@@ -45,8 +45,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 125
-text = "Title Here
+theme_override_font_sizes/font_size = 100
+text = "This Side Down
 "
 horizontal_alignment = 1
 vertical_alignment = 1
