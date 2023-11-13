@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjceqrxsj38yu"]
+
+[ext_resource type="Script" path="res://basebox.gd" id="1_ffweb"]
+[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://TempBox.png" id="2_be7ld"]
+
+[node name="TBox" type="RigidBody2D"]
+center_of_mass_mode = 1
+center_of_mass = Vector2(2.08167e-16, 2.08167e-16)
+script = ExtResource("1_ffweb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14.5, 14)
+scale = Vector2(10.0156, 2.90625)
+texture = ExtResource("2_be7ld")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(163.5, -207.5)
+scale = Vector2(3.39062, 4.04688)
+texture = ExtResource("2_be7ld")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-13.5891, 2.4827)
+scale = Vector2(1.82686, 0.580715)
+polygon = PackedVector2Array(-159.511, -140.318, 36.7057, -139.751, 36.9974, -589.76, 156.328, -588.038, 157.97, -140.314, 191.304, -139.305, 191.304, 181.897, -161.618, 181.897)
