@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5wk733prk63c"
-path="res://.godot/imported/TempFloor.png-1df55a4f24c07dedf4c4038d2b8867a5.ctex"
+uid="uid://djuavqm6xlx6e"
+path="res://.godot/imported/TempBox.png-9d177b82dda3cacf0394dbdff031af75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TempFloor.png"
-dest_files=["res://.godot/imported/TempFloor.png-1df55a4f24c07dedf4c4038d2b8867a5.ctex"]
+source_file="res://Sprites/TempBox.png"
+dest_files=["res://.godot/imported/TempBox.png-9d177b82dda3cacf0394dbdff031af75.ctex"]
 
 [params]
 
