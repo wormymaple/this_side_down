@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://r0yq03eqwlcd"]
+
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_dhfbf"]
+[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="2_yd7ci"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_dhfbf")]
+position = Vector2(576, 608)
+
+[node name="Floor2" parent="." instance=ExtResource("1_dhfbf")]
+position = Vector2(762, 247)
+rotation = 1.5717
+scale = Vector2(0.147749, 0.190335)
+
+[node name="Floor3" parent="." instance=ExtResource("1_dhfbf")]
+position = Vector2(585, 167)
+rotation = -3.14028
+scale = Vector2(0.320337, 0.120444)
+skew = 0.00160074
+
+[node name="Squarebox" parent="." instance=ExtResource("2_yd7ci")]
+position = Vector2(625, 440)
