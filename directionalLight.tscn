@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://wonkd2sx7pt6"]
+
+[ext_resource type="Texture2D" uid="uid://6t6sv1ello7f" path="res://icon.svg" id="1_mr8ae"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D"]
+energy = 0.7
+height = 0.3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("1_mr8ae")
