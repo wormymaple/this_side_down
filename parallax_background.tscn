@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckanvdi6ly78t"]
+
+[ext_resource type="Texture2D" uid="uid://cjf4ijbigs0wq" path="res://Art/First Level/BG_Wall_Garage.png" id="1_8rpev"]
+[ext_resource type="Texture2D" uid="uid://dppylpwwd0ogx" path="res://Art/First Level/UI_Shelves.png" id="2_uha3e"]
+[ext_resource type="Texture2D" uid="uid://kahrs3utubug" path="res://Art/First Level/UI_BoxesforShelves.png" id="3_x8xnt"]
+[ext_resource type="Texture2D" uid="uid://bd43l2j3mn18m" path="res://Art/First Level/BG_Ground.png" id="4_j55r0"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6mrvt"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Wayback" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Wayback"]
+texture = ExtResource("1_8rpev")
+
+[node name="Midground" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Midground"]
+material = SubResource("CanvasItemMaterial_6mrvt")
+texture = ExtResource("2_uha3e")
+
+[node name="Foreground" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
+texture = ExtResource("3_x8xnt")
+
+[node name="Ground" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+texture = ExtResource("4_j55r0")
