@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://oj2x50mstjua"]
+
+[ext_resource type="Texture2D" uid="uid://6t6sv1ello7f" path="res://Sprites/icon.svg" id="1_i4md2"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vislo"]
+polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, 1.38053, -64, -59.6, -59, -63.9, 59, -64)
+
+[node name="Sprite2D2" type="Sprite2D"]
+scale = Vector2(1.72656, 1.53125)
+texture = ExtResource("1_i4md2")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, 0.653061)
+occluder = SubResource("OccluderPolygon2D_vislo")
