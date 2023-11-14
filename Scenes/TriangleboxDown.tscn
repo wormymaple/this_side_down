@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6dbdts3ycfjs"]
+
+[ext_resource type="Script" path="res://Scripts/basebox.gd" id="1_jfsiv"]
+[ext_resource type="Texture2D" uid="uid://b1w0nua3woyxf" path="res://Sprites/TempTriangleDown.png" id="2_ljftu"]
+
+[node name="TriangleboxUp" type="RigidBody2D"]
+position = Vector2(-4, -3)
+center_of_mass_mode = 1
+center_of_mass = Vector2(2.08167e-16, 2.08167e-16)
+script = ExtResource("1_jfsiv")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 19.5)
+rotation = -3.13217
+scale = Vector2(8.5625, 8.21875)
+texture = ExtResource("2_ljftu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-3.52061, 21.7172)
+rotation = -3.13321
+scale = Vector2(0.338248, 0.374362)
+polygon = PackedVector2Array(22.234, -154.175, 243.965, 166.371, -202.453, 169.042)
