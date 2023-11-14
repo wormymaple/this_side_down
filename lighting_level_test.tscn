@@ -2,15 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="1_o3xxm"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="1_tn2pd"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="2_cfxnt"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_kbdst"]
-
-[sub_resource type="Gradient" id="Gradient_rmpev"]
-offsets = PackedFloat32Array(0, 0.0193548, 0.935484, 0.996774, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.444242, 0.444242, 0.444242, 1, 0.758065, 0.758065, 0.758065, 1, 0.712903, 0.712903, 0.712903, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_bt8q2"]
-gradient = SubResource("Gradient_rmpev")
-fill_from = Vector2(0, 1)
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="4_07jig"]
 
 [node name="LightingLevelTest" type="Node2D"]
 position = Vector2(592, 460)
@@ -19,26 +13,29 @@ position = Vector2(592, 460)
 position = Vector2(374, -488)
 scale = Vector2(-5.59652, 0.540353)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.160784, 0.160784, 0.160784, 1)
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="CanvasModulate" parent="." instance=ExtResource("2_cfxnt")]
 
 [node name="DirectionalLight2D2" parent="." instance=ExtResource("1_o3xxm")]
-position = Vector2(-1284, -836)
-energy = 0.22
+position = Vector2(-1638, -1241)
+color = Color(1, 0.541176, 0.290196, 1)
+energy = 0.45
+range_layer_min = -100
+range_layer_max = 100
+shadow_filter_smooth = 1.7
 
 [node name="PointLight2D2" parent="." instance=ExtResource("3_kbdst")]
-position = Vector2(217, -4)
+position = Vector2(-350, -269)
 scale = Vector2(5.17799, 4.72663)
-shadow_filter_smooth = 0.0
-texture_scale = 5.52
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -5
-position = Vector2(-1304, 192)
-scale = Vector2(1158, 647)
-texture = SubResource("GradientTexture2D_bt8q2")
+energy = 0.88
+range_z_max = 10
+texture_scale = 2.32
 
 [node name="Sprite2D3" parent="." instance=ExtResource("1_tn2pd")]
-position = Vector2(-590, -556)
+position = Vector2(-789, -898)
+scale = Vector2(3.56641, 1.53125)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_07jig")]
+layer = -3
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("2_cfxnt")]
