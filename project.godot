@@ -92,6 +92,21 @@ right_down_p2={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":1,"axis":3,"axis_value":1.0,"script":null)
 ]
 }
+right_trigger_p1={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+right_trigger_p2={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+
+[physics]
+
+common/physics_ticks_per_second=256
+common/max_physics_steps_per_frame=10
 
 [rendering]
 
