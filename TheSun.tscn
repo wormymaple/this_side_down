@@ -4,6 +4,7 @@
 
 [node name="DirectionalLight2D" type="DirectionalLight2D"]
 skew = -0.555015
+color = Color(1, 0.419608, 0.168627, 1)
 energy = 0.53
 range_layer_min = -100
 shadow_enabled = true
