@@ -19,7 +19,6 @@ scale = Vector2(-5.59652, 0.540353)
 
 [node name="DirectionalLight2D2" parent="." instance=ExtResource("1_o3xxm")]
 position = Vector2(-1638, -1241)
-color = Color(1, 0.541176, 0.290196, 1)
 energy = 0.45
 range_layer_max = 100
 shadow_filter_smooth = 1.7
