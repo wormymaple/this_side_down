@@ -13,7 +13,7 @@ script = ExtResource("1_kr7b3")
 position = Vector2(576, 603)
 
 [node name="Squarebox" parent="." instance=ExtResource("2_q7y2m")]
-position = Vector2(996, 436)
+position = Vector2(993, 436)
 rotation = 12.5656
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_fdt07")]
