@@ -26,6 +26,11 @@ var target_body: Node2D
 var grabbed_body: Node2D
 var on_ground = false
 
+@export var box_pickup: AudioStreamPlayer
+@export var box_drop: AudioStreamPlayer
+@export var jump: AudioStreamPlayer
+
+
 var body_state: PhysicsDirectBodyState2D
 
 func _ready():
@@ -69,9 +74,12 @@ func _physics_process(delta):
 		
 
 func _input(event):
+	# jump
 	if event.is_action_pressed("left_trigger_" + playerID) && on_ground:
 		linear_velocity.y = -jump_speed
+		jump.play()
 		
+	# grab
 	if event.is_action_pressed("right_trigger_" + playerID):
 		if grabbed_body == null && target_body != null: # Try grab
 			# Am I being grabbed by a player?
@@ -81,6 +89,7 @@ func _input(event):
 			grabbed_body = target_body
 			grabbed_body.gravity_scale = 0
 			grabbed_body.set_meta("grabbed", true)
+			box_pickup.play()
 		elif grabbed_body != null:
 			drop_object()
 
@@ -95,6 +104,8 @@ func drop_object():
 	grabbed_body.set_meta("grabbed", false)
 			
 	grabbed_body = null
+	
+	box_drop.play()
 
 func _on_grab_area_body_entered(body):
 	if body == self:
