@@ -10,47 +10,59 @@
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 layer = -1
-metadata/_edit_vertical_guides_ = [576.0]
+follow_viewport_enabled = true
+metadata/_edit_vertical_guides_ = [1924.0]
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.19, 1)
+motion_scale = Vector2(0.7, 0.85)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wayback"]
 material = SubResource("CanvasItemMaterial_s4lip")
-position = Vector2(576, 324)
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_8rpev")
 
 [node name="Midground" type="ParallaxLayer" parent="."]
 z_index = 1
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.4, 1)
+motion_scale = Vector2(0.87, 0.94)
 
 [node name="Sprite2D" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_s4lip")
-position = Vector2(576, 324)
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_uha3e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Midground"]
+modulate = Color(0.376471, 0.376471, 0.376471, 1)
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_x8xnt")
 
 [node name="Foreground" type="ParallaxLayer" parent="."]
 z_index = 1
 material = SubResource("CanvasItemMaterial_s4lip")
-position = Vector2(576, 324)
-motion_scale = Vector2(0.6, 1)
+motion_scale = Vector2(0.9, 0.95)
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground"]
 material = SubResource("CanvasItemMaterial_s4lip")
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_x8xnt")
 
 [node name="Ground" type="ParallaxLayer" parent="."]
 z_index = 2
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.9, 1)
+motion_scale = Vector2(0.99, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_s4lip")
-position = Vector2(576, 324)
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_j55r0")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground"]
-position = Vector2(576, 324)
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_loqtg")

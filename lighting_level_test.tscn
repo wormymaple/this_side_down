@@ -37,6 +37,5 @@ scale = Vector2(3.56641, 1.53125)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_07jig")]
 layer = -3
-follow_viewport_enabled = true
 
 [node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("2_cfxnt")]
