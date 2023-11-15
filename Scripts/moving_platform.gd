@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 var direction = "up"
 @export var speed = 1
