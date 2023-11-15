@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwpxs0n1bfa8h"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_4.gd" id="1_lc6j4"]
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_v4xq1"]
+[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="2_1lqnc"]
+[ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="3_iml12"]
+[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="4_keg0h"]
+[ext_resource type="PackedScene" uid="uid://c05ps7i55fw6q" path="res://Scenes/TriangleboxUp.tscn" id="5_km41f"]
+[ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="6_nde0g"]
+
+[node name="Level4" type="Node2D"]
+script = ExtResource("1_lc6j4")
+
+[node name="Floor" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(288, 608)
+scale = Vector2(0.5, 1)
+
+[node name="Floor2" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(1552, 604)
+scale = Vector2(0.5, 1)
+
+[node name="Floor3" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(547, 306)
+rotation = 1.5708
+scale = Vector2(0.6, 1)
+
+[node name="Floor4" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(1276, 302)
+rotation = 1.5708
+scale = Vector2(0.6, 1)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("2_1lqnc")]
+position = Vector2(102, 468)
+scale = Vector2(2.12, 1)
+speed = 2
+
+[node name="Ramp" parent="." instance=ExtResource("3_iml12")]
+position = Vector2(622, -58)
+scale = Vector2(-3.68, 2.04)
+
+[node name="Ramp2" parent="." instance=ExtResource("3_iml12")]
+position = Vector2(1202, -60)
+scale = Vector2(3.68, 2.04)
+
+[node name="Ramp3" parent="." instance=ExtResource("3_iml12")]
+position = Vector2(1435, 71)
+scale = Vector2(-3.68, 2.04)
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("2_1lqnc")]
+position = Vector2(1711, 371)
+scale = Vector2(2.4, 1)
+speed = 2
+
+[node name="LoadingZone" parent="." instance=ExtResource("4_keg0h")]
+position = Vector2(1694, 516)
+scale = Vector2(3.86667, 1.5)
+
+[node name="TriangleboxUp" parent="." instance=ExtResource("5_km41f")]
+position = Vector2(419, 479)
+rotation = -6.28318
+
+[node name="TriangleboxUp2" parent="." instance=ExtResource("6_nde0g")]
+position = Vector2(351, 486)
+rotation = -0.0210259
+
+[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
+[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]

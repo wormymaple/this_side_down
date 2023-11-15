@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctxyn1x1kaljf"]
+
+[ext_resource type="Script" path="res://Scripts/basebox.gd" id="1_l3da3"]
+[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://Sprites/TempBox.png" id="2_onjoh"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r3r0y"]
+polygon = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+
+[node name="Squarebox" type="RigidBody2D"]
+center_of_mass_mode = 1
+center_of_mass = Vector2(2.08167e-16, 2.08167e-16)
+script = ExtResource("1_l3da3")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.499982, 28.32)
+scale = Vector2(3, 3)
+texture = ExtResource("2_onjoh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-3.52061, 21.7172)
+scale = Vector2(0.338248, 0.374362)
+polygon = PackedVector2Array(-273.407, -239.654, 294.224, -239.654, 297.181, 273.219, -273.407, 273.219)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0.499982, 28.32)
+scale = Vector2(3, 3)
+occluder = SubResource("OccluderPolygon2D_r3r0y")

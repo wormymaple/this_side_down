@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://wonkd2sx7pt6"]
+
+[ext_resource type="Texture2D" uid="uid://6t6sv1ello7f" path="res://Sprites/icon.svg" id="1_mr8ae"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D"]
+skew = -0.555015
+energy = 0.53
+range_layer_min = -100
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 1.6
+height = 0.3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = ExtResource("1_mr8ae")

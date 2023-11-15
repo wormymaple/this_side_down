@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3v4hdhvpfbkq"]
+
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="1_o3xxm"]
+[ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="1_tn2pd"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="2_cfxnt"]
+[ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_kbdst"]
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="4_07jig"]
+
+[node name="LightingLevelTest" type="Node2D"]
+position = Vector2(592, 460)
+
+[node name="Sprite2D2" parent="." instance=ExtResource("1_tn2pd")]
+position = Vector2(374, -488)
+scale = Vector2(-5.59652, 0.540353)
+
+[node name="CanvasModulate" parent="." instance=ExtResource("2_cfxnt")]
+
+[node name="DirectionalLight2D2" parent="." instance=ExtResource("1_o3xxm")]
+position = Vector2(-1638, -1241)
+color = Color(1, 0.541176, 0.290196, 1)
+energy = 0.45
+range_layer_min = -100
+range_layer_max = 100
+shadow_filter_smooth = 1.7
+
+[node name="PointLight2D2" parent="." instance=ExtResource("3_kbdst")]
+position = Vector2(-350, -269)
+scale = Vector2(5.17799, 4.72663)
+energy = 0.88
+range_z_max = 10
+texture_scale = 2.32
+
+[node name="Sprite2D3" parent="." instance=ExtResource("1_tn2pd")]
+position = Vector2(-789, -898)
+scale = Vector2(3.56641, 1.53125)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_07jig")]
+layer = -3
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("2_cfxnt")]
