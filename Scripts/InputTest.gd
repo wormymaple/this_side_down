@@ -7,6 +7,16 @@ extends RigidBody2D
 @export var arm_length: float
 @export var drop_threshold: float
 
+@export var wiggle_curve: Curve
+@export var wiggle_intensity: float
+@export var wiggle_time: float
+var wiggle_current_time = 0.0
+@export var legs_path: NodePath
+@onready var legs = get_node(legs_path)
+@export var head_path: NodePath
+@onready var head = get_node(head_path)
+@export var head_bob: float
+
 @export var playerID: String
 @export var hand_path: NodePath
 @export var arm_path: NodePath
@@ -15,6 +25,11 @@ extends RigidBody2D
 var target_body: Node2D
 var grabbed_body: Node2D
 var on_ground = false
+
+@export var box_pickup: AudioStreamPlayer
+@export var box_drop: AudioStreamPlayer
+@export var jump: AudioStreamPlayer
+
 
 var body_state: PhysicsDirectBodyState2D
 
@@ -45,14 +60,26 @@ func _physics_process(delta):
 	var left_stick = Input.get_axis("left_left_" + playerID, "left_right_" + playerID)
 	if left_stick != 0:
 		linear_velocity.x = left_stick * move_speed
+		
+		if on_ground: # Player anim.
+			wiggle_current_time += delta
+			if wiggle_current_time > wiggle_time:
+				wiggle_current_time -= wiggle_time
+			
+			var sample = wiggle_curve.sample(wiggle_current_time / wiggle_time)
+			legs.position = Vector2(sample * wiggle_intensity, legs.position.y)
+			head.position = Vector2(0, sin(wiggle_current_time / wiggle_time * PI) * head_bob)
 	else:
 		linear_velocity.x = 0
 		
 
 func _input(event):
+	# jump
 	if event.is_action_pressed("left_trigger_" + playerID) && on_ground:
 		linear_velocity.y = -jump_speed
+		jump.play()
 		
+	# grab
 	if event.is_action_pressed("right_trigger_" + playerID):
 		if grabbed_body == null && target_body != null: # Try grab
 			# Am I being grabbed by a player?
@@ -62,6 +89,7 @@ func _input(event):
 			grabbed_body = target_body
 			grabbed_body.gravity_scale = 0
 			grabbed_body.set_meta("grabbed", true)
+			box_pickup.play()
 		elif grabbed_body != null:
 			drop_object()
 
@@ -76,6 +104,8 @@ func drop_object():
 	grabbed_body.set_meta("grabbed", false)
 			
 	grabbed_body = null
+	
+	box_drop.play()
 
 func _on_grab_area_body_entered(body):
 	if body == self:

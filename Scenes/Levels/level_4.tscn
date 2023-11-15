@@ -11,57 +11,52 @@
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_lc6j4")
 
-[node name="Floor" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(288, 608)
-scale = Vector2(0.5, 1)
-
-[node name="Floor2" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(1552, 604)
-scale = Vector2(0.5, 1)
-
-[node name="Floor3" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(547, 306)
-rotation = 1.5708
-scale = Vector2(0.6, 1)
-
-[node name="Floor4" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(1276, 302)
-rotation = 1.5708
-scale = Vector2(0.6, 1)
-
 [node name="MovingPlatform" parent="." instance=ExtResource("2_1lqnc")]
-position = Vector2(102, 468)
-scale = Vector2(2.12, 1)
+position = Vector2(-404, 602)
+scale = Vector2(0.35, 0.35)
 speed = 2
 
 [node name="Ramp" parent="." instance=ExtResource("3_iml12")]
-position = Vector2(622, -58)
-scale = Vector2(-3.68, 2.04)
+position = Vector2(2436, -14)
+scale = Vector2(0.2, 0.4)
 
 [node name="Ramp2" parent="." instance=ExtResource("3_iml12")]
-position = Vector2(1202, -60)
-scale = Vector2(3.68, 2.04)
+position = Vector2(3343, -10.0001)
+scale = Vector2(-0.5, 0.4)
 
 [node name="Ramp3" parent="." instance=ExtResource("3_iml12")]
-position = Vector2(1435, 71)
-scale = Vector2(-3.68, 2.04)
+position = Vector2(1277, -17)
+scale = Vector2(-0.2, 0.4)
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("2_1lqnc")]
-position = Vector2(1711, 371)
-scale = Vector2(2.4, 1)
+position = Vector2(4203, 613)
+scale = Vector2(0.35, 0.35)
 speed = 2
 
-[node name="LoadingZone" parent="." instance=ExtResource("4_keg0h")]
-position = Vector2(1694, 516)
-scale = Vector2(3.86667, 1.5)
-
 [node name="TriangleboxUp" parent="." instance=ExtResource("5_km41f")]
-position = Vector2(419, 479)
+position = Vector2(589, 690)
 rotation = -6.28318
 
 [node name="TriangleboxUp2" parent="." instance=ExtResource("6_nde0g")]
-position = Vector2(351, 486)
+position = Vector2(525, 689)
 rotation = -0.0210259
+
+[node name="Floor" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(151, 1008)
+
+[node name="Floor3" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(3571, 1008)
+
+[node name="Floor2" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(957, 312)
+scale = Vector2(0.16, 2.12)
+
+[node name="Floor4" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(2761, 312)
+scale = Vector2(0.16, 2.12)
+
+[node name="LoadingZone" parent="." instance=ExtResource("4_keg0h")]
+position = Vector2(4202, 786)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]

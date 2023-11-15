@@ -10,19 +10,19 @@
 script = ExtResource("1_kr7b3")
 
 [node name="Floor" parent="." instance=ExtResource("1_jrl6j")]
-position = Vector2(576, 603)
+position = Vector2(961, 1114)
+scale = Vector2(1.76, 1)
 
 [node name="Squarebox" parent="." instance=ExtResource("2_q7y2m")]
-position = Vector2(993, 436)
+position = Vector2(476, 761)
 rotation = 12.5656
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_fdt07")]
-position = Vector2(175, 463)
-scale = Vector2(4.69905, 3.16026)
+position = Vector2(1928, 893)
 
 [node name="Ramp" parent="." instance=ExtResource("4_nh0bc")]
-position = Vector2(604, 436)
-scale = Vector2(6.97323, 4.03186)
+position = Vector2(1168, 757)
+scale = Vector2(0.4, 0.400001)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
