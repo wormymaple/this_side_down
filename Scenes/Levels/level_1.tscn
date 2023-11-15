@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://kiyufpj683ic"]
+[gd_scene load_steps=11 format=3 uid="uid://kiyufpj683ic"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_d88h3"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrwse"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="5_n57bp"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_yeun7"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_bc66u"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="8_such3"]
+[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_8gwty"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="10_2kv4e"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_d88h3")
@@ -14,10 +17,11 @@ script = ExtResource("1_d88h3")
 [node name="CanvasModulate" parent="." instance=ExtResource("6_yeun7")]
 
 [node name="Floor" parent="." instance=ExtResource("1_yrwse")]
-position = Vector2(576, 603)
+position = Vector2(750, 723)
+scale = Vector2(2.96115, 1)
 
 [node name="Squarebox" parent="." instance=ExtResource("2_fbhks")]
-position = Vector2(170, 433)
+position = Vector2(445, 150)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_46dmi")]
@@ -25,12 +29,23 @@ position = Vector2(875, 462)
 scale = Vector2(7.37905, 3.16026)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_n57bp")]
-follow_viewport_enabled = true
+follow_viewport_enabled = false
+metadata/_edit_vertical_guides_ = [576.0]
 
 [node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("6_yeun7")]
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_bc66u")]
 position = Vector2(386, -631)
+
+[node name="Camera" parent="." instance=ExtResource("8_such3")]
+scale = Vector2(1.92115, 0.983541)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-2, 0)
+script = ExtResource("9_8gwty")
+player_scene = ExtResource("10_2kv4e")
+camera = NodePath("../Camera")
+colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]

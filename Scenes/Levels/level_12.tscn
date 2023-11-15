@@ -1,0 +1,146 @@
+[gd_scene load_steps=11 format=3 uid="uid://dl5ncyiq5epgd"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_12.gd" id="1_s4r1i"]
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrdb1"]
+[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="2_ymd4g"]
+[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_dt02e"]
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="4_o81mb"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="5_f2ie4"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="6_p82q7"]
+[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="7_stoc5"]
+[ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="8_0fbum"]
+[ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="8_yl3tf"]
+
+[node name="level_12" type="Node2D"]
+script = ExtResource("1_s4r1i")
+
+[node name="Floor4" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-1732, 604)
+
+[node name="Floor3" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-579, 604)
+
+[node name="Floor" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(574, 604)
+
+[node name="Squarebox" parent="." instance=ExtResource("2_ymd4g")]
+position = Vector2(-1712, 403)
+rotation = 6.27737
+
+[node name="CircleBox" parent="." instance=ExtResource("2_ymd4g")]
+position = Vector2(-2030, 401)
+rotation = 6.27737
+
+[node name="LoadingZone" parent="." instance=ExtResource("3_dt02e")]
+position = Vector2(912, -181)
+scale = Vector2(7.96255, 3.16026)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_o81mb")]
+follow_viewport_enabled = true
+
+[node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("5_f2ie4")]
+
+[node name="DirectionalLight2D" parent="." instance=ExtResource("6_p82q7")]
+position = Vector2(386, -631)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("7_stoc5")]
+position = Vector2(-386, 496)
+scale = Vector2(10.24, 1.96)
+speed = 2
+
+[node name="Floor2" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(605, 227)
+rotation = 1.5717
+scale = Vector2(0.584145, 1.20513)
+
+[node name="Floor5" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-2258, 226)
+rotation = 1.5717
+scale = Vector2(0.584145, 1.20513)
+
+[node name="Floor6" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-1750, 198)
+scale = Vector2(0.8, 1)
+
+[node name="Floor7" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(1727, 604)
+
+[node name="Floor8" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-1338, -177)
+rotation = 1.5717
+scale = Vector2(0.584145, 1.20513)
+
+[node name="Floor9" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-885, -25)
+rotation = 1.5717
+scale = Vector2(0.464074, 1.20513)
+
+[node name="Floor10" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(126, 128)
+rotation = 1.5717
+scale = Vector2(0.19479, 1.20481)
+
+[node name="Floor11" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(127, -524)
+rotation = 1.5717
+scale = Vector2(0.304041, 1.20513)
+
+[node name="Floor12" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-885, -991)
+rotation = 1.5717
+scale = Vector2(0.584145, 1.20513)
+
+[node name="Floor17" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(881, -1129)
+scale = Vector2(1.4, 1)
+
+[node name="Floor13" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-354, -1860)
+
+[node name="Floor14" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(606, -386)
+rotation = 1.5717
+scale = Vector2(0.544074, 1.20513)
+
+[node name="Floor15" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-1337, -851)
+rotation = 1.5717
+scale = Vector2(0.584145, 1.20513)
+
+[node name="Floor16" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-1109, -696)
+scale = Vector2(0.32, 1)
+
+[node name="Floor18" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(607, -778)
+rotation = 1.5717
+scale = Vector2(0.544074, 1.20513)
+
+[node name="Floor19" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(-885, -1568)
+rotation = 1.5717
+scale = Vector2(0.584145, 1.20513)
+
+[node name="Floor20" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(793, -1860)
+
+[node name="HorMovingPlatform" parent="." instance=ExtResource("8_0fbum")]
+position = Vector2(1892, -1045)
+scale = Vector2(4.47305, 1.63523)
+
+[node name="Ramp" parent="." instance=ExtResource("8_yl3tf")]
+position = Vector2(1466, -1301)
+scale = Vector2(6.97323, 4.03186)
+
+[node name="Floor21" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(1642, -670)
+rotation = 1.5717
+scale = Vector2(0.584145, 1.20513)
+
+[node name="Floor22" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(2258, -638)
+rotation = 1.5717
+scale = Vector2(2.22411, 1.20513)
+
+[node name="Floor23" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(1738, -1867)
