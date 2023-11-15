@@ -18,7 +18,7 @@ script = ExtResource("1_d88h3")
 
 [node name="Floor" parent="." instance=ExtResource("1_yrwse")]
 position = Vector2(750, 723)
-scale = Vector2(1.92115, 1)
+scale = Vector2(2.96115, 1)
 
 [node name="Squarebox" parent="." instance=ExtResource("2_fbhks")]
 position = Vector2(445, 150)

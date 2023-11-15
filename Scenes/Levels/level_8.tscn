@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfuk1ayoi88qa"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_8.gd" id="1_3fm5b"]
+[ext_resource type="PackedScene" uid="uid://dh031n2t5v3fm" path="res://Scenes/spherebox.tscn" id="1_ifffa"]
+[ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="2_tv6ys"]
+[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="3_rnimm"]
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="4_08m74"]
+[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="5_226u4"]
+[ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="6_tgh7o"]
+
+[node name="Level8" type="Node2D"]
+script = ExtResource("1_3fm5b")
+
+[node name="Spherebox" parent="." instance=ExtResource("1_ifffa")]
+position = Vector2(1268, -187)
+
+[node name="HorMovingPlatform" parent="." instance=ExtResource("2_tv6ys")]
+position = Vector2(459, -82)
+scale = Vector2(1.77212, 2.59398)
+
+[node name="Squarebox" parent="." instance=ExtResource("3_rnimm")]
+position = Vector2(1878, 428)
+
+[node name="Floor" parent="." instance=ExtResource("4_08m74")]
+position = Vector2(342, 608)
+scale = Vector2(0.6, 1)
+
+[node name="Floor3" parent="." instance=ExtResource("4_08m74")]
+position = Vector2(728, -68)
+scale = Vector2(0.16, 1)
+
+[node name="Floor4" parent="." instance=ExtResource("4_08m74")]
+position = Vector2(1628, -69)
+scale = Vector2(0.799995, 1)
+
+[node name="Floor2" parent="." instance=ExtResource("4_08m74")]
+position = Vector2(1707, 598)
+scale = Vector2(0.6, 1)
+
+[node name="LoadingZone" parent="." instance=ExtResource("5_226u4")]
+position = Vector2(1711, -185)
+scale = Vector2(11.0982, 2.32)
+
+[node name="TriangleboxUp" parent="." instance=ExtResource("6_tgh7o")]
+position = Vector2(532, 519)
+rotation = -3.13424
+
+[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
+[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
