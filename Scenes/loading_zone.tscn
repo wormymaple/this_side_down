@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb864bfhhw1so"]
+
+[ext_resource type="Texture2D" uid="uid://dcmmcgs2h4r8u" path="res://Sprites/TempLoad.png" id="1_n7e4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d44a2"]
+size = Vector2(28, 40)
+
+[node name="LoadingZone" type="Area2D"]
+
+[node name="LoadingArea" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d44a2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n7e4d")
+
+[node name="LoadRamp" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoadRamp"]
+position = Vector2(0, -0.741665)
+scale = Vector2(1, 1.02083)
+polygon = PackedVector2Array(33, 32, 16, 20, -16, 20, -32, 32)

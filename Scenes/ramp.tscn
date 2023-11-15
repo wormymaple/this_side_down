@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbybiva8l4ojn"]
+
+[ext_resource type="Texture2D" uid="uid://cpev7knuwego6" path="res://Sprites/TempRamp.png" id="1_ynjip"]
+
+[node name="Ramp" type="Area2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_ynjip")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-46, 57)
+polygon = PackedVector2Array(13, -25, 78, -25, 78, -89)

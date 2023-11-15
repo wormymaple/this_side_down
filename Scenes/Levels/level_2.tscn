@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://b648xp38c3ny7"]
+
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_jrl6j"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_2.gd" id="1_kr7b3"]
+[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="2_q7y2m"]
+[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_fdt07"]
+[ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="4_nh0bc"]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_kr7b3")
+
+[node name="Floor" parent="." instance=ExtResource("1_jrl6j")]
+position = Vector2(576, 603)
+
+[node name="Squarebox" parent="." instance=ExtResource("2_q7y2m")]
+position = Vector2(996, 436)
+rotation = 12.5656
+
+[node name="LoadingZone" parent="." instance=ExtResource("3_fdt07")]
+position = Vector2(175, 463)
+scale = Vector2(4.69905, 3.16026)
+
+[node name="Ramp" parent="." instance=ExtResource("4_nh0bc")]
+position = Vector2(604, 436)
+scale = Vector2(6.97323, 4.03186)
+
+[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
+[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]

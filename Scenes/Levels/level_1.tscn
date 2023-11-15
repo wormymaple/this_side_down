@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://kiyufpj683ic"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_d88h3"]
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrwse"]
+[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="2_fbhks"]
+[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_46dmi"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_d88h3")
+
+[node name="Floor" parent="." instance=ExtResource("1_yrwse")]
+position = Vector2(576, 603)
+
+[node name="Squarebox" parent="." instance=ExtResource("2_fbhks")]
+position = Vector2(170, 433)
+rotation = 6.27737
+
+[node name="LoadingZone" parent="." instance=ExtResource("3_46dmi")]
+position = Vector2(875, 462)
+scale = Vector2(7.37905, 3.16026)
+
+[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
+[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
