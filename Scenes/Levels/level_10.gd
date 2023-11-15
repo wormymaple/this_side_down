@@ -15,7 +15,7 @@ func _process(delta):
 					if $CircleBox.rotation > minRotation and $CircleBox.rotation < maxRotation:
 						if box3loaded == true:
 							LevelsCompleted.level10done = true
-							get_tree().change_scene("res://Scenes/Levels/level_11")
+							get_tree().change_scene_to_file("res://Scenes/Levels/level_11")
 
 func _on_loading_zone_body_entered(body):
 	if body == $SquareBox1:

@@ -16,7 +16,7 @@ func _process(delta):
 					if $TriangleboxUp3.rotation > minRotation and $TriangleboxUp3.rotation < maxRotation:
 						if box3loaded == true:
 							LevelsCompleted.level5done = true
-							get_tree().change_scene("res://Scenes/Levels/level_6")
+							get_tree().change_scene_to_file("res://Scenes/Levels/level_6")
 
 func _on_loading_zone_body_entered(body):
 	if body == $TriangleboxUp:
