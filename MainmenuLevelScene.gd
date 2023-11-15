@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _on_play_button_pressed():
-	get_tree().change_scene()
+	get_tree().change_scene("res://level_select.tscn")
 
 
 func _on_options_button_pressed():
