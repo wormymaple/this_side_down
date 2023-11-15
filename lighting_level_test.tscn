@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3v4hdhvpfbkq"]
+[gd_scene load_steps=6 format=3 uid="uid://d3v4hdhvpfbkq"]
 
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="1_o3xxm"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="1_tn2pd"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="2_cfxnt"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_kbdst"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="5_55iqg"]
-[ext_resource type="Shader" path="res://Art/Fourth Level/parallax_backgroundOcean.gdshader" id="6_v8vb0"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uw0qv"]
-render_priority = 0
-shader = ExtResource("6_v8vb0")
 
 [node name="LightingLevelTest" type="Node2D"]
 position = Vector2(592, 460)
@@ -42,5 +37,4 @@ scale = Vector2(3.56641, 1.53125)
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_55iqg")]
 
 [node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("2_cfxnt")]
-material = SubResource("ShaderMaterial_uw0qv")
 color = Color(0.462745, 0.654902, 0.92549, 1)
