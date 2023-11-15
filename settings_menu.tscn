@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dq5ntdtxdyc8c"]
+[gd_scene load_steps=3 format=3 uid="uid://dq5ntdtxdyc8c"]
+
+[ext_resource type="Script" path="res://settings_menu.gd" id="1_f8lut"]
+[ext_resource type="Script" path="res://OptionButton.gd" id="2_d04pw"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -13,6 +16,7 @@ offset_right = 460.0
 offset_bottom = 295.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f8lut")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -57,3 +61,101 @@ text = "Display Mode"
 
 [node name="OptionButton" type="OptionButton" parent="SettingTabs/Video/MarginContainer/VideoSettings"]
 layout_mode = 2
+size_flags_horizontal = 10
+item_count = 2
+selected = 0
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+script = ExtResource("2_d04pw")
+
+[node name="Audio" type="TabBar" parent="SettingTabs"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SettingTabs/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="AudioSettings" type="GridContainer" parent="SettingTabs/Audio/MarginContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 50
+columns = 2
+
+[node name="MasterVolLabel" type="Label" parent="SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="MasterVal" type="Label" parent="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer"]
+layout_mode = 2
+text = "Max"
+
+[node name="MasterVolSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer"]
+custom_minimum_size = Vector2(400, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 2.08165e-12
+value = -10.0
+
+[node name="MusicVolLabel" type="Label" parent="SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="MusicValue" type="Label" parent="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer2"]
+layout_mode = 2
+text = "Max"
+
+[node name="MusicVolSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer2"]
+custom_minimum_size = Vector2(400, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 2.08165e-12
+value = -10.0
+
+[node name="OtherVolLabel" type="Label" parent="SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+text = "Other Volume"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingTabs/Audio/MarginContainer/AudioSettings"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="OtherVal" type="Label" parent="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer3"]
+layout_mode = 2
+text = "Max"
+
+[node name="OtherVolSlider" type="HSlider" parent="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer3"]
+custom_minimum_size = Vector2(400, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = -50.0
+max_value = 2.08165e-12
+value = -10.0
+
+[connection signal="item_selected" from="SettingTabs/Video/MarginContainer/VideoSettings/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
+[connection signal="value_changed" from="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer2/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer3/OtherVolSlider" to="." method="_on_other_vol_slider_value_changed"]
