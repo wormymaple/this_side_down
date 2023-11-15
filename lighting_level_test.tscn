@@ -8,6 +8,8 @@
 
 [node name="LightingLevelTest" type="Node2D"]
 position = Vector2(592, 460)
+metadata/_edit_horizontal_guides_ = []
+metadata/_edit_vertical_guides_ = []
 
 [node name="Sprite2D2" parent="." instance=ExtResource("1_tn2pd")]
 position = Vector2(374, -488)
@@ -19,12 +21,11 @@ scale = Vector2(-5.59652, 0.540353)
 position = Vector2(-1638, -1241)
 color = Color(1, 0.541176, 0.290196, 1)
 energy = 0.45
-range_layer_min = -100
 range_layer_max = 100
 shadow_filter_smooth = 1.7
 
 [node name="PointLight2D2" parent="." instance=ExtResource("3_kbdst")]
-position = Vector2(-350, -269)
+position = Vector2(-248, -201)
 scale = Vector2(5.17799, 4.72663)
 energy = 0.88
 range_z_max = 10
