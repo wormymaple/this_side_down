@@ -15,7 +15,7 @@ metadata/_edit_vertical_guides_ = [1924.0]
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.7, 0.85)
+motion_scale = Vector2(0.7, 0.95)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wayback"]
 material = SubResource("CanvasItemMaterial_s4lip")
@@ -32,7 +32,7 @@ texture = ExtResource("4_j55r0")
 [node name="Midground" type="ParallaxLayer" parent="."]
 z_index = 1
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.87, 0.98)
+motion_scale = Vector2(0.87, 0.99)
 
 [node name="Sprite2D" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_s4lip")
@@ -60,7 +60,7 @@ texture = ExtResource("3_x8xnt")
 [node name="Ground" type="ParallaxLayer" parent="."]
 z_index = 2
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.99, 1)
+motion_scale = Vector2(0.99, 0.995)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground"]
 position = Vector2(960, 540)
