@@ -23,10 +23,16 @@ position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_8rpev")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Wayback"]
+material = SubResource("CanvasItemMaterial_s4lip")
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_j55r0")
+
 [node name="Midground" type="ParallaxLayer" parent="."]
 z_index = 1
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.87, 0.94)
+motion_scale = Vector2(0.87, 0.98)
 
 [node name="Sprite2D" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_s4lip")
@@ -43,7 +49,7 @@ texture = ExtResource("3_x8xnt")
 [node name="Foreground" type="ParallaxLayer" parent="."]
 z_index = 1
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.9, 0.95)
+motion_scale = Vector2(0.9, 0.999)
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground"]
 material = SubResource("CanvasItemMaterial_s4lip")
@@ -55,12 +61,6 @@ texture = ExtResource("3_x8xnt")
 z_index = 2
 material = SubResource("CanvasItemMaterial_s4lip")
 motion_scale = Vector2(0.99, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
-material = SubResource("CanvasItemMaterial_s4lip")
-position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("4_j55r0")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Ground"]
 position = Vector2(960, 540)

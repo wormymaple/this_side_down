@@ -21,7 +21,7 @@ position = Vector2(1171, 1319)
 scale = Vector2(2.28115, 1.96)
 
 [node name="Squarebox" parent="." instance=ExtResource("2_fbhks")]
-position = Vector2(915, 751)
+position = Vector2(233, 692)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_46dmi")]
