@@ -7,6 +7,16 @@ extends RigidBody2D
 @export var arm_length: float
 @export var drop_threshold: float
 
+@export var wiggle_curve: Curve
+@export var wiggle_intensity: float
+@export var wiggle_time: float
+var wiggle_current_time = 0.0
+@export var legs_path: NodePath
+@onready var legs = get_node(legs_path)
+@export var head_path: NodePath
+@onready var head = get_node(head_path)
+@export var head_bob: float
+
 @export var playerID: String
 @export var hand_path: NodePath
 @export var arm_path: NodePath
@@ -45,6 +55,15 @@ func _physics_process(delta):
 	var left_stick = Input.get_axis("left_left_" + playerID, "left_right_" + playerID)
 	if left_stick != 0:
 		linear_velocity.x = left_stick * move_speed
+		
+		if on_ground: # Player anim.
+			wiggle_current_time += delta
+			if wiggle_current_time > wiggle_time:
+				wiggle_current_time -= wiggle_time
+			
+			var sample = wiggle_curve.sample(wiggle_current_time / wiggle_time)
+			legs.position = Vector2(sample * wiggle_intensity, legs.position.y)
+			head.position = Vector2(0, sample * head_bob)
 	else:
 		linear_velocity.x = 0
 		

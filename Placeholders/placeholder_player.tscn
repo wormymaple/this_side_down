@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgr4nq5o17pmh"]
+[gd_scene load_steps=9 format=3 uid="uid://bgr4nq5o17pmh"]
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
 [ext_resource type="Texture2D" uid="uid://bwy0ukd6nqpv5" path="res://Placeholders/Circle.png" id="2_72rom"]
+[ext_resource type="Texture2D" uid="uid://dfjoeme16oowv" path="res://Art/sprites/goobers-1 2.PNG" id="2_gify4"]
+[ext_resource type="Texture2D" uid="uid://dc6qvslkcggxi" path="res://Art/sprites/goobers-2 2.PNG" id="3_xgrwr"]
+
+[sub_resource type="Curve" id="Curve_fcyqv"]
+min_value = -1.0
+_data = [Vector2(0, 2.13163e-14), 0.0, 0.0, 0, 0, Vector2(0.238948, 1), 0.0, 0.0, 0, 0, Vector2(0.497415, -0.0211756), 0.0, 0.0, 0, 0, Vector2(0.766221, -1), 0.0, 0.0, 0, 0, Vector2(1, 2.13163e-14), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnnjl"]
-size = Vector2(64, 64)
+size = Vector2(64, 85)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wh5jr"]
 radius = 9.0
@@ -26,18 +33,30 @@ arm_move_speed = 5.0
 grab_speed = 20.0
 arm_length = 150.0
 drop_threshold = 100.0
+wiggle_curve = SubResource("Curve_fcyqv")
+wiggle_intensity = 2.0
+wiggle_time = 0.5
+legs_path = NodePath("Legs")
+head_path = NodePath("Head")
+head_bob = 2.0
 playerID = "p1"
 hand_path = NodePath("HandMeta")
 arm_path = NodePath("Arm")
 metadata/grabbable = true
 metadata/grabbed = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Head" type="Sprite2D" parent="."]
 z_index = 1
-scale = Vector2(0.036, 0.036)
-texture = ExtResource("2_72rom")
+scale = Vector2(0.048, 0.048)
+texture = ExtResource("2_gify4")
+
+[node name="Legs" type="Sprite2D" parent="."]
+position = Vector2(0, 36)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_xgrwr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_dnnjl")
 
 [node name="Arm" type="Line2D" parent="."]

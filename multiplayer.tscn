@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="1_erc7g"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="3_10642"]
 [ext_resource type="Script" path="res://CameraController.gd" id="3_vgbjy"]
-[ext_resource type="Texture2D" uid="uid://6t6sv1ello7f" path="res://icon.svg" id="4_i7jhp"]
+[ext_resource type="Texture2D" uid="uid://6t6sv1ello7f" path="res://Sprites/icon.svg" id="4_i7jhp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b30eg"]
 size = Vector2(1152, 79)
@@ -28,7 +28,7 @@ polygon = PackedVector2Array(1154, 560, 1153, 650, 2.08165e-12, 650, 2.08165e-12
 script = ExtResource("3_10642")
 player_scene = ExtResource("1_erc7g")
 camera = NodePath("../Camera2D")
-colors = [Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(0, 1, 0, 1)]
+colors = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
