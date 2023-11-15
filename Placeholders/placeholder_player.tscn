@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgr4nq5o17pmh"]
+
+[ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
+[ext_resource type="Texture2D" uid="uid://bwy0ukd6nqpv5" path="res://Placeholders/Circle.png" id="2_72rom"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnnjl"]
+size = Vector2(64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wh5jr"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4eusl"]
+
+[node name="PlaceholderPlayer" type="RigidBody2D" groups=["Player"]]
+position = Vector2(250, 2.08165e-12)
+collision_layer = 2
+collision_mask = 3
+continuous_cd = 1
+max_contacts_reported = 1
+contact_monitor = true
+lock_rotation = true
+script = ExtResource("1_si3e4")
+move_speed = 250.0
+jump_speed = 500.0
+arm_move_speed = 5.0
+grab_speed = 20.0
+arm_length = 150.0
+drop_threshold = 100.0
+playerID = "p1"
+hand_path = NodePath("HandMeta")
+arm_path = NodePath("Arm")
+metadata/grabbable = true
+metadata/grabbed = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.036, 0.036)
+texture = ExtResource("2_72rom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dnnjl")
+
+[node name="Arm" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, 0)
+
+[node name="HandMeta" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandMeta"]
+shape = SubResource("CircleShape2D_wh5jr")
+
+[node name="Hand" type="Sprite2D" parent="HandMeta"]
+z_index = 2
+texture_filter = 1
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_72rom")
+
+[node name="GrabArea" type="Area2D" parent="HandMeta"]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandMeta/GrabArea"]
+shape = SubResource("CircleShape2D_4eusl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="HandMeta/GrabArea" to="." method="_on_grab_area_body_entered"]
+[connection signal="body_exited" from="HandMeta/GrabArea" to="." method="_on_grab_area_body_exited"]
