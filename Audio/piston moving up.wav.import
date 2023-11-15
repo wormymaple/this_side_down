@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lr3y0wkm4yv1"
+path="res://.godot/imported/piston moving up.wav-04ed6ed918bc2c4fc762030e7292c8f8.sample"
+
+[deps]
+
+source_file="res://Audio/piston moving up.wav"
+dest_files=["res://.godot/imported/piston moving up.wav-04ed6ed918bc2c4fc762030e7292c8f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
