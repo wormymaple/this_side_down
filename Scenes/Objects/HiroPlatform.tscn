@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlwptuwx6ppy2"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/hiro_moving_platform.gd" id="1_vb141"]
+[ext_resource type="Texture2D" uid="uid://6t6sv1ello7f" path="res://Sprites/icon.svg" id="2_uehvc"]
+
+[sub_resource type="Curve2D" id="Curve2D_llgmf"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f2m7n"]
+a = Vector2(-51.3676, 1.18905)
+b = Vector2(52.0018, 1.18905)
+
+[node name="Platform" type="Path2D"]
+scale = Vector2(1.57687, 1.36727)
+curve = SubResource("Curve2D_llgmf")
+script = ExtResource("1_vb141")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+progress = 488.85
+
+[node name="Panel" type="Panel" parent="PathFollow2D"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.00784314, 0.584314, 0.592157, 1)
+rotation = 3.14159
+scale = Vector2(0.805921, 0.118436)
+texture = ExtResource("2_uehvc")
+
+[node name="Collision" type="StaticBody2D" parent="."]
+scale = Vector2(1, 1)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+scale = Vector2(1, -2.46039)
+shape = SubResource("SegmentShape2D_f2m7n")

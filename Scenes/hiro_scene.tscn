@@ -1,16 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpy3ohh5pa7jr"]
+[gd_scene load_steps=11 format=3 uid="uid://cpy3ohh5pa7jr"]
 
 [ext_resource type="PackedScene" uid="uid://blr6srdhy3jte" path="res://Scenes/Objects/detection_area.tscn" id="1_asp6b"]
 [ext_resource type="PackedScene" uid="uid://cxmsc6y5qjwet" path="res://Scenes/Objects/ground.tscn" id="2_b2uwk"]
 [ext_resource type="PackedScene" uid="uid://43ip1gasv7wc" path="res://Scenes/Objects/player.tscn" id="3_72pb0"]
-[ext_resource type="FontFile" uid="uid://cqsyc4unjo1p4" path="res://alagard.ttf" id="4_epsqm"]
-[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/BrokenPlatform.tscn" id="4_hw7l0"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="4_hw7l0"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="4_slbon"]
 [ext_resource type="VideoStream" path="res://video.ogv" id="5_1tgiu"]
+[ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="7_3hjsy"]
+[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="8_h4bom"]
+
+[sub_resource type="Curve2D" id="Curve2D_kk2oo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 17.7567, 66.556, 0, 0, 0, 0, 132.541, 87.0347, 0, 0, 0, 0, 181.372, -98.7369, 0, 0, 0, 0, 55.1725, -91.4231, 0, 0, 0, 0, -0.634216, -3.05176e-05, 0, 0, 0, 0, 17.7567, 66.556)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_m0cgk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 97.6618, -46.0772, 0, 0, 0, 0, 269.521, 3.65692, 0, 0, 0, 0, 279.034, 59.9735, 0, 0, 0, 0, 123.028, 62.8991, 0, 0, 0, 0, -15.8542, 50.4655)
+}
+point_count = 6
 
 [node name="HiroScene" type="Node2D"]
 
-[node name="DetectionArea" parent="." instance=ExtResource("1_asp6b")]
+[node name="NotSus" parent="." instance=ExtResource("1_asp6b")]
 position = Vector2(1229, 401)
 
 [node name="Node2D" parent="." instance=ExtResource("2_b2uwk")]
@@ -35,53 +48,12 @@ position = Vector2(343, 586)
 scale = Vector2(17.8654, -0.996173)
 
 [node name="Player" parent="." instance=ExtResource("3_72pb0")]
-position = Vector2(558, 271)
-
-[node name="Platform" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
-position = Vector2(212, 407)
-player = NodePath("../Player")
+position = Vector2(468, 453)
 
 [node name="Spring" parent="." instance=ExtResource("4_slbon")]
-position = Vector2(553, 459)
+position = Vector2(1009, 459)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextEdit" type="TextEdit" parent="CanvasLayer"]
-visible = false
-offset_right = 500.0
-offset_bottom = 100.0
-theme_override_fonts/font = ExtResource("4_epsqm")
-theme_override_font_sizes/font_size = 16
-text = "This is a text edit test box"
-placeholder_text = "Hello world"
-
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
-visible = false
-offset_right = 67.0625
-offset_bottom = 31.0
-placeholder_text = "type here"
-
-[node name="SpinBox" type="SpinBox" parent="CanvasLayer"]
-visible = false
-offset_right = 83.0625
-offset_bottom = 31.0
-
-[node name="VScrollBar" type="VScrollBar" parent="CanvasLayer"]
-visible = false
-offset_right = 30.0
-offset_bottom = 400.0
-
-[node name="ReferenceRect" type="ReferenceRect" parent="CanvasLayer"]
-visible = false
-offset_right = 300.0
-offset_bottom = 40.0
-
-[node name="Tree" type="Tree" parent="CanvasLayer"]
-visible = false
-offset_left = 466.0
-offset_top = 176.0
-offset_right = 666.0
-offset_bottom = 376.0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
 offset_right = 1280.0
@@ -89,4 +61,29 @@ offset_bottom = 720.0
 scale = Vector2(0.341974, 0.341974)
 stream = ExtResource("5_1tgiu")
 
-[connection signal="body_entered" from="DetectionArea" to="Player" method="_on_detection_area_body_entered"]
+[node name="Platform" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
+position = Vector2(610, 368)
+curve = SubResource("Curve2D_kk2oo")
+player = NodePath("../Player")
+speed = 0.5
+path_behavior = "Looping"
+
+[node name="Platform2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
+position = Vector2(157, 154)
+curve = SubResource("Curve2D_m0cgk")
+player = NodePath("../Player")
+speed = 0.5
+path_behavior = "One Way"
+
+[node name="Platform3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
+position = Vector2(319, 463)
+curve = null
+player = NodePath("../Player")
+speed = 0.5
+
+[node name="HorMovingPlatform2" parent="." instance=ExtResource("7_3hjsy")]
+
+[node name="MovingPlatform" parent="." instance=ExtResource("8_h4bom")]
+position = Vector2(-77, 400)
+
+[connection signal="body_entered" from="NotSus" to="Player" method="_on_detection_area_body_entered"]
