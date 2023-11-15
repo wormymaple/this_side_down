@@ -7,8 +7,9 @@ var box1loaded = false
 func _process(delta):
 	if $Squarebox.rotation > minRotation and $Squarebox.rotation < maxRotation:
 		if box1loaded == true:
-			
-			print("YOU DID IT")
+			LevelsCompleted.level1done = true
+			get_tree().change_scene("res://Scenes/Levels/level_2")
+			#print("YOU DID IT")
 
 func _on_loading_zone_body_entered(body):
 	if body == $Squarebox:
