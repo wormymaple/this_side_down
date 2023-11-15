@@ -6,7 +6,7 @@ var box1loaded = false
 var box2loaded = false
 
 func _process(delta):
-	if $SmallTriangleboxDown.rotation > minRotation and $SmallTriangleboxDown.rotation < maxRotation:
+	if $TriangleboxUp.rotation > minRotation and $TriangleboxUp.rotation < maxRotation:
 		if box1loaded == true:
 			
 			if $Squarebox.rotation > minRotation and $Squarebox.rotation < maxRotation:
@@ -15,14 +15,14 @@ func _process(delta):
 					get_tree().change_scene("res://Scenes/Levels/level_7")
 
 func _on_loading_zone_body_entered(body):
-	if body == $SmallTriangleboxDown:
+	if body == $TriangleboxUp:
 		box1loaded = true
 	elif body == $Squarebox:
 		box2loaded = true
 
 
 func _on_loading_zone_body_exited(body):
-	if body == $SmallTriangleboxDown:
+	if body == $TriangleboxUp:
 		box1loaded = false
 	elif body == $Squarebox:
 		box2loaded = false
