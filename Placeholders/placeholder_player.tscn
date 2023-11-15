@@ -1,17 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgr4nq5o17pmh"]
+[gd_scene load_steps=12 format=3 uid="uid://bgr4nq5o17pmh"]
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
 [ext_resource type="Texture2D" uid="uid://bwy0ukd6nqpv5" path="res://Placeholders/Circle.png" id="2_72rom"]
+[ext_resource type="Texture2D" uid="uid://dcsxxh6wfcyf5" path="res://Art/sprites/goobers-1.PNG" id="2_eti0h"]
+[ext_resource type="Texture2D" uid="uid://ia8oqvh2uvwi" path="res://Art/sprites/goobers-2.PNG" id="3_0tw52"]
+[ext_resource type="AudioStream" uid="uid://2ja1567iek2c" path="res://Audio/box pickup.wav" id="5_wmfcq"]
+[ext_resource type="AudioStream" uid="uid://r38bou024ydg" path="res://Audio/box drop (better).wav" id="6_2vynb"]
+[ext_resource type="AudioStream" uid="uid://4clo5ncfr5uq" path="res://Audio/jump3.wav" id="7_x2kif"]
+
+[sub_resource type="Curve" id="Curve_fcyqv"]
+min_value = -1.0
+_data = [Vector2(0, 2.13163e-14), 0.0, 0.0, 0, 0, Vector2(0.238948, 1), 0.0, 0.0, 0, 0, Vector2(0.497415, -0.0211756), 0.0, 0.0, 0, 0, Vector2(0.766221, -1), 0.0, 0.0, 0, 0, Vector2(1, 2.13163e-14), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnnjl"]
-size = Vector2(64, 64)
+size = Vector2(64, 85)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wh5jr"]
 radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4eusl"]
 
-[node name="PlaceholderPlayer" type="RigidBody2D" groups=["Player"]]
+[node name="PlaceholderPlayer" type="RigidBody2D" node_paths=PackedStringArray("box_pickup", "box_drop", "jump") groups=["Player"]]
 position = Vector2(250, 2.08165e-12)
 collision_layer = 2
 collision_mask = 3
@@ -26,22 +36,38 @@ arm_move_speed = 5.0
 grab_speed = 20.0
 arm_length = 150.0
 drop_threshold = 100.0
+wiggle_curve = SubResource("Curve_fcyqv")
+wiggle_intensity = 2.0
+wiggle_time = 0.5
+legs_path = NodePath("Legs")
+head_path = NodePath("Head")
+head_bob = 2.0
 playerID = "p1"
 hand_path = NodePath("HandMeta")
 arm_path = NodePath("Arm")
+box_pickup = NodePath("BoxPickup")
+box_drop = NodePath("BoxDrop")
+jump = NodePath("Jump")
 metadata/grabbable = true
 metadata/grabbed = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Head" type="Sprite2D" parent="."]
 z_index = 1
-scale = Vector2(0.036, 0.036)
-texture = ExtResource("2_72rom")
+scale = Vector2(0.048, 0.048)
+texture = ExtResource("2_eti0h")
+
+[node name="Legs" type="Sprite2D" parent="."]
+position = Vector2(0, 36)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_0tw52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_dnnjl")
 
 [node name="Arm" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0.207843, 0.384314, 0.529412, 1)
 
 [node name="HandMeta" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -50,6 +76,7 @@ collision_layer = 4
 shape = SubResource("CircleShape2D_wh5jr")
 
 [node name="Hand" type="Sprite2D" parent="HandMeta"]
+modulate = Color(0.109804, 0.196078, 0.317647, 1)
 z_index = 2
 texture_filter = 1
 scale = Vector2(0.01, 0.01)
@@ -60,6 +87,18 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HandMeta/GrabArea"]
 shape = SubResource("CircleShape2D_4eusl")
+
+[node name="BoxPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wmfcq")
+volume_db = -15.0
+
+[node name="BoxDrop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2vynb")
+volume_db = -15.0
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_x2kif")
+volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

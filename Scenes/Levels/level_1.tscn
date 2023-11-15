@@ -17,16 +17,15 @@ script = ExtResource("1_d88h3")
 [node name="CanvasModulate" parent="." instance=ExtResource("6_yeun7")]
 
 [node name="Floor" parent="." instance=ExtResource("1_yrwse")]
-position = Vector2(750, 723)
-scale = Vector2(1.92115, 1)
+position = Vector2(1171, 1319)
+scale = Vector2(2.28115, 1.96)
 
 [node name="Squarebox" parent="." instance=ExtResource("2_fbhks")]
-position = Vector2(445, 150)
+position = Vector2(915, 751)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_46dmi")]
-position = Vector2(875, 462)
-scale = Vector2(7.37905, 3.16026)
+position = Vector2(1601, 887)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_n57bp")]
 follow_viewport_enabled = false
