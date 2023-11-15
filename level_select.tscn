@@ -130,3 +130,4 @@ text = "12"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button3" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_3_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button4" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_4_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button5" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_5_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button6" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_6_pressed"]
