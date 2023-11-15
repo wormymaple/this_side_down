@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=6 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://MainmenuLevelScene.gd" id="1_ay4ea"]
+[ext_resource type="Script" path="res://Play Button.gd" id="2_bkbwr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpcu7"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -64,13 +65,13 @@ theme_override_constants/margin_right = 50
 
 [node name="Play Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_miobr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7rdxa")
 text = "Play
 "
+script = ExtResource("2_bkbwr")
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -80,7 +81,6 @@ theme_override_constants/margin_right = 50
 
 [node name="Options Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_miobr")
@@ -95,7 +95,6 @@ theme_override_constants/margin_right = 50
 
 [node name="Quit Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
 layout_mode = 2
-focus_mode = 0
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_miobr")
