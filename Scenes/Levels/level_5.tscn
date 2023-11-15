@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwfqlui2oxdvp"]
+[gd_scene load_steps=9 format=3 uid="uid://bwfqlui2oxdvp"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/level_5.gd" id="1_1uj3l"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_arfby"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="2_li18c"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="3_a4aac"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="7_aak83"]
 
 [node name="Level5" type="Node2D"]
+script = ExtResource("1_1uj3l")
 
 [node name="Floor" parent="." instance=ExtResource("1_arfby")]
 position = Vector2(964, 612)
@@ -46,3 +48,6 @@ rotation = -1.09205
 [node name="TriangleboxUp3" parent="." instance=ExtResource("7_aak83")]
 position = Vector2(1613, 526)
 rotation = 0.915497
+
+[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
+[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
