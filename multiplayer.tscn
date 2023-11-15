@@ -28,6 +28,7 @@ polygon = PackedVector2Array(1154, 560, 1153, 650, 2.08165e-12, 650, 2.08165e-12
 script = ExtResource("3_10642")
 player_scene = ExtResource("1_erc7g")
 camera = NodePath("../Camera2D")
+colors = [Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(0, 1, 0, 1)]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
@@ -38,6 +39,7 @@ position = Vector2(842, 366)
 collision_mask = 7
 continuous_cd = 1
 metadata/grabbable = true
+metadata/Grabbed = false
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 scale = Vector2(0.5, 0.5)

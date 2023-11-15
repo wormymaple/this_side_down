@@ -2,6 +2,7 @@ extends Node
 
 @export var player_scene: PackedScene
 @export var camera: NodePath
+@export var colors: Array[Color]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +13,7 @@ func _ready():
 		add_child(new_player)
 		new_player.playerID = "p" + str(i + 1)
 		get_node(camera).players.append(new_player)
+		new_player.set_color(colors[i])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
