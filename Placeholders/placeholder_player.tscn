@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
 [ext_resource type="Texture2D" uid="uid://bwy0ukd6nqpv5" path="res://Placeholders/Circle.png" id="2_72rom"]
-[ext_resource type="Texture2D" uid="uid://dfjoeme16oowv" path="res://Art/sprites/goobers-1 2.PNG" id="2_gify4"]
-[ext_resource type="Texture2D" uid="uid://dc6qvslkcggxi" path="res://Art/sprites/goobers-2 2.PNG" id="3_xgrwr"]
+[ext_resource type="Texture2D" uid="uid://dcsxxh6wfcyf5" path="res://Art/sprites/goobers-1.PNG" id="2_eti0h"]
+[ext_resource type="Texture2D" uid="uid://ia8oqvh2uvwi" path="res://Art/sprites/goobers-2.PNG" id="3_0tw52"]
 
 [sub_resource type="Curve" id="Curve_fcyqv"]
 min_value = -1.0
@@ -48,12 +48,12 @@ metadata/grabbed = false
 [node name="Head" type="Sprite2D" parent="."]
 z_index = 1
 scale = Vector2(0.048, 0.048)
-texture = ExtResource("2_gify4")
+texture = ExtResource("2_eti0h")
 
 [node name="Legs" type="Sprite2D" parent="."]
 position = Vector2(0, 36)
 scale = Vector2(0.04, 0.04)
-texture = ExtResource("3_xgrwr")
+texture = ExtResource("3_0tw52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10.5)
@@ -61,6 +61,7 @@ shape = SubResource("RectangleShape2D_dnnjl")
 
 [node name="Arm" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0.207843, 0.384314, 0.529412, 1)
 
 [node name="HandMeta" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -69,6 +70,7 @@ collision_layer = 4
 shape = SubResource("CircleShape2D_wh5jr")
 
 [node name="Hand" type="Sprite2D" parent="HandMeta"]
+modulate = Color(0.109804, 0.196078, 0.317647, 1)
 z_index = 2
 texture_filter = 1
 scale = Vector2(0.01, 0.01)

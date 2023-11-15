@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="1_erc7g"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="3_10642"]
 [ext_resource type="Script" path="res://CameraController.gd" id="3_vgbjy"]
-[ext_resource type="Texture2D" uid="uid://6t6sv1ello7f" path="res://Sprites/icon.svg" id="4_i7jhp"]
+[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://Sprites/TempBox.png" id="4_b0i5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b30eg"]
 size = Vector2(1152, 79)
@@ -34,16 +34,15 @@ colors = Array[Color]([Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), 
 position_smoothing_enabled = true
 script = ExtResource("3_vgbjy")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="Box" type="RigidBody2D" parent="."]
 position = Vector2(842, 366)
 collision_mask = 7
 continuous_cd = 1
 metadata/grabbable = true
 metadata/Grabbed = false
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_i7jhp")
+[node name="Sprite2D" type="Sprite2D" parent="Box"]
+texture = ExtResource("4_b0i5j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
 shape = SubResource("RectangleShape2D_gpqfj")
