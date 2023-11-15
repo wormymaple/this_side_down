@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bn6ufxv2jtl3j"]
 
 [ext_resource type="Script" path="res://Scenes/hor_moving_platform.gd" id="1_7pam6"]
-[ext_resource type="Texture2D" uid="uid://b5wk733prk63c" path="res://Sprites/TempFloor.png" id="2_yve34"]
+[ext_resource type="Texture2D" uid="uid://cdeql6nd5gprt" path="res://Art/First Level/UI_floatingplatform.png" id="2_kpkcf"]
 
 [node name="HorMovingPlatform" type="Area2D"]
 script = ExtResource("1_7pam6")
@@ -10,8 +10,7 @@ script = ExtResource("1_7pam6")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1.19209e-06, 4.76837e-07)
-scale = Vector2(1.09375, 0.28125)
-texture = ExtResource("2_yve34")
+texture = ExtResource("2_kpkcf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-35, -9, 35, -9, 35, 9, -35, 9)
+polygon = PackedVector2Array(-955, -256, 953, -259, 776, 91, -781, 76)

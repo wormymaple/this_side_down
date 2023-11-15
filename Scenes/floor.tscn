@@ -1,18 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://d776xgt8nd8i"]
 
-[ext_resource type="Texture2D" uid="uid://b5wk733prk63c" path="res://Sprites/TempFloor.png" id="1_e6nd6"]
+[ext_resource type="Texture2D" uid="uid://bd43l2j3mn18m" path="res://Art/First Level/BG_Ground.png" id="1_pq6cq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1vl"]
-size = Vector2(1153, 85)
+size = Vector2(1923, 454)
 
 [node name="Floor" type="Area2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1, -313)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 312)
 shape = SubResource("RectangleShape2D_eo1vl")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
-scale = Vector2(18.0288, 1.30075)
-texture = ExtResource("1_e6nd6")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_pq6cq")

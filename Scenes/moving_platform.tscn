@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://u7sofeosm22w"]
 
 [ext_resource type="Script" path="res://Scripts/moving_platform.gd" id="1_ko5wk"]
-[ext_resource type="Texture2D" uid="uid://b5wk733prk63c" path="res://Sprites/TempFloor.png" id="1_n8jnq"]
+[ext_resource type="Texture2D" uid="uid://cdeql6nd5gprt" path="res://Art/First Level/UI_floatingplatform.png" id="2_3ll8i"]
 
 [node name="MovingPlatform" type="Area2D"]
 script = ExtResource("1_ko5wk")
@@ -11,8 +11,9 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(1.19209e-06, 4.76837e-07)
-scale = Vector2(1.09375, 0.28125)
-texture = ExtResource("1_n8jnq")
+texture = ExtResource("2_3ll8i")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-35, -9, 35, -9, 35, 9, -35, 9)
+position = Vector2(-12.4999, -83)
+scale = Vector2(20.5804, 16.4583)
+polygon = PackedVector2Array(-45.5046, -10.2684, 46.5735, -10.7544, 38.216, 10.2684, -37.3414, 9.35696)
