@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bvpim07i7se1g"]
 
 [ext_resource type="Script" path="res://Button.gd" id="1_b3r14"]
-[ext_resource type="FontFile" uid="uid://cqsyc4unjo1p4" path="res://alagard.ttf" id="1_yy4y5"]
+[ext_resource type="FontFile" uid="uid://c5syft2wlgm0" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="1_mr8kh"]
 [ext_resource type="Texture2D" uid="uid://cnb0v6ukb3edh" path="res://Art/Main Menu/UI_1Button.png" id="2_ijqul"]
 [ext_resource type="Texture2D" uid="uid://b3situl82j18i" path="res://Art/Main Menu/UI_2Button.png" id="3_0kuay"]
 [ext_resource type="Texture2D" uid="uid://1rmxt65vgskl" path="res://Art/Main Menu/UI_3Button.png" id="4_58krm"]
@@ -37,7 +37,7 @@ anchor_bottom = 1.0
 offset_top = 137.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_yy4y5")
+theme_override_fonts/font = ExtResource("1_mr8kh")
 theme_override_font_sizes/font_size = 80
 text = "Select Your Level!"
 horizontal_alignment = 1
