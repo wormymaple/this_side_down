@@ -52,8 +52,22 @@ scale = Vector2(0.54124, 0.54124)
 position = Vector2(343, 586)
 scale = Vector2(17.8654, -0.996173)
 
+[node name="Node2D7" parent="GroundHandler" instance=ExtResource("2_b2uwk")]
+position = Vector2(343, 755)
+scale = Vector2(17.8654, -0.996173)
+
 [node name="Spring" parent="." instance=ExtResource("4_slbon")]
-position = Vector2(1009, 484)
+position = Vector2(395, 484)
+Power = 1000
+
+[node name="Spring2" parent="." instance=ExtResource("4_slbon")]
+position = Vector2(796, 484)
+rotation = 0.549661
+Power = 1000
+
+[node name="Spring3" parent="." instance=ExtResource("4_slbon")]
+position = Vector2(574, 484)
+rotation = -0.831413
 Power = 1000
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -80,7 +94,7 @@ path_behavior = "One Way"
 sprite = ExtResource("6_7pj3m")
 
 [node name="Platform3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
-position = Vector2(604, 398)
+position = Vector2(316, 601)
 curve = null
 player = NodePath("../PlaceholderPlayer")
 speed = 0.5
@@ -95,4 +109,4 @@ position = Vector2(698, -549)
 position = Vector2(62, 239)
 
 [node name="Box" parent="." instance=ExtResource("10_cx2xa")]
-position = Vector2(453, 450)
+position = Vector2(250, 490)

@@ -74,7 +74,7 @@ func _physics_process(delta):
 			var sample = wiggle_curve.sample(wiggle_current_time / wiggle_time)
 			legs.position = Vector2(sample * wiggle_intensity, legs.position.y)
 			head.position = Vector2(0, sin(wiggle_current_time / wiggle_time * PI) * head_bob)
-	else:
+	elif on_ground:
 		linear_velocity.x = 0
 		
 func _input(event):

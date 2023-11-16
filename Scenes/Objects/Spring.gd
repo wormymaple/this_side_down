@@ -6,6 +6,7 @@ var pressed_state = "Done"
 
 func _ready():
 	$Sprite2D.texture = Sprite
+
 func _process(_delta):
 	# This makes the spring stretch when something bounces on it
 	if pressed_state == "In":
@@ -27,6 +28,10 @@ func _process(_delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player") or body.is_in_group("Box"):
 		pressed_state = "In"
-		body.linear_velocity.y = - Power
+		#body.linear_velocity.y = - Power
+		print(rotation_degrees)
+		var dir = Vector2(asin(rotation), -acos(rotation))
+		#print(dir)
+		body.linear_velocity = dir * Power
 		$AudioStreamPlayer.play() # change for a more springy sound later
 		
