@@ -62,3 +62,15 @@ scale = Vector2(5.81934, 1.53125)
 [node name="Sprite2D3" parent="." instance=ExtResource("12_bxkdo")]
 position = Vector2(1845, -360)
 scale = Vector2(7.51904, 1.53125)
+
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+color = Color(0.584314, 0.576471, 0.560784, 1)
+invert_enabled = true
+invert_border = 1000.0
+polygon = PackedVector2Array(2159, -92, 2159, 886, -428, 948, -428, -87)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2819, -702, -575, -611, -428, -87, 2159, -92, 2159, 746, -428, 747, -428, -87)
