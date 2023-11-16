@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="7_3hjsy"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="8_bj4e0"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="8_h4bom"]
-[ext_resource type="PackedScene" uid="uid://cnrsc6utwff0q" path="res://Scenes/small_squarebox.tscn" id="10_vr5nn"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="10_cx2xa"]
 
 [sub_resource type="Curve2D" id="Curve2D_kk2oo"]
 _data = {
@@ -27,6 +27,7 @@ point_count = 6
 
 [node name="NotSus" parent="." instance=ExtResource("1_asp6b")]
 position = Vector2(1229, 401)
+collision_mask = 15
 
 [node name="GroundHandler" type="Node2D" parent="."]
 
@@ -79,7 +80,7 @@ path_behavior = "One Way"
 sprite = ExtResource("6_7pj3m")
 
 [node name="Platform3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
-position = Vector2(639, 57)
+position = Vector2(604, 398)
 curve = null
 player = NodePath("../PlaceholderPlayer")
 speed = 0.5
@@ -93,5 +94,5 @@ position = Vector2(698, -549)
 [node name="PlaceholderPlayer" parent="." instance=ExtResource("8_bj4e0")]
 position = Vector2(62, 239)
 
-[node name="SmallSquarebox" parent="." instance=ExtResource("10_vr5nn")]
-position = Vector2(291, 425)
+[node name="Box" parent="." instance=ExtResource("10_cx2xa")]
+position = Vector2(453, 450)

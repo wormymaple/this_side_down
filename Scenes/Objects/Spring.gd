@@ -25,7 +25,8 @@ func _process(_delta):
 			position.y += 4 # down 40
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") or body.is_in_group("Box"):
 		pressed_state = "In"
 		body.linear_velocity.y = - Power
 		$AudioStreamPlayer.play() # change for a more springy sound later
+		
