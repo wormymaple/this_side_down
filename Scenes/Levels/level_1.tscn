@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="8_such3"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_8gwty"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="10_2kv4e"]
-[ext_resource type="PackedScene" path="res://Scenes/box.tscn" id="10_mhr4p"]
-[ext_resource type="PackedScene" path="res://Scenes/landing_zone.tscn" id="11_kijhk"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="10_mhr4p"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="11_kijhk"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="13_knull"]
 
 [node name="Level1" type="Node2D"]
