@@ -1,31 +1,57 @@
-[gd_scene load_steps=11 format=3 uid="uid://kiyufpj683ic"]
+[gd_scene load_steps=18 format=3 uid="uid://kiyufpj683ic"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_d88h3"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrwse"]
-[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="2_fbhks"]
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_46dmi"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="5_n57bp"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_yeun7"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_bc66u"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="8_such3"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_8gwty"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="10_2kv4e"]
+[ext_resource type="Texture2D" uid="uid://faj1vrwnl6ct" path="res://Art/First Level/UI_landingpad.png" id="10_e2gfo"]
+[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://Sprites/TempBox.png" id="10_r4alv"]
+[ext_resource type="Script" path="res://Scripts/AnimatePosition.gd" id="11_gqsw1"]
+[ext_resource type="Texture2D" uid="uid://dj2l1ydocafm6" path="res://Art/StandardParticle.png" id="12_57bt4"]
 
-[node name="Level1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20bt7"]
+size = Vector2(64, 64)
+
+[sub_resource type="Curve" id="Curve_edar3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494845, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_g2jmp"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h4tb3"]
+gradient = SubResource("Gradient_g2jmp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pitsf"]
+emission_shape = 3
+emission_box_extents = Vector3(250, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 10.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_h4tb3")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("particles")]
 script = ExtResource("1_d88h3")
+particles = NodePath("LandingZone/GPUParticles2D")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("6_yeun7")]
 
 [node name="Floor" parent="." instance=ExtResource("1_yrwse")]
 position = Vector2(1171, 1319)
 scale = Vector2(2.28115, 1.96)
-
-[node name="Squarebox" parent="." instance=ExtResource("2_fbhks")]
-position = Vector2(233, 692)
-rotation = 6.27737
-
-[node name="LoadingZone" parent="." instance=ExtResource("3_46dmi")]
-position = Vector2(1601, 887)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_n57bp")]
 follow_viewport_enabled = false
@@ -38,13 +64,78 @@ position = Vector2(386, -631)
 
 [node name="Camera" parent="." instance=ExtResource("8_such3")]
 scale = Vector2(1.92115, 0.983541)
+zoom = Vector2(1.5, 1.5)
+min_dist = 250.0
+min_scale = 1.5
+scale_rate = -0.001
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-2, 0)
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(1008, 767)
 script = ExtResource("9_8gwty")
 player_scene = ExtResource("10_2kv4e")
 camera = NodePath("../Camera")
 colors = Array[Color]([Color(1, 0, 1, 1)])
 
-[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
-[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
+[node name="Box" type="RigidBody2D" parent="." groups=["Box"]]
+position = Vector2(699, 831)
+collision_mask = 7
+metadata/grabbable = false
+metadata/grabbed = false
+
+[node name="BoxSprite" type="Sprite2D" parent="Box"]
+texture = ExtResource("10_r4alv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_20bt7")
+
+[node name="LandingZone" type="Sprite2D" parent="."]
+position = Vector2(1714, 860)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_e2gfo")
+
+[node name="ZoneBody" type="RigidBody2D" parent="LandingZone"]
+gravity_scale = 0.0
+max_contacts_reported = 6
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LandingZone/ZoneBody"]
+polygon = PackedVector2Array(-286, 12, 298, 14, 262, -44, -252, -42)
+
+[node name="Indicator" type="Sprite2D" parent="LandingZone"]
+modulate = Color(1, 1, 1, 0.509804)
+z_index = -1
+position = Vector2(0, -246)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("10_r4alv")
+script = ExtResource("11_gqsw1")
+curve = SubResource("Curve_edar3")
+anim_time = 1.0
+move = Vector2(0, 1)
+intensity = 50.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="LandingZone"]
+z_index = -1
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_pitsf")
+texture = ExtResource("12_57bt4")
+trail_enabled = true
+trail_lifetime = 0.1
+
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+color = Color(0.584314, 0.576471, 0.560784, 1)
+invert_enabled = true
+invert_border = 1000.0
+polygon = PackedVector2Array(2400, -257, 2400, 908, -480, 947, -480, -256)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2819, -702, -575, -611, -481, -259, 2399, -259, 2401, 896, -480, 890, -480, -256)
+
+[connection signal="body_entered" from="LandingZone/ZoneBody" to="." method="_on_zone_body_body_entered"]

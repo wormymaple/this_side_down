@@ -72,7 +72,6 @@ func _physics_process(delta):
 	else:
 		linear_velocity.x = 0
 		
-
 func _input(event):
 	# jump
 	if event.is_action_pressed("left_trigger_" + playerID) && on_ground:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgr4nq5o17pmh"]
+[gd_scene load_steps=13 format=3 uid="uid://bgr4nq5o17pmh"]
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
 [ext_resource type="Texture2D" uid="uid://bwy0ukd6nqpv5" path="res://Placeholders/Circle.png" id="2_72rom"]
@@ -8,13 +8,17 @@
 [ext_resource type="AudioStream" uid="uid://r38bou024ydg" path="res://Audio/box drop (better).wav" id="6_2vynb"]
 [ext_resource type="AudioStream" uid="uid://4clo5ncfr5uq" path="res://Audio/jump3.wav" id="7_x2kif"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
+friction = 0.0
+
 [sub_resource type="Curve" id="Curve_fcyqv"]
 min_value = -1.0
 _data = [Vector2(0, 2.13163e-14), 0.0, 0.0, 0, 0, Vector2(0.238948, 1), 0.0, 0.0, 0, 0, Vector2(0.497415, -0.0211756), 0.0, 0.0, 0, 0, Vector2(0.766221, -1), 0.0, 0.0, 0, 0, Vector2(1, 2.13163e-14), 0.0, 0.0, 0, 0]
 point_count = 5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnnjl"]
-size = Vector2(64, 85)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rmwu"]
+radius = 29.14
+height = 86.99
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wh5jr"]
 radius = 9.0
@@ -22,9 +26,9 @@ radius = 9.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4eusl"]
 
 [node name="PlaceholderPlayer" type="RigidBody2D" node_paths=PackedStringArray("box_pickup", "box_drop", "jump") groups=["Player"]]
-position = Vector2(250, 2.08165e-12)
 collision_layer = 2
 collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_2c1hu")
 continuous_cd = 1
 max_contacts_reported = 1
 contact_monitor = true
@@ -63,7 +67,7 @@ texture = ExtResource("3_0tw52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10.5)
-shape = SubResource("RectangleShape2D_dnnjl")
+shape = SubResource("CapsuleShape2D_4rmwu")
 
 [node name="Arm" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)

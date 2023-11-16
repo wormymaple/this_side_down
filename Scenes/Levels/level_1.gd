@@ -3,19 +3,18 @@ extends Node2D
 var minRotation = 2.7
 var maxRotation = 3.3
 var box1loaded = false
+@onready var global_vars = get_node("/root/GlobalVariables")
 
-func _process(delta):
-	if $Squarebox.rotation > minRotation and $Squarebox.rotation < maxRotation:
-		if box1loaded == true:
-			LevelsCompleted.level1done = true
-			get_tree().change_scene_to_file("res://Scenes/Levels/level_2")
-			#print("YOU DID IT")
+@export var particles: GPUParticles2D
 
-func _on_loading_zone_body_entered(body):
-	if body == $Squarebox:
-		box1loaded = true
-
-
-func _on_loading_zone_body_exited(body):
-	if body == $Squarebox:
-		box1loaded = false
+func _on_zone_body_body_entered(body):
+	if body.is_in_group("Box"):
+		if body.get_meta("grabbed"):
+			return
+		
+		if abs(body.rotation_degrees) > 180 - 35:
+			win()
+		
+func win():
+	global_vars.win_level(1)
+	particles.emitting = true
