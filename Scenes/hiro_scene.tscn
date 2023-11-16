@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpy3ohh5pa7jr"]
+[gd_scene load_steps=13 format=3 uid="uid://cpy3ohh5pa7jr"]
 
 [ext_resource type="PackedScene" uid="uid://blr6srdhy3jte" path="res://Scenes/Objects/detection_area.tscn" id="1_asp6b"]
 [ext_resource type="PackedScene" uid="uid://cxmsc6y5qjwet" path="res://Scenes/Objects/ground.tscn" id="2_b2uwk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="7_3hjsy"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="8_bj4e0"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="8_h4bom"]
+[ext_resource type="PackedScene" uid="uid://cnrsc6utwff0q" path="res://Scenes/small_squarebox.tscn" id="10_vr5nn"]
 
 [sub_resource type="Curve2D" id="Curve2D_kk2oo"]
 _data = {
@@ -27,29 +28,32 @@ point_count = 6
 [node name="NotSus" parent="." instance=ExtResource("1_asp6b")]
 position = Vector2(1229, 401)
 
-[node name="Node2D" parent="." instance=ExtResource("2_b2uwk")]
+[node name="GroundHandler" type="Node2D" parent="."]
+
+[node name="Node2D" parent="GroundHandler" instance=ExtResource("2_b2uwk")]
 position = Vector2(65, 463)
 
-[node name="Node2D4" parent="." instance=ExtResource("2_b2uwk")]
+[node name="Node2D4" parent="GroundHandler" instance=ExtResource("2_b2uwk")]
 position = Vector2(1423, 463)
 
-[node name="Node2D5" parent="." instance=ExtResource("2_b2uwk")]
+[node name="Node2D5" parent="GroundHandler" instance=ExtResource("2_b2uwk")]
 position = Vector2(-738, 463)
 
-[node name="Node2D2" parent="." instance=ExtResource("2_b2uwk")]
+[node name="Node2D2" parent="GroundHandler" instance=ExtResource("2_b2uwk")]
 position = Vector2(165, 488)
 scale = Vector2(0.54124, 0.54124)
 
-[node name="Node2D6" parent="." instance=ExtResource("2_b2uwk")]
+[node name="Node2D6" parent="GroundHandler" instance=ExtResource("2_b2uwk")]
 position = Vector2(-333, 488)
 scale = Vector2(0.54124, 0.54124)
 
-[node name="Node2D3" parent="." instance=ExtResource("2_b2uwk")]
+[node name="Node2D3" parent="GroundHandler" instance=ExtResource("2_b2uwk")]
 position = Vector2(343, 586)
 scale = Vector2(17.8654, -0.996173)
 
 [node name="Spring" parent="." instance=ExtResource("4_slbon")]
 position = Vector2(1009, 484)
+Power = 1000
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -60,14 +64,14 @@ scale = Vector2(0.341974, 0.341974)
 stream = ExtResource("5_1tgiu")
 
 [node name="Platform" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
-position = Vector2(793, 160)
+position = Vector2(843, -229)
 curve = SubResource("Curve2D_kk2oo")
 player = NodePath("../PlaceholderPlayer")
 speed = 0.5
 path_behavior = "Looping"
 
 [node name="Platform2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
-position = Vector2(199, 303)
+position = Vector2(249, -86)
 curve = SubResource("Curve2D_m0cgk")
 player = NodePath("../PlaceholderPlayer")
 speed = 0.5
@@ -75,7 +79,7 @@ path_behavior = "One Way"
 sprite = ExtResource("6_7pj3m")
 
 [node name="Platform3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
-position = Vector2(635, 436)
+position = Vector2(639, 57)
 curve = null
 player = NodePath("../PlaceholderPlayer")
 speed = 0.5
@@ -88,3 +92,6 @@ position = Vector2(698, -549)
 
 [node name="PlaceholderPlayer" parent="." instance=ExtResource("8_bj4e0")]
 position = Vector2(62, 239)
+
+[node name="SmallSquarebox" parent="." instance=ExtResource("10_vr5nn")]
+position = Vector2(291, 425)
