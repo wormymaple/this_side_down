@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwfqlui2oxdvp"]
+[gd_scene load_steps=12 format=3 uid="uid://bwfqlui2oxdvp"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_5.gd" id="1_1uj3l"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_arfby"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="5_x16v6"]
 [ext_resource type="PackedScene" uid="uid://c05ps7i55fw6q" path="res://Scenes/TriangleboxUp.tscn" id="6_ymikr"]
 [ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="7_aak83"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="9_caiko"]
+[ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="10_efuj4"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_vbs12"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_1uj3l")
@@ -46,6 +49,21 @@ rotation = -1.09205
 [node name="TriangleboxUp3" parent="." instance=ExtResource("7_aak83")]
 position = Vector2(3341, 537)
 rotation = 0.915497
+
+[node name="DirectionalLight2D" parent="." instance=ExtResource("9_caiko")]
+position = Vector2(-2171, 49)
+color = Color(0.807843, 0.552941, 0.482353, 1)
+energy = 1.41
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("10_efuj4")]
+
+[node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("11_vbs12")]
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.0901961, 0.211765, 0.447059, 1)
+
+[node name="CanvasModulate" parent="." instance=ExtResource("11_vbs12")]
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.141176, 0.231373, 0.352941, 1)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
