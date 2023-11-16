@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctxyn1x1kaljf"]
+[gd_scene load_steps=5 format=3 uid="uid://ctxyn1x1kaljf"]
 
 [ext_resource type="Script" path="res://Scripts/basebox.gd" id="1_l3da3"]
-[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://Sprites/TempBox.png" id="2_onjoh"]
+[ext_resource type="Texture2D" uid="uid://dwp1m337quaf5" path="res://Art/First Level/UI_HeavyBox.png" id="2_eqacy"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="3_67m8c"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r3r0y"]
-polygon = PackedVector2Array(32, 32, -32, 32, -32, -32, 32, -32)
+polygon = PackedVector2Array(30.1667, 28.2267, -29.8333, 29.8933, -31.8333, -29.44, 29.5, -30.44)
 
 [node name="Squarebox" type="RigidBody2D"]
 center_of_mass_mode = 1
@@ -14,13 +15,18 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.499982, 28.32)
-scale = Vector2(3, 3)
-texture = ExtResource("2_onjoh")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_eqacy")
+
+[node name="UiBasicArrow" type="Sprite2D" parent="."]
+position = Vector2(4, 25)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_67m8c")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-3.52061, 21.7172)
 scale = Vector2(0.338248, 0.374362)
-polygon = PackedVector2Array(-273.407, -239.654, 294.224, -239.654, 297.181, 273.219, -273.407, 273.219)
+polygon = PackedVector2Array(-270.451, -215.613, 270.572, -223.626, 279.442, 241.164, -252.712, 254.52)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2(0.499982, 28.32)

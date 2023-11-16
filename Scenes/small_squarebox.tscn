@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnrsc6utwff0q"]
+[gd_scene load_steps=3 format=3 uid="uid://cnrsc6utwff0q"]
 
-[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://Sprites/TempBox.png" id="1_m5lgi"]
+[ext_resource type="Texture2D" uid="uid://dwp1m337quaf5" path="res://Art/First Level/UI_HeavyBox.png" id="1_dajxp"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_4l5di"]
 
 [node name="SmallSquarebox" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.499982, 28.32)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_m5lgi")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_dajxp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-3.52061, 21.7172)
 scale = Vector2(0.338248, 0.374362)
-polygon = PackedVector2Array(-130.027, -110.559, 153.753, -110.606, 153.817, 145.856, -129.952, 145.794)
+polygon = PackedVector2Array(-126.602, -99.6614, 140.238, -103.128, 143.028, 128.83, -118.544, 136.183)
+
+[node name="UiBasicArrow" type="Sprite2D" parent="."]
+position = Vector2(2.625, 24)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_4l5di")
