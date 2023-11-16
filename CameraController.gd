@@ -13,6 +13,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if len(players) < 1:
+		return
+	
 	var pos = Vector2.ZERO;
 	for player in players:
 		pos += player.global_position
