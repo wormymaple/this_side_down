@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_d88h3"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrwse"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="5_n57bp"]
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="5_n57bp"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_yeun7"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_bc66u"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="8_such3"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_8gwty"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="10_2kv4e"]
-[ext_resource type="PackedScene" path="res://Scenes/box.tscn" id="10_mhr4p"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="10_mhr4p"]
 [ext_resource type="PackedScene" path="res://Scenes/landing_zone.tscn" id="11_kijhk"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="13_knull"]
 
