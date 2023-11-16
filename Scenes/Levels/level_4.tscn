@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwpxs0n1bfa8h"]
+[gd_scene load_steps=11 format=3 uid="uid://bwpxs0n1bfa8h"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_4.gd" id="1_lc6j4"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_v4xq1"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="4_keg0h"]
 [ext_resource type="PackedScene" uid="uid://c05ps7i55fw6q" path="res://Scenes/TriangleboxUp.tscn" id="5_km41f"]
 [ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="6_nde0g"]
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="8_sj8f4"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_tvqyk"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="10_qfp0h"]
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_lc6j4")
@@ -57,6 +60,19 @@ scale = Vector2(0.16, 2.12)
 
 [node name="LoadingZone" parent="." instance=ExtResource("4_keg0h")]
 position = Vector2(4202, 786)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("8_sj8f4")]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("9_tvqyk")]
+position = Vector2(1041.43, 1878.69)
+
+[node name="CanvasModulate" parent="." instance=ExtResource("9_tvqyk")]
+position = Vector2(-359, 1382)
+
+[node name="DirectionalLight2D" parent="." instance=ExtResource("10_qfp0h")]
+position = Vector2(581, -1048)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]

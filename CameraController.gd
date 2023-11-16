@@ -38,6 +38,5 @@ func _process(delta):
 			target_zoom = max_scale
 			
 		zoom = target_zoom * Vector2.ONE
-		print(zoom)
 	else:
 		zoom = min_scale * Vector2.ONE

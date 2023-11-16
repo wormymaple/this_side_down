@@ -1,11 +1,8 @@
 extends Node2D
 
-var minRotation = 2.7
-var maxRotation = 3.3
-var box1loaded = false
 @onready var global_vars = get_node("/root/GlobalVariables")
 
-@export var particles: GPUParticles2D
+@export var landing_zone: NodePath
 
 func _on_zone_body_body_entered(body):
 	if body.is_in_group("Box"):
@@ -17,4 +14,4 @@ func _on_zone_body_body_entered(body):
 		
 func win():
 	global_vars.win_level(1)
-	particles.emitting = true
+	get_node(landing_zone).play_particles();

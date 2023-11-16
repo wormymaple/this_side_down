@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmfa7lxg68u7k"]
+
+[ext_resource type="Texture2D" uid="uid://dwp1m337quaf5" path="res://Art/First Level/UI_HeavyBox.png" id="1_lvvm8"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_t3msf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20bt7"]
+size = Vector2(64, 64)
+
+[node name="Box" type="RigidBody2D" groups=["Box"]]
+position = Vector2(2.08165e-12, 2.08165e-12)
+collision_layer = 8
+collision_mask = 15
+metadata/grabbable = false
+metadata/grabbed = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_20bt7")
+
+[node name="BoxSprite" type="Sprite2D" parent="."]
+position = Vector2(0.500001, 0.500002)
+scale = Vector2(0.144898, 0.144708)
+texture = ExtResource("1_lvvm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_t3msf")

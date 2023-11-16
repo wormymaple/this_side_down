@@ -25,6 +25,7 @@ var wiggle_current_time = 0.0
 var target_body: Node2D
 var grabbed_body: Node2D
 var on_ground = false
+var grab_did_collide = false
 
 @export var box_pickup: AudioStreamPlayer
 @export var box_drop: AudioStreamPlayer
@@ -41,11 +42,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var right_stick = Input.get_vector("right_left_" + playerID, "right_right_" + playerID, "right_up_" + playerID, "right_down_" + playerID).normalized()
+	var right_stick = Input.get_vector("right_left_" + playerID, "right_right_" + playerID, "right_up_" + playerID, "right_down_" + playerID)
 	if right_stick.length() != 0:
 		hand.position += (right_stick * arm_length - hand.position) * arm_move_speed * delta
-		hand.position = hand.position.normalized() * arm_length
-		arm.set_point_position(1, hand.position)
+		#hand.position = hand.position.normalized() * arm_length <- FOR FIXED PENDULUM
+	elif grabbed_body == null:
+		hand.position -= hand.position * arm_move_speed * delta
+		
+	
+	arm.set_point_position(1, hand.position)
 	
 	if grabbed_body != null:
 		var dir = hand.global_position - grabbed_body.global_position
@@ -82,12 +87,15 @@ func _input(event):
 	if event.is_action_pressed("right_trigger_" + playerID):
 		if grabbed_body == null && target_body != null: # Try grab
 			# Am I being grabbed by a player?
-			if target_body.is_in_group("Player") && target_body.grabbed_body == self:
+			if target_body.is_in_group("Player") && check_player_linkage(target_body):
 				return
 			
 			grabbed_body = target_body
 			grabbed_body.gravity_scale = 0
 			grabbed_body.set_meta("grabbed", true)
+			grab_did_collide = grabbed_body.get_collision_mask_value(2)
+			grabbed_body.set_collision_mask_value(2, false)
+			
 			box_pickup.play()
 		elif grabbed_body != null:
 			drop_object()
@@ -101,6 +109,7 @@ func _integrate_forces(state):
 func drop_object():
 	grabbed_body.gravity_scale = 1
 	grabbed_body.set_meta("grabbed", false)
+	grabbed_body.set_collision_mask_value(2, grab_did_collide)
 			
 	grabbed_body = null
 	
@@ -120,13 +129,19 @@ func _on_grab_area_body_exited(body):
 		target_body = null
 
 
-func _on_body_entered(_body):
+func _on_body_entered(body):
 	var normal = body_state.get_contact_local_normal(0)
-	if abs(normal.x) < 0.2 && normal.y < 0:
+	if abs(normal.x) < 0.4 && normal.y < 0:
 		on_ground = true
 
-func _on_body_exited(_body):
+func _on_body_exited(body):
 	on_ground = false
-
-
-
+	
+func check_player_linkage(body):
+	if body.grabbed_body == null || !body.grabbed_body.is_in_group("Player"):
+		return false
+	
+	if body.grabbed_body == self:
+		return true
+	
+	return check_player_linkage(body.grabbed_body)

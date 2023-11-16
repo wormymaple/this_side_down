@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c05ps7i55fw6q"]
+[gd_scene load_steps=4 format=3 uid="uid://c05ps7i55fw6q"]
 
 [ext_resource type="Script" path="res://Scripts/basebox.gd" id="1_le5sw"]
-[ext_resource type="Texture2D" uid="uid://bausxj1lmjger" path="res://Sprites/TempTriangleUp.png" id="2_qsonf"]
+[ext_resource type="Texture2D" uid="uid://c4npl8cwq4kcs" path="res://Art/First Level/UI_HeavyTriangle.png" id="2_kexsc"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="3_uepuw"]
 
 [node name="TriangleboxUp" type="RigidBody2D"]
 position = Vector2(-4, -3)
@@ -11,11 +12,16 @@ script = ExtResource("1_le5sw")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-5, 19.5)
-scale = Vector2(8.5625, 8.21875)
-texture = ExtResource("2_qsonf")
+position = Vector2(0.5, 17.5)
+scale = Vector2(0.287755, 0.295896)
+texture = ExtResource("2_kexsc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-3.52061, 21.7172)
 scale = Vector2(0.338248, 0.374362)
-polygon = PackedVector2Array(22.234, -154.175, 243.965, 166.371, -202.453, 169.042)
+polygon = PackedVector2Array(25.1904, -159.517, 243.965, 166.371, -208.366, 169.042)
+
+[node name="UiBasicArrow" type="Sprite2D" parent="."]
+position = Vector2(6, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_uepuw")

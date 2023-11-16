@@ -25,4 +25,3 @@ shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 0.6
 texture = SubResource("GradientTexture2D_xvbfj")
-texture_scale = 1.24
