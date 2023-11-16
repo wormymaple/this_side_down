@@ -13,7 +13,7 @@ func _ready():
 		add_child(new_player)
 		new_player.playerID = "p" + str(i + 1)
 		get_node(camera).players.append(new_player)
-		new_player.set_color(colors[i])
+		new_player.set_color(Color.WHITE)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

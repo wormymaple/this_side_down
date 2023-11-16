@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byupcj80xghpt"
-path="res://.godot/imported/UI_Clouds.png-de660dccc094c4f17559643d6c9ccd0a.ctex"
+uid="uid://1mkcwafi3bqc"
+path="res://.godot/imported/UI_Foregroud_Crates.png-d02917953fecbe9055100c5bce0b7696.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/second level/UI_Clouds.png"
-dest_files=["res://.godot/imported/UI_Clouds.png-de660dccc094c4f17559643d6c9ccd0a.ctex"]
+source_file="res://Art/third level/UI_Foregroud_Crates.png"
+dest_files=["res://.godot/imported/UI_Foregroud_Crates.png-d02917953fecbe9055100c5bce0b7696.ctex"]
 
 [params]
 

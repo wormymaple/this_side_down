@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byupcj80xghpt"
-path="res://.godot/imported/UI_Clouds.png-de660dccc094c4f17559643d6c9ccd0a.ctex"
+uid="uid://j2h0rm723ulg"
+path="res://.godot/imported/BG_StormySky.png-b1e44744bad7c38d2729ae36505e59b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/second level/UI_Clouds.png"
-dest_files=["res://.godot/imported/UI_Clouds.png-de660dccc094c4f17559643d6c9ccd0a.ctex"]
+source_file="res://Art/third level/BG_StormySky.png"
+dest_files=["res://.godot/imported/BG_StormySky.png-b1e44744bad7c38d2729ae36505e59b4.ctex"]
 
 [params]
 

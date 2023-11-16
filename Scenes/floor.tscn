@@ -17,4 +17,5 @@ shape = SubResource("RectangleShape2D_eo1vl")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+z_index = 5
 texture = ExtResource("1_pq6cq")
