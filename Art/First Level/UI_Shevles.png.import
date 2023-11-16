@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfwbaffpw33na"
-path="res://.godot/imported/UI_BasicArrow.png-4dce481b74814e334cc1d5fafb529e42.ctex"
+uid="uid://booxphdgwu2iw"
+path="res://.godot/imported/UI_Shevles.png-26b0eaca4f8380eb71fc5fd6ad7f6c92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/First Level/UI_BasicArrow.png"
-dest_files=["res://.godot/imported/UI_BasicArrow.png-4dce481b74814e334cc1d5fafb529e42.ctex"]
+source_file="res://Art/First Level/UI_Shevles.png"
+dest_files=["res://.godot/imported/UI_Shevles.png-26b0eaca4f8380eb71fc5fd6ad7f6c92.ctex"]
 
 [params]
 
