@@ -120,10 +120,13 @@ func _on_grab_area_body_exited(body):
 		target_body = null
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	var normal = body_state.get_contact_local_normal(0)
 	if abs(normal.x) < 0.2 && normal.y < 0:
 		on_ground = true
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	on_ground = false
+
+
+

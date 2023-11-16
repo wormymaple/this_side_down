@@ -1,26 +1,30 @@
 extends Node2D
 
-var is_pressed = false
+var pressed_state = "Done"
+@export var Sprite: Texture
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	$Sprite2D.texture = Sprite
 func _process(_delta):
-	if is_pressed:
+	# This makes the spring stretch when something bounces on it
+	if pressed_state == "In":
+		if scale.y > 0.5:
+			scale.y -= .1
+			position.y += 4 # 20 pixels down
+		else:
+			pressed_state = "Out"
+	elif pressed_state == "Out":
 		if scale.y < 2:
 			scale.y += .1
-			position.y -= 6
-		else: is_pressed = false
-	else:
+			position.y -= 4 # up 60 pixels
+		else: pressed_state = "Done"
+	elif pressed_state == "Done":
 		if scale.y > 1:
 			scale.y -= .1
-			position.y += 6
+			position.y += 4 # down 40
 
-
-# When something enters the body, this will play a spring animation
-
-func _on_area_2d_body_entered(_body):
-	is_pressed = true
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Player"):
+		pressed_state = "In"
+		body.linear_velocity.y = - 700
+		$AudioStreamPlayer.play() # change for a more springy sound later

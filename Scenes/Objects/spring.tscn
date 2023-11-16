@@ -1,23 +1,28 @@
 [gd_scene load_steps=4 format=3 uid="uid://b13ui3edlyvfn"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/Spring.gd" id="1_xbm6y"]
-[ext_resource type="Texture2D" uid="uid://6t6sv1ello7f" path="res://Sprites/icon.svg" id="2_kraem"]
+[ext_resource type="Texture2D" uid="uid://bfs42evqhsl7d" path="res://Art/First Level/UI_spring.png" id="2_uh0i2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfp4"]
-size = Vector2(128, 64)
+size = Vector2(128, 25)
 
 [node name="Spring" type="Node2D"]
 script = ExtResource("1_xbm6y")
+Sprite = ExtResource("2_uh0i2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.94902, 0.196078, 0.596078, 1)
-texture = ExtResource("2_kraem")
+scale = Vector2(0.0820286, 0.0820286)
+texture = ExtResource("2_uh0i2")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-54, -54)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(54, 22)
+position = Vector2(54, 23.5)
 shape = SubResource("RectangleShape2D_cxfp4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
