@@ -40,7 +40,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_twvvl")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Midground"]
-modulate = Color(0.376471, 0.376471, 0.376471, 1)
+modulate = Color(0.309804, 0.309804, 0.309804, 1)
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_x8xnt")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://MainmenuLevelScene.gd" id="1_ay4ea"]
+[ext_resource type="FontFile" uid="uid://c5syft2wlgm0" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="2_b7p4q"]
 [ext_resource type="Script" path="res://Play Button.gd" id="2_bkbwr"]
-[ext_resource type="FontFile" uid="uid://cqsyc4unjo1p4" path="res://alagard.ttf" id="2_cdj2f"]
 [ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Main Menu/UI_Play_Button.png" id="3_327wy"]
 [ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Main Menu/UI_Options_Button.png" id="4_1vgje"]
 [ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Main Menu/UI_Quit_Button.png" id="5_ptnpq"]
@@ -42,7 +42,7 @@ offset_top = 71.0
 offset_right = 1955.0
 offset_bottom = 572.0
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_cdj2f")
+theme_override_fonts/font = ExtResource("2_b7p4q")
 theme_override_font_sizes/font_size = 160
 text = "This Side Down
 "
@@ -70,7 +70,7 @@ position = Vector2(370, 470)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_327wy")
 
-[node name="MarginContainer" type="MarginContainer" parent="UiPlayButton"]
+[node name="MarginContainer2" type="MarginContainer" parent="UiPlayButton"]
 anchors_preset = -1
 anchor_left = 0.192
 anchor_top = 0.285
@@ -78,13 +78,13 @@ anchor_right = 0.824
 anchor_bottom = 0.629
 offset_left = -1063.22
 offset_top = -1033.68
-offset_right = -974.552
+offset_right = -963.22
 offset_bottom = -1028.19
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Play Button" type="Button" parent="UiPlayButton/MarginContainer"]
+[node name="Play Button" type="Button" parent="UiPlayButton/MarginContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
@@ -97,7 +97,7 @@ position = Vector2(641, 718)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_1vgje")
 
-[node name="MarginContainer2" type="MarginContainer" parent="UiOptionsButton"]
+[node name="MarginContainer3" type="MarginContainer" parent="UiOptionsButton"]
 anchors_preset = -1
 anchor_left = 0.207
 anchor_top = 0.297
@@ -111,7 +111,7 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Options Button" type="Button" parent="UiOptionsButton/MarginContainer2"]
+[node name="Options Button" type="Button" parent="UiOptionsButton/MarginContainer3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
@@ -123,7 +123,7 @@ position = Vector2(913, 964)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_ptnpq")
 
-[node name="MarginContainer3" type="MarginContainer" parent="UiQuitButton"]
+[node name="MarginContainer4" type="MarginContainer" parent="UiQuitButton"]
 anchors_preset = -1
 anchor_left = 0.199
 anchor_top = 0.288
@@ -137,13 +137,13 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="Quit Button" type="Button" parent="UiQuitButton/MarginContainer3"]
+[node name="Quit Button" type="Button" parent="UiQuitButton/MarginContainer4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_miobr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7rdxa")
 
-[connection signal="pressed" from="UiPlayButton/MarginContainer/Play Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="UiOptionsButton/MarginContainer2/Options Button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="UiQuitButton/MarginContainer3/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UiPlayButton/MarginContainer2/Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UiOptionsButton/MarginContainer3/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="UiQuitButton/MarginContainer4/Quit Button" to="." method="_on_quit_button_pressed"]

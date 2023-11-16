@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvpim07i7se1g"]
+[gd_scene load_steps=15 format=3 uid="uid://bvpim07i7se1g"]
 
 [ext_resource type="Script" path="res://Button.gd" id="1_b3r14"]
+[ext_resource type="FontFile" uid="uid://c5syft2wlgm0" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="1_mr8kh"]
+[ext_resource type="Texture2D" uid="uid://cnb0v6ukb3edh" path="res://Art/Main Menu/UI_1Button.png" id="2_ijqul"]
+[ext_resource type="Texture2D" uid="uid://b3situl82j18i" path="res://Art/Main Menu/UI_2Button.png" id="3_0kuay"]
+[ext_resource type="Texture2D" uid="uid://1rmxt65vgskl" path="res://Art/Main Menu/UI_3Button.png" id="4_58krm"]
+[ext_resource type="Texture2D" uid="uid://c5mqxi1nledwx" path="res://Art/Main Menu/UI_4Button.png" id="5_yx3ve"]
+[ext_resource type="Texture2D" uid="uid://cdejbpm10k31g" path="res://Art/Main Menu/UI_5Button.png" id="6_mkg41"]
+[ext_resource type="Texture2D" uid="uid://bait04mgixe36" path="res://Art/Main Menu/UI_6Button.png" id="8_voema"]
+[ext_resource type="Texture2D" uid="uid://b0htklssgl4t0" path="res://Art/Main Menu/UI_7Button.png" id="9_2h4oc"]
+[ext_resource type="Texture2D" uid="uid://g7j8awtgc4c3" path="res://Art/Main Menu/UI_8Button.png" id="10_aicim"]
+[ext_resource type="Texture2D" uid="uid://bamp7ynus6uq0" path="res://Art/Main Menu/UI_9Button.png" id="11_uerib"]
+[ext_resource type="Texture2D" uid="uid://b3qmyhovj5ti7" path="res://Art/Main Menu/UI_10Button.png" id="12_lxknw"]
+[ext_resource type="Texture2D" uid="uid://r48v1hpfn0fo" path="res://Art/Main Menu/UI_11Button.png" id="13_ec1ca"]
+[ext_resource type="Texture2D" uid="uid://c5540sv32yiay" path="res://Art/Main Menu/UI_12Button.png" id="14_wyhjg"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -14,15 +27,17 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1927.0
 offset_bottom = 1074.0
-color = Color(0.286275, 0.313726, 0.529412, 1)
+color = Color(0.419608, 0.305882, 0.227451, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 137.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_mr8kh")
 theme_override_font_sizes/font_size = 80
 text = "Select Your Level!"
 horizontal_alignment = 1
@@ -52,11 +67,21 @@ theme_override_font_sizes/font_size = 80
 text = "1"
 script = ExtResource("1_b3r14")
 
+[node name="Ui1Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+position = Vector2(125, 127)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ijqul")
+
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "2"
+
+[node name="Ui2Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button2"]
+position = Vector2(126, 125)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_0kuay")
 
 [node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(250, 250)
@@ -64,11 +89,21 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "3"
 
+[node name="Ui3Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button3"]
+position = Vector2(127, 124)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_58krm")
+
 [node name="Button4" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "4"
+
+[node name="Ui4Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button4"]
+position = Vector2(126, 125)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_yx3ve")
 
 [node name="Button5" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(250, 250)
@@ -76,11 +111,21 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "5"
 
+[node name="Ui5Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button5"]
+position = Vector2(126, 125)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_mkg41")
+
 [node name="Button6" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "6"
+
+[node name="Ui6Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button6"]
+position = Vector2(127, 126)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_voema")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -93,12 +138,22 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "7"
 
+[node name="Ui7Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button"]
+position = Vector2(126, 129)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_2h4oc")
+
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "8
 "
+
+[node name="Ui8Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button2"]
+position = Vector2(123, 128)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_aicim")
 
 [node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
@@ -107,11 +162,21 @@ theme_override_font_sizes/font_size = 80
 text = "9
 "
 
+[node name="Ui9Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button3"]
+position = Vector2(124, 127)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_uerib")
+
 [node name="Button4" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "10"
+
+[node name="Ui10Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button4"]
+position = Vector2(126, 124)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_lxknw")
 
 [node name="Button5" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
@@ -119,11 +184,21 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "11"
 
+[node name="Ui11Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button5"]
+position = Vector2(126, 123)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_ec1ca")
+
 [node name="Button6" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "12"
+
+[node name="Ui12Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button6"]
+position = Vector2(123, 122)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_wyhjg")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button2" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_2_pressed"]

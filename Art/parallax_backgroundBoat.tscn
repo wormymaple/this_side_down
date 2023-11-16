@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://bq13ti4fn0mxl"]
+
+[ext_resource type="Texture2D" uid="uid://j2h0rm723ulg" path="res://Art/third level/BG_StormySky.png" id="1_51wte"]
+[ext_resource type="Texture2D" uid="uid://c10ihvq65b06v" path="res://Art/third level/UI_Birds.png" id="2_67hpp"]
+[ext_resource type="Texture2D" uid="uid://cpmp10nkoidmr" path="res://Art/third level/BG_Concret.png" id="3_j1xru"]
+[ext_resource type="Texture2D" uid="uid://1ydnakr8p6ac" path="res://Art/third level/UI_StormyClouds.png" id="4_m0inj"]
+[ext_resource type="Texture2D" uid="uid://c008j6erbf4sd" path="res://Art/third level/UI_Boat.png" id="5_mi7jj"]
+[ext_resource type="Texture2D" uid="uid://1mkcwafi3bqc" path="res://Art/third level/UI_Foregroud_Crates.png" id="6_g5acr"]
+[ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/third level/UI_Barrier.png" id="7_1gxmx"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Wayback" type="ParallaxLayer" parent="."]
+material = SubResource("CanvasItemMaterial_3xyd5")
+motion_scale = Vector2(0.7, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wayback"]
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_51wte")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Wayback"]
+modulate = Color(0.376471, 0.376471, 0.376471, 1)
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_67hpp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Wayback"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_j1xru")
+
+[node name="Midground" type="ParallaxLayer" parent="."]
+z_index = 1
+material = SubResource("CanvasItemMaterial_3xyd5")
+motion_scale = Vector2(0.87, 0.94)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Midground"]
+modulate = Color(0.376471, 0.376471, 0.376471, 1)
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_m0inj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Midground"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_mi7jj")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Midground"]
+modulate = Color(0.627451, 0.627451, 0.627451, 1)
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_g5acr")
+
+[node name="Foreground" type="ParallaxLayer" parent="."]
+z_index = 1
+material = SubResource("CanvasItemMaterial_3xyd5")
+motion_scale = Vector2(0.9, 0.95)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_g5acr")
+
+[node name="Ground" type="ParallaxLayer" parent="."]
+z_index = 2
+material = SubResource("CanvasItemMaterial_3xyd5")
+motion_scale = Vector2(1.2, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground"]
+position = Vector2(960, 540)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_1gxmx")
