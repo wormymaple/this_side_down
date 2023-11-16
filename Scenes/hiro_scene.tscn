@@ -76,7 +76,7 @@ speed = 0.5
 path_behavior = "One Way"
 
 [node name="Platform3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
-position = Vector2(319, 463)
+position = Vector2(289, 512)
 curve = null
 player = NodePath("../Player")
 speed = 0.5

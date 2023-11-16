@@ -8,7 +8,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if is_pressed:
 		if scale.y < 2:
 			scale.y += .1
@@ -22,5 +22,5 @@ func _process(delta):
 
 # When something enters the body, this will play a spring animation
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	is_pressed = true
