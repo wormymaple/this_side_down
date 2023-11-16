@@ -5,6 +5,7 @@ var players: Array
 @export var min_dist: float
 @export var min_scale: float
 @export var scale_rate: float
+@export var max_scale: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +14,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if len(players) < 1: 
+		return
+	
 	var pos = Vector2.ZERO;
 	for player in players:
 		pos += player.global_position
@@ -29,6 +33,11 @@ func _process(delta):
 			furthest_dist = dist
 		
 	if furthest_dist > min_dist:
-		zoom = ((furthest_dist - min_dist) * scale_rate + min_scale) * Vector2.ONE
+		var target_zoom = (furthest_dist - min_dist) * scale_rate + min_scale
+		if target_zoom < max_scale:
+			target_zoom = max_scale
+			
+		zoom = target_zoom * Vector2.ONE
+		print(zoom)
 	else:
-		scale = min_scale * Vector2.ONE
+		zoom = min_scale * Vector2.ONE
