@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="4_keg0h"]
 [ext_resource type="PackedScene" uid="uid://c05ps7i55fw6q" path="res://Scenes/TriangleboxUp.tscn" id="5_km41f"]
 [ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="6_nde0g"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="8_sj8f4"]
+[ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="8_sj8f4"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_tvqyk"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="10_qfp0h"]
 
@@ -73,6 +73,18 @@ position = Vector2(-359, 1382)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("10_qfp0h")]
 position = Vector2(581, -1048)
+
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+color = Color(0.584314, 0.576471, 0.560784, 1)
+invert_enabled = true
+invert_border = 1000.0
+polygon = PackedVector2Array(4532, -540, 4530, 823, -811, 823, -811, -540)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+polygon = PackedVector2Array(-1134, 699, -704, 1435, 4840, 1036, 4816, -828, -575, -611, -811, -540, 4531, -539, 4530, 773, -812, 773, -811, -540)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
