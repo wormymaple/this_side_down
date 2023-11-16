@@ -68,6 +68,7 @@ zoom = Vector2(1.5, 1.5)
 min_dist = 250.0
 min_scale = 1.5
 scale_rate = -0.001
+max_scale = 0.8
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(1008, 767)
