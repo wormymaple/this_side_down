@@ -122,7 +122,7 @@ func _on_grab_area_body_exited(body):
 
 func _on_body_entered(body):
 	var normal = body_state.get_contact_local_normal(0)
-	if abs(normal.x) < 0.2 && normal.y < 0:
+	if abs(normal.x) < 0.4 && normal.y < 0:
 		on_ground = true
 
 func _on_body_exited(body):

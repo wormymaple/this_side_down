@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7gc0sday64y6"]
+
+[ext_resource type="Texture2D" uid="uid://faj1vrwnl6ct" path="res://Art/First Level/UI_landingpad.png" id="1_1s0ao"]
+[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://Sprites/TempBox.png" id="2_1se70"]
+[ext_resource type="Script" path="res://Scripts/landing_zone.gd" id="2_53gdw"]
+[ext_resource type="Script" path="res://Scripts/AnimatePosition.gd" id="3_5c5mp"]
+[ext_resource type="Texture2D" uid="uid://dj2l1ydocafm6" path="res://Art/StandardParticle.png" id="4_dbcuk"]
+
+[sub_resource type="Curve" id="Curve_edar3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494845, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_g2jmp"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h4tb3"]
+gradient = SubResource("Gradient_g2jmp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pitsf"]
+emission_shape = 3
+emission_box_extents = Vector3(250, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 10.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_h4tb3")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="LandingZone" type="Sprite2D" node_paths=PackedStringArray("particles")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1s0ao")
+script = ExtResource("2_53gdw")
+particles = NodePath("GPUParticles2D")
+
+[node name="ZoneBody" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+max_contacts_reported = 6
+contact_monitor = true
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ZoneBody"]
+polygon = PackedVector2Array(-286, 12, 298, 14, 262, -44, -252, -42)
+
+[node name="Indicator" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.509804)
+z_index = -1
+position = Vector2(0, -246)
+rotation = -3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("2_1se70")
+script = ExtResource("3_5c5mp")
+curve = SubResource("Curve_edar3")
+anim_time = 1.0
+move = Vector2(0, 1)
+intensity = 50.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_pitsf")
+texture = ExtResource("4_dbcuk")
+trail_enabled = true
+trail_lifetime = 0.1
+
+[connection signal="body_entered" from="ZoneBody" to="." method="body_collide"]

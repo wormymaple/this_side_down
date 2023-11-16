@@ -8,3 +8,7 @@ scale = Vector2(1.92115, 1)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 script = ExtResource("1_ju03k")
+min_dist = 250.0
+min_scale = 1.5
+scale_rate = -0.001
+max_scale = 0.8
