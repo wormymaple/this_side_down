@@ -9,36 +9,29 @@
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_twdix")
 
-[node name="Floor2" parent="." instance=ExtResource("1_tg4xy")]
-position = Vector2(2341, 618)
-scale = Vector2(1.31243, 1.18921)
-
-[node name="Floor" parent="." instance=ExtResource("1_tg4xy")]
-position = Vector2(389, 609)
-scale = Vector2(0.68, 1)
-
-[node name="Floor4" parent="." instance=ExtResource("1_tg4xy")]
-position = Vector2(303, 27)
-scale = Vector2(0.399999, 1)
-
 [node name="TriangleboxUp" parent="." instance=ExtResource("2_7rhvh")]
-position = Vector2(446, 515)
+position = Vector2(763, 815)
 rotation = -3.11852
 
 [node name="TriangleboxUp2" parent="." instance=ExtResource("2_7rhvh")]
-position = Vector2(1761, 508)
+position = Vector2(2991, 847)
 rotation = -3.11852
 
-[node name="Floor3" parent="." instance=ExtResource("1_tg4xy")]
-position = Vector2(2037, 72)
-rotation = 1.5708
+[node name="Spherebox" parent="." instance=ExtResource("4_2qpt1")]
+position = Vector2(3569, -660)
+
+[node name="Floor" parent="." instance=ExtResource("1_tg4xy")]
+position = Vector2(480, 1086)
+
+[node name="Floor2" parent="." instance=ExtResource("1_tg4xy")]
+position = Vector2(3581, 1122)
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_xic28")]
-position = Vector2(2590, 432)
-scale = Vector2(13.0534, 4.4)
+position = Vector2(4185, 885)
 
-[node name="Spherebox" parent="." instance=ExtResource("4_2qpt1")]
-position = Vector2(2038, -547)
+[node name="Floor3" parent="." instance=ExtResource("1_tg4xy")]
+position = Vector2(3574, 322)
+scale = Vector2(0.0799951, 3.92)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
