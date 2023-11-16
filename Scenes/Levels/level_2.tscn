@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="6_3jehe"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="6_48uye"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="7_2ga8b"]
-[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="8_grauf"]
+[ext_resource type="PackedScene" path="res://Scenes/landing_zone.tscn" id="8_grauf"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="8_jmg2h"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="9_64wh3"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="10_yrdje"]
+[ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="10_yrdje"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_xo40b"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="12_bxkdo"]
 
@@ -73,4 +73,5 @@ polygon = PackedVector2Array(2159, -92, 2159, 886, -428, 948, -428, -87)
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
-polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2819, -702, -575, -611, -428, -87, 2159, -92, 2159, 746, -428, 747, -428, -87)
+position = Vector2(-1, 5)
+polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2819, -702, -575, -611, -428, -87, 2159, -92, 2160, 872, -427, 873, -428, -87)
