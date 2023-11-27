@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://bgr4nq5o17pmh"]
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
-[ext_resource type="Texture2D" uid="uid://bwy0ukd6nqpv5" path="res://Placeholders/Circle.png" id="2_72rom"]
+[ext_resource type="Texture2D" uid="uid://cvq8yje2bqism" path="res://Placeholders/Circle.png" id="2_72rom"]
 [ext_resource type="Texture2D" uid="uid://dcsxxh6wfcyf5" path="res://Art/sprites/goobers-1.PNG" id="2_eti0h"]
 [ext_resource type="Texture2D" uid="uid://ia8oqvh2uvwi" path="res://Art/sprites/goobers-2.PNG" id="3_0tw52"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_jvxiw"]
-[ext_resource type="AudioStream" uid="uid://2ja1567iek2c" path="res://Audio/box pickup.wav" id="5_wmfcq"]
-[ext_resource type="AudioStream" uid="uid://r38bou024ydg" path="res://Audio/box drop (better).wav" id="6_2vynb"]
-[ext_resource type="AudioStream" uid="uid://4clo5ncfr5uq" path="res://Audio/jump3.wav" id="7_x2kif"]
+[ext_resource type="AudioStream" uid="uid://co6b8bualid24" path="res://Audio/box pickup.wav" id="5_wmfcq"]
+[ext_resource type="AudioStream" uid="uid://xrfqy3rvcyix" path="res://Audio/box drop (better).wav" id="6_2vynb"]
+[ext_resource type="AudioStream" uid="uid://cq1c0i8e7mafv" path="res://Audio/jump3.wav" id="7_x2kif"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
 friction = 0.0

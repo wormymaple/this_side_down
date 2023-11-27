@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=12 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://MainmenuLevelScene.gd" id="1_ay4ea"]
 [ext_resource type="FontFile" uid="uid://c83jj56dxhixg" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="2_b7p4q"]
 [ext_resource type="Script" path="res://Play Button.gd" id="2_bkbwr"]
 [ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Main Menu/UI_Play_Button.png" id="3_327wy"]
+[ext_resource type="Texture2D" uid="uid://bc0hl8dqms67q" path="res://Art/logo/logo_thissidedown.png" id="3_khvvf"]
 [ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Main Menu/UI_Options_Button.png" id="4_1vgje"]
 [ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Main Menu/UI_Quit_Button.png" id="5_ptnpq"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://settings_menu.tscn" id="7_1s0hk"]
@@ -35,9 +36,10 @@ script = ExtResource("1_ay4ea")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.419608, 0.305882, 0.227451, 1)
+color = Color(0.611765, 0.462745, 0.360784, 1)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 534.0
 offset_top = 71.0
 offset_right = 1955.0
@@ -49,6 +51,11 @@ text = "This Side Down
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LogoThissidedown" type="Sprite2D" parent="."]
+position = Vector2(1389, 404)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_khvvf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 1920.0
@@ -86,6 +93,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
 [node name="Play Button" type="Button" parent="UiPlayButton/MarginContainer2"]
+z_index = -1
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
@@ -113,6 +121,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
 [node name="Options Button" type="Button" parent="UiOptionsButton/MarginContainer3"]
+z_index = -1
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
@@ -139,6 +148,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
 [node name="Quit Button" type="Button" parent="UiQuitButton/MarginContainer4"]
+z_index = -1
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
