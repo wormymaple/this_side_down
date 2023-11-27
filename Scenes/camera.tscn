@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://CameraController.gd" id="1_ju03k"]
 
 [node name="Camera" type="Camera2D"]
-position = Vector2(613, 606)
-scale = Vector2(1.92115, 1)
+position = Vector2(2.08165e-12, 2.08165e-12)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 script = ExtResource("1_ju03k")
@@ -12,3 +11,16 @@ min_dist = 250.0
 min_scale = 1.5
 scale_rate = -0.001
 max_scale = 0.8
+no_controller_path = NodePath("NoController")
+
+[node name="NoController" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -112.0
+offset_top = -13.0
+offset_right = 111.0
+offset_bottom = 27.0
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "[b][center]NO CONTROLLER DETECTED"
+fit_content = true
+autowrap_mode = 0

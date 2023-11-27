@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="5_a4ndb"]
 [ext_resource type="PackedScene" uid="uid://43ip1gasv7wc" path="res://Scenes/Objects/player.tscn" id="7_l5tl5"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="8_6vpom"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="9_5ant1"]
+[ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="9_5ant1"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="10_i46cw"]
 
 [node name="Level3" type="Node2D"]
@@ -63,6 +63,18 @@ position = Vector2(-305, -1294)
 
 [node name="CanvasModulate" parent="." instance=ExtResource("10_i46cw")]
 position = Vector2(-2116, 380)
+
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+color = Color(0.584314, 0.576471, 0.560784, 1)
+invert_enabled = true
+invert_border = 1000.0
+polygon = PackedVector2Array(2578, -460, 2578, 909, -654, 910, -654, -460)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2819, -702, -575, -611, -654, -460, 2578, -460, 2578, 848, -654, 849, -654, -460)
 
 [connection signal="body_entered" from="MovingPlatform/LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="MovingPlatform/LoadingZone" to="." method="_on_loading_zone_body_exited"]

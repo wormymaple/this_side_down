@@ -7,6 +7,9 @@ var players: Array
 @export var scale_rate: float
 @export var max_scale: float
 
+@export var no_controller_path: NodePath
+@onready var no_controller = get_node(no_controller_path)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -15,6 +18,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if len(players) < 1: 
+		if !no_controller.visible:
+			no_controller.visible = true
 		return
 	
 	var pos = Vector2.ZERO;
