@@ -48,7 +48,7 @@ scale = Vector2(0.35, 0.35)
 speed = 2
 
 [node name="LoadingZone" parent="MovingPlatform" instance=ExtResource("5_a4ndb")]
-position = Vector2(-5.71411, -220)
+position = Vector2(-5.71411, -317.143)
 scale = Vector2(2.5, 2.5)
 
 [node name="Player" parent="." instance=ExtResource("7_l5tl5")]
