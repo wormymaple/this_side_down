@@ -36,6 +36,9 @@ var unmovable = false
 var body_state: PhysicsDirectBodyState2D
 
 func _ready():
+	if !ThemeSongLoop.playing:
+		ThemeSongLoop.play()
+	
 	hand.position = Vector2.UP * arm_length
 	arm.set_point_position(1, hand.position)
 	

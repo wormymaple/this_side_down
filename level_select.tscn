@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvpim07i7se1g"]
+[gd_scene load_steps=16 format=3 uid="uid://bvpim07i7se1g"]
 
 [ext_resource type="Script" path="res://Button.gd" id="1_b3r14"]
 [ext_resource type="FontFile" uid="uid://c83jj56dxhixg" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="1_mr8kh"]
+[ext_resource type="Script" path="res://level_select.gd" id="1_wtpsa"]
 [ext_resource type="Texture2D" uid="uid://cnb0v6ukb3edh" path="res://Art/Main Menu/UI_1Button.png" id="2_ijqul"]
 [ext_resource type="Texture2D" uid="uid://b3situl82j18i" path="res://Art/Main Menu/UI_2Button.png" id="3_0kuay"]
 [ext_resource type="Texture2D" uid="uid://1rmxt65vgskl" path="res://Art/Main Menu/UI_3Button.png" id="4_58krm"]
@@ -22,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wtpsa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
