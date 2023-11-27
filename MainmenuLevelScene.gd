@@ -4,9 +4,8 @@ extends Node2D
 @onready var main_menu = $MainMenu
 
 func _ready():
-	#if ThemeSongLoop.playing:
-		#ThemeSongLoop.stop()
-	pass
+	if !ThemeSongLoop.playing:
+		ThemeSongLoop.play()
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://level_select.tscn")
