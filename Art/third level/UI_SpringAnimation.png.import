@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc42xlkx1xr1i"
-path="res://.godot/imported/UI_landingpad.png-56c2dd556efa190f4ce9ef9734c2bf77.ctex"
+uid="uid://qk2u2sjgl33g"
+path="res://.godot/imported/UI_SpringAnimation.png-8f5e0fba7d587510e634dd296f01f307.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Fourth Level/UI_landingpad.png"
-dest_files=["res://.godot/imported/UI_landingpad.png-56c2dd556efa190f4ce9ef9734c2bf77.ctex"]
+source_file="res://Art/third level/UI_SpringAnimation.png"
+dest_files=["res://.godot/imported/UI_SpringAnimation.png-8f5e0fba7d587510e634dd296f01f307.ctex"]
 
 [params]
 

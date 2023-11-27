@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc42xlkx1xr1i"
-path="res://.godot/imported/UI_landingpad.png-56c2dd556efa190f4ce9ef9734c2bf77.ctex"
+uid="uid://cudkwqk0t4e22"
+path="res://.godot/imported/Sprite_goobers_legs_red-2.png-368661efdf10e7a51504f75e9ed78231.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Fourth Level/UI_landingpad.png"
-dest_files=["res://.godot/imported/UI_landingpad.png-56c2dd556efa190f4ce9ef9734c2bf77.ctex"]
+source_file="res://Art/sprites/Sprite_goobers_legs_red-2.png"
+dest_files=["res://.godot/imported/Sprite_goobers_legs_red-2.png-368661efdf10e7a51504f75e9ed78231.ctex"]
 
 [params]
 
