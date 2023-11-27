@@ -5,6 +5,7 @@
 
 [node name="Loop" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_0dv33")
+autoplay = true
 bus = &"Music"
 script = ExtResource("2_gid20")
 
