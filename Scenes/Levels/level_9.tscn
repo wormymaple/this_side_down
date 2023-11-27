@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfume0p3k4a7x"]
+[gd_scene load_steps=12 format=3 uid="uid://bfume0p3k4a7x"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_9.gd" id="1_ulhtr"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="2_etqoo"]
 [ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="3_ywc5b"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="4_jpuag"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="5_feajl"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_tammo"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_lplcc"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="8_cahcg"]
 [ext_resource type="PackedScene" uid="uid://c05ps7i55fw6q" path="res://Scenes/TriangleboxUp.tscn" id="9_celqn"]
 [ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="10_gnpag"]
+[ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="10_q0eyp"]
+[ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="11_cmrej"]
 
 [node name="level_9" type="Node2D"]
 script = ExtResource("1_ulhtr")
@@ -25,13 +26,9 @@ rotation = 6.27737
 [node name="LoadingZone" parent="." instance=ExtResource("4_jpuag")]
 position = Vector2(3690, 941)
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("5_feajl")]
-follow_viewport_enabled = true
-
-[node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("6_tammo")]
-
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_lplcc")]
 position = Vector2(386, -631)
+color = Color(0.615686, 0.592157, 0.827451, 1)
 
 [node name="TriangleboxUp" parent="." instance=ExtResource("9_celqn")]
 position = Vector2(2318, 817)
@@ -56,3 +53,9 @@ scale = Vector2(0.35, 0.35)
 [node name="StaticBody2D2" parent="." instance=ExtResource("8_cahcg")]
 position = Vector2(-300, 137)
 scale = Vector2(0.35, 0.35)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("11_cmrej")]
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource("10_q0eyp")]
+
+[node name="CanvasModulate" parent="." instance=ExtResource("6_tammo")]
