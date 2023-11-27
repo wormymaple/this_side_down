@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="2_etqoo"]
 [ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="3_ywc5b"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="4_jpuag"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="5_feajl"]
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="5_feajl"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_tammo"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_lplcc"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="8_cahcg"]
@@ -14,23 +14,16 @@
 [node name="level_9" type="Node2D"]
 script = ExtResource("1_ulhtr")
 
-[node name="Floor4" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-1732, 604)
-
-[node name="Floor3" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-579, 604)
-
 [node name="SquareBox1" parent="." instance=ExtResource("3_ywc5b")]
-position = Vector2(-2064, 405)
+position = Vector2(-370, 732)
 rotation = 6.27737
 
 [node name="SquareBox2" parent="." instance=ExtResource("3_ywc5b")]
-position = Vector2(-416, -1530)
+position = Vector2(2086, -841)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("4_jpuag")]
-position = Vector2(1208, 452)
-scale = Vector2(7.96255, 3.16026)
+position = Vector2(3690, 941)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_feajl")]
 follow_viewport_enabled = true
@@ -40,72 +33,26 @@ follow_viewport_enabled = true
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_lplcc")]
 position = Vector2(386, -631)
 
-[node name="Floor2" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-417, -418)
-rotation = 1.5717
-scale = Vector2(1.70425, 1.20513)
-
-[node name="Floor5" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-2258, 226)
-rotation = 1.5717
-scale = Vector2(0.584145, 1.20513)
-
-[node name="Floor8" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-2253, -444)
-rotation = 1.5717
-scale = Vector2(0.584145, 1.20513)
-
-[node name="Floor12" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-2248, -1553)
-rotation = 1.5717
-scale = Vector2(0.584145, 1.20513)
-
-[node name="Floor15" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-2249, -1116)
-rotation = 1.5717
-scale = Vector2(0.584145, 1.20513)
-
-[node name="Floor20" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(881, -1865)
-scale = Vector2(1.08, 1)
-
-[node name="Floor22" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(1522, -625)
-rotation = 1.5717
-scale = Vector2(2.22411, 1.20513)
-
-[node name="Floor21" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-979, -1862)
-scale = Vector2(2.2013, 0.998988)
-
-[node name="MovingPlatform" parent="." instance=ExtResource("8_cahcg")]
-position = Vector2(-1441, 105)
-scale = Vector2(7.6, 1.96)
-script = null
-
-[node name="Floor16" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(43, 671)
-rotation = 0.734784
-scale = Vector2(0.184073, 1.20513)
-
-[node name="Floor6" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-1961, 129)
-scale = Vector2(0.440002, 1)
-
 [node name="TriangleboxUp" parent="." instance=ExtResource("9_celqn")]
-position = Vector2(-194, 472)
-rotation = 2.16056
+position = Vector2(2318, 817)
+rotation = 2.09064
 
-[node name="MovingPlatform2" parent="." instance=ExtResource("8_cahcg")]
-position = Vector2(555, -1374)
-scale = Vector2(16.24, 1.96)
-script = null
+[node name="Floor" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(1117, 1080)
+scale = Vector2(1.84, 1)
 
-[node name="HorMovingPlatform" parent="." instance=ExtResource("10_gnpag")]
-position = Vector2(-757, -1345)
-scale = Vector2(4.47305, 1.63523)
+[node name="Floor3" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(-282, 342)
+scale = Vector2(0.400001, 0.359999)
 
-[node name="MovingPlatform3" parent="." instance=ExtResource("8_cahcg")]
-position = Vector2(-1972, -108)
-scale = Vector2(5.6, 1.96)
-speed = 2
+[node name="Floor2" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(2082, 117)
+scale = Vector2(0.0800012, 3.54911)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("10_gnpag")]
+position = Vector2(1534, -611)
+scale = Vector2(0.35, 0.35)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("8_cahcg")]
+position = Vector2(-300, 137)
+scale = Vector2(0.35, 0.35)

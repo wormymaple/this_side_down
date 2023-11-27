@@ -6,6 +6,8 @@ var box1loaded = false
 var box2loaded = false
 var box3loaded = false
 
+@onready var global_vars = get_node("/root/GlobalVariables")
+
 func _process(delta):
 	if $SquareBox1.rotation > minRotation and $SquareBox1.rotation < maxRotation:
 		if box1loaded == true:
@@ -14,7 +16,7 @@ func _process(delta):
 				if box2loaded == true:
 					if $SquareBox3.rotation > minRotation and $SquareBox3.rotation < maxRotation:
 						if box3loaded == true:
-							LevelsCompleted.level11done = true
+							global_vars.win_level(11)
 							get_tree().change_scene_to_file("res://Scenes/Levels/level_12")
 
 func _on_loading_zone_body_entered(body):

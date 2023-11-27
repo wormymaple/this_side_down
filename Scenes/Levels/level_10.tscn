@@ -1,27 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv6cw04ulkig0"]
+[gd_scene load_steps=9 format=3 uid="uid://dv6cw04ulkig0"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_10.gd" id="1_w5nf4"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="2_l85uj"]
 [ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="3_vocux"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="4_8r61f"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://parallax_background.tscn" id="5_v0lf2"]
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="5_v0lf2"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_db016"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_tms1o"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="8_j0wbu"]
-[ext_resource type="Script" path="res://Scenes/moving_platform_reversed.gd" id="9_u2y6r"]
 
 [node name="level_10" type="Node2D"]
 script = ExtResource("1_w5nf4")
-
-[node name="Floor4" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-1732, 604)
-
-[node name="Floor3" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-579, 604)
-
-[node name="Floor" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(778, 601)
-scale = Vector2(1.379, 1)
 
 [node name="SquareBox1" parent="." instance=ExtResource("3_vocux")]
 position = Vector2(-400, 391)
@@ -36,8 +25,7 @@ position = Vector2(-1534, -49)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("4_8r61f")]
-position = Vector2(1060, 452)
-scale = Vector2(7.96255, 3.16026)
+position = Vector2(4347, 837)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_v0lf2")]
 follow_viewport_enabled = true
@@ -47,90 +35,26 @@ follow_viewport_enabled = true
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_tms1o")]
 position = Vector2(386, -631)
 
+[node name="Floor" parent="." instance=ExtResource("2_l85uj")]
+position = Vector2(1885, 1077)
+scale = Vector2(2.92001, 1)
+
 [node name="Floor2" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(623, -408)
-rotation = 1.5717
-scale = Vector2(1.70425, 1.20513)
+position = Vector2(1280, -724)
+scale = Vector2(0.160007, 4.28)
 
-[node name="Floor5" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-2258, 226)
-rotation = 1.5717
-scale = Vector2(0.584145, 1.20513)
+[node name="Floor3" parent="." instance=ExtResource("2_l85uj")]
+position = Vector2(2458, -724)
+scale = Vector2(0.160007, 4.28)
 
-[node name="Floor8" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-2253, -444)
-rotation = 1.5717
-scale = Vector2(0.584145, 1.20513)
+[node name="Floor4" parent="." instance=ExtResource("2_l85uj")]
+position = Vector2(3814, -63.0001)
+scale = Vector2(0.160007, 4.28)
 
-[node name="Floor12" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-2248, -1553)
-rotation = 1.5717
-scale = Vector2(0.584145, 1.20513)
+[node name="StaticBody2D" parent="." instance=ExtResource("8_j0wbu")]
+position = Vector2(3293, 711)
+scale = Vector2(0.35, 0.35)
 
-[node name="Floor14" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-197, -825)
-rotation = 1.5717
-scale = Vector2(1.86411, 1.20513)
-
-[node name="Floor15" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-2249, -1116)
-rotation = 1.5717
-scale = Vector2(0.584145, 1.20513)
-
-[node name="Floor20" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(881, -1865)
-scale = Vector2(1.08, 1)
-
-[node name="Floor22" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(1522, -625)
-rotation = 1.5717
-scale = Vector2(2.22411, 1.20513)
-
-[node name="Floor21" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-979, -1862)
-scale = Vector2(2.2013, 0.998988)
-
-[node name="MovingPlatform" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(-1801, 141)
-scale = Vector2(11.6, 1.96)
-script = null
-
-[node name="MovingPlatform2" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(-393, -1154)
-scale = Vector2(4.08, 1.96)
-script = null
-
-[node name="MovingPlatform3" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(-887, -1342)
-scale = Vector2(4.4, 1.96)
-script = null
-
-[node name="Floor6" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-1097, -611)
-rotation = 1.5717
-scale = Vector2(1.30418, 1.20513)
-
-[node name="MovingPlatform4" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(-2039, -1386)
-scale = Vector2(4.4, 1.96)
-script = null
-
-[node name="Floor16" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(-1744, -1113)
-rotation = 0.734784
-scale = Vector2(0.184073, 1.20513)
-
-[node name="MovingPlatform5" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(400, 486)
-scale = Vector2(4.44, 1.96)
-speed = 2
-
-[node name="MovingPlatform6" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(397, -733)
-scale = Vector2(4.44, 1.96)
-speed = 2
-
-[node name="MovingPlatform7" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(44, -730)
-scale = Vector2(4.44, 1.96)
-script = ExtResource("9_u2y6r")
+[node name="StaticBody2D2" parent="." instance=ExtResource("8_j0wbu")]
+position = Vector2(2953, 69.0001)
+scale = Vector2(0.35, 0.35)
