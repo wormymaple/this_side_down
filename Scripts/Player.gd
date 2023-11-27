@@ -27,5 +27,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_detection_area_body_entered(body): # This isn't "sus." I don't want to hear it, guys.
+func _on_detection_area_body_entered(_body): # This isn't "sus." I don't want to hear it, guys.
 	$"../CanvasLayer/VideoStreamPlayer".play()

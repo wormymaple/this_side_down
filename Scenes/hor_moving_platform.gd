@@ -8,7 +8,7 @@ func _ready():
 
 
 
-func _process(delta):
+func _process(_delta):
 	if direction == "left":
 		position.x -= speed
 	elif direction == "right":
