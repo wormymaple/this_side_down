@@ -52,7 +52,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LogoThissidedown" type="Sprite2D" parent="."]
-position = Vector2(1326, 378)
+position = Vector2(1354, 378)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_w3v83")
 
@@ -78,7 +78,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_327wy")
 
 [node name="MarginContainer2" type="MarginContainer" parent="UiPlayButton"]
-visible = false
 anchors_preset = -1
 anchor_left = 0.192
 anchor_top = 0.285
@@ -93,6 +92,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
 [node name="Play Button" type="Button" parent="UiPlayButton/MarginContainer2"]
+z_index = -1
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
@@ -106,7 +106,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_1vgje")
 
 [node name="MarginContainer3" type="MarginContainer" parent="UiOptionsButton"]
-visible = false
 anchors_preset = -1
 anchor_left = 0.207
 anchor_top = 0.297
@@ -121,6 +120,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
 [node name="Options Button" type="Button" parent="UiOptionsButton/MarginContainer3"]
+z_index = -1
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
@@ -133,7 +133,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_ptnpq")
 
 [node name="MarginContainer4" type="MarginContainer" parent="UiQuitButton"]
-visible = false
 anchors_preset = -1
 anchor_left = 0.199
 anchor_top = 0.288
@@ -148,6 +147,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
 [node name="Quit Button" type="Button" parent="UiQuitButton/MarginContainer4"]
+z_index = -1
 layout_mode = 2
 theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
