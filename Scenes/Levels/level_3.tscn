@@ -43,7 +43,7 @@ position = Vector2(2244, -184)
 scale = Vector2(0.4, 0.4)
 
 [node name="MovingPlatform" parent="." instance=ExtResource("4_2ogfo")]
-position = Vector2(-289, 572)
+position = Vector2(-289, 133)
 scale = Vector2(0.35, 0.35)
 speed = 2
 
@@ -69,12 +69,12 @@ z_index = 5
 color = Color(0.584314, 0.576471, 0.560784, 1)
 invert_enabled = true
 invert_border = 1000.0
-polygon = PackedVector2Array(2578, -460, 2578, 909, -654, 910, -654, -460)
+polygon = PackedVector2Array(2576, -700, 2578, 909, -654, 910, -654, -700)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
-polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2819, -702, -575, -611, -654, -460, 2578, -460, 2578, 848, -654, 849, -654, -460)
+polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2828, -875, -680, -909, -654, -700, 2576, -700, 2578, 848, -654, 849, -654, -700)
 
 [connection signal="body_entered" from="MovingPlatform/LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="MovingPlatform/LoadingZone" to="." method="_on_loading_zone_body_exited"]
