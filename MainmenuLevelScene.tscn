@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=11 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://MainmenuLevelScene.gd" id="1_ay4ea"]
-[ext_resource type="FontFile" uid="uid://c5syft2wlgm0" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="2_b7p4q"]
+[ext_resource type="FontFile" uid="uid://c83jj56dxhixg" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="2_b7p4q"]
 [ext_resource type="Script" path="res://Play Button.gd" id="2_bkbwr"]
 [ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Main Menu/UI_Play_Button.png" id="3_327wy"]
 [ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Main Menu/UI_Options_Button.png" id="4_1vgje"]
 [ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Main Menu/UI_Quit_Button.png" id="5_ptnpq"]
+[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://settings_menu.tscn" id="7_1s0hk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpcu7"]
 bg_color = Color(0, 0, 0, 0.392157)
@@ -143,6 +144,13 @@ theme_override_font_sizes/font_size = 75
 theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_miobr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7rdxa")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("7_1s0hk")]
+visible = false
+offset_left = 150.0
+offset_top = 100.0
+offset_right = 1750.0
+offset_bottom = 1000.0
 
 [connection signal="pressed" from="UiPlayButton/MarginContainer2/Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="UiOptionsButton/MarginContainer3/Options Button" to="." method="_on_options_button_pressed"]

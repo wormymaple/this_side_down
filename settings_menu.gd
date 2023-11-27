@@ -21,16 +21,32 @@ func _process(delta):
 
 
 func _on_option_button_item_selected(index):
-	pass # Replace with function body.
+	if index == 1:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 
 func _on_master_vol_slider_value_changed(value):
-	pass # Replace with function body.
+	if value == -50:
+		AudioServer.set_bus_mute(0,true)
+	else:
+		AudioServer.set_bus_mute(0,false)
+		AudioServer.set_bus_volume_db(0,value)
 
 
 func _on_music_vol_slider_value_changed(value):
-	pass # Replace with function body.
+	var BusInt = AudioServer.get_bus_index(MUSIC_BUS)
+	AudioServer.set_bus_volume_db(BusInt, value)
 
 
 func _on_other_vol_slider_value_changed(value):
-	pass # Replace with function body.
+	var BusInt = AudioServer.get_bus_index(OTHER_BUS)
+	AudioServer.set_bus_volume_db(BusInt, value)
+
+const MUSIC_BUS = "Music"
+const OTHER_BUS = "Other"
+
+
+func _on_button_pressed():
+	$".".hide()
