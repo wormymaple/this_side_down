@@ -8,6 +8,8 @@ var players: Array
 @export var max_scale: float
 
 @export var no_controller_path: NodePath
+@export var no_controller_button: NodePath
+@onready var button = get_node(no_controller_button)
 @onready var no_controller = get_node(no_controller_path)
 
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +22,9 @@ func _process(delta):
 	if len(players) < 1: 
 		if !no_controller.visible:
 			no_controller.visible = true
+			button.visible = true
+			#new_button.position.x = position.x + 500
+			#new_button.position.y = position.y - 500
 		return
 	
 	var pos = Vector2.ZERO;
