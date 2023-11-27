@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalEttings="*res://global_ettings.gd"
 GlobalVariables="*res://Scripts/global_variables.gd"
+ThemeSongLoop="*res://Audio/Theme_Song_Loop.tscn"
 
 [display]
 

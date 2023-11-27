@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuk1rxbbekmwo"]
+
+[ext_resource type="AudioStream" uid="uid://xufoxcqktqtn" path="res://Audio/BoxInSocksntro.wav" id="1_0dv33"]
+[ext_resource type="Script" path="res://Audio/Theme_Song_Loop.gd" id="2_gid20"]
+
+[node name="Loop" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_0dv33")
+script = ExtResource("2_gid20")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
