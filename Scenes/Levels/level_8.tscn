@@ -12,38 +12,35 @@
 script = ExtResource("1_3fm5b")
 
 [node name="Spherebox" parent="." instance=ExtResource("1_ifffa")]
-position = Vector2(1268, -187)
+position = Vector2(2192, -141)
 
 [node name="HorMovingPlatform" parent="." instance=ExtResource("2_tv6ys")]
-position = Vector2(459, -82)
-scale = Vector2(1.77212, 2.59398)
+position = Vector2(385, 30)
+scale = Vector2(0.35, 0.35)
 
 [node name="Squarebox" parent="." instance=ExtResource("3_rnimm")]
-position = Vector2(1878, 428)
-
-[node name="Floor" parent="." instance=ExtResource("4_08m74")]
-position = Vector2(342, 608)
-scale = Vector2(0.6, 1)
-
-[node name="Floor3" parent="." instance=ExtResource("4_08m74")]
-position = Vector2(728, -68)
-scale = Vector2(0.16, 1)
-
-[node name="Floor4" parent="." instance=ExtResource("4_08m74")]
-position = Vector2(1628, -69)
-scale = Vector2(0.799995, 1)
-
-[node name="Floor2" parent="." instance=ExtResource("4_08m74")]
-position = Vector2(1707, 598)
-scale = Vector2(0.6, 1)
+position = Vector2(3126, 724)
 
 [node name="LoadingZone" parent="." instance=ExtResource("5_226u4")]
-position = Vector2(1711, -185)
-scale = Vector2(11.0982, 2.32)
+position = Vector2(3179, -85)
 
 [node name="TriangleboxUp" parent="." instance=ExtResource("6_tgh7o")]
-position = Vector2(532, 519)
+position = Vector2(540, 791)
 rotation = -3.13424
+
+[node name="Floor" parent="." instance=ExtResource("4_08m74")]
+position = Vector2(6, 1082)
+
+[node name="Floor2" parent="." instance=ExtResource("4_08m74")]
+position = Vector2(3202, 1074)
+
+[node name="Floor3" parent="." instance=ExtResource("4_08m74")]
+position = Vector2(970, 30)
+scale = Vector2(0.24, 0.4)
+
+[node name="Floor4" parent="." instance=ExtResource("4_08m74")]
+position = Vector2(2754, 30)
+scale = Vector2(0.88, 0.4)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
