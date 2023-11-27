@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	if ThemeSongLoop.playing:
+		ThemeSongLoop.stop()
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://level_select.tscn")
