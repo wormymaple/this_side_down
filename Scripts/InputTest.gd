@@ -26,6 +26,7 @@ var target_body: Node2D
 var grabbed_body: Node2D
 var on_ground = false
 var grab_did_collide = false
+var unmovable = false
 
 @export var box_pickup: AudioStreamPlayer
 @export var box_drop: AudioStreamPlayer
@@ -49,7 +50,6 @@ func _physics_process(delta):
 	elif grabbed_body == null:
 		hand.position -= hand.position * arm_move_speed * delta
 		
-	
 	arm.set_point_position(1, hand.position)
 	
 	if grabbed_body != null:
@@ -59,7 +59,7 @@ func _physics_process(delta):
 		else: 
 			grabbed_body.linear_velocity = dir * grab_speed
 	
-	if get_meta("grabbed") == true:
+	if get_meta("grabbed") == true or unmovable:
 		return
 	
 	var left_stick = Input.get_axis("left_left_" + playerID, "left_right_" + playerID)
@@ -133,6 +133,7 @@ func _on_body_entered(body):
 	var normal = body_state.get_contact_local_normal(0)
 	if abs(normal.x) < 0.4 && normal.y < 0:
 		on_ground = true
+		unmovable = false
 
 func _on_body_exited(body):
 	on_ground = false

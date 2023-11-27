@@ -27,11 +27,12 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player") or body.is_in_group("Box"):
+		print(abs(asin(rotation)))
+		if body.is_in_group("Player"):
+			body.unmovable = abs(asin(rotation)) > 0.1
+		
 		pressed_state = "In"
-		#body.linear_velocity.y = - Power
-		print(rotation_degrees)
-		var dir = Vector2(asin(rotation), -acos(rotation))
-		#print(dir)
+		var dir = Vector2(asin(rotation), -acos(rotation)).normalized()
 		body.linear_velocity = dir * Power
 		$AudioStreamPlayer.play() # change for a more springy sound later
 		
