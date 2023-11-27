@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpy3ohh5pa7jr"]
+[gd_scene load_steps=12 format=3 uid="uid://cpy3ohh5pa7jr"]
 
 [ext_resource type="PackedScene" uid="uid://blr6srdhy3jte" path="res://Scenes/Objects/detection_area.tscn" id="1_asp6b"]
 [ext_resource type="PackedScene" uid="uid://cxmsc6y5qjwet" path="res://Scenes/Objects/ground.tscn" id="2_b2uwk"]
@@ -7,6 +7,7 @@
 [ext_resource type="VideoStream" path="res://video.ogv" id="5_1tgiu"]
 [ext_resource type="Texture2D" uid="uid://bp7wvgue20js" path="res://Art/third level/UI_floatingplatform.png" id="6_7pj3m"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="8_bj4e0"]
+[ext_resource type="PackedScene" uid="uid://cnrsc6utwff0q" path="res://Scenes/small_squarebox.tscn" id="8_s21my"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="10_cx2xa"]
 
 [sub_resource type="Curve2D" id="Curve2D_kk2oo"]
@@ -53,17 +54,14 @@ scale = Vector2(17.8654, -0.996173)
 
 [node name="Spring" parent="." instance=ExtResource("4_slbon")]
 position = Vector2(861, 916)
-Power = 500
 
 [node name="Spring2" parent="." instance=ExtResource("4_slbon")]
 position = Vector2(324, 889)
 rotation = 0.549661
-Power = 500
 
 [node name="Spring3" parent="." instance=ExtResource("4_slbon")]
 position = Vector2(583, 886)
 rotation = -0.831413
-Power = 500
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -97,5 +95,11 @@ speed = 0.5
 [node name="PlaceholderPlayer" parent="." instance=ExtResource("8_bj4e0")]
 position = Vector2(1127, 904)
 
+[node name="SmallSquarebox" parent="." groups=["Box"] instance=ExtResource("8_s21my")]
+position = Vector2(1399, 732)
+collision_layer = 15
+collision_mask = 15
+
 [node name="Box" parent="." instance=ExtResource("10_cx2xa")]
 position = Vector2(1207, 923)
+can_sleep = false
