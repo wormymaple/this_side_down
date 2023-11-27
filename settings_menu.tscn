@@ -155,7 +155,16 @@ min_value = -50.0
 max_value = 2.08165e-12
 value = -10.0
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -119.0
+offset_top = 494.0
+offset_right = 3.0
+offset_bottom = 586.0
+text = "Back"
+
 [connection signal="item_selected" from="SettingTabs/Video/MarginContainer/VideoSettings/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer2/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
 [connection signal="value_changed" from="SettingTabs/Audio/MarginContainer/AudioSettings/HBoxContainer3/OtherVolSlider" to="." method="_on_other_vol_slider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
