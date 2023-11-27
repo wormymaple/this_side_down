@@ -58,17 +58,17 @@ scale = Vector2(17.8654, -0.996173)
 
 [node name="Spring" parent="." instance=ExtResource("4_slbon")]
 position = Vector2(395, 484)
-Power = 1000
+Power = 500
 
 [node name="Spring2" parent="." instance=ExtResource("4_slbon")]
 position = Vector2(796, 484)
 rotation = 0.549661
-Power = 1000
+Power = 500
 
 [node name="Spring3" parent="." instance=ExtResource("4_slbon")]
 position = Vector2(574, 484)
 rotation = -0.831413
-Power = 1000
+Power = 500
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
