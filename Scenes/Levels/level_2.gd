@@ -13,5 +13,5 @@ func _on_zone_body_body_entered(body):
 			win()
 		
 func win():
-	global_vars.win_level(1)
+	global_vars.win_level(2)
 	get_node(landing_zone).play_particles();
