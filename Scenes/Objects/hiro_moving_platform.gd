@@ -13,20 +13,20 @@ extends Path2D
 
 @export var sprite: Texture
 
-var moving_body = null
+var objects_to_move = []
 @onready var previous_position = $PathFollow2D.position
-@onready var previous_previous_position: Vector2 = $PathFollow2D.position
+
 var movement = 0.0
 
 func _ready():
-	#previous_position = position
 	$Sprite2D.texture = sprite
-	pass
 
 func _physics_process(_delta):
 	$Collision.position = $PathFollow2D.position
 	$Sprite2D.position = $PathFollow2D.position
 	$Area2D.position = $PathFollow2D.position
+	
+	# This code is commented out because one way collision does all of this automatically
 	
 	#if name == "Platform":
 	#	print("Player pos: ", int(player.position.y), ". Platform pos: ", int(position.y + $Collision.position.y))
@@ -42,7 +42,7 @@ func _physics_process(_delta):
 	
 	if path_behavior == "Stop": # The platform does nothing
 		pass
-		# return
+		#return
 	elif path_behavior == "One Way":
 		if $PathFollow2D.progress_ratio < 0.99:
 			$PathFollow2D.progress += speed
@@ -62,21 +62,39 @@ func _physics_process(_delta):
 	previous_position = $PathFollow2D.position
 	# Update last position
 	
-	if moving_body != null and moving_body.on_ground:
+	#if moving_body != null:
+		#print(moving_body.on_ground)
+	#if name == "Platform":
+		#print($"../Box".on_ground)
+	
+	for object in objects_to_move:
+		if object.is_in_group("Player"):
+			if object.on_ground:
+				
+				object.position += movement * 1.55
+		if object.is_in_group("Box"):
+			#print("global pos: ", object.global_position, ". pos: ", object.position)
+			#print("there is an object in box group!")
+			#object.global_position = $Collision.global_position + Vector2(0, -30)
+			object.position += movement * 1.55
+			#object.position.x += 10
+	
+	#if object != null and object.on_ground:
 		#print("moving something on a platform!")
 		#moving_body.position.x += movement * 1.55
-		moving_body.position += movement * 1.55
+	#	moving_body.position += movement * 1.55
 		#print(movement)
 
 
 func _on_area_2d_body_entered(body):
-	#print(body)
-	if body.is_in_group("Player"):
+	#print(body.name)
+	if body.is_in_group("Player") or body.is_in_group("Box"):
 		#print("The body that entered was the player!")
-		#moving_player = false
-		moving_body = body
+		objects_to_move.push_back(body)
+		print(objects_to_move)
 
 func _on_area_2d_body_exited(body):
-	if body == player:
-		#moving_player = false
-		moving_body = null
+	if body.is_in_group("Player"):
+		if body in objects_to_move:
+			objects_to_move.pop_at(objects_to_move.find(body))
+			print("Removed ", body.name)

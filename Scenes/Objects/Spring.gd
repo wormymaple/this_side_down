@@ -27,7 +27,7 @@ func _process(_delta):
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player") or body.is_in_group("Box"):
-		print(abs(asin(rotation)))
+		#print(abs(asin(rotation)))
 		if body.is_in_group("Player"):
 			body.unmovable = abs(asin(rotation)) > 0.1
 		
