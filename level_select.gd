@@ -66,3 +66,6 @@ func _on_button_11_pressed():
 func _on_button_12_pressed():
 	if GlobalVariables.completed_levels.has(11):
 		_start_level(12)
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")

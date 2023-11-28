@@ -6,8 +6,9 @@ extends Control
 var arrow_position = "top"
 
 func _ready():
-	#if ThemeSongLoop.playing:
-		#ThemeSongLoop.stop()
+	if ThemeSongLoop.playing:
+		ThemeSongLoop.stop()
+		
 	#$"Play Button".grab_focus()
 	
 	#var left_stick = Input.get_axis("left_left_" + playerID, "left_right_" + playerID)

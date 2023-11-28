@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bvpim07i7se1g"]
+[gd_scene load_steps=17 format=3 uid="uid://bvpim07i7se1g"]
 
 [ext_resource type="FontFile" uid="uid://c83jj56dxhixg" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="1_mr8kh"]
 [ext_resource type="Script" path="res://level_select.gd" id="1_wtpsa"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://b3qmyhovj5ti7" path="res://Art/Main Menu/UI_10Button.png" id="12_lxknw"]
 [ext_resource type="Texture2D" uid="uid://r48v1hpfn0fo" path="res://Art/Main Menu/UI_11Button.png" id="13_ec1ca"]
 [ext_resource type="Texture2D" uid="uid://c5540sv32yiay" path="res://Art/Main Menu/UI_12Button.png" id="14_wyhjg"]
+[ext_resource type="Texture2D" uid="uid://bqe772yohpqjc" path="res://Art/Main Menu/UI_Back_Button.png" id="16_y83q0"]
 
 [node name="LevelSelect" type="Control" node_paths=PackedStringArray("lock_list")]
 layout_mode = 3
@@ -46,13 +47,29 @@ theme_override_font_sizes/font_size = 80
 text = "Select Your Level!"
 horizontal_alignment = 1
 
+[node name="Back Button" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 48.0
+offset_right = 446.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 75
+
+[node name="UiBackButton" type="TextureRect" parent="Back Button"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -171.0
+offset_right = 1931.0
+offset_bottom = 1877.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_y83q0")
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 113.0
-offset_bottom = 113.0
+offset_top = 128.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -260,6 +277,7 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
 
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
