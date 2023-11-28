@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var settings_menu = $SettingsMenu
 @onready var main_menu = $MainMenu

@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=8 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://MainmenuLevelScene.gd" id="1_ay4ea"]
-[ext_resource type="FontFile" uid="uid://c83jj56dxhixg" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="2_b7p4q"]
 [ext_resource type="Script" path="res://Play Button.gd" id="2_bkbwr"]
 [ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Main Menu/UI_Play_Button.png" id="3_327wy"]
 [ext_resource type="Texture2D" uid="uid://bc0hl8dqms67q" path="res://Art/logo/logo_thissidedown.png" id="3_khvvf"]
@@ -9,159 +8,86 @@
 [ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Main Menu/UI_Quit_Button.png" id="5_ptnpq"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://settings_menu.tscn" id="7_1s0hk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpcu7"]
-bg_color = Color(0, 0, 0, 0.392157)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_miobr"]
-bg_color = Color(0, 0, 0, 0.490196)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rdxa"]
-bg_color = Color(0, 0, 0, 0.686275)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_ay4ea")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Backround" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.611765, 0.462745, 0.360784, 1)
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 534.0
-offset_top = 71.0
-offset_right = 1955.0
-offset_bottom = 572.0
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_b7p4q")
-theme_override_font_sizes/font_size = 160
-text = "This Side Down
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="LogoThissidedown" type="Sprite2D" parent="."]
-position = Vector2(1389, 404)
-scale = Vector2(0.65, 0.65)
+[node name="LogoThissidedown" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 64.0
+offset_right = 2422.0
+offset_bottom = 1234.0
+scale = Vector2(0.669703, 0.669703)
 texture = ExtResource("3_khvvf")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme_override_constants/margin_left = 500
-theme_override_constants/margin_top = 75
-theme_override_constants/margin_right = 500
-theme_override_constants/margin_bottom = 100
+[node name="Play Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 48.0
+offset_right = 446.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 75
+script = ExtResource("2_bkbwr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 20
-
-[node name="UiPlayButton" type="Sprite2D" parent="."]
-position = Vector2(370, 470)
+[node name="UiPlayButton" type="TextureRect" parent="Play Button"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -171.0
+offset_right = 1931.0
+offset_bottom = 1877.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_327wy")
 
-[node name="MarginContainer2" type="MarginContainer" parent="UiPlayButton"]
-anchors_preset = -1
-anchor_left = 0.192
-anchor_top = 0.285
-anchor_right = 0.824
-anchor_bottom = 0.629
-offset_left = -1063.22
-offset_top = -1033.68
-offset_right = -963.22
-offset_bottom = -1028.19
-size_flags_vertical = 3
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 50
-
-[node name="Play Button" type="Button" parent="UiPlayButton/MarginContainer2"]
-z_index = -1
-layout_mode = 2
+[node name="Options Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 296.0
+offset_right = 446.0
+offset_bottom = 506.0
 theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_miobr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7rdxa")
-script = ExtResource("2_bkbwr")
 
-[node name="UiOptionsButton" type="Sprite2D" parent="."]
-position = Vector2(641, 718)
+[node name="UiOptionsButton" type="TextureRect" parent="Options Button"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -172.0
+offset_right = 1931.0
+offset_bottom = 1876.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_1vgje")
 
-[node name="MarginContainer3" type="MarginContainer" parent="UiOptionsButton"]
-anchors_preset = -1
-anchor_left = 0.207
-anchor_top = 0.297
-anchor_right = 0.823
-anchor_bottom = 0.617
-offset_left = -1090.94
-offset_top = -1061.26
-offset_right = -978.504
-offset_bottom = -1013.62
-size_flags_vertical = 3
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 50
-
-[node name="Options Button" type="Button" parent="UiOptionsButton/MarginContainer3"]
-z_index = -1
+[node name="Quit Button" type="Button" parent="."]
 layout_mode = 2
+offset_left = 60.0
+offset_top = 544.0
+offset_right = 450.0
+offset_bottom = 754.0
 theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_miobr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7rdxa")
 
-[node name="UiQuitButton" type="Sprite2D" parent="."]
-position = Vector2(913, 964)
+[node name="UiQuitButton" type="TextureRect" parent="Quit Button"]
+layout_mode = 0
+offset_left = -120.0
+offset_top = -172.0
+offset_right = 1928.0
+offset_bottom = 1876.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_ptnpq")
 
-[node name="MarginContainer4" type="MarginContainer" parent="UiQuitButton"]
-anchors_preset = -1
-anchor_left = 0.199
-anchor_top = 0.288
-anchor_right = 0.83
-anchor_bottom = 0.622
-offset_left = -1100.55
-offset_top = -1056.82
-offset_right = -989.84
-offset_bottom = -1010.86
-size_flags_vertical = 3
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_right = 50
-
-[node name="Quit Button" type="Button" parent="UiQuitButton/MarginContainer4"]
-z_index = -1
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-theme_override_styles/normal = SubResource("StyleBoxFlat_cpcu7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_miobr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7rdxa")
-
 [node name="SettingsMenu" parent="." instance=ExtResource("7_1s0hk")]
 visible = false
+layout_mode = 1
 offset_left = 150.0
 offset_top = 100.0
 offset_right = 1750.0
 offset_bottom = 1000.0
 
-[connection signal="pressed" from="UiPlayButton/MarginContainer2/Play Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="UiOptionsButton/MarginContainer3/Options Button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="UiQuitButton/MarginContainer4/Quit Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
