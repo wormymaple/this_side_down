@@ -1,7 +1,7 @@
 extends AudioStreamPlayer2D
 
 var intro = true
-var loop = false
+var warehouse = false
 var outro = false
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +18,7 @@ func _on_finished():
 		stream = load("res://Audio/BoxInSocksLoop.wav")
 		play()
 		intro = false
-		loop = true
-	elif loop == true:
+		warehouse = true
+	elif warehouse == true:
+		stream = load("res://Audio/BoxInSocksLoop.wav")
 		play()
