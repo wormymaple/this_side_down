@@ -189,6 +189,16 @@ right_right_p4={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":3,"axis":2,"axis_value":1.0,"script":null)
 ]
 }
+left_up_p1={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+left_down_p1={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+]
+}
 
 [physics]
 
