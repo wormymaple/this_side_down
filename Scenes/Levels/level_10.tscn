@@ -13,15 +13,15 @@
 script = ExtResource("1_w5nf4")
 
 [node name="SquareBox1" parent="." instance=ExtResource("3_vocux")]
-position = Vector2(-400, 391)
+position = Vector2(633, 546)
 rotation = 6.27737
 
 [node name="SquareBox2" parent="." instance=ExtResource("3_vocux")]
-position = Vector2(-878, -1543)
+position = Vector2(562, 721)
 rotation = 6.27737
 
 [node name="CircleBox" parent="." instance=ExtResource("3_vocux")]
-position = Vector2(-1534, -49)
+position = Vector2(770, 732)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("4_8r61f")]
@@ -53,8 +53,8 @@ scale = Vector2(0.160007, 4.28)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("8_j0wbu")]
 position = Vector2(3293, 711)
-scale = Vector2(0.35, 0.35)
+scale = Vector2(4, 4)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("8_j0wbu")]
 position = Vector2(2953, 69.0001)
-scale = Vector2(0.35, 0.35)
+scale = Vector2(4, 4)
