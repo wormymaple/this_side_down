@@ -1,7 +1,7 @@
 extends Control
 
 @onready var settings_menu = $SettingsMenu
-@onready var main_menu = $MainMenu
+#@onready var main_menu = $MainMenu
 
 func _ready():
 	if !ThemeSongLoop.playing:
