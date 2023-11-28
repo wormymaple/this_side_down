@@ -20,6 +20,7 @@ var wiggle_current_time = 0.0
 @export var playerID: String
 @export var hand_path: NodePath
 @export var arm_path: NodePath
+@export var hand_sprite: Sprite2D
 @onready var hand = get_node(hand_path)
 @onready var arm = get_node(arm_path)
 var target_body: Node2D
@@ -27,6 +28,9 @@ var grabbed_body: Node2D
 var on_ground = false
 var grab_did_collide = false
 var unmovable = false
+
+@export var holding_hand: Texture2D
+@export var empty_hand: Texture2D
 
 @export var box_pickup: AudioStreamPlayer
 @export var box_drop: AudioStreamPlayer
@@ -54,6 +58,8 @@ func _physics_process(delta):
 		hand.position -= hand.position * arm_move_speed * delta
 		
 	arm.set_point_position(1, hand.position)
+	var dir_to_hand = hand.position.angle()
+	hand_sprite.rotation = dir_to_hand + (PI / 2)
 	
 	if grabbed_body != null:
 		var dir = hand.global_position - grabbed_body.global_position
@@ -61,6 +67,8 @@ func _physics_process(delta):
 			drop_object()
 		else: 
 			grabbed_body.linear_velocity = dir * grab_speed
+	else:
+		hand_sprite.rotation += (PI / 7)
 	
 	if get_meta("grabbed") == true or unmovable:
 		return
@@ -98,6 +106,7 @@ func _input(event):
 			grabbed_body.set_meta("grabbed", true)
 			grab_did_collide = grabbed_body.get_collision_mask_value(2)
 			grabbed_body.set_collision_mask_value(2, false)
+			hand_sprite.texture = holding_hand
 			
 			box_pickup.play()
 		elif grabbed_body != null:
@@ -115,6 +124,7 @@ func drop_object():
 	grabbed_body.set_collision_mask_value(2, grab_did_collide)
 			
 	grabbed_body = null
+	hand_sprite.texture = empty_hand
 	
 	box_drop.play()
 
