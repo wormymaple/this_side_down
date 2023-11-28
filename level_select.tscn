@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=3 uid="uid://bvpim07i7se1g"]
+[gd_scene load_steps=16 format=3 uid="uid://bvpim07i7se1g"]
 
-[ext_resource type="Script" path="res://Button.gd" id="1_b3r14"]
 [ext_resource type="FontFile" uid="uid://c83jj56dxhixg" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="1_mr8kh"]
 [ext_resource type="Script" path="res://level_select.gd" id="1_wtpsa"]
 [ext_resource type="Texture2D" uid="uid://cnb0v6ukb3edh" path="res://Art/Main Menu/UI_1Button.png" id="2_ijqul"]
@@ -17,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://r48v1hpfn0fo" path="res://Art/Main Menu/UI_11Button.png" id="13_ec1ca"]
 [ext_resource type="Texture2D" uid="uid://c5540sv32yiay" path="res://Art/Main Menu/UI_12Button.png" id="14_wyhjg"]
 
-[node name="LevelSelect" type="Control"]
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("lock_list")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wtpsa")
+lock_list = [NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button2/Ui2Button/1"), NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button3/Ui3Button/2"), NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button4/Ui4Button/3"), NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button5/Ui5Button/4"), NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button6/Ui6Button/5"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button7/Ui7Button/6"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button8/Ui8Button/7"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button9/Ui9Button/8"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button10/Ui10Button/9"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button11/Ui11Button/10"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button12/Ui12Button/11")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -37,7 +37,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 137.0
+offset_top = 58.0
+offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_mr8kh")
@@ -50,6 +51,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 113.0
+offset_bottom = 113.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -68,7 +71,6 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "1"
-script = ExtResource("1_b3r14")
 
 [node name="Ui1Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 position = Vector2(125, 127)
@@ -86,7 +88,7 @@ position = Vector2(126, 125)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_0kuay")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button2/Ui2Button"]
+[node name="1" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button2/Ui2Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
@@ -102,7 +104,7 @@ position = Vector2(127, 124)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_58krm")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button3/Ui3Button"]
+[node name="2" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button3/Ui3Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
@@ -118,7 +120,7 @@ position = Vector2(126, 125)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_yx3ve")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button4/Ui4Button"]
+[node name="3" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button4/Ui4Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
@@ -134,7 +136,7 @@ position = Vector2(126, 125)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_mkg41")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button5/Ui5Button"]
+[node name="4" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button5/Ui5Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
@@ -150,7 +152,7 @@ position = Vector2(127, 126)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_voema")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button6/Ui6Button"]
+[node name="5" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button6/Ui6Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
@@ -160,107 +162,113 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button7" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "7"
 
-[node name="Ui7Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button"]
+[node name="Ui7Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button7"]
 position = Vector2(126, 129)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_2h4oc")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button/Ui7Button"]
+[node name="6" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button7/Ui7Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button8" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "8
 "
 
-[node name="Ui8Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button2"]
+[node name="Ui8Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button8"]
 position = Vector2(123, 128)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_aicim")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button2/Ui8Button"]
+[node name="7" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button8/Ui8Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button9" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "9
 "
 
-[node name="Ui9Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button3"]
+[node name="Ui9Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button9"]
 position = Vector2(124, 127)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("11_uerib")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button3/Ui9Button"]
+[node name="8" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button9/Ui9Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button4" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button10" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "10"
 
-[node name="Ui10Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button4"]
+[node name="Ui10Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button10"]
 position = Vector2(126, 124)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("12_lxknw")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button4/Ui10Button"]
+[node name="9" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button10/Ui10Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button5" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button11" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "11"
 
-[node name="Ui11Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button5"]
+[node name="Ui11Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button11"]
 position = Vector2(126, 123)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("13_ec1ca")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button5/Ui11Button"]
+[node name="10" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button11/Ui11Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button6" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button12" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "12"
 
-[node name="Ui12Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button6"]
+[node name="Ui12Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button12"]
 position = Vector2(123, 122)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("14_wyhjg")
 
-[node name="UiLockIcon" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button6/Ui12Button"]
+[node name="11" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button12/Ui12Button"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tvo2t")
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button2" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_2_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button3" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_3_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button4" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_4_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button5" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_5_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button6" to="CenterContainer/VBoxContainer/HBoxContainer/Button" method="_on_button_6_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button12" to="." method="_on_button_12_pressed"]
