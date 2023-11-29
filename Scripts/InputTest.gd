@@ -35,7 +35,7 @@ var unmovable = false
 @export var box_pickup: AudioStreamPlayer
 @export var box_drop: AudioStreamPlayer
 @export var jump: AudioStreamPlayer
-
+@export var footsteps: AudioStreamPlayer
 
 var body_state: PhysicsDirectBodyState2D
 
