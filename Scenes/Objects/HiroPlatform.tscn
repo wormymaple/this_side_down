@@ -15,6 +15,7 @@ size = Vector2(102.735, 22.4335)
 scale = Vector2(1.57687, 1.36727)
 curve = SubResource("Curve2D_llgmf")
 script = ExtResource("1_vb141")
+speed = null
 sprite = ExtResource("2_v0bgm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

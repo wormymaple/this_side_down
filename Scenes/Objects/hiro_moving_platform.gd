@@ -1,8 +1,9 @@
 extends Path2D
 
+enum States {ONEWAY, LOOPING, STOP}
+@export var path_behavior: States
 @export var player = Node2D
 @export var speed = 0.0
-@export var path_behavior = "Stop"
 
 #@onready var player = get_tree().get_nodes_in_group("Player")
 # The path behavior allows for 3 different options:
@@ -28,17 +29,7 @@ func _physics_process(_delta):
 	
 	# This code is commented out because one way collision does all of this automatically
 	
-	#if name == "Platform":
-	#	print("Player pos: ", int(player.position.y), ". Platform pos: ", int(position.y + $Collision.position.y))
-	#if player.position.y < $Collision.position.y + position.y - 30: # If player y is smaller than the platform's y, the player is above the platform
-#		$Collision.set_collision_layer_value(2, true) # -55
-#		$Area2D.set_collision_mask_value(2, true)
-#		if name == "Platform":
-#			print("You are above platform #1")
-#	else:
-#		$Collision.set_collision_layer_value(2, false)
-#		$Area2D.set_collision_mask_value(2, false)
-		#print("You are below the platform")
+	
 	
 	if path_behavior == "Stop": # The platform does nothing
 		pass

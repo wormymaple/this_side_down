@@ -1,7 +1,12 @@
 extends Control
 
 @onready var settings_menu = $SettingsMenu
-var arrow_position = "top"
+
+enum Test {TEST1, TEST2, TEST3}
+@export var test: Test
+var positions = [477, 721, 975]
+var menu_funcs = ['_on_play_button_pressed', '_on_options_button_pressed', '_on_quit_button_pressed']
+@export var arrow_position: int
 
 func _ready():
 	#if ThemeSongLoop.playing:
@@ -11,47 +16,27 @@ func _ready():
 	#var left_stick = Input.get_axis("left_left_" + playerID, "left_right_" + playerID)
 	#if left_stick != 0:
 		#linear_velocity.x = left_stick * move_speed
-	$Arrow.hide()
+	#$Arrow.hide()
+	pass
 
 func _process(delta):
 	if Input.is_action_just_pressed("left_up_p1"):
-		print("you pressed up")
-		if $Arrow.visible == false:
-			$Arrow.show()
-			return
-		else:
-			if arrow_position == "top": # is 477
-				return
-			if arrow_position == "middle": # is 721
-				$Arrow.position.y = 477 
-				arrow_position = "top"
-			if arrow_position == "bottom": # is 975
-				$Arrow.position.y = 721
-				arrow_position = "middle"
+		move_arrow(-1)
 	if Input.is_action_just_pressed("left_down_p1"):
-		print("You pressed down")
-		if $Arrow.visible == false:
-			$Arrow.show()
-			return
-		else:
-			if arrow_position == "top": # is 477
-				$Arrow.position.y = 721
-				arrow_position = "middle"
-				return
-			if arrow_position == "middle":
-				$Arrow.position.y = 975
-				arrow_position = "bottom"
-			if arrow_position == "bottom":
-				return
+		move_arrow(1)
 	
-	if Input.is_action_just_pressed("left_trigger_p1"): # left trigger will be confirm
-		if arrow_position == "top":
-			get_tree().change_scene_to_file("res://level_select.tscn")
-		elif arrow_position == "middle":
-			settings_menu.show()
-		elif arrow_position == "bottom":
-			get_tree().quit()
-
+	if Input.is_action_just_pressed("confirm"): # left trigger will be confirm
+		call(menu_funcs[arrow_position])
+	
+	
+func move_arrow(dir: int):
+	arrow_position += dir
+	if arrow_position > 2:
+		arrow_position = 0
+	elif arrow_position < 0:
+		arrow_position = 2
+	
+	$Arrow.position.y = positions[arrow_position]
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://level_select.tscn")
