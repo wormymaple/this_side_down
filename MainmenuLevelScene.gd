@@ -25,11 +25,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("left_down_p1"):
 		move_arrow(1)
 	
-	if Input.is_action_just_pressed("confirm"):
+	if Input.is_action_just_pressed("confirm"): # left trigger will be confirm
 		call(menu_funcs[arrow_position])
 	
-	if Input.is_action_just_pressed("cancel") and $SettingsMenu.visible:
-		$SettingsMenu.hide()
 	
 func move_arrow(dir: int):
 	arrow_position += dir
