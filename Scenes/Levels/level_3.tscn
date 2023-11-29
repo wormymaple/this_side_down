@@ -1,65 +1,76 @@
-[gd_scene load_steps=11 format=3 uid="uid://r0yq03eqwlcd"]
+[gd_scene load_steps=14 format=3 uid="uid://r0yq03eqwlcd"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_3.gd" id="1_3f1r8"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_dhfbf"]
+[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="2_dmm6o"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="2_i1512"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="3_jyb7d"]
-[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="4_2ogfo"]
-[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="4_fwxs1"]
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="5_a4ndb"]
-[ext_resource type="PackedScene" uid="uid://43ip1gasv7wc" path="res://Scenes/Objects/player.tscn" id="7_l5tl5"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="3_mv7h8"]
+[ext_resource type="PackedScene" uid="uid://cc5nqimy6p2p7" path="res://Scenes/boxlarge.tscn" id="4_0lor1"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="8_6vpom"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="8_xy6mt"]
 [ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="9_5ant1"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="9_e6i4h"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="10_i46cw"]
 
-[node name="Level3" type="Node2D"]
-script = ExtResource("1_3f1r8")
+[sub_resource type="Curve2D" id="Curve2D_c76w3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, -113, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
 
-[node name="Ramp2" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(1794, 236)
-scale = Vector2(-0.4, 0.4)
+[node name="Level3" type="Node2D"]
+position = Vector2(12, 305)
+script = ExtResource("1_3f1r8")
+landing_zone = NodePath("Platform/PathFollow2D/LandingZone")
+
+[node name="Camera" parent="." instance=ExtResource("2_i1512")]
+zoom = Vector2(1.5, 1.5)
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(410, 719)
+script = ExtResource("2_dmm6o")
+player_scene = ExtResource("3_mv7h8")
+camera = NodePath("../Camera")
+colors = Array[Color]([Color(1, 0, 1, 1)])
+
+[node name="Box" parent="." instance=ExtResource("4_0lor1")]
+position = Vector2(754, 591)
 
 [node name="2" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(964, 1085)
 scale = Vector2(1.68323, 1)
 
 [node name="3" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(1391, 36)
-scale = Vector2(0.0832358, 1.72)
+position = Vector2(1576, 273)
+scale = Vector2(0.083, 1)
 
 [node name="4" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(747, -281)
+position = Vector2(1077, 109)
 scale = Vector2(0.603232, 0.319999)
 
-[node name="Squarebox" parent="." instance=ExtResource("4_fwxs1")]
-position = Vector2(976, 779)
-rotation = 3.14025
-
 [node name="Ramp" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(2245, 723)
+position = Vector2(2240, 719)
 scale = Vector2(0.4, 0.4)
+
+[node name="Ramp2" parent="." instance=ExtResource("3_jyb7d")]
+position = Vector2(1983, 350)
+rotation = 3.14159
+scale = Vector2(0.4, -0.4)
 
 [node name="Ramp3" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(2244, -184)
+position = Vector2(2240, -19)
 scale = Vector2(0.4, 0.4)
-
-[node name="MovingPlatform" parent="." instance=ExtResource("4_2ogfo")]
-position = Vector2(-289, 133)
-scale = Vector2(0.35, 0.35)
-speed = 2
-
-[node name="LoadingZone" parent="MovingPlatform" instance=ExtResource("5_a4ndb")]
-position = Vector2(-5.71411, -317.143)
-scale = Vector2(2.5, 2.5)
-
-[node name="Player" parent="." instance=ExtResource("7_l5tl5")]
-position = Vector2(875, -598)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("8_6vpom")]
 position = Vector2(-305, -1294)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("9_5ant1")]
+scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 
 [node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("10_i46cw")]
+position = Vector2(8, 174.667)
 
 [node name="CanvasModulate" parent="." instance=ExtResource("10_i46cw")]
 position = Vector2(-2116, 380)
@@ -76,5 +87,21 @@ polygon = PackedVector2Array(2576, -700, 2578, 909, -654, 910, -654, -700)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
 polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2828, -875, -680, -909, -654, -700, 2576, -700, 2578, 848, -654, 849, -654, -700)
 
-[connection signal="body_entered" from="MovingPlatform/LoadingZone" to="." method="_on_loading_zone_body_entered"]
-[connection signal="body_exited" from="MovingPlatform/LoadingZone" to="." method="_on_loading_zone_body_exited"]
+[node name="Platform" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_xy6mt")]
+position = Vector2(125, 300)
+scale = Vector2(4, 3.467)
+curve = SubResource("Curve2D_c76w3")
+player = NodePath("..")
+speed = 0.2
+path_behavior = "One Way"
+
+[node name="PathFollow2D" parent="Platform" index="0"]
+rotation = 1.5708
+
+[node name="LandingZone" parent="Platform/PathFollow2D" index="0" instance=ExtResource("9_e6i4h")]
+position = Vector2(-15, 0.25)
+rotation = -1.5708
+scale = Vector2(0.125, 0.144217)
+handler_script = NodePath("../../..")
+
+[editable path="Platform"]
