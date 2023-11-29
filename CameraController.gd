@@ -11,6 +11,7 @@ var players: Array
 @export var no_controller_button: NodePath
 @onready var button = get_node(no_controller_button)
 @onready var no_controller = get_node(no_controller_path)
+@export var background: Polygon2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,9 +24,16 @@ func _process(delta):
 		if !no_controller.visible:
 			no_controller.visible = true
 			button.visible = true
-			#new_button.position.x = position.x + 500
-			#new_button.position.y = position.y - 500
+			background.visible = true
 		return
+	
+	if Input.is_action_just_pressed("cancel"):
+		if !button.visible:
+			button.visible = true
+			background.visible = true
+	
+	if Input.is_action_just_pressed("confirm") and button.visible:
+		button._on_button_down()
 	
 	var pos = Vector2.ZERO;
 	for player in players:
