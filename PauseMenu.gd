@@ -1,22 +1,20 @@
 extends Control
 
-var is_paused = false:
-	set(value):
-		is_paused = value
-		get_tree().paused = is_paused
-		visible = is_paused
-
-func set_is_paused(value):
-	is_paused = value
-	get_tree().paused = is_paused
-
-func _unhandled_input(event):
-	if event.is_action_pressed("pause"):
-		self.is_paused = !is_paused
+@onready var level_1 = $"../../"
+@onready var settings_menu = $SettingsMenu
 
 func _on_resume_btn_pressed():
-	self.is_paused = false
-
+	level_1.pauseMenu()
 
 func _on_button_4_pressed():
 	get_tree().quit()
+
+
+
+
+func _on_button_3_pressed():
+	get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")
+
+
+func _on_button_2_pressed():
+	settings_menu.show()

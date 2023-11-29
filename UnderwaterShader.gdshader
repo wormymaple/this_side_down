@@ -8,7 +8,8 @@ uniform float timeMultiplier;
 
 void fragment() {
 	vec2 noise = vec2(texture(noise0, UV + TIME * timeMultiplier).x, texture(noise1, UV + TIME * timeMultiplier).x);
-    vec3 col = texture(screen_texture, SCREEN_UV + noise * intensity).xyz;
+	vec3 sample = texture(screen_texture, SCREEN_UV + noise * intensity).xyz;
+    vec4 col = vec4(sample.r, sample.g, sample.b, 1);
 
-    COLOR.xyz = col;
+    COLOR.rgba = col;
 }
