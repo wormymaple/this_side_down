@@ -5,6 +5,11 @@ var maxRotation = 3.3
 var box1loaded = false
 var box2loaded = false
 
+func _ready():
+	ThemeSongLoop.stop()
+	ThemeSongLoop.stream = load("res://Audio/.wav")
+	ThemeSongLoop.play()
+	
 func _process(delta):
 	if $TriangleboxUp.rotation > minRotation and $TriangleboxUp.rotation < maxRotation:
 		if box1loaded == true:

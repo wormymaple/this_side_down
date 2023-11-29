@@ -2,6 +2,11 @@ extends Node2D
 
 @export var landing_zone: NodePath
 
+func _ready():
+	ThemeSongLoop.stop()
+	ThemeSongLoop.stream = load("res://Audio/.wav")
+	ThemeSongLoop.play()
+	
 func _on_zone_body_body_entered(body):
 	if body.is_in_group("Box"):
 		if body.get_meta("grabbed"):
