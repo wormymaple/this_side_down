@@ -1,61 +1,71 @@
 extends Control
 
-var focus_position_x = "far_left"
+@export var lock_list: Array[Sprite2D]
 
-enum Pos {TOP, MID, BOTTOM}
-var positions = [477, 721, 975]
-@export var arrow_position := Pos.TOP
-
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	#if ThemeSongLoop.playing:
 		#ThemeSongLoop.stop()
+	for lock in lock_list:
+		if GlobalVariables.completed_levels.has(str(lock.name) as int):
+			lock.queue_free()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
 	pass
 
-func _process(_delta):
-	pass
+func _start_level(level):
+	get_tree().change_scene_to_file("res://Scenes/Levels/level_" + str(level) + ".tscn")
+	
+func _nope():
+	print("uh uh uh, you didnt say the magic word")
 
-func _on_button_1_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
-
+func _on_pressed():
+	_start_level(1)
 
 func _on_button_2_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")
-
+	if GlobalVariables.completed_levels.has(1):
+		_start_level(2)
 
 func _on_button_3_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_3.tscn")
-
+	if GlobalVariables.completed_levels.has(2):
+		_start_level(3)
 
 func _on_button_4_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_4.tscn")
-
+	if GlobalVariables.completed_levels.has(3):
+		_start_level(4)
 
 func _on_button_5_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_5.tscn")
-
+	if GlobalVariables.completed_levels.has(4):
+		_start_level(5)
 
 func _on_button_6_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_6.tscn")
-
+	if GlobalVariables.completed_levels.has(5):
+		_start_level(6)
 
 func _on_button_7_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_7.tscn")
-
+	if GlobalVariables.completed_levels.has(6):
+		_start_level(7)
 
 func _on_button_8_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_8.tscn")
-
+	if GlobalVariables.completed_levels.has(7):
+		_start_level(8)
 
 func _on_button_9_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_9.tscn")
+	if GlobalVariables.completed_levels.has(8):
+		_start_level(9)
 
 func _on_button_10_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_10.tscn")
-
+	if GlobalVariables.completed_levels.has(9):
+		_start_level(10)
 
 func _on_button_11_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_11.tscn")
-
+	if GlobalVariables.completed_levels.has(10):
+		_start_level(11)
 
 func _on_button_12_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_12.tscn")
+	if GlobalVariables.completed_levels.has(11):
+		_start_level(12)
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")

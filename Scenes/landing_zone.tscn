@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7gc0sday64y6"]
 
 [ext_resource type="Texture2D" uid="uid://faj1vrwnl6ct" path="res://Art/First Level/UI_landingpad.png" id="1_1s0ao"]
-[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://Sprites/TempBox.png" id="2_1se70"]
+[ext_resource type="Texture2D" uid="uid://dwc5a2upd5v3c" path="res://Sprites/TempBox.png" id="2_1se70"]
 [ext_resource type="Script" path="res://Scripts/landing_zone.gd" id="2_53gdw"]
 [ext_resource type="Script" path="res://Scripts/AnimatePosition.gd" id="3_5c5mp"]
-[ext_resource type="Texture2D" uid="uid://dj2l1ydocafm6" path="res://Art/StandardParticle.png" id="4_dbcuk"]
+[ext_resource type="Texture2D" uid="uid://cx8mwyk0tq0vd" path="res://Art/StandardParticle.png" id="4_dbcuk"]
 
 [sub_resource type="Curve" id="Curve_edar3"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494845, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -74,3 +74,4 @@ trail_enabled = true
 trail_lifetime = 0.1
 
 [connection signal="body_entered" from="ZoneBody" to="." method="body_collide"]
+[connection signal="body_exited" from="ZoneBody" to="." method="body_exit"]
