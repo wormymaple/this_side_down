@@ -2,6 +2,8 @@ extends RigidBody2D
 
 @export var move_speed: float
 @export var jump_speed: float
+@export var water_jump_coefficient: float
+var is_in_water: bool
 @export var arm_move_speed: float
 @export var grab_speed: float
 @export var arm_length: float
@@ -92,6 +94,8 @@ func _input(event):
 	# jump
 	if event.is_action_pressed("left_trigger_" + playerID) && on_ground:
 		linear_velocity.y = -jump_speed
+		if is_in_water:
+			linear_velocity.y *= water_jump_coefficient
 		jump.play()
 		
 	# grab

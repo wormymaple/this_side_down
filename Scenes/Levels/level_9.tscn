@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfume0p3k4a7x"]
+[gd_scene load_steps=16 format=3 uid="uid://bfume0p3k4a7x"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_9.gd" id="1_ulhtr"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="2_etqoo"]
@@ -11,16 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="10_gnpag"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="10_q0eyp"]
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="11_cmrej"]
+[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="12_42hc6"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="13_avyxm"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="14_wbbsx"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="15_iu3jp"]
 
 [node name="level_9" type="Node2D"]
 script = ExtResource("1_ulhtr")
 
 [node name="SquareBox1" parent="." instance=ExtResource("3_ywc5b")]
-position = Vector2(-370, 732)
+position = Vector2(-371, 731)
 rotation = 6.27737
 
 [node name="SquareBox2" parent="." instance=ExtResource("3_ywc5b")]
-position = Vector2(2086, -841)
+position = Vector2(2085, -842)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("4_jpuag")]
@@ -61,3 +65,20 @@ scale = Vector2(0.35, 0.35)
 [node name="CanvasModulate" parent="ParallaxBackground2" instance=ExtResource("6_tammo")]
 
 [node name="CanvasModulate" parent="." instance=ExtResource("6_tammo")]
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(1602, 771)
+script = ExtResource("12_42hc6")
+player_scene = ExtResource("13_avyxm")
+camera = NodePath("../Camera")
+colors = Array[Color]([Color(1, 0, 1, 1)])
+damp = 2.0
+gravity_scale = 0.6
+is_in_water = true
+
+[node name="Camera" parent="." instance=ExtResource("14_wbbsx")]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Box" parent="." instance=ExtResource("15_iu3jp")]
+position = Vector2(390, 610)
+linear_damp = 10.0
