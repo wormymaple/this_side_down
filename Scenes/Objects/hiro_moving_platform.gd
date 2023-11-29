@@ -1,50 +1,42 @@
 extends Path2D
 
-enum States {ONEWAY, LOOPING, STOP}
-@export var path_behavior: States
-@export var player = Node2D
+enum State {ONEWAY, LOOPING, STOP, ONEWAYBACK}
+var objects_to_move = []
+var movement = 0.0
 @export var speed = 0.0
+@onready var previous_position = $PathFollow2D.position
+@export var sprite: Texture
 
-#@onready var player = get_tree().get_nodes_in_group("Player")
+@export var path_behavior: State
 # The path behavior allows for 3 different options:
-
 # One Way, which makes the platform turn around when it reaches the end
 # Looping, which makes the platform loop. Make sure the loop is complete
 # Stop, which will make the platform not move at all.
-
-@export var sprite: Texture
-
-var objects_to_move = []
-@onready var previous_position = $PathFollow2D.position
-
-var movement = 0.0
+# One Way Back is just One Way but will move in reverse.
 
 func _ready():
 	$Sprite2D.texture = sprite
 
 func _physics_process(_delta):
-	$Collision.position = $PathFollow2D.position
+	$Collision.position = $PathFollow2D.position # I set the position instead of making these a child of pathFollow2D because PathFollow2D has unwanted rotations
 	$Sprite2D.position = $PathFollow2D.position
 	$Area2D.position = $PathFollow2D.position
 	
-	# This code is commented out because one way collision does all of this automatically
 	
-	
-	
-	if path_behavior == "Stop": # The platform does nothing
-		pass
-		#return
-	elif path_behavior == "One Way":
+	if path_behavior == State.STOP: # The platform does nothing
+		#pass
+		return
+	elif path_behavior == State.ONEWAY:
 		if $PathFollow2D.progress_ratio < 0.99:
 			$PathFollow2D.progress += speed
 		else:
-			path_behavior = "One Way Back" # Looping reuses the path_behavior variable to know when the platform needs to reverse
-	elif path_behavior == "One Way Back":
+			path_behavior = State.ONEWAYBACK # Looping reuses the path_behavior variable to know when the platform needs to reverse
+	elif path_behavior == State.ONEWAYBACK:
 		if $PathFollow2D.progress_ratio > 0.01:
 			$PathFollow2D.progress -= speed
 		else:
-			path_behavior = "One Way"
-	elif path_behavior == "Looping":
+			path_behavior = State.ONEWAY
+	elif path_behavior == State.LOOPING:
 		$PathFollow2D.progress += speed
 	
 	
@@ -62,12 +54,12 @@ func _physics_process(_delta):
 		if object.is_in_group("Player"):
 			if object.on_ground:
 				
-				object.position += movement * 1.55
+				object.position += movement
 		if object.is_in_group("Box"):
 			#print("global pos: ", object.global_position, ". pos: ", object.position)
 			#print("there is an object in box group!")
 			#object.global_position = $Collision.global_position + Vector2(0, -30)
-			object.position += movement * 1.55
+			object.position += movement
 			#object.position.x += 10
 	
 	#if object != null and object.on_ground:

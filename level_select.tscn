@@ -1,13 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://bvpim07i7se1g"]
+[gd_scene load_steps=19 format=3 uid="uid://bvpim07i7se1g"]
 
-[ext_resource type="FontFile" uid="uid://c83jj56dxhixg" path="res://font/Nunito/Nunito-VariableFont_wght.ttf" id="1_mr8kh"]
 [ext_resource type="Script" path="res://level_select.gd" id="1_wtpsa"]
 [ext_resource type="Texture2D" uid="uid://cnb0v6ukb3edh" path="res://Art/Main Menu/UI_1Button.png" id="2_ijqul"]
+[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://font/Nunito/static/Nunito-Medium.ttf" id="2_un2fg"]
 [ext_resource type="Texture2D" uid="uid://b3situl82j18i" path="res://Art/Main Menu/UI_2Button.png" id="3_0kuay"]
 [ext_resource type="Texture2D" uid="uid://1rmxt65vgskl" path="res://Art/Main Menu/UI_3Button.png" id="4_58krm"]
+[ext_resource type="Texture2D" uid="uid://cjlgso42caneh" path="res://Sprites/LevelSelectHighlighter.png" id="4_e0w72"]
 [ext_resource type="Texture2D" uid="uid://c5mqxi1nledwx" path="res://Art/Main Menu/UI_4Button.png" id="5_yx3ve"]
 [ext_resource type="Texture2D" uid="uid://cdejbpm10k31g" path="res://Art/Main Menu/UI_5Button.png" id="6_mkg41"]
-[ext_resource type="Texture2D" uid="uid://bhjhl1b6py14c" path="res://Art/Main Menu/UI_Lock_Icon.PNG" id="6_tvo2t"]
+[ext_resource type="Texture2D" uid="uid://bnsk8d1fqaq28" path="res://Art/Main Menu/UI_Lock_Icon.PNG" id="6_tvo2t"]
 [ext_resource type="Texture2D" uid="uid://bait04mgixe36" path="res://Art/Main Menu/UI_6Button.png" id="8_voema"]
 [ext_resource type="Texture2D" uid="uid://b0htklssgl4t0" path="res://Art/Main Menu/UI_7Button.png" id="9_2h4oc"]
 [ext_resource type="Texture2D" uid="uid://g7j8awtgc4c3" path="res://Art/Main Menu/UI_8Button.png" id="10_aicim"]
@@ -15,9 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://b3qmyhovj5ti7" path="res://Art/Main Menu/UI_10Button.png" id="12_lxknw"]
 [ext_resource type="Texture2D" uid="uid://r48v1hpfn0fo" path="res://Art/Main Menu/UI_11Button.png" id="13_ec1ca"]
 [ext_resource type="Texture2D" uid="uid://c5540sv32yiay" path="res://Art/Main Menu/UI_12Button.png" id="14_wyhjg"]
-[ext_resource type="Texture2D" uid="uid://bqe772yohpqjc" path="res://Art/Main Menu/UI_Back_Button.png" id="16_y83q0"]
+[ext_resource type="Texture2D" uid="uid://bv7knga8381vs" path="res://Art/Main Menu/UI_Back_Button.png" id="16_y83q0"]
 
-[node name="LevelSelect" type="Control" node_paths=PackedStringArray("lock_list")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or8un"]
+bg_color = Color(0, 0, 0, 0.541176)
+
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("lock_list", "select_rect")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,29 +29,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wtpsa")
-lock_list = [NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button2/Ui2Button/1"), NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button3/Ui3Button/2"), NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button4/Ui4Button/3"), NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button5/Ui5Button/4"), NodePath("CenterContainer/VBoxContainer/HBoxContainer/Button6/Ui6Button/5"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button7/Ui7Button/6"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button8/Ui8Button/7"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button9/Ui9Button/8"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button10/Ui10Button/9"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button11/Ui11Button/10"), NodePath("CenterContainer/VBoxContainer/HBoxContainer2/Button12/Ui12Button/11")]
+lock_list = [NodePath("CenterContainer/GridContainer/Button2/Ui2Button/1"), NodePath("CenterContainer/GridContainer/Button3/Ui3Button/2"), NodePath("CenterContainer/GridContainer/Button4/Ui4Button/3"), NodePath("CenterContainer/GridContainer/Button5/Ui5Button/4"), NodePath("CenterContainer/GridContainer/Button6/Ui6Button/5"), NodePath("CenterContainer/GridContainer/Button7/Ui7Button/6"), NodePath("CenterContainer/GridContainer/Button8/Ui8Button/7"), NodePath("CenterContainer/GridContainer/Button9/Ui9Button/8"), NodePath("CenterContainer/GridContainer/Button10/Ui10Button/9"), NodePath("CenterContainer/GridContainer/Button11/Ui11Button/10"), NodePath("CenterContainer/GridContainer/Button12/Ui12Button/11")]
+select_rect = NodePath("Selector")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Backround" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1927.0
-offset_bottom = 1074.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.611765, 0.462745, 0.360784, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="SelectYourLevel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 58.0
-offset_bottom = -79.0
+offset_top = 153.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_mr8kh")
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_un2fg")
 theme_override_font_sizes/font_size = 80
 text = "Select Your Level!"
 horizontal_alignment = 1
 
 [node name="Back Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 48.0
 offset_right = 446.0
@@ -63,6 +72,16 @@ offset_bottom = 1877.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("16_y83q0")
 
+[node name="Selector" type="TextureRect" parent="."]
+modulate = Color(0.878431, 0.635294, 0.458824, 1)
+layout_mode = 0
+offset_left = 44.0001
+offset_top = 328.0
+offset_right = 244.0
+offset_bottom = 528.0
+scale = Vector2(1.94046, 1.94046)
+texture = ExtResource("4_e0w72")
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -73,220 +92,337 @@ offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-clip_contents = true
+[node name="Button" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "1"
 
-[node name="Ui1Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-position = Vector2(125, 127)
-scale = Vector2(0.3, 0.3)
+[node name="Ui1Button" type="TextureRect" parent="CenterContainer/GridContainer/Button"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("2_ijqul")
 
-[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Button2" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "2"
 
-[node name="Ui2Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button2"]
-position = Vector2(126, 125)
-scale = Vector2(0.3, 0.3)
+[node name="Ui2Button" type="TextureRect" parent="CenterContainer/GridContainer/Button2"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("3_0kuay")
 
-[node name="1" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button2/Ui2Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button2/Ui2Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="1" type="Sprite2D" parent="CenterContainer/GridContainer/Button2/Ui2Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Button3" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "3"
 
-[node name="Ui3Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button3"]
-position = Vector2(127, 124)
-scale = Vector2(0.3, 0.3)
+[node name="Ui3Button" type="TextureRect" parent="CenterContainer/GridContainer/Button3"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("4_58krm")
 
-[node name="2" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button3/Ui3Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button3/Ui3Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="2" type="Sprite2D" parent="CenterContainer/GridContainer/Button3/Ui3Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button4" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Button4" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "4"
 
-[node name="Ui4Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button4"]
-position = Vector2(126, 125)
-scale = Vector2(0.3, 0.3)
+[node name="Ui4Button" type="TextureRect" parent="CenterContainer/GridContainer/Button4"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("5_yx3ve")
 
-[node name="3" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button4/Ui4Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button4/Ui4Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="3" type="Sprite2D" parent="CenterContainer/GridContainer/Button4/Ui4Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button5" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Button5" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "5"
 
-[node name="Ui5Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button5"]
-position = Vector2(126, 125)
-scale = Vector2(0.3, 0.3)
+[node name="Ui5Button" type="TextureRect" parent="CenterContainer/GridContainer/Button5"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("6_mkg41")
 
-[node name="4" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button5/Ui5Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button5/Ui5Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="4" type="Sprite2D" parent="CenterContainer/GridContainer/Button5/Ui5Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button6" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Button6" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "6"
 
-[node name="Ui6Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button6"]
-position = Vector2(127, 126)
-scale = Vector2(0.3, 0.3)
+[node name="Ui6Button" type="TextureRect" parent="CenterContainer/GridContainer/Button6"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("8_voema")
 
-[node name="5" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer/Button6/Ui6Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button6/Ui6Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="5" type="Sprite2D" parent="CenterContainer/GridContainer/Button6/Ui6Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Button7" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button7" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "7"
 
-[node name="Ui7Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button7"]
-position = Vector2(126, 129)
-scale = Vector2(0.3, 0.3)
+[node name="Ui7Button" type="TextureRect" parent="CenterContainer/GridContainer/Button7"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("9_2h4oc")
 
-[node name="6" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button7/Ui7Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button7/Ui7Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="6" type="Sprite2D" parent="CenterContainer/GridContainer/Button7/Ui7Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button8" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button8" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "8
 "
 
-[node name="Ui8Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button8"]
-position = Vector2(123, 128)
-scale = Vector2(0.3, 0.3)
+[node name="Ui8Button" type="TextureRect" parent="CenterContainer/GridContainer/Button8"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("10_aicim")
 
-[node name="7" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button8/Ui8Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button8/Ui8Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="7" type="Sprite2D" parent="CenterContainer/GridContainer/Button8/Ui8Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button9" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button9" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "9
 "
 
-[node name="Ui9Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button9"]
-position = Vector2(124, 127)
-scale = Vector2(0.3, 0.3)
+[node name="Ui9Button" type="TextureRect" parent="CenterContainer/GridContainer/Button9"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("11_uerib")
 
-[node name="8" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button9/Ui9Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button9/Ui9Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="8" type="Sprite2D" parent="CenterContainer/GridContainer/Button9/Ui9Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button10" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button10" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "10"
 
-[node name="Ui10Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button10"]
-position = Vector2(126, 124)
-scale = Vector2(0.3, 0.3)
+[node name="Ui10Button" type="TextureRect" parent="CenterContainer/GridContainer/Button10"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("12_lxknw")
 
-[node name="9" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button10/Ui10Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button10/Ui10Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="9" type="Sprite2D" parent="CenterContainer/GridContainer/Button10/Ui10Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button11" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button11" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "11"
 
-[node name="Ui11Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button11"]
-position = Vector2(126, 123)
-scale = Vector2(0.3, 0.3)
+[node name="Ui11Button" type="TextureRect" parent="CenterContainer/GridContainer/Button11"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("13_ec1ca")
 
-[node name="10" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button11/Ui11Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button11/Ui11Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="10" type="Sprite2D" parent="CenterContainer/GridContainer/Button11/Ui11Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
-[node name="Button12" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button12" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "12"
 
-[node name="Ui12Button" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button12"]
-position = Vector2(123, 122)
-scale = Vector2(0.3, 0.3)
+[node name="Ui12Button" type="TextureRect" parent="CenterContainer/GridContainer/Button12"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
 texture = ExtResource("14_wyhjg")
 
-[node name="11" type="Sprite2D" parent="CenterContainer/VBoxContainer/HBoxContainer2/Button12/Ui12Button"]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
+[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button12/Ui12Button"]
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="11" type="Sprite2D" parent="CenterContainer/GridContainer/Button12/Ui12Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button7" to="." method="_on_button_7_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button8" to="." method="_on_button_8_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button9" to="." method="_on_button_9_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button10" to="." method="_on_button_10_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button11" to="." method="_on_button_11_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Button12" to="." method="_on_button_12_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button" to="." method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button12" to="." method="_on_button_12_pressed"]
