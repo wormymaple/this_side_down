@@ -71,32 +71,29 @@ offset_bottom = 720.0
 scale = Vector2(0.341974, 0.341974)
 stream = ExtResource("5_1tgiu")
 
-[node name="Platform" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
+[node name="Platform" parent="." instance=ExtResource("4_hw7l0")]
 position = Vector2(1371, 820)
 curve = SubResource("Curve2D_kk2oo")
-player = NodePath("../PlaceholderPlayer")
 speed = 0.5
-path_behavior = "Looping"
+path_behavior = 1
 
-[node name="Platform2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
+[node name="Platform2" parent="." instance=ExtResource("4_hw7l0")]
 position = Vector2(154, 516)
 curve = SubResource("Curve2D_m0cgk")
-player = NodePath("../PlaceholderPlayer")
 speed = 0.5
-path_behavior = "One Way"
 sprite = ExtResource("6_7pj3m")
+path_behavior = 3
 
-[node name="Platform3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_hw7l0")]
+[node name="Platform3" parent="." instance=ExtResource("4_hw7l0")]
 position = Vector2(977, 607)
 curve = null
-player = NodePath("../PlaceholderPlayer")
 speed = 0.5
 
 [node name="PlaceholderPlayer" parent="." instance=ExtResource("8_bj4e0")]
 position = Vector2(1127, 904)
 
 [node name="SmallSquarebox" parent="." groups=["Box"] instance=ExtResource("8_s21my")]
-position = Vector2(1399, 732)
+position = Vector2(734, 750)
 collision_layer = 15
 collision_mask = 15
 

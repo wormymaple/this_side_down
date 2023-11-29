@@ -82,9 +82,9 @@ texture = ExtResource("5_ptnpq")
 [node name="Arrow" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 308.0
-offset_top = 491.0
+offset_top = 474.0
 offset_right = 798.0
-offset_bottom = 954.0
+offset_bottom = 937.0
 rotation = -1.57079
 scale = Vector2(1.3316, 1.3316)
 texture = ExtResource("6_874je")

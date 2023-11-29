@@ -1,8 +1,13 @@
 extends Control
 
 @export var lock_list: Array[Sprite2D]
+@export var select_rect = TextureRect
 
-# Called when the node enters the scene tree for the first time.
+#var menu_funcs = ['_on_play_button_pressed', '_on_options_button_pressed', '_on_quit_button_pressed']
+const positions = [Vector2(45, 333), Vector2(334, 333), Vector2(622, 333), Vector2(913, 333), Vector2(1202, 333), Vector2(1492, 333), Vector2(45, 620), Vector2(334, 620), Vector2(622, 620), Vector2(913, 620), Vector2(1202, 620), Vector2(1492, 620)]
+@export var select_rect_position: int = 0
+
+
 func _ready():
 	#if ThemeSongLoop.playing:
 		#ThemeSongLoop.stop()
@@ -10,17 +15,42 @@ func _ready():
 		if GlobalVariables.completed_levels.has(str(lock.name) as int):
 			lock.queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("left_right_p1"):
+		move_arrow(1)
+	if Input.is_action_just_pressed("left_left_p1"):
+		move_arrow(-1)
+	
+	if Input.is_action_just_pressed("left_up_p1"):
+		move_arrow(-6) # Minus 6 because the lower row is the second row
+	if Input.is_action_just_pressed("left_down_p1"):
+		move_arrow(6)
+	
+	if Input.is_action_just_pressed("confirm"):
+		call('_on_button_' + str(select_rect_position + 1) + '_pressed')
+	
+	if Input.is_action_just_pressed("cancel"):
+		get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")
+	
+	
+
+func move_arrow(dir: int):
+	select_rect_position += dir
+	if select_rect_position > 11:
+		select_rect_position -= 12
+	elif select_rect_position < 0:
+		select_rect_position += 12
+	
+	select_rect.global_position = positions[select_rect_position]
 
 func _start_level(level):
 	get_tree().change_scene_to_file("res://Scenes/Levels/level_" + str(level) + ".tscn")
 	
-func _nope():
+func _nope(): # This is not used currently
 	print("uh uh uh, you didnt say the magic word")
 
-func _on_pressed():
+func _on_button_1_pressed():
 	_start_level(1)
 
 func _on_button_2_pressed():
