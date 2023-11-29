@@ -2,6 +2,8 @@ extends RigidBody2D
 
 @export var move_speed: float
 @export var jump_speed: float
+@export var water_jump_coefficient: float
+var is_in_water: bool
 @export var arm_move_speed: float
 @export var grab_speed: float
 @export var arm_length: float
@@ -36,6 +38,9 @@ var unmovable = false
 @export var box_drop: AudioStreamPlayer
 @export var jump: AudioStreamPlayer
 @export var footsteps: AudioStreamPlayer
+
+@export var footstep_time: float
+var footstep_time_real: float
 
 var body_state: PhysicsDirectBodyState2D
 
@@ -85,6 +90,12 @@ func _physics_process(delta):
 			var sample = wiggle_curve.sample(wiggle_current_time / wiggle_time)
 			legs.position = Vector2(sample * wiggle_intensity, legs.position.y)
 			head.position = Vector2(0, sin(wiggle_current_time / wiggle_time * PI) * head_bob)
+			
+			footstep_time_real += delta
+			if footstep_time_real > footstep_time:
+				footsteps.play()
+				footstep_time_real -= footstep_time
+			
 	elif on_ground:
 		linear_velocity.x = 0
 		
@@ -92,6 +103,8 @@ func _input(event):
 	# jump
 	if event.is_action_pressed("left_trigger_" + playerID) && on_ground:
 		linear_velocity.y = -jump_speed
+		if is_in_water:
+			linear_velocity.y *= water_jump_coefficient
 		jump.play()
 		
 	# grab
