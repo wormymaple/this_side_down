@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
 [ext_resource type="Texture2D" uid="uid://dcsxxh6wfcyf5" path="res://Art/sprites/goobers-1.PNG" id="2_eti0h"]
-[ext_resource type="Texture2D" uid="uid://cvmgr1e4tp8xo" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
+[ext_resource type="Texture2D" uid="uid://dsos0q8kfktl5" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
 [ext_resource type="Texture2D" uid="uid://ia8oqvh2uvwi" path="res://Art/sprites/goobers-2.PNG" id="3_0tw52"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_jvxiw"]
-[ext_resource type="Texture2D" uid="uid://velvtm7bc3j1" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
-[ext_resource type="AudioStream" uid="uid://co6b8bualid24" path="res://Audio/box pickup.wav" id="5_wmfcq"]
-[ext_resource type="AudioStream" uid="uid://xrfqy3rvcyix" path="res://Audio/box drop (better).wav" id="6_2vynb"]
-[ext_resource type="AudioStream" uid="uid://cq1c0i8e7mafv" path="res://Audio/jump3.wav" id="7_x2kif"]
+[ext_resource type="Texture2D" uid="uid://cpjhwqimlx3mk" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
+[ext_resource type="AudioStream" uid="uid://bm765wo7sc07t" path="res://Audio/box pickup.wav" id="5_wmfcq"]
+[ext_resource type="AudioStream" uid="uid://1aade03bey4y" path="res://Audio/box drop (better).wav" id="6_2vynb"]
+[ext_resource type="AudioStream" uid="uid://c0limxipwjg8y" path="res://Audio/jump3.wav" id="7_x2kif"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
 friction = 0.0
@@ -27,7 +27,7 @@ radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4eusl"]
 
-[node name="PlaceholderPlayer" type="RigidBody2D" node_paths=PackedStringArray("hand_sprite", "box_pickup", "box_drop", "jump") groups=["Player"]]
+[node name="PlaceholderPlayer" type="RigidBody2D" node_paths=PackedStringArray("hand_sprite", "box_pickup", "box_drop", "jump", "footsteps") groups=["Player"]]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_2c1hu")
 continuous_cd = 1
@@ -56,6 +56,7 @@ empty_hand = ExtResource("4_vmjrj")
 box_pickup = NodePath("BoxPickup")
 box_drop = NodePath("BoxDrop")
 jump = NodePath("Jump")
+footsteps = NodePath("Footsteps")
 metadata/grabbable = true
 metadata/grabbed = false
 
@@ -107,6 +108,8 @@ volume_db = -15.0
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_x2kif")
 volume_db = -15.0
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
 
 [node name="PointLight2D" parent="." instance=ExtResource("3_jvxiw")]
 scale = Vector2(10, 10)
