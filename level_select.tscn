@@ -157,6 +157,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("4_58krm")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button3/Ui3Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -184,6 +185,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("5_yx3ve")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button4/Ui4Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -211,6 +213,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("6_mkg41")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button5/Ui5Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -238,6 +241,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("8_voema")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button6/Ui6Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -265,6 +269,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("9_2h4oc")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button7/Ui7Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -293,6 +298,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("10_aicim")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button8/Ui8Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -321,6 +327,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("11_uerib")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button9/Ui9Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -348,6 +355,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("12_lxknw")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button10/Ui10Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -375,6 +383,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("13_ec1ca")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button11/Ui11Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
@@ -402,6 +411,7 @@ scale = Vector2(0.29, 0.29)
 texture = ExtResource("14_wyhjg")
 
 [node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button12/Ui12Button"]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
 offset_right = 1460.0
