@@ -6,16 +6,14 @@
 [sub_resource type="Curve2D" id="Curve2D_llgmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2jwb"]
-size = Vector2(102.735, 5.94527)
+size = Vector2(186, 17.9864)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qwh1"]
-size = Vector2(102.735, 22.4335)
+size = Vector2(186, 22.4335)
 
 [node name="Platform" type="Path2D"]
-scale = Vector2(1.57687, 1.36727)
 curve = SubResource("Curve2D_llgmf")
 script = ExtResource("1_vb141")
-speed = null
 sprite = ExtResource("2_v0bgm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
@@ -28,7 +26,7 @@ offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 7.31384)
-scale = Vector2(0.0550002, 0.0550002)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_v0bgm")
 
 [node name="Collision" type="StaticBody2D" parent="."]
@@ -36,8 +34,7 @@ collision_layer = 15
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
-rotation = 3.14159
-scale = Vector2(1, -2.46039)
+position = Vector2(-1.90735e-06, -9)
 shape = SubResource("RectangleShape2D_m2jwb")
 one_way_collision = true
 
@@ -46,7 +43,7 @@ collision_layer = 3
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-8.17222e-05, -19.7474)
+position = Vector2(3.8147e-06, -30)
 shape = SubResource("RectangleShape2D_3qwh1")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
