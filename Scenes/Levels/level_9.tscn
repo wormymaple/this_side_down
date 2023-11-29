@@ -28,7 +28,7 @@ position = Vector2(3690, 941)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_lplcc")]
 position = Vector2(386, -631)
-color = Color(0.615686, 0.592157, 0.827451, 1)
+color = Color(1, 0.941176, 0.917647, 1)
 
 [node name="TriangleboxUp" parent="." instance=ExtResource("9_celqn")]
 position = Vector2(2318, 817)
@@ -57,5 +57,7 @@ scale = Vector2(0.35, 0.35)
 [node name="CanvasLayer" parent="." instance=ExtResource("11_cmrej")]
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource("10_q0eyp")]
+
+[node name="CanvasModulate" parent="ParallaxBackground2" instance=ExtResource("6_tammo")]
 
 [node name="CanvasModulate" parent="." instance=ExtResource("6_tammo")]
