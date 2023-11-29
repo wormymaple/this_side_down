@@ -9,7 +9,7 @@ size = Vector2(64, 64)
 [node name="Box" type="RigidBody2D" groups=["Box"]]
 position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 8
-collision_mask = 15
+collision_mask = 13
 metadata/grabbable = false
 metadata/grabbed = false
 
