@@ -13,9 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_xo40b"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="12_bxkdo"]
 
-[node name="Level2" type="Node2D"]
+[node name="Level2" type="Node2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_kr7b3")
 landing_zone = NodePath("LandingZone")
+camera = NodePath("Camera")
 
 [node name="Floor" parent="." instance=ExtResource("1_jrl6j")]
 position = Vector2(961, 1114)

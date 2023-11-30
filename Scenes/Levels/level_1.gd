@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var landing_zone: NodePath
+@export var camera: Camera2D
 
 func _ready():
 	ThemeSongLoop.stop()
@@ -18,4 +19,6 @@ func _on_zone_body_body_entered(body):
 func win():
 	GlobalVariables.win_level(1)
 	get_node(landing_zone).play_particles()
+	
+	camera.fade_out(true)
 

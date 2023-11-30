@@ -19,10 +19,11 @@ _data = {
 }
 point_count = 2
 
-[node name="Level3" type="Node2D"]
+[node name="Level3" type="Node2D" node_paths=PackedStringArray("camera")]
 position = Vector2(12, 305)
 script = ExtResource("1_3f1r8")
 landing_zone = NodePath("Platform/Collision/LandingZone")
+camera = NodePath("Camera")
 
 [node name="Camera" parent="." instance=ExtResource("2_i1512")]
 zoom = Vector2(1.5, 1.5)
