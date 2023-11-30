@@ -49,6 +49,7 @@ wiggle_time = 0.5
 legs_path = NodePath("Legs")
 head_path = NodePath("Head")
 head_bob = 2.0
+jump_buffer = 5
 playerID = "p1"
 hand_path = NodePath("HandMeta")
 arm_path = NodePath("Arm")
