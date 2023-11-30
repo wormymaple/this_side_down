@@ -24,27 +24,28 @@ position = Vector2(180, 622)
 rotation = 6.27737
 
 [node name="SquareBox3" parent="." instance=ExtResource("2_3lcx1")]
-position = Vector2(4041, -376)
+position = Vector2(2224, 283)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_sb7pc")]
-position = Vector2(2722, 825)
+position = Vector2(1915, 1122)
+scale = Vector2(0.5, 0.5)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("6_8j7ak")]
 position = Vector2(386, -631)
 color = Color(0.686275, 0.568627, 0.788235, 1)
 
 [node name="Floor" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(1920, 1076)
+position = Vector2(1120, 1352)
 scale = Vector2(2.36, 1)
 
 [node name="Floor3" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(6, -499)
+position = Vector2(-110, -33)
 scale = Vector2(0.360002, 0.56)
 
 [node name="Floor2" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(3724, 315)
-scale = Vector2(0.48, 2.44)
+position = Vector2(2337, 914)
+scale = Vector2(0.220133, 2.17861)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_d02wj")]
 
