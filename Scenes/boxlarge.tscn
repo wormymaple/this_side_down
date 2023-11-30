@@ -4,24 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_6n1fc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20bt7"]
-size = Vector2(128, 128)
+size = Vector2(100, 100)
 
-[node name="Box" type="RigidBody2D" groups=["Box"]]
+[node name="BoxLarge" type="RigidBody2D" groups=["Box"]]
 position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 8
 collision_mask = 13
 metadata/grabbable = false
 metadata/grabbed = false
 
+[node name="BoxSprite" type="Sprite2D" parent="."]
+position = Vector2(0.500001, 0.500002)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("1_st7xw")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_20bt7")
 
-[node name="BoxSprite" type="Sprite2D" parent="."]
-position = Vector2(0.500001, 0.500002)
-scale = Vector2(0.29, 0.29)
-texture = ExtResource("1_st7xw")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-36.3333, -33)
+position = Vector2(-26, -20)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_6n1fc")
