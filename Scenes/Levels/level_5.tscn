@@ -1,14 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwfqlui2oxdvp"]
+[gd_scene load_steps=12 format=3 uid="uid://bwfqlui2oxdvp"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_5.gd" id="1_1uj3l"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_arfby"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="2_li18c"]
-[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="3_a4aac"]
-[ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="4_qffub"]
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="5_x16v6"]
-[ext_resource type="PackedScene" uid="uid://c05ps7i55fw6q" path="res://Scenes/TriangleboxUp.tscn" id="6_ymikr"]
-[ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="7_aak83"]
+[ext_resource type="PackedScene" uid="uid://cc5nqimy6p2p7" path="res://Scenes/boxlarge.tscn" id="8_42ivj"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="9_8ra23"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="9_caiko"]
+[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="10_hv6gi"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="11_eobp3"]
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/parallax_backgroundCrates.tscn" id="11_kaf0w"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_vbs12"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="12_o2sbc"]
@@ -17,7 +16,7 @@
 script = ExtResource("1_1uj3l")
 
 [node name="Floor" parent="." instance=ExtResource("1_arfby")]
-position = Vector2(1067, 1082)
+position = Vector2(1067, 1672)
 scale = Vector2(2.84, 1)
 
 [node name="Floor2" parent="." instance=ExtResource("1_arfby")]
@@ -27,29 +26,6 @@ scale = Vector2(0.120001, 2.56)
 [node name="Ramp" parent="." instance=ExtResource("2_li18c")]
 position = Vector2(1990, 713)
 scale = Vector2(0.4, 0.4)
-
-[node name="MovingPlatform" parent="." instance=ExtResource("3_a4aac")]
-position = Vector2(3341, 687)
-scale = Vector2(0.35, 0.35)
-
-[node name="HorMovingPlatform" parent="." instance=ExtResource("4_qffub")]
-position = Vector2(2291, -39)
-scale = Vector2(0.35, 0.35)
-
-[node name="LoadingZone" parent="." instance=ExtResource("5_x16v6")]
-position = Vector2(82, 41)
-
-[node name="TriangleboxUp" parent="." instance=ExtResource("6_ymikr")]
-position = Vector2(2232, -166)
-rotation = 2.16056
-
-[node name="TriangleboxUp2" parent="." instance=ExtResource("7_aak83")]
-position = Vector2(2618, 789)
-rotation = -1.09205
-
-[node name="TriangleboxUp3" parent="." instance=ExtResource("7_aak83")]
-position = Vector2(3341, 537)
-rotation = 0.915497
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("9_caiko")]
 position = Vector2(-2171, 49)
@@ -70,8 +46,20 @@ transform = Transform2D(2, 0, 0, 2, -600, -300)
 position = Vector2(-2226.9, -1118.87)
 color = Color(0.0901961, 0.211765, 0.447059, 1)
 
-[node name="PlaceholderPlayer" parent="." instance=ExtResource("12_o2sbc")]
-position = Vector2(1409, 537)
+[node name="Box" parent="." instance=ExtResource("8_42ivj")]
+position = Vector2(808, 787)
 
-[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
-[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
+[node name="Camera" parent="." instance=ExtResource("9_8ra23")]
+zoom = Vector2(1.5, 1.5)
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(410, 1408)
+script = ExtResource("10_hv6gi")
+player_scene = ExtResource("12_o2sbc")
+camera = NodePath("../Camera")
+colors = Array[Color]([Color(1, 0, 1, 1)])
+
+[node name="LandingZone" parent="." instance=ExtResource("11_eobp3")]
+position = Vector2(0.333359, 1423)
+scale = Vector2(0.4, 0.4)
+handler_script = NodePath("../../..")

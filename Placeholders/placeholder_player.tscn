@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
 [ext_resource type="Texture2D" uid="uid://dcsxxh6wfcyf5" path="res://Art/sprites/goobers-1.PNG" id="2_eti0h"]
-[ext_resource type="Texture2D" uid="uid://c75wj8nyvwntq" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
+[ext_resource type="Texture2D" uid="uid://dsos0q8kfktl5" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
 [ext_resource type="Texture2D" uid="uid://ia8oqvh2uvwi" path="res://Art/sprites/goobers-2.PNG" id="3_0tw52"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_jvxiw"]
-[ext_resource type="Texture2D" uid="uid://di3dgms5gfato" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
-[ext_resource type="AudioStream" uid="uid://cycba4nu4px1r" path="res://Audio/box pickup.wav" id="5_wmfcq"]
-[ext_resource type="AudioStream" uid="uid://djnpgejqbbp7d" path="res://Audio/box drop (better).wav" id="6_2vynb"]
-[ext_resource type="AudioStream" uid="uid://ctx22kryguqa4" path="res://Audio/jump3.wav" id="7_x2kif"]
+[ext_resource type="Texture2D" uid="uid://cpjhwqimlx3mk" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
+[ext_resource type="AudioStream" uid="uid://bm765wo7sc07t" path="res://Audio/box pickup.wav" id="5_wmfcq"]
+[ext_resource type="AudioStream" uid="uid://1aade03bey4y" path="res://Audio/box drop (better).wav" id="6_2vynb"]
+[ext_resource type="AudioStream" uid="uid://c0limxipwjg8y" path="res://Audio/jump3.wav" id="7_x2kif"]
 [ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep(one).wav" id="9_46h22"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
