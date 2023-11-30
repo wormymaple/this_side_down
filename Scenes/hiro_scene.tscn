@@ -98,5 +98,4 @@ collision_layer = 15
 collision_mask = 15
 
 [node name="Box" parent="." instance=ExtResource("10_cx2xa")]
-position = Vector2(1207, 923)
-can_sleep = false
+position = Vector2(1365, 766)

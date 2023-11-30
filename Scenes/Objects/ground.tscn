@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://baxbmumno8w6g" path="res://Sprites/TempFloor.png" id="1_gmxou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g4t3"]
-size = Vector2(128, 127)
+size = Vector2(128, 128)
 
 [node name="Node2D" type="StaticBody2D"]
 
@@ -12,5 +12,4 @@ scale = Vector2(2.00554, 2.00554)
 texture = ExtResource("1_gmxou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_3g4t3")
