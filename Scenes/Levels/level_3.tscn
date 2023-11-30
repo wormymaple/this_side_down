@@ -91,7 +91,6 @@ polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2828, -875, -680,
 position = Vector2(125, 300)
 scale = Vector2(3, 2.6)
 curve = SubResource("Curve2D_c76w3")
-speed = 0.2
 
 [node name="PathFollow2D" parent="Platform" index="0"]
 rotation = 1.5708
