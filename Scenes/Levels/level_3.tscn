@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5nqimy6p2p7" path="res://Scenes/boxlarge.tscn" id="4_0lor1"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="8_6vpom"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="8_xy6mt"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="9_5ant1"]
+[ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="9_5ant1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="9_e6i4h"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="10_i46cw"]
 
