@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bfume0p3k4a7x"]
+[gd_scene load_steps=17 format=3 uid="uid://bfume0p3k4a7x"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_9.gd" id="1_ulhtr"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="2_etqoo"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="13_avyxm"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="14_wbbsx"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="15_iu3jp"]
+[ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="16_paf4g"]
 
 [node name="level_9" type="Node2D"]
 script = ExtResource("1_ulhtr")
@@ -31,7 +32,7 @@ rotation = 6.27737
 position = Vector2(3690, 941)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_lplcc")]
-position = Vector2(386, -631)
+position = Vector2(-252, -1441)
 color = Color(1, 0.941176, 0.917647, 1)
 
 [node name="TriangleboxUp" parent="." instance=ExtResource("9_celqn")]
@@ -81,4 +82,9 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="Box" parent="." instance=ExtResource("15_iu3jp")]
 position = Vector2(390, 610)
-linear_damp = 10.0
+gravity_scale = 0.4
+linear_damp = 2.0
+
+[node name="Spring" parent="." instance=ExtResource("16_paf4g")]
+position = Vector2(1877, 766)
+Power = 4000
