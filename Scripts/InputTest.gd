@@ -177,8 +177,9 @@ func _on_grab_area_body_exited(body):
 func _on_body_entered(body):
 	var normal = body_state.get_contact_local_normal(0)
 	if body.is_in_group("Box"):
-		if body.get_meta("grabbed") == true:
-			drop_object()
+		#if body.get_meta("grabbed") == true:
+			#drop_object()
+			pass
 		
 	if abs(normal.x) < 0.4 && normal.y < 0:
 		on_ground = true
