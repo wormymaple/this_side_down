@@ -7,7 +7,7 @@ var box2loaded = false
 
 func _ready():
 	ThemeSongLoop.stop()
-	ThemeSongLoop.stream = load("res://Audio/.wav")
+	ThemeSongLoop.stream = load("res://Audio/BoxInSocksOutro.wav")
 	ThemeSongLoop.play()
 	
 func _process(delta):
