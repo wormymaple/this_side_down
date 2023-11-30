@@ -17,47 +17,50 @@
 script = ExtResource("1_w5nf4")
 
 [node name="SquareBox1" parent="." instance=ExtResource("3_vocux")]
-position = Vector2(633, 546)
+position = Vector2(624, 658)
 rotation = 6.27737
 
 [node name="SquareBox2" parent="." instance=ExtResource("3_vocux")]
-position = Vector2(562, 721)
+position = Vector2(553, 833)
 rotation = 6.27737
 
 [node name="CircleBox" parent="." instance=ExtResource("3_vocux")]
-position = Vector2(770, 732)
+position = Vector2(761, 844)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("4_8r61f")]
-position = Vector2(4347, 837)
+position = Vector2(2199, 975)
+scale = Vector2(0.5, 0.5)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_tms1o")]
-position = Vector2(386, -631)
+position = Vector2(377, -519)
 color = Color(1, 0.658824, 0.533333, 1)
 
 [node name="Floor" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(1885, 1077)
-scale = Vector2(2.92001, 1)
+position = Vector2(1876, 1189)
+scale = Vector2(2.562, 0.838407)
 
 [node name="Floor2" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(1280, -724)
-scale = Vector2(0.160007, 4.28)
+position = Vector2(397, -170)
+scale = Vector2(0.094465, 1.69318)
 
 [node name="Floor3" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(2458, -724)
-scale = Vector2(0.160007, 4.28)
+position = Vector2(1015, -181)
+scale = Vector2(0.086839, 1.61372)
 
 [node name="Floor4" parent="." instance=ExtResource("2_l85uj")]
-position = Vector2(3814, -63.0001)
-scale = Vector2(0.160007, 4.28)
+position = Vector2(1919, 839)
+scale = Vector2(0.0732193, 2.73604)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(3293, 711)
-scale = Vector2(4, 4)
+position = Vector2(1645, 894)
+scale = Vector2(1.86248, 2.82842)
+speed = 2
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(2953, 69.0001)
-scale = Vector2(4, 4)
+position = Vector2(1313, 204)
+scale = Vector2(2.11982, 3.03274)
+speed = -2
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(1602, 771)
