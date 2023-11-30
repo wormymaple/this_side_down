@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://kiyufpj683ic"]
+[gd_scene load_steps=12 format=3 uid="uid://kiyufpj683ic"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_d88h3"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrwse"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="5_n57bp"]
+[ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="5_n57bp"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_yeun7"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_bc66u"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="8_such3"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="10_2kv4e"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="10_mhr4p"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="11_kijhk"]
-[ext_resource type="PackedScene" uid="uid://de33bfmp2w6jc" path="res://pause_menu.tscn" id="12_wnj1w"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="13_knull"]
 
 [node name="Level1" type="Node2D"]
@@ -36,9 +35,6 @@ position = Vector2(386, -631)
 
 [node name="Camera" parent="." instance=ExtResource("8_such3")]
 zoom = Vector2(1.5, 1.5)
-
-[node name="PauseMenu" parent="Camera" instance=ExtResource("12_wnj1w")]
-visible = false
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(1008, 767)

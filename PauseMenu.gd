@@ -1,20 +1,24 @@
-extends Control
+extends CanvasLayer
 
-@onready var level_1 = $"../../"
-@onready var settings_menu = $SettingsMenu
+var paused = false
 
 func _on_resume_btn_pressed():
-	level_1.pauseMenu()
-
+	pauseMenu()
+	
+func _on_button_3_pressed():
+	get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")
+	
 func _on_button_4_pressed():
 	get_tree().quit()
 
-
-
-
-func _on_button_3_pressed():
-	get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")
-
-
-func _on_button_2_pressed():
-	settings_menu.show()
+func _process(delta):
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
+		
+func pauseMenu():
+	if paused:
+		visible = false
+		paused = false
+	else:
+		visible = true
+		paused = true
