@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvmrk074yven"]
+[gd_scene load_steps=12 format=3 uid="uid://bvmrk074yven"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_11.gd" id="1_2rs6l"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_6qh6a"]
@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_sb7pc"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="5_4hvyx"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="6_8j7ak"]
+[ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="6_d02wj"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="6_p5pqx"]
+[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_77780"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="10_lni03"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="11_w7flq"]
 
 [node name="level_11" type="Node2D"]
 script = ExtResource("1_2rs6l")
@@ -42,6 +46,23 @@ scale = Vector2(0.360002, 0.56)
 position = Vector2(3724, 315)
 scale = Vector2(0.48, 2.44)
 
+[node name="CanvasLayer" parent="." instance=ExtResource("6_d02wj")]
+
 [node name="ParallaxBackground2" parent="." instance=ExtResource("6_p5pqx")]
 
-[node name="CanvasModulate" parent="ParallaxBackground2" instance=ExtResource("5_4hvyx")]
+[node name="CanvasModulate2" parent="ParallaxBackground2" instance=ExtResource("5_4hvyx")]
+
+[node name="CanvasModulate" parent="." instance=ExtResource("5_4hvyx")]
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(1602, 771)
+script = ExtResource("9_77780")
+player_scene = ExtResource("10_lni03")
+camera = NodePath("../Camera")
+colors = Array[Color]([Color(1, 0, 1, 1)])
+damp = 2.0
+gravity_scale = 0.6
+is_in_water = true
+
+[node name="Camera" parent="." instance=ExtResource("11_w7flq")]
+zoom = Vector2(1.5, 1.5)

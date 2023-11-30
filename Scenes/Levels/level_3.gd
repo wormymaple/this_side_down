@@ -1,20 +1,15 @@
 extends Node2D
 
-var minRotation = 2.7
-var maxRotation = 3.3
-var box1loaded = false
+@export var landing_zone: NodePath
 
-func _process(delta):
-	if $Squarebox.rotation > minRotation and $Squarebox.rotation < maxRotation:
-		if box1loaded == true:
-			#LevelsCompleted.level3done = true
-			get_tree().change_scene_to_file("res://Scenes/Levels/level_4")
-
-func _on_loading_zone_body_entered(body):
-	if body == $Squarebox:
-		box1loaded = true
-
-
-func _on_loading_zone_body_exited(body):
-	if body == $Squarebox:
-		box1loaded = false
+func _on_zone_body_body_entered(body):
+	if body.is_in_group("Box"):
+		if body.get_meta("grabbed"):
+			return
+		
+		if abs(body.rotation_degrees) > 180 - 35:
+			win()
+		
+func win():
+	GlobalVariables.win_level(3)
+	get_node(landing_zone).play_particles()

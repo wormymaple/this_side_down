@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=9 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://MainmenuLevelScene.gd" id="1_ay4ea"]
+[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://font/Nunito/static/Nunito-Medium.ttf" id="2_dyvjo"]
 [ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Main Menu/UI_Play_Button.png" id="3_327wy"]
 [ext_resource type="Texture2D" uid="uid://bc0hl8dqms67q" path="res://Art/logo/logo_thissidedown.png" id="3_khvvf"]
 [ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Main Menu/UI_Options_Button.png" id="4_1vgje"]
@@ -18,6 +19,25 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.611765, 0.462745, 0.360784, 1)
+
+[node name="A" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 758.0
+offset_right = 509.0
+offset_bottom = 844.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_dyvjo")
+theme_override_font_sizes/font_size = 60
+text = "(Press A to select)"
+horizontal_alignment = 1
 
 [node name="LogoThissidedown" type="TextureRect" parent="."]
 layout_mode = 0

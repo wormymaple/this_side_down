@@ -75,7 +75,17 @@ func _physics_process(delta):
 	var dir_to_hand = hand.position.angle()
 	hand_sprite.rotation = dir_to_hand + (PI / 2)
 	
-	if grabbed_body != null:
+	var has_grabbed = grabbed_body != null
+	
+	var box_collides = get_collision_mask_value(4)
+	if target_body != null or has_grabbed:
+		if box_collides:
+			set_collision_mask_value(4, false)
+	elif !box_collides:
+		set_collision_mask_value(4, true)
+	
+	
+	if has_grabbed:
 		var dir = hand.global_position - grabbed_body.global_position
 		if dir.length() > drop_threshold:
 			drop_object()
@@ -166,6 +176,10 @@ func _on_grab_area_body_exited(body):
 
 func _on_body_entered(body):
 	var normal = body_state.get_contact_local_normal(0)
+	if body.is_in_group("Box"):
+		if body.get_meta("grabbed") == true:
+			drop_object()
+		
 	if abs(normal.x) < 0.4 && normal.y < 0:
 		on_ground = true
 		
