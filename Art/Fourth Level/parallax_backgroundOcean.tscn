@@ -14,6 +14,7 @@
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_3xyd5")
 motion_scale = Vector2(0.7, 0.85)
+motion_mirroring = Vector2(1, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wayback"]
 position = Vector2(960, 540)
