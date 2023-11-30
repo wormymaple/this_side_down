@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8aiossmut76m"]
+[gd_scene load_steps=12 format=3 uid="uid://c8aiossmut76m"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_6ojl1"]
 [ext_resource type="Script" path="res://Scenes/Levels/level_6.gd" id="1_7kglf"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="6_xl2g2"]
 [ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="7_krkdf"]
 [ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="8_ipfma"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_lxu1d"]
+[ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/parallax_backgroundCrates.tscn" id="10_5rxrt"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="11_unprq"]
 
 [node name="Level6" type="Node2D"]
 script = ExtResource("1_7kglf")
@@ -61,6 +64,22 @@ position = Vector2(3520, 851)
 [node name="TriangleboxUp" parent="." instance=ExtResource("8_ipfma")]
 position = Vector2(620, 799)
 rotation = 3.12945
+
+[node name="CanvasModulate" parent="." instance=ExtResource("9_lxu1d")]
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.141176, 0.231373, 0.352941, 1)
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource("10_5rxrt")]
+layer = -3
+
+[node name="CanvasModulate2" parent="ParallaxBackground2" instance=ExtResource("9_lxu1d")]
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.141176, 0.231373, 0.352941, 1)
+
+[node name="DirectionalLight2D" parent="." instance=ExtResource("11_unprq")]
+position = Vector2(-2171, 49)
+color = Color(0.807843, 0.552941, 0.482353, 1)
+energy = 1.41
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
