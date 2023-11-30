@@ -22,7 +22,7 @@ point_count = 2
 [node name="Level3" type="Node2D"]
 position = Vector2(12, 305)
 script = ExtResource("1_3f1r8")
-landing_zone = NodePath("Platform/PathFollow2D/LandingZone")
+landing_zone = NodePath("Platform/Collision/LandingZone")
 
 [node name="Camera" parent="." instance=ExtResource("2_i1512")]
 zoom = Vector2(1.5, 1.5)
@@ -89,17 +89,19 @@ polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2828, -875, -680,
 
 [node name="Platform" parent="." instance=ExtResource("8_xy6mt")]
 position = Vector2(125, 300)
-scale = Vector2(4, 3.467)
+scale = Vector2(3, 2.6)
 curve = SubResource("Curve2D_c76w3")
 speed = 0.2
 
 [node name="PathFollow2D" parent="Platform" index="0"]
 rotation = 1.5708
 
-[node name="LandingZone" parent="Platform/PathFollow2D" index="0" instance=ExtResource("9_e6i4h")]
-position = Vector2(-15, 0.25)
-rotation = -1.5708
-scale = Vector2(0.125, 0.144217)
+[node name="Collision" parent="Platform" index="2"]
+position = Vector2(0, -4.61537)
+
+[node name="LandingZone" parent="Platform/Collision" index="1" instance=ExtResource("9_e6i4h")]
+position = Vector2(-0.333332, -31.8279)
+scale = Vector2(0.166667, 0.192308)
 handler_script = NodePath("../../..")
 
 [editable path="Platform"]
