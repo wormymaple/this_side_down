@@ -16,8 +16,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _process(delta_):
+	if Input.is_action_just_pressed("cancel") and visible:
+		hide()
 
 
 func _on_option_button_item_selected(index):
@@ -50,3 +51,6 @@ const OTHER_BUS = "Other"
 
 func _on_button_pressed():
 	$".".hide()
+
+
+
