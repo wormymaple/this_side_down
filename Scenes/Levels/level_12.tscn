@@ -94,3 +94,4 @@ is_in_water = true
 
 [node name="Camera" parent="." instance=ExtResource("13_r0ek7")]
 zoom = Vector2(1.5, 1.5)
+no_controller_path = NodePath("../PlayerSpawn")
