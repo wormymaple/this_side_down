@@ -1,0 +1,355 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkiib854vbjx6"]
+
+[ext_resource type="Texture2D" uid="uid://ck14l68kxkrfv" path="res://Art/Main Menu/UI_Back_Button.png" id="1_qm0ml"]
+[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://font/Nunito/static/Nunito-Medium.ttf" id="2_5qn18"]
+
+[node name="CreditsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = 12.0
+offset_right = -28.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.611765, 0.462745, 0.360784, 1)
+
+[node name="Back Button" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_top = -280.0
+offset_right = 195.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 75
+
+[node name="UiBackButton" type="TextureRect" parent="ColorRect/Back Button"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -171.0
+offset_right = 1931.0
+offset_bottom = 1877.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_qm0ml")
+
+[node name="A" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -270.0
+offset_right = 231.0
+offset_bottom = 138.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 100
+text = "(Credits)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Artist" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -830.875
+offset_top = 125.0
+offset_right = -343.875
+offset_bottom = 228.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 75
+text = "Artists
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -889.375
+offset_top = 210.0
+offset_right = -272.375
+offset_bottom = 279.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Lead Artist Sienna Spencer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -869.875
+offset_top = 270.0
+offset_right = -369.875
+offset_bottom = 339.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Quentina Candelaria"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A5" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -830.875
+offset_top = 330.0
+offset_right = -330.875
+offset_bottom = 399.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Meredith Ernst"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A6" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -830.875
+offset_top = 390.0
+offset_right = -330.875
+offset_bottom = 459.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Taylor Steffe"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Artist2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -253.5
+offset_top = 125.0
+offset_right = 233.5
+offset_bottom = 228.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 75
+text = "Designers
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A7" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -314.5
+offset_top = 210.0
+offset_right = 307.5
+offset_bottom = 279.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Lead Designer Andrew Decker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A8" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -253.5
+offset_top = 270.0
+offset_right = 246.5
+offset_bottom = 339.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Zane Lee"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A9" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -253.5
+offset_top = 330.0
+offset_right = 246.5
+offset_bottom = 399.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Zack Martin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Artist3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 343.875
+offset_top = 125.0
+offset_right = 830.875
+offset_bottom = 228.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 75
+text = "Programmers
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A10" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 309.875
+offset_top = 210.0
+offset_right = 938.875
+offset_bottom = 279.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Lead Programmer Marshall Perkins"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A11" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 343.875
+offset_top = 270.0
+offset_right = 904.875
+offset_bottom = 339.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Kesler Ratke"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A12" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 343.875
+offset_top = 330.0
+offset_right = 904.875
+offset_bottom = 399.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Zack Martin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A13" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 343.875
+offset_top = 390.0
+offset_right = 904.875
+offset_bottom = 459.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Hiro Kahara"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A14" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 343.875
+offset_top = 450.0
+offset_right = 904.875
+offset_bottom = 519.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_5qn18")
+theme_override_font_sizes/font_size = 38
+text = "Cody Sandford"
+horizontal_alignment = 1
+vertical_alignment = 1
