@@ -16,13 +16,11 @@ motion_scale = Vector2(0.7, 0.85)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wayback"]
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_ubq6e")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Wayback"]
 modulate = Color(0.376471, 0.376471, 0.376471, 1)
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_q6dxw")
 
 [node name="Midground" type="ParallaxLayer" parent="."]
@@ -33,13 +31,11 @@ motion_scale = Vector2(0.87, 0.94)
 [node name="Sprite2D2" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_x6mhr")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Midground"]
 modulate = Color(0.376471, 0.376471, 0.376471, 1)
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_26asc")
 
 [node name="Foreground" type="ParallaxLayer" parent="."]
@@ -51,7 +47,6 @@ motion_scale = Vector2(0.9, 0.95)
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_26asc")
 
 [node name="Ground" type="ParallaxLayer" parent="."]
@@ -62,5 +57,4 @@ motion_scale = Vector2(0.99, 1)
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_q6dxw")
