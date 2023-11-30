@@ -10,7 +10,6 @@
 [node name="ParallaxBackground" type="ParallaxBackground"]
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
-z_index = -1024
 material = SubResource("CanvasItemMaterial_3xyd5")
 motion_scale = Vector2(0.7, 0.85)
 
@@ -41,7 +40,7 @@ texture = ExtResource("4_26asc")
 [node name="Foreground" type="ParallaxLayer" parent="."]
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.9, 0.95)
+motion_scale = Vector2(0.9, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground"]
 z_index = 2
@@ -52,7 +51,6 @@ texture = ExtResource("4_26asc")
 [node name="Ground" type="ParallaxLayer" parent="."]
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.99, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
