@@ -8,8 +8,6 @@ var players: Array
 @export var max_scale: float
 
 @export var no_controller_path: NodePath
-@export var no_controller_button: NodePath
-@onready var button = get_node(no_controller_button)
 @onready var no_controller = get_node(no_controller_path)
 @export var background: Polygon2D
 
@@ -23,8 +21,6 @@ func _process(delta):
 	if len(players) < 1: 
 		if !no_controller.visible:
 			no_controller.visible = true
-			button.visible = true
-			background.visible = true
 		return
 	
 	if Input.is_action_just_pressed("cancel"):
