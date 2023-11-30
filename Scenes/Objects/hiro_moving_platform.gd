@@ -3,7 +3,7 @@ extends Path2D
 enum State {ONEWAY, LOOPING, STOP, ONEWAYBACK}
 var objects_to_move = []
 var movement = 0.0
-@export var speed = 0.0
+@export var speed = 0.2
 @onready var previous_position = $PathFollow2D.position
 @export var sprite: Texture
 
