@@ -37,7 +37,7 @@ position = Vector2(386, -631)
 [node name="Camera" parent="." instance=ExtResource("8_such3")]
 zoom = Vector2(1.5, 1.5)
 
-[node name="PauseMenu" parent="Camera" instance=ExtResource("12_wnj1w")]
+[node name="PauseMenu2" parent="Camera" instance=ExtResource("12_wnj1w")]
 visible = false
 
 [node name="PlayerSpawn" type="Node2D" parent="."]

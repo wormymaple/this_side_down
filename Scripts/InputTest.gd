@@ -19,6 +19,10 @@ var wiggle_current_time = 0.0
 @onready var head = get_node(head_path)
 @export var head_bob: float
 
+@export var jump_buffer: int
+var jump_buffer_frames: int
+var running_buffer: bool
+
 @export var playerID: String
 @export var hand_path: NodePath
 @export var arm_path: NodePath
@@ -55,6 +59,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if running_buffer: # Jump buffer
+		jump_buffer_frames -= 1
+		if jump_buffer_frames <= 0:
+			on_ground = false
+	
 	var right_stick = Input.get_vector("right_left_" + playerID, "right_right_" + playerID, "right_up_" + playerID, "right_down_" + playerID)
 	if right_stick.length() != 0:
 		hand.position += (right_stick * arm_length - hand.position) * arm_move_speed * delta
@@ -82,7 +91,7 @@ func _physics_process(delta):
 	if left_stick != 0:
 		linear_velocity.x = left_stick * move_speed
 		
-		if on_ground: # Player anim.
+		if on_ground && !running_buffer: # Player anim.
 			wiggle_current_time += delta
 			if wiggle_current_time > wiggle_time:
 				wiggle_current_time -= wiggle_time
@@ -159,10 +168,14 @@ func _on_body_entered(body):
 	var normal = body_state.get_contact_local_normal(0)
 	if abs(normal.x) < 0.4 && normal.y < 0:
 		on_ground = true
+		
+		jump_buffer_frames = jump_buffer
+		running_buffer = false
+		
 		unmovable = false
 
 func _on_body_exited(body):
-	on_ground = false
+	running_buffer = true
 	
 func check_player_linkage(body):
 	if body.grabbed_body == null || !body.grabbed_body.is_in_group("Player"):
