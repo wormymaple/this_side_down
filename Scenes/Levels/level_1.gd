@@ -4,9 +4,7 @@ extends Node2D
 @export var camera: Camera2D
 
 func _ready():
-	ThemeSongLoop.stop()
-	ThemeSongLoop.stream = load("res://Audio/.wav")
-	ThemeSongLoop.play()
+	pass
 	
 func _on_zone_body_body_entered(body):
 	if body.is_in_group("Box"):

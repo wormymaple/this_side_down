@@ -3,6 +3,8 @@ extends Control
 @export var lock_list: Array[Sprite2D]
 @export var select_rect = TextureRect
 
+
+
 #var menu_funcs = ['_on_play_button_pressed', '_on_options_button_pressed', '_on_quit_button_pressed']
 const positions = [Vector2(45, 333), Vector2(334, 333), Vector2(622, 333), Vector2(913, 333), Vector2(1202, 333), Vector2(1492, 333), Vector2(45, 620), Vector2(334, 620), Vector2(622, 620), Vector2(913, 620), Vector2(1202, 620), Vector2(1492, 620)]
 @export var select_rect_position: int = 0
@@ -11,10 +13,13 @@ const positions = [Vector2(45, 333), Vector2(334, 333), Vector2(622, 333), Vecto
 func _ready():
 	#if ThemeSongLoop.playing:
 		#ThemeSongLoop.stop()
+		
 	for lock in lock_list:
 		if GlobalVariables.completed_levels.has(str(lock.name) as int):
-			lock.queue_free()
-
+			#lock.queue_free()
+			#var parent_of_lock = lock.get_parent()
+			for child in lock.get_parent().get_children():
+				child.queue_free()
 
 func _process(delta):
 	if Input.is_action_just_pressed("left_right_p1"):
@@ -51,26 +56,50 @@ func _nope(): # This is not used currently
 	print("uh uh uh, you didnt say the magic word")
 
 func _on_button_1_pressed():
+	ThemeSongLoop.intro1 = true
+	ThemeSongLoop.intro2 = false
+	ThemeSongLoop.stream = load("res://Audio/BoxInSocksntro.wav")
+	ThemeSongLoop.play()
 	_start_level(1)
 
 func _on_button_2_pressed():
 	if GlobalVariables.completed_levels.has(1):
+		ThemeSongLoop.intro1 = true
+		ThemeSongLoop.intro2 = false
+		ThemeSongLoop.stream = load("res://Audio/BoxInSocksntro.wav")
+		ThemeSongLoop.play()
 		_start_level(2)
 
 func _on_button_3_pressed():
 	if GlobalVariables.completed_levels.has(2):
+		ThemeSongLoop.intro1 = true
+		ThemeSongLoop.intro2 = false
+		ThemeSongLoop.stream = load("res://Audio/BoxInSocksntro.wav")
+		ThemeSongLoop.play()
 		_start_level(3)
 
 func _on_button_4_pressed():
 	if GlobalVariables.completed_levels.has(3):
+		ThemeSongLoop.intro1 = false
+		ThemeSongLoop.intro2 = true
+		ThemeSongLoop.stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+		ThemeSongLoop.play()
 		_start_level(4)
 
 func _on_button_5_pressed():
 	if GlobalVariables.completed_levels.has(4):
+		ThemeSongLoop.intro1 = false
+		ThemeSongLoop.intro2 = true
+		ThemeSongLoop.stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+		ThemeSongLoop.play()
 		_start_level(5)
 
 func _on_button_6_pressed():
 	if GlobalVariables.completed_levels.has(5):
+		ThemeSongLoop.intro1 = false
+		ThemeSongLoop.intro2 = true
+		ThemeSongLoop.stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+		ThemeSongLoop.play()
 		_start_level(6)
 
 func _on_button_7_pressed():

@@ -1,7 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://dq5ntdtxdyc8c"]
 
 [ext_resource type="Script" path="res://settings_menu.gd" id="1_f8lut"]
-[ext_resource type="Script" path="res://OptionButton.gd" id="2_d04pw"]
+
+[sub_resource type="GDScript" id="GDScript_eipe2"]
+script/source = "extends OptionButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -68,7 +81,7 @@ popup/item_0/text = "Windowed"
 popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
-script = ExtResource("2_d04pw")
+script = SubResource("GDScript_eipe2")
 
 [node name="Audio" type="TabBar" parent="SettingTabs"]
 visible = false

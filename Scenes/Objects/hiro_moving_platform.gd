@@ -74,10 +74,13 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player") or body.is_in_group("Box"):
 		#print("The body that entered was the player!")
 		objects_to_move.push_back(body)
-		print(objects_to_move)
+	#	var objects_in_array = "" # Only to help list them all, does no function
+	#	for object in objects_to_move:
+	#		objects_in_array += object.name + " "
+	#	print(objects_in_array)
 
 func _on_area_2d_body_exited(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") or body.is_in_group("Box"):
 		if body in objects_to_move:
 			objects_to_move.pop_at(objects_to_move.find(body))
 			print("Removed ", body.name)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpy3ohh5pa7jr"]
+[gd_scene load_steps=13 format=3 uid="uid://cpy3ohh5pa7jr"]
 
 [ext_resource type="PackedScene" uid="uid://blr6srdhy3jte" path="res://Scenes/Objects/detection_area.tscn" id="1_asp6b"]
 [ext_resource type="PackedScene" uid="uid://cxmsc6y5qjwet" path="res://Scenes/Objects/ground.tscn" id="2_b2uwk"]
+[ext_resource type="Script" path="res://Scenes/Objects/detection_area.gd" id="2_rknb4"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="4_hw7l0"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="4_slbon"]
 [ext_resource type="VideoStream" path="res://video.ogv" id="5_1tgiu"]
@@ -27,6 +28,7 @@ point_count = 6
 [node name="NotSus" parent="." instance=ExtResource("1_asp6b")]
 position = Vector2(1893, 568)
 collision_mask = 15
+script = ExtResource("2_rknb4")
 
 [node name="GroundHandler" type="Node2D" parent="."]
 
@@ -98,5 +100,6 @@ collision_layer = 15
 collision_mask = 15
 
 [node name="Box" parent="." instance=ExtResource("10_cx2xa")]
-position = Vector2(1207, 923)
-can_sleep = false
+position = Vector2(1365, 766)
+
+[connection signal="body_entered" from="NotSus" to="NotSus" method="_on_body_entered"]
