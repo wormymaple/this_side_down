@@ -29,5 +29,5 @@ func _on_loading_zone_body_exited(body):
 
 func _on_area_2d_body_entered(body):
 	print(body)
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") or body.is_in_group("Box"):
 		get_tree().change_scene_to_file("res://Scenes/Levels/level_4.tscn")
