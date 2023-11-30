@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4h46cjlyo4qt"]
+[gd_scene load_steps=15 format=3 uid="uid://c4h46cjlyo4qt"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_tg4xy"]
 [ext_resource type="Script" path="res://Scenes/Levels/level_7.gd" id="1_twdix"]
 [ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="2_7rhvh"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_xic28"]
 [ext_resource type="PackedScene" uid="uid://dh031n2t5v3fm" path="res://Scenes/spherebox.tscn" id="4_2qpt1"]
+[ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://Art/parallax_backgroundBoat.tscn" id="6_yoqci"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="7_1qngq"]
+[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="8_2yscn"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="8_v6gpo"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="9_vr6y1"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="10_sb6ob"]
+[ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/third level/UI_Barrier.png" id="12_tge58"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x03f7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0kylo"]
+light_mode = 1
 
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_twdix")
@@ -32,6 +44,46 @@ position = Vector2(4185, 885)
 [node name="Floor3" parent="." instance=ExtResource("1_tg4xy")]
 position = Vector2(3574, 322)
 scale = Vector2(0.0799951, 3.92)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("6_yoqci")]
+
+[node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("7_1qngq")]
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.603922, 0.709804, 0.823529, 1)
+
+[node name="DirectionalLight2D" parent="." instance=ExtResource("8_v6gpo")]
+position = Vector2(-2171, 49)
+color = Color(0.807843, 0.552941, 0.482353, 1)
+energy = 1.41
+
+[node name="CanvasModulate2" parent="." instance=ExtResource("7_1qngq")]
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.498039, 0.639216, 0.827451, 1)
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(1237, 672)
+script = ExtResource("8_2yscn")
+player_scene = ExtResource("9_vr6y1")
+camera = NodePath("../Camera")
+colors = Array[Color]([Color(1, 0, 1, 1)])
+
+[node name="Camera" parent="." instance=ExtResource("10_sb6ob")]
+zoom = Vector2(1.5, 1.5)
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground2"]
+z_index = 4096
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_x03f7")
+motion_scale = Vector2(1.2, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground2/Ground"]
+material = SubResource("CanvasItemMaterial_0kylo")
+position = Vector2(960, 350)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_tge58")
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]

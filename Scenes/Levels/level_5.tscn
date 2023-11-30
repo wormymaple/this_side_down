@@ -16,16 +16,16 @@
 script = ExtResource("1_1uj3l")
 
 [node name="Floor" parent="." instance=ExtResource("1_arfby")]
-position = Vector2(1067, 1672)
+position = Vector2(1056, 1078)
 scale = Vector2(2.84, 1)
 
 [node name="Floor2" parent="." instance=ExtResource("1_arfby")]
-position = Vector2(673, -324)
-scale = Vector2(0.120001, 2.56)
+position = Vector2(518, 326)
+scale = Vector2(0.0399998, 1.12)
 
 [node name="Ramp" parent="." instance=ExtResource("2_li18c")]
-position = Vector2(1990, 713)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1324, 793)
+scale = Vector2(0.16, 0.16)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("9_caiko")]
 position = Vector2(-2171, 49)
@@ -38,9 +38,6 @@ color = Color(0.141176, 0.231373, 0.352941, 1)
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource("11_kaf0w")]
 layer = -3
-offset = Vector2(-600, -300)
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, -600, -300)
 
 [node name="CanvasModulate" parent="ParallaxBackground2" instance=ExtResource("11_vbs12")]
 position = Vector2(-2226.9, -1118.87)
@@ -53,13 +50,13 @@ position = Vector2(808, 787)
 zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(410, 1408)
+position = Vector2(1174, 754)
 script = ExtResource("10_hv6gi")
 player_scene = ExtResource("12_o2sbc")
 camera = NodePath("../Camera")
 colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="LandingZone" parent="." instance=ExtResource("11_eobp3")]
-position = Vector2(0.333359, 1423)
+position = Vector2(212, 472)
 scale = Vector2(0.4, 0.4)
 handler_script = NodePath("../../..")

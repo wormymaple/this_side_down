@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="11_kijhk"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="13_knull"]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_d88h3")
 landing_zone = NodePath("LandingZone")
+camera = NodePath("Camera")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("6_yeun7")]
 

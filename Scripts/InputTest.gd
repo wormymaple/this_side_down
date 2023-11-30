@@ -49,8 +49,8 @@ var footstep_time_real: float
 var body_state: PhysicsDirectBodyState2D
 
 func _ready():
-	if !ThemeSongLoop.playing:
-		ThemeSongLoop.play()
+	#if !ThemeSongLoop.playing:
+		#ThemeSongLoop.play()
 	
 	hand.position = Vector2.UP * arm_length
 	arm.set_point_position(1, hand.position)
@@ -177,8 +177,9 @@ func _on_grab_area_body_exited(body):
 func _on_body_entered(body):
 	var normal = body_state.get_contact_local_normal(0)
 	if body.is_in_group("Box"):
-		if body.get_meta("grabbed") == true:
-			drop_object()
+		#if body.get_meta("grabbed") == true:
+			#drop_object()
+			pass
 		
 	if abs(normal.x) < 0.4 && normal.y < 0:
 		on_ground = true
