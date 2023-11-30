@@ -5,10 +5,10 @@
 [ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://font/Nunito/static/Nunito-Medium.ttf" id="2_un2fg"]
 [ext_resource type="Texture2D" uid="uid://b3situl82j18i" path="res://Art/Main Menu/UI_2Button.png" id="3_0kuay"]
 [ext_resource type="Texture2D" uid="uid://1rmxt65vgskl" path="res://Art/Main Menu/UI_3Button.png" id="4_58krm"]
-[ext_resource type="Texture2D" uid="uid://dfmbamcki46m2" path="res://Sprites/LevelSelectHighlighter.png" id="4_e0w72"]
+[ext_resource type="Texture2D" uid="uid://cjlgso42caneh" path="res://Sprites/LevelSelectHighlighter.png" id="4_e0w72"]
 [ext_resource type="Texture2D" uid="uid://c5mqxi1nledwx" path="res://Art/Main Menu/UI_4Button.png" id="5_yx3ve"]
 [ext_resource type="Texture2D" uid="uid://cdejbpm10k31g" path="res://Art/Main Menu/UI_5Button.png" id="6_mkg41"]
-[ext_resource type="Texture2D" uid="uid://bhjhl1b6py14c" path="res://Art/Main Menu/UI_Lock_Icon.PNG" id="6_tvo2t"]
+[ext_resource type="Texture2D" uid="uid://bnsk8d1fqaq28" path="res://Art/Main Menu/UI_Lock_Icon.PNG" id="6_tvo2t"]
 [ext_resource type="Texture2D" uid="uid://bait04mgixe36" path="res://Art/Main Menu/UI_6Button.png" id="8_voema"]
 [ext_resource type="Texture2D" uid="uid://b0htklssgl4t0" path="res://Art/Main Menu/UI_7Button.png" id="9_2h4oc"]
 [ext_resource type="Texture2D" uid="uid://g7j8awtgc4c3" path="res://Art/Main Menu/UI_8Button.png" id="10_aicim"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b3qmyhovj5ti7" path="res://Art/Main Menu/UI_10Button.png" id="12_lxknw"]
 [ext_resource type="Texture2D" uid="uid://r48v1hpfn0fo" path="res://Art/Main Menu/UI_11Button.png" id="13_ec1ca"]
 [ext_resource type="Texture2D" uid="uid://c5540sv32yiay" path="res://Art/Main Menu/UI_12Button.png" id="14_wyhjg"]
-[ext_resource type="Texture2D" uid="uid://bqe772yohpqjc" path="res://Art/Main Menu/UI_Back_Button.png" id="16_y83q0"]
+[ext_resource type="Texture2D" uid="uid://bv7knga8381vs" path="res://Art/Main Menu/UI_Back_Button.png" id="16_y83q0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or8un"]
 bg_color = Color(0, 0, 0, 0.541176)
@@ -147,7 +147,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("3_0kuay")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button2/Ui2Button"]
+[node name="Fade1" type="Panel" parent="CenterContainer/GridContainer/Button2/Ui2Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -175,7 +175,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("4_58krm")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button3/Ui3Button"]
+[node name="Fade2" type="Panel" parent="CenterContainer/GridContainer/Button3/Ui3Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -203,7 +203,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("5_yx3ve")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button4/Ui4Button"]
+[node name="Fade3" type="Panel" parent="CenterContainer/GridContainer/Button4/Ui4Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -231,7 +231,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("6_mkg41")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button5/Ui5Button"]
+[node name="Fade4" type="Panel" parent="CenterContainer/GridContainer/Button5/Ui5Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -259,7 +259,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("8_voema")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button6/Ui6Button"]
+[node name="Fade5" type="Panel" parent="CenterContainer/GridContainer/Button6/Ui6Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -287,7 +287,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("9_2h4oc")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button7/Ui7Button"]
+[node name="Fade6" type="Panel" parent="CenterContainer/GridContainer/Button7/Ui7Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -316,7 +316,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("10_aicim")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button8/Ui8Button"]
+[node name="Fade7" type="Panel" parent="CenterContainer/GridContainer/Button8/Ui8Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -345,7 +345,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("11_uerib")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button9/Ui9Button"]
+[node name="Fade8" type="Panel" parent="CenterContainer/GridContainer/Button9/Ui9Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -373,7 +373,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("12_lxknw")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button10/Ui10Button"]
+[node name="Fade9" type="Panel" parent="CenterContainer/GridContainer/Button10/Ui10Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -401,7 +401,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("13_ec1ca")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button11/Ui11Button"]
+[node name="Fade10" type="Panel" parent="CenterContainer/GridContainer/Button11/Ui11Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
@@ -429,7 +429,7 @@ offset_bottom = 1878.0
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("14_wyhjg")
 
-[node name="FadeOverlay" type="Panel" parent="CenterContainer/GridContainer/Button12/Ui12Button"]
+[node name="Fade11" type="Panel" parent="CenterContainer/GridContainer/Button12/Ui12Button"]
 layout_mode = 0
 offset_left = 590.0
 offset_top = 590.0
