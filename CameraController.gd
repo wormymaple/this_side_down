@@ -17,19 +17,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if len(players) < 1: 
 		if !no_controller.visible:
 			no_controller.visible = true
-		return
-	
-	if Input.is_action_just_pressed("cancel"):
-		if !button.visible:
-			button.visible = true
-			background.visible = true
-	
-	if Input.is_action_just_pressed("confirm") and button.visible:
-		button._on_button_down()
+		return 
 	
 	var pos = Vector2.ZERO;
 	for player in players:

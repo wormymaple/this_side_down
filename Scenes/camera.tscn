@@ -28,4 +28,3 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_kdmjn")]
-visible = false
