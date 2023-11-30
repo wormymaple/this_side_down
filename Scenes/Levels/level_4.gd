@@ -1,33 +1,33 @@
 extends Node2D
 
-var minRotation = 2.7
-var maxRotation = 3.3
-var box1loaded = false
-var box2loaded = false
+@export var landing_zone: NodePath
+var num_of_boxes = 0
+
+func _on_zone_body_body_entered(body):
+	if body.is_in_group("Box"):
+		if body.get_meta("grabbed"):
+			return
+		
+		if abs(body.rotation_degrees) > 180 - 35:
+			num_of_boxes += 1
+			
+		if num_of_boxes >= 2:
+			win()
+		
+func win():
+	GlobalVariables.win_level(3)
+	get_node(landing_zone).play_particles()
+
 
 func _ready():
-	ThemeSongLoop.stop()
-	ThemeSongLoop.stream = load("res://Audio/BoxInSocksOutro.wav")
-	ThemeSongLoop.play()
-	
-func _process(delta):
-	if $TriangleboxUp.rotation > minRotation and $TriangleboxUp.rotation < maxRotation:
-		if box1loaded == true:
-			
-			if $TriangleboxUp2.rotation > minRotation and $TriangleboxUp2.rotation < maxRotation:
-				if box2loaded == true:
-					#LevelsCompleted.level4done = true
-					get_tree().change_scene_to_file("res://Scenes/Levels/level_5")
-
-func _on_loading_zone_body_entered(body):
-	if body == $TriangleboxUp:
-		box1loaded = true
-	elif body == $TriangleboxUp2:
-		box2loaded = true
-
+	pass
 
 func _on_loading_zone_body_exited(body):
-	if body == $TriangleboxUp:
-		box1loaded = false
-	elif body == $TriangleboxUp2:
-		box2loaded = false
+	if body.is_in_group("Box") && num_of_boxes > 0:
+		num_of_boxes -= 1
+
+
+func _on_area_2d_body_entered(body):
+	print(body)
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://Scenes/Levels/level_4.tscn")
