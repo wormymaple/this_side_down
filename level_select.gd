@@ -11,6 +11,7 @@ const positions = [Vector2(45, 333), Vector2(334, 333), Vector2(622, 333), Vecto
 func _ready():
 	#if ThemeSongLoop.playing:
 		#ThemeSongLoop.stop()
+		
 	for lock in lock_list:
 		if GlobalVariables.completed_levels.has(str(lock.name) as int):
 			lock.queue_free()
@@ -51,26 +52,50 @@ func _nope(): # This is not used currently
 	print("uh uh uh, you didnt say the magic word")
 
 func _on_button_1_pressed():
+	ThemeSongLoop.intro1 = true
+	ThemeSongLoop.intro2 = false
+	ThemeSongLoop.stream = load("res://Audio/BoxInSocksntro.wav")
+	ThemeSongLoop.play()
 	_start_level(1)
 
 func _on_button_2_pressed():
 	if GlobalVariables.completed_levels.has(1):
+		ThemeSongLoop.intro1 = true
+		ThemeSongLoop.intro2 = false
+		ThemeSongLoop.stream = load("res://Audio/BoxInSocksntro.wav")
+		ThemeSongLoop.play()
 		_start_level(2)
 
 func _on_button_3_pressed():
 	if GlobalVariables.completed_levels.has(2):
+		ThemeSongLoop.intro1 = true
+		ThemeSongLoop.intro2 = false
+		ThemeSongLoop.stream = load("res://Audio/BoxInSocksntro.wav")
+		ThemeSongLoop.play()
 		_start_level(3)
 
 func _on_button_4_pressed():
 	if GlobalVariables.completed_levels.has(3):
+		ThemeSongLoop.intro1 = false
+		ThemeSongLoop.intro2 = true
+		ThemeSongLoop.stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+		ThemeSongLoop.play()
 		_start_level(4)
 
 func _on_button_5_pressed():
 	if GlobalVariables.completed_levels.has(4):
+		ThemeSongLoop.intro1 = false
+		ThemeSongLoop.intro2 = true
+		ThemeSongLoop.stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+		ThemeSongLoop.play()
 		_start_level(5)
 
 func _on_button_6_pressed():
 	if GlobalVariables.completed_levels.has(5):
+		ThemeSongLoop.intro1 = false
+		ThemeSongLoop.intro2 = true
+		ThemeSongLoop.stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+		ThemeSongLoop.play()
 		_start_level(6)
 
 func _on_button_7_pressed():

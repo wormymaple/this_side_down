@@ -1,15 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwpxs0n1bfa8h"]
+[gd_scene load_steps=15 format=3 uid="uid://bwpxs0n1bfa8h"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_4.gd" id="1_lc6j4"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_v4xq1"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="2_1lqnc"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="3_iml12"]
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="4_keg0h"]
 [ext_resource type="PackedScene" uid="uid://c05ps7i55fw6q" path="res://Scenes/TriangleboxUp.tscn" id="5_km41f"]
 [ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="6_nde0g"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="7_sqj7y"]
 [ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="8_sj8f4"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_tvqyk"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="10_qfp0h"]
+[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="11_f3xvt"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="12_itn5d"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="13_dkewa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdlb6"]
+size = Vector2(1600, 100)
 
 [node name="Level4" type="Node2D"]
 script = ExtResource("1_lc6j4")
@@ -58,8 +64,8 @@ scale = Vector2(0.16, 2.12)
 position = Vector2(2761, 312)
 scale = Vector2(0.16, 2.12)
 
-[node name="LoadingZone" parent="." instance=ExtResource("4_keg0h")]
-position = Vector2(4202, 786)
+[node name="LandingZone" parent="." instance=ExtResource("7_sqj7y")]
+position = Vector2(4202, 760)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_sj8f4")]
 scale = Vector2(2, 2)
@@ -84,7 +90,24 @@ polygon = PackedVector2Array(4532, -540, 4530, 823, -811, 823, -811, -540)
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
-polygon = PackedVector2Array(-1134, 699, -704, 1435, 4840, 1036, 4816, -828, -575, -611, -811, -540, 4531, -539, 4530, 773, -812, 773, -811, -540)
+position = Vector2(1492, 121)
+polygon = PackedVector2Array(1268, 1000, 2611, 1135, 4840, 1036, 4816, -828, 798, -1089, -2807, -1026, -2697, 965, 1116, 653, -2303, 651, -2303, -661, 3040, -661, 3038, 650, 1116, 653)
 
-[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
-[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(993, -299)
+script = ExtResource("11_f3xvt")
+player_scene = ExtResource("12_itn5d")
+camera = NodePath("../Camera")
+colors = Array[Color]([Color(1, 0, 1, 1)])
+
+[node name="Camera" parent="." instance=ExtResource("13_dkewa")]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 15
+
+[node name="Kill Plane" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1849, 723)
+shape = SubResource("RectangleShape2D_kdlb6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -20,10 +20,14 @@ func win():
 
 
 func _ready():
-	ThemeSongLoop.stop()
-	ThemeSongLoop.stream = load("res://Audio/BoxInSocksOutro.wav")
-	ThemeSongLoop.play()
+	pass
 
 func _on_loading_zone_body_exited(body):
 	if body.is_in_group("Box") && num_of_boxes > 0:
 		num_of_boxes -= 1
+
+
+func _on_area_2d_body_entered(body):
+	print(body)
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://Scenes/Levels/level_4.tscn")
