@@ -53,12 +53,14 @@ position = Vector2(1919, 839)
 scale = Vector2(0.0732193, 2.73604)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(1652, 697)
+position = Vector2(1645, 894)
 scale = Vector2(1.86248, 2.82842)
+speed = 2
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("8_j0wbu")]
-position = Vector2(1313, 344)
+position = Vector2(1313, 204)
 scale = Vector2(2.11982, 3.03274)
+speed = -2
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(1602, 771)
