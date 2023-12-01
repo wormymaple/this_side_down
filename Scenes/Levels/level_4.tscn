@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwpxs0n1bfa8h"]
+[gd_scene load_steps=17 format=3 uid="uid://bwpxs0n1bfa8h"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_4.gd" id="1_lc6j4"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_v4xq1"]
@@ -19,24 +19,21 @@ size = Vector2(1600, 100)
 
 [sub_resource type="Curve2D" id="Curve2D_ec6w1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, -113, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, -342, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_i8a8g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.08165e-12, -200)
 }
 point_count = 2
 
 [node name="Level4" type="Node2D"]
+position = Vector2(254, 315)
+scale = Vector2(0.51, 0.51)
 script = ExtResource("1_lc6j4")
-
-[node name="Ramp" parent="." instance=ExtResource("3_iml12")]
-position = Vector2(2436, -14)
-scale = Vector2(0.2, 0.4)
-
-[node name="Ramp2" parent="." instance=ExtResource("3_iml12")]
-position = Vector2(3343, -10.0001)
-scale = Vector2(-0.5, 0.4)
-
-[node name="Ramp3" parent="." instance=ExtResource("3_iml12")]
-position = Vector2(1277, -17)
-scale = Vector2(-0.2, 0.4)
+landing_zone = NodePath("LandingZone")
 
 [node name="Floor" parent="." instance=ExtResource("1_v4xq1")]
 position = Vector2(151, 1008)
@@ -49,11 +46,21 @@ position = Vector2(957, 312)
 scale = Vector2(0.16, 2.12)
 
 [node name="Floor4" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(2761, 312)
+position = Vector2(2656.86, 311.765)
+scale = Vector2(0.16, 2.12)
+
+[node name="Floor5" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(3135.29, 515.687)
+scale = Vector2(0.16, 2.12)
+
+[node name="Floor6" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(2656.86, 311.765)
 scale = Vector2(0.16, 2.12)
 
 [node name="LandingZone" parent="." instance=ExtResource("7_sqj7y")]
-position = Vector2(4202, 760)
+position = Vector2(3580.39, 754.902)
+scale = Vector2(0.7, 0.7)
+handler_script = NodePath("..")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_sj8f4")]
 
@@ -71,16 +78,16 @@ z_index = 5
 color = Color(0.584314, 0.576471, 0.560784, 1)
 invert_enabled = true
 invert_border = 1000.0
-polygon = PackedVector2Array(4532, -540, 4530, 823, -811, 823, -811, -540)
+polygon = PackedVector2Array(3903.92, -801.961, 3898.04, 792.157, -811, 823, -807.843, -796.078)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
 position = Vector2(1492, 121)
-polygon = PackedVector2Array(1268, 1000, 2611, 1135, 4840, 1036, 4816, -828, 798, -1089, -2807, -1026, -2697, 965, 1116, 653, -2303, 651, -2303, -661, 3040, -661, 3038, 650, 1116, 653)
+polygon = PackedVector2Array(1268, 1000, 2611, 1135, 4840, 1036, 4816, -828, 798, -1089, -2807, -1026, -2697, 965, 1116, 653, -2303, 651, -2299.84, -917.078, 2409.96, -924.922, 2406.04, 651.549, 1116, 653)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(194, 648)
+position = Vector2(637.255, 515.686)
 script = ExtResource("11_f3xvt")
 player_scene = ExtResource("12_itn5d")
 camera = NodePath("../Camera")
@@ -103,20 +110,36 @@ position = Vector2(425, 723)
 position = Vector2(464, 756)
 
 [node name="Platform" parent="." instance=ExtResource("13_mvl3v")]
-position = Vector2(-179, 699)
-scale = Vector2(3, 2.6)
+position = Vector2(-45.0981, 664.706)
+scale = Vector2(3.84902, 2.86)
 curve = SubResource("Curve2D_ec6w1")
+speed = 0.4
 
 [node name="PathFollow2D" parent="Platform" index="0"]
+position = Vector2(-1.69407e-21, 0)
 rotation = 1.5708
 
 [node name="Platform2" parent="." instance=ExtResource("13_mvl3v")]
-position = Vector2(4167, 262)
+position = Vector2(3580.39, 401.961)
 scale = Vector2(3, 2.6)
-curve = SubResource("Curve2D_ec6w1")
+curve = SubResource("Curve2D_i8a8g")
+speed = 0.5
 
 [node name="PathFollow2D" parent="Platform2" index="0"]
-rotation = 1.5708
+position = Vector2(2.08165e-12, -200)
+rotation = -1.5708
+
+[node name="Ramp4" parent="." instance=ExtResource("3_iml12")]
+position = Vector2(1347.06, -68.6276)
+scale = Vector2(-0.28, 0.28)
+
+[node name="Ramp5" parent="." instance=ExtResource("3_iml12")]
+position = Vector2(2266.67, -66.6666)
+scale = Vector2(0.28, 0.28)
+
+[node name="Ramp6" parent="." instance=ExtResource("3_iml12")]
+position = Vector2(3047.06, -68.6276)
+scale = Vector2(-0.28, 0.28)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
