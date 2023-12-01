@@ -12,6 +12,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+	
+func check_win_condition(bodies):
+	for body in bodies:
+		if body.is_in_group("Box"):
+			if body.get_meta("grabbed"):
+				return false
+			
+			if abs(body.rotation_degrees) < 180 - 35:
+				return false
+	
+	return true
 
 func win_level(level: int):
 	if level in completed_levels:
