@@ -95,7 +95,7 @@ position = Vector2(1247, 684)
 position = Vector2(844, 904)
 
 [node name="Box" parent="." instance=ExtResource("10_cx2xa")]
-position = Vector2(969, 922)
+position = Vector2(82, 738)
 freeze_mode = 1
 
 [connection signal="body_entered" from="NotSus" to="NotSus" method="_on_body_entered"]
