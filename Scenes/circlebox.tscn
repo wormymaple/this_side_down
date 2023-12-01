@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c02557mdlevgc"]
+
+[ext_resource type="Texture2D" uid="uid://cn0nvh3ruw17a" path="res://Art/First Level/UI_HeavyCicle.png" id="1_qluji"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_2f16l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y87lr"]
+radius = 31.0161
+
+[node name="Box" type="RigidBody2D" groups=["Box"]]
+position = Vector2(2.08165e-12, 2.08165e-12)
+collision_layer = 8
+collision_mask = 13
+metadata/grabbable = false
+metadata/grabbed = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.08165e-12, 1)
+shape = SubResource("CircleShape2D_y87lr")
+
+[node name="BoxSprite" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+rotation = 2.53073
+scale = Vector2(0.144898, 0.144708)
+texture = ExtResource("1_qluji")
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+position = Vector2(-11, 3)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_2f16l")
