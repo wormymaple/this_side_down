@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
 [ext_resource type="Texture2D" uid="uid://dcsxxh6wfcyf5" path="res://Art/sprites/goobers-1.PNG" id="2_eti0h"]
-[ext_resource type="Texture2D" uid="uid://cvmgr1e4tp8xo" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
+[ext_resource type="Texture2D" uid="uid://rhl2ujh2louh" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
 [ext_resource type="Texture2D" uid="uid://ia8oqvh2uvwi" path="res://Art/sprites/goobers-2.PNG" id="3_0tw52"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_jvxiw"]
-[ext_resource type="Texture2D" uid="uid://velvtm7bc3j1" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
-[ext_resource type="AudioStream" uid="uid://co6b8bualid24" path="res://Audio/box pickup.wav" id="5_wmfcq"]
-[ext_resource type="AudioStream" uid="uid://xrfqy3rvcyix" path="res://Audio/box drop (better).wav" id="6_2vynb"]
-[ext_resource type="AudioStream" uid="uid://cq1c0i8e7mafv" path="res://Audio/jump3.wav" id="7_x2kif"]
-[ext_resource type="AudioStream" uid="uid://cafg13h6w7dmv" path="res://Audio/footstep(one).wav" id="9_46h22"]
+[ext_resource type="Texture2D" uid="uid://drgov0hsrc4ig" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
+[ext_resource type="AudioStream" uid="uid://b77qnikw5loa1" path="res://Audio/box pickup.wav" id="5_wmfcq"]
+[ext_resource type="AudioStream" uid="uid://bfrt1tuk44vt2" path="res://Audio/box drop (better).wav" id="6_2vynb"]
+[ext_resource type="AudioStream" uid="uid://8y20kn764clt" path="res://Audio/jump3.wav" id="7_x2kif"]
+[ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep(one).wav" id="9_46h22"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
 friction = 0.0
@@ -39,6 +39,7 @@ script = ExtResource("1_si3e4")
 move_speed = 250.0
 jump_speed = 500.0
 water_jump_coefficient = 1.5
+ladder_climb_speed = 200.0
 arm_move_speed = 5.0
 grab_speed = 20.0
 arm_length = 150.0
@@ -49,7 +50,7 @@ wiggle_time = 0.5
 legs_path = NodePath("Legs")
 head_path = NodePath("Head")
 head_bob = 2.0
-jump_buffer = 35
+jump_buffer = 5
 playerID = "p1"
 hand_path = NodePath("HandMeta")
 arm_path = NodePath("Arm")
@@ -65,7 +66,7 @@ metadata/grabbable = true
 metadata/grabbed = false
 
 [node name="Head" type="Sprite2D" parent="."]
-z_index = 3
+z_index = 4
 scale = Vector2(0.048, 0.048)
 texture = ExtResource("2_eti0h")
 
@@ -79,6 +80,7 @@ position = Vector2(0, 10.5)
 shape = SubResource("CapsuleShape2D_4rmwu")
 
 [node name="Arm" type="Line2D" parent="."]
+z_index = 1
 points = PackedVector2Array(0, 0, 0, 0)
 default_color = Color(0.207843, 0.384314, 0.529412, 1)
 
@@ -91,7 +93,7 @@ disabled = true
 
 [node name="Hand" type="Sprite2D" parent="HandMeta"]
 modulate = Color(0.109804, 0.196078, 0.317647, 1)
-z_index = 2
+z_index = 3
 texture_filter = 1
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("4_vmjrj")
