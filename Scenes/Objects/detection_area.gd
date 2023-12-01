@@ -15,6 +15,7 @@ func _on_ready():
 func _physics_process(_delta):
 	pass
 	#box.set_physics_process(false) # Does not move box
+	##box.set_use_custom_integrator(true)
 	#box.custom_integrator = true # does not move
 #	box.freeze = true # Works but I can't unfreeze
 	#box.sleeping = true # Does not move box
