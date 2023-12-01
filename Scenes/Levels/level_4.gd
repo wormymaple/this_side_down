@@ -3,16 +3,11 @@ extends Node2D
 @export var landing_zone: NodePath
 var num_of_boxes = 0
 
-func _on_zone_body_body_entered(body):
-	if body.is_in_group("Box"):
-		if body.get_meta("grabbed"):
-			return
-		
-		if abs(body.rotation_degrees) > 180 - 35:
-			num_of_boxes += 1
-			
-		if num_of_boxes >= 2:
-			win()
+func _on_zone_body_body_entered(bodies):
+	var won = GlobalVariables.check_win_condition(bodies)
+	
+	if won:
+		win()
 		
 func win():
 	GlobalVariables.win_level(3)

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="3_mv7h8"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="8_6vpom"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="8_xy6mt"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="9_5ant1"]
+[ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="9_5ant1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="9_e6i4h"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="10_i46cw"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="12_jkmtc"]
@@ -33,7 +33,6 @@ position = Vector2(410, 719)
 script = ExtResource("2_dmm6o")
 player_scene = ExtResource("3_mv7h8")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="2" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(964, 1085)
