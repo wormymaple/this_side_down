@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var sizes: Array[int]
 @onready var sprite = $BoxSprite
 @onready var collision = $CollisionShape2D
+@onready var arrow = $ArrowSprite
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,8 +12,13 @@ func _ready():
 	var current_level = GlobalVariables.levelrn
 	print(current_level)
 	sprite.texture = sprites[int(current_level) - 1]
-	#sprite.set_scale(sizes[int(current_level) - 1], sizes[int(current_level) - 1])
-	#collision.set_scale(sizes[int(current_level) - 1], sizes[int(current_level) - 1])
+	sprite.scale.x *= sizes[int(current_level) - 1]
+	sprite.scale.y *= sizes[int(current_level) - 1]
+	collision.scale.x *= sizes[int(current_level) - 1]
+	collision.scale.y *= sizes[int(current_level) - 1]
+	if sizes[int(current_level) - 1] == 2:
+		arrow.position.x -= 20
+		arrow. position.y -= 20
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

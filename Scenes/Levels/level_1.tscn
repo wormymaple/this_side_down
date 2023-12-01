@@ -73,11 +73,12 @@ position = Vector2(1701.44, -1268)
 scale = Vector2(8.55371, 1.53125)
 
 [node name="Box" parent="." instance=ExtResource("10_mhr4p")]
-position = Vector2(946, 833)
+position = Vector2(887, 742)
 
 [node name="LandingZone" parent="." instance=ExtResource("11_kijhk")]
-position = Vector2(1734, 858)
+position = Vector2(1735, 856)
 handler_script = NodePath("..")
+boxes_required = 1
 
 [node name="Ladder" type="Area2D" parent="."]
 position = Vector2(228, 617)
