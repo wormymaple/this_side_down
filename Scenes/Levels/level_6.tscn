@@ -1,31 +1,39 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8aiossmut76m"]
+[gd_scene load_steps=21 format=3 uid="uid://c8aiossmut76m"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_6.gd" id="1_7kglf"]
-[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="3_qa1mb"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="5_20p7a"]
-[ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="7_krkdf"]
-[ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="8_ipfma"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="7_5g5wu"]
+[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="7_fhnad"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="7_hqlvf"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="8_lh8vf"]
+[ext_resource type="Script" path="res://Scripts/Ladder.gd" id="8_vwsy4"]
+[ext_resource type="Texture2D" uid="uid://ct2w003o42dva" path="res://Art/third level/UI_ladder.png" id="9_ghcfw"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_lxu1d"]
+[ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="9_lytq7"]
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/parallax_backgroundCrates.tscn" id="10_5rxrt"]
+[ext_resource type="Texture2D" uid="uid://gmpfrosil5gl" path="res://Art/second level/UI_floatingplatform.png" id="10_oxqs3"]
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="10_w06lg"]
+[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/boxtri.tscn" id="11_ncb4q"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="11_unprq"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="12_7j7q0"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="13_uogt2"]
+[ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="14_jcsp8"]
+
+[sub_resource type="Curve2D" id="Curve2D_w117e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, 2.08165e-12, -300)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_habp2"]
+size = Vector2(85, 475)
 
 [node name="Level6" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_7kglf")
-
-[node name="MovingPlatform" parent="." instance=ExtResource("3_qa1mb")]
-position = Vector2(-120, 681)
-scale = Vector2(0.35, 0.35)
-
-[node name="HorMovingPlatform" parent="." instance=ExtResource("7_krkdf")]
-position = Vector2(2167, 1201)
-scale = Vector2(0.35, 0.35)
 
 [node name="LoadingZone" parent="." instance=ExtResource("5_20p7a")]
 position = Vector2(3520, 851)
-
-[node name="TriangleboxUp" parent="." instance=ExtResource("8_ipfma")]
-position = Vector2(620, 799)
-rotation = 3.12945
 
 [node name="CanvasModulate" parent="." instance=ExtResource("9_lxu1d")]
 position = Vector2(-2226.9, -1118.87)
@@ -43,5 +51,111 @@ position = Vector2(-2171, 49)
 color = Color(0.807843, 0.552941, 0.482353, 1)
 energy = 1.41
 
+[node name="Camera" parent="." instance=ExtResource("7_5g5wu")]
+position = Vector2(403, 863)
+zoom = Vector2(1.5, 1.5)
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(403, 863)
+script = ExtResource("7_fhnad")
+player_scene = ExtResource("8_lh8vf")
+camera = NodePath("../Camera")
+
+[node name="Piston" parent="." instance=ExtResource("9_lytq7")]
+position = Vector2(653, 18)
+
+[node name="Piston2" parent="." instance=ExtResource("9_lytq7")]
+position = Vector2(804, 18)
+
+[node name="Platform" parent="." instance=ExtResource("7_hqlvf")]
+position = Vector2(250, 950)
+curve = SubResource("Curve2D_w117e")
+speed = 0.3
+
+[node name="Platform2" parent="." instance=ExtResource("7_hqlvf")]
+position = Vector2(1200, 960)
+rotation = 0.698132
+speed = 0.3
+sprite = ExtResource("10_oxqs3")
+path_behavior = 2
+
+[node name="BoxTri" parent="." instance=ExtResource("11_ncb4q")]
+position = Vector2(453, 917)
+
+[node name="Box2" parent="." instance=ExtResource("12_7j7q0")]
+position = Vector2(901, 328)
+
+[node name="LandingZone" parent="." instance=ExtResource("13_uogt2")]
+position = Vector2(1590, 1008)
+handler_script = NodePath("..")
+boxes_required = 2
+
+[node name="Ramp" parent="." instance=ExtResource("14_jcsp8")]
+position = Vector2(1047, 952)
+scale = Vector2(-0.101375, 0.199112)
+
+[node name="Ramp2" parent="." instance=ExtResource("14_jcsp8")]
+position = Vector2(1097, 869)
+scale = Vector2(0.0647705, -0.140396)
+
+[node name="Ladder" type="Area2D" parent="."]
+position = Vector2(360, 424)
+collision_mask = 2
+script = ExtResource("8_vwsy4")
+
+[node name="LadderSprite" type="Sprite2D" parent="Ladder"]
+z_index = -1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_ghcfw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+shape = SubResource("RectangleShape2D_habp2")
+
+[node name="FloorHandler" type="Node2D" parent="."]
+position = Vector2(263, 558)
+
+[node name="Polygon2D" type="Polygon2D" parent="FloorHandler"]
+position = Vector2(-263, -558)
+
+[node name="Floor2" parent="FloorHandler" instance=ExtResource("10_w06lg")]
+position = Vector2(430, -78)
+scale = Vector2(0.280002, 0.320001)
+
+[node name="Floor5" parent="FloorHandler" instance=ExtResource("10_w06lg")]
+position = Vector2(475, -323)
+scale = Vector2(0.320002, 0.200002)
+
+[node name="Floor6" parent="FloorHandler" instance=ExtResource("10_w06lg")]
+position = Vector2(475, -636)
+scale = Vector2(0.320002, 0.200002)
+
+[node name="Floor3" parent="FloorHandler" instance=ExtResource("10_w06lg")]
+position = Vector2(636, 172)
+rotation = 1.56413
+scale = Vector2(0.334143, 0.261368)
+
+[node name="Floor4" parent="FloorHandler" instance=ExtResource("10_w06lg")]
+position = Vector2(831, -53)
+rotation = 1.56413
+scale = Vector2(0.329529, -0.224068)
+
+[node name="Floor" parent="FloorHandler" instance=ExtResource("10_w06lg")]
+position = Vector2(697, 691)
+
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+position = Vector2(401, 478)
+color = Color(0.584314, 0.576471, 0.560784, 1)
+invert_enabled = true
+invert_border = 1000.0
+polygon = PackedVector2Array(2400, -257, 2400, 908, -480, 947, -480, -256)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2819, -702, -575, -611, -481, -259, 2399, -259, 2401, 896, -480, 890, -480, -256)
+
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
+[connection signal="body_entered" from="Ladder" to="Ladder" method="_on_body_entered"]
+[connection signal="body_exited" from="Ladder" to="Ladder" method="_on_body_exited"]

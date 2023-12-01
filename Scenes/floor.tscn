@@ -8,21 +8,16 @@ size = Vector2(1923, 454)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3vuf4"]
 polygon = PackedVector2Array(960, 540, -960, 540, -960, 77, 362, 77, 362, 76, 960, 76)
 
-[node name="Floor" type="Area2D"]
+[node name="StaticBody2D" type="StaticBody2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-1, -313)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-0.5, 312)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eo1vl")
-metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 5
+position = Vector2(0, -314)
 texture = ExtResource("1_pq6cq")
 
-[node name="LightOccluder2D4" type="LightOccluder2D" parent="StaticBody2D"]
-position = Vector2(-2, 6)
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(3, -307)
 occluder = SubResource("OccluderPolygon2D_3vuf4")
