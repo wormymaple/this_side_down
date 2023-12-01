@@ -12,6 +12,9 @@ func _on_zone_body_body_entered(body):
 			win()
 		
 func win():
+	if 3 in GlobalVariables.completed_levels:
+		return
+	
 	GlobalVariables.win_level(3)
 	get_node(landing_zone).play_particles()
 	

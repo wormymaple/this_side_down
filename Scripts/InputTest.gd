@@ -154,8 +154,9 @@ func _input(event):
 			hand_sprite.texture = holding_hand
 			
 			box_pickup.play()
-		elif grabbed_body != null:
-			drop_object()
+			
+	elif event.is_action_released("right_trigger_" + playerID) && grabbed_body != null:
+		drop_object()
 
 func set_color(color):
 	modulate = color
