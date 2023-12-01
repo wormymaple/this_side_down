@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_tg4xy"]
 [ext_resource type="Script" path="res://Scenes/Levels/level_7.gd" id="1_twdix"]
-[ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="2_7rhvh"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_xic28"]
 [ext_resource type="PackedScene" uid="uid://dh031n2t5v3fm" path="res://Scenes/spherebox.tscn" id="4_2qpt1"]
 [ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://Art/parallax_backgroundBoat.tscn" id="6_yoqci"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/third level/UI_Barrier.png" id="12_tge58"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="13_xmucb"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="14_cygbs"]
+[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/boxtri.tscn" id="15_3yhl3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x03f7"]
 
@@ -22,14 +22,6 @@ light_mode = 1
 
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_twdix")
-
-[node name="TriangleboxUp" parent="." instance=ExtResource("2_7rhvh")]
-position = Vector2(1137, 925)
-rotation = -3.11852
-
-[node name="TriangleboxUp2" parent="." instance=ExtResource("2_7rhvh")]
-position = Vector2(97.0002, 922)
-rotation = -3.11852
 
 [node name="Spherebox" parent="." instance=ExtResource("4_2qpt1")]
 position = Vector2(1665, 223)
@@ -111,6 +103,18 @@ position = Vector2(70, 270)
 scale = Vector2(3, 1)
 speed = 2.08165e-12
 path_behavior = 2
+
+[node name="Platform2" parent="." instance=ExtResource("14_cygbs")]
+position = Vector2(655, 550)
+rotation = 0.368264
+speed = 2.08165e-12
+path_behavior = 2
+
+[node name="Box" parent="." instance=ExtResource("15_3yhl3")]
+position = Vector2(322, 918)
+
+[node name="Box2" parent="." instance=ExtResource("15_3yhl3")]
+position = Vector2(1232, 934)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
