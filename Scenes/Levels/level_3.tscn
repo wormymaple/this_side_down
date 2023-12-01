@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cc5nqimy6p2p7" path="res://Scenes/boxlarge.tscn" id="4_0lor1"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="8_6vpom"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="8_xy6mt"]
-[ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="9_5ant1"]
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="9_5ant1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="9_e6i4h"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="10_i46cw"]
 
@@ -34,9 +34,6 @@ script = ExtResource("2_dmm6o")
 player_scene = ExtResource("3_mv7h8")
 camera = NodePath("../Camera")
 colors = Array[Color]([Color(1, 0, 1, 1)])
-
-[node name="Box" parent="." instance=ExtResource("4_0lor1")]
-position = Vector2(808, 787)
 
 [node name="2" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(964, 1085)
@@ -108,5 +105,8 @@ transform = Transform2D(0.9, 0, 0, 0.9, 2.08165e-12, 150)
 
 [node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("10_i46cw")]
 position = Vector2(12, 305)
+
+[node name="BoxLarge" parent="." instance=ExtResource("4_0lor1")]
+position = Vector2(936, 721)
 
 [editable path="Platform"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://de33bfmp2w6jc"]
 
 [ext_resource type="Script" path="res://PauseMenu.gd" id="1_xgo0j"]
-[ext_resource type="Texture2D" uid="uid://kndyenucqpye" path="res://Sprites/PauseMenuHighlight.png" id="2_6wcx4"]
+[ext_resource type="Texture2D" uid="uid://dynuad7r6e0nv" path="res://Sprites/PauseMenuHighlight.png" id="2_6wcx4"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://settings_menu.tscn" id="2_eru1t"]
 [ext_resource type="FontFile" uid="uid://bsdypfjjnmwjc" path="res://font/Nunito/static/Nunito-Bold.ttf" id="2_iun0m"]
 [ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://font/Nunito/static/Nunito-Medium.ttf" id="3_an8ph"]

@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var jump_speed: float
 @export var water_jump_coefficient: float
 var is_in_water: bool
+@export var ladder_climb_speed: float
 @export var arm_move_speed: float
 @export var grab_speed: float
 @export var arm_length: float
@@ -34,6 +35,8 @@ var grabbed_body: Node2D
 var on_ground = false
 var grab_did_collide = false
 var unmovable = false
+var standing_in_ladder = false
+var original_grav_scale: float
 
 @export var holding_hand: Texture2D
 @export var empty_hand: Texture2D
@@ -56,9 +59,19 @@ func _ready():
 	arm.set_point_position(1, hand.position)
 	
 	add_to_group("Player")
+	original_grav_scale = gravity_scale
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if standing_in_ladder: # Ladder physics
+		if Input.is_action_pressed("left_trigger_" + playerID):
+			gravity_scale = 0
+			linear_velocity = Vector2.UP * ladder_climb_speed
+		else:
+			linear_velocity = Vector2.ZERO
+	elif gravity_scale == 0:
+		gravity_scale = original_grav_scale
+	
 	if running_buffer: # Jump buffer
 		jump_buffer_frames -= 1
 		if jump_buffer_frames <= 0:
@@ -120,7 +133,7 @@ func _physics_process(delta):
 		
 func _input(event):
 	# jump
-	if event.is_action_pressed("left_trigger_" + playerID) && on_ground:
+	if event.is_action_pressed("left_trigger_" + playerID) && on_ground && !standing_in_ladder:
 		linear_velocity.y = -jump_speed
 		if is_in_water:
 			linear_velocity.y *= water_jump_coefficient
@@ -141,8 +154,9 @@ func _input(event):
 			hand_sprite.texture = holding_hand
 			
 			box_pickup.play()
-		elif grabbed_body != null:
-			drop_object()
+			
+	elif event.is_action_released("right_trigger_" + playerID) && grabbed_body != null:
+		drop_object()
 
 func set_color(color):
 	modulate = color
