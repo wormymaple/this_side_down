@@ -4,7 +4,7 @@ extends Node2D
 @export var camera: Camera2D
 
 func _ready():
-	pass
+	GlobalVariables.levelrn = 1
 	
 func _on_zone_body_body_entered(bodies):
 	var won = GlobalVariables.check_win_condition(bodies)
