@@ -48,8 +48,20 @@ position = Vector2(-282, 342)
 scale = Vector2(0.400001, 0.359999)
 
 [node name="Floor2" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(2082, 117)
-scale = Vector2(0.0800012, 3.54911)
+position = Vector2(1864, 720)
+scale = Vector2(0.0800012, 1.59582)
+
+[node name="Floor4" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(-543, 525)
+scale = Vector2(0.0800012, 3.67582)
+
+[node name="Floor6" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(2462, 525)
+scale = Vector2(0.0800012, 3.67582)
+
+[node name="Floor5" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(2227, -365)
+scale = Vector2(-1.68731, 0.436588)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("10_gnpag")]
 position = Vector2(1534, -611)
@@ -68,11 +80,10 @@ scale = Vector2(0.35, 0.35)
 [node name="CanvasModulate" parent="." instance=ExtResource("6_tammo")]
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(1602, 771)
+position = Vector2(621, 727)
 script = ExtResource("12_42hc6")
 player_scene = ExtResource("13_avyxm")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 damp = 2.0
 gravity_scale = 0.6
 is_in_water = true
@@ -86,5 +97,5 @@ gravity_scale = 0.4
 linear_damp = 2.0
 
 [node name="Spring" parent="." instance=ExtResource("16_paf4g")]
-position = Vector2(1877, 766)
-Power = 4000
+position = Vector2(1677, 807)
+Power = 1300

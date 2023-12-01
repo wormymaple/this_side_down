@@ -62,7 +62,6 @@ position = Vector2(1237, 672)
 script = ExtResource("8_2yscn")
 player_scene = ExtResource("9_vr6y1")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="Camera" parent="." instance=ExtResource("10_sb6ob")]
 zoom = Vector2(1.5, 1.5)

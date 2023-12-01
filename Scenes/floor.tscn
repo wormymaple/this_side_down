@@ -24,4 +24,5 @@ z_index = 5
 texture = ExtResource("1_pq6cq")
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="StaticBody2D"]
+position = Vector2(-2, 6)
 occluder = SubResource("OccluderPolygon2D_3vuf4")

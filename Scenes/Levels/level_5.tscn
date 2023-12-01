@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwfqlui2oxdvp"]
+[gd_scene load_steps=18 format=3 uid="uid://bwfqlui2oxdvp"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_5.gd" id="1_1uj3l"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_arfby"]
@@ -10,7 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="11_eobp3"]
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/parallax_backgroundCrates.tscn" id="11_kaf0w"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_vbs12"]
+[ext_resource type="Script" path="res://Scripts/Ladder.gd" id="12_3joda"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="12_o2sbc"]
+[ext_resource type="Texture2D" uid="uid://ct2w003o42dva" path="res://Art/third level/UI_ladder.png" id="13_5aiuj"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="14_blfx0"]
+[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/boxtri.tscn" id="15_q38yl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7hxk"]
+size = Vector2(85, 475)
+
+[sub_resource type="Curve2D" id="Curve2D_037mp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 68, 0, 0, 0, 0, 0, -334, 0, 0, 0, 0, -1043, -336)
+}
+point_count = 3
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_1uj3l")
@@ -20,8 +33,8 @@ position = Vector2(1056, 1078)
 scale = Vector2(2.84, 1)
 
 [node name="Floor2" parent="." instance=ExtResource("1_arfby")]
-position = Vector2(518, 326)
-scale = Vector2(0.0399998, 1.12)
+position = Vector2(518, 346)
+scale = Vector2(0.0399998, 0.719999)
 
 [node name="Ramp" parent="." instance=ExtResource("2_li18c")]
 position = Vector2(1324, 793)
@@ -57,6 +70,62 @@ camera = NodePath("../Camera")
 colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="LandingZone" parent="." instance=ExtResource("11_eobp3")]
-position = Vector2(212, 472)
+position = Vector2(346, 464)
 scale = Vector2(0.4, 0.4)
 handler_script = NodePath("../../..")
+
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+position = Vector2(288.887, 348.266)
+scale = Vector2(0.35991, 0.641233)
+color = Color(0.584314, 0.576471, 0.560784, 1)
+invert_enabled = true
+invert_border = 1000.0
+polygon = PackedVector2Array(4532, -540, 4530, 823, -811, 823, -811, -540)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+position = Vector2(1492, 121)
+polygon = PackedVector2Array(1268, 1000, 2611, 1135, 4840, 1036, 4816, -828, 798, -1089, -2807, -1026, -2697, 965, 1116, 653, -2303, 651, -2303, -661, 3040, -661, 3038, 650, 1116, 653)
+
+[node name="Ladder" type="Area2D" parent="."]
+position = Vector2(215, 709)
+collision_mask = 2
+script = ExtResource("12_3joda")
+metadata/_edit_group_ = true
+
+[node name="LadderSprite" type="Sprite2D" parent="Ladder"]
+z_index = -1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_5aiuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+shape = SubResource("RectangleShape2D_u7hxk")
+
+[node name="Platform" parent="." instance=ExtResource("14_blfx0")]
+position = Vector2(290, 491)
+scale = Vector2(2, 1)
+speed = 2.08165e-12
+path_behavior = 2
+
+[node name="Platform2" parent="." instance=ExtResource("14_blfx0")]
+position = Vector2(1668, 737)
+curve = SubResource("Curve2D_037mp")
+speed = 0.7
+path_behavior = 3
+
+[node name="Box2" parent="." instance=ExtResource("15_q38yl")]
+position = Vector2(1524, 800)
+rotation = 1.03412
+
+[node name="Box3" parent="." instance=ExtResource("15_q38yl")]
+position = Vector2(1627, 672)
+rotation = 3.11039
+
+[node name="Box4" parent="." instance=ExtResource("15_q38yl")]
+position = Vector2(1705, 669)
+rotation = 5.1907
+
+[connection signal="body_entered" from="Ladder" to="Ladder" method="_on_body_entered"]
+[connection signal="body_exited" from="Ladder" to="Ladder" method="_on_body_exited"]

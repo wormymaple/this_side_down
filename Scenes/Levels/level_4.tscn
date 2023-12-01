@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_v4xq1"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="3_iml12"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="7_sqj7y"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="8_sj8f4"]
+[ext_resource type="PackedScene" path="res://Art/parallax_background.tscn" id="8_sj8f4"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_tvqyk"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="10_qfp0h"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="11_f3xvt"]
@@ -95,7 +95,6 @@ position = Vector2(637.255, 515.686)
 script = ExtResource("11_f3xvt")
 player_scene = ExtResource("12_itn5d")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="Camera" parent="." instance=ExtResource("13_dkewa")]
 
@@ -106,12 +105,6 @@ collision_mask = 15
 [node name="Kill Plane" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1849, 723)
 shape = SubResource("RectangleShape2D_kdlb6")
-
-[node name="Box" parent="." instance=ExtResource("12_xkuuy")]
-position = Vector2(425, 723)
-
-[node name="Box2" parent="." instance=ExtResource("13_0n2yu")]
-position = Vector2(464, 756)
 
 [node name="Platform" parent="." instance=ExtResource("13_mvl3v")]
 position = Vector2(-45.0981, 664.706)
@@ -144,6 +137,12 @@ scale = Vector2(0.28, 0.28)
 [node name="Ramp6" parent="." instance=ExtResource("3_iml12")]
 position = Vector2(3047.06, -68.6276)
 scale = Vector2(-0.28, 0.28)
+
+[node name="Box" parent="." instance=ExtResource("12_xkuuy")]
+position = Vector2(486.275, 727.451)
+
+[node name="Box2" parent="." instance=ExtResource("13_0n2yu")]
+position = Vector2(523.529, 747.059)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
