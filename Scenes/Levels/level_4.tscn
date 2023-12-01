@@ -106,12 +106,6 @@ collision_mask = 15
 position = Vector2(1849, 723)
 shape = SubResource("RectangleShape2D_kdlb6")
 
-[node name="Box" parent="." instance=ExtResource("12_xkuuy")]
-position = Vector2(425, 723)
-
-[node name="Box2" parent="." instance=ExtResource("13_0n2yu")]
-position = Vector2(464, 756)
-
 [node name="Platform" parent="." instance=ExtResource("13_mvl3v")]
 position = Vector2(-45.0981, 664.706)
 scale = Vector2(3.84902, 2.86)
@@ -143,6 +137,12 @@ scale = Vector2(0.28, 0.28)
 [node name="Ramp6" parent="." instance=ExtResource("3_iml12")]
 position = Vector2(3047.06, -68.6276)
 scale = Vector2(-0.28, 0.28)
+
+[node name="Box" parent="." instance=ExtResource("12_xkuuy")]
+position = Vector2(486.275, 727.451)
+
+[node name="Box2" parent="." instance=ExtResource("13_0n2yu")]
+position = Vector2(523.529, 747.059)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 

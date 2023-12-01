@@ -2,6 +2,9 @@ extends Node2D
 
 @export var landing_zone: NodePath
 
+func _ready():
+	GlobalVariables.levelrn = 12
+	
 func _on_zone_body_body_entered(bodies):
 	var won = GlobalVariables.check_win_condition(bodies)
 	

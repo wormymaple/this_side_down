@@ -15,7 +15,7 @@ func win():
 
 
 func _ready():
-	pass
+	GlobalVariables.levelrn = 4
 
 func _on_loading_zone_body_exited(body):
 	if body.is_in_group("Box") && num_of_boxes > 0:
