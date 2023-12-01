@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4h46cjlyo4qt"]
+[gd_scene load_steps=17 format=3 uid="uid://c4h46cjlyo4qt"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_tg4xy"]
 [ext_resource type="Script" path="res://Scenes/Levels/level_7.gd" id="1_twdix"]
-[ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="2_7rhvh"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_xic28"]
 [ext_resource type="PackedScene" uid="uid://dh031n2t5v3fm" path="res://Scenes/spherebox.tscn" id="4_2qpt1"]
 [ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://Art/parallax_backgroundBoat.tscn" id="6_yoqci"]
@@ -12,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="9_vr6y1"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="10_sb6ob"]
 [ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/third level/UI_Barrier.png" id="12_tge58"]
+[ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="13_xmucb"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="14_cygbs"]
+[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/boxtri.tscn" id="15_3yhl3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x03f7"]
 
@@ -21,29 +23,24 @@ light_mode = 1
 [node name="Level7" type="Node2D"]
 script = ExtResource("1_twdix")
 
-[node name="TriangleboxUp" parent="." instance=ExtResource("2_7rhvh")]
-position = Vector2(763, 815)
-rotation = -3.11852
-
-[node name="TriangleboxUp2" parent="." instance=ExtResource("2_7rhvh")]
-position = Vector2(2991, 847)
-rotation = -3.11852
-
 [node name="Spherebox" parent="." instance=ExtResource("4_2qpt1")]
-position = Vector2(3569, -660)
+position = Vector2(1665, 223)
 
 [node name="Floor" parent="." instance=ExtResource("1_tg4xy")]
-position = Vector2(480, 1086)
+position = Vector2(-209, 1206)
+scale = Vector2(-0.966132, 0.963958)
 
 [node name="Floor2" parent="." instance=ExtResource("1_tg4xy")]
-position = Vector2(3581, 1122)
+position = Vector2(1915, 1175)
+scale = Vector2(1.03354, 0.785044)
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_xic28")]
-position = Vector2(4185, 885)
+position = Vector2(2049, 974)
+scale = Vector2(0.5, 0.5)
 
 [node name="Floor3" parent="." instance=ExtResource("1_tg4xy")]
-position = Vector2(3574, 322)
-scale = Vector2(0.0799951, 3.92)
+position = Vector2(1667, 895)
+scale = Vector2(0.104197, 2.50086)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_yoqci")]
 
@@ -65,7 +62,6 @@ position = Vector2(1237, 672)
 script = ExtResource("8_2yscn")
 player_scene = ExtResource("9_vr6y1")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="Camera" parent="." instance=ExtResource("10_sb6ob")]
 zoom = Vector2(1.5, 1.5)
@@ -77,6 +73,7 @@ layer = 0
 z_index = 4096
 z_as_relative = false
 material = SubResource("CanvasItemMaterial_x03f7")
+position = Vector2(-14, 173)
 motion_scale = Vector2(1.2, 1)
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground2/Ground"]
@@ -84,6 +81,39 @@ material = SubResource("CanvasItemMaterial_0kylo")
 position = Vector2(960, 350)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_tge58")
+
+[node name="Spring" parent="." instance=ExtResource("13_xmucb")]
+position = Vector2(1468, 942)
+Power = 1200
+
+[node name="Spring2" parent="." instance=ExtResource("13_xmucb")]
+position = Vector2(-74, 942)
+scale = Vector2(1.2, 1)
+Power = 1200
+
+[node name="Spring3" parent="." instance=ExtResource("13_xmucb")]
+position = Vector2(674, 498)
+rotation = 0.359538
+scale = Vector2(1.2, 1)
+Power = 1000
+
+[node name="Platform" parent="." instance=ExtResource("14_cygbs")]
+position = Vector2(70, 270)
+scale = Vector2(3, 1)
+speed = 2.08165e-12
+path_behavior = 2
+
+[node name="Platform2" parent="." instance=ExtResource("14_cygbs")]
+position = Vector2(655, 550)
+rotation = 0.368264
+speed = 2.08165e-12
+path_behavior = 2
+
+[node name="Box" parent="." instance=ExtResource("15_3yhl3")]
+position = Vector2(322, 918)
+
+[node name="Box2" parent="." instance=ExtResource("15_3yhl3")]
+position = Vector2(1232, 934)
 
 [connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
 [connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]

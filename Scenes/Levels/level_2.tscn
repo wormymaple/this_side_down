@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b648xp38c3ny7"]
+[gd_scene load_steps=14 format=3 uid="uid://b648xp38c3ny7"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_jrl6j"]
 [ext_resource type="Script" path="res://Scenes/Levels/level_2.gd" id="1_kr7b3"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="4_nh0bc"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="6_3jehe"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="6_48uye"]
+[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/boxtri.tscn" id="6_55da6"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="7_2ga8b"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="8_grauf"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="8_jmg2h"]
@@ -32,17 +33,20 @@ position = Vector2(972, 393)
 [node name="Box" parent="." instance=ExtResource("6_3jehe")]
 position = Vector2(619, 841)
 
+[node name="Box2" parent="." instance=ExtResource("6_55da6")]
+position = Vector2(610, 762)
+
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(1008, 767)
 scale = Vector2(1.00399, 1.01237)
 script = ExtResource("7_2ga8b")
 player_scene = ExtResource("8_jmg2h")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="LandingZone" parent="." instance=ExtResource("8_grauf")]
 position = Vector2(1452, 877)
 handler_script = NodePath("..")
+boxes_required = 2
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("9_64wh3")]
 position = Vector2(545, -363)

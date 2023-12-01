@@ -16,7 +16,8 @@ var players: Array
 @export var fade_delay: float
 @export var unfade_speed: float
 var fade_time_real: float
-var fading
+var fading = false
+var fadout = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,8 +34,11 @@ func _process(delta):
 		
 		fade.modulate = Color(1, 1, 1, fade_time_real / fade_time)
 		
-	elif fade.modulate.a > 0:
-		fade.modulate.a -= delta * unfade_speed
+	elif fadout:
+		if fade.modulate.a > 0:
+			fade.modulate.a -= delta * unfade_speed
+		else:
+			fadout = false
 	
 	if len(players) < 1: 
 		if !no_controller.visible:

@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://rlnrmnltn78o"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Piston.gd" id="1_wefcu"]
+[ext_resource type="Texture2D" uid="uid://dbxdafhf1hffn" path="res://Art/First Level/UI_piston.png" id="2_w13lb"]
+[ext_resource type="Texture2D" uid="uid://mkbxosof3gib" path="res://Art/First Level/UI_PistonTop.png" id="3_2s4el"]
+[ext_resource type="Texture2D" uid="uid://dldepckixr6ge" path="res://Art/First Level/UI_PistonBase.png" id="4_0qpyl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vyyi"]
+size = Vector2(2810.67, 744.616)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1808u"]
+size = Vector2(2376.5, 358.692)
+
+[node name="Piston" type="StaticBody2D"]
+rotation = 3.14159
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("1_wefcu")
+sprite = ExtResource("2_w13lb")
+
+[node name="RegularPiston" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.080595, 0.080595)
+texture = ExtResource("2_w13lb")
+
+[node name="PistonBase" type="Sprite2D" parent="."]
+position = Vector2(-1.23658e-12, -3.13496e-18)
+scale = Vector2(0.0805957, 0.0956991)
+texture = ExtResource("4_0qpyl")
+
+[node name="PistonHead" type="Sprite2D" parent="."]
+position = Vector2(-0.000109013, 43)
+scale = Vector2(0.0776159, 0.0476485)
+texture = ExtResource("3_2s4el")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.35657e-05, 29)
+scale = Vector2(0.0437618, 0.053719)
+shape = SubResource("RectangleShape2D_6vyyi")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Deleter" type="Area2D" parent="."]
+position = Vector2(-0.500001, 25)
+scale = Vector2(0.0437618, 0.053719)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Deleter"]
+position = Vector2(-11.4266, -93.077)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1808u")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(-0.500239, 119)
+scale = Vector2(0.0437618, 0.053719)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(-11.4212, -1824.31)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1808u")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Deleter" to="." method="_on_deleter_body_entered"]

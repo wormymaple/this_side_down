@@ -2,8 +2,6 @@ extends Control
 
 @onready var settings_menu = $SettingsMenu
 
-enum Test {TEST1, TEST2, TEST3}
-@export var test: Test
 var positions = [477, 721, 975]
 var menu_funcs = ['_on_play_button_pressed', '_on_options_button_pressed', '_on_quit_button_pressed']
 @export var arrow_position: int
@@ -28,8 +26,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("confirm"):
 		call(menu_funcs[arrow_position])
 	
-	if Input.is_action_just_pressed("cancel") and $SettingsMenu.visible:
-		$SettingsMenu.hide()
+	
 	
 func move_arrow(dir: int):
 	arrow_position += dir
