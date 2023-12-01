@@ -1,11 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8aiossmut76m"]
+[gd_scene load_steps=9 format=3 uid="uid://c8aiossmut76m"]
 
-[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_6ojl1"]
 [ext_resource type="Script" path="res://Scenes/Levels/level_6.gd" id="1_7kglf"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="3_qa1mb"]
-[ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="4_pxh7m"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="5_20p7a"]
-[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="6_xl2g2"]
 [ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="7_krkdf"]
 [ext_resource type="PackedScene" uid="uid://b6dbdts3ycfjs" path="res://Scenes/TriangleboxDown.tscn" id="8_ipfma"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_lxu1d"]
@@ -18,41 +15,6 @@ script = ExtResource("1_7kglf")
 [node name="MovingPlatform" parent="." instance=ExtResource("3_qa1mb")]
 position = Vector2(-120, 681)
 scale = Vector2(0.35, 0.35)
-
-[node name="Ramp" parent="." instance=ExtResource("4_pxh7m")]
-position = Vector2(1260, 971)
-scale = Vector2(-0.2, 0.2)
-
-[node name="Squarebox" parent="." instance=ExtResource("6_xl2g2")]
-position = Vector2(1412, -823)
-
-[node name="Floor4" parent="." instance=ExtResource("1_6ojl1")]
-position = Vector2(794, 66)
-scale = Vector2(0.519999, 0.360001)
-
-[node name="Floor" parent="." instance=ExtResource("1_6ojl1")]
-position = Vector2(49, 1079)
-scale = Vector2(1.08, 1)
-
-[node name="Floor7" parent="." instance=ExtResource("1_6ojl1")]
-position = Vector2(3605, 1079)
-scale = Vector2(1.08, 1)
-
-[node name="Floor2" parent="." instance=ExtResource("1_6ojl1")]
-position = Vector2(970, 642)
-scale = Vector2(0.120001, 1.32)
-
-[node name="Floor3" parent="." instance=ExtResource("1_6ojl1")]
-position = Vector2(1202, 287)
-scale = Vector2(0.120001, 1.32)
-
-[node name="Floor6" parent="." instance=ExtResource("1_6ojl1")]
-position = Vector2(1651, 111)
-scale = Vector2(0.120001, 3.4)
-
-[node name="Floor5" parent="." instance=ExtResource("1_6ojl1")]
-position = Vector2(1228, -614)
-scale = Vector2(0.56, 0.360001)
 
 [node name="HorMovingPlatform" parent="." instance=ExtResource("7_krkdf")]
 position = Vector2(2167, 1201)
