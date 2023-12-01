@@ -25,7 +25,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_i8a8g"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.08165e-12, -200)
+"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 60, 0, 0, 0, 0, 2.08165e-12, -240)
 }
 point_count = 2
 
@@ -55,6 +55,10 @@ scale = Vector2(0.16, 2.12)
 
 [node name="Floor6" parent="." instance=ExtResource("1_v4xq1")]
 position = Vector2(2656.86, 311.765)
+scale = Vector2(0.16, 2.12)
+
+[node name="Floor7" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(2964.71, 515.687)
 scale = Vector2(0.16, 2.12)
 
 [node name="LandingZone" parent="." instance=ExtResource("7_sqj7y")]
@@ -116,7 +120,7 @@ curve = SubResource("Curve2D_ec6w1")
 speed = 0.4
 
 [node name="PathFollow2D" parent="Platform" index="0"]
-position = Vector2(-1.69407e-21, 0)
+position = Vector2(2.5411e-21, 0)
 rotation = 1.5708
 
 [node name="Platform2" parent="." instance=ExtResource("13_mvl3v")]
@@ -126,7 +130,7 @@ curve = SubResource("Curve2D_i8a8g")
 speed = 0.5
 
 [node name="PathFollow2D" parent="Platform2" index="0"]
-position = Vector2(2.08165e-12, -200)
+position = Vector2(2.08165e-12, -240)
 rotation = -1.5708
 
 [node name="Ramp4" parent="." instance=ExtResource("3_iml12")]

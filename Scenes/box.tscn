@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmfa7lxg68u7k"]
+[gd_scene load_steps=7 format=3 uid="uid://bmfa7lxg68u7k"]
 
+[ext_resource type="Script" path="res://Scenes/boxspriteload.gd" id="1_387k0"]
 [ext_resource type="Texture2D" uid="uid://dwp1m337quaf5" path="res://Art/First Level/UI_HeavyBox.png" id="1_lvvm8"]
 [ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_t3msf"]
+[ext_resource type="Texture2D" uid="uid://b24yfkpxl0oqr" path="res://Art/second level/UI_Square_Crate.png" id="3_rxui6"]
+[ext_resource type="Texture2D" uid="uid://dkxsio51anlwx" path="res://Art/Fourth Level/UI_Underwater_Square_Box.png" id="4_fhcqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20bt7"]
 size = Vector2(64, 64)
@@ -10,6 +13,9 @@ size = Vector2(64, 64)
 position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 8
 collision_mask = 15
+script = ExtResource("1_387k0")
+sprites = Array[Texture2D]([ExtResource("1_lvvm8"), ExtResource("1_lvvm8"), ExtResource("1_lvvm8"), ExtResource("3_rxui6"), ExtResource("3_rxui6"), ExtResource("3_rxui6"), ExtResource("3_rxui6"), ExtResource("3_rxui6"), ExtResource("3_rxui6"), ExtResource("4_fhcqu"), ExtResource("4_fhcqu"), ExtResource("4_fhcqu")])
+sizes = Array[int]([1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 metadata/grabbable = false
 metadata/grabbed = false
 
