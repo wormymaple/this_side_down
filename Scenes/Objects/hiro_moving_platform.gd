@@ -70,6 +70,8 @@ func _physics_process(_delta):
 
 
 func _on_area_2d_body_entered(body):
+	if path_behavior == State.STOP:
+		return
 	#print(body.name)
 	if body.is_in_group("Player") or body.is_in_group("Box"):
 		#print("The body that entered was the player!")
@@ -80,6 +82,8 @@ func _on_area_2d_body_entered(body):
 	#	print(objects_in_array)
 
 func _on_area_2d_body_exited(body):
+	if path_behavior == State.STOP:
+		return
 	if body.is_in_group("Player") or body.is_in_group("Box"):
 		if body in objects_to_move:
 			objects_to_move.pop_at(objects_to_move.find(body))
