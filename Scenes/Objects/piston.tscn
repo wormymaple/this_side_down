@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://rlnrmnltn78o"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Piston.gd" id="1_wefcu"]
+[ext_resource type="Texture2D" uid="uid://dbxdafhf1hffn" path="res://Art/First Level/UI_piston.png" id="2_w13lb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vyyi"]
+size = Vector2(2810.67, 595.692)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1808u"]
+size = Vector2(2181.56, 307.846)
+
+[node name="Piston" type="StaticBody2D"]
+rotation = 3.14159
+script = ExtResource("1_wefcu")
+sprite = ExtResource("2_w13lb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.080595, 0.080595)
+texture = ExtResource("2_w13lb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.500001, 25)
+scale = Vector2(0.0437618, 0.053719)
+shape = SubResource("RectangleShape2D_6vyyi")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="AnimatableBody2D" parent="."]
+position = Vector2(-0.500001, 25)
+scale = Vector2(0.0437618, 0.053719)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(11.4255, -1023.85)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1808u")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
