@@ -442,6 +442,23 @@ position = Vector2(1024, 1024)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
+[node name="CantUnlock" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 953.0
+offset_bottom = 816.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.54902, 0.439216, 0.313726, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_un2fg")
+theme_override_font_sizes/font_size = 70
+text = "(Levels 7-12 cannot be unlocked at this time)"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Button" to="." method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Button2" to="." method="_on_button_2_pressed"]

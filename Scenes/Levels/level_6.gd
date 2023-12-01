@@ -12,5 +12,12 @@ func _on_zone_body_body_entered(bodies):
 		win()
 		
 func win():
-	GlobalVariables.win_level(5)
 	get_node(landing_zone).play_particles()
+	if 6 in GlobalVariables.completed_levels:
+		return
+	
+	GlobalVariables.completed_levels.append(6)
+	print(GlobalVariables.completed_levels)
+	
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")
