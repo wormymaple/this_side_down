@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://hq0rudy871uy"]
+[gd_scene load_steps=5 format=3 uid="uid://hq0rudy871uy"]
 
 [ext_resource type="Texture2D" uid="uid://c4npl8cwq4kcs" path="res://Art/First Level/UI_HeavyTriangle.png" id="1_co643"]
+[ext_resource type="Script" path="res://Scenes/triboxspriteload.gd" id="1_jv4x8"]
 [ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_kcdm2"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_sr6oy"]
@@ -10,6 +11,7 @@ points = PackedVector2Array(32, 9, -34, 8, 2.08165e-12, -46)
 position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 8
 collision_mask = 15
+script = ExtResource("1_jv4x8")
 metadata/grabbable = false
 metadata/grabbed = false
 
@@ -22,7 +24,7 @@ position = Vector2(-2, -19)
 scale = Vector2(0.144898, 0.144708)
 texture = ExtResource("1_co643")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="ArrowSprite" type="Sprite2D" parent="."]
 position = Vector2(5.96046e-08, -9)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_kcdm2")
