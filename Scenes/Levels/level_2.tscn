@@ -42,7 +42,6 @@ scale = Vector2(1.00399, 1.01237)
 script = ExtResource("7_2ga8b")
 player_scene = ExtResource("8_jmg2h")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="LandingZone" parent="." instance=ExtResource("8_grauf")]
 position = Vector2(1452, 877)

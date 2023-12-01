@@ -49,6 +49,8 @@ var original_grav_scale: float
 @export var footstep_time: float
 var footstep_time_real: float
 
+@export var player_colors: Array[Color]
+
 var body_state: PhysicsDirectBodyState2D
 
 func _ready():
@@ -158,8 +160,8 @@ func _input(event):
 	elif event.is_action_released("right_trigger_" + playerID) && grabbed_body != null:
 		drop_object()
 
-func set_color(color):
-	modulate = color
+func set_color(player_index):
+	modulate = player_colors[player_index]
 		
 func _integrate_forces(state):
 	body_state = state
