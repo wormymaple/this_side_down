@@ -115,7 +115,7 @@ shape = SubResource("RectangleShape2D_habp2")
 position = Vector2(263, 558)
 
 [node name="Polygon2D" type="Polygon2D" parent="FloorHandler"]
-position = Vector2(-263, -558)
+position = Vector2(1237, -60)
 
 [node name="Floor2" parent="FloorHandler" instance=ExtResource("10_w06lg")]
 position = Vector2(430, -78)
