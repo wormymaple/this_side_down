@@ -2,13 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cseji4gc7bqc5" path="res://Art/First Level/UI_ramp.png" id="1_o4ow0"]
 
-[node name="Ramp" type="Area2D"]
+[node name="StaticBody2D" type="StaticBody2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_o4ow0")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-46, 57)
 polygon = PackedVector2Array(-862, 283, 889, 279, 894, -453)
