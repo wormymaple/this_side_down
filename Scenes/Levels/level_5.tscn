@@ -67,12 +67,12 @@ position = Vector2(1174, 754)
 script = ExtResource("10_hv6gi")
 player_scene = ExtResource("12_o2sbc")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 
 [node name="LandingZone" parent="." instance=ExtResource("11_eobp3")]
 position = Vector2(346, 464)
 scale = Vector2(0.4, 0.4)
 handler_script = NodePath("../../..")
+boxes_required = 3
 
 [node name="Walls" type="Polygon2D" parent="."]
 z_index = 5
