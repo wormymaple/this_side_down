@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_db016"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_tms1o"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="7_twdvf"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="8_afu2o"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="8_afu2o"]
 [ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="8_j0wbu"]
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="9_mkvtq"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="10_u7o0h"]

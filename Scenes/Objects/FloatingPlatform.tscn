@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlwptuwx6ppy2"]
 
-[ext_resource type="Script" path="res://Scenes/Objects/hiro_moving_platform.gd" id="1_vb141"]
+[ext_resource type="Script" path="res://Scenes/Objects/platform.gd" id="1_vb141"]
 [ext_resource type="Texture2D" uid="uid://cdeql6nd5gprt" path="res://Art/First Level/UI_floatingplatform.png" id="2_v0bgm"]
 
 [sub_resource type="Curve2D" id="Curve2D_llgmf"]
@@ -19,7 +19,7 @@ sprite = ExtResource("2_v0bgm")
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 progress = 488.85
 
-[node name="Panel" type="Panel" parent="PathFollow2D"]
+[node name="Referance" type="Panel" parent="PathFollow2D"]
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0

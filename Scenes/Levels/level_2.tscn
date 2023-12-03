@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/boxtri.tscn" id="6_55da6"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="7_2ga8b"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="8_grauf"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="8_jmg2h"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="8_jmg2h"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="9_64wh3"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="10_yrdje"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_xo40b"]

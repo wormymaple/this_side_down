@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="6_d02wj"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="6_p5pqx"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_77780"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="10_lni03"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="10_lni03"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="11_w7flq"]
 
 [node name="level_11" type="Node2D"]
