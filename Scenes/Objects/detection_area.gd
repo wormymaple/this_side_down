@@ -4,9 +4,6 @@ extends Area2D
 var move_box_state = "move"
 var timer_started_yet = "no"
 
-func _on_body_entered(_body):
-	$"../CanvasLayer/VideoStreamPlayer".play()
-
 func _on_ready():
 	
 	#box.linear_velocity += Vector2(1, 0)

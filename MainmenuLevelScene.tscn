@@ -110,10 +110,10 @@ texture = ExtResource("6_874je")
 [node name="SettingsMenu" parent="." instance=ExtResource("7_1s0hk")]
 visible = false
 layout_mode = 1
-offset_left = 150.0
-offset_top = 100.0
-offset_right = 1750.0
-offset_bottom = 1000.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Options Button" to="." method="_on_options_button_pressed"]

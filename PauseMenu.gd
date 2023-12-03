@@ -21,7 +21,7 @@ func _on_button_3_pressed():
 func _on_button_4_pressed():
 	get_tree().quit()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		visible = !visible
 	

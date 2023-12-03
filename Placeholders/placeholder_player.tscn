@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://bgr4nq5o17pmh"]
 
 [ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
-[ext_resource type="Texture2D" uid="uid://rhl2ujh2louh" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
+[ext_resource type="Texture2D" uid="uid://1evxdg38q3gj" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_jvxiw"]
-[ext_resource type="Texture2D" uid="uid://diyhkh5doenm1" path="res://Art/sprites/grayscale_player/player_head.png" id="4_q0jwu"]
-[ext_resource type="Texture2D" uid="uid://drgov0hsrc4ig" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
-[ext_resource type="Texture2D" uid="uid://cbpt7efgun0n2" path="res://Art/sprites/grayscale_player/player_legs.png" id="5_4d126"]
-[ext_resource type="AudioStream" uid="uid://b77qnikw5loa1" path="res://Audio/box pickup.wav" id="5_wmfcq"]
-[ext_resource type="AudioStream" uid="uid://bfrt1tuk44vt2" path="res://Audio/box drop (better).wav" id="6_2vynb"]
-[ext_resource type="AudioStream" uid="uid://8y20kn764clt" path="res://Audio/jump3.wav" id="7_x2kif"]
+[ext_resource type="Texture2D" uid="uid://drlj0pirdqkc3" path="res://Art/sprites/grayscale_player/player_head.png" id="4_q0jwu"]
+[ext_resource type="Texture2D" uid="uid://kgkbn6skvqam" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
+[ext_resource type="Texture2D" uid="uid://cf0jx7irt4gwu" path="res://Art/sprites/grayscale_player/player_legs.png" id="5_4d126"]
+[ext_resource type="AudioStream" uid="uid://b83ui00rhi76c" path="res://Audio/box pickup.wav" id="5_wmfcq"]
+[ext_resource type="AudioStream" uid="uid://bow3uyffj1ib3" path="res://Audio/box drop (better).wav" id="6_2vynb"]
+[ext_resource type="AudioStream" uid="uid://bp6qkjj6mbixo" path="res://Audio/jump3.wav" id="7_x2kif"]
 [ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep(one).wav" id="9_46h22"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
@@ -31,10 +31,10 @@ radius = 9.0
 [node name="PlaceholderPlayer" type="RigidBody2D" node_paths=PackedStringArray("hand_sprite", "box_pickup", "box_drop", "jump", "footsteps") groups=["Player"]]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_2c1hu")
+lock_rotation = true
 continuous_cd = 1
 max_contacts_reported = 1
 contact_monitor = true
-lock_rotation = true
 script = ExtResource("1_si3e4")
 move_speed = 250.0
 jump_speed = 500.0
@@ -72,6 +72,7 @@ scale = Vector2(0.048, 0.048)
 texture = ExtResource("4_q0jwu")
 
 [node name="Legs" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0, 36)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("5_4d126")
@@ -81,7 +82,7 @@ position = Vector2(0, 10.5)
 shape = SubResource("CapsuleShape2D_4rmwu")
 
 [node name="Arm" type="Line2D" parent="."]
-z_index = 1
+z_index = 2
 points = PackedVector2Array(0, 0, 0, 0)
 default_color = Color(0.662745, 0.662745, 0.662745, 1)
 

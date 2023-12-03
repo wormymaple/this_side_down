@@ -8,7 +8,7 @@ var mode: State = State.WAIT
 
 @onready var head_texture = $PistonHead
 @onready var hitbox = $Deleter
-@onready var collider = $Area2D
+@onready var collider = $AnimatableBody2D
 
 func _ready():
 	$Timer.wait_time = time_interval
@@ -23,7 +23,7 @@ func _process(delta):
 			head_texture.scale.y += 0.02
 			head_texture.position.y -= 3
 			hitbox.position.y -= 12
-			#collider.position.y -= 12
+			collider.position.y -= 12
 		else:
 			mode = State.RETRACT
 	
@@ -32,7 +32,7 @@ func _process(delta):
 			head_texture.scale.y -= 0.02
 			head_texture.position.y += 3
 			hitbox.position.y += 12
-			#collider.position.y += 12
+			collider.position.y += 12
 		else:
 			mode = State.WAIT
 	
@@ -48,7 +48,7 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 
 func _on_deleter_body_entered(body):
-	if body.is_in_group("Player") or body.is_in_group("Box"):
+	if body.is_in_group("Box"):
 		#print(body.name)
 		body.queue_free()
 
