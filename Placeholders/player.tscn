@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://bgr4nq5o17pmh"]
 
-[ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_si3e4"]
-[ext_resource type="Texture2D" uid="uid://1evxdg38q3gj" path="res://Art/sprites/UI_Hand_Closed.png" id="2_poyj6"]
-[ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="3_jvxiw"]
-[ext_resource type="Texture2D" uid="uid://drlj0pirdqkc3" path="res://Art/sprites/grayscale_player/player_head.png" id="4_q0jwu"]
-[ext_resource type="Texture2D" uid="uid://kgkbn6skvqam" path="res://Art/sprites/UI_Hand_Open.png" id="4_vmjrj"]
-[ext_resource type="Texture2D" uid="uid://cf0jx7irt4gwu" path="res://Art/sprites/grayscale_player/player_legs.png" id="5_4d126"]
-[ext_resource type="AudioStream" uid="uid://b83ui00rhi76c" path="res://Audio/box pickup.wav" id="5_wmfcq"]
-[ext_resource type="AudioStream" uid="uid://bow3uyffj1ib3" path="res://Audio/box drop (better).wav" id="6_2vynb"]
-[ext_resource type="AudioStream" uid="uid://bp6qkjj6mbixo" path="res://Audio/jump3.wav" id="7_x2kif"]
-[ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep(one).wav" id="9_46h22"]
+[ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_hsmpc"]
+[ext_resource type="Texture2D" uid="uid://1evxdg38q3gj" path="res://Art/sprites/UI_Hand_Closed.png" id="2_soivl"]
+[ext_resource type="Texture2D" uid="uid://kgkbn6skvqam" path="res://Art/sprites/UI_Hand_Open.png" id="3_ocvgj"]
+[ext_resource type="Texture2D" uid="uid://drlj0pirdqkc3" path="res://Art/sprites/grayscale_player/player_head.png" id="4_nmhw0"]
+[ext_resource type="Texture2D" uid="uid://cf0jx7irt4gwu" path="res://Art/sprites/grayscale_player/player_legs.png" id="5_ejl4p"]
+[ext_resource type="AudioStream" uid="uid://b83ui00rhi76c" path="res://Audio/box pickup.wav" id="6_xlqwi"]
+[ext_resource type="AudioStream" uid="uid://bow3uyffj1ib3" path="res://Audio/box drop (better).wav" id="7_gbcoe"]
+[ext_resource type="AudioStream" uid="uid://bp6qkjj6mbixo" path="res://Audio/jump3.wav" id="8_j7tyg"]
+[ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep(one).wav" id="9_g1d7s"]
+[ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://point_light_2d.tscn" id="10_ubrlc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
 friction = 0.0
@@ -35,7 +35,7 @@ lock_rotation = true
 continuous_cd = 1
 max_contacts_reported = 1
 contact_monitor = true
-script = ExtResource("1_si3e4")
+script = ExtResource("1_hsmpc")
 move_speed = 250.0
 jump_speed = 500.0
 water_jump_coefficient = 1.5
@@ -55,8 +55,8 @@ playerID = "p1"
 hand_path = NodePath("HandMeta")
 arm_path = NodePath("Arm")
 hand_sprite = NodePath("HandMeta/Hand")
-holding_hand = ExtResource("2_poyj6")
-empty_hand = ExtResource("4_vmjrj")
+holding_hand = ExtResource("2_soivl")
+empty_hand = ExtResource("3_ocvgj")
 box_pickup = NodePath("BoxPickup")
 box_drop = NodePath("BoxDrop")
 jump = NodePath("Jump")
@@ -69,13 +69,13 @@ metadata/grabbed = false
 [node name="Head" type="Sprite2D" parent="."]
 z_index = 4
 scale = Vector2(0.048, 0.048)
-texture = ExtResource("4_q0jwu")
+texture = ExtResource("4_nmhw0")
 
 [node name="Legs" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(0, 36)
 scale = Vector2(0.04, 0.04)
-texture = ExtResource("5_4d126")
+texture = ExtResource("5_ejl4p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10.5)
@@ -98,7 +98,7 @@ modulate = Color(0.701961, 0.701961, 0.701961, 1)
 z_index = 3
 texture_filter = 1
 scale = Vector2(0.03, 0.03)
-texture = ExtResource("4_vmjrj")
+texture = ExtResource("3_ocvgj")
 
 [node name="GrabArea" type="Area2D" parent="HandMeta"]
 collision_mask = 11
@@ -107,22 +107,22 @@ collision_mask = 11
 shape = SubResource("CircleShape2D_4eusl")
 
 [node name="BoxPickup" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_wmfcq")
+stream = ExtResource("6_xlqwi")
 volume_db = -15.0
 
 [node name="BoxDrop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_2vynb")
+stream = ExtResource("7_gbcoe")
 volume_db = -15.0
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_x2kif")
+stream = ExtResource("8_j7tyg")
 volume_db = -15.0
 
 [node name="Footstep" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_46h22")
+stream = ExtResource("9_g1d7s")
 volume_db = -15.0
 
-[node name="PointLight2D" parent="." instance=ExtResource("3_jvxiw")]
+[node name="PointLight2D" parent="." instance=ExtResource("10_ubrlc")]
 scale = Vector2(10, 10)
 energy = 0.36
 

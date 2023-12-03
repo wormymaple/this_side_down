@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://Scenes/Objects/detection_area.gd" id="2_6efvm"]
 [ext_resource type="PackedScene" uid="uid://cxmsc6y5qjwet" path="res://Scenes/Objects/ground.tscn" id="3_q6axd"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="4_1856f"]
-[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="5_ju6ok"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="5_ju6ok"]
 [ext_resource type="Texture2D" uid="uid://bp7wvgue20js" path="res://Art/third level/UI_floatingplatform.png" id="6_1lv2v"]
 [ext_resource type="PackedScene" uid="uid://cc5nqimy6p2p7" path="res://Scenes/boxlarge.tscn" id="7_k2ca6"]
 [ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="8_mufoi"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="9_37pv2"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="9_37pv2"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="10_f1yyn"]
 
 [sub_resource type="Curve2D" id="Curve2D_kk2oo"]

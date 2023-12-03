@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/parallax_backgroundCrates.tscn" id="11_kaf0w"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_vbs12"]
 [ext_resource type="Script" path="res://Scripts/Ladder.gd" id="12_3joda"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="12_o2sbc"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="12_o2sbc"]
 [ext_resource type="Texture2D" uid="uid://ct2w003o42dva" path="res://Art/third level/UI_ladder.png" id="13_5aiuj"]
-[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/HiroPlatform.tscn" id="14_blfx0"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="14_blfx0"]
 [ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/boxtri.tscn" id="15_q38yl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7hxk"]

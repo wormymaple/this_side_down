@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="2_dmm6o"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="2_i1512"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="3_jyb7d"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/placeholder_player.tscn" id="3_mv7h8"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="3_mv7h8"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="8_6vpom"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="9_5ant1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="9_e6i4h"]
@@ -33,12 +33,12 @@ position = Vector2(964, 1085)
 scale = Vector2(1.68323, 1)
 
 [node name="3" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(148, 199)
-scale = Vector2(0.083, 1.66228)
+position = Vector2(92, 439)
+scale = Vector2(0.150937, -0.619043)
 
 [node name="4" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(972, 271)
-scale = Vector2(0.06, 0.850001)
+position = Vector2(972, 223)
+scale = Vector2(0.06, 1.05078)
 
 [node name="5" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(972, 879)
@@ -59,7 +59,7 @@ rotation = 3.14159
 scale = Vector2(0.239173, -0.239173)
 
 [node name="Ramp3" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(691, 209)
+position = Vector2(691, 135)
 scale = Vector2(0.28, 0.28)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("8_6vpom")]
@@ -83,7 +83,6 @@ polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2828, -875, -680,
 position = Vector2(1812, 839)
 scale = Vector2(0.800001, 0.693399)
 handler_script = NodePath("..")
-boxes_required = 1
 
 [node name="CanvasModulate2" parent="." instance=ExtResource("10_i46cw")]
 position = Vector2(-12, -305)
