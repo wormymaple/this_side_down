@@ -205,7 +205,7 @@ func _on_body_entered(body):
 		
 		unmovable = false
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	running_buffer = true
 	
 func check_player_linkage(body):
