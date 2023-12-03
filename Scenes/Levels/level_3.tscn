@@ -38,7 +38,7 @@ scale = Vector2(0.083, 1.66228)
 
 [node name="4" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(972, 271)
-scale = Vector2(0.06, 0.770001)
+scale = Vector2(0.06, 0.850001)
 
 [node name="5" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(972, 879)
