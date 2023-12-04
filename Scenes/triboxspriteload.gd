@@ -1,22 +1,13 @@
 extends RigidBody2D
 
-@export var sprites: Array[Texture2D]
-@export var sizes: Array[int]
+@export var texture: Texture
+@export var size: float = 1
 @onready var sprite = $BoxSprite
-@onready var collision = $CollisionShape2D
+@onready var collision = $Hitbox # It is a Collision Polygon 2D now
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	await get_tree().create_timer(0.01).timeout
-	var current_level = GlobalVariables.levelrn
-	print(current_level)
-	sprite.texture = sprites[int(current_level) - 1]
-	sprite.scale.x *= sizes[int(current_level) - 1]
-	sprite.scale.y *= sizes[int(current_level) - 1]
-	collision.scale.x *= sizes[int(current_level) - 1]
-	collision.scale.y *= sizes[int(current_level) - 1]
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+	sprite.texture = texture
+	
+	sprite.scale *= Vector2(size, size)
+	collision.scale *= Vector2(size, size)

@@ -54,7 +54,7 @@ func _physics_process(_delta):
 		if object.is_in_group("Player"):
 			if object.on_ground:
 				
-				object.position += movement
+				object.position += movement * scale
 		if object.is_in_group("Box"):
 			#print("global pos: ", object.global_position, ". pos: ", object.position)
 			#print("there is an object in box group!")

@@ -209,6 +209,17 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_pcowc")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lawxx")
 text = "Back"
 
+[node name="Label" type="Label" parent="ButtonMarginContainer/BackButton"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 57.0
+offset_right = 108.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.631373)
+theme_override_fonts/font = ExtResource("4_ej0lo")
+text = "(Press B)"
+horizontal_alignment = 1
+
 [connection signal="item_selected" from="MarginContainer2/MarginContainer/VBoxContainer/DisplayContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/MasterContainer/HBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer2/MarginContainer/VBoxContainer/MusicContainer/HBoxContainer2/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]

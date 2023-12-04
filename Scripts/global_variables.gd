@@ -2,7 +2,7 @@ extends Node
 
 var completed_levels: Array[int]
 
-var is_ok = true
+var is_ok = true # What is this?
 var levelrn = 0
 
 # Called when the node enters the scene tree for the first time.
