@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bwpxs0n1bfa8h"]
+[gd_scene load_steps=16 format=3 uid="uid://bwpxs0n1bfa8h"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_4.gd" id="1_lc6j4"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_v4xq1"]
-[ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="3_iml12"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="7_sqj7y"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="8_sj8f4"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_tvqyk"]
@@ -27,29 +26,30 @@ _data = {
 }
 point_count = 2
 
-[node name="Level4" type="Node2D"]
+[node name="Level4" type="Node2D" node_paths=PackedStringArray("camera")]
 position = Vector2(254, 315)
 script = ExtResource("1_lc6j4")
 landing_zone = NodePath("LandingZone")
+camera = NodePath("Camera")
 
 [node name="MainFloor" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(-760.784, 1008)
+position = Vector2(-760.784, 830)
 scale = Vector2(3.39121, 1)
 
 [node name="Floor2" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(496, 521)
+position = Vector2(287, 343)
 scale = Vector2(0.152516, 1.19459)
 
 [node name="Floor6" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(1762, 527)
-scale = Vector2(0.2, 1.22)
+position = Vector2(2144, 349)
+scale = Vector2(0.809995, 1.22)
 
 [node name="Floor5" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(3925, 676)
+position = Vector2(3893, 162)
 scale = Vector2(2.06, 1)
 
 [node name="LandingZone" parent="." instance=ExtResource("7_sqj7y")]
-position = Vector2(2777, 432)
+position = Vector2(1659, 54)
 handler_script = NodePath("..")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_sj8f4")]
@@ -65,53 +65,50 @@ position = Vector2(581, -1048)
 
 [node name="Walls" type="Polygon2D" parent="."]
 z_index = 5
+position = Vector2(11, 7)
 color = Color(0.584314, 0.576471, 0.560784, 1)
 invert_enabled = true
 invert_border = 1000.0
-polygon = PackedVector2Array(2138, -546, 2147, 801, -730, 773, -739, -595)
+polygon = PackedVector2Array(2137, -592, 2134, 800, -730, 773, -746, -592)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
 position = Vector2(1492, 121)
-polygon = PackedVector2Array(2180, 906, 2209, -1066, -2681, -1108, -2697, 965, 1116, 653, -2303, 651, -2299.84, -917.078, 1763, -929, 1759, 661, 1116, 653)
+polygon = PackedVector2Array(2180, 906, 2209, -1066, -2681, -1108, -2697, 965, 489, 655, -2227, 658, -2230, -713, 636, -706, 639, 639, 478, 645)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(-323.529, 613.725)
+position = Vector2(-411, 450)
 script = ExtResource("11_f3xvt")
 player_scene = ExtResource("12_itn5d")
 camera = NodePath("../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("13_dkewa")]
-position = Vector2(-319.608, 621.569)
+position = Vector2(-407.079, 457.844)
 
 [node name="VoidOutArea" parent="." instance=ExtResource("10_eo61p")]
-position = Vector2(1084, 739)
+position = Vector2(875, 561)
 scale = Vector2(1.6, 1)
 
 [node name="Platform" parent="." instance=ExtResource("13_mvl3v")]
-position = Vector2(244, 737)
+position = Vector2(35, 559)
 curve = SubResource("Curve2D_ymx3a")
 speed = 0.3
 
 [node name="Platform2" parent="." instance=ExtResource("13_mvl3v")]
-position = Vector2(753, 264)
+position = Vector2(544, 86)
 curve = SubResource("Curve2D_ec6w1")
 speed = 0.5
 
-[node name="Ramp6" parent="." instance=ExtResource("3_iml12")]
-position = Vector2(2178, 354)
-scale = Vector2(-0.28, 0.28)
-
 [node name="Box" parent="." instance=ExtResource("14_3ujrv")]
-position = Vector2(48, 700)
+position = Vector2(-161, 522)
 size = 1.5
 
 [node name="Label" type="Label" parent="."]
-offset_left = 877.0
-offset_top = 301.0
-offset_right = 1348.0
-offset_bottom = 365.0
+offset_left = 679.0
+offset_top = 123.0
+offset_right = 1150.0
+offset_bottom = 187.0
 scale = Vector2(0.995067, 0.98283)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10

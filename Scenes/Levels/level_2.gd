@@ -18,5 +18,4 @@ func win():
 		
 	GlobalVariables.win_level(2)
 	get_node(landing_zone).play_particles();
-
 	camera.fade_out(true)

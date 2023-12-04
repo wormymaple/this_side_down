@@ -1,6 +1,6 @@
 extends Control
 
-@export var lock_list: Array[Sprite2D]
+@export var lock_list: Array[Sprite2D] # Removed 6 temporarily
 @export var select_rect = TextureRect
 
 
@@ -21,7 +21,7 @@ func _ready():
 			for child in lock.get_parent().get_children():
 				child.queue_free()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("left_right_p1"):
 		move_arrow(1)
 	if Input.is_action_just_pressed("left_left_p1"):
