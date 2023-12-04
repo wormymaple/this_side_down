@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var landing_zone: NodePath
+@export var camera: Camera2D
 
 func _ready():
 	GlobalVariables.levelrn = 5 
@@ -11,6 +12,11 @@ func _on_zone_body_body_entered(bodies):
 	if won:
 		win()
 		
+
 func win():
-	GlobalVariables.win_level(3)
+	if 5 in GlobalVariables.completed_levels:
+		return
+	
+	GlobalVariables.win_level(5)
 	get_node(landing_zone).play_particles()
+	camera.fade_out(true)

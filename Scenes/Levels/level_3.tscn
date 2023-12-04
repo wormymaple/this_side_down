@@ -19,30 +19,38 @@ landing_zone = NodePath("LandingZone")
 camera = NodePath("Camera")
 
 [node name="Camera" parent="." instance=ExtResource("2_i1512")]
-position = Vector2(-164, 695)
+position = Vector2(-209, 805)
 zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(-156, 719)
+position = Vector2(-209, 805)
 script = ExtResource("2_dmm6o")
 player_scene = ExtResource("3_mv7h8")
 camera = NodePath("../Camera")
 
-[node name="2" parent="." instance=ExtResource("1_dhfbf")]
+[node name="MainFloor" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(964, 1085)
-scale = Vector2(1.68323, 1)
+scale = Vector2(2.84323, 1)
 
 [node name="3" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(92, 439)
 scale = Vector2(0.150937, -0.619043)
 
 [node name="4" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(972, 223)
-scale = Vector2(0.06, 1.05078)
+position = Vector2(972, 254)
+scale = Vector2(0.06, 1.29078)
+
+[node name="6" parent="." instance=ExtResource("1_dhfbf")]
+position = Vector2(972, 281)
+scale = Vector2(0.06, -1.18922)
 
 [node name="5" parent="." instance=ExtResource("1_dhfbf")]
 position = Vector2(972, 879)
-scale = Vector2(0.0619059, 1.42258)
+scale = Vector2(0.06, 1)
+
+[node name="7" parent="." instance=ExtResource("1_dhfbf")]
+position = Vector2(1100, 991)
+scale = Vector2(0.078, 1)
 
 [node name="Ramp" parent="." instance=ExtResource("3_jyb7d")]
 position = Vector2(689, 758)
@@ -52,11 +60,6 @@ scale = Vector2(0.28, 0.28)
 position = Vector2(464, 485)
 rotation = 3.14159
 scale = Vector2(0.28, -0.28)
-
-[node name="Ramp4" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(1228, 775)
-rotation = 3.14159
-scale = Vector2(0.239173, -0.239173)
 
 [node name="Ramp3" parent="." instance=ExtResource("3_jyb7d")]
 position = Vector2(691, 135)
@@ -80,8 +83,7 @@ polygon = PackedVector2Array(2576, -700, 2578, 909, -654, 910, -654, -700)
 polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2828, -875, -680, -909, -654, -700, 2576, -700, 2578, 848, -654, 849, -654, -700)
 
 [node name="LandingZone" parent="." instance=ExtResource("9_e6i4h")]
-position = Vector2(1812, 839)
-scale = Vector2(0.800001, 0.693399)
+position = Vector2(1812, 843)
 handler_script = NodePath("..")
 
 [node name="CanvasModulate2" parent="." instance=ExtResource("10_i46cw")]
@@ -96,4 +98,5 @@ transform = Transform2D(0.9, 0, 0, 0.9, 2.08165e-12, 150)
 position = Vector2(12, 305)
 
 [node name="Box" parent="." instance=ExtResource("12_jkmtc")]
-position = Vector2(92, 751)
+position = Vector2(126, 792)
+size = 2.0

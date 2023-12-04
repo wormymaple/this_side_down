@@ -27,12 +27,13 @@ func _process(_delta):
 	
 	if $SettingsMenu.visible: # Prevents selectingwhile the settings are up
 		return
-	if Input.is_action_just_pressed("left_up_p1"):
+	if Input.is_action_just_pressed("left_up_p1") and visible:
+		print("You pressed up")
 		move_arrow(-1)
-	if Input.is_action_just_pressed("left_down_p1"):
+	if Input.is_action_just_pressed("left_down_p1") and visible:
 		move_arrow(1)
 	
-	if Input.is_action_just_pressed("confirm"):
+	if Input.is_action_just_pressed("confirm") and visible:
 		call(button_functions[selected_space])
 		
 		

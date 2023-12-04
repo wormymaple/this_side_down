@@ -20,8 +20,8 @@ camera = NodePath("Camera")
 [node name="CanvasModulate" parent="." instance=ExtResource("6_yeun7")]
 
 [node name="Floor" parent="." instance=ExtResource("1_yrwse")]
-position = Vector2(1171, 1319)
-scale = Vector2(2.28115, 1.96)
+position = Vector2(1171, 1039)
+scale = Vector2(1.7914, 0.778049)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_n57bp")]
 offset = Vector2(2.08165e-12, 60)

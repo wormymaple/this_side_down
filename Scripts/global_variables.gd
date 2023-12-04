@@ -2,7 +2,7 @@ extends Node
 
 var completed_levels: Array[int]
 
-var is_ok = true
+var is_ok = true # What is this?
 var levelrn = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -31,7 +31,9 @@ func win_level(level: int):
 	
 	completed_levels.append(level)
 	print(completed_levels)
-	
 	await get_tree().create_timer(2).timeout
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_" + str(level + 1) + ".tscn")
 	
+	if level != 5: # Because the next level is not ready
+		get_tree().change_scene_to_file("res://Scenes/Levels/level_" + str(level + 1) + ".tscn")
+	else:
+		get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")
