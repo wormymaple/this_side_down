@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="10_um1cw"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="11_lh4ec"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="12_sb3ji"]
-[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="13_p6fm6"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="13_p6fm6"]
 [ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/third level/UI_Barrier.png" id="14_oy4gm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d415h"]

@@ -6,14 +6,7 @@ var intro2 = false
 var yard = false
 var outro1 = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+# Who wrote this horrible code!
 
 func _on_finished():
 	if intro1 == true:

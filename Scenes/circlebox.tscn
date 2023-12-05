@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c02557mdlevgc"]
+[gd_scene load_steps=5 format=3 uid="uid://c02557mdlevgc"]
 
-[ext_resource type="Script" path="res://Scenes/circboxspriteload.gd" id="1_caxgq"]
-[ext_resource type="Texture2D" uid="uid://cn0nvh3ruw17a" path="res://Art/First Level/UI_HeavyCicle.png" id="1_qluji"]
+[ext_resource type="Script" path="res://Scenes/circle_box.gd" id="1_caxgq"]
+[ext_resource type="Texture2D" uid="uid://cn0nvh3ruw17a" path="res://Art/First Level/UI_HeavyCircle.png" id="1_qluji"]
 [ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_2f16l"]
-[ext_resource type="Texture2D" uid="uid://dmo68cp1gjtfh" path="res://Art/second level/UI-3.png" id="3_6hres"]
-[ext_resource type="Texture2D" uid="uid://bmoic1rxnpd3h" path="res://Art/Fourth Level/UI_Underwater_Circle_Box.png" id="4_nt8gs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y87lr"]
 radius = 31.0161
@@ -14,8 +12,7 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_caxgq")
-sprites = Array[Texture2D]([ExtResource("1_qluji"), ExtResource("1_qluji"), ExtResource("1_qluji"), ExtResource("3_6hres"), ExtResource("3_6hres"), ExtResource("3_6hres"), ExtResource("3_6hres"), ExtResource("3_6hres"), ExtResource("3_6hres"), ExtResource("4_nt8gs"), ExtResource("4_nt8gs"), ExtResource("4_nt8gs")])
-sizes = Array[int]([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+texture = ExtResource("1_qluji")
 metadata/grabbable = false
 metadata/grabbed = false
 
@@ -30,6 +27,5 @@ scale = Vector2(0.144898, 0.144708)
 texture = ExtResource("1_qluji")
 
 [node name="ArrowSprite" type="Sprite2D" parent="."]
-position = Vector2(-11, 3)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_2f16l")

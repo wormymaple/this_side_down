@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="10_qfp0h"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="11_f3xvt"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="12_itn5d"]
-[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="13_dkewa"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="13_dkewa"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="13_mvl3v"]
-[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="14_3ujrv"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="14_3ujrv"]
 [ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://font/Nunito/static/Nunito-Medium.ttf" id="14_jdn7g"]
 
 [sub_resource type="Curve2D" id="Curve2D_ymx3a"]
@@ -50,7 +50,6 @@ scale = Vector2(2.06, 1)
 
 [node name="LandingZone" parent="." instance=ExtResource("7_sqj7y")]
 position = Vector2(1659, 54)
-handler_script = NodePath("..")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_sj8f4")]
 
@@ -93,12 +92,12 @@ scale = Vector2(1.6, 1)
 [node name="Platform" parent="." instance=ExtResource("13_mvl3v")]
 position = Vector2(35, 559)
 curve = SubResource("Curve2D_ymx3a")
-speed = 0.3
+speed = 0.5
 
 [node name="Platform2" parent="." instance=ExtResource("13_mvl3v")]
 position = Vector2(544, 86)
 curve = SubResource("Curve2D_ec6w1")
-speed = 0.5
+speed = 0.6
 
 [node name="Box" parent="." instance=ExtResource("14_3ujrv")]
 position = Vector2(-161, 522)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwfqlui2oxdvp"]
+[gd_scene load_steps=16 format=3 uid="uid://bwfqlui2oxdvp"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_5.gd" id="1_1uj3l"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_arfby"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="2_li18c"]
-[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="7_b4qlp"]
-[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/camera.tscn" id="9_8ra23"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="7_b4qlp"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="9_8ra23"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="9_caiko"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="10_hv6gi"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="11_eobp3"]
@@ -16,9 +16,15 @@
 
 [sub_resource type="Curve2D" id="Curve2D_037mp"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, -334, 0, 0, 0, 0, -798, -441)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 560.624, -18.295, 0, -441)
 }
-point_count = 3
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_0qsux"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 550, 4, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
 
 [node name="Level5" type="Node2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_1uj3l")
@@ -37,8 +43,8 @@ position = Vector2(646, 481)
 scale = Vector2(0.04, 1.2)
 
 [node name="Ramp" parent="." instance=ExtResource("2_li18c")]
-position = Vector2(1324, 793)
-scale = Vector2(0.16, 0.16)
+position = Vector2(1316, 797)
+scale = Vector2(0.15, 0.15)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("9_caiko")]
 position = Vector2(-2171, 49)
@@ -59,12 +65,12 @@ color = Color(0.0901961, 0.211765, 0.447059, 1)
 [node name="Box" parent="." instance=ExtResource("7_b4qlp")]
 position = Vector2(1303, 727)
 rotation = -3.58526
-size = 2.0
+size = 1.5
 
 [node name="Box2" parent="." instance=ExtResource("7_b4qlp")]
 position = Vector2(1799, 786)
 rotation = -3.12633
-size = 2.0
+size = 1.5
 
 [node name="Camera" parent="." instance=ExtResource("9_8ra23")]
 position = Vector2(784, 785)
@@ -78,7 +84,6 @@ camera = NodePath("../Camera")
 
 [node name="LandingZone" parent="." instance=ExtResource("11_eobp3")]
 position = Vector2(429, 460)
-handler_script = NodePath("..")
 boxes_required = 2
 
 [node name="Walls" type="Polygon2D" parent="."]
@@ -99,11 +104,15 @@ polygon = PackedVector2Array(1268, 1000, 2611, 1135, 4840, 1036, 4816, -828, 798
 [node name="Platform" parent="." instance=ExtResource("14_blfx0")]
 position = Vector2(425, 491)
 scale = Vector2(2, 1)
-speed = 2.08165e-12
+speed = 0.6
 path_behavior = 2
 
 [node name="Platform2" parent="." instance=ExtResource("14_blfx0")]
-position = Vector2(1559, 801)
+position = Vector2(1551, 768)
 curve = SubResource("Curve2D_037mp")
-speed = 0.7
-path_behavior = 3
+speed = 0.4
+
+[node name="Platform3" parent="." instance=ExtResource("14_blfx0")]
+position = Vector2(787, 332)
+curve = SubResource("Curve2D_0qsux")
+speed = 0.5
