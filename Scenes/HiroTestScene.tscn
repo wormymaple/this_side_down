@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://blr6srdhy3jte" path="res://Scenes/Objects/detection_area.tscn" id="1_qogw0"]
 [ext_resource type="Script" path="res://Scenes/Objects/detection_area.gd" id="2_6efvm"]
-[ext_resource type="PackedScene" uid="uid://cxmsc6y5qjwet" path="res://Scenes/Objects/ground.tscn" id="3_q6axd"]
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="3_mesxs"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="4_1856f"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="5_ju6ok"]
 [ext_resource type="Texture2D" uid="uid://bp7wvgue20js" path="res://Art/third level/UI_floatingplatform.png" id="6_1lv2v"]
-[ext_resource type="PackedScene" uid="uid://cc5nqimy6p2p7" path="res://Scenes/boxlarge.tscn" id="7_k2ca6"]
+[ext_resource type="PackedScene" uid="uid://cc5nqimy6p2p7" path="res://Scenes/Objects/boxlarge.tscn" id="7_k2ca6"]
 [ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="8_mufoi"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="9_37pv2"]
-[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/box.tscn" id="10_f1yyn"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="10_f1yyn"]
 
 [sub_resource type="Curve2D" id="Curve2D_kk2oo"]
 _data = {
@@ -25,35 +25,17 @@ point_count = 6
 
 [node name="HiroScene" type="Node2D"]
 
-[node name="NotSus" parent="." node_paths=PackedStringArray("box") instance=ExtResource("1_qogw0")]
-position = Vector2(1893, 568)
+[node name="Area2D" parent="." node_paths=PackedStringArray("box") instance=ExtResource("1_qogw0")]
+position = Vector2(1075, 861)
 collision_mask = 15
 script = ExtResource("2_6efvm")
 box = NodePath("../Box")
 
 [node name="GroundHandler" type="Node2D" parent="."]
 
-[node name="Node2D" parent="GroundHandler" instance=ExtResource("3_q6axd")]
-position = Vector2(322, 902)
-
-[node name="Node2D4" parent="GroundHandler" instance=ExtResource("3_q6axd")]
-position = Vector2(1863, 811)
-scale = Vector2(0.981454, 2.47726)
-
-[node name="Node2D5" parent="GroundHandler" instance=ExtResource("3_q6axd")]
-position = Vector2(59, 902)
-
-[node name="Node2D2" parent="GroundHandler" instance=ExtResource("3_q6axd")]
-position = Vector2(187, 927)
-scale = Vector2(0.54124, 0.54124)
-
-[node name="Node2D3" parent="GroundHandler" instance=ExtResource("3_q6axd")]
-position = Vector2(965, 1022)
-scale = Vector2(15.1454, -0.996173)
-
-[node name="Node2D6" parent="GroundHandler" instance=ExtResource("3_q6axd")]
-position = Vector2(1246, 580)
-scale = Vector2(2.54541, -0.996173)
+[node name="StaticBody2D" parent="GroundHandler" instance=ExtResource("3_mesxs")]
+position = Vector2(972, 1189)
+scale = Vector2(1.04, 1)
 
 [node name="Spring" parent="." instance=ExtResource("4_1856f")]
 position = Vector2(527, 916)
@@ -77,7 +59,7 @@ curve = null
 speed = 0.5
 
 [node name="BoxLarge" parent="." instance=ExtResource("7_k2ca6")]
-position = Vector2(1247, 904)
+position = Vector2(1287, 898)
 
 [node name="Piston" parent="." instance=ExtResource("8_mufoi")]
 position = Vector2(1247, 684)
@@ -88,3 +70,6 @@ position = Vector2(844, 904)
 [node name="Box" parent="." instance=ExtResource("10_f1yyn")]
 position = Vector2(82, 738)
 freeze_mode = 1
+
+[node name="BoxLarge2" parent="." instance=ExtResource("7_k2ca6")]
+position = Vector2(722, 818)

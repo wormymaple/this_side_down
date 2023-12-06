@@ -13,9 +13,7 @@ func _on_zone_body_body_entered(bodies):
 		win()
 		
 func win():
-	if 2 in GlobalVariables.completed_levels:
-		return
-		
+	
 	GlobalVariables.win_level(2)
 	get_node(landing_zone).play_particles();
 	camera.fade_out(true)

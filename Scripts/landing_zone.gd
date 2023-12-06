@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var handler_script: NodePath
-@onready var handler = get_node(handler_script) # Bro why does this even get the script if its not actually the script just to do another variable that one @export could do
+#@export var level_root: Node2D
+@onready var level_root = owner
 @export var boxes_required: int = 1
 
 @export var particles: GPUParticles2D
@@ -10,7 +10,7 @@ var colliding_bodies: Array[Node2D];
 
 func _process(_delta):
 	if len(colliding_bodies) >= boxes_required:
-		handler._on_zone_body_body_entered(colliding_bodies)
+		level_root._on_zone_body_body_entered(colliding_bodies)
 
 func play_particles():
 	particles.emitting = true

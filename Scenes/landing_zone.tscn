@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7gc0sday64y6"]
 
 [ext_resource type="Texture2D" uid="uid://faj1vrwnl6ct" path="res://Art/First Level/UI_landingpad.png" id="1_1s0ao"]
-[ext_resource type="Texture2D" uid="uid://bix6qe3awhla1" path="res://Sprites/TempBox.png" id="2_1se70"]
+[ext_resource type="Texture2D" uid="uid://bix6qe3awhla1" path="res://Art/MiscSprites/TempBox.png" id="2_1se70"]
 [ext_resource type="Script" path="res://Scripts/landing_zone.gd" id="2_53gdw"]
 [ext_resource type="Script" path="res://Scripts/AnimatePosition.gd" id="3_5c5mp"]
 [ext_resource type="Texture2D" uid="uid://cwqtumx1dgf51" path="res://Art/StandardParticle.png" id="4_dbcuk"]

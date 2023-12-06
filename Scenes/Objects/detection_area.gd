@@ -1,5 +1,7 @@
 extends Area2D
 
+# This script is for tests i (Hiro) do
+
 @export var box : RigidBody2D
 var move_box_state = "move"
 var timer_started_yet = "no"

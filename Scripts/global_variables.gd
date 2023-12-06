@@ -20,17 +20,16 @@ func check_win_condition(bodies):
 			if body.get_meta("grabbed"):
 				return false
 			
-			if abs(body.rotation_degrees) < 180 - 35:
+			if abs(body.rotation_degrees) < 180 - 35: # Is this saying is bigger than 175?
 				return false
 	
 	return true
 
 func win_level(level: int):
-	if level in completed_levels:
-		return
+	if level not in completed_levels: # Check that this is works like how I think it does
+		completed_levels.append(level)
+		print(completed_levels)
 	
-	completed_levels.append(level)
-	print(completed_levels)
 	await get_tree().create_timer(2).timeout
 	
 	if level != 5: # Because the next level is not ready

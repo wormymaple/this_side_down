@@ -6,7 +6,6 @@ extends RigidBody2D
 @onready var collision = $CollisionShape2D
 @onready var arrow = $ArrowSprite
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite.texture = texture
 	
@@ -16,8 +15,3 @@ func _ready():
 	#if size >= 2: # i think this moves the arrow closer to the center if the box is big
 	#	arrow.position.x -= 20
 	#	arrow.position.y -= 20
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
