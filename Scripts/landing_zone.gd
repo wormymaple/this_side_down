@@ -1,25 +1,41 @@
 extends Node2D
 
-#@export var level_root: Node2D
-@onready var level_root = owner
 @export var boxes_required: int = 1
-
+@export var camera: Camera2D
 @export var particles: GPUParticles2D
+@export var level: int = 1
+var colliding_bodies: Array[Node2D]
 
-var colliding_bodies: Array[Node2D];
-
-func _process(_delta):
-	if len(colliding_bodies) >= boxes_required:
-		level_root._on_zone_body_body_entered(colliding_bodies)
-
-func play_particles():
-	particles.emitting = true
-
-
-func _on_body_entered(body):
-	if body.is_in_group("Box"):
-		colliding_bodies.append(body)
+func _on_body_entered(new_body):
+	if new_body.is_in_group("Box"):
+		print("New Box!")
+		colliding_bodies.append(new_body)
+	if len(colliding_bodies) >= boxes_required: # Asks if there are enough boxes. This could be indented but activating at every new collision makes a less of a chance or not activating
+		for body in colliding_bodies:
+			if body.is_in_group("Box"):
+				if body.get_meta("grabbed"): # Boxes that are being grabbed do not count
+					return
+				if abs(body.rotation_degrees) < 180 - 35: # Has to be the facing downwards
+					return
+		print("You Win!")
+		GlobalVariables.win_level(1)
+		particles.emitting = true
+		camera.fade_out(true)
+		
+		if level == 3:
+			await get_tree().create_timer(1.9).timeout
+			ThemeSongLoop.stop()
+			ThemeSongLoop.intro1 = false
+			ThemeSongLoop.warehouse = false
+			ThemeSongLoop.intro2 = true
+			ThemeSongLoop.stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+			ThemeSongLoop.play()
 
 func _on_body_exited(body):
 	if body in colliding_bodies:
 		colliding_bodies.remove_at(colliding_bodies.find(body))
+		
+func _on_void_out_area_body_entered(body): # This will happen if the player hits a void out plane
+	if body.is_in_group("Player") or body.is_in_group("Box"):
+		get_tree().reload_current_scene()
+		#get_tree().change_scene_to_file("res://Scenes/Levels/level_4.tscn")

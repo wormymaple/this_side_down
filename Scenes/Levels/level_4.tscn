@@ -26,11 +26,9 @@ _data = {
 }
 point_count = 2
 
-[node name="Level4" type="Node2D" node_paths=PackedStringArray("camera")]
+[node name="Level4" type="Node2D"]
 position = Vector2(254, 315)
 script = ExtResource("1_lc6j4")
-landing_zone = NodePath("LandingZone")
-camera = NodePath("Camera")
 
 [node name="MainFloor" parent="." instance=ExtResource("1_v4xq1")]
 position = Vector2(-760.784, 830)
@@ -48,8 +46,10 @@ scale = Vector2(0.809995, 1.22)
 position = Vector2(3893, 162)
 scale = Vector2(2.06, 1)
 
-[node name="LandingZone" parent="." instance=ExtResource("7_sqj7y")]
+[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("7_sqj7y")]
 position = Vector2(1659, 54)
+camera = NodePath("../Camera")
+level = 4
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("8_sj8f4")]
 

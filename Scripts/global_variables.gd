@@ -1,32 +1,12 @@
 extends Node
 
 var completed_levels: Array[int]
-
-var is_ok = true # What is this?
-var levelrn = 0
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+#var levelrn = 0
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-	
-func check_win_condition(bodies):
-	for body in bodies:
-		if body.is_in_group("Box"):
-			if body.get_meta("grabbed"):
-				return false
-			
-			if abs(body.rotation_degrees) < 180 - 35: # Is this saying is bigger than 175?
-				return false
-	
-	return true
 
 func win_level(level: int):
-	if level not in completed_levels: # Check that this is works like how I think it does
+	if level not in completed_levels:
 		completed_levels.append(level)
 		print(completed_levels)
 	

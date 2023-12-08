@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bgr4nq5o17pmh"]
 
-[ext_resource type="Script" path="res://Scripts/InputTest.gd" id="1_hsmpc"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_57550"]
 [ext_resource type="Texture2D" uid="uid://1evxdg38q3gj" path="res://Art/PlayerSprites/UI_Hand_Closed.png" id="2_soivl"]
 [ext_resource type="Texture2D" uid="uid://kgkbn6skvqam" path="res://Art/PlayerSprites/UI_Hand_Open.png" id="3_ocvgj"]
 [ext_resource type="Texture2D" uid="uid://drlj0pirdqkc3" path="res://Art/PlayerSprites/grayscale_player/player_head.png" id="4_nmhw0"]
@@ -35,7 +35,7 @@ lock_rotation = true
 continuous_cd = 1
 max_contacts_reported = 1
 contact_monitor = true
-script = ExtResource("1_hsmpc")
+script = ExtResource("1_57550")
 move_speed = 250.0
 jump_speed = 500.0
 water_jump_coefficient = 1.5
@@ -62,7 +62,7 @@ box_drop = NodePath("BoxDrop")
 jump = NodePath("Jump")
 footsteps = NodePath("Footstep")
 footstep_time = 0.3
-player_colors = Array[Color]([Color(0, 0.709804, 0.835294, 1), Color(1, 0.435294, 0.294118, 1), Color(0.321569, 0.74902, 0, 1), Color(0.670588, 0.537255, 1, 1)])
+player_colors = Array[Color]([Color(0, 0.709804, 0.835294, 1), Color(1, 0.435294, 0.294118, 1), Color(0.321569, 0.74902, 0, 1), Color(0.670588, 0.537255, 1, 1), Color(1, 0.890196, 0.427451, 1), Color(0.364706, 0.364706, 0.364706, 1)])
 metadata/grabbable = true
 metadata/grabbed = false
 
