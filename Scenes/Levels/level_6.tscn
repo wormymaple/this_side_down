@@ -1,160 +1,118 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8aiossmut76m"]
+[gd_scene load_steps=16 format=3 uid="uid://bwfqlui2oxdvp"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level_6.gd" id="1_7kglf"]
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="5_20p7a"]
+[ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="2_87pw1"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="7_5g5wu"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="7_fhnad"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="7_hqlvf"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="8_lh8vf"]
-[ext_resource type="Script" path="res://Scripts/Ladder.gd" id="8_vwsy4"]
-[ext_resource type="Texture2D" uid="uid://ct2w003o42dva" path="res://Art/third level/UI_ladder.png" id="9_ghcfw"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_lxu1d"]
-[ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="9_lytq7"]
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/parallax_backgroundCrates.tscn" id="10_5rxrt"]
 [ext_resource type="Texture2D" uid="uid://gmpfrosil5gl" path="res://Art/second level/UI_floatingplatform.png" id="10_oxqs3"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="10_w06lg"]
-[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/Objects/boxtri.tscn" id="11_ncb4q"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="11_unprq"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="12_7j7q0"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="13_uogt2"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="14_jcsp8"]
 
-[sub_resource type="Curve2D" id="Curve2D_w117e"]
+[sub_resource type="Curve2D" id="Curve2D_037mp"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2.08165e-12, 2.08165e-12, 0, 0, 0, 0, 2.08165e-12, -300)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 560.624, -18.295, 0, -441)
 }
 point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_habp2"]
-size = Vector2(85, 475)
+[sub_resource type="Curve2D" id="Curve2D_0qsux"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 550, 4, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
 
-[node name="Level6" type="Node2D"]
-scale = Vector2(0.5, 0.5)
-script = ExtResource("1_7kglf")
+[node name="Level5" type="Node2D"]
 
-[node name="LoadingZone" parent="." instance=ExtResource("5_20p7a")]
-position = Vector2(3520, 851)
+[node name="Floor" parent="." instance=ExtResource("10_w06lg")]
+position = Vector2(1056, 1181.87)
+scale = Vector2(2.84, 1)
+
+[node name="Ladder2" parent="." instance=ExtResource("2_87pw1")]
+position = Vector2(176, 720.87)
+
+[node name="Floor2" parent="." instance=ExtResource("10_w06lg")]
+position = Vector2(646, 584.87)
+scale = Vector2(0.04, 1.2)
+
+[node name="Ramp" parent="." instance=ExtResource("14_jcsp8")]
+position = Vector2(1316, 900.87)
+scale = Vector2(0.15, 0.15)
+
+[node name="DirectionalLight2D" parent="." instance=ExtResource("11_unprq")]
+position = Vector2(-2171, 152.87)
+color = Color(0.807843, 0.552941, 0.482353, 1)
+energy = 1.41
 
 [node name="CanvasModulate" parent="." instance=ExtResource("9_lxu1d")]
-position = Vector2(-2226.9, -1118.87)
+position = Vector2(-2226.9, -1015)
 color = Color(0.141176, 0.231373, 0.352941, 1)
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource("10_5rxrt")]
 layer = -3
 
-[node name="CanvasModulate2" parent="ParallaxBackground2" instance=ExtResource("9_lxu1d")]
-position = Vector2(-2226.9, -1118.87)
-color = Color(0.141176, 0.231373, 0.352941, 1)
+[node name="CanvasModulate" parent="ParallaxBackground2" instance=ExtResource("9_lxu1d")]
+position = Vector2(-2226.9, -1015)
+color = Color(0.0901961, 0.211765, 0.447059, 1)
 
-[node name="DirectionalLight2D" parent="." instance=ExtResource("11_unprq")]
-position = Vector2(-2171, 49)
-color = Color(0.807843, 0.552941, 0.482353, 1)
-energy = 1.41
+[node name="Box" parent="." instance=ExtResource("12_7j7q0")]
+position = Vector2(1303, 830.87)
+rotation = -3.58526
+size = 1.7
+
+[node name="Box2" parent="." instance=ExtResource("12_7j7q0")]
+position = Vector2(1799, 887.87)
+rotation = -3.12633
+size = 1.7
 
 [node name="Camera" parent="." instance=ExtResource("7_5g5wu")]
-position = Vector2(403, 863)
+position = Vector2(784, 888.87)
 zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(403, 863)
+position = Vector2(785, 889.87)
 script = ExtResource("7_fhnad")
 player_scene = ExtResource("8_lh8vf")
 camera = NodePath("../Camera")
 
-[node name="Piston" parent="." instance=ExtResource("9_lytq7")]
-position = Vector2(653, 18)
-
-[node name="Piston2" parent="." instance=ExtResource("9_lytq7")]
-position = Vector2(804, 18)
-
-[node name="Platform" parent="." instance=ExtResource("7_hqlvf")]
-position = Vector2(250, 950)
-curve = SubResource("Curve2D_w117e")
-speed = 0.3
-
-[node name="Platform2" parent="." instance=ExtResource("7_hqlvf")]
-position = Vector2(1200, 960)
-rotation = 0.698132
-speed = 0.3
-sprite = ExtResource("10_oxqs3")
-path_behavior = 2
-
-[node name="BoxTri" parent="." instance=ExtResource("11_ncb4q")]
-position = Vector2(453, 917)
-
-[node name="Box2" parent="." instance=ExtResource("12_7j7q0")]
-position = Vector2(901, 328)
-
-[node name="LandingZone" parent="." instance=ExtResource("13_uogt2")]
-position = Vector2(1590, 1008)
+[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_uogt2")]
+position = Vector2(429, 563.87)
 boxes_required = 2
-
-[node name="Ramp" parent="." instance=ExtResource("14_jcsp8")]
-position = Vector2(1047, 952)
-scale = Vector2(-0.101375, 0.199112)
-
-[node name="Ramp2" parent="." instance=ExtResource("14_jcsp8")]
-position = Vector2(1097, 869)
-scale = Vector2(0.0647705, -0.140396)
-
-[node name="Ladder" type="Area2D" parent="."]
-position = Vector2(360, 424)
-collision_mask = 2
-script = ExtResource("8_vwsy4")
-
-[node name="LadderSprite" type="Sprite2D" parent="Ladder"]
-z_index = -1
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("9_ghcfw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
-shape = SubResource("RectangleShape2D_habp2")
-
-[node name="FloorHandler" type="Node2D" parent="."]
-position = Vector2(263, 558)
-
-[node name="Polygon2D" type="Polygon2D" parent="FloorHandler"]
-position = Vector2(1237, -60)
-
-[node name="Floor2" parent="FloorHandler" instance=ExtResource("10_w06lg")]
-position = Vector2(430, -78)
-scale = Vector2(0.280002, 0.320001)
-
-[node name="Floor5" parent="FloorHandler" instance=ExtResource("10_w06lg")]
-position = Vector2(475, -323)
-scale = Vector2(0.320002, 0.200002)
-
-[node name="Floor6" parent="FloorHandler" instance=ExtResource("10_w06lg")]
-position = Vector2(475, -636)
-scale = Vector2(0.320002, 0.200002)
-
-[node name="Floor3" parent="FloorHandler" instance=ExtResource("10_w06lg")]
-position = Vector2(636, 172)
-rotation = 1.56413
-scale = Vector2(0.334143, 0.261368)
-
-[node name="Floor4" parent="FloorHandler" instance=ExtResource("10_w06lg")]
-position = Vector2(831, -53)
-rotation = 1.56413
-scale = Vector2(0.329529, -0.224068)
-
-[node name="Floor" parent="FloorHandler" instance=ExtResource("10_w06lg")]
-position = Vector2(697, 691)
+camera = NodePath("../Camera")
+level = 6
 
 [node name="Walls" type="Polygon2D" parent="."]
 z_index = 5
-position = Vector2(401, 478)
+position = Vector2(288.887, 452.136)
+scale = Vector2(0.35991, 0.641233)
 color = Color(0.584314, 0.576471, 0.560784, 1)
 invert_enabled = true
-invert_border = 1000.0
-polygon = PackedVector2Array(2400, -257, 2400, 908, -480, 947, -480, -256)
+invert_border = 2000.0
+polygon = PackedVector2Array(4529.22, -703.544, 4530, 823, -791.551, 821.439, -819.335, -709.782)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
-polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2819, -702, -575, -611, -481, -259, 2399, -259, 2401, 896, -480, 890, -480, -256)
+position = Vector2(1492, 121)
+polygon = PackedVector2Array(1268, 1000, 2611, 1135, 4840, 1036, 4816, -828, 798, -1089, -2807, -1026, -2697, 965, 1116, 653, -2303, 651, -2303, -824.544, 3053.89, -824.544, 3038, 650, 1116, 653)
 
-[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
-[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]
-[connection signal="body_entered" from="Ladder" to="Ladder" method="_on_body_entered"]
-[connection signal="body_exited" from="Ladder" to="Ladder" method="_on_body_exited"]
+[node name="Platform" parent="." instance=ExtResource("7_hqlvf")]
+position = Vector2(425, 594.87)
+scale = Vector2(2, 2)
+speed = 0.6
+sprite = ExtResource("10_oxqs3")
+path_behavior = 2
+
+[node name="Platform2" parent="." instance=ExtResource("7_hqlvf")]
+position = Vector2(1551, 871.87)
+curve = SubResource("Curve2D_037mp")
+speed = 0.4
+
+[node name="Platform3" parent="." instance=ExtResource("7_hqlvf")]
+position = Vector2(787, 435.87)
+curve = SubResource("Curve2D_0qsux")
+speed = 0.5

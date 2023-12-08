@@ -18,15 +18,14 @@ func _ready():
 	$Sprite2D.texture = sprite
 
 func _physics_process(_delta):
+	if path_behavior == State.STOP: # The platform does nothing
+		return
+	
 	$Collision.position = $PathFollow2D.position # I set the position instead of making these a child of pathFollow2D because PathFollow2D has unwanted rotations
 	$Sprite2D.position = $PathFollow2D.position
 	$Area2D.position = $PathFollow2D.position
 	
-	
-	if path_behavior == State.STOP: # The platform does nothing
-		#pass
-		return
-	elif path_behavior == State.ONEWAY:
+	if path_behavior == State.ONEWAY:
 		if $PathFollow2D.progress_ratio < 0.99:
 			$PathFollow2D.progress += speed
 		else:

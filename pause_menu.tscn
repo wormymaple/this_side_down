@@ -16,7 +16,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("1_xgo0j")
 
 [node name="background" type="ColorRect" parent="CanvasLayer"]
@@ -67,6 +66,13 @@ theme_override_fonts/font = ExtResource("3_an8ph")
 theme_override_font_sizes/font_size = 40
 text = "Resume Game"
 
+[node name="RestartLevel" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(468, 93)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_an8ph")
+theme_override_font_sizes/font_size = 40
+text = "Restart Level"
+
 [node name="Settings" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(468, 93)
 layout_mode = 2
@@ -82,13 +88,6 @@ theme_override_fonts/font = ExtResource("3_an8ph")
 theme_override_font_sizes/font_size = 40
 text = "Quit To Main Menu"
 
-[node name="QuitToDesktop" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(468, 93)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_an8ph")
-theme_override_font_sizes/font_size = 40
-text = "Quit To Desktop"
-
 [node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("2_eru1t")]
 visible = false
 anchors_preset = -1
@@ -103,6 +102,6 @@ offset_bottom = -550.08
 
 [connection signal="visibility_changed" from="CanvasLayer" to="CanvasLayer" method="_on_visibility_changed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ResumeButton" to="CanvasLayer" method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/RestartLevel" to="CanvasLayer" method="_on_restart_level_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Settings" to="CanvasLayer" method="_on_settings_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/QuitToMenu" to="CanvasLayer" method="_on_button_3_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/QuitToDesktop" to="CanvasLayer" method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/QuitToMenu" to="CanvasLayer" method="_on_quit_to_menu_pressed"]

@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://r0yq03eqwlcd"]
+[gd_scene load_steps=11 format=3 uid="uid://r0yq03eqwlcd"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level_3.gd" id="1_3f1r8"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_dhfbf"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="2_dmm6o"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="2_i1512"]
@@ -12,57 +11,53 @@
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="10_i46cw"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="12_jkmtc"]
 
-[node name="Level3" type="Node2D" node_paths=PackedStringArray("camera")]
-position = Vector2(12, 305)
-script = ExtResource("1_3f1r8")
-landing_zone = NodePath("LandingZone")
-camera = NodePath("Camera")
+[node name="Level3" type="Node2D"]
 
 [node name="Camera" parent="." instance=ExtResource("2_i1512")]
-position = Vector2(-209, 805)
+position = Vector2(-175, 1113)
 zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(-209, 805)
+position = Vector2(-175, 1113)
 script = ExtResource("2_dmm6o")
 player_scene = ExtResource("3_mv7h8")
 camera = NodePath("../Camera")
 
 [node name="MainFloor" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(964, 1085)
+position = Vector2(998, 1393)
 scale = Vector2(2.84323, 1)
 
 [node name="3" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(92, 439)
+position = Vector2(126, 747)
 scale = Vector2(0.150937, -0.619043)
 
 [node name="4" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(972, 254)
+position = Vector2(1006, 562)
 scale = Vector2(0.06, 1.29078)
 
 [node name="6" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(972, 281)
+position = Vector2(1006, 589)
 scale = Vector2(0.06, -1.18922)
 
 [node name="5" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(972, 879)
+position = Vector2(1006, 1187)
 scale = Vector2(0.06, 1)
 
 [node name="7" parent="." instance=ExtResource("1_dhfbf")]
-position = Vector2(1100, 991)
+position = Vector2(1134, 1299)
 scale = Vector2(0.078, 1)
 
 [node name="Ramp" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(689, 758)
+position = Vector2(723, 1066)
 scale = Vector2(0.28, 0.28)
 
 [node name="Ramp2" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(464, 485)
+position = Vector2(498, 793)
 rotation = 3.14159
 scale = Vector2(0.28, -0.28)
 
 [node name="Ramp3" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(691, 135)
+position = Vector2(725, 443)
 scale = Vector2(0.28, 0.28)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("8_6vpom")]
@@ -70,7 +65,7 @@ position = Vector2(-305, -1294)
 
 [node name="Walls" type="Polygon2D" parent="."]
 z_index = 5
-position = Vector2(82.2927, 168.217)
+position = Vector2(116.293, 476.217)
 scale = Vector2(0.801671, 0.807453)
 color = Color(0.584314, 0.576471, 0.560784, 1)
 invert_enabled = true
@@ -83,7 +78,7 @@ polygon = PackedVector2Array(2576, -700, 2578, 909, -654, 910, -654, -700)
 polygon = PackedVector2Array(-990, 645, -146, 1569, 2913, 986, 2828, -875, -680, -909, -654, -700, 2576, -700, 2578, 848, -654, 849, -654, -700)
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_e6i4h")]
-position = Vector2(1812, 843)
+position = Vector2(1846, 1151)
 camera = NodePath("../Camera")
 level = 3
 
@@ -99,5 +94,5 @@ transform = Transform2D(0.9, 0, 0, 0.9, 2.08165e-12, 150)
 position = Vector2(12, 305)
 
 [node name="Box" parent="." instance=ExtResource("12_jkmtc")]
-position = Vector2(126, 792)
+position = Vector2(160, 1100)
 size = 2.0

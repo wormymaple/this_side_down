@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://kiyufpj683ic"]
+[gd_scene load_steps=11 format=3 uid="uid://kiyufpj683ic"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_d88h3"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrwse"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="5_n57bp"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_yeun7"]
@@ -13,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://LightBlocker.tscn" id="13_knull"]
 
 [node name="Level1" type="Node2D"]
-script = ExtResource("1_d88h3")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("6_yeun7")]
 
