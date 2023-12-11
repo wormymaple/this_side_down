@@ -114,4 +114,4 @@ theme_override_font_sizes/font_size = 32
 text = "Don't fall in pits!"
 horizontal_alignment = 1
 
-[connection signal="body_entered" from="VoidOutArea" to="." method="_on_void_out_area_body_entered"]
+[connection signal="body_entered" from="VoidOutArea" to="LandingZone" method="_on_void_out_area_body_entered"]

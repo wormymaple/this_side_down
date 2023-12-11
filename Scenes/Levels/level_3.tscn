@@ -49,16 +49,15 @@ scale = Vector2(0.078, 1)
 
 [node name="Ramp" parent="." instance=ExtResource("3_jyb7d")]
 position = Vector2(723, 1066)
-scale = Vector2(0.28, 0.28)
+scale = Vector2(1.4, 1.4)
 
 [node name="Ramp2" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(498, 793)
-rotation = 3.14159
-scale = Vector2(0.28, -0.28)
+position = Vector2(495, 796)
+scale = Vector2(-1.4, 1.4)
 
 [node name="Ramp3" parent="." instance=ExtResource("3_jyb7d")]
 position = Vector2(725, 443)
-scale = Vector2(0.28, 0.28)
+scale = Vector2(1.4, 1.4)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("8_6vpom")]
 position = Vector2(-305, -1294)

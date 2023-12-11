@@ -20,16 +20,15 @@ position = Vector2(961, 1113)
 scale = Vector2(3.16, 1)
 
 [node name="Ramp" parent="." instance=ExtResource("4_nh0bc")]
-position = Vector2(480, 815)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-263, 815)
+scale = Vector2(-1, 1)
 
 [node name="Ramp2" parent="." instance=ExtResource("4_nh0bc")]
 position = Vector2(1022, 813)
-scale = Vector2(-0.2, 0.2)
+scale = Vector2(-1, 1)
 
 [node name="Ramp3" parent="." instance=ExtResource("4_nh0bc")]
-position = Vector2(-261, 813)
-scale = Vector2(-0.2, 0.2)
+position = Vector2(482, 813)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_jrl6j")]
 position = Vector2(751, 807)
