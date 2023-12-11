@@ -117,13 +117,13 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 40
 columns = 6
 
-[node name="Button" type="Button" parent="CenterContainer/GridContainer"]
+[node name="Button1" type="Button" parent="CenterContainer/GridContainer"]
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "1"
 
-[node name="Ui1Button" type="TextureRect" parent="CenterContainer/GridContainer/Button"]
+[node name="Ui1Button" type="TextureRect" parent="CenterContainer/GridContainer/Button1"]
 layout_mode = 0
 offset_left = -170.0
 offset_top = -170.0
@@ -456,11 +456,11 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_un2fg")
 theme_override_font_sizes/font_size = 70
-text = "(Levels 7-12 cannot be unlocked at this time)"
+text = "(Levels 8-12 cannot be unlocked at this time)"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="CenterContainer/GridContainer/Button" to="." method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button1" to="." method="_on_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Button4" to="." method="_on_button_4_pressed"]

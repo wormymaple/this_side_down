@@ -75,13 +75,13 @@ position = Vector2(1492, 121)
 polygon = PackedVector2Array(2180, 906, 2209, -1066, -2681, -1108, -2697, 965, 489, 655, -2227, 658, -2230, -713, 636, -706, 639, 639, 478, 645)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(-411, 450)
+position = Vector2(-411, 541)
 script = ExtResource("11_f3xvt")
 player_scene = ExtResource("12_itn5d")
 camera = NodePath("../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("13_dkewa")]
-position = Vector2(-407.079, 457.844)
+position = Vector2(-407.079, 548.844)
 
 [node name="VoidOutArea" parent="." instance=ExtResource("10_eo61p")]
 position = Vector2(875, 561)
