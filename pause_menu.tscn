@@ -55,7 +55,7 @@ text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="HSeparator" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+[node name="Spacer" type="HSeparator" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 40)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0

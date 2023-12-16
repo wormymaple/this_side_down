@@ -44,46 +44,28 @@ func _physics_process(_delta):
 	previous_position = $PathFollow2D.position
 	# Update last position
 	
-	#if moving_body != null:
-		#print(moving_body.on_ground)
-	#if name == "Platform":
-		#print($"../Box".on_ground)
 	
 	for object in objects_to_move:
 		if object.is_in_group("Player"):
 			if object.on_ground:
-				
 				object.position += movement * scale
 		if object.is_in_group("Box"):
-			#print("global pos: ", object.global_position, ". pos: ", object.position)
-			#print("there is an object in box group!")
-			#object.global_position = $Collision.global_position + Vector2(0, -30)
-			object.position += movement
-			#object.position.x += 10
-	
-	#if object != null and object.on_ground:
-		#print("moving something on a platform!")
-		#moving_body.position.x += movement * 1.55
-	#	moving_body.position += movement * 1.55
-		#print(movement)
+			#object.global_position += movement * scale # This works for some reason
+			object.global_transform.origin += movement * scale # For some reason this works while setting the position will not
 
 
 func _on_area_2d_body_entered(body):
-	if path_behavior == State.STOP:
-		return
-	#print(body.name)
-	if body.is_in_group("Player") or body.is_in_group("Box"):
-		#print("The body that entered was the player!")
-		objects_to_move.push_back(body)
-	#	var objects_in_array = "" # Only to help list them all, does no function
-	#	for object in objects_to_move:
-	#		objects_in_array += object.name + " "
-	#	print(objects_in_array)
+	if path_behavior != State.STOP:
+		if body.is_in_group("Player") or body.is_in_group("Box"):
+			objects_to_move.push_back(body)
+		#	var objects_in_array = ""
+		#	for object in objects_to_move:
+		#		objects_in_array += object.name + " "
+		#	print(objects_in_array)
 
 func _on_area_2d_body_exited(body):
-	if path_behavior == State.STOP:
-		return
-	if body.is_in_group("Player") or body.is_in_group("Box"):
-		if body in objects_to_move:
-			objects_to_move.pop_at(objects_to_move.find(body))
-			print("Removed ", body.name)
+	if path_behavior != State.STOP:
+		if body.is_in_group("Player") or body.is_in_group("Box"):
+			if body in objects_to_move:
+				objects_to_move.pop_at(objects_to_move.find(body))
+			#print("Removed ", body.name)

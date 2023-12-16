@@ -63,15 +63,16 @@ func _ready():
 	add_to_group("Player")
 	original_grav_scale = gravity_scale
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if standing_in_ladder: # Ladder physics
+		unmovable = false
 		if Input.is_action_pressed("left_trigger_" + playerID):
-			gravity_scale = 0
+			gravity_scale = 0.5 # Was 0
 			linear_velocity = Vector2.UP * ladder_climb_speed
 		else:
-			linear_velocity = Vector2.ZERO
-	elif gravity_scale == 0:
+			#linear_velocity = Vector2.ZERO
+			linear_velocity = Vector2.DOWN * 100
+	elif gravity_scale == 0 or gravity_scale == 0.5:
 		gravity_scale = original_grav_scale
 	
 	if running_buffer: # Jump buffer

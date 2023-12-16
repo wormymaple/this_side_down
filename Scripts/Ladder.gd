@@ -7,7 +7,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	collide(body, false)
 	
-func collide(body, state: bool):
+func collide(body, state: bool): # Why make another function?
 	if !body.is_in_group("Player"):
 		return
 	

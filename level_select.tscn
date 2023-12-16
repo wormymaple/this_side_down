@@ -29,7 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wtpsa")
-lock_list = [NodePath("CenterContainer/GridContainer/Button2/Ui2Button/1"), NodePath("CenterContainer/GridContainer/Button3/Ui3Button/2"), NodePath("CenterContainer/GridContainer/Button4/Ui4Button/3"), NodePath("CenterContainer/GridContainer/Button5/Ui5Button/4"), NodePath("CenterContainer/GridContainer/Button6/Ui6Button/5"), NodePath("CenterContainer/GridContainer/Button7/Ui7Button/6"), NodePath("CenterContainer/GridContainer/Button9/Ui9Button/8"), NodePath("CenterContainer/GridContainer/Button10/Ui10Button/9"), NodePath("CenterContainer/GridContainer/Button11/Ui11Button/10"), NodePath("CenterContainer/GridContainer/Button12/Ui12Button/11")]
+lock_list = [NodePath("CenterContainer/GridContainer/Button2/Ui2Button/1"), NodePath("CenterContainer/GridContainer/Button3/Ui3Button/2"), NodePath("CenterContainer/GridContainer/Button4/Ui4Button/3"), NodePath("CenterContainer/GridContainer/Button5/Ui5Button/4"), NodePath("CenterContainer/GridContainer/Button6/Ui6Button/5"), NodePath("CenterContainer/GridContainer/Button7/Ui7Button/6"), NodePath("CenterContainer/GridContainer/Button8/Ui8Button/7"), NodePath("CenterContainer/GridContainer/Button9/Ui9Button/8"), NodePath("CenterContainer/GridContainer/Button10/Ui10Button/9"), NodePath("CenterContainer/GridContainer/Button11/Ui11Button/10"), NodePath("CenterContainer/GridContainer/Button12/Ui12Button/11")]
 select_rect = NodePath("Selector")
 
 [node name="Backround" type="ColorRect" parent="."]

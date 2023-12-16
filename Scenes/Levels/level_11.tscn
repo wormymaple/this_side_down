@@ -1,51 +1,75 @@
-[gd_scene load_steps=12 format=3 uid="uid://bvmrk074yven"]
+[gd_scene load_steps=13 format=3 uid="uid://dv6cw04ulkig0"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level_11.gd" id="1_2rs6l"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_6qh6a"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_10.gd" id="1_pdyxa"]
 [ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="2_3lcx1"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_sb7pc"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="5_4hvyx"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="6_8j7ak"]
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="6_d02wj"]
+[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="6_dla5n"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="6_p5pqx"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_77780"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="10_lni03"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="11_w7flq"]
 
-[node name="level_11" type="Node2D"]
-script = ExtResource("1_2rs6l")
+[node name="level_10" type="Node2D"]
+script = ExtResource("1_pdyxa")
 
 [node name="SquareBox1" parent="." instance=ExtResource("2_3lcx1")]
-position = Vector2(2025, -983)
+position = Vector2(624, 658)
 rotation = 6.27737
 
 [node name="SquareBox2" parent="." instance=ExtResource("2_3lcx1")]
-position = Vector2(180, 622)
+position = Vector2(553, 833)
 rotation = 6.27737
 
-[node name="SquareBox3" parent="." instance=ExtResource("2_3lcx1")]
-position = Vector2(2224, 283)
+[node name="CircleBox" parent="." instance=ExtResource("2_3lcx1")]
+position = Vector2(761, 844)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_sb7pc")]
-position = Vector2(1915, 1122)
+position = Vector2(2199, 975)
 scale = Vector2(0.5, 0.5)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("6_8j7ak")]
-position = Vector2(386, -631)
-color = Color(0.686275, 0.568627, 0.788235, 1)
+position = Vector2(377, -519)
+color = Color(1, 0.658824, 0.533333, 1)
 
 [node name="Floor" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(1120, 1352)
-scale = Vector2(2.36, 1)
-
-[node name="Floor3" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(-110, -33)
-scale = Vector2(0.360002, 0.56)
+position = Vector2(1876, 1189)
+scale = Vector2(2.562, 0.838407)
 
 [node name="Floor2" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(2337, 914)
-scale = Vector2(0.220133, 2.17861)
+position = Vector2(397, -170)
+scale = Vector2(0.094465, 1.69318)
+
+[node name="Floor3" parent="." instance=ExtResource("1_6qh6a")]
+position = Vector2(1015, -181)
+scale = Vector2(0.086839, 1.61372)
+
+[node name="Floor4" parent="." instance=ExtResource("1_6qh6a")]
+position = Vector2(1919, 839)
+scale = Vector2(0.0732193, 2.73604)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("6_dla5n")]
+position = Vector2(1645, 894)
+scale = Vector2(1.86248, 2.82842)
+speed = 2
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("6_dla5n")]
+position = Vector2(1313, 204)
+scale = Vector2(2.11982, 3.03274)
+speed = -2
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(1602, 771)
+script = ExtResource("9_77780")
+player_scene = ExtResource("10_lni03")
+camera = NodePath("../Camera")
+damp = 2.0
+gravity_scale = 0.6
+is_in_water = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_d02wj")]
 
@@ -54,16 +78,6 @@ scale = Vector2(0.220133, 2.17861)
 [node name="CanvasModulate2" parent="ParallaxBackground2" instance=ExtResource("5_4hvyx")]
 
 [node name="CanvasModulate" parent="." instance=ExtResource("5_4hvyx")]
-
-[node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(1602, 771)
-script = ExtResource("9_77780")
-player_scene = ExtResource("10_lni03")
-camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
-damp = 2.0
-gravity_scale = 0.6
-is_in_water = true
 
 [node name="Camera" parent="." instance=ExtResource("11_w7flq")]
 zoom = Vector2(1.5, 1.5)

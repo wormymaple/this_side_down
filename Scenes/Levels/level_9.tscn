@@ -1,101 +1,187 @@
-[gd_scene load_steps=17 format=3 uid="uid://bfume0p3k4a7x"]
+[gd_scene load_steps=21 format=3 uid="uid://bfuk1ayoi88qa"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level_9.gd" id="1_ulhtr"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="2_etqoo"]
-[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="3_ywc5b"]
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="4_jpuag"]
+[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/Objects/boxtri.tscn" id="2_xpmd4"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="3_7stkk"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="5_bhl86"]
+[ext_resource type="PackedScene" uid="uid://ftopepwcjoag" path="res://divider.tscn" id="6_h2bma"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="6_tammo"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="7_lplcc"]
-[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="8_cahcg"]
-[ext_resource type="PackedScene" uid="uid://c05ps7i55fw6q" path="res://Scenes/TriangleboxUp.tscn" id="9_celqn"]
-[ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="10_gnpag"]
-[ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="10_q0eyp"]
-[ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="11_cmrej"]
+[ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="7_svcn1"]
+[ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="9_wbevr"]
+[ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://Art/parallax_backgroundBoat.tscn" id="10_ffl0r"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="12_42hc6"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="13_avyxm"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="14_wbbsx"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="15_iu3jp"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="16_paf4g"]
+[ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://void_out_area.tscn" id="16_yemu3"]
+[ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/third level/UI_Barrier.png" id="17_eh8td"]
 
-[node name="level_9" type="Node2D"]
-script = ExtResource("1_ulhtr")
+[sub_resource type="Curve2D" id="Curve2D_cf76v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200)
+}
+point_count = 2
 
-[node name="SquareBox1" parent="." instance=ExtResource("3_ywc5b")]
-position = Vector2(-371, 731)
-rotation = 6.27737
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uaspm"]
 
-[node name="SquareBox2" parent="." instance=ExtResource("3_ywc5b")]
-position = Vector2(2085, -842)
-rotation = 6.27737
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vtxps"]
+light_mode = 1
 
-[node name="LoadingZone" parent="." instance=ExtResource("4_jpuag")]
-position = Vector2(3690, 941)
+[node name="Level8" type="Node2D"]
 
-[node name="DirectionalLight2D" parent="." instance=ExtResource("7_lplcc")]
-position = Vector2(-252, -1441)
-color = Color(1, 0.941176, 0.917647, 1)
+[node name="Box" parent="." instance=ExtResource("15_iu3jp")]
+position = Vector2(347, -196)
+size = 1.5
 
-[node name="TriangleboxUp" parent="." instance=ExtResource("9_celqn")]
-position = Vector2(2318, 817)
-rotation = 2.09064
+[node name="TriangleBox" parent="." instance=ExtResource("2_xpmd4")]
+position = Vector2(2004, 893)
+rotation = -1.03869
+size = 2.0
+
+[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_7stkk")]
+position = Vector2(2100, 100)
+boxes_required = 2
+camera = NodePath("../Camera")
+level = 9
+
+[node name="Spring" parent="." instance=ExtResource("16_paf4g")]
+position = Vector2(822, 958)
+rotation = 0.757022
+Power = 1100
+
+[node name="Spring2" parent="." instance=ExtResource("16_paf4g")]
+position = Vector2(1369, 967)
+rotation = -0.578387
+Power = 1100
+
+[node name="Platform" parent="." instance=ExtResource("5_bhl86")]
+position = Vector2(351, -107)
+curve = SubResource("Curve2D_cf76v")
+speed = 0.4
+
+[node name="Divider" parent="." instance=ExtResource("6_h2bma")]
+position = Vector2(465, -78)
+rotation = 1.5708
+scale = Vector2(1.86331, 1.86331)
+
+[node name="Ladder" parent="." instance=ExtResource("7_svcn1")]
+position = Vector2(1045, 333)
+scale = Vector2(1.14635, 1.14635)
 
 [node name="Floor" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(1117, 1080)
-scale = Vector2(1.84, 1)
+position = Vector2(-286, 1179)
 
-[node name="Floor3" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-282, 342)
-scale = Vector2(0.400001, 0.359999)
+[node name="Floor7" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(-2951, 819)
+scale = Vector2(0.64, 1.2)
+
+[node name="Floor8" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(-2290, 795)
+scale = Vector2(0.05, 0.708)
+
+[node name="Floor9" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(-2194, 897)
+scale = Vector2(0.05, 0.708)
+
+[node name="Floor10" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(-2101, 1006)
+scale = Vector2(0.05, 0.708)
 
 [node name="Floor2" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(1864, 720)
-scale = Vector2(0.0800012, 1.59582)
-
-[node name="Floor4" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(-543, 525)
-scale = Vector2(0.0800012, 3.67582)
-
-[node name="Floor6" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(2462, 525)
-scale = Vector2(0.0800012, 3.67582)
+position = Vector2(2528, 1176)
 
 [node name="Floor5" parent="." instance=ExtResource("2_etqoo")]
-position = Vector2(2227, -365)
-scale = Vector2(-1.68731, 0.436588)
+position = Vector2(769, 1349)
+scale = Vector2(0.1, 1)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("10_gnpag")]
-position = Vector2(1534, -611)
-scale = Vector2(0.35, 0.35)
+[node name="Floor6" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(1444, 1351)
+scale = Vector2(0.13, 1)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("8_cahcg")]
-position = Vector2(-300, 137)
-scale = Vector2(0.35, 0.35)
+[node name="Floor3" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(682, 200)
+scale = Vector2(0.24, 0.4)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("11_cmrej")]
+[node name="Floor4" parent="." instance=ExtResource("2_etqoo")]
+position = Vector2(2018, 207)
+scale = Vector2(0.88, 0.4)
 
-[node name="ParallaxBackground2" parent="." instance=ExtResource("10_q0eyp")]
+[node name="Ramp" parent="." instance=ExtResource("9_wbevr")]
+position = Vector2(758, 1038)
+rotation = 1.5708
+scale = Vector2(0.5, 1.3)
 
-[node name="CanvasModulate" parent="ParallaxBackground2" instance=ExtResource("6_tammo")]
+[node name="Ramp2" parent="." instance=ExtResource("9_wbevr")]
+position = Vector2(1450, 1039)
+scale = Vector2(0.722, 1.2)
 
-[node name="CanvasModulate" parent="." instance=ExtResource("6_tammo")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("10_ffl0r")]
+
+[node name="CanvasModulate3" parent="ParallaxBackground" instance=ExtResource("6_tammo")]
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.498039, 0.639216, 0.827451, 1)
+
+[node name="DirectionalLight2D" parent="." instance=ExtResource("7_lplcc")]
+position = Vector2(-2171, 49)
+color = Color(0.807843, 0.552941, 0.482353, 1)
+energy = 1.41
+
+[node name="CanvasModulate2" parent="." instance=ExtResource("6_tammo")]
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.498039, 0.639216, 0.827451, 1)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(621, 727)
+position = Vector2(354, 869)
 script = ExtResource("12_42hc6")
 player_scene = ExtResource("13_avyxm")
 camera = NodePath("../Camera")
-damp = 2.0
-gravity_scale = 0.6
-is_in_water = true
 
 [node name="Camera" parent="." instance=ExtResource("14_wbbsx")]
+position = Vector2(354, 870)
 zoom = Vector2(1.5, 1.5)
 
-[node name="Box" parent="." instance=ExtResource("15_iu3jp")]
-position = Vector2(390, 610)
-gravity_scale = 0.4
-linear_damp = 2.0
+[node name="VoidOutArea" parent="." instance=ExtResource("16_yemu3")]
+position = Vector2(1103, 1389)
+scale = Vector2(1.6123, 1.6123)
 
-[node name="Spring" parent="." instance=ExtResource("16_paf4g")]
-position = Vector2(1677, 807)
-Power = 1300
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+position = Vector2(-191, 187)
+scale = Vector2(0.35991, 0.641233)
+color = Color(0.584314, 0.576471, 0.560784, 1)
+invert_enabled = true
+invert_border = 2000.0
+polygon = PackedVector2Array(7154.57, -709.57, 7143.45, 1812.13, -811.314, 1782.5, -802.978, -704.892)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+position = Vector2(1592.06, 134.117)
+polygon = PackedVector2Array(464.009, 1665.54, 455.674, 2053.85, 6276.57, 2092.84, 6296.06, -1053.58, -2970.19, -1122.84, -3020.19, 1849.56, 366.763, 1849.56, 363.984, 1520.51, -2395.04, 1506.47, -2406.15, -840.568, 5559.73, -846.806, 5554.17, 1679.58, 1592.06, 1654.62)
+
+[node name="Rails" type="ParallaxBackground" parent="."]
+layer = 0
+visible = false
+
+[node name="Ground" type="ParallaxLayer" parent="Rails"]
+z_index = 4096
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_uaspm")
+position = Vector2(-14, 173)
+motion_scale = Vector2(1.2, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Rails/Ground"]
+material = SubResource("CanvasItemMaterial_vtxps")
+position = Vector2(-508, 350)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_eh8td")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Rails/Ground"]
+material = SubResource("CanvasItemMaterial_vtxps")
+position = Vector2(2235, 350)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_eh8td")
+
+[connection signal="body_entered" from="VoidOutArea" to="LandingZone" method="_on_void_out_area_body_entered"]

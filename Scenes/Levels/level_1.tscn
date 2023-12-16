@@ -65,7 +65,7 @@ position = Vector2(2105, -1458)
 scale = Vector2(14.7897, 3.92412)
 
 [node name="Box" parent="." instance=ExtResource("10_mhr4p")]
-position = Vector2(887, 742)
+position = Vector2(887, 828)
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_kijhk")]
 position = Vector2(1735, 856)

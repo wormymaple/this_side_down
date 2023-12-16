@@ -14,7 +14,7 @@ func _ready():
 	$Timer.wait_time = time_interval
 
 
-func _process(delta):
+func _process_delta():
 	if mode == State.WAIT:
 		return
 	
@@ -43,7 +43,7 @@ func _on_timer_timeout():
 	mode = State.PUSH
 
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
+func _on_area_2d_input_event(_viewport, event, shape_idx):
 	print("Input event!: ", event, ", ", shape_idx)
 
 

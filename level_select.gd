@@ -115,6 +115,7 @@ func _on_button_9_pressed():
 		_start_level(9)
 
 func _on_button_10_pressed():
+	return # Because there level is not made yet
 	if GlobalVariables.completed_levels.has(9):
 		_start_level(10)
 

@@ -81,7 +81,7 @@ player_scene = ExtResource("12_itn5d")
 camera = NodePath("../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("13_dkewa")]
-position = Vector2(-407.079, 548.844)
+position = Vector2(-411, 541)
 
 [node name="VoidOutArea" parent="." instance=ExtResource("10_eo61p")]
 position = Vector2(875, 561)

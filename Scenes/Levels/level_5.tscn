@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8aiossmut76m"]
+[gd_scene load_steps=12 format=3 uid="uid://c8aiossmut76m"]
 
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="1_1gxev"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_arfby"]
 [ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/Objects/boxtri.tscn" id="8_hmve4"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="9_8ra23"]
@@ -14,9 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="14_jv4xn"]
 
 [node name="Level5" type="Node2D"]
-
-[node name="LoadingZone" parent="." instance=ExtResource("1_1gxev")]
-position = Vector2(3520, 851)
 
 [node name="CanvasModulate" parent="." instance=ExtResource("11_vbs12")]
 position = Vector2(-2226.9, -1118.87)
@@ -83,11 +79,11 @@ position = Vector2(-14, -38)
 polygon = PackedVector2Array(-647.499, -262.19, -633.499, 955.81, 1666.5, 975.81, 1700.5, -619.19, -465.499, -619.19, -472.002, -258.011, 1433.5, -259.19, 1441.5, 804.81, -478.499, 812.81, -470, -256.006)
 
 [node name="Spring" parent="." instance=ExtResource("11_ve53h")]
-position = Vector2(795, 1017)
+position = Vector2(743, 963)
 Power = 900
 
 [node name="Spring2" parent="." instance=ExtResource("11_ve53h")]
-position = Vector2(1758, 1013)
+position = Vector2(1706, 959)
 Power = 950
 
 [node name="Ladder2" parent="." instance=ExtResource("14_jv4xn")]
@@ -95,6 +91,3 @@ position = Vector2(459, 871)
 
 [node name="Ladder3" parent="." instance=ExtResource("14_jv4xn")]
 position = Vector2(1352, 871)
-
-[connection signal="body_entered" from="LoadingZone" to="." method="_on_loading_zone_body_entered"]
-[connection signal="body_exited" from="LoadingZone" to="." method="_on_loading_zone_body_exited"]

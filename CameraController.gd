@@ -9,7 +9,7 @@ var players: Array
 
 @export var no_controller_path: NodePath
 @onready var no_controller = get_node(no_controller_path)
-@export var background: Polygon2D
+@export var background: Polygon2D # This isn't used
 
 @export var fade: ColorRect
 @export var fade_time: float

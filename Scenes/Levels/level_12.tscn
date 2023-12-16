@@ -1,84 +1,57 @@
-[gd_scene load_steps=14 format=3 uid="uid://dl5ncyiq5epgd"]
+[gd_scene load_steps=12 format=3 uid="uid://bvmrk074yven"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level_12.gd" id="1_s4r1i"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_11.gd" id="1_68dca"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrdb1"]
 [ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="2_ymd4g"]
 [ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_dt02e"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="5_f2ie4"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="6_p82q7"]
-[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="7_stoc5"]
-[ext_resource type="PackedScene" uid="uid://bn6ufxv2jtl3j" path="res://Scenes/hor_moving_platform.tscn" id="8_0fbum"]
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="8_u77f3"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="9_akor3"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="11_psbp5"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="12_ukulb"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="13_r0ek7"]
 
-[node name="level_12" type="Node2D"]
-script = ExtResource("1_s4r1i")
+[node name="level_11" type="Node2D"]
+script = ExtResource("1_68dca")
 
-[node name="Squarebox" parent="." instance=ExtResource("2_ymd4g")]
-position = Vector2(-1712, 403)
+[node name="SquareBox1" parent="." instance=ExtResource("2_ymd4g")]
+position = Vector2(2025, -983)
 rotation = 6.27737
 
-[node name="CircleBox" parent="." instance=ExtResource("2_ymd4g")]
-position = Vector2(-2030, 401)
+[node name="SquareBox2" parent="." instance=ExtResource("2_ymd4g")]
+position = Vector2(180, 622)
+rotation = 6.27737
+
+[node name="SquareBox3" parent="." instance=ExtResource("2_ymd4g")]
+position = Vector2(2224, 283)
 rotation = 6.27737
 
 [node name="LoadingZone" parent="." instance=ExtResource("3_dt02e")]
-position = Vector2(3903, -32)
+position = Vector2(1915, 1122)
+scale = Vector2(0.5, 0.5)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("6_p82q7")]
 position = Vector2(386, -631)
-
-[node name="MovingPlatform" parent="." instance=ExtResource("7_stoc5")]
-position = Vector2(1574, 653)
-scale = Vector2(4, 4)
-speed = 2
+color = Color(0.686275, 0.568627, 0.788235, 1)
 
 [node name="Floor" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(1792, 1074)
-scale = Vector2(2.68, 1)
-
-[node name="Floor2" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(-319, -1493)
-scale = Vector2(0.519999, 6.76)
+position = Vector2(1120, 1352)
+scale = Vector2(2.36, 1)
 
 [node name="Floor3" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(563, -2260)
-scale = Vector2(0.519999, 3.44)
+position = Vector2(-110, -33)
+scale = Vector2(0.360002, 0.56)
 
-[node name="Floor4" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(876, -353)
-scale = Vector2(0.199997, 3.08)
-
-[node name="Floor5" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(2223, 100)
-scale = Vector2(0.199997, 1.04)
-
-[node name="Floor6" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(2223, -943)
-scale = Vector2(0.199997, 1.6)
-
-[node name="Floor9" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(3941, 498)
-scale = Vector2(0.439997, 2.16)
-
-[node name="Floor7" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(2808, -1866)
-scale = Vector2(0.799995, 0.839998)
-
-[node name="Floor8" parent="." instance=ExtResource("1_yrdb1")]
-position = Vector2(3407, -529)
-scale = Vector2(0.199992, 6.56)
-
-[node name="StaticBody2D" parent="." instance=ExtResource("8_0fbum")]
-position = Vector2(5090, -2004)
-scale = Vector2(4, 4)
+[node name="Floor2" parent="." instance=ExtResource("1_yrdb1")]
+position = Vector2(2337, 914)
+scale = Vector2(0.220133, 2.17861)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_u77f3")]
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource("9_akor3")]
+
+[node name="CanvasModulate2" parent="ParallaxBackground2" instance=ExtResource("5_f2ie4")]
 
 [node name="CanvasModulate" parent="." instance=ExtResource("5_f2ie4")]
 
@@ -87,11 +60,9 @@ position = Vector2(1602, 771)
 script = ExtResource("11_psbp5")
 player_scene = ExtResource("12_ukulb")
 camera = NodePath("../Camera")
-colors = Array[Color]([Color(1, 0, 1, 1)])
 damp = 2.0
 gravity_scale = 0.6
 is_in_water = true
 
 [node name="Camera" parent="." instance=ExtResource("13_r0ek7")]
 zoom = Vector2(1.5, 1.5)
-no_controller_path = NodePath("../PlayerSpawn")
