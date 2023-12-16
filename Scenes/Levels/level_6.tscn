@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwfqlui2oxdvp"]
+[gd_scene load_steps=15 format=3 uid="uid://bwfqlui2oxdvp"]
 
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="2_87pw1"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="7_5g5wu"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="8_lh8vf"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_lxu1d"]
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/parallax_backgroundCrates.tscn" id="10_5rxrt"]
-[ext_resource type="Texture2D" uid="uid://gmpfrosil5gl" path="res://Art/second level/UI_floatingplatform.png" id="10_oxqs3"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="10_w06lg"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="11_unprq"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="12_7j7q0"]
@@ -103,7 +102,6 @@ polygon = PackedVector2Array(1268, 1000, 2611, 1135, 4840, 1036, 4816, -828, 798
 position = Vector2(425, 594.87)
 scale = Vector2(2, 1.5)
 speed = 0.6
-sprite = ExtResource("10_oxqs3")
 path_behavior = 2
 
 [node name="Platform2" parent="." instance=ExtResource("7_hqlvf")]

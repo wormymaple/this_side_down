@@ -1,12 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjceqrxsj38yu"]
+[gd_scene load_steps=2 format=3 uid="uid://bjceqrxsj38yu"]
 
-[ext_resource type="Script" path="res://Scripts/basebox.gd" id="1_ffweb"]
-[ext_resource type="Texture2D" uid="uid://djuavqm6xlx6e" path="res://Sprites/TempBox.png" id="2_qc72w"]
+[ext_resource type="Texture2D" uid="uid://bix6qe3awhla1" path="res://Art/MiscSprites/TempBox.png" id="2_qc72w"]
 
 [node name="TBox" type="RigidBody2D"]
 center_of_mass_mode = 1
 center_of_mass = Vector2(2.08167e-16, 2.08167e-16)
-script = ExtResource("1_ffweb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(14.5, 14)

@@ -32,6 +32,7 @@ point_count = 2
 position = Vector2(1686, -28)
 gravity_scale = 0.4
 linear_damp = 2.0
+theme = 1
 size = 3.0
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_5g4cw")]
@@ -42,6 +43,10 @@ level = 10
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_tms1o")]
 position = Vector2(-252, -1441)
 color = Color(1, 0.941176, 0.917647, 1)
+
+[node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_qfg1o")]
+position = Vector2(6, 937)
+landing_zone = NodePath("../LandingZone")
 
 [node name="Spring" parent="." instance=ExtResource("16_ot8xr")]
 position = Vector2(809, 1130)
@@ -90,10 +95,6 @@ scale = Vector2(0.6, 0.2)
 [node name="Floor9" parent="." instance=ExtResource("2_l85uj")]
 position = Vector2(2223, -1363)
 scale = Vector2(0.6, 0.2)
-
-[node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_qfg1o")]
-position = Vector2(6, 937)
-landing_zone = NodePath("../LandingZone")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_mkvtq")]
 

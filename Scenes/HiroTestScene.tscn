@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpy3ohh5pa7jr"]
+[gd_scene load_steps=11 format=3 uid="uid://cpy3ohh5pa7jr"]
 
 [ext_resource type="PackedScene" uid="uid://blr6srdhy3jte" path="res://Scenes/Objects/detection_area.tscn" id="1_qogw0"]
 [ext_resource type="Script" path="res://Scenes/Objects/detection_area.gd" id="2_6efvm"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="3_mesxs"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="4_1856f"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="5_ju6ok"]
-[ext_resource type="Texture2D" uid="uid://bp7wvgue20js" path="res://Art/third level/UI_floatingplatform.png" id="6_1lv2v"]
 [ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="8_mufoi"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="9_37pv2"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="10_f1yyn"]
@@ -49,7 +48,6 @@ path_behavior = 1
 position = Vector2(719, 873)
 curve = SubResource("Curve2D_m0cgk")
 speed = 0.5
-sprite = ExtResource("6_1lv2v")
 path_behavior = 3
 
 [node name="Platform3" parent="." instance=ExtResource("5_ju6ok")]

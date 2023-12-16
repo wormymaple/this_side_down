@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="9_pbvov"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="10_um1cw"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="11_lh4ec"]
-[ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/circlebox.tscn" id="12_7lyud"]
+[ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/Objects/circlebox.tscn" id="12_7lyud"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="12_sb3ji"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="13_p6fm6"]
 [ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/third level/UI_Barrier.png" id="14_oy4gm"]
@@ -94,7 +94,7 @@ Power = 1200
 [node name="Spring4" parent="." instance=ExtResource("5_6hfre")]
 position = Vector2(1370, 919)
 rotation = -1.13892
-Power = 1100
+Power = 1200
 
 [node name="Spring3" parent="." instance=ExtResource("5_6hfre")]
 position = Vector2(499, 343)

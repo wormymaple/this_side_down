@@ -1,6 +1,7 @@
 extends StaticBody2D
 
-@export var sprite: Texture
+enum Themes {YELLOW, GREEN, BLUE, PURPLE}
+@export var theme: Themes = Themes.YELLOW
 @export var time_interval: int = 5
 @export var landing_zone: RigidBody2D
 
@@ -16,6 +17,19 @@ func _ready():
 	print("Piston is ready")
 	mode = State.WAIT
 	#set_process(true)
+	
+	if theme == Themes.YELLOW:
+		head_texture.texture = load("res://Art/First Level/UI_PistonTop.png")
+		$PistonBase.texture = load("res://Art/First Level/UI_PistonBase.png")
+	elif theme == Themes.BLUE:
+		head_texture.texture = load("res://Art/third level/UI_PistonTop.png")
+		$PistonBase.texture = load("res://Art/third level/UI_PistonBase.png")
+	elif theme == Themes.GREEN:
+		head_texture.texture = load("res://Art/second level/UI_PistonTop.png")
+		$PistonBase.texture = load("res://Art/second level/UI_PistonBase.png")
+	elif theme == Themes.PURPLE:
+		head_texture.texture = load("res://Art/Fourth Level/UI_PistonTop.png")
+		$PistonBase.texture = load("res://Art/Fourth Level/UI_PistonBase.png")
 
 #func _process_delta():
 func _process(_delta):
@@ -55,10 +69,10 @@ func _on_area_2d_input_event(_viewport, event, shape_idx):
 
 
 func _on_deleter_body_entered(body):
+	#print(body.name)
 	if body.is_in_group("Box") or body.is_in_group("Player"):
-		#print(body.name)
 		body.queue_free()
-		landing_zone._on_void_out_area_body_entered(body)
+		get_tree().reload_current_scene()
 
 
 #func _on_deleter_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):

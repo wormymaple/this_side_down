@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://jyvaflxbj8dc"]
 
-[ext_resource type="Script" path="res://Scenes/triangle_box.gd" id="1_gcsqy"]
+[ext_resource type="Script" path="res://Scenes/Objects/triangle_box.gd" id="1_gcsqy"]
 [ext_resource type="Texture2D" uid="uid://c4npl8cwq4kcs" path="res://Art/First Level/UI_HeavyTriangle.png" id="1_yhasj"]
 [ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_r7alg"]
 
@@ -9,7 +9,6 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 8
 collision_mask = 15
 script = ExtResource("1_gcsqy")
-texture = ExtResource("1_yhasj")
 metadata/grabbable = false
 metadata/grabbed = false
 

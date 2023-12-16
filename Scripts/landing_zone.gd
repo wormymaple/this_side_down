@@ -40,7 +40,4 @@ func _on_body_exited(body):
 	if body in colliding_bodies:
 		colliding_bodies.remove_at(colliding_bodies.find(body))
 		
-func _on_void_out_area_body_entered(body): # This will happen if the player hits a void out plane
-	if body.is_in_group("Player") or body.is_in_group("Box"):
-		get_tree().reload_current_scene()
-		#get_tree().change_scene_to_file("res://Scenes/Levels/level_4.tscn")
+

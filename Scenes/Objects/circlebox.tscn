@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c02557mdlevgc"]
 
-[ext_resource type="Script" path="res://Scenes/circle_box.gd" id="1_caxgq"]
+[ext_resource type="Script" path="res://Scenes/Objects/circle_box.gd" id="1_caxgq"]
 [ext_resource type="Texture2D" uid="uid://cn0nvh3ruw17a" path="res://Art/First Level/UI_HeavyCircle.png" id="1_qluji"]
 [ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="2_2f16l"]
 

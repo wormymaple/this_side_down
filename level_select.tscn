@@ -443,6 +443,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_tvo2t")
 
 [node name="CantUnlock" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,11 +1,13 @@
 extends Path2D
 
+enum Themes {YELLOW, GREEN, BLUE, PURPLE}
+@export var theme: Themes = Themes.YELLOW
 enum State {ONEWAY, LOOPING, STOP, ONEWAYBACK}
 var objects_to_move = []
 var movement = 0.0
 @export var speed = 0.2
 @onready var previous_position = $PathFollow2D.position
-@export var sprite: Texture
+#@export var sprite: Texture
 
 @export var path_behavior: State
 # The path behavior allows for 3 different options:
@@ -15,7 +17,14 @@ var movement = 0.0
 # One Way Back is just One Way but will move in reverse.
 
 func _ready():
-	$Sprite2D.texture = sprite
+	if theme == Themes.YELLOW:
+		$Sprite2D.texture = load("res://Art/First Level/UI_floatingplatform.png")
+	elif theme == Themes.BLUE:
+		$Sprite2D.texture = load("res://Art/third level/UI_floatingplatform.png")
+	elif theme == Themes.GREEN:
+		$Sprite2D.texture = load("res://Art/second level/UI_floatingplatform.png")
+	elif theme == Themes.PURPLE:
+		$Sprite2D.texture = load("res://Art/Fourth Level/UI_floatingplatform.png")
 
 func _physics_process(_delta):
 	if path_behavior == State.STOP: # The platform does nothing

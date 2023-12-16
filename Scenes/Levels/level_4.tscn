@@ -29,8 +29,12 @@ point_count = 2
 position = Vector2(254, 315)
 
 [node name="MainFloor" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(-760.784, 830)
-scale = Vector2(3.39121, 1)
+position = Vector2(-1486, 830)
+scale = Vector2(2, 1)
+
+[node name="MainFloor2" parent="." instance=ExtResource("1_v4xq1")]
+position = Vector2(1847, 1069)
+scale = Vector2(0.5, 2)
 
 [node name="Floor2" parent="." instance=ExtResource("1_v4xq1")]
 position = Vector2(287, 343)
@@ -41,8 +45,7 @@ position = Vector2(2144, 349)
 scale = Vector2(0.809995, 1.22)
 
 [node name="Floor5" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(3893, 162)
-scale = Vector2(2.06, 1)
+position = Vector2(2876, 162)
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("7_sqj7y")]
 position = Vector2(1659, 54)
@@ -84,7 +87,7 @@ camera = NodePath("../Camera")
 position = Vector2(-411, 541)
 
 [node name="VoidOutArea" parent="." instance=ExtResource("10_eo61p")]
-position = Vector2(875, 561)
+position = Vector2(875, 735)
 scale = Vector2(1.6, 1)
 
 [node name="Platform" parent="." instance=ExtResource("13_mvl3v")]
@@ -95,6 +98,7 @@ speed = 0.5
 [node name="Platform2" parent="." instance=ExtResource("13_mvl3v")]
 position = Vector2(544, 86)
 curve = SubResource("Curve2D_ec6w1")
+theme = 1
 speed = 0.6
 
 [node name="Box" parent="." instance=ExtResource("14_3ujrv")]
