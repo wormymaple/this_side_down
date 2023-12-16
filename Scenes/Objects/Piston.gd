@@ -1,10 +1,11 @@
 extends StaticBody2D
 
 @export var sprite: Texture
-@export var time_interval: float = 5
+@export var time_interval: int = 5
+@export var landing_zone: RigidBody2D
 
 enum State {WAIT, PUSH, RETRACT}
-var mode: State = State.WAIT
+var mode: State# = State.WAIT
 
 @onready var head_texture = $PistonHead
 @onready var hitbox = $Deleter
@@ -12,10 +13,15 @@ var mode: State = State.WAIT
 
 func _ready():
 	$Timer.wait_time = time_interval
+	print("Piston is ready")
+	mode = State.WAIT
+	#set_process(true)
 
-
-func _process_delta():
+#func _process_delta():
+func _process(_delta):
+	#print("Hello from process delta")
 	if mode == State.WAIT:
+		#print("Am waiting")
 		return
 	
 	elif mode == State.PUSH: # Stretches the piston
@@ -40,6 +46,7 @@ func _process_delta():
 
 
 func _on_timer_timeout():
+	print("Timer timed out")
 	mode = State.PUSH
 
 
@@ -48,9 +55,10 @@ func _on_area_2d_input_event(_viewport, event, shape_idx):
 
 
 func _on_deleter_body_entered(body):
-	if body.is_in_group("Box"):
+	if body.is_in_group("Box") or body.is_in_group("Player"):
 		#print(body.name)
 		body.queue_free()
+		landing_zone._on_void_out_area_body_entered(body)
 
 
 #func _on_deleter_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):

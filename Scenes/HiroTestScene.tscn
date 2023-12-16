@@ -57,8 +57,10 @@ position = Vector2(1592, 876)
 curve = null
 speed = 0.5
 
-[node name="Piston" parent="." instance=ExtResource("8_mufoi")]
+[node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("8_mufoi")]
 position = Vector2(1247, 684)
+time_interval = 3
+landing_zone = NodePath("../Area2D")
 
 [node name="Player" parent="." instance=ExtResource("9_37pv2")]
 position = Vector2(833, 894)

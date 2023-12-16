@@ -1,75 +1,171 @@
-[gd_scene load_steps=13 format=3 uid="uid://dv6cw04ulkig0"]
+[gd_scene load_steps=19 format=3 uid="uid://dv6cw04ulkig0"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_6qh6a"]
-[ext_resource type="Script" path="res://Scenes/Levels/level_10.gd" id="1_pdyxa"]
-[ext_resource type="PackedScene" uid="uid://ctxyn1x1kaljf" path="res://Scenes/Squarebox.tscn" id="2_3lcx1"]
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_sb7pc"]
+[ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/circlebox.tscn" id="2_qevbq"]
+[ext_resource type="Texture2D" uid="uid://ctkitq2341fpf" path="res://Art/Fourth Level/UI_Underwater_Circle_Box.png" id="3_2ns3a"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="4_53dvt"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="5_4hvyx"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="5_a1m2x"]
+[ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="5_o3tqu"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="6_8j7ak"]
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="6_d02wj"]
-[ext_resource type="PackedScene" uid="uid://u7sofeosm22w" path="res://Scenes/moving_platform.tscn" id="6_dla5n"]
+[ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/ramp.tscn" id="6_j8o2a"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="6_p5pqx"]
+[ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="9_6tj2g"]
 [ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_77780"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="10_lni03"]
+[ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="10_s532q"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="11_w7flq"]
 
+[sub_resource type="Curve2D" id="Curve2D_j3nrf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -400)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1ip46"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -400, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
 [node name="level_10" type="Node2D"]
-script = ExtResource("1_pdyxa")
 
-[node name="SquareBox1" parent="." instance=ExtResource("2_3lcx1")]
-position = Vector2(624, 658)
-rotation = 6.27737
+[node name="CircleBox" parent="." instance=ExtResource("2_qevbq")]
+position = Vector2(-368, 663)
+gravity_scale = 0.5
+texture = ExtResource("3_2ns3a")
+size = 1.5
 
-[node name="SquareBox2" parent="." instance=ExtResource("2_3lcx1")]
-position = Vector2(553, 833)
-rotation = 6.27737
+[node name="Platform" parent="." instance=ExtResource("4_53dvt")]
+position = Vector2(1318, 1162)
+curve = SubResource("Curve2D_j3nrf")
+speed = 0.5
 
-[node name="CircleBox" parent="." instance=ExtResource("2_3lcx1")]
-position = Vector2(761, 844)
-rotation = 6.27737
+[node name="Platform2" parent="." instance=ExtResource("4_53dvt")]
+position = Vector2(1106, 769)
+curve = SubResource("Curve2D_1ip46")
+speed = 0.5
 
-[node name="LoadingZone" parent="." instance=ExtResource("3_sb7pc")]
-position = Vector2(2199, 975)
-scale = Vector2(0.5, 0.5)
+[node name="Platform5" parent="." instance=ExtResource("4_53dvt")]
+position = Vector2(1318, 390)
+curve = SubResource("Curve2D_j3nrf")
+speed = 0.5
+
+[node name="Platform3" parent="." instance=ExtResource("4_53dvt")]
+position = Vector2(-2000, 610)
+
+[node name="Platform4" parent="." instance=ExtResource("4_53dvt")]
+position = Vector2(-2000, 1050)
+
+[node name="Spring" parent="." instance=ExtResource("5_o3tqu")]
+position = Vector2(-240, 770)
+Power = 1500
+
+[node name="Spring2" parent="." instance=ExtResource("5_o3tqu")]
+position = Vector2(-421, 360)
+rotation = 0.626098
+Power = 2000
+
+[node name="Ramp" parent="." instance=ExtResource("6_j8o2a")]
+position = Vector2(-435, 471)
+rotation = 3.14159
+scale = Vector2(0.3, -0.5)
+
+[node name="Ramp2" parent="." instance=ExtResource("6_j8o2a")]
+position = Vector2(2136, 452)
+scale = Vector2(1.5, 1.5)
+
+[node name="Ramp3" parent="." instance=ExtResource("6_j8o2a")]
+position = Vector2(1850, 107)
+rotation = 3.14159
+scale = Vector2(1.5, -1.5)
+
+[node name="Ramp4" parent="." instance=ExtResource("6_j8o2a")]
+position = Vector2(1850, 761)
+rotation = 3.14159
+scale = Vector2(1.5, -1.5)
+
+[node name="Ramp5" parent="." instance=ExtResource("6_j8o2a")]
+position = Vector2(2136, 1115)
+scale = Vector2(1.5, 1.5)
+
+[node name="Ramp6" parent="." instance=ExtResource("6_j8o2a")]
+position = Vector2(1728, 1161)
+scale = Vector2(-0.8, 0.8)
+
+[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("5_a1m2x")]
+position = Vector2(1741, 1150)
+rotation = 0.373311
+camera = NodePath("../Camera")
+level = 11
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("6_8j7ak")]
 position = Vector2(377, -519)
 color = Color(1, 0.658824, 0.533333, 1)
 
+[node name="Ladder" parent="." instance=ExtResource("9_6tj2g")]
+position = Vector2(583, 866)
+rotation = -0.333207
+
+[node name="Ladder2" parent="." instance=ExtResource("9_6tj2g")]
+position = Vector2(428, 351)
+rotation = 0.0589613
+
+[node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("10_s532q")]
+position = Vector2(330, 321)
+rotation = 1.57455
+landing_zone = NodePath("../LandingZone")
+
+[node name="Piston2" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("10_s532q")]
+position = Vector2(742, 755)
+rotation = -1.52117
+landing_zone = NodePath("../LandingZone")
+
 [node name="Floor" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(1876, 1189)
+position = Vector2(1876, 1408)
 scale = Vector2(2.562, 0.838407)
 
+[node name="Floor5" parent="." instance=ExtResource("1_6qh6a")]
+position = Vector2(-679, 923)
+scale = Vector2(1, 0.25)
+
 [node name="Floor2" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(397, -170)
+position = Vector2(190, 534)
 scale = Vector2(0.094465, 1.69318)
 
 [node name="Floor3" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(1015, -181)
-scale = Vector2(0.086839, 1.61372)
+position = Vector2(868, 754)
+scale = Vector2(0.087, 1)
+
+[node name="Floor7" parent="." instance=ExtResource("1_6qh6a")]
+position = Vector2(-790, 1008)
+scale = Vector2(0.5, 1.2)
+
+[node name="Floor6" parent="." instance=ExtResource("1_6qh6a")]
+position = Vector2(868, 180)
+scale = Vector2(0.087, 2)
 
 [node name="Floor4" parent="." instance=ExtResource("1_6qh6a")]
-position = Vector2(1919, 839)
-scale = Vector2(0.0732193, 2.73604)
+position = Vector2(1529, 786)
+scale = Vector2(0.073, 2)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("6_dla5n")]
-position = Vector2(1645, 894)
-scale = Vector2(1.86248, 2.82842)
-speed = 2
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("6_dla5n")]
-position = Vector2(1313, 204)
-scale = Vector2(2.11982, 3.03274)
-speed = -2
+[node name="Floor8" parent="." instance=ExtResource("1_6qh6a")]
+position = Vector2(1529, 223)
+scale = Vector2(0.073, 1)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(1602, 771)
+position = Vector2(-190, 1124)
 script = ExtResource("9_77780")
 player_scene = ExtResource("10_lni03")
 camera = NodePath("../Camera")
 damp = 2.0
 gravity_scale = 0.6
 is_in_water = true
+
+[node name="Camera" parent="." instance=ExtResource("11_w7flq")]
+position = Vector2(-190, 1124)
+zoom = Vector2(1.5, 1.5)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_d02wj")]
 
@@ -79,5 +175,17 @@ is_in_water = true
 
 [node name="CanvasModulate" parent="." instance=ExtResource("5_4hvyx")]
 
-[node name="Camera" parent="." instance=ExtResource("11_w7flq")]
-zoom = Vector2(1.5, 1.5)
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+position = Vector2(-191, 187)
+scale = Vector2(0.35991, 0.641233)
+color = Color(0.0627451, 0.141176, 0.168627, 1)
+invert_enabled = true
+invert_border = 2000.0
+polygon = PackedVector2Array(7154.57, -709.57, 7143.45, 1812.13, -811.314, 1782.5, -802.978, -704.892)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+position = Vector2(1592.06, 134.117)
+polygon = PackedVector2Array(464.009, 1665.54, 455.674, 2053.85, 6276.57, 2092.84, 6296.06, -1053.58, -2970.19, -1122.84, -3020.19, 1849.56, 366.763, 1849.56, 363.984, 1520.51, -2395.04, 1506.47, -2406.15, -840.568, 5559.73, -846.806, 5554.17, 1679.58, 1592.06, 1654.62)
