@@ -9,7 +9,7 @@ func win_level(level_cleared):
 	
 	await get_tree().create_timer(2).timeout
 	
-	if level_cleared != 9: # Because the next level is not ready
+	if level_cleared != 12: # Because the next level is not ready
 		get_tree().change_scene_to_file("res://Scenes/Levels/level_" + str(level_cleared + 1) + ".tscn")
 	else:
 		get_tree().change_scene_to_file("res://MainmenuLevelScene.tscn")
