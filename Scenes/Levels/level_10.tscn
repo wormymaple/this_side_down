@@ -46,14 +46,17 @@ color = Color(1, 0.941176, 0.917647, 1)
 
 [node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_qfg1o")]
 position = Vector2(6, 937)
+theme = 3
 landing_zone = NodePath("../LandingZone")
 
 [node name="Spring" parent="." instance=ExtResource("16_ot8xr")]
 position = Vector2(809, 1130)
+theme = 2
 Power = 1300
 
 [node name="Spring2" parent="." instance=ExtResource("16_ot8xr")]
 position = Vector2(239, 620)
+theme = 2
 Power = 1300
 
 [node name="Floor" parent="." instance=ExtResource("2_l85uj")]
@@ -135,13 +138,16 @@ polygon = PackedVector2Array(464.009, 1665.54, 455.674, 2053.85, 6276.57, 2092.8
 [node name="Platform" parent="." instance=ExtResource("12_n18kp")]
 position = Vector2(589, 849)
 curve = SubResource("Curve2D_8saqi")
+theme = 3
 speed = 0.4
 
 [node name="Platform3" parent="." instance=ExtResource("12_n18kp")]
 position = Vector2(-222, 183)
 curve = SubResource("Curve2D_cg7ha")
+theme = 3
 speed = 0.5
 
 [node name="Platform2" parent="." instance=ExtResource("12_n18kp")]
 position = Vector2(300, 730)
+theme = 3
 path_behavior = 2

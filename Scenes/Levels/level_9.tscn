@@ -69,6 +69,7 @@ scale = Vector2(1.86331, 1.86331)
 [node name="Ladder" parent="." instance=ExtResource("7_svcn1")]
 position = Vector2(1045, 333)
 scale = Vector2(1.14635, 1.14635)
+theme = 1
 
 [node name="Floor" parent="." instance=ExtResource("2_etqoo")]
 position = Vector2(-286, 1179)

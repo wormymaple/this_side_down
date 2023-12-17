@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dl5ncyiq5epgd"]
+[gd_scene load_steps=17 format=3 uid="uid://dl5ncyiq5epgd"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_yrdb1"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="2_evlye"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="4_cdfft"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="5_ap2rn"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="5_f2ie4"]
@@ -21,6 +22,10 @@ position = Vector2(10, -18)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("6_p82q7")]
 position = Vector2(-1374, -1172)
+
+[node name="Box" parent="." instance=ExtResource("2_evlye")]
+position = Vector2(-293, 828)
+gravity_scale = 0.5
 
 [node name="Floor" parent="." instance=ExtResource("1_yrdb1")]
 position = Vector2(851, 1530)
@@ -66,9 +71,16 @@ scale = Vector2(0.199992, 6.56)
 [node name="Ladder" parent="." instance=ExtResource("4_cdfft")]
 position = Vector2(1872, 1227)
 rotation = -0.785397
+theme = 2
+
+[node name="Ladder2" parent="." instance=ExtResource("4_cdfft")]
+position = Vector2(2111, 399)
+rotation = -0.181089
+theme = 1
 
 [node name="Spring" parent="." instance=ExtResource("5_ap2rn")]
 position = Vector2(2175, 1205)
+theme = 2
 Power = 1600
 
 [node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
@@ -79,10 +91,11 @@ landing_zone = NodePath("../LandingZone")
 [node name="Piston2" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
 position = Vector2(1560, 131)
 rotation = 0.136673
+theme = 1
 landing_zone = NodePath("../LandingZone")
 
 [node name="Divider" parent="." instance=ExtResource("7_ukslq")]
-position = Vector2(668, 1206)
+position = Vector2(668, 1185)
 rotation = -0.0815678
 
 [node name="Divider26" parent="." instance=ExtResource("7_ukslq")]
@@ -136,11 +149,11 @@ position = Vector2(711, 616)
 rotation = -3.03162
 
 [node name="Divider30" parent="." instance=ExtResource("7_ukslq")]
-position = Vector2(2055, 776)
-rotation = -1.72827
+position = Vector2(1944, 485)
+rotation = -2.92853
 
 [node name="Divider31" parent="." instance=ExtResource("7_ukslq")]
-position = Vector2(1965, 515)
+position = Vector2(2337, 124)
 rotation = -2.0569
 scale = Vector2(1.4, 1.4)
 
@@ -239,7 +252,14 @@ level = 12
 position = Vector2(1895, 870)
 rotation = 0.148353
 scale = Vector2(2, 1.5)
+theme = 3
 path_behavior = 2
+
+[node name="Ramp" parent="." instance=ExtResource("16_sinvx")]
+position = Vector2(1874, 248)
+rotation = 3.14159
+scale = Vector2(1, -1)
+theme = 3
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_u77f3")]
 
@@ -260,10 +280,6 @@ is_in_water = true
 position = Vector2(-197, 1255)
 zoom = Vector2(1.5, 1.5)
 no_controller_path = NodePath("../PlayerSpawn")
-
-[node name="Ramp" parent="." instance=ExtResource("16_sinvx")]
-position = Vector2(1874, 248)
-scale = Vector2(-1, 1)
 
 [node name="Walls" type="Polygon2D" parent="."]
 z_index = 5

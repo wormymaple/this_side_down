@@ -39,59 +39,64 @@ size = 1.5
 [node name="Platform" parent="." instance=ExtResource("4_53dvt")]
 position = Vector2(1318, 1162)
 curve = SubResource("Curve2D_j3nrf")
+theme = 3
 speed = 0.5
 
 [node name="Platform2" parent="." instance=ExtResource("4_53dvt")]
 position = Vector2(1106, 769)
 curve = SubResource("Curve2D_1ip46")
+theme = 2
 speed = 0.5
 
 [node name="Platform5" parent="." instance=ExtResource("4_53dvt")]
 position = Vector2(1318, 390)
 curve = SubResource("Curve2D_j3nrf")
+theme = 3
 speed = 0.5
-
-[node name="Platform3" parent="." instance=ExtResource("4_53dvt")]
-position = Vector2(-2000, 610)
-
-[node name="Platform4" parent="." instance=ExtResource("4_53dvt")]
-position = Vector2(-2000, 1050)
 
 [node name="Spring" parent="." instance=ExtResource("5_o3tqu")]
 position = Vector2(-240, 770)
+theme = 1
 Power = 1500
 
 [node name="Spring2" parent="." instance=ExtResource("5_o3tqu")]
 position = Vector2(-421, 360)
 rotation = 0.626098
+theme = 2
 Power = 2000
 
 [node name="Ramp" parent="." instance=ExtResource("6_j8o2a")]
 position = Vector2(-435, 471)
 rotation = 3.14159
 scale = Vector2(0.3, -0.5)
+theme = 2
 
 [node name="Ramp2" parent="." instance=ExtResource("6_j8o2a")]
 position = Vector2(2136, 452)
 scale = Vector2(1.5, 1.5)
+theme = 3
 
 [node name="Ramp3" parent="." instance=ExtResource("6_j8o2a")]
 position = Vector2(1850, 107)
 rotation = 3.14159
 scale = Vector2(1.5, -1.5)
+theme = 3
 
 [node name="Ramp4" parent="." instance=ExtResource("6_j8o2a")]
 position = Vector2(1850, 761)
 rotation = 3.14159
 scale = Vector2(1.5, -1.5)
+theme = 3
 
 [node name="Ramp5" parent="." instance=ExtResource("6_j8o2a")]
 position = Vector2(2136, 1115)
 scale = Vector2(1.5, 1.5)
+theme = 3
 
 [node name="Ramp6" parent="." instance=ExtResource("6_j8o2a")]
 position = Vector2(1728, 1161)
 scale = Vector2(-0.8, 0.8)
+theme = 3
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("5_a1m2x")]
 position = Vector2(1741, 1150)
@@ -106,19 +111,23 @@ color = Color(1, 0.658824, 0.533333, 1)
 [node name="Ladder" parent="." instance=ExtResource("9_6tj2g")]
 position = Vector2(583, 866)
 rotation = -0.333207
+theme = 2
 
 [node name="Ladder2" parent="." instance=ExtResource("9_6tj2g")]
 position = Vector2(428, 351)
 rotation = 0.0589613
+theme = 2
 
 [node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("10_s532q")]
 position = Vector2(330, 321)
 rotation = 1.57455
+theme = 1
 landing_zone = NodePath("../LandingZone")
 
 [node name="Piston2" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("10_s532q")]
 position = Vector2(742, 755)
 rotation = -1.52117
+theme = 3
 landing_zone = NodePath("../LandingZone")
 
 [node name="Floor" parent="." instance=ExtResource("1_6qh6a")]

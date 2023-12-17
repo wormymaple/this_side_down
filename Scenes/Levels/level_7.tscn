@@ -34,10 +34,12 @@ scale = Vector2(0.28, 0.5)
 
 [node name="Ladder2" parent="." instance=ExtResource("16_xyxst")]
 position = Vector2(1796, 713)
+theme = 1
 
 [node name="Ramp2" parent="." instance=ExtResource("9_vck8b")]
 position = Vector2(124, 900.87)
 scale = Vector2(-0.75, 1)
+theme = 1
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("8_v6gpo")]
 position = Vector2(-2171, 152.87)
@@ -58,7 +60,7 @@ color = Color(0.0901961, 0.211765, 0.447059, 1)
 [node name="Box" parent="." instance=ExtResource("7_oyu26")]
 position = Vector2(165, 830.87)
 rotation = -2.72096
-size = 1.7
+size = 2.0
 
 [node name="Camera" parent="." instance=ExtResource("10_sb6ob")]
 position = Vector2(559, 888.87)

@@ -1,12 +1,19 @@
 extends Area2D
 
+enum Themes {YELLOW, GREEN, BLUE}
+@export var theme: Themes = Themes.YELLOW
 enum State {DONE, IN, OUT}
 var current_state: State = State.DONE
-@export var Sprite: Texture
 @export var Power: int = 700
+@onready var sprite = $Sprite2D
 
 func _ready():
-	$Sprite2D.texture = Sprite
+	if theme == Themes.YELLOW:
+		sprite.texture = load("res://Art/First Level/UI_spring.png")
+	elif theme == Themes.BLUE:
+		sprite.texture = load("res://Art/third level/UI_spring.png")
+	elif theme == Themes.GREEN:
+		sprite.texture = load("res://Art/second level/UI_spring.png")
 
 func _process(_delta):
 	# This makes the spring stretch when something bounces on it

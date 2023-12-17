@@ -101,15 +101,18 @@ polygon = PackedVector2Array(1268, 1000, 2611, 1135, 4840, 1036, 4816, -828, 798
 [node name="Platform" parent="." instance=ExtResource("7_hqlvf")]
 position = Vector2(425, 594.87)
 scale = Vector2(2, 1.5)
+theme = 1
 speed = 0.6
 path_behavior = 2
 
 [node name="Platform2" parent="." instance=ExtResource("7_hqlvf")]
 position = Vector2(1551, 871.87)
 curve = SubResource("Curve2D_037mp")
+theme = 2
 speed = 0.4
 
 [node name="Platform3" parent="." instance=ExtResource("7_hqlvf")]
 position = Vector2(787, 435.87)
 curve = SubResource("Curve2D_0qsux")
+theme = 2
 speed = 0.5

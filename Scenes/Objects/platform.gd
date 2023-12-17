@@ -7,7 +7,7 @@ var objects_to_move = []
 var movement = 0.0
 @export var speed = 0.2
 @onready var previous_position = $PathFollow2D.position
-#@export var sprite: Texture
+@onready var sprite = $Sprite2D
 
 @export var path_behavior: State
 # The path behavior allows for 3 different options:
@@ -18,20 +18,20 @@ var movement = 0.0
 
 func _ready():
 	if theme == Themes.YELLOW:
-		$Sprite2D.texture = load("res://Art/First Level/UI_floatingplatform.png")
+		sprite.texture = load("res://Art/First Level/UI_floatingplatform.png")
 	elif theme == Themes.BLUE:
-		$Sprite2D.texture = load("res://Art/third level/UI_floatingplatform.png")
+		sprite.texture = load("res://Art/third level/UI_floatingplatform.png")
 	elif theme == Themes.GREEN:
-		$Sprite2D.texture = load("res://Art/second level/UI_floatingplatform.png")
+		sprite.texture = load("res://Art/second level/UI_floatingplatform.png")
 	elif theme == Themes.PURPLE:
-		$Sprite2D.texture = load("res://Art/Fourth Level/UI_floatingplatform.png")
+		sprite.texture = load("res://Art/Fourth Level/UI_floatingplatform.png")
 
 func _physics_process(_delta):
 	if path_behavior == State.STOP: # The platform does nothing
 		return
 	
-	$Collision.position = $PathFollow2D.position # I set the position instead of making these a child of pathFollow2D because PathFollow2D has unwanted rotations
-	$Sprite2D.position = $PathFollow2D.position
+	$Collision.position = $PathFollow2D.position # Sets positions instead of being a child of PathFollow2D because it rotates weirdly
+	sprite.position = $PathFollow2D.position
 	$Area2D.position = $PathFollow2D.position
 	
 	if path_behavior == State.ONEWAY:
