@@ -2,7 +2,7 @@ extends Control
 
 @onready var settings_menu = $SettingsMenu
 
-var positions = [477, 721, 975]
+var positions = [597, 848, 1100]
 var menu_funcs = ['_on_play_button_pressed', '_on_options_button_pressed', '_on_quit_button_pressed']
 @export var arrow_position: int
 
