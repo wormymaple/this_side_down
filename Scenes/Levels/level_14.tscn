@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_14.gd" id="1_fkw6f"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="2_0knmg"]
-[ext_resource type="PackedScene" uid="uid://bb864bfhhw1so" path="res://Scenes/loading_zone.tscn" id="3_k8kex"]
-[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="4_awupr"]
-[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="5_41kqh"]
-[ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://UnderwaterShader.tscn" id="6_0nqo2"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/landing_zone.tscn" id="3_mqiwg"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="4_awupr"]
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="5_41kqh"]
+[ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://Scenes/UI/UnderwaterShader.tscn" id="6_0nqo2"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="7_qnl8e"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="8_2prvc"]
-[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="9_a6hw4"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="10_sjdlt"]
-[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="11_w0n30"]
+[ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="9_a6hw4"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="10_sjdlt"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="11_w0n30"]
 
 [node name="level_11" type="Node2D"]
 script = ExtResource("1_fkw6f")
@@ -23,9 +23,8 @@ size = 2.0
 position = Vector2(2232, 322)
 size = 2.0
 
-[node name="LoadingZone" parent="." instance=ExtResource("3_k8kex")]
-position = Vector2(1915, 1122)
-scale = Vector2(0.5, 0.5)
+[node name="LandingZone" parent="." instance=ExtResource("3_mqiwg")]
+position = Vector2(1915, 1109)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("4_awupr")]
 position = Vector2(386, -631)

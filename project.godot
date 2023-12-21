@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="this_side_down"
-run/main_scene="res://MainmenuLevelScene.tscn"
+run/main_scene="res://Scenes/UI/MainmenuLevelScene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalEttings="*res://global_settings.gd"
+GlobalEttings="*res://Scripts/global_settings.gd"
 GlobalVariables="*res://Scripts/global_variables.gd"
 ThemeSongLoop="*res://Audio/Theme_Song_Loop.tscn"
 
@@ -28,6 +28,18 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+
+[file_customization]
+
+folder_colors={
+"res://Art/": "red",
+"res://Audio/": "yellow",
+"res://Builds/": "gray",
+"res://Fonts/": "teal",
+"res://GarageBand/": "orange",
+"res://Scenes/": "green",
+"res://Scripts/": "teal"
+}
 
 [input]
 

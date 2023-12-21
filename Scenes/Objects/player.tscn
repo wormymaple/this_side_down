@@ -1,0 +1,133 @@
+[gd_scene load_steps=16 format=3 uid="uid://bgr4nq5o17pmh"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/Player.gd" id="1_5wbp8"]
+[ext_resource type="Texture2D" uid="uid://1evxdg38q3gj" path="res://Art/PlayerSprites/UI_Hand_Closed.png" id="2_4wubt"]
+[ext_resource type="Texture2D" uid="uid://kgkbn6skvqam" path="res://Art/PlayerSprites/UI_Hand_Open.png" id="3_nc5kx"]
+[ext_resource type="Texture2D" uid="uid://drlj0pirdqkc3" path="res://Art/PlayerSprites/grayscale_player/player_head.png" id="4_8lqlt"]
+[ext_resource type="Texture2D" uid="uid://cf0jx7irt4gwu" path="res://Art/PlayerSprites/grayscale_player/player_legs.png" id="5_g830a"]
+[ext_resource type="AudioStream" uid="uid://b83ui00rhi76c" path="res://Audio/box pickup.wav" id="6_dmfrs"]
+[ext_resource type="AudioStream" uid="uid://bow3uyffj1ib3" path="res://Audio/box drop (better).wav" id="7_jdbta"]
+[ext_resource type="AudioStream" uid="uid://bp6qkjj6mbixo" path="res://Audio/jump3.wav" id="8_3mkwv"]
+[ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep(one).wav" id="9_7tj8n"]
+[ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://Scenes/UI/point_light_2d.tscn" id="10_1kx1r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
+friction = 0.0
+
+[sub_resource type="Curve" id="Curve_fcyqv"]
+min_value = -1.0
+_data = [Vector2(0, 2.13163e-14), 0.0, 0.0, 0, 0, Vector2(0.238948, 1), 0.0, 0.0, 0, 0, Vector2(0.497415, -0.0211756), 0.0, 0.0, 0, 0, Vector2(0.766221, -1), 0.0, 0.0, 0, 0, Vector2(1, 2.13163e-14), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rmwu"]
+radius = 29.14
+height = 86.99
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wh5jr"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4eusl"]
+
+[node name="PlaceholderPlayer" type="RigidBody2D" node_paths=PackedStringArray("hand_sprite", "box_pickup", "box_drop", "jump", "footsteps") groups=["Player"]]
+collision_layer = 2
+collision_mask = 2049
+physics_material_override = SubResource("PhysicsMaterial_2c1hu")
+lock_rotation = true
+continuous_cd = 1
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_5wbp8")
+move_speed = 250.0
+jump_speed = 500.0
+water_jump_coefficient = 1.5
+ladder_climb_speed = 200.0
+arm_move_speed = 5.0
+grab_speed = 20.0
+arm_length = 150.0
+drop_threshold = 100.0
+wiggle_curve = SubResource("Curve_fcyqv")
+wiggle_intensity = 2.0
+wiggle_time = 0.5
+legs_path = NodePath("Legs")
+head_path = NodePath("Head")
+head_bob = 2.0
+jump_buffer = 40
+playerID = "p1"
+hand_path = NodePath("HandMeta")
+arm_path = NodePath("Arm")
+hand_sprite = NodePath("HandMeta/Hand")
+holding_hand = ExtResource("2_4wubt")
+empty_hand = ExtResource("3_nc5kx")
+box_pickup = NodePath("BoxPickup")
+box_drop = NodePath("BoxDrop")
+jump = NodePath("Jump")
+footsteps = NodePath("Footstep")
+footstep_time = 0.3
+player_colors = Array[Color]([Color(0, 0.709804, 0.835294, 1), Color(1, 0.435294, 0.294118, 1), Color(0.321569, 0.74902, 0, 1), Color(0.670588, 0.537255, 1, 1), Color(1, 0.890196, 0.427451, 1), Color(0.364706, 0.364706, 0.364706, 1)])
+metadata/grabbable = true
+metadata/grabbed = false
+
+[node name="Head" type="Sprite2D" parent="."]
+z_index = 4
+scale = Vector2(0.048, 0.048)
+texture = ExtResource("4_8lqlt")
+
+[node name="Legs" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 36)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("5_g830a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10.5)
+shape = SubResource("CapsuleShape2D_4rmwu")
+
+[node name="Arm" type="Line2D" parent="."]
+z_index = 2
+points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(0.662745, 0.662745, 0.662745, 1)
+
+[node name="HandMeta" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandMeta"]
+shape = SubResource("CircleShape2D_wh5jr")
+disabled = true
+
+[node name="Hand" type="Sprite2D" parent="HandMeta"]
+modulate = Color(0.701961, 0.701961, 0.701961, 1)
+z_index = 3
+texture_filter = 1
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("3_nc5kx")
+
+[node name="GrabArea" type="Area2D" parent="HandMeta"]
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HandMeta/GrabArea"]
+shape = SubResource("CircleShape2D_4eusl")
+
+[node name="BoxPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dmfrs")
+volume_db = -15.0
+
+[node name="BoxDrop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_jdbta")
+volume_db = -15.0
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3mkwv")
+volume_db = -15.0
+
+[node name="Footstep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7tj8n")
+volume_db = -15.0
+
+[node name="PointLight2D" parent="." instance=ExtResource("10_1kx1r")]
+scale = Vector2(10, 10)
+energy = 0.36
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="HandMeta/GrabArea" to="." method="_on_grab_area_body_entered"]
+[connection signal="body_exited" from="HandMeta/GrabArea" to="." method="_on_grab_area_body_exited"]

@@ -1,0 +1,484 @@
+[gd_scene load_steps=20 format=3 uid="uid://bvpim07i7se1g"]
+
+[ext_resource type="Script" path="res://Scenes/UI/level_select.gd" id="1_hmbbl"]
+[ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/Main Menu/BG_Box.png" id="2_om6rk"]
+[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_uutcg"]
+[ext_resource type="Texture2D" uid="uid://bc7ikluxqo3ue" path="res://Art/Main Menu/UI_Back_Button.png" id="4_t206h"]
+[ext_resource type="Texture2D" uid="uid://06d41cbn8co6" path="res://Art/MiscSprites/LevelSelectHighlighter.png" id="5_a78qb"]
+[ext_resource type="Texture2D" uid="uid://cnb0v6ukb3edh" path="res://Art/Main Menu/UI_1Button.png" id="6_wptct"]
+[ext_resource type="Texture2D" uid="uid://b3situl82j18i" path="res://Art/Main Menu/UI_2Button.png" id="7_4c16x"]
+[ext_resource type="Texture2D" uid="uid://bjapc2frhcdxm" path="res://Art/Main Menu/UI_Lock_Icon.PNG" id="8_cj47e"]
+[ext_resource type="Texture2D" uid="uid://1rmxt65vgskl" path="res://Art/Main Menu/UI_3Button.png" id="9_u0ksp"]
+[ext_resource type="Texture2D" uid="uid://c5mqxi1nledwx" path="res://Art/Main Menu/UI_4Button.png" id="10_3j7g1"]
+[ext_resource type="Texture2D" uid="uid://cdejbpm10k31g" path="res://Art/Main Menu/UI_5Button.png" id="11_0feon"]
+[ext_resource type="Texture2D" uid="uid://bait04mgixe36" path="res://Art/Main Menu/UI_6Button.png" id="12_17icu"]
+[ext_resource type="Texture2D" uid="uid://b0htklssgl4t0" path="res://Art/Main Menu/UI_7Button.png" id="13_x08gd"]
+[ext_resource type="Texture2D" uid="uid://g7j8awtgc4c3" path="res://Art/Main Menu/UI_8Button.png" id="14_gj1f7"]
+[ext_resource type="Texture2D" uid="uid://bamp7ynus6uq0" path="res://Art/Main Menu/UI_9Button.png" id="15_bqwat"]
+[ext_resource type="Texture2D" uid="uid://b3qmyhovj5ti7" path="res://Art/Main Menu/UI_10Button.png" id="16_5r7dn"]
+[ext_resource type="Texture2D" uid="uid://r48v1hpfn0fo" path="res://Art/Main Menu/UI_11Button.png" id="17_4cx8h"]
+[ext_resource type="Texture2D" uid="uid://c5540sv32yiay" path="res://Art/Main Menu/UI_12Button.png" id="18_e4uqk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or8un"]
+bg_color = Color(0, 0, 0, 0.541176)
+
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("lock_list", "select_rect")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmbbl")
+lock_list = [NodePath("CenterContainer/GridContainer/Button2/Ui2Button/1"), NodePath("CenterContainer/GridContainer/Button3/Ui3Button/2"), NodePath("CenterContainer/GridContainer/Button4/Ui4Button/3"), NodePath("CenterContainer/GridContainer/Button5/Ui5Button/4"), NodePath("CenterContainer/GridContainer/Button6/Ui6Button/5"), NodePath("CenterContainer/GridContainer/Button7/Ui7Button/6"), NodePath("CenterContainer/GridContainer/Button8/Ui8Button/7"), NodePath("CenterContainer/GridContainer/Button9/Ui9Button/8"), NodePath("CenterContainer/GridContainer/Button10/Ui10Button/9"), NodePath("CenterContainer/GridContainer/Button11/Ui11Button/10"), NodePath("CenterContainer/GridContainer/Button12/Ui12Button/11")]
+select_rect = NodePath("Selector")
+
+[node name="Backround" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.611765, 0.462745, 0.360784, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.760784, 0.643137, 1)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_om6rk")
+
+[node name="PressB" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = 277.0
+offset_right = -1424.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_uutcg")
+theme_override_font_sizes/font_size = 42
+text = "(Press B)"
+horizontal_alignment = 1
+
+[node name="SelectYourLevel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 153.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_uutcg")
+theme_override_font_sizes/font_size = 80
+text = "Select Your Level!"
+horizontal_alignment = 1
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 55.0
+offset_right = 565.0
+offset_bottom = 265.0
+theme_override_font_sizes/font_size = 75
+
+[node name="UiBackButton" type="TextureRect" parent="Back Button"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -171.0
+offset_right = 1931.0
+offset_bottom = 1877.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_t206h")
+
+[node name="Selector" type="TextureRect" parent="."]
+modulate = Color(0.878431, 0.635294, 0.458824, 1)
+layout_mode = 0
+offset_left = 44.0001
+offset_top = 328.0
+offset_right = 244.0
+offset_bottom = 528.0
+scale = Vector2(1.94046, 1.94046)
+texture = ExtResource("5_a78qb")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 6
+
+[node name="Button1" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "1"
+
+[node name="Ui1Button" type="TextureRect" parent="CenterContainer/GridContainer/Button1"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("6_wptct")
+
+[node name="Button2" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "2"
+
+[node name="Ui2Button" type="TextureRect" parent="CenterContainer/GridContainer/Button2"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("7_4c16x")
+
+[node name="Fade1" type="Panel" parent="CenterContainer/GridContainer/Button2/Ui2Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="1" type="Sprite2D" parent="CenterContainer/GridContainer/Button2/Ui2Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button3" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "3"
+
+[node name="Ui3Button" type="TextureRect" parent="CenterContainer/GridContainer/Button3"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("9_u0ksp")
+
+[node name="Fade2" type="Panel" parent="CenterContainer/GridContainer/Button3/Ui3Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="2" type="Sprite2D" parent="CenterContainer/GridContainer/Button3/Ui3Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button4" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "4"
+
+[node name="Ui4Button" type="TextureRect" parent="CenterContainer/GridContainer/Button4"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("10_3j7g1")
+
+[node name="Fade3" type="Panel" parent="CenterContainer/GridContainer/Button4/Ui4Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="3" type="Sprite2D" parent="CenterContainer/GridContainer/Button4/Ui4Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button5" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "5"
+
+[node name="Ui5Button" type="TextureRect" parent="CenterContainer/GridContainer/Button5"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("11_0feon")
+
+[node name="Fade4" type="Panel" parent="CenterContainer/GridContainer/Button5/Ui5Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="4" type="Sprite2D" parent="CenterContainer/GridContainer/Button5/Ui5Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button6" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "6"
+
+[node name="Ui6Button" type="TextureRect" parent="CenterContainer/GridContainer/Button6"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("12_17icu")
+
+[node name="Fade5" type="Panel" parent="CenterContainer/GridContainer/Button6/Ui6Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="5" type="Sprite2D" parent="CenterContainer/GridContainer/Button6/Ui6Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button7" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "7"
+
+[node name="Ui7Button" type="TextureRect" parent="CenterContainer/GridContainer/Button7"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("13_x08gd")
+
+[node name="Fade6" type="Panel" parent="CenterContainer/GridContainer/Button7/Ui7Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="6" type="Sprite2D" parent="CenterContainer/GridContainer/Button7/Ui7Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button8" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "8
+"
+
+[node name="Ui8Button" type="TextureRect" parent="CenterContainer/GridContainer/Button8"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("14_gj1f7")
+
+[node name="Fade7" type="Panel" parent="CenterContainer/GridContainer/Button8/Ui8Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="7" type="Sprite2D" parent="CenterContainer/GridContainer/Button8/Ui8Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button9" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "9
+"
+
+[node name="Ui9Button" type="TextureRect" parent="CenterContainer/GridContainer/Button9"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("15_bqwat")
+
+[node name="Fade8" type="Panel" parent="CenterContainer/GridContainer/Button9/Ui9Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="8" type="Sprite2D" parent="CenterContainer/GridContainer/Button9/Ui9Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button10" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "10"
+
+[node name="Ui10Button" type="TextureRect" parent="CenterContainer/GridContainer/Button10"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("16_5r7dn")
+
+[node name="Fade9" type="Panel" parent="CenterContainer/GridContainer/Button10/Ui10Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="9" type="Sprite2D" parent="CenterContainer/GridContainer/Button10/Ui10Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button11" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "11"
+
+[node name="Ui11Button" type="TextureRect" parent="CenterContainer/GridContainer/Button11"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("17_4cx8h")
+
+[node name="Fade10" type="Panel" parent="CenterContainer/GridContainer/Button11/Ui11Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="10" type="Sprite2D" parent="CenterContainer/GridContainer/Button11/Ui11Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="Button12" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "12"
+
+[node name="Ui12Button" type="TextureRect" parent="CenterContainer/GridContainer/Button12"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("18_e4uqk")
+
+[node name="Fade11" type="Panel" parent="CenterContainer/GridContainer/Button12/Ui12Button"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="11" type="Sprite2D" parent="CenterContainer/GridContainer/Button12/Ui12Button"]
+position = Vector2(1024, 1024)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_cj47e")
+
+[node name="CantUnlock" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 953.0
+offset_bottom = 816.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.54902, 0.439216, 0.313726, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_uutcg")
+theme_override_font_sizes/font_size = 70
+text = "(Levels 8-12 cannot be unlocked at this time)"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button1" to="." method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button12" to="." method="_on_button_12_pressed"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8w37b1rl3qup"]
 
-[ext_resource type="Script" path="res://Scripts/test_level.gd" id="1_nvde3"]
+[ext_resource type="Script" path="res://Scenes/Other/test_level.gd" id="1_nvde3"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="2_4kfl3"]
-[ext_resource type="PackedScene" uid="uid://bjceqrxsj38yu" path="res://Scenes/Tbox.tscn" id="3_kxkte"]
+[ext_resource type="PackedScene" uid="uid://bjceqrxsj38yu" path="res://Scenes/Objects/Tbox.tscn" id="3_kxkte"]
 [ext_resource type="Texture2D" uid="uid://2qqucowycpck" path="res://Art/MiscSprites/TempFloor.png" id="4_fwnm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycfjn"]

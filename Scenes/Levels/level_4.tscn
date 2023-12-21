@@ -1,17 +1,17 @@
 [gd_scene load_steps=15 format=3 uid="uid://bwpxs0n1bfa8h"]
 
-[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/floor.tscn" id="1_v4xq1"]
-[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/landing_zone.tscn" id="7_sqj7y"]
+[ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="1_v4xq1"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/landing_zone.tscn" id="7_sqj7y"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/parallax_background.tscn" id="8_sj8f4"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_tvqyk"]
-[ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://void_out_area.tscn" id="10_eo61p"]
-[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://TheSun.tscn" id="10_qfp0h"]
-[ext_resource type="Script" path="res://Scripts/PlayerSpawner.gd" id="11_f3xvt"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Placeholders/player.tscn" id="12_itn5d"]
-[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/Other/camera.tscn" id="13_dkewa"]
+[ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://Scenes/Objects/void_out_area.tscn" id="10_eo61p"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="10_qfp0h"]
+[ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="11_f3xvt"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="12_itn5d"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="13_dkewa"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="13_mvl3v"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="14_3ujrv"]
-[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://font/Nunito/static/Nunito-Medium.ttf" id="14_jdn7g"]
+[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="14_jdn7g"]
 
 [sub_resource type="Curve2D" id="Curve2D_ymx3a"]
 _data = {
@@ -33,7 +33,7 @@ position = Vector2(-1486, 830)
 scale = Vector2(2, 1)
 
 [node name="MainFloor2" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(1847, 1069)
+position = Vector2(1847, 928)
 scale = Vector2(0.5, 2)
 
 [node name="Floor2" parent="." instance=ExtResource("1_v4xq1")]
@@ -41,8 +41,8 @@ position = Vector2(287, 343)
 scale = Vector2(0.152516, 1.19459)
 
 [node name="Floor6" parent="." instance=ExtResource("1_v4xq1")]
-position = Vector2(2144, 349)
-scale = Vector2(0.809995, 1.22)
+position = Vector2(2144, 297)
+scale = Vector2(0.81, 1)
 
 [node name="Floor5" parent="." instance=ExtResource("1_v4xq1")]
 position = Vector2(2876, 162)

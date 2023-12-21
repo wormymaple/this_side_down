@@ -1,0 +1,150 @@
+[gd_scene load_steps=10 format=3 uid="uid://csk0rv5ibfuuk"]
+
+[ext_resource type="Script" path="res://Scenes/UI/MainmenuLevelScene.gd" id="1_ay4ea"]
+[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="2_dyvjo"]
+[ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/Main Menu/BG_Box.png" id="2_sfv8s"]
+[ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Main Menu/UI_Play_Button.png" id="3_327wy"]
+[ext_resource type="Texture2D" uid="uid://bc0hl8dqms67q" path="res://Art/Main Menu/logo_thissidedown.png" id="3_khvvf"]
+[ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Main Menu/UI_Options_Button.png" id="4_1vgje"]
+[ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Main Menu/UI_Quit_Button.png" id="5_ptnpq"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="6_874je"]
+[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://Scenes/UI/settings_menu.tscn" id="7_1s0hk"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ay4ea")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.760784, 0.643137, 1)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_sfv8s")
+
+[node name="Backround" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.611765, 0.462745, 0.360784, 1)
+
+[node name="How to select" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = 764.0
+offset_right = 539.0
+offset_bottom = 850.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
+theme_override_fonts/font = ExtResource("2_dyvjo")
+theme_override_font_sizes/font_size = 40
+text = "(A to confirm)"
+horizontal_alignment = 1
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 922.0
+offset_top = 158.0
+offset_right = 2512.0
+offset_bottom = 1328.0
+scale = Vector2(0.48675, 0.48675)
+texture = ExtResource("3_khvvf")
+
+[node name="Play Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 169.0
+offset_right = 660.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 75
+
+[node name="UiPlayButton" type="TextureRect" parent="Play Button"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -171.0
+offset_right = 1931.0
+offset_bottom = 1877.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_327wy")
+
+[node name="Options Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 417.0
+offset_right = 660.0
+offset_bottom = 627.0
+theme_override_font_sizes/font_size = 75
+
+[node name="UiOptionsButton" type="TextureRect" parent="Options Button"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -172.0
+offset_right = 1931.0
+offset_bottom = 1876.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_1vgje")
+
+[node name="Quit Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 274.0
+offset_top = 665.0
+offset_right = 664.0
+offset_bottom = 875.0
+theme_override_font_sizes/font_size = 75
+
+[node name="UiQuitButton" type="TextureRect" parent="Quit Button"]
+layout_mode = 0
+offset_left = -120.0
+offset_top = -172.0
+offset_right = 1928.0
+offset_bottom = 1876.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_ptnpq")
+
+[node name="Arrow" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 597.0
+offset_right = 970.0
+offset_bottom = 1060.0
+rotation = -1.57079
+scale = Vector2(1.3316, 1.3316)
+texture = ExtResource("6_874je")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("7_1s0hk")]
+visible = false
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Controls" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 282.0
+offset_top = 943.0
+offset_right = 1682.0
+offset_bottom = 1135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.54902, 0.439216, 0.313726, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_dyvjo")
+theme_override_font_sizes/font_size = 45
+text = "Only works with a controller. Left trigger/bumper to jump, right trigger/bumper to grab, left stick to move, right stick to control arm."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
