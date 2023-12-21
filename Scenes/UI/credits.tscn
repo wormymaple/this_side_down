@@ -1,81 +1,87 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkiib854vbjx6"]
+[gd_scene load_steps=6 format=3 uid="uid://dkiib854vbjx6"]
 
 [ext_resource type="Texture2D" uid="uid://bc7ikluxqo3ue" path="res://Art/Main Menu/UI_Back_Button.png" id="1_8piub"]
+[ext_resource type="Script" path="res://Scenes/UI/credits.gd" id="1_w0aj4"]
+[ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/Main Menu/BG_Box.png" id="2_6d2yu"]
 [ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="2_r18ib"]
+[ext_resource type="FontFile" uid="uid://bsdypfjjnmwjc" path="res://Fonts/Nunito/static/Nunito-Bold.ttf" id="3_o5ggc"]
 
-[node name="CreditsPanel" type="Control"]
+[node name="Credits" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w0aj4")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -28.0
-offset_top = 12.0
-offset_right = -28.0
-offset_bottom = 12.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.611765, 0.462745, 0.360784, 1)
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 496.0
+offset_bottom = 250.0
+theme_override_constants/separation = 100
 
-[node name="Back Button" type="Button" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -195.0
-offset_top = -280.0
-offset_right = 195.0
-offset_bottom = -70.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 75
-
-[node name="UiBackButton" type="TextureRect" parent="ColorRect/Back Button"]
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.760784, 0.643137, 1)
 layout_mode = 0
-offset_left = -117.0
-offset_top = -171.0
-offset_right = 1931.0
-offset_bottom = 1877.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_8piub")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_6d2yu")
 
-[node name="A" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -270.0
-offset_right = 231.0
-offset_bottom = 138.0
-grow_horizontal = 2
+[node name="Congratulations" type="Label" parent="."]
+layout_mode = 2
+offset_left = 267.0
+offset_top = 17.0
+offset_right = 1680.0
+offset_bottom = 120.0
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 100
-text = "(Credits)"
+theme_override_font_sizes/font_size = 64
+text = "You beat all 12 levels! Thanks for playing!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Artist" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -830.875
-offset_top = 125.0
-offset_right = -343.875
-offset_bottom = 228.0
+offset_left = -960.0
+offset_top = 140.0
+offset_right = 960.0
+offset_bottom = 278.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("3_o5ggc")
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 270
+theme_override_constants/margin_right = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Artists" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
@@ -86,92 +92,26 @@ text = "Artists
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="A3" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -889.375
-offset_top = 210.0
-offset_right = -272.375
-offset_bottom = 279.0
-grow_horizontal = 2
+[node name="Names" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Lead Artist Sienna Spencer"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 48
+text = "Sienna Spencer
+Lead Artist
 
-[node name="A4" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -869.875
-offset_top = 270.0
-offset_right = -369.875
-offset_bottom = 339.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Quentina Candelaria"
+Quentina Candelaria
+Meredith Ernst
+Taylor Steffe"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="A5" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -830.875
-offset_top = 330.0
-offset_right = -330.875
-offset_bottom = 399.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Meredith Ernst"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 
-[node name="A6" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -830.875
-offset_top = 390.0
-offset_right = -330.875
-offset_bottom = 459.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Taylor Steffe"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Artist2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -253.5
-offset_top = 125.0
-offset_right = 233.5
-offset_bottom = 228.0
-grow_horizontal = 2
+[node name="Designers" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
@@ -182,73 +122,24 @@ text = "Designers
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="A7" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -314.5
-offset_top = 210.0
-offset_right = 307.5
-offset_bottom = 279.0
-grow_horizontal = 2
+[node name="Names2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Lead Designer Andrew Decker"
+theme_override_font_sizes/font_size = 48
+text = "Andrew Decker
+Lead Designer
+Zane Lee
+Zack Martin"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="A8" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -253.5
-offset_top = 270.0
-offset_right = 246.5
-offset_bottom = 339.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Zane Lee"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
 
-[node name="A9" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -253.5
-offset_top = 330.0
-offset_right = 246.5
-offset_bottom = 399.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Zack Martin"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Artist3" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 343.875
-offset_top = 125.0
-offset_right = 830.875
-offset_bottom = 228.0
-grow_horizontal = 2
+[node name="Programmers" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
@@ -259,97 +150,62 @@ text = "Programmers
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="A10" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 309.875
-offset_top = 210.0
-offset_right = 938.875
-offset_bottom = 279.0
-grow_horizontal = 2
+[node name="Names3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Lead Programmer Marshall Perkins"
+theme_override_font_sizes/font_size = 48
+text = "Marshall Perkins
+Lead Programmer
+Kesler Ratke
+Zack Martin
+Hiro Kahara
+Cody Sandford"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="A11" type="Label" parent="."]
+[node name="PressB" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 343.875
-offset_top = 270.0
-offset_right = 904.875
-offset_bottom = 339.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.0
+offset_top = 992.0
+offset_right = -100.0
+offset_bottom = 840.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Kesler Ratke"
+theme_override_font_sizes/font_size = 42
+text = "(Press B)"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="A12" type="Label" parent="."]
+[node name="Back Button" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = 343.875
-offset_top = 330.0
-offset_right = 904.875
-offset_bottom = 399.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -301.0
+offset_right = 202.0
+offset_bottom = -91.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Zack Martin"
-horizontal_alignment = 1
-vertical_alignment = 1
+grow_vertical = 0
+theme_override_font_sizes/font_size = 75
 
-[node name="A13" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 343.875
-offset_top = 390.0
-offset_right = 904.875
-offset_bottom = 459.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Hiro Kahara"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="UiBackButton" type="TextureRect" parent="Back Button"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -171.0
+offset_right = 1931.0
+offset_bottom = 1877.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_8piub")
 
-[node name="A14" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 343.875
-offset_top = 450.0
-offset_right = 904.875
-offset_bottom = 519.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("2_r18ib")
-theme_override_font_sizes/font_size = 38
-text = "Cody Sandford"
-horizontal_alignment = 1
-vertical_alignment = 1
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

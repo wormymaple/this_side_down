@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/landing_zone.tscn" id="8_2ie1f"]
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://Scenes/UI/UnderwaterShader.tscn" id="8_u77f3"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="9_akor3"]
-[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/FloatingPlatform.tscn" id="9_df3oo"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/Platform.tscn" id="9_df3oo"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="11_psbp5"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="12_ukulb"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="13_r0ek7"]

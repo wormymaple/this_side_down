@@ -1,22 +1,23 @@
 extends CanvasLayer
 
 const positions = [402, 525, 648, 771]
-const button_functions = ['_on_resume_btn_pressed', '_on_restart_level_pressed', '_on_settings_pressed', '_on_quit_to_menu_pressed']
+const button_functions = ['_on_resume_button_pressed', '_on_restart_level_pressed', '_on_settings_pressed', '_on_quit_to_menu_pressed']
 var selected_space = 0
+
+@onready var SettingsMenu = $SettingsMenu
+@onready var Highlighter = $Highlighter
 
 func _ready():
 	hide()
 
-func _on_resume_btn_pressed():
-	#get_tree().paused = false
+func _on_resume_button_pressed():
 	hide()
 
 func _on_restart_level_pressed():
-	
 	get_tree().reload_current_scene()
 
 func _on_settings_pressed():
-	$SettingsMenu.show()
+	SettingsMenu.show()
 
 func _on_quit_to_menu_pressed():
 	get_tree().paused = false
@@ -28,7 +29,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		visible = !visible
 	
-	if $SettingsMenu.visible: # Prevents selecting while the settings are up
+	if SettingsMenu.visible: # Prevents selecting while the settings are up
 		return
 	if Input.is_action_just_pressed("left_up_p1") and visible:
 		#print("You pressed up")
@@ -49,7 +50,7 @@ func move_arrow(dir: int):
 	elif selected_space < 0:
 		selected_space = 3
 	
-	$NinePatchRect.position.y = positions[selected_space]
+	Highlighter.position.y = positions[selected_space]
 
 func _on_visibility_changed():
 	if visible:
@@ -60,5 +61,3 @@ func _on_visibility_changed():
 		#print("Unpausing")
 		if get_tree().paused:
 			get_tree().paused = false
-
-
