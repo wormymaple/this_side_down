@@ -13,8 +13,8 @@ func _process(_delta):
 			if body.is_in_group("Box"):
 				if body.get_meta("grabbed"): # Boxes that are being grabbed do not count
 					return
-				if abs(body.rotation_degrees) < 180 - 35: # Has to be the facing downwards
-					return
+				#if abs(body.rotation_degrees) < 180 - 35: # Has to be the facing downwards
+				#	return
 		won_already = true
 		#print("You Win!")
 		GlobalVariables.win_level(level)
