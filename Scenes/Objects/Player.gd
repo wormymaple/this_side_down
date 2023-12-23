@@ -102,6 +102,22 @@ func _physics_process(delta):
 	
 	
 	if has_grabbed:
+		
+		#if grabbed_body.is_in_group("Box"):
+			#print("Item grabbed is a box!")
+		
+		#if Input.is_action_pressed("rotate_right_p1"):
+		#	print("You are pressing rotate!")
+		
+		# Addinng this code to test being able to rotate held item by button press
+		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_right_p1"):
+			grabbed_body.global_rotation += 0.01
+			#print("I am rotating!")
+		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_left_p1"):
+			grabbed_body.global_rotation -= 0.01
+			#print("I am rotating!")
+			
+		
 		var dir = hand.global_position - grabbed_body.global_position
 		if dir.length() > drop_threshold:
 			drop_object()
