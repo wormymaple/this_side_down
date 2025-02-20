@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://Scenes/UI/MainmenuLevelScene.gd" id="1_ay4ea"]
-[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="2_dyvjo"]
+[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="2_dyvjo"]
 [ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/Main Menu/BG_Box.png" id="2_sfv8s"]
 [ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Main Menu/UI_Play_Button.png" id="3_327wy"]
-[ext_resource type="Texture2D" uid="uid://bc0hl8dqms67q" path="res://Art/Main Menu/logo_thissidedown.png" id="3_khvvf"]
+[ext_resource type="Texture2D" uid="uid://dwgxu1q1cbukc" path="res://Art/Main Menu/logo_thissidedown.png" id="3_khvvf"]
 [ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Main Menu/UI_Options_Button.png" id="4_1vgje"]
 [ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Main Menu/UI_Quit_Button.png" id="5_ptnpq"]
 [ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="6_874je"]
