@@ -38,7 +38,7 @@ func move_arrow(dir: int):
 	$Arrow.position.y = positions[arrow_position]
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/UI/level_select.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/LevelSelect.tscn")
 
 func _on_options_button_pressed():
 	settings_menu.show()

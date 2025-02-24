@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=3 uid="uid://bgr4nq5o17pmh"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/Player.gd" id="1_5wbp8"]
-[ext_resource type="Texture2D" uid="uid://1evxdg38q3gj" path="res://Art/PlayerSprites/UI_Hand_Closed.png" id="2_4wubt"]
-[ext_resource type="Texture2D" uid="uid://kgkbn6skvqam" path="res://Art/PlayerSprites/UI_Hand_Open.png" id="3_nc5kx"]
-[ext_resource type="Texture2D" uid="uid://drlj0pirdqkc3" path="res://Art/PlayerSprites/grayscale_player/player_head.png" id="4_8lqlt"]
-[ext_resource type="Texture2D" uid="uid://cf0jx7irt4gwu" path="res://Art/PlayerSprites/grayscale_player/player_legs.png" id="5_g830a"]
-[ext_resource type="AudioStream" uid="uid://b83ui00rhi76c" path="res://Audio/box pickup.wav" id="6_dmfrs"]
-[ext_resource type="AudioStream" uid="uid://bow3uyffj1ib3" path="res://Audio/box drop (better).wav" id="7_jdbta"]
-[ext_resource type="AudioStream" uid="uid://bp6qkjj6mbixo" path="res://Audio/jump3.wav" id="8_3mkwv"]
+[ext_resource type="Texture2D" uid="uid://f0igwnei2hhr" path="res://Art/PlayerSprites/UI_Hand_Closed.png" id="2_4wubt"]
+[ext_resource type="Texture2D" uid="uid://q04cg6ithtg3" path="res://Art/PlayerSprites/UI_Hand_Open.png" id="3_nc5kx"]
+[ext_resource type="Texture2D" uid="uid://dmbg4cn3tb3fh" path="res://Art/PlayerSprites/grayscale_player/player_head.png" id="4_8lqlt"]
+[ext_resource type="Texture2D" uid="uid://7ti1q5r62dru" path="res://Art/PlayerSprites/grayscale_player/player_legs.png" id="5_g830a"]
+[ext_resource type="AudioStream" uid="uid://do8sybdffo7m2" path="res://Audio/box pickup.wav" id="6_dmfrs"]
+[ext_resource type="AudioStream" uid="uid://dfgxaw2fmj6j4" path="res://Audio/box drop (better).wav" id="7_jdbta"]
+[ext_resource type="AudioStream" uid="uid://d3b4l1mjyt4ig" path="res://Audio/jump3.wav" id="8_3mkwv"]
 [ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep(one).wav" id="9_7tj8n"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://Scenes/UI/point_light_2d.tscn" id="10_1kx1r"]
 
@@ -28,14 +28,14 @@ radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4eusl"]
 
-[node name="PlaceholderPlayer" type="RigidBody2D" node_paths=PackedStringArray("hand_sprite", "box_pickup", "box_drop", "jump", "footsteps") groups=["Player"]]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("hand_sprite", "box_pickup", "box_drop", "jump", "footsteps") groups=["Player"]]
 collision_layer = 2
 collision_mask = 2049
 physics_material_override = SubResource("PhysicsMaterial_2c1hu")
 lock_rotation = true
 continuous_cd = 1
-max_contacts_reported = 1
 contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_5wbp8")
 move_speed = 250.0
 jump_speed = 500.0

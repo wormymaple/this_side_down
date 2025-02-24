@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bvpim07i7se1g"]
 
-[ext_resource type="Script" path="res://Scenes/UI/level_select.gd" id="1_hmbbl"]
+[ext_resource type="Script" path="res://Scenes/UI/LevelSelect.gd" id="1_hmbbl"]
 [ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/MainMenu/BG_Box.png" id="2_om6rk"]
 [ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_uutcg"]
 [ext_resource type="Texture2D" uid="uid://dgj32h8kkmi8a" path="res://Art/MainMenu/UI_Back_Button.png" id="4_t206h"]
@@ -471,7 +471,7 @@ text = "(Levels 8-12 cannot be unlocked at this time)"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="CenterContainer/GridContainer/Button1" to="." method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="CenterContainer/GridContainer/Button4" to="." method="_on_button_4_pressed"]

@@ -9,9 +9,9 @@ enum Themes {NORMAL, UNDERWATER}
 
 func _ready():
 	if theme == Themes.NORMAL:
-		sprite.texture = load("res://Art/First Level/UI_HeavyBox.png")
+		sprite.texture = load("res://Art/Level1/UI_HeavyBox.png")
 	elif theme == Themes.UNDERWATER:
-		sprite.texture = load("res://Art/Fourth Level/UI_Underwater_Square_Box.png")
+		sprite.texture = load("res://Art/Level4/UI_Underwater_Square_Box.png")
 	
 	sprite.scale *= Vector2(size, size) # Uses *= instead of just = because the starting sprite size is 0.145 
 	collision.scale *= Vector2(size, size)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dv6cw04ulkig0"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="1_6qh6a"]
-[ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/Objects/circlebox.tscn" id="2_qevbq"]
+[ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/Objects/BoxCircle.tscn" id="2_qevbq"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/Platform.tscn" id="4_53dvt"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="5_4hvyx"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="5_a1m2x"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Area4/parallax_backgroundOcean.tscn" id="6_p5pqx"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="9_6tj2g"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="9_77780"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="10_lni03"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="10_lni03"]
 [ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="10_s532q"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="11_w7flq"]
 

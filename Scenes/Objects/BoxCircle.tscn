@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c02557mdlevgc"]
 
-[ext_resource type="Script" path="res://Scenes/Objects/circle_box.gd" id="1_caxgq"]
-[ext_resource type="Texture2D" uid="uid://ccp03uo1e3hod" path="res://Art/Area1/UI_HeavyCircle.png" id="1_qluji"]
-[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/Area1/UI_BasicArrow.png" id="2_2f16l"]
+[ext_resource type="Script" path="res://Scenes/Objects/BoxCircle.gd" id="1_tgy83"]
+[ext_resource type="Texture2D" uid="uid://ccp03uo1e3hod" path="res://Art/Area1/UI_HeavyCircle.png" id="2_2f1j3"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/Area1/UI_BasicArrow.png" id="3_1c5nq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y87lr"]
 radius = 31.0161
@@ -11,8 +11,7 @@ radius = 31.0161
 position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 8
 collision_mask = 13
-script = ExtResource("1_caxgq")
-texture = ExtResource("1_qluji")
+script = ExtResource("1_tgy83")
 size = 1.0
 metadata/grabbable = false
 metadata/grabbed = false
@@ -25,8 +24,8 @@ shape = SubResource("CircleShape2D_y87lr")
 position = Vector2(2.08165e-12, 2.08165e-12)
 rotation = 2.53073
 scale = Vector2(0.144898, 0.144708)
-texture = ExtResource("1_qluji")
+texture = ExtResource("2_2f1j3")
 
 [node name="ArrowSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_2f16l")
+texture = ExtResource("3_1c5nq")

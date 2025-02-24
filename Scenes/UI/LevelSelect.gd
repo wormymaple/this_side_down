@@ -3,8 +3,6 @@ extends Control
 @export var lock_list: Array[Sprite2D] # Removed 6 temporarily
 @export var select_rect = TextureRect
 
-
-
 #var menu_funcs = ['_on_play_button_pressed', '_on_options_button_pressed', '_on_quit_button_pressed']
 const positions = [Vector2(45, 333), Vector2(334, 333), Vector2(622, 333), Vector2(913, 333), Vector2(1202, 333), Vector2(1492, 333), Vector2(45, 620), Vector2(334, 620), Vector2(622, 620), Vector2(913, 620), Vector2(1202, 620), Vector2(1492, 620)]
 @export var select_rect_position: int = 0
@@ -22,20 +20,20 @@ func _ready():
 				child.queue_free()
 
 func _process(_delta):
-	if Input.is_action_just_pressed("left_right_p1"):
+	if Input.is_action_just_pressed("ui_right"):
 		move_arrow(1)
-	if Input.is_action_just_pressed("left_left_p1"):
+	if Input.is_action_just_pressed("ui_left"):
 		move_arrow(-1)
 	
-	if Input.is_action_just_pressed("left_up_p1"):
+	if Input.is_action_just_pressed("ui_up"):
 		move_arrow(-6) # Minus 6 because the lower row is the second row
-	if Input.is_action_just_pressed("left_down_p1"):
+	if Input.is_action_just_pressed("ui_down"):
 		move_arrow(6)
 	
-	if Input.is_action_just_pressed("confirm"):
+	if Input.is_action_just_pressed("ui_accept"):
 		call('_on_button_' + str(select_rect_position + 1) + '_pressed')
 	
-	if Input.is_action_just_pressed("cancel"):
+	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://Scenes/UI/MainmenuLevelScene.tscn")
 	
 	

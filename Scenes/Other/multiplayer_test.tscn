@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvu6pqwjke534"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="1_01fhd"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="2_e3q2l"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="2_e3q2l"]
 [ext_resource type="Script" path="res://Scenes/UI/CameraController.gd" id="3_4bvcx"]
-[ext_resource type="Texture2D" uid="uid://bix6qe3awhla1" path="res://Art/MiscSprites/TempBox.png" id="4_vp4gt"]
+[ext_resource type="Texture2D" path="res://Art/MiscSprites/TempBox.png" id="4_vp4gt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b30eg"]
 size = Vector2(1152, 79)

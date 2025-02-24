@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://c4h46cjlyo4qt"]
 
-[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/Objects/boxtri.tscn" id="3_ifi5f"]
+[ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/Objects/BoxTriangle.tscn" id="3_ifi5f"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="4_08m74"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="4_nd8ak"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="5_6hfre"]
@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/Objects/ramp.tscn" id="9_pbvov"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="10_um1cw"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="11_lh4ec"]
-[ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/Objects/circlebox.tscn" id="12_7lyud"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="12_sb3ji"]
+[ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/Objects/BoxCircle.tscn" id="12_7lyud"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="12_sb3ji"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="13_p6fm6"]
 [ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/Area3/UI_Barrier.png" id="14_oy4gm"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://Scenes/Objects/void_out_area.tscn" id="15_k47hj"]
