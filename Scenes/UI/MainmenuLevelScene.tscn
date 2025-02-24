@@ -1,14 +1,34 @@
-[gd_scene load_steps=10 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=20 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://Scenes/UI/MainmenuLevelScene.gd" id="1_ay4ea"]
 [ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="2_dyvjo"]
-[ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/Main Menu/BG_Box.png" id="2_sfv8s"]
-[ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Main Menu/UI_Play_Button.png" id="3_327wy"]
-[ext_resource type="Texture2D" uid="uid://dwgxu1q1cbukc" path="res://Art/Main Menu/logo_thissidedown.png" id="3_khvvf"]
-[ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Main Menu/UI_Options_Button.png" id="4_1vgje"]
-[ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Main Menu/UI_Quit_Button.png" id="5_ptnpq"]
-[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/First Level/UI_BasicArrow.png" id="6_874je"]
+[ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/MainMenu/BG_Box.png" id="2_sfv8s"]
+[ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/MainMenu/UI_Play_Button.png" id="3_327wy"]
+[ext_resource type="Texture2D" uid="uid://dwgxu1q1cbukc" path="res://Art/MainMenu/logo_thissidedown.png" id="3_khvvf"]
+[ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/MainMenu/UI_Options_Button.png" id="4_1vgje"]
+[ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/MainMenu/UI_Quit_Button.png" id="5_ptnpq"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/Area1/UI_BasicArrow.png" id="6_874je"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://Scenes/UI/settings_menu.tscn" id="7_1s0hk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2r47"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ke8d4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cd8u6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l52dd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5ykk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1awg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ykre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gujig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf7yw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ve26"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -63,6 +83,11 @@ offset_top = 169.0
 offset_right = 660.0
 offset_bottom = 379.0
 theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r2r47")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ke8d4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cd8u6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l52dd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j5ykk")
 
 [node name="UiPlayButton" type="TextureRect" parent="Play Button"]
 layout_mode = 0
@@ -80,6 +105,11 @@ offset_top = 417.0
 offset_right = 660.0
 offset_bottom = 627.0
 theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i1awg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gujig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mf7yw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ve26")
 
 [node name="UiOptionsButton" type="TextureRect" parent="Options Button"]
 layout_mode = 0
@@ -97,6 +127,11 @@ offset_top = 665.0
 offset_right = 664.0
 offset_bottom = 875.0
 theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i1awg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gujig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mf7yw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ve26")
 
 [node name="UiQuitButton" type="TextureRect" parent="Quit Button"]
 layout_mode = 0

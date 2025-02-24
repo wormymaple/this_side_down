@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://Scenes/UI/LightBlocker.tscn" id="1_tn2pd"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="2_cfxnt"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://Scenes/UI/point_light_2d.tscn" id="3_kbdst"]
-[ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Fourth Level/parallax_backgroundOcean.tscn" id="5_55iqg"]
+[ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/Area4/parallax_backgroundOcean.tscn" id="5_55iqg"]
 
 [node name="LightingLevelTest" type="Node2D"]
 position = Vector2(592, 460)

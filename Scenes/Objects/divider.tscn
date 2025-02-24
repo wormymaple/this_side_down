@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ftopepwcjoag"]
 
 [ext_resource type="Script" path="res://Scenes/Other/divider.gd" id="1_15g8y"]
-[ext_resource type="Texture2D" uid="uid://bi5k0l5mfwj2d" path="res://Art/First Level/UI_SpringAnimation.png" id="1_kakcq"]
+[ext_resource type="Texture2D" uid="uid://bi5k0l5mfwj2d" path="res://Art/Area1/UI_SpringAnimation.png" id="1_kakcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2mhgt"]
 size = Vector2(202, 13)

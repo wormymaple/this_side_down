@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm3nhumty4u0u"]
 
-[ext_resource type="AudioStream" uid="uid://b5fbsg7bbx7gp" path="res://Audio/BoxInSocksntro.wav" id="1_0dv33"]
+[ext_resource type="AudioStream" uid="uid://newwpr3h40o3" path="res://Audio/BoxInSocksntro.wav" id="1_0dv33"]
 [ext_resource type="Script" path="res://Audio/Theme_Song_Loop.gd" id="2_gid20"]
 
 [node name="Loop" type="AudioStreamPlayer"]

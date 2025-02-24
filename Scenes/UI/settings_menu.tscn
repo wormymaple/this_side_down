@@ -1,19 +1,21 @@
 [gd_scene load_steps=12 format=3 uid="uid://dq5ntdtxdyc8c"]
 
 [ext_resource type="Script" path="res://Scenes/UI/settings_menu.gd" id="1_uuh1i"]
-[ext_resource type="FontFile" uid="uid://b8liwgotux8id" path="res://Fonts/Nunito/static/Nunito-BoldItalic.ttf" id="2_2ksna"]
-[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
-[ext_resource type="FontFile" uid="uid://bsdypfjjnmwjc" path="res://Fonts/Nunito/static/Nunito-Bold.ttf" id="4_grtet"]
+[ext_resource type="FontFile" uid="uid://ca1xyci8y4mc5" path="res://Fonts/Nunito/static/Nunito-BoldItalic.ttf" id="2_2ksna"]
+[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
+[ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://Fonts/Nunito/static/Nunito-Bold.ttf" id="4_grtet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vk4d"]
-bg_color = Color(0.286275, 0.313726, 0.529412, 1)
-border_width_left = 20
-border_width_bottom = 20
-border_color = Color(0.188235, 0.211765, 0.372549, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fw3b"]
 bg_color = Color(0, 0, 0, 0.486275)
@@ -22,15 +24,15 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hm6t0"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lawxx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pcowc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o00mv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wv853"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pcowc"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lawxx"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hm6t0"]
 
 [node name="SettingsMenu" type="Control"]
 process_mode = 3
@@ -93,10 +95,9 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_fonts/font = ExtResource("3_ur1dc")
-item_count = 2
 selected = 0
+item_count = 2
 popup/item_0/text = "Windowed"
-popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
 
@@ -202,11 +203,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8fw3b")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_grtet")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hm6t0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lawxx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pcowc")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_o00mv")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wv853")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_pcowc")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lawxx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hm6t0")
 text = "Back"
 
 [node name="Label" type="Label" parent="ButtonMarginContainer/BackButton"]
