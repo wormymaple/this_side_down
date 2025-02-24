@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b13ui3edlyvfn"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/spring.gd" id="1_fdvwv"]
-[ext_resource type="Texture2D" uid="uid://bfs42evqhsl7d" path="res://Art/Area1/UI_spring.png" id="2_uh0i2"]
+[ext_resource type="Texture2D" uid="uid://bfs42evqhsl7d" path="res://Art/Area1/Spring.png" id="2_uh0i2"]
 [ext_resource type="AudioStream" uid="uid://fhy635tei41u" path="res://Audio/boing spring.wav" id="3_36sag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfp4"]

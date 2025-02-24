@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="10_hv6gi"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="11_eobp3"]
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/BackgroundCrates.tscn" id="11_kaf0w"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_vbs12"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="11_vbs12"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="11_ve53h"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="12_o2sbc"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="14_jv4xn"]

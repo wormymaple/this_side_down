@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="8_jmg2h"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="9_64wh3"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/BackgroundWarehouse.tscn" id="10_yrdje"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="11_xo40b"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="11_xo40b"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://Scenes/UI/LightBlocker.tscn" id="12_bxkdo"]
 
 [node name="Level2" type="Node2D"]

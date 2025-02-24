@@ -1,15 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://de33bfmp2w6jc"]
+[gd_scene load_steps=5 format=3 uid="uid://de33bfmp2w6jc"]
 
 [ext_resource type="Script" path="res://Scenes/UI/PauseMenu.gd" id="1_kf0y2"]
-[ext_resource type="Texture2D" uid="uid://dpbirhid6jhme" path="res://Art/MiscSprites/PauseMenuHighlight.png" id="2_ywya3"]
-[ext_resource type="FontFile" uid="uid://bsdypfjjnmwjc" path="res://Fonts/Nunito/static/Nunito-Bold.ttf" id="3_7cjo4"]
-[ext_resource type="FontFile" uid="uid://cp06hnbot6cb7" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="4_vw1xm"]
+[ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://Fonts/Nunito/static/Nunito-Bold.ttf" id="3_7cjo4"]
+[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="4_vw1xm"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://Scenes/UI/settings_menu.tscn" id="5_iy68b"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 layer = 2
-visible = false
 script = ExtResource("1_kf0y2")
 
 [node name="background" type="ColorRect" parent="."]
@@ -19,18 +17,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.847059, 0.623529, 0.419608, 0.615686)
-
-[node name="Highlighter" type="NinePatchRect" parent="."]
-modulate = Color(0.933333, 0.780392, 0.65098, 1)
-offset_left = 726.0
-offset_top = 401.0
-offset_right = 1194.0
-offset_bottom = 496.0
-texture = ExtResource("2_ywya3")
-patch_margin_left = 10
-patch_margin_top = 10
-patch_margin_right = 10
-patch_margin_bottom = 10
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15

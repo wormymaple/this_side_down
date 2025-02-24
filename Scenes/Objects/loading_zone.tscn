@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd864umc5qnki"]
 
-[ext_resource type="Texture2D" uid="uid://faj1vrwnl6ct" path="res://Art/Area1/UI_landingpad.png" id="1_pg838"]
+[ext_resource type="Texture2D" uid="uid://faj1vrwnl6ct" path="res://Art/Area1/LandingZone.png" id="1_pg838"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d44a2"]
 size = Vector2(492, 299)

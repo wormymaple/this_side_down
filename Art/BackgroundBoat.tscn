@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bq13ti4fn0mxl"]
 
-[ext_resource type="Texture2D" uid="uid://j2h0rm723ulg" path="res://Art/Area3/BG_StormySky.png" id="1_51wte"]
-[ext_resource type="Texture2D" uid="uid://c10ihvq65b06v" path="res://Art/Area3/UI_Birds.png" id="2_67hpp"]
-[ext_resource type="Texture2D" uid="uid://cpmp10nkoidmr" path="res://Art/Area3/BG_Concret.png" id="3_j1xru"]
-[ext_resource type="Texture2D" uid="uid://1ydnakr8p6ac" path="res://Art/Area3/UI_StormyClouds.png" id="4_m0inj"]
-[ext_resource type="Texture2D" uid="uid://c008j6erbf4sd" path="res://Art/Area3/UI_Boat.png" id="5_mi7jj"]
-[ext_resource type="Texture2D" uid="uid://1mkcwafi3bqc" path="res://Art/Area3/UI_Foregroud_Crates.png" id="6_g5acr"]
+[ext_resource type="Texture2D" uid="uid://j2h0rm723ulg" path="res://Art/Area3/RectangleBlue.png" id="1_51wte"]
+[ext_resource type="Texture2D" uid="uid://c10ihvq65b06v" path="res://Art/Area3/Birds.png" id="2_67hpp"]
+[ext_resource type="Texture2D" uid="uid://cpmp10nkoidmr" path="res://Art/Area3/Concrete.png" id="3_j1xru"]
+[ext_resource type="Texture2D" uid="uid://1ydnakr8p6ac" path="res://Art/Area3/StormyClouds.png" id="4_m0inj"]
+[ext_resource type="Texture2D" uid="uid://c008j6erbf4sd" path="res://Art/Area3/BackgroundBoat.png" id="5_mi7jj"]
+[ext_resource type="Texture2D" uid="uid://1mkcwafi3bqc" path="res://Art/Area3/ForegroundCrates.png" id="6_g5acr"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 

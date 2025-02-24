@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="1_v4xq1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="7_sqj7y"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/BackgroundWarehouse.tscn" id="8_sj8f4"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/canvas_modulate.tscn" id="9_tvqyk"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="9_tvqyk"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://Scenes/Objects/void_out_area.tscn" id="10_eo61p"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="10_qfp0h"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="11_f3xvt"]

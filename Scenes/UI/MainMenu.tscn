@@ -1,14 +1,14 @@
 [gd_scene load_steps=20 format=3 uid="uid://csk0rv5ibfuuk"]
 
-[ext_resource type="Script" path="res://Scenes/UI/MainmenuLevelScene.gd" id="1_ay4ea"]
-[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="2_dyvjo"]
-[ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/MainMenu/BG_Box.png" id="2_sfv8s"]
-[ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/MainMenu/UI_Play_Button.png" id="3_327wy"]
-[ext_resource type="Texture2D" uid="uid://dwgxu1q1cbukc" path="res://Art/MainMenu/logo_thissidedown.png" id="3_khvvf"]
-[ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/MainMenu/UI_Options_Button.png" id="4_1vgje"]
-[ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/MainMenu/UI_Quit_Button.png" id="5_ptnpq"]
-[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/Area1/UI_BasicArrow.png" id="6_874je"]
-[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://Scenes/UI/settings_menu.tscn" id="7_1s0hk"]
+[ext_resource type="Script" path="res://Scenes/UI/MainMenu.gd" id="1_eci1h"]
+[ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/Menus/BG_Box.png" id="2_0m78c"]
+[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_6tew7"]
+[ext_resource type="Texture2D" uid="uid://dwgxu1q1cbukc" path="res://Art/Menus/Logo.png" id="4_qd3ux"]
+[ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Menus/UI_Play_Button.png" id="5_m312u"]
+[ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Menus/UI_Options_Button.png" id="6_wiy3j"]
+[ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Menus/UI_Quit_Button.png" id="7_n54g6"]
+[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/Area1/UI_BasicArrow.png" id="8_4fdky"]
+[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://Scenes/UI/settings_menu.tscn" id="9_ygyx6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2r47"]
 
@@ -33,14 +33,14 @@
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_ay4ea")
+script = ExtResource("1_eci1h")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.882353, 0.760784, 0.643137, 1)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_sfv8s")
+texture = ExtResource("2_0m78c")
 
 [node name="Backround" type="ColorRect" parent="."]
 visible = false
@@ -62,7 +62,7 @@ offset_bottom = 850.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
-theme_override_fonts/font = ExtResource("2_dyvjo")
+theme_override_fonts/font = ExtResource("3_6tew7")
 theme_override_font_sizes/font_size = 40
 text = "(A to confirm)"
 horizontal_alignment = 1
@@ -74,7 +74,7 @@ offset_top = 158.0
 offset_right = 2512.0
 offset_bottom = 1328.0
 scale = Vector2(0.48675, 0.48675)
-texture = ExtResource("3_khvvf")
+texture = ExtResource("4_qd3ux")
 
 [node name="Play Button" type="Button" parent="."]
 layout_mode = 0
@@ -96,7 +96,7 @@ offset_top = -171.0
 offset_right = 1931.0
 offset_bottom = 1877.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_327wy")
+texture = ExtResource("5_m312u")
 
 [node name="Options Button" type="Button" parent="."]
 layout_mode = 0
@@ -118,7 +118,7 @@ offset_top = -172.0
 offset_right = 1931.0
 offset_bottom = 1876.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_1vgje")
+texture = ExtResource("6_wiy3j")
 
 [node name="Quit Button" type="Button" parent="."]
 layout_mode = 2
@@ -140,7 +140,7 @@ offset_top = -172.0
 offset_right = 1928.0
 offset_bottom = 1876.0
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_ptnpq")
+texture = ExtResource("7_n54g6")
 
 [node name="Arrow" type="TextureRect" parent="."]
 layout_mode = 0
@@ -150,9 +150,9 @@ offset_right = 970.0
 offset_bottom = 1060.0
 rotation = -1.57079
 scale = Vector2(1.3316, 1.3316)
-texture = ExtResource("6_874je")
+texture = ExtResource("8_4fdky")
 
-[node name="SettingsMenu" parent="." instance=ExtResource("7_1s0hk")]
+[node name="SettingsMenu" parent="." instance=ExtResource("9_ygyx6")]
 visible = false
 layout_mode = 1
 offset_left = 0.0
@@ -174,7 +174,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("2_dyvjo")
+theme_override_fonts/font = ExtResource("3_6tew7")
 theme_override_font_sizes/font_size = 45
 text = "Play with a controller. Left trigger/bumper to jump, right trigger/bumper to grab, left stick to move, and right stick to control arm."
 horizontal_alignment = 1

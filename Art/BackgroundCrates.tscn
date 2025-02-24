@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dm4xs6vqflfc" path="res://Art/Area2/BG_sky.png" id="1_ubq6e"]
 [ext_resource type="Texture2D" uid="uid://oxym5k2adiep" path="res://Art/Area2/BG_Road.png" id="2_q6dxw"]
-[ext_resource type="Texture2D" uid="uid://byupcj80xghpt" path="res://Art/Area2/UI_Clouds.png" id="3_x6mhr"]
-[ext_resource type="Texture2D" uid="uid://cprxkqcmlhjlg" path="res://Art/Area2/UI_Background_Crates.png" id="4_26asc"]
+[ext_resource type="Texture2D" uid="uid://byupcj80xghpt" path="res://Art/Area2/Clouds.png" id="3_x6mhr"]
+[ext_resource type="Texture2D" uid="uid://cprxkqcmlhjlg" path="res://Art/Area2/BackgroundCrates.png" id="4_26asc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 

@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://1fc34qaiyikq"]
 
-[ext_resource type="Texture2D" uid="uid://bb18da5e2nowo" path="res://Art/Area4/BG_Ocean.png" id="1_mx878"]
-[ext_resource type="Texture2D" uid="uid://cg6he6r1ygn35" path="res://Art/Area4/UI_background_Kelp.png" id="2_mmx5e"]
-[ext_resource type="Texture2D" uid="uid://bcvf0lyvxmw7c" path="res://Art/Area4/BG_background.png" id="3_kyahy"]
-[ext_resource type="Texture2D" uid="uid://bpymagcrd87ga" path="res://Art/Area4/UI_Foreground_Boat.png" id="4_63om1"]
-[ext_resource type="Texture2D" uid="uid://0x18kxri6btf" path="res://Art/Area4/UI_Foreground_Kelp.png" id="5_id25e"]
-[ext_resource type="Texture2D" uid="uid://cdy4c4qwqve0d" path="res://Art/Area4/BG_foreground.png" id="6_qlq6n"]
+[ext_resource type="Texture2D" uid="uid://bb18da5e2nowo" path="res://Art/Area4/RectangleDarkBlue.png" id="1_mx878"]
+[ext_resource type="Texture2D" uid="uid://cg6he6r1ygn35" path="res://Art/Area4/Kelp.png" id="2_mmx5e"]
+[ext_resource type="Texture2D" uid="uid://bcvf0lyvxmw7c" path="res://Art/Area4/OceanFloor.png" id="3_kyahy"]
+[ext_resource type="Texture2D" uid="uid://bpymagcrd87ga" path="res://Art/Area4/SunkenCrates.png" id="4_63om1"]
+[ext_resource type="Texture2D" uid="uid://0x18kxri6btf" path="res://Art/Area4/ForegroundKelp.png" id="5_id25e"]
+[ext_resource type="Texture2D" uid="uid://cdy4c4qwqve0d" path="res://Art/Area4/ForegroundOcean.png" id="6_qlq6n"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
