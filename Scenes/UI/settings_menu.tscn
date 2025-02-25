@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://Fonts/Nunito/static/Nunito-Bold.ttf" id="4_grtet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vk4d"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.847059, 0.623529, 0.419608, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
