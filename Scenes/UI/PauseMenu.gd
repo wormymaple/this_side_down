@@ -13,6 +13,7 @@ var selected_space = 0
 @onready var QuitButton = $CenterContainer/VBoxContainer/QuitToMenu
 
 func _ready():
+	
 	hide()
 
 func _process(_delta):

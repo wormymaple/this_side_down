@@ -1,16 +1,25 @@
-[gd_scene load_steps=20 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=19 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" path="res://Scenes/UI/MainMenu.gd" id="1_eci1h"]
 [ext_resource type="Texture2D" uid="uid://dtgk1p2n8m7jt" path="res://Art/Menus/BG_Box.png" id="2_0m78c"]
 [ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_6tew7"]
-[ext_resource type="Texture2D" uid="uid://dwgxu1q1cbukc" path="res://Art/Menus/Logo.png" id="4_qd3ux"]
+[ext_resource type="Texture2D" uid="uid://c5thluaggwjij" path="res://Art/Menus/BetterTitle.png" id="4_4rgjt"]
+[ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://Scenes/UI/UITheme.tres" id="5_bpy87"]
 [ext_resource type="Texture2D" uid="uid://dgjxto3npkklb" path="res://Art/Menus/UI_Play_Button.png" id="5_m312u"]
 [ext_resource type="Texture2D" uid="uid://wtihl4racchr" path="res://Art/Menus/UI_Options_Button.png" id="6_wiy3j"]
 [ext_resource type="Texture2D" uid="uid://bf7hly0o6md5u" path="res://Art/Menus/UI_Quit_Button.png" id="7_n54g6"]
-[ext_resource type="Texture2D" uid="uid://cfwbaffpw33na" path="res://Art/Area1/UI_BasicArrow.png" id="8_4fdky"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://Scenes/UI/settings_menu.tscn" id="9_ygyx6"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2r47"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a47bt"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ke8d4"]
 
@@ -19,8 +28,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l52dd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5ykk"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1awg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ykre"]
 
@@ -42,123 +49,26 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_0m78c")
 
-[node name="Backround" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0.611765, 0.462745, 0.360784, 1)
-
-[node name="How to select" type="Label" parent="."]
-visible = false
+[node name="Logo" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -43.0
-offset_top = 764.0
-offset_right = 539.0
-offset_bottom = 850.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 342.0
+offset_top = 63.0
+offset_right = 1548.0
+offset_bottom = 668.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.635294, 0.635294, 0.635294, 1)
-theme_override_fonts/font = ExtResource("3_6tew7")
-theme_override_font_sizes/font_size = 40
-text = "(A to confirm)"
-horizontal_alignment = 1
-
-[node name="Logo" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 922.0
-offset_top = 158.0
-offset_right = 2512.0
-offset_bottom = 1328.0
-scale = Vector2(0.48675, 0.48675)
-texture = ExtResource("4_qd3ux")
-
-[node name="Play Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 270.0
-offset_top = 169.0
-offset_right = 660.0
-offset_bottom = 379.0
-theme_override_font_sizes/font_size = 75
-theme_override_styles/focus = SubResource("StyleBoxEmpty_r2r47")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ke8d4")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_cd8u6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_l52dd")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_j5ykk")
-
-[node name="UiPlayButton" type="TextureRect" parent="Play Button"]
-layout_mode = 0
-offset_left = -117.0
-offset_top = -171.0
-offset_right = 1931.0
-offset_bottom = 1877.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_m312u")
-
-[node name="Options Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 270.0
-offset_top = 417.0
-offset_right = 660.0
-offset_bottom = 627.0
-theme_override_font_sizes/font_size = 75
-theme_override_styles/focus = SubResource("StyleBoxEmpty_i1awg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_gujig")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mf7yw")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5ve26")
-
-[node name="UiOptionsButton" type="TextureRect" parent="Options Button"]
-layout_mode = 0
-offset_left = -117.0
-offset_top = -172.0
-offset_right = 1931.0
-offset_bottom = 1876.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_wiy3j")
-
-[node name="Quit Button" type="Button" parent="."]
-layout_mode = 2
-offset_left = 274.0
-offset_top = 665.0
-offset_right = 664.0
-offset_bottom = 875.0
-theme_override_font_sizes/font_size = 75
-theme_override_styles/focus = SubResource("StyleBoxEmpty_i1awg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_gujig")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mf7yw")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5ve26")
-
-[node name="UiQuitButton" type="TextureRect" parent="Quit Button"]
-layout_mode = 0
-offset_left = -120.0
-offset_top = -172.0
-offset_right = 1928.0
-offset_bottom = 1876.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_n54g6")
-
-[node name="Arrow" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 597.0
-offset_right = 970.0
-offset_bottom = 1060.0
-rotation = -1.57079
-scale = Vector2(1.3316, 1.3316)
-texture = ExtResource("8_4fdky")
+scale = Vector2(1.12492, 1.12492)
+texture = ExtResource("4_4rgjt")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="SettingsMenu" parent="." instance=ExtResource("9_ygyx6")]
 visible = false
-layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
 
 [node name="Controls" type="Label" parent="."]
 layout_mode = 1
@@ -171,15 +81,81 @@ offset_right = 1676.0
 offset_bottom = 1129.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("5_bpy87")
 theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_6tew7")
-theme_override_font_sizes/font_size = 45
-text = "Play with a controller. Left trigger/bumper to jump, right trigger/bumper to grab, left stick to move, and right stick to control arm."
+theme_override_font_sizes/font_size = 48
+text = "Requires a controller. Left trigger/bumper to jump, right trigger/bumper to grab, left stick to move, and right stick to control arm."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Options Button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Quit Button" to="." method="_on_quit_button_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 693.0
+offset_right = 1920.0
+offset_bottom = 875.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(327, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_a47bt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ke8d4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cd8u6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l52dd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j5ykk")
+
+[node name="UiPlayButton" type="TextureRect" parent="HBoxContainer/ButtonPlay"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = -140.0
+offset_right = 1950.0
+offset_bottom = 1908.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_m312u")
+
+[node name="ButtonOption" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(327, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_a47bt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gujig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mf7yw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ve26")
+
+[node name="UiOptionsButton" type="TextureRect" parent="HBoxContainer/ButtonOption"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = -141.0
+offset_right = 1950.0
+offset_bottom = 1907.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_wiy3j")
+
+[node name="ButtonQuit" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(327, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxFlat_a47bt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gujig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mf7yw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ve26")
+
+[node name="UiQuitButton" type="TextureRect" parent="HBoxContainer/ButtonQuit"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = -141.0
+offset_right = 1951.0
+offset_bottom = 1907.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_n54g6")
+
+[connection signal="pressed" from="HBoxContainer/ButtonPlay" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonOption" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonQuit" to="." method="_on_quit_button_pressed"]

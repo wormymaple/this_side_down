@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ln2ffi74l3eg"]
+
+[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://Fonts/Nunito/static/Nunito-Regular.ttf" id="1_egpol"]
+[ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://Scenes/UI/LevelSelectButton.tres" id="2_7twn1"]
+[ext_resource type="StyleBox" uid="uid://b7x078ag0jx8d" path="res://Scenes/UI/buttonStyleBox.tres" id="2_eihje"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54eja"]
+bg_color = Color(0.847059, 0.623529, 0.419608, 1)
+
+[resource]
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_egpol")
+Button/styles/focus = ExtResource("2_7twn1")
+Button/styles/hover = ExtResource("2_eihje")
+Button/styles/hover_pressed = ExtResource("2_eihje")
+Button/styles/normal = ExtResource("2_eihje")
+Button/styles/pressed = ExtResource("2_eihje")
+Label/colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 8
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_egpol")
+Panel/styles/panel = SubResource("StyleBoxFlat_54eja")
