@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://do8sybdffo7m2" path="res://Audio/box pickup.wav" id="6_dmfrs"]
 [ext_resource type="AudioStream" uid="uid://dfgxaw2fmj6j4" path="res://Audio/box drop (better).wav" id="7_jdbta"]
 [ext_resource type="AudioStream" uid="uid://d3b4l1mjyt4ig" path="res://Audio/jump3.wav" id="8_3mkwv"]
-[ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep(one).wav" id="9_7tj8n"]
+[ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep.wav" id="9_7tj8n"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://Scenes/UI/point_light_2d.tscn" id="10_1kx1r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]

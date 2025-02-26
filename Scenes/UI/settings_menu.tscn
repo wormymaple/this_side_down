@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://ca1xyci8y4mc5" path="res://Fonts/Nunito/static/Nunito-BoldItalic.ttf" id="2_2ksna"]
 [ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
 [ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://Fonts/Nunito/static/Nunito-Bold.ttf" id="4_grtet"]
-[ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://Scenes/UI/UITheme.tres" id="4_ra86d"]
+[ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://Resources/UITheme.tres" id="4_ra86d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vk4d"]
 bg_color = Color(0.847059, 0.623529, 0.419608, 1)
@@ -52,6 +52,9 @@ theme_override_constants/separation = 30
 
 [node name="Settings" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_ra86d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_2ksna")
 theme_override_font_sizes/font_size = 46
 text = "Settings"
@@ -169,6 +172,7 @@ text = " Higher"
 custom_minimum_size = Vector2(170, 80)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 6
 focus_neighbor_top = NodePath("../EffectsContainer/HBoxContainer3/EffectsVolSlider")
 theme = ExtResource("4_ra86d")
 theme_override_constants/outline_size = 6

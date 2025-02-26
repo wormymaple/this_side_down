@@ -1,29 +1,41 @@
 extends AudioStreamPlayer
 
-var intro1 = false
-var warehouse = false
-var intro2 = false
-var yard = false
-var outro1 = false
-
-# Who wrote this horrible code!
+var song_playing = "Box in socks" # I might want to make this use an enum
+var song_to_play_next = "Box in socks" # "Automatic label maker"
+var song_phase = "intro" # "loop", "outro"
 
 func _on_finished():
-	if intro1 == true:
-		stream = load("res://Audio/BoxInSocksLoop.wav")
-		play()
-		intro1 = false
-		warehouse = true
-	elif warehouse == true:
-		stream = load("res://Audio/BoxInSocksLoop.wav")
-		play()
+	
+	if song_phase == "intro": # The intro can go straight into the outro if the song needs to change
+		if song_playing == "Box in socks":
+			if song_to_play_next != "Box in socks":
+				stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+				song_playing = "Automatic label maker"
+			else:
+				stream = load("res://Audio/BoxInSocksLoop.wav")
+		else:
+			if song_to_play_next != "Automatic label maker":
+				stream = load("res://Audio/BoxInSocksIntro.wav")
+				song_playing = "Box in socks"
+			else:
+				stream = load("res://Audio/AutomaticLabelMakerLoop.mp3")
+	
+	elif song_phase == "loop":
+		if song_to_play_next == song_playing: # Then loop
+			pass # Will calling play on it without changing it start it again?
+			#play() 
+		else:
+			if song_playing == "Box in socks":
+				stream = load("res://Audio/BoxInSocksOutro.wav")
+			else:
+				stream = load("res://Audio/AutomaticLabelMakerOutro.mp3")
+			
+	else: # Outro
+		if song_to_play_next == "Box in socks":
+			stream = load("res://Audio/BoxInSocksIntro.wav")
+			song_playing = "Box in socks"
+		else:
+			stream = load("res://Audio/AutomaticLabelMakerIntro.mp3")
+			song_playing = "Automatic label maker"
 		
-	if intro2 == true:
-		stream = load("res://Audio/AutomaticLabelMakerLoop.mp3")
-		play()
-		intro2 = false
-		yard = true
-	elif yard == true:
-		stream = load("res://Audio/AutomaticLabelMakerLoop.mp3")
-		play()
-		
+	play()

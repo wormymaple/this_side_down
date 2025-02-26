@@ -1,6 +1,6 @@
 extends Control
 
-@export var lock_list: Array[Sprite2D] # Removed 6 temporarily
+@export var button_texture_list: Array[TextureRect] # Removed 6 temporarily
 @export var select_rect = TextureRect
 
 @export var select_rect_position: int = 0
@@ -9,16 +9,15 @@ extends Control
 func _ready():
 	FocusButton.grab_focus()
 	
-	for lock in lock_list:
-		if GlobalVariables.completed_levels.has(str(lock.name) as int):
-			#lock.queue_free()
-			#var parent_of_lock = lock.get_parent()
-			for child in lock.get_parent().get_children():
-				child.queue_free()
+	for i in range(GlobalVariables.farthest_unlocked_level - 1): # Because it starts counting at 1 and 1 is already unlocked
+		button_texture_list[i+2]
+		
+		for child in button_texture_list[i+2].get_children():
+			child.queue_free()
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/UI/MainmenuLevelScene.tscn")
-
+	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
+	
 func _start_level(level): # I am not sure why this is it's own function
 	get_tree().change_scene_to_file("res://Scenes/Levels/level_" + str(level) + ".tscn")
 	
@@ -26,7 +25,7 @@ func _start_level(level): # I am not sure why this is it's own function
 func _on_button_1_pressed():
 	ThemeSongLoop.intro1 = true
 	ThemeSongLoop.intro2 = false
-	ThemeSongLoop.stream = load("res://Audio/BoxInSocksntro.wav")
+	ThemeSongLoop.stream = load("res://Audio/BoxInSocksIntro.wav")
 	ThemeSongLoop.play()
 	_start_level(1)
 func _on_button_2_pressed():

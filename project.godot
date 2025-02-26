@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalEttings="*res://Scripts/global_settings.gd"
 GlobalVariables="*res://Scripts/global_variables.gd"
 ThemeSongLoop="*res://Audio/Theme_Song_Loop.tscn"
 
