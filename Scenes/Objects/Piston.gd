@@ -8,7 +8,8 @@ enum Themes {YELLOW, GREEN, BLUE, PURPLE}
 enum State {WAIT, PUSH, RETRACT}
 var mode: State# = State.WAIT
 
-@onready var head_texture = $PistonHead
+@onready var TextureHead = $PistonHead
+@onready var TextureBase = $PistonBase
 @onready var hitbox = $Deleter
 @onready var collider = $AnimatableBody2D
 
@@ -19,38 +20,36 @@ func _ready():
 	#set_process(true)
 	
 	if theme == Themes.YELLOW:
-		head_texture.texture = load("res://Art/First Level/UI_PistonTop.png")
-		$PistonBase.texture = load("res://Art/First Level/UI_PistonBase.png")
+		TextureHead.texture = load("res://Art/Area1/PistonTop.png")
+		TextureBase.texture = load("res://Art/Area1/PistonBase.png")
 	elif theme == Themes.BLUE:
-		head_texture.texture = load("res://Art/third level/UI_PistonTop.png")
-		$PistonBase.texture = load("res://Art/third level/UI_PistonBase.png")
+		TextureHead.texture = load("res://Art/Area2/PistonTop.png")
+		TextureBase.texture = load("res://Art/Area2/PistonBase.png")
 	elif theme == Themes.GREEN:
-		head_texture.texture = load("res://Art/second level/UI_PistonTop.png")
-		$PistonBase.texture = load("res://Art/second level/UI_PistonBase.png")
+		TextureHead.texture = load("res://Art/Area3/PistonTop.png")
+		TextureBase.texture = load("res://Art/Area3/PistonBase.png")
 	elif theme == Themes.PURPLE:
-		head_texture.texture = load("res://Art/Fourth Level/UI_PistonTop.png")
-		$PistonBase.texture = load("res://Art/Fourth Level/UI_PistonBase.png")
+		TextureHead.texture = load("res://Art/Area4/PistonTop.png")
+		TextureBase.texture = load("res://Art/Area4/PistonBase.png")
 
-#func _process_delta():
 func _process(_delta):
-	#print("Hello from process delta")
 	if mode == State.WAIT:
 		#print("Am waiting")
 		return
 	
 	elif mode == State.PUSH: # Stretches the piston
-		if head_texture.scale.y < .5:
-			head_texture.scale.y += 0.02
-			head_texture.position.y -= 3
+		if TextureHead.scale.y < .5:
+			TextureHead.scale.y += 0.02
+			TextureHead.position.y -= 3
 			hitbox.position.y -= 12
 			collider.position.y -= 12
 		else:
 			mode = State.RETRACT
 	
 	elif mode == State.RETRACT: # Retracts the piston
-		if head_texture.scale.y > 0.065: # 0.078
-			head_texture.scale.y -= 0.02
-			head_texture.position.y += 3
+		if TextureHead.scale.y > 0.065: # 0.078
+			TextureHead.scale.y -= 0.02
+			TextureHead.position.y += 3
 			hitbox.position.y += 12
 			collider.position.y += 12
 		else:

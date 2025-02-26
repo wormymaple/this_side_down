@@ -22,8 +22,6 @@ func _start_level(level): # I am not sure why this is it's own function
 	
 
 func _on_button_1_pressed():
-	ThemeSongLoop.stream = load("res://Audio/BoxInSocksIntro.wav")
-	ThemeSongLoop.play()
 	_start_level(1)
 func _on_button_2_pressed():
 	if GlobalVariables.farthest_unlocked_level >= 2:

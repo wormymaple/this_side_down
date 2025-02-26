@@ -8,21 +8,22 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s4lip"]
 
-[node name="ParallaxBackground" type="ParallaxBackground"]
+[node name="WarehouseBackground" type="ParallaxBackground"]
 layer = -1
+follow_viewport_enabled = true
 metadata/_edit_vertical_guides_ = [1924.0]
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_s4lip")
-motion_scale = Vector2(0.7, 0.95)
+motion_scale = Vector2(0, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Wayback"]
+[node name="Door" type="Sprite2D" parent="Wayback"]
 material = SubResource("CanvasItemMaterial_s4lip")
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_8rpev")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Wayback"]
+[node name="Ground" type="Sprite2D" parent="Wayback"]
 material = SubResource("CanvasItemMaterial_s4lip")
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
@@ -33,13 +34,13 @@ z_index = 1
 material = SubResource("CanvasItemMaterial_s4lip")
 motion_scale = Vector2(0.87, 0.99)
 
-[node name="Sprite2D" type="Sprite2D" parent="Midground"]
+[node name="Shelves" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_s4lip")
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_twvvl")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Midground"]
+[node name="Boxes" type="Sprite2D" parent="Midground"]
 modulate = Color(0.309804, 0.309804, 0.309804, 1)
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)

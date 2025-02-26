@@ -21,8 +21,7 @@ texture = ExtResource("1_mr8ae")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
 rotation = 0.181514
-color = Color(1, 0.419608, 0.168627, 1)
-energy = 0.77
+energy = 100.0
 range_layer_min = -10
 shadow_enabled = true
 height = 0.2

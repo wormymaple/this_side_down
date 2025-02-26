@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://c4h46cjlyo4qt"]
+[gd_scene load_steps=20 format=3 uid="uid://c4h46cjlyo4qt"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_8e67y"]
 [ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://Scenes/Objects/BoxTriangle.tscn" id="3_ifi5f"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="4_08m74"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="4_nd8ak"]
@@ -7,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/Platform.tscn" id="6_840l0"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="7_nujb5"]
 [ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://Art/BackgroundBoat.tscn" id="8_60fi5"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="9_p0iqp"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="9_p0iqp"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/Objects/ramp.tscn" id="9_pbvov"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="10_um1cw"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="11_lh4ec"]
@@ -22,7 +23,9 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0kylo"]
 light_mode = 1
 
-[node name="Level7" type="Node2D"]
+[node name="Level8" type="Node2D"]
+script = ExtResource("1_8e67y")
+Song = 1
 
 [node name="Floor" parent="." instance=ExtResource("4_08m74")]
 position = Vector2(-437, 1246)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://b648xp38c3ny7"]
+[gd_scene load_steps=14 format=3 uid="uid://b648xp38c3ny7"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_daa33"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="1_jrl6j"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/Objects/ramp.tscn" id="4_nh0bc"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/Box.tscn" id="6_3jehe"]
@@ -10,10 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="8_jmg2h"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="9_64wh3"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/BackgroundWarehouse.tscn" id="10_yrdje"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="11_xo40b"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="11_xo40b"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://Scenes/UI/LightBlocker.tscn" id="12_bxkdo"]
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_daa33")
 
 [node name="Floor" parent="." instance=ExtResource("1_jrl6j")]
 position = Vector2(961, 1113)
@@ -71,12 +73,12 @@ transform = Transform2D(0.9, 0, 0, 0.9, 2.08165e-12, 150)
 [node name="CanvasModulate" parent="." instance=ExtResource("11_xo40b")]
 
 [node name="Sprite2D2" parent="." instance=ExtResource("12_bxkdo")]
-position = Vector2(-136, -324)
-scale = Vector2(5.81934, 1.53125)
+position = Vector2(-136, -200)
+scale = Vector2(5.819, 1)
 
 [node name="Sprite2D3" parent="." instance=ExtResource("12_bxkdo")]
-position = Vector2(1845, -360)
-scale = Vector2(7.51904, 1.53125)
+position = Vector2(1845, -200)
+scale = Vector2(7.519, 1)
 
 [node name="Walls" type="Polygon2D" parent="."]
 z_index = 5

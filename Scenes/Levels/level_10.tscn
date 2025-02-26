@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bfume0p3k4a7x"]
+[gd_scene load_steps=17 format=3 uid="uid://bfume0p3k4a7x"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_sa26g"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="2_5g4cw"]
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="2_l85uj"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="6_db016"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="6_db016"]
 [ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="6_qfg1o"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="7_tms1o"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="7_twdvf"]
@@ -26,7 +27,9 @@ _data = {
 }
 point_count = 2
 
-[node name="level_9" type="Node2D"]
+[node name="Level10" type="Node2D"]
+script = ExtResource("1_sa26g")
+Song = 1
 
 [node name="Box" parent="." instance=ExtResource("15_cawam")]
 position = Vector2(1686, -28)
@@ -47,6 +50,7 @@ color = Color(1, 0.941176, 0.917647, 1)
 [node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_qfg1o")]
 position = Vector2(6, 937)
 theme = 3
+time_interval = 5
 landing_zone = NodePath("../LandingZone")
 
 [node name="Spring" parent="." instance=ExtResource("16_ot8xr")]

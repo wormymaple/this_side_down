@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://oj2x50mstjua"]
 
-[ext_resource type="Texture2D" uid="uid://c0q8ka0n63tgy" path="res://Art/MiscSprites/icon.svg" id="1_2g033"]
+[ext_resource type="Texture2D" uid="uid://cj30gnj85qxvu" path="res://icon.svg" id="1_2g033"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vislo"]
-polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, 1.38053, -64, -59.6, -59, -63.9, 59, -64)
+polygon = PackedVector2Array(64, 64.3469, -64, 64.3469, -64, -59.6, -64, -63.6531, 64, -63.6531)
 
 [node name="Sprite2D2" type="Sprite2D"]
-scale = Vector2(1.72656, 1.53125)
 texture = ExtResource("1_2g033")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]

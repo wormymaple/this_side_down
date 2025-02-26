@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://r0yq03eqwlcd"]
+[gd_scene load_steps=12 format=3 uid="uid://r0yq03eqwlcd"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="1_dhfbf"]
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_ndoax"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="2_dmm6o"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="2_i1512"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/Objects/ramp.tscn" id="3_jyb7d"]
@@ -8,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="8_6vpom"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/BackgroundWarehouse.tscn" id="9_5ant1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="9_e6i4h"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="10_i46cw"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="10_i46cw"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/Box.tscn" id="12_jkmtc"]
 
 [node name="Level3" type="Node2D"]
+script = ExtResource("1_ndoax")
 
 [node name="Camera" parent="." instance=ExtResource("2_i1512")]
 position = Vector2(-175, 1113)

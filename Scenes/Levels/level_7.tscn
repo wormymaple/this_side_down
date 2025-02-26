@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5f8uid778i23"]
+[gd_scene load_steps=15 format=3 uid="uid://b5f8uid778i23"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="1_tg4xy"]
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_ywfd7"]
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/BackgroundCrates.tscn" id="6_p2mlh"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="7_1qngq"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="7_1qngq"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/Box.tscn" id="7_oyu26"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="8_2yscn"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="8_v6gpo"]
@@ -14,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="15_kdqcl"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="16_xyxst"]
 
-[node name="Level5" type="Node2D"]
+[node name="Level7" type="Node2D"]
+script = ExtResource("1_ywfd7")
 
 [node name="Floor" parent="." instance=ExtResource("1_tg4xy")]
 position = Vector2(1056, 1181.87)

@@ -19,28 +19,9 @@ func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		visible = !visible
 	
-	#if SettingsMenu.visible: # Prevents selecting while the settings are up
-		#return
-	#if Input.is_action_just_pressed("left_up_p1") and visible:
-		##print("You pressed up")
-		#move_arrow(-1)
-	#if Input.is_action_just_pressed("left_down_p1") and visible:
-		#move_arrow(1)
-	#
-	#if Input.is_action_just_pressed("confirm") and visible:
-		#call(button_functions[selected_space])
-		
-	if Input.is_action_just_pressed("cancel") and visible:
+	if Input.is_action_just_pressed("ui_cancel") and visible:
 		hide()
 
-#func move_arrow(dir: int):
-	#selected_space += dir
-	#if selected_space > 3:
-		#selected_space = 0
-	#elif selected_space < 0:
-		#selected_space = 3
-	#
-	#Highlighter.position.y = positions[selected_space]
 
 func _on_resume_button_pressed():
 	hide()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dv6cw04ulkig0"]
+[gd_scene load_steps=19 format=3 uid="uid://dv6cw04ulkig0"]
 
 [ext_resource type="PackedScene" uid="uid://d776xgt8nd8i" path="res://Scenes/Objects/floor.tscn" id="1_6qh6a"]
+[ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_f4rfb"]
 [ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/Objects/BoxCircle.tscn" id="2_qevbq"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://Scenes/Objects/Platform.tscn" id="4_53dvt"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/UniqueCanvasModulate.tscn" id="5_4hvyx"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="5_4hvyx"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="5_a1m2x"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="5_o3tqu"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="6_8j7ak"]
@@ -28,7 +29,9 @@ _data = {
 }
 point_count = 2
 
-[node name="level_10" type="Node2D"]
+[node name="Level11" type="Node2D"]
+script = ExtResource("1_f4rfb")
+Song = 1
 
 [node name="CircleBox" parent="." instance=ExtResource("2_qevbq")]
 position = Vector2(-368, 663)
@@ -122,12 +125,14 @@ theme = 2
 position = Vector2(330, 321)
 rotation = 1.57455
 theme = 1
+time_interval = 5
 landing_zone = NodePath("../LandingZone")
 
 [node name="Piston2" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("10_s532q")]
 position = Vector2(742, 755)
 rotation = -1.52117
 theme = 3
+time_interval = 5
 landing_zone = NodePath("../LandingZone")
 
 [node name="Floor" parent="." instance=ExtResource("1_6qh6a")]
