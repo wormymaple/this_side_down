@@ -4,6 +4,9 @@ var song_playing = "Box in socks" # I might want to make this use an enum
 var song_to_play_next = "Box in socks" # "Automatic label maker"
 var song_phase = "intro" # "loop", "outro"
 
+func _ready():
+	play()
+
 func _on_finished():
 	
 	if song_phase == "intro": # The intro can go straight into the outro if the song needs to change

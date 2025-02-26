@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_uutcg"]
 [ext_resource type="Texture2D" uid="uid://dgj32h8kkmi8a" path="res://Art/Menus/UI_Back_Button.png" id="4_t206h"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://Resources/UITheme.tres" id="5_djahh"]
-[ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://Resources/LevelSelectButton.tres" id="6_u67c6"]
+[ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://Resources/ButtonFocus.tres" id="6_u67c6"]
 [ext_resource type="Texture2D" uid="uid://cnb0v6ukb3edh" path="res://Art/Menus/UI_1Button.png" id="6_wptct"]
 [ext_resource type="Texture2D" uid="uid://b3situl82j18i" path="res://Art/Menus/UI_2Button.png" id="7_4c16x"]
 [ext_resource type="Texture2D" uid="uid://b5shsgq7ltach" path="res://Art/Menus/LockIcon.png" id="8_cj47e"]
@@ -63,8 +63,8 @@ horizontal_alignment = 1
 layout_mode = 0
 offset_left = 175.0
 offset_top = 55.0
-offset_right = 565.0
-offset_bottom = 265.0
+offset_right = 568.0
+offset_bottom = 269.0
 theme = ExtResource("5_djahh")
 
 [node name="Texture" type="TextureRect" parent="ButtonBack"]

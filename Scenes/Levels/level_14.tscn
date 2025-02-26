@@ -43,6 +43,7 @@ position = Vector2(2337, 914)
 scale = Vector2(0.220133, 2.17861)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_0nqo2")]
+layer = 0
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource("7_qnl8e")]
 

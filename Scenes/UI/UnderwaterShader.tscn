@@ -22,7 +22,7 @@ shader_parameter/timeMultiplier = 0.07
 shader_parameter/noise0 = SubResource("NoiseTexture2D_hysw7")
 shader_parameter/noise1 = SubResource("NoiseTexture2D_friad")
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="WaterCanvasLayer" type="CanvasLayer"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_5prjj")

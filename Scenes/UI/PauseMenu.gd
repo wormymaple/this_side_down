@@ -5,15 +5,14 @@ const positions = [402, 525, 648, 771]
 var selected_space = 0
 
 @onready var SettingsMenu = $SettingsMenu
-@onready var Highlighter = $Highlighter
 
-@onready var ResumeButton = $CenterContainer/VBoxContainer/ResumeButton
+@onready var FocusButton = $CenterContainer/VBoxContainer/ResumeButton
 @onready var RestartButton = $CenterContainer/VBoxContainer/RestartLevel
 @onready var SettingsButton = $CenterContainer/VBoxContainer/Settings
 @onready var QuitButton = $CenterContainer/VBoxContainer/QuitToMenu
 
 func _ready():
-	
+	#$CenterContainer/VBoxContainer/ResumeButton.grab_focus()
 	hide()
 
 func _process(_delta):
@@ -51,7 +50,7 @@ func _on_settings_pressed():
 	SettingsMenu.show()
 func _on_quit_to_menu_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/UI/MainmenuLevelScene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
 
 func _on_visibility_changed():
 	if visible:

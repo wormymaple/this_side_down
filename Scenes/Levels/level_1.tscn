@@ -59,10 +59,12 @@ position = Vector2(-289, -1351)
 [node name="LightBlock" parent="." instance=ExtResource("13_knull")]
 position = Vector2(-1161, -1360)
 scale = Vector2(25.5126, 1.53125)
+texture = null
 
 [node name="LightBlock1" parent="." instance=ExtResource("13_knull")]
 position = Vector2(2105, -1458)
 scale = Vector2(14.7897, 3.92412)
+texture = null
 
 [node name="Box" parent="." instance=ExtResource("10_mhr4p")]
 position = Vector2(887, 828)

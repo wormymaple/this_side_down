@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://ln2ffi74l3eg"]
 
 [ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://Fonts/Nunito/static/Nunito-Regular.ttf" id="1_egpol"]
-[ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://Resources/LevelSelectButton.tres" id="2_7twn1"]
+[ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://Resources/ButtonFocus.tres" id="2_7twn1"]
 [ext_resource type="StyleBox" uid="uid://b7x078ag0jx8d" path="res://Resources/buttonStyleBox.tres" id="2_eihje"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54eja"]
