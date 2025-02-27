@@ -1,17 +1,14 @@
 extends Control
 
-@export var button_texture_list: Array[TextureRect] # Removed 6 temporarily
-@export var select_rect = TextureRect
-
-@export var select_rect_position: int = 0
+@export var button_texture_list: Array[TextureRect]
 @export var FocusButton: Button
 
 func _ready():
 	FocusButton.grab_focus()
 	
-	for i in range(GlobalVariables.farthest_unlocked_level - 1): # Because it starts counting at 1 and 1 is already unlocked
-		
-		for child in button_texture_list[i+2].get_children():
+	for i in range(1, GlobalVariables.farthest_unlocked_level): # Starts at 1 since 1 is always unlocked. Never ever reaching 12 is fine because there are only 11 textures 
+		print(i)
+		for child in button_texture_list[i].get_children(): 
 			child.queue_free()
 
 func _on_back_button_pressed():

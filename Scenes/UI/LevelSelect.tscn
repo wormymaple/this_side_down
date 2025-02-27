@@ -23,7 +23,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or8un"]
 bg_color = Color(0, 0, 0, 0.541176)
 
-[node name="LevelSelect" type="Control" node_paths=PackedStringArray("FocusButton")]
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("button_texture_list", "FocusButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hmbbl")
+button_texture_list = [NodePath("GridContainer/Button1/Texture"), NodePath("GridContainer/Button2/Texture2"), NodePath("GridContainer/Button3/Texture3"), NodePath("GridContainer/Button4/Texture4"), NodePath("GridContainer/Button5/Texture5"), NodePath("GridContainer/Button6/Texture6"), NodePath("GridContainer/Button7/Texture7"), NodePath("GridContainer/Button8/Texture8"), NodePath("GridContainer/Button9/Texture9"), NodePath("GridContainer/Button10/Texture10"), NodePath("GridContainer/Button11/Texture11"), NodePath("GridContainer/Button12/Texture12")]
 FocusButton = NodePath("GridContainer/Button1")
 
 [node name="Background" type="TextureRect" parent="."]
