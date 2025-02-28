@@ -1,69 +1,163 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq13ti4fn0mxl"]
+[gd_scene load_steps=12 format=3 uid="uid://bq13ti4fn0mxl"]
 
 [ext_resource type="Texture2D" uid="uid://j2h0rm723ulg" path="res://Art/Area3/RectangleBlue.png" id="1_51wte"]
+[ext_resource type="Script" path="res://Art/background_boat.gd" id="1_pkpy6"]
 [ext_resource type="Texture2D" uid="uid://c10ihvq65b06v" path="res://Art/Area3/Birds.png" id="2_67hpp"]
 [ext_resource type="Texture2D" uid="uid://cpmp10nkoidmr" path="res://Art/Area3/Concrete.png" id="3_j1xru"]
 [ext_resource type="Texture2D" uid="uid://1ydnakr8p6ac" path="res://Art/Area3/StormyClouds.png" id="4_m0inj"]
+[ext_resource type="Texture2D" uid="uid://bdo8s47jb14a2" path="res://Art/MiscSprites/StandardParticle.png" id="4_yjr6x"]
 [ext_resource type="Texture2D" uid="uid://c008j6erbf4sd" path="res://Art/Area3/BackgroundBoat.png" id="5_mi7jj"]
-[ext_resource type="Texture2D" uid="uid://1mkcwafi3bqc" path="res://Art/Area3/ForegroundCrates.png" id="6_g5acr"]
+[ext_resource type="Texture2D" uid="uid://cprxkqcmlhjlg" path="res://Art/Area2/BackgroundCrates.png" id="7_lnsdr"]
+[ext_resource type="Texture2D" uid="uid://dtwxwy188ur7k" path="res://Art/Area3/BackgroundCrates.png" id="8_41mej"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
-[node name="ParallaxBackground" type="ParallaxBackground"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xk1jj"]
+
+[node name="BoatBackground" type="ParallaxBackground"]
+script = ExtResource("1_pkpy6")
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.7, 0.5)
+motion_scale = Vector2(0, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Wayback"]
-position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
+[node name="Birds" type="Sprite2D" parent="Wayback"]
+modulate = Color(0.376471, 0.376471, 0.376471, 1)
+z_index = 1
+position = Vector2(987, 662)
+scale = Vector2(2.2139, 2.2139)
+texture = ExtResource("2_67hpp")
+
+[node name="Sky" type="Sprite2D" parent="Wayback"]
+position = Vector2(1136, 526.5)
+scale = Vector2(2.25938, 1.475)
 texture = ExtResource("1_51wte")
+
+[node name="Clouds" type="Sprite2D" parent="Wayback"]
+visible = false
+modulate = Color(0.376471, 0.376471, 0.376471, 1)
+z_index = 1
+position = Vector2(1107, 927)
+scale = Vector2(2.23852, 2.23852)
+texture = ExtResource("4_m0inj")
+
+[node name="ColorExtension" type="Sprite2D" parent="Wayback"]
+visible = false
+modulate = Color(0.282353, 0.329412, 0.486275, 1)
+position = Vector2(1119.75, 137.75)
+scale = Vector2(437.05, 81.65)
+texture = ExtResource("4_yjr6x")
 
 [node name="Midground" type="ParallaxLayer" parent="."]
 z_index = 1
 material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.87, 0.8)
+motion_scale = Vector2(0.87, 0)
 
-[node name="Sprite2D6" type="Sprite2D" parent="Midground"]
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("3_j1xru")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Midground"]
-modulate = Color(0.376471, 0.376471, 0.376471, 1)
-position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("4_m0inj")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Midground"]
+[node name="Boat" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_mi7jj")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Midground"]
-modulate = Color(0.627451, 0.627451, 0.627451, 1)
+[node name="Ground" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(960, 540)
+position = Vector2(2359, 540)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("6_g5acr")
-offset = Vector2(2.08165e-12, -10)
+texture = ExtResource("3_j1xru")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Midground"]
-modulate = Color(0.376471, 0.376471, 0.376471, 1)
-position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_67hpp")
-
-[node name="Foreground" type="ParallaxLayer" parent="."]
-z_index = 1
+[node name="Ground2" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.9, 0.82)
-
-[node name="Sprite2D" type="Sprite2D" parent="Foreground"]
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(960, 540)
+position = Vector2(-500, 536)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("6_g5acr")
+texture = ExtResource("3_j1xru")
+
+[node name="Crates3Background" type="ParallaxLayer" parent="."]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+z_index = 2
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(883, 893)
+scale = Vector2(-1, -1)
+motion_scale = Vector2(0.45, 0.05)
+
+[node name="Crates" type="Sprite2D" parent="Crates3Background"]
+z_index = 2
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(-88, 567)
+texture = ExtResource("7_lnsdr")
+
+[node name="Crates3" type="ParallaxLayer" parent="."]
+z_index = 2
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(883, 893)
+scale = Vector2(-1, -1)
+motion_scale = Vector2(0.45, 0.05)
+
+[node name="Crates" type="Sprite2D" parent="Crates3"]
+z_index = 2
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(-88, 567)
+texture = ExtResource("7_lnsdr")
+
+[node name="Crates2Background" type="ParallaxLayer" parent="."]
+z_index = 2
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(1058, 77)
+motion_scale = Vector2(0.5, 0.2)
+
+[node name="Crates" type="Sprite2D" parent="Crates2Background"]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+z_index = 2
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(-88, 567)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_lnsdr")
+
+[node name="Crates2" type="ParallaxLayer" parent="."]
+z_index = 2
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(1073, -34)
+scale = Vector2(1.2, 1.2)
+motion_scale = Vector2(0.5, 0.2)
+
+[node name="Crates" type="Sprite2D" parent="Crates2"]
+z_index = 2
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(-88, 567)
+texture = ExtResource("7_lnsdr")
+
+[node name="Crates1Behind" type="ParallaxLayer" parent="."]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+z_index = 3
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(582, 63)
+motion_scale = Vector2(0.813, 0.4)
+
+[node name="Crates" type="Sprite2D" parent="Crates1Behind"]
+z_index = 3
+position = Vector2(254, 944)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_41mej")
+
+[node name="Crates3" type="Sprite2D" parent="Crates1Behind"]
+z_index = 3
+position = Vector2(519, 943)
+scale = Vector2(-1.3, 1.3)
+texture = ExtResource("8_41mej")
+
+[node name="Crates1" type="ParallaxLayer" parent="."]
+z_index = 3
+material = SubResource("CanvasItemMaterial_xk1jj")
+position = Vector2(910, -828)
+motion_scale = Vector2(0.8, 0.4)
+
+[node name="Crates" type="Sprite2D" parent="Crates1"]
+z_index = 3
+position = Vector2(-75, 1835)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_41mej")
+
+[node name="Crates3" type="Sprite2D" parent="Crates1"]
+z_index = 3
+position = Vector2(191, 1836)
+scale = Vector2(-1.3, 1.3)
+texture = ExtResource("8_41mej")

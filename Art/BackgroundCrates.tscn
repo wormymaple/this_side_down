@@ -212,6 +212,6 @@ texture = ExtResource("2_q6dxw")
 
 [node name="MoreRoad2" type="Sprite2D" parent="RoadButScrollsY"]
 modulate = Color(0.470588, 0.454902, 0.454902, 1)
-position = Vector2(1929, 916)
-scale = Vector2(387.2, 2.87501)
+position = Vector2(1929, 843.188)
+scale = Vector2(387.2, 17.4375)
 texture = ExtResource("2_1yy8e")
