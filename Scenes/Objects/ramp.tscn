@@ -8,7 +8,7 @@ script = ExtResource("1_vbkbe")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-46, 57)
-polygon = PackedVector2Array(-136, 10, 209, 10, 209, -132)
+polygon = PackedVector2Array(-125, 7, -120, 12, 209, 10, 213, -132)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)

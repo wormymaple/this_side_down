@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cj30gnj85qxvu" path="res://icon.svg" id="1_mr8ae"]
 
-[node name="DirectionalLight2D" type="DirectionalLight2D"]
+[node name="Light" type="DirectionalLight2D"]
 rotation = 0.139626
 skew = -0.555015
-color = Color(1, 0.419608, 0.168627, 1)
+color = Color(1, 0.415686, 0, 1)
 energy = 0.76
 range_z_max = 4
 range_layer_min = -100
@@ -17,11 +17,3 @@ height = 0.3
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
 texture = ExtResource("1_mr8ae")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
-rotation = 0.181514
-energy = 100.0
-range_layer_min = -10
-shadow_enabled = true
-height = 0.2

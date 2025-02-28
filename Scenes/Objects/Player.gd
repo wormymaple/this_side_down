@@ -15,7 +15,7 @@ var is_in_water: bool
 @export var wiggle_time: float
 var wiggle_current_time = 0.0
 @export var legs_path: NodePath
-@onready var legs = get_node(legs_path)
+@onready var legs = get_node(legs_path) # Why not just export the legs node?
 @export var head_path: NodePath
 @onready var head = get_node(head_path)
 @export var head_bob: float
@@ -60,7 +60,6 @@ func _ready():
 	hand.position = Vector2.UP * arm_length
 	arm.set_point_position(1, hand.position)
 	
-	add_to_group("Player")
 	original_grav_scale = gravity_scale
 
 func _physics_process(delta):

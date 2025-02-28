@@ -39,6 +39,11 @@ folder_colors={
 "res://Scripts/": "blue"
 }
 
+[global_group]
+
+Box=""
+Player=""
+
 [input]
 
 ui_accept={

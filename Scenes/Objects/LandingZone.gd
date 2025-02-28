@@ -17,6 +17,7 @@ func _process(_delta):
 				if body.get_meta("grabbed"): # Boxes that are being grabbed do not count
 					return
 				if abs(body.rotation_degrees) < 180 - 35: # Has to be the facing downwards
+					#print("box rotation is not right")
 					return
 		won_already = true
 		#print("You Win!")
@@ -25,11 +26,14 @@ func _process(_delta):
 		camera.fade_out(true)
 		
 
-func _on_body_entered(new_body):
-	if new_body.is_in_group("Box"):
-		print("New Box!")
-		colliding_bodies.append(new_body)
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Box"):
+		#print("New Box!")
+		colliding_bodies.append(body)
+	else:
+		print(body.name)
 
-func _on_body_exited(body):
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body in colliding_bodies:
 		colliding_bodies.remove_at(colliding_bodies.find(body))

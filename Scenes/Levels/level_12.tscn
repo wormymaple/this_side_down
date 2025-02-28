@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="5_ap2rn"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="5_f2ie4"]
 [ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://Scenes/Objects/piston.tscn" id="6_0nodb"]
-[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="6_p82q7"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/Light.tscn" id="6_p82q7"]
 [ext_resource type="PackedScene" uid="uid://ftopepwcjoag" path="res://Scenes/Objects/Plank.tscn" id="7_ukslq"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="8_2ie1f"]
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://Scenes/UI/UnderwaterShader.tscn" id="8_u77f3"]

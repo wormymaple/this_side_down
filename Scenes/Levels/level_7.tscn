@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="7_1qngq"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/Box.tscn" id="7_oyu26"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="8_2yscn"]
-[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="8_v6gpo"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/Light.tscn" id="8_v6gpo"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/Objects/ramp.tscn" id="9_vck8b"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="9_vr6y1"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="10_sb6ob"]

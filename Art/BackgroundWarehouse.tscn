@@ -9,7 +9,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s4lip"]
 
 [node name="WarehouseBackground" type="ParallaxBackground"]
-layer = -1
+layer = -3
 follow_viewport_enabled = true
 metadata/_edit_vertical_guides_ = [1924.0]
 

@@ -9,11 +9,11 @@ var current_state: State = State.DONE
 
 func _ready():
 	if theme == Themes.YELLOW:
-		sprite.texture = load("res://Art/First Level/UI_spring.png")
+		sprite.texture = load("res://Art/Area1/Spring.png")
 	elif theme == Themes.BLUE:
-		sprite.texture = load("res://Art/third level/UI_spring.png")
+		sprite.texture = load("res://Art/Area3/Spring.png")
 	elif theme == Themes.GREEN:
-		sprite.texture = load("res://Art/second level/UI_spring.png")
+		sprite.texture = load("res://Art/Unused/Spring2.png")
 
 func _process(_delta):
 	# This makes the spring stretch when something bounces on it

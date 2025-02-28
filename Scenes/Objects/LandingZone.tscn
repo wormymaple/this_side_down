@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7gc0sday64y6"]
+[gd_scene load_steps=11 format=3 uid="uid://c7gc0sday64y6"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/LandingZone.gd" id="1_wkjfu"]
 [ext_resource type="Texture2D" uid="uid://faj1vrwnl6ct" path="res://Art/Area1/LandingZone.png" id="2_jkmx4"]
@@ -31,6 +31,9 @@ color_ramp = SubResource("GradientTexture1D_h4tb3")
 hue_variation_min = -1.0
 hue_variation_max = 1.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8x63u"]
+size = Vector2(255, 20)
+
 [node name="LandingZone" type="RigidBody2D"]
 gravity_scale = 0.0
 lock_rotation = true
@@ -50,7 +53,7 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_jkmx4")
 
-[node name="Indicator" type="Sprite2D" parent="."]
+[node name="Hint" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.509804)
 z_index = -1
 position = Vector2(2.08165e-12, -123)
@@ -73,5 +76,14 @@ texture = ExtResource("5_jsrkl")
 trail_enabled = true
 trail_lifetime = 0.1
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -24)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_8x63u")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

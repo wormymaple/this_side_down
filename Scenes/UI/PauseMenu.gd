@@ -26,7 +26,9 @@ func _process(_delta):
 func _on_resume_button_pressed():
 	hide()
 func _on_restart_level_pressed():
+	get_tree().paused = false
 	get_tree().reload_current_scene()
+	
 func _on_settings_pressed():
 	SettingsMenu.show()
 func _on_quit_to_menu_pressed():

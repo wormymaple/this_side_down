@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="2_i1512"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/Objects/ramp.tscn" id="3_jyb7d"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="3_mv7h8"]
-[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/TheSun.tscn" id="8_6vpom"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/Light.tscn" id="8_6vpom"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/BackgroundWarehouse.tscn" id="9_5ant1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://Scenes/Objects/LandingZone.tscn" id="9_e6i4h"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="10_i46cw"]
@@ -27,7 +27,7 @@ player_scene = ExtResource("3_mv7h8")
 camera = NodePath("../Camera")
 
 [node name="Ramp" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(589, 1043)
+position = Vector2(589, 1046)
 scale = Vector2(1.12379, 1.12379)
 
 [node name="Ramp2" parent="." instance=ExtResource("3_jyb7d")]
@@ -38,7 +38,7 @@ scale = Vector2(-1.4, 1.4)
 position = Vector2(592, 567)
 scale = Vector2(1.13261, 1.13261)
 
-[node name="DirectionalLight2D" parent="." instance=ExtResource("8_6vpom")]
+[node name="Light" parent="." instance=ExtResource("8_6vpom")]
 position = Vector2(-487, -1294)
 
 [node name="Box" parent="." instance=ExtResource("12_jkmtc")]
@@ -46,7 +46,7 @@ position = Vector2(-22, 1100)
 size = 2.0
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_e6i4h")]
-position = Vector2(1530, 1105)
+position = Vector2(1530, 1108)
 camera = NodePath("../Camera")
 level = 3
 

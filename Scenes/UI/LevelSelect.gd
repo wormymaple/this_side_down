@@ -7,7 +7,7 @@ func _ready():
 	FocusButton.grab_focus()
 	
 	for i in range(1, GlobalVariables.farthest_unlocked_level): # Starts at 1 since 1 is always unlocked. Never ever reaching 12 is fine because there are only 11 textures 
-		print(i)
+		#print(i)
 		for child in button_texture_list[i].get_children(): 
 			child.queue_free()
 
