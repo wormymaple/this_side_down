@@ -54,11 +54,11 @@ camera = NodePath("../Camera")
 level = 5
 
 [node name="Spring" parent="." instance=ExtResource("11_ve53h")]
-position = Vector2(768, 847)
+position = Vector2(768, 837)
 Power = 900
 
 [node name="Spring2" parent="." instance=ExtResource("11_ve53h")]
-position = Vector2(1691, 843)
+position = Vector2(1691, 838)
 theme = 1
 Power = 950
 
