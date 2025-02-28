@@ -29,7 +29,7 @@ transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 position = Vector2(-2226.9, -1118.87)
 color = Color(0.141176, 0.231373, 0.352941, 1)
 
-[node name="DirectionalLight2D" parent="." instance=ExtResource("9_caiko")]
+[node name="Light" parent="." instance=ExtResource("9_caiko")]
 position = Vector2(-2146, -67)
 color = Color(0.807843, 0.552941, 0.482353, 1)
 energy = 1.41
