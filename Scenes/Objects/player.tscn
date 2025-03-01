@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://bgr4nq5o17pmh"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/Player.gd" id="1_5wbp8"]
-[ext_resource type="Texture2D" uid="uid://f0igwnei2hhr" path="res://Art/PlayerSprites/UI_Hand_Closed.png" id="2_4wubt"]
-[ext_resource type="Texture2D" uid="uid://q04cg6ithtg3" path="res://Art/PlayerSprites/UI_Hand_Open.png" id="3_nc5kx"]
-[ext_resource type="Texture2D" uid="uid://dmbg4cn3tb3fh" path="res://Art/PlayerSprites/player_head.png" id="4_8lqlt"]
-[ext_resource type="Texture2D" uid="uid://7ti1q5r62dru" path="res://Art/PlayerSprites/player_legs.png" id="5_g830a"]
-[ext_resource type="AudioStream" uid="uid://do8sybdffo7m2" path="res://Audio/box pickup.wav" id="6_dmfrs"]
-[ext_resource type="AudioStream" uid="uid://dfgxaw2fmj6j4" path="res://Audio/box drop (better).wav" id="7_jdbta"]
-[ext_resource type="AudioStream" uid="uid://d3b4l1mjyt4ig" path="res://Audio/jump3.wav" id="8_3mkwv"]
-[ext_resource type="AudioStream" uid="uid://jr53urrwh7fo" path="res://Audio/footstep.wav" id="9_7tj8n"]
+[ext_resource type="Texture2D" uid="uid://dkj2ltlmyqlii" path="res://Art/PlayerSprites/UI_Hand_Closed.png" id="2_4wubt"]
+[ext_resource type="Texture2D" uid="uid://cmpjj5lo2116y" path="res://Art/PlayerSprites/UI_Hand_Open.png" id="3_nc5kx"]
+[ext_resource type="Texture2D" uid="uid://c4ik7civndvb6" path="res://Art/PlayerSprites/player_head.png" id="4_8lqlt"]
+[ext_resource type="Texture2D" uid="uid://1palh4ajmj3" path="res://Art/PlayerSprites/player_legs.png" id="5_g830a"]
+[ext_resource type="AudioStream" uid="uid://bnb36mqraxmkg" path="res://Audio/box pickup.wav" id="6_dmfrs"]
+[ext_resource type="AudioStream" uid="uid://drvdd0g5lu211" path="res://Audio/box drop (better).wav" id="7_jdbta"]
+[ext_resource type="AudioStream" uid="uid://bkyjrghnif8y8" path="res://Audio/jump3.wav" id="8_3mkwv"]
+[ext_resource type="AudioStream" uid="uid://c6i1ybp18w08x" path="res://Audio/footstep.wav" id="9_7tj8n"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://Scenes/UI/point_light_2d.tscn" id="10_1kx1r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
@@ -37,19 +37,7 @@ continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_5wbp8")
-move_speed = 250.0
-jump_speed = 500.0
-water_jump_coefficient = 1.5
-ladder_climb_speed = 200.0
-arm_move_speed = 5.0
-grab_speed = 20.0
-arm_length = 150.0
-drop_threshold = 100.0
 wiggle_curve = SubResource("Curve_fcyqv")
-wiggle_intensity = 2.0
-wiggle_time = 0.5
-legs_path = NodePath("Legs")
-head_path = NodePath("Head")
 head_bob = 2.0
 jump_buffer = 40
 playerID = "p1"

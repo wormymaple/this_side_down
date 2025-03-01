@@ -1,30 +1,25 @@
 extends Camera2D
 
+@onready var NoController = $NoController
+@onready var fade = $CanvasLayer/Fade
+
 var players: Array
 
-@export var min_dist: float
-@export var min_scale: float
-@export var scale_rate: float
-@export var max_scale: float
+var min_dist = 250
+var min_scale = 1.5
+var scale_rate = -0.0001
+var max_scale = 0.8
 
-@export var no_controller_path: NodePath
-@onready var no_controller = get_node(no_controller_path)
-@export var background: Polygon2D # This isn't used
-
-@export var fade: ColorRect
-@export var fade_time: float
-@export var fade_delay: float
-@export var unfade_speed: float
+var fade_time = 1.0
+var fade_delay = 0.5
+var unfade_speed = 2.0
 var fade_time_real: float
 var fading = false
 var fadout = true
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	fade.modulate.a = 1
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if fading:
 		fade_time_real += delta
@@ -41,8 +36,8 @@ func _process(delta):
 			fadout = false
 	
 	if len(players) < 1: 
-		if !no_controller.visible:
-			no_controller.visible = true
+		if !NoController.visible:
+			NoController.visible = true
 		return 
 	
 	var pos = Vector2.ZERO;

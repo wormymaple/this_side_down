@@ -1,23 +1,22 @@
 extends RigidBody2D
 
-@export var move_speed: float
-@export var jump_speed: float
-@export var water_jump_coefficient: float
+const move_speed = 250
+const jump_speed = 500
+const water_jump_coefficient = 1.5
+const ladder_climb_speed = 200
+const arm_move_speed = 5
+const grab_speed = 20
+const arm_length = 150
+const drop_threshold = 100
+
 var is_in_water: bool
-@export var ladder_climb_speed: float
-@export var arm_move_speed: float
-@export var grab_speed: float
-@export var arm_length: float
-@export var drop_threshold: float
 
 @export var wiggle_curve: Curve
-@export var wiggle_intensity: float
-@export var wiggle_time: float
+var wiggle_intensity = 2
+var wiggle_time = .5
 var wiggle_current_time = 0.0
-@export var legs_path: NodePath
-@onready var legs = get_node(legs_path) # Why not just export the legs node?
-@export var head_path: NodePath
-@onready var head = get_node(head_path)
+@onready var legs = $Legs
+@onready var head = $Head
 @export var head_bob: float
 
 @export var jump_buffer: int
@@ -79,7 +78,7 @@ func _physics_process(delta):
 		if jump_buffer_frames <= 0:
 			on_ground = false
 	
-	var right_stick = Input.get_vector("right_left_" + playerID, "right_right_" + playerID, "right_up_" + playerID, "right_down_" + playerID)
+	var right_stick = Input.get_vector("RS_left_" + playerID, "RS_right_" + playerID, "RS_up_" + playerID, "RS_down_" + playerID)
 	if right_stick.length() != 0:
 		hand.position += (right_stick * arm_length - hand.position) * arm_move_speed * delta
 		#hand.position = hand.position.normalized() * arm_length <- FOR FIXED PENDULUM
@@ -128,7 +127,7 @@ func _physics_process(delta):
 	if get_meta("grabbed") == true or unmovable:
 		return
 	
-	var left_stick = Input.get_axis("left_left_" + playerID, "left_right_" + playerID)
+	var left_stick = Input.get_axis("LS_left_" + playerID, "LS_right_" + playerID)
 	if left_stick != 0:
 		linear_velocity.x = left_stick * move_speed
 		

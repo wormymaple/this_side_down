@@ -11,6 +11,7 @@ var won_already = false
 
 func _process(_delta):
 	# It would be best if this activated whenever the player let go of a box or a box touched the landing zone
+	
 	if !won_already and len(colliding_bodies) >= boxes_required: # Asks if there are enough boxes. This could be indented but activating at every new collision makes a less of a chance or not activating
 		for body in colliding_bodies:
 			if body.is_in_group("Box"): # Maybe I should give boxes and the landing zone its own collision layer

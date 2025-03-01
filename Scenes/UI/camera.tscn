@@ -3,20 +3,11 @@
 [ext_resource type="Script" path="res://Scenes/UI/CameraController.gd" id="1_ju03k"]
 [ext_resource type="PackedScene" uid="uid://de33bfmp2w6jc" path="res://Scenes/UI/pause_menu.tscn" id="3_kdmjn"]
 
-[node name="Camera" type="Camera2D" node_paths=PackedStringArray("fade")]
+[node name="Camera" type="Camera2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 script = ExtResource("1_ju03k")
-min_dist = 250.0
-min_scale = 1.5
-scale_rate = -0.001
-max_scale = 0.8
-no_controller_path = NodePath("NoController")
-fade = NodePath("CanvasLayer/Fade")
-fade_time = 1.0
-fade_delay = 0.5
-unfade_speed = 2.0
 
 [node name="NoController" type="RichTextLabel" parent="."]
 visible = false
