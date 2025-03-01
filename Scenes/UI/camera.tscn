@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/CameraController.gd" id="1_ju03k"]
 [ext_resource type="PackedScene" uid="uid://de33bfmp2w6jc" path="res://Scenes/UI/pause_menu.tscn" id="3_kdmjn"]
 
-[node name="Camera" type="Camera2D"]
+[node name="MultiCamera" type="Camera2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true

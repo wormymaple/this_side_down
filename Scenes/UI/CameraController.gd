@@ -1,5 +1,7 @@
 extends Camera2D
 
+## This scene could be combined with the PlayerSpawn script
+
 @onready var NoController = $NoController
 @onready var fade = $CanvasLayer/Fade
 

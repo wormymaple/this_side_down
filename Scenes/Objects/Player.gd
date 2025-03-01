@@ -4,7 +4,7 @@ extends RigidBody2D
 const move_speed = 50000
 const jump_speed = 500
 const water_jump_multiplier = 1.5
-const ladder_climb_speed = 200
+const ladder_climb_speed = 40000
 const arm_move_speed = 5
 const grab_speed = 20
 const arm_length = 150
@@ -65,7 +65,7 @@ func _physics_process(delta):
 			gravity_scale = 0.5 # Was 0
 			linear_velocity = Vector2.UP * ladder_climb_speed * delta
 		else: # This will eventually be replaced with up or down on the left stick
-			linear_velocity = Vector2.DOWN * 100 * delta
+			linear_velocity = Vector2.DOWN * -ladder_climb_speed * delta
 	elif gravity_scale == 0 or gravity_scale == 0.5:
 		gravity_scale = original_grav_scale ## This shouldn't need to be here. Does this account for if the player is being held?
 	
