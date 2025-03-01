@@ -1,160 +1,153 @@
 extends RigidBody2D
 
-const move_speed = 250
+# Movement constants
+const move_speed = 50000
 const jump_speed = 500
-const water_jump_coefficient = 1.5
+const water_jump_multiplier = 1.5
 const ladder_climb_speed = 200
 const arm_move_speed = 5
 const grab_speed = 20
 const arm_length = 150
 const drop_threshold = 100
 
+# States
 var is_in_water: bool
+var on_ground = false
+var grab_did_collide = false
+var unmovable = false # The player can't move, either because they are being grabbed or they hit a directional spring
+var standing_in_ladder = false
+var original_grav_scale = 1 # This is literally 1. Grav scale gets changed when being held or climbing ladders
 
-@export var wiggle_curve: Curve
+# Player detail
+@export var wiggle_curve: Curve # What is wiggle? The player jiggling while moving?
 var wiggle_intensity = 2
 var wiggle_time = .5
 var wiggle_current_time = 0.0
-@onready var legs = $Legs
-@onready var head = $Head
-@export var head_bob: float
-
-@export var jump_buffer: int
-var jump_buffer_frames: int
-var running_buffer: bool
-
-@export var playerID: String
-@export var hand_path: NodePath
-@export var arm_path: NodePath
-@export var hand_sprite: Sprite2D
-@onready var hand = get_node(hand_path)
-@onready var arm = get_node(arm_path)
-var target_body: Node2D
-var grabbed_body: Node2D
-var on_ground = false
-var grab_did_collide = false
-var unmovable = false
-var standing_in_ladder = false
-var original_grav_scale: float
-
+var head_bob = 2
 @export var holding_hand: Texture2D
 @export var empty_hand: Texture2D
-
-@export var box_pickup: AudioStreamPlayer
-@export var box_drop: AudioStreamPlayer
-@export var jump: AudioStreamPlayer
-@export var footsteps: AudioStreamPlayer
-
-@export var footstep_time: float
-var footstep_time_real: float
-
 @export var player_colors: Array[Color]
+const footstep_interval = 0.4 # This is the amount of time before footsteps can play again
+var time_since_last_footstep = 0.0
 
-var body_state: PhysicsDirectBodyState2D
+# Parts of the body that the script needs
+@onready var legs = $Legs
+@onready var head = $Head
+@onready var hand_sprite = $HandMeta/Hand
+@onready var hand_meta = $HandMeta
+@onready var arm = $Arm
+# Sound effects
+@onready var BoxPickup = $BoxPickup
+@onready var BoxDrop = $BoxDrop
+@onready var Jump = $Jump
+@onready var Footsteps = $Footstep
+
+var body_state: PhysicsDirectBodyState2D # I am not sure how this is used
+
+# Coyote time variables
+var jump_buffer_time = 0.0 # Current time left for jumping
+var running_buffer = false # This is whether or not the jump buffer is being used
+
+# These get set and used while playing
+var target_body: Node2D
+var grabbed_body: Node2D
+var playerID = "p1"
+var right_stick = Vector2.ZERO
 
 func _ready():
-	#if !ThemeSongLoop.playing:
-		#ThemeSongLoop.play()
+	hand_meta.position = Vector2.UP * arm_length # Why?
+	arm.set_point_position(1, hand_meta.position) # Why?
 	
-	hand.position = Vector2.UP * arm_length
-	arm.set_point_position(1, hand.position)
-	
-	original_grav_scale = gravity_scale
 
 func _physics_process(delta):
+	## First, do ladder physics
 	if standing_in_ladder: # Ladder physics
 		unmovable = false
-		if Input.is_action_pressed("left_trigger_" + playerID):
+		if Input.is_action_pressed("left_trigger_" + playerID): # The player will climb up
 			gravity_scale = 0.5 # Was 0
-			linear_velocity = Vector2.UP * ladder_climb_speed
-		else:
-			#linear_velocity = Vector2.ZERO
-			linear_velocity = Vector2.DOWN * 100
+			linear_velocity = Vector2.UP * ladder_climb_speed * delta
+		else: # This will eventually be replaced with up or down on the left stick
+			linear_velocity = Vector2.DOWN * 100 * delta
 	elif gravity_scale == 0 or gravity_scale == 0.5:
-		gravity_scale = original_grav_scale
+		gravity_scale = original_grav_scale ## This shouldn't need to be here. Does this account for if the player is being held?
 	
+	## Update the jump buffer
 	if running_buffer: # Jump buffer
-		jump_buffer_frames -= 1
-		if jump_buffer_frames <= 0:
+		jump_buffer_time -= delta
+		if jump_buffer_time <= 0:
 			on_ground = false
 	
-	var right_stick = Input.get_vector("RS_left_" + playerID, "RS_right_" + playerID, "RS_up_" + playerID, "RS_down_" + playerID)
+	## Move the player's arm
+	right_stick = Input.get_vector("RS_left_" + playerID, "RS_right_" + playerID, "RS_up_" + playerID, "RS_down_" + playerID)
 	if right_stick.length() != 0:
-		hand.position += (right_stick * arm_length - hand.position) * arm_move_speed * delta
-		#hand.position = hand.position.normalized() * arm_length <- FOR FIXED PENDULUM
+		hand_meta.position += (right_stick * arm_length - hand_meta.position) * arm_move_speed * delta
+		#hand_meta.position = hand_meta.position.normalized() * arm_length <- FOR FIXED PENDULUM
 	elif grabbed_body == null:
-		hand.position -= hand.position * arm_move_speed * delta
+		hand_meta.position -= hand_meta.position * arm_move_speed * delta
 		
-	arm.set_point_position(1, hand.position)
-	var dir_to_hand = hand.position.angle()
+	arm.set_point_position(1, hand_meta.position)
+	var dir_to_hand = hand_meta.position.angle()
 	hand_sprite.rotation = dir_to_hand + (PI / 2)
 	
-	var has_grabbed = grabbed_body != null
-	
 	var box_collides = get_collision_mask_value(4)
-	if target_body != null or has_grabbed:
+	if target_body != null or grabbed_body != null:
 		if box_collides:
 			set_collision_mask_value(4, false)
-	elif !box_collides:
+	elif !box_collides: # I am not sure what is happening here
 		set_collision_mask_value(4, true)
 	
-	
-	if has_grabbed:
-		
-		#if grabbed_body.is_in_group("Box"):
-			#print("Item grabbed is a box!")
-		
-		#if Input.is_action_pressed("rotate_right_p1"):
-		#	print("You are pressing rotate!")
+	## Rotate grabbed item (Provided it is a box)
+	if grabbed_body != null:
 		
 		# Addinng this code to test being able to rotate held item by button press
 		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_right_p1"):
-			grabbed_body.global_rotation += 0.01
+			grabbed_body.global_rotation += 0.01 * delta
 			#print("I am rotating!")
 		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_left_p1"):
-			grabbed_body.global_rotation -= 0.01
+			grabbed_body.global_rotation -= 0.01 * delta
 			#print("I am rotating!")
 			
 		
-		var dir = hand.global_position - grabbed_body.global_position
-		if dir.length() > drop_threshold:
+		var body_to_hand_dir = hand_meta.global_position - grabbed_body.global_position
+		if body_to_hand_dir.length() > drop_threshold:
 			drop_object()
 		else: 
-			grabbed_body.linear_velocity = dir * grab_speed
+			grabbed_body.linear_velocity = body_to_hand_dir * grab_speed
 	else:
 		hand_sprite.rotation += (PI / 7)
 	
 	if get_meta("grabbed") == true or unmovable:
 		return
 	
+	## Move left and right
 	var left_stick = Input.get_axis("LS_left_" + playerID, "LS_right_" + playerID)
 	if left_stick != 0:
-		linear_velocity.x = left_stick * move_speed
+		linear_velocity.x = left_stick * move_speed * delta
 		
-		if on_ground && !running_buffer: # Player anim.
+		if on_ground && !running_buffer: # So only if the player is on ground
 			wiggle_current_time += delta
 			if wiggle_current_time > wiggle_time:
-				wiggle_current_time -= wiggle_time
+				wiggle_current_time -= wiggle_time # So restart where the wiggling is
 			
 			var sample = wiggle_curve.sample(wiggle_current_time / wiggle_time)
 			legs.position = Vector2(sample * wiggle_intensity, legs.position.y)
 			head.position = Vector2(0, sin(wiggle_current_time / wiggle_time * PI) * head_bob)
 			
-			footstep_time_real += delta
-			if footstep_time_real > footstep_time:
-				footsteps.play()
-				footstep_time_real -= footstep_time
+			time_since_last_footstep += delta # Play footstep sound effect when supposed to
+			if time_since_last_footstep > footstep_interval:
+				Footsteps.play()
+				time_since_last_footstep -= footstep_interval
 			
 	elif on_ground:
 		linear_velocity.x = 0
-		
+
 func _input(event):
 	# jump
 	if event.is_action_pressed("left_trigger_" + playerID) && on_ground && !standing_in_ladder:
 		linear_velocity.y = -jump_speed
 		if is_in_water:
-			linear_velocity.y *= water_jump_coefficient
-		jump.play()
+			linear_velocity.y *= water_jump_multiplier
+		Jump.play()
 		
 	# grab
 	if event.is_action_pressed("right_trigger_" + playerID):
@@ -170,26 +163,25 @@ func _input(event):
 			grabbed_body.set_collision_mask_value(2, false)
 			hand_sprite.texture = holding_hand
 			
-			box_pickup.play()
+			BoxPickup.play()
 			
 	elif event.is_action_released("right_trigger_" + playerID) && grabbed_body != null:
 		drop_object()
 
 func set_color(player_index):
 	modulate = player_colors[player_index]
-		
+
 func _integrate_forces(state):
 	body_state = state
 
 func drop_object():
 	grabbed_body.gravity_scale = 1
 	grabbed_body.set_meta("grabbed", false)
-	grabbed_body.set_collision_mask_value(2, grab_did_collide)
-			
+	grabbed_body.set_collision_mask_value(2, grab_did_collide) # Also for players?
 	grabbed_body = null
-	hand_sprite.texture = empty_hand
 	
-	box_drop.play()
+	hand_sprite.texture = empty_hand
+	BoxDrop.play()
 
 func _on_grab_area_body_entered(body):
 	if body == self:
@@ -199,35 +191,27 @@ func _on_grab_area_body_entered(body):
 	if grabbable == true and body.get_meta("grabbed") != true:
 		target_body = body
 
-
 func _on_grab_area_body_exited(body):
 	if body == target_body:
 		target_body = null
 
-
-func _on_body_entered(body):
+func _on_body_entered(_body):
+	
 	var normal = body_state.get_contact_local_normal(0)
-	if body.is_in_group("Box"):
-		#if body.get_meta("grabbed") == true:
-			#drop_object()
-			pass
-		
-	if abs(normal.x) < 0.4 && normal.y < 0:
+	
+	if abs(normal.x) < 0.4 && normal.y < 0: # If the direction is mostly under the player then they are grounded!
 		on_ground = true
-		
-		jump_buffer_frames = jump_buffer
+		jump_buffer_time = 0.1 ## This is the jump buffer
 		running_buffer = false
-		
-		unmovable = false
+		unmovable = false # What if you are being grabbed?
 
-func _on_body_exited(_body):
+func _on_body_exited(_body): # Is this when the player leaves the ground?
 	running_buffer = true
-	
-func check_player_linkage(body):
-	if body.grabbed_body == null || !body.grabbed_body.is_in_group("Player"):
+
+func check_player_linkage(body): # This function is used for knowing if a player can grab another player?
+	if body.grabbed_body == null or not body.grabbed_body.is_in_group("Player"):
 		return false
-	
-	if body.grabbed_body == self:
+	elif body.grabbed_body == self:
 		return true
 	
 	return check_player_linkage(body.grabbed_body)
