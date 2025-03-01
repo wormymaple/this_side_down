@@ -15,9 +15,10 @@
 friction = 0.0
 
 [sub_resource type="Curve" id="Curve_fcyqv"]
-min_value = -1.0
-_data = [Vector2(0, 2.13163e-14), 0.0, 0.0, 0, 0, Vector2(0.238948, 1), 0.0, 0.0, 0, 0, Vector2(0.497415, -0.0211756), 0.0, 0.0, 0, 0, Vector2(0.766221, -1), 0.0, 0.0, 0, 0, Vector2(1, 2.13163e-14), 0.0, 0.0, 0, 0]
-point_count = 5
+min_value = -2.0
+max_value = 2.0
+_data = [Vector2(0, 2.13163e-14), 0.0, 13.0693, 0, 0, Vector2(0.250746, 2), 0.0, 0.0, 0, 0, Vector2(0.755224, -2), 0.0, 0.0, 0, 0, Vector2(1, 2.13163e-14), 12.2595, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rmwu"]
 radius = 29.14

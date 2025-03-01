@@ -20,10 +20,8 @@ var original_grav_scale = 1 # This is literally 1. Grav scale gets changed when 
 
 # Player detail
 @export var wiggle_curve: Curve # What is wiggle? The player jiggling while moving?
-var wiggle_intensity = 2
 var wiggle_time = .5
 var wiggle_current_time = 0.0
-var head_bob = 2
 @export var holding_hand: Texture2D
 @export var empty_hand: Texture2D
 @export var player_colors: Array[Color]
@@ -124,14 +122,14 @@ func _physics_process(delta):
 	if left_stick != 0:
 		linear_velocity.x = left_stick * move_speed * delta
 		
-		if on_ground && !running_buffer: # So only if the player is on ground
+		if on_ground and !running_buffer: # So only if the player is on ground
 			wiggle_current_time += delta
 			if wiggle_current_time > wiggle_time:
 				wiggle_current_time -= wiggle_time # So restart where the wiggling is
 			
-			var sample = wiggle_curve.sample(wiggle_current_time / wiggle_time)
-			legs.position = Vector2(sample * wiggle_intensity, legs.position.y)
-			head.position = Vector2(0, sin(wiggle_current_time / wiggle_time * PI) * head_bob)
+			var sample = wiggle_curve.sample(wiggle_current_time / wiggle_time) # Put in x, get y out
+			legs.position.x = sample
+			head.position.y = sample
 			
 			time_since_last_footstep += delta # Play footstep sound effect when supposed to
 			if time_since_last_footstep > footstep_interval:
