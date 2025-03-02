@@ -1,0 +1,120 @@
+[gd_scene load_steps=17 format=4 uid="uid://bfume0p3k4a7x"]
+
+[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_sa26g"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/LandingZone.tscn" id="2_5g4cw"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="6_db016"]
+[ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://scenes/objects/piston.tscn" id="6_qfg1o"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/user_interface/light.tscn" id="7_tms1o"]
+[ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="7_twdvf"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="8_afu2o"]
+[ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://scenes/user_interface/underwater_shader.tscn" id="9_mkvtq"]
+[ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://scenes/other/background_ocean.tscn" id="10_u7o0h"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/user_interface/group_camera.tscn" id="12_483kp"]
+[ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://scenes/objects/platform.tscn" id="12_n18kp"]
+[ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="14_3bci7"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="15_cawam"]
+[ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://scenes/objects/spring.tscn" id="16_ot8xr"]
+
+[sub_resource type="Curve2D" id="Curve2D_8saqi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 560.92, -21.7339, 0, 0, 0, 0, 568, -1)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_cg7ha"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1736, -99)
+}
+point_count = 2
+
+[node name="Level10" type="Node2D"]
+script = ExtResource("1_sa26g")
+Song = 1
+
+[node name="Box" parent="." instance=ExtResource("15_cawam")]
+position = Vector2(1686, -28)
+gravity_scale = 0.4
+linear_damp = 2.0
+theme = 1
+size = 3.0
+
+[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("2_5g4cw")]
+position = Vector2(2073, 1216)
+camera = NodePath("../Camera")
+level = 10
+
+[node name="DirectionalLight2D" parent="." instance=ExtResource("7_tms1o")]
+position = Vector2(-252, -1441)
+color = Color(1, 0.941176, 0.917647, 1)
+
+[node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_qfg1o")]
+position = Vector2(6, 937)
+theme = 3
+time_interval = 5
+landing_zone = NodePath("../LandingZone")
+
+[node name="Spring" parent="." instance=ExtResource("16_ot8xr")]
+position = Vector2(809, 1130)
+script = null
+
+[node name="Spring2" parent="." instance=ExtResource("16_ot8xr")]
+position = Vector2(239, 620)
+script = null
+
+[node name="CanvasLayer" parent="." instance=ExtResource("9_mkvtq")]
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource("10_u7o0h")]
+
+[node name="CanvasModulate" parent="ParallaxBackground2" instance=ExtResource("6_db016")]
+
+[node name="CanvasModulate" parent="." instance=ExtResource("6_db016")]
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(-321, 1124)
+script = ExtResource("7_twdvf")
+player_scene = ExtResource("8_afu2o")
+camera = NodePath("../Camera")
+damp = 2.0
+gravity_scale = 0.6
+is_in_water = true
+
+[node name="Camera" parent="." instance=ExtResource("12_483kp")]
+position = Vector2(-321, 1124)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Walls" type="Polygon2D" parent="."]
+z_index = 5
+position = Vector2(-191, 187)
+scale = Vector2(0.35991, 0.641233)
+color = Color(0.0627451, 0.141176, 0.168627, 1)
+invert_enabled = true
+invert_border = 2000.0
+polygon = PackedVector2Array(7154.57, -709.57, 7143.45, 1812.13, -811.314, 1782.5, -802.978, -704.892)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/StaticBody2D"]
+position = Vector2(1592.06, 134.117)
+polygon = PackedVector2Array(464.009, 1665.54, 455.674, 2053.85, 6276.57, 2092.84, 6296.06, -1053.58, -2970.19, -1122.84, -3020.19, 1849.56, 366.763, 1849.56, 363.984, 1520.51, -2395.04, 1506.47, -2406.15, -840.568, 5559.73, -846.806, 5554.17, 1679.58, 1592.06, 1654.62)
+
+[node name="Platform" parent="." instance=ExtResource("12_n18kp")]
+position = Vector2(589, 849)
+curve = SubResource("Curve2D_8saqi")
+theme = 3
+speed = 0.4
+
+[node name="Platform3" parent="." instance=ExtResource("12_n18kp")]
+position = Vector2(-222, 183)
+curve = SubResource("Curve2D_cg7ha")
+theme = 3
+speed = 0.5
+
+[node name="Platform2" parent="." instance=ExtResource("12_n18kp")]
+position = Vector2(300, 730)
+theme = 3
+path_behavior = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAAfABAAAAADAAIAAAAfAA8AAAADAAAAAAAeABAAAAACAAIAAAAeAA8AAAACAAAAAAAdABAAAAACAAIAAAAdAA8AAAACAAAAAAAcABAAAAACAAIAAAAcAA8AAAACAAAAAAAbABAAAAACAAIAAAAbAA8AAAACAAAAAAAaABAAAAACAAIAAAAaAA8AAAACAAAAAAAZABAAAAACAAIAAAAZAA8AAAACAAAAAAAYABAAAAACAAIAAAAYAA8AAAACAAAAAAAXABAAAAACAAIAAAAXAA8AAAACAAAAAAAWABAAAAACAAIAAAAWAA8AAAACAAAAAAAVABAAAAACAAIAAAAVAA8AAAAEAAEAAAAUABAAAAACAAIAAAAUAA8AAAAGAAEAAAATABAAAAACAAIAAAATAA8AAAACAAAAAAASABAAAAACAAIAAAASAA8AAAACAAAAAAARABAAAAACAAIAAAARAA8AAAACAAAAAAAQABAAAAACAAIAAAAQAA8AAAACAAAAAAAPABAAAAACAAIAAAAPAA8AAAACAAAAAAAOABAAAAACAAIAAAAOAA8AAAACAAAAAAANABAAAAACAAIAAAANAA8AAAACAAAAAAAMABAAAAACAAIAAAAMAA8AAAACAAAAAAALABAAAAACAAIAAAALAA8AAAACAAAAAAAKABAAAAACAAIAAAAKAA8AAAACAAAAAAAJABAAAAACAAIAAAAJAA8AAAACAAAAAAAIABAAAAACAAIAAAAIAA8AAAACAAAAAAAHABAAAAACAAIAAAAHAA8AAAACAAAAAAAGABAAAAACAAIAAAAGAA8AAAACAAAAAAAFABAAAAACAAIAAAAFAA8AAAACAAAAAAAEABAAAAACAAIAAAAEAA8AAAACAAAAAAADABAAAAACAAIAAAADAA8AAAACAAAAAAACABAAAAACAAIAAAACAA8AAAACAAAAAAABABAAAAACAAIAAAABAA8AAAACAAAAAAAAABAAAAACAAIAAAAAAA8AAAACAAAAAAD//xAAAAACAAIAAAD//w8AAAACAAAAAAD+/xAAAAACAAIAAAD+/w8AAAACAAAAAAD9/xAAAAACAAIAAAD9/w8AAAACAAAAAAD8/xAAAAACAAIAAAD8/w8AAAACAAAAAAD7/xAAAAACAAIAAAD7/w8AAAACAAAAAAD6/xAAAAABAAIAAAD6/w8AAAAGAAIAAAAVAA4AAAADAAEAAAAVAA0AAAADAAEAAAAVAAwAAAADAAEAAAAVAAsAAAADAAEAAAAVAAoAAAADAAEAAAAVAAkAAAADAAEAAAAVAAgAAAADAAEAAAAVAAcAAAADAAEAAAAVAAYAAAADAAEAAAAVAAUAAAADAAEAAAAVAAQAAAADAAEAAAAVAAMAAAADAAEAAAAVAAIAAAADAAEAAAAVAAEAAAADAAAAAAAUAA4AAAABAAEAAAAUAA0AAAABAAEAAAAUAAwAAAABAAEAAAAUAAsAAAABAAEAAAAUAAoAAAABAAEAAAAUAAkAAAABAAEAAAAUAAgAAAABAAEAAAAUAAcAAAABAAEAAAAUAAYAAAABAAEAAAAUAAUAAAABAAEAAAAUAAQAAAABAAEAAAAUAAMAAAABAAEAAAAUAAIAAAABAAEAAAAUAAEAAAABAAAAAAAVAP7/AAADAAIAAAAVAP3/AAADAAAAAAAUAP7/AAABAAIAAAAUAP3/AAABAAAAAAAAAAgAAAADAAEAAAAAAAcAAAADAAEAAAAAAAYAAAADAAEAAAAAAAUAAAADAAEAAAAAAAQAAAADAAEAAAAAAAMAAAADAAAAAAD//wgAAAAGAAMAAAD//wcAAAACAAEAAAD//wYAAAACAAEAAAD//wUAAAACAAEAAAD//wQAAAACAAEAAAD//wMAAAACAAAAAAD+/wgAAAACAAIAAAD+/wcAAAACAAEAAAD+/wYAAAACAAEAAAD+/wUAAAACAAEAAAD+/wQAAAACAAEAAAD+/wMAAAACAAAAAAD9/wgAAAACAAIAAAD9/wcAAAACAAEAAAD9/wYAAAACAAEAAAD9/wUAAAACAAEAAAD9/wQAAAACAAEAAAD9/wMAAAACAAAAAAD8/wgAAAACAAIAAAD8/wcAAAACAAEAAAD8/wYAAAACAAEAAAD8/wUAAAACAAEAAAD8/wQAAAACAAEAAAD8/wMAAAACAAAAAAD7/wgAAAACAAIAAAD7/wcAAAACAAEAAAD7/wYAAAACAAEAAAD7/wUAAAACAAEAAAD7/wQAAAACAAEAAAD7/wMAAAACAAAAAAD6/wgAAAACAAIAAAD6/wcAAAACAAEAAAD6/wYAAAACAAEAAAD6/wUAAAACAAEAAAD6/wQAAAACAAEAAAD6/wMAAAACAAAAAAD5/wgAAAAEAAMAAAD5/wcAAAACAAEAAAD5/wYAAAACAAEAAAD5/wUAAAACAAEAAAD5/wQAAAACAAEAAAD5/wMAAAAEAAEAAAAAAAoAAAADAAIAAAAAAAkAAAADAAEAAAD//woAAAABAAIAAAD//wkAAAABAAEAAAD5/w8AAAAEAAAAAAD5/w4AAAADAAEAAAD5/w0AAAADAAEAAAD5/wwAAAADAAEAAAD5/wsAAAADAAEAAAD5/woAAAADAAEAAAD5/wkAAAADAAEAAAD5/wIAAAADAAEAAAD5/wEAAAADAAEAAAD5/wAAAAADAAEAAAD5////AAADAAEAAAD5//7/AAADAAEAAAD5//3/AAADAAEAAAD5//z/AAADAAAAAAD4/w8AAAABAAIAAAD4/w4AAAABAAEAAAD4/w0AAAABAAEAAAD4/wwAAAABAAEAAAD4/wsAAAABAAEAAAD4/woAAAABAAEAAAD4/wkAAAABAAEAAAD4/wgAAAABAAEAAAD4/wcAAAABAAEAAAD4/wYAAAABAAEAAAD4/wUAAAABAAEAAAD4/wQAAAABAAEAAAD4/wMAAAABAAEAAAD4/wIAAAABAAEAAAD4/wEAAAABAAEAAAD4/wAAAAABAAEAAAD4////AAABAAEAAAD4//7/AAABAAEAAAD4//3/AAABAAEAAAD4//z/AAABAAAAAAA=")
+tile_set = ExtResource("14_3bci7")

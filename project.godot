@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="this_side_down"
-run/main_scene="res://Scenes/UI/MainMenu.tscn"
+run/main_scene="res://scenes/user_interface/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalVariables="*res://Scripts/global_variables.gd"
-ThemeSongLoop="*res://Audio/Theme_Song_Loop.tscn"
+GlobalVariables="*res://standalone_scripts/global_variables.gd"
+ThemeSongLoop="*res://scenes/other/music_handler.tscn"
 
 [display]
 
@@ -31,13 +31,12 @@ window/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 [file_customization]
 
 folder_colors={
-"res://Art/": "red",
-"res://Audio/": "yellow",
-"res://Fonts/": "pink",
-"res://GarageBand/": "orange",
-"res://Resources/": "purple",
-"res://Scenes/": "green",
-"res://Scripts/": "blue"
+"res://art/": "red",
+"res://audio/": "yellow",
+"res://fonts/": "pink",
+"res://resources/": "purple",
+"res://scenes/": "green",
+"res://standalone_scripts/": "blue"
 }
 
 [global_group]

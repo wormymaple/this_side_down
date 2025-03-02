@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo63sxhlcjmuj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eo1vl"]
+size = Vector2(1923, 454)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e0qqc"]
+load_path = "res://.godot/imported/BG_Ground.png-31f1ef7ed14b773ecab109619e18e415.ctex"
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3vuf4"]
+polygon = PackedVector2Array(960, 540, -960, 540, -960, 77, 362, 77, 362, 76, 960, 76)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eo1vl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(0, -314)
+texture = SubResource("CompressedTexture2D_e0qqc")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
+position = Vector2(3, -307)
+occluder = SubResource("OccluderPolygon2D_3vuf4")

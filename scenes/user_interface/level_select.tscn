@@ -1,0 +1,529 @@
+[gd_scene load_steps=24 format=3 uid="uid://bvpim07i7se1g"]
+
+[ext_resource type="Script" path="res://scenes/user_interface/level_select.gd" id="1_ykioh"]
+[ext_resource type="Texture2D" uid="uid://c365snjl8080e" path="res://art/menus/box_background.png" id="2_jass7"]
+[ext_resource type="FontFile" uid="uid://fx52s08yvsdd" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="3_34nss"]
+[ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="4_nb6hw"]
+[ext_resource type="Texture2D" uid="uid://1bpoocsofkxr" path="res://art/menus/button_back.png" id="5_gk6vl"]
+[ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://resources/button_focus.tres" id="6_irdil"]
+[ext_resource type="Texture2D" uid="uid://bilfp36ffdscw" path="res://art/menus/button_1.png" id="7_bekcr"]
+[ext_resource type="Texture2D" uid="uid://skqj43yv778h" path="res://art/menus/button_2.png" id="8_f2rhw"]
+[ext_resource type="Texture2D" uid="uid://popne0qvt8fn" path="res://art/menus/lock.png" id="9_fxaam"]
+[ext_resource type="Texture2D" uid="uid://463a72ceja75" path="res://art/menus/button_3.png" id="10_ocorl"]
+[ext_resource type="Texture2D" uid="uid://df6sa3teyx8bs" path="res://art/menus/button_4.png" id="11_6406e"]
+[ext_resource type="Texture2D" uid="uid://cyaw1phe40oep" path="res://art/menus/button_5.png" id="12_oql6w"]
+[ext_resource type="Texture2D" uid="uid://d3vvitp16uwf3" path="res://art/menus/button_6.png" id="13_c6s3q"]
+[ext_resource type="Texture2D" uid="uid://xp14tl8fu61j" path="res://art/menus/button_7.png" id="14_4vn40"]
+[ext_resource type="Texture2D" uid="uid://ukjda62x1sf4" path="res://art/menus/button_8.png" id="15_bmatn"]
+[ext_resource type="Texture2D" uid="uid://b7l3xhkv5aqrw" path="res://art/menus/button_9.png" id="16_d4mug"]
+[ext_resource type="Texture2D" uid="uid://c34l8tq70jmur" path="res://art/menus/button_10.png" id="17_80kqj"]
+[ext_resource type="Texture2D" uid="uid://bregvoxau6jrq" path="res://art/menus/button_11.png" id="18_ow7qo"]
+[ext_resource type="Texture2D" uid="uid://bmeqhb35qpac8" path="res://art/menus/button_12.png" id="19_m0ssy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7mc1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihvqa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlnq6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or8un"]
+bg_color = Color(0, 0, 0, 0.541176)
+
+[node name="LevelSelect" type="Control" node_paths=PackedStringArray("button_texture_list", "FocusButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykioh")
+button_texture_list = [NodePath("GridContainer/Button1/Texture"), NodePath("GridContainer/Button2/Texture2"), NodePath("GridContainer/Button3/Texture3"), NodePath("GridContainer/Button4/Texture4"), NodePath("GridContainer/Button5/Texture5"), NodePath("GridContainer/Button6/Texture6"), NodePath("GridContainer/Button7/Texture7"), NodePath("GridContainer/Button8/Texture8"), NodePath("GridContainer/Button9/Texture9"), NodePath("GridContainer/Button10/Texture10"), NodePath("GridContainer/Button11/Texture11"), NodePath("GridContainer/Button12/Texture12")]
+FocusButton = NodePath("GridContainer/Button1")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.760784, 0.643137, 1)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_jass7")
+
+[node name="SelectYourLevel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 842.0
+offset_top = 240.0
+offset_right = -396.0
+offset_bottom = -703.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.98736, 0.957039, 0.931485, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_34nss")
+theme_override_font_sizes/font_size = 80
+text = "Choose a level!"
+horizontal_alignment = 1
+
+[node name="ButtonBack" type="Button" parent="."]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 176.0
+offset_right = 698.0
+offset_bottom = 390.0
+theme = ExtResource("4_nb6hw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7mc1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mlnq6")
+
+[node name="Texture" type="TextureRect" parent="ButtonBack"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -171.0
+offset_right = 1931.0
+offset_bottom = 1877.0
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("4_nb6hw")
+texture = ExtResource("5_gk6vl")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 254.0
+offset_top = 442.0
+offset_right = 1954.0
+offset_bottom = 982.0
+scale = Vector2(0.824263, 0.824263)
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 6
+
+[node name="Button1" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "
+"
+
+[node name="Texture" type="TextureRect" parent="GridContainer/Button1"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("7_bekcr")
+
+[node name="Button2" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "2"
+
+[node name="Texture2" type="TextureRect" parent="GridContainer/Button2"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("8_f2rhw")
+
+[node name="Fade1" type="Panel" parent="GridContainer/Button2/Texture2"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button2/Texture2"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button3" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "3"
+
+[node name="Texture3" type="TextureRect" parent="GridContainer/Button3"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("10_ocorl")
+
+[node name="Fade2" type="Panel" parent="GridContainer/Button3/Texture3"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button3/Texture3"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button4" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "4"
+
+[node name="Texture4" type="TextureRect" parent="GridContainer/Button4"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("11_6406e")
+
+[node name="Fade3" type="Panel" parent="GridContainer/Button4/Texture4"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button4/Texture4"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button5" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "5"
+
+[node name="Texture5" type="TextureRect" parent="GridContainer/Button5"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("12_oql6w")
+
+[node name="Fade4" type="Panel" parent="GridContainer/Button5/Texture5"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button5/Texture5"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button6" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "6"
+
+[node name="Texture6" type="TextureRect" parent="GridContainer/Button6"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("13_c6s3q")
+
+[node name="Fade5" type="Panel" parent="GridContainer/Button6/Texture6"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button6/Texture6"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button7" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "7"
+
+[node name="Texture7" type="TextureRect" parent="GridContainer/Button7"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("14_4vn40")
+
+[node name="Fade6" type="Panel" parent="GridContainer/Button7/Texture7"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button7/Texture7"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button8" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "8
+"
+
+[node name="Texture8" type="TextureRect" parent="GridContainer/Button8"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("15_bmatn")
+
+[node name="Fade7" type="Panel" parent="GridContainer/Button8/Texture8"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button8/Texture8"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button9" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "9
+"
+
+[node name="Texture9" type="TextureRect" parent="GridContainer/Button9"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("16_d4mug")
+
+[node name="Fade8" type="Panel" parent="GridContainer/Button9/Texture9"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button9/Texture9"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button10" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "10"
+
+[node name="Texture10" type="TextureRect" parent="GridContainer/Button10"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("17_80kqj")
+
+[node name="Fade9" type="Panel" parent="GridContainer/Button10/Texture10"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button10/Texture10"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button11" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "11"
+
+[node name="Texture11" type="TextureRect" parent="GridContainer/Button11"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("18_ow7qo")
+
+[node name="Fade10" type="Panel" parent="GridContainer/Button11/Texture11"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button11/Texture11"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="Button12" type="Button" parent="GridContainer"]
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+theme = ExtResource("4_nb6hw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("6_irdil")
+text = "12"
+
+[node name="Texture12" type="TextureRect" parent="GridContainer/Button12"]
+layout_mode = 0
+offset_left = -170.0
+offset_top = -170.0
+offset_right = 1878.0
+offset_bottom = 1878.0
+scale = Vector2(0.29, 0.29)
+texture = ExtResource("19_m0ssy")
+
+[node name="Fade11" type="Panel" parent="GridContainer/Button12/Texture12"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 590.0
+offset_right = 1460.0
+offset_bottom = 1460.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_or8un")
+
+[node name="Lock" type="TextureRect" parent="GridContainer/Button12/Texture12"]
+layout_mode = 0
+offset_left = 617.241
+offset_top = 617.242
+offset_right = 2665.24
+offset_bottom = 2665.24
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_fxaam")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 372.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="ButtonBack" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="GridContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="GridContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="GridContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="GridContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="GridContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="GridContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="GridContainer/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="GridContainer/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="GridContainer/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="GridContainer/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="GridContainer/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="GridContainer/Button12" to="." method="_on_button_12_pressed"]

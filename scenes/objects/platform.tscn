@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlwptuwx6ppy2"]
+
+[ext_resource type="Script" path="res://scenes/objects/platform.gd" id="1_vb141"]
+[ext_resource type="Texture2D" uid="uid://mdw25byxk7rd" path="res://art/area_1/floating_platform.png" id="2_v0bgm"]
+
+[sub_resource type="Curve2D" id="Curve2D_llgmf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2jwb"]
+size = Vector2(186, 17.9864)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qwh1"]
+size = Vector2(186, 7.21675)
+
+[node name="Platform" type="Path2D"]
+curve = SubResource("Curve2D_llgmf")
+script = ExtResource("1_vb141")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+
+[node name="Reference" type="Panel" parent="PathFollow2D"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 7.31384)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_v0bgm")
+
+[node name="Collision" type="StaticBody2D" parent="."]
+collision_layer = 15
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-1.90735e-06, -9)
+shape = SubResource("RectangleShape2D_m2jwb")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.8147e-06, -22.3916)
+shape = SubResource("RectangleShape2D_3qwh1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

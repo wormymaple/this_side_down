@@ -1,0 +1,150 @@
+[gd_scene load_steps=18 format=3 uid="uid://csk0rv5ibfuuk"]
+
+[ext_resource type="Script" path="res://scenes/user_interface/main_menu.gd" id="1_eci1h"]
+[ext_resource type="Texture2D" uid="uid://c365snjl8080e" path="res://art/menus/box_background.png" id="2_0m78c"]
+[ext_resource type="FontFile" uid="uid://fx52s08yvsdd" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="3_6tew7"]
+[ext_resource type="Texture2D" uid="uid://bfofokndy0w38" path="res://art/menus/logo_1.png" id="4_4rgjt"]
+[ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="5_bpy87"]
+[ext_resource type="Texture2D" uid="uid://80qo1h37y8bu" path="res://art/menus/button_play.png" id="5_m312u"]
+[ext_resource type="Texture2D" uid="uid://ddmfeb64ycwk6" path="res://art/menus/button_options.png" id="6_wiy3j"]
+[ext_resource type="Texture2D" uid="uid://6vs0le1ewi1o" path="res://art/menus/button_quit.png" id="7_n54g6"]
+[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://scenes/user_interface/settings_menu.tscn" id="9_ygyx6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ke8d4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cd8u6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l52dd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j5ykk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ykre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gujig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf7yw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ve26"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eci1h")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.760784, 0.643137, 1)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_0m78c")
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 342.0
+offset_top = 63.0
+offset_right = 1548.0
+offset_bottom = 668.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.12492, 1.12492)
+texture = ExtResource("4_4rgjt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="SettingsMenu" parent="." instance=ExtResource("9_ygyx6")]
+visible = false
+
+[node name="Controls" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 276.0
+offset_top = 937.0
+offset_right = 1676.0
+offset_bottom = 1129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_bpy87")
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_6tew7")
+theme_override_font_sizes/font_size = 48
+text = "Requires a controller. Left trigger/bumper to jump, right trigger/bumper to grab, left stick to move, and right stick to control arm."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 693.0
+offset_right = 1920.0
+offset_bottom = 875.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(327, 0)
+layout_mode = 2
+theme = ExtResource("5_bpy87")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ke8d4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cd8u6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l52dd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j5ykk")
+
+[node name="UiPlayButton" type="TextureRect" parent="HBoxContainer/ButtonPlay"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = -140.0
+offset_right = 1950.0
+offset_bottom = 1908.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_m312u")
+
+[node name="ButtonOption" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(327, 0)
+layout_mode = 2
+theme = ExtResource("5_bpy87")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gujig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mf7yw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ve26")
+
+[node name="UiOptionsButton" type="TextureRect" parent="HBoxContainer/ButtonOption"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = -141.0
+offset_right = 1950.0
+offset_bottom = 1907.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_wiy3j")
+
+[node name="ButtonQuit" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(327, 0)
+layout_mode = 2
+theme = ExtResource("5_bpy87")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gujig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mf7yw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5ve26")
+
+[node name="UiQuitButton" type="TextureRect" parent="HBoxContainer/ButtonQuit"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = -141.0
+offset_right = 1951.0
+offset_bottom = 1907.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_n54g6")
+
+[connection signal="pressed" from="HBoxContainer/ButtonPlay" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonOption" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonQuit" to="." method="_on_quit_button_pressed"]

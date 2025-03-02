@@ -1,0 +1,197 @@
+[gd_scene load_steps=7 format=3 uid="uid://bymth3hp348qh"]
+
+[ext_resource type="Texture2D" uid="uid://bivvp24yml4dq" path="res://art/general/white_square.png" id="2_1yy8e"]
+[ext_resource type="Texture2D" uid="uid://cjbnvsh4ijie6" path="res://art/area_2/clouds.png" id="2_lxydj"]
+[ext_resource type="Texture2D" uid="uid://c76u8c5e63tyu" path="res://art/area_2/background_crates.png" id="3_5hc8t"]
+[ext_resource type="Texture2D" uid="uid://duv02tjve681c" path="res://art/general/square_crates_background.png" id="4_iao84"]
+[ext_resource type="Texture2D" uid="uid://bkfktkbe7ajq2" path="res://art/area_2/road_line.png" id="5_21nnr"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
+
+[node name="BackgroundCrates" type="ParallaxBackground"]
+
+[node name="Wayback" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Sky" type="Sprite2D" parent="Wayback"]
+modulate = Color(0.705882, 0.772549, 0.952941, 1)
+position = Vector2(640, 196)
+scale = Vector2(128, 40)
+texture = ExtResource("2_1yy8e")
+
+[node name="Clouds1" type="Sprite2D" parent="Wayback"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(145.15, 96.55)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_lxydj")
+
+[node name="Clouds2" type="Sprite2D" parent="Wayback"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(654.15, 36.55)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_lxydj")
+
+[node name="Clouds3" type="Sprite2D" parent="Wayback"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(1228, 111.55)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_lxydj")
+
+[node name="Road" type="Sprite2D" parent="Wayback"]
+modulate = Color(0.470588, 0.454902, 0.454902, 1)
+position = Vector2(640, 535)
+scale = Vector2(128, 40)
+texture = ExtResource("2_1yy8e")
+
+[node name="RoadOutline" type="Line2D" parent="Wayback"]
+position = Vector2(0, 334)
+points = PackedVector2Array(0, 0, 1280, 0)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" parent="Wayback"]
+visible = false
+z_index = 5
+points = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720, 0, 0)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Crates3" type="ParallaxLayer" parent="."]
+modulate = Color(0.666569, 0.666569, 0.666569, 1)
+z_index = 1
+material = SubResource("CanvasItemMaterial_3xyd5")
+motion_scale = Vector2(0.5, 0.3)
+
+[node name="BackgroundCrates" type="Sprite2D" parent="Crates3"]
+modulate = Color(0.668629, 0.668629, 0.668629, 1)
+position = Vector2(-141, 338)
+scale = Vector2(-0.4, -0.4)
+texture = ExtResource("3_5hc8t")
+
+[node name="BackgroundCrates2" type="Sprite2D" parent="Crates3"]
+modulate = Color(0.668629, 0.668629, 0.668629, 1)
+position = Vector2(625, 338)
+scale = Vector2(-0.4, -0.4)
+texture = ExtResource("3_5hc8t")
+
+[node name="BackgroundCrates3" type="Sprite2D" parent="Crates3"]
+modulate = Color(0.668629, 0.668629, 0.668629, 1)
+position = Vector2(1391, 338)
+scale = Vector2(0.4, -0.4)
+texture = ExtResource("3_5hc8t")
+
+[node name="Crates2" type="ParallaxLayer" parent="."]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
+z_index = 2
+material = SubResource("CanvasItemMaterial_3xyd5")
+motion_scale = Vector2(0.6, 0.45)
+
+[node name="Crates" type="Sprite2D" parent="Crates2"]
+modulate = Color(0.830335, 0.830335, 0.830335, 1)
+z_index = 2
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(-238, 387)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_5hc8t")
+
+[node name="Crates2" type="Sprite2D" parent="Crates2"]
+modulate = Color(0.830335, 0.830335, 0.830335, 1)
+z_index = 2
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(624.15, 387)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_5hc8t")
+
+[node name="Crates3" type="Sprite2D" parent="Crates2"]
+modulate = Color(0.830335, 0.830335, 0.830335, 1)
+z_index = 2
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(1486, 387)
+scale = Vector2(-0.45, 0.45)
+texture = ExtResource("3_5hc8t")
+
+[node name="Crates1Behind" type="ParallaxLayer" parent="."]
+modulate = Color(0.45098, 0.45098, 0.45098, 1)
+z_index = 3
+material = SubResource("CanvasItemMaterial_3xyd5")
+motion_scale = Vector2(0.65, 0.6)
+
+[node name="Crates" type="Sprite2D" parent="Crates1Behind"]
+z_index = 3
+position = Vector2(-1.59997, 437)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("4_iao84")
+
+[node name="Crates2" type="Sprite2D" parent="Crates1Behind"]
+z_index = 3
+position = Vector2(632.8, 436)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iao84")
+
+[node name="Crates3" type="Sprite2D" parent="Crates1Behind"]
+z_index = 3
+position = Vector2(1265.4, 437.25)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iao84")
+
+[node name="Crates1" type="ParallaxLayer" parent="."]
+z_index = 3
+material = SubResource("CanvasItemMaterial_3xyd5")
+motion_scale = Vector2(0.7, 0.6)
+
+[node name="Crates" type="Sprite2D" parent="Crates1"]
+z_index = 3
+position = Vector2(-1.59997, 437.25)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("4_iao84")
+
+[node name="Crates2" type="Sprite2D" parent="Crates1"]
+z_index = 3
+position = Vector2(631.8, 437.25)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iao84")
+
+[node name="Crates3" type="Sprite2D" parent="Crates1"]
+z_index = 3
+position = Vector2(1265.6, 437.25)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iao84")
+
+[node name="RoadLines" type="ParallaxLayer" parent="."]
+position = Vector2(0, -54)
+motion_scale = Vector2(0.8, 0.6)
+
+[node name="RoadLine" type="Sprite2D" parent="RoadLines"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(-161.4, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
+
+[node name="RoadLine2" type="Sprite2D" parent="RoadLines"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(155.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
+
+[node name="RoadLine3" type="Sprite2D" parent="RoadLines"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(472.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
+
+[node name="RoadLine4" type="Sprite2D" parent="RoadLines"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(789.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
+
+[node name="RoadLine5" type="Sprite2D" parent="RoadLines"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(1106.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
+
+[node name="RoadLine6" type="Sprite2D" parent="RoadLines"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(1423.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
