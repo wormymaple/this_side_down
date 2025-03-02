@@ -12,12 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://Scenes/Objects/ramp.tscn" id="9_wbevr"]
 [ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://Art/BackgroundBoat.tscn" id="10_ffl0r"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="12_42hc6"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="13_avyxm"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="13_avyxm"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="14_wbbsx"]
-[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/Box.tscn" id="15_iu3jp"]
+[ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://Scenes/Objects/box.tscn" id="15_iu3jp"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="16_paf4g"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://Scenes/Objects/void_out_area.tscn" id="16_yemu3"]
-[ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/Area3/Barrier.png" id="17_eh8td"]
+[ext_resource type="Texture2D" uid="uid://o0vpdiqu2xnd" path="res://Art/Area3/Barrier.png" id="17_eh8td"]
 
 [sub_resource type="Curve2D" id="Curve2D_cf76v"]
 _data = {

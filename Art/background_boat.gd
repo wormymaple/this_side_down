@@ -1,13 +1,9 @@
 extends ParallaxBackground
 
-enum Weather {NORMAL, STORMY}
-@export var current_weather = Weather.NORMAL
+@export var bad_weather = false
 
 func _ready():
-	if current_weather == Weather.NORMAL:
-		pass
-	else:
-		$Wayback/Birds.hide()
-		$Wayback/Clouds.show()
+	if bad_weather:
+		$Wayback/Ship.sprite = load("res://Art/Area3/NewShipStormy.png")
 		for child in self.get_children():
-			child.modulate = Color(.5, .5, .5)
+			child.modulate = Color(.5, .5, .5) # Darken everything else
