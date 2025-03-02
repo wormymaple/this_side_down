@@ -1,94 +1,106 @@
-[gd_scene load_steps=8 format=3 uid="uid://bymth3hp348qh"]
+[gd_scene load_steps=7 format=3 uid="uid://bymth3hp348qh"]
 
-[ext_resource type="Texture2D" uid="uid://baq3qmtrb5qnx" path="res://Art/Area2/BG_sky.png" id="1_ubq6e"]
 [ext_resource type="Texture2D" uid="uid://bivvp24yml4dq" path="res://Art/MiscSprites/StandardParticle.png" id="2_1yy8e"]
-[ext_resource type="Texture2D" uid="uid://tcikg6ov0i7e" path="res://Art/Area2/BG_Road.png" id="2_q6dxw"]
-[ext_resource type="Texture2D" uid="uid://beor6g0hxuh4h" path="res://Art/Area2/Clouds.png" id="3_x6mhr"]
-[ext_resource type="Texture2D" uid="uid://bh86tq8ntfi6w" path="res://Art/Area2/BackgroundCrates.png" id="4_26asc"]
-[ext_resource type="Texture2D" uid="uid://c7qunq5u6pwdu" path="res://Art/Area3/BackgroundCrates.png" id="5_rbhrl"]
+[ext_resource type="Texture2D" uid="uid://cjbnvsh4ijie6" path="res://Art/Area2/NewClouds.png" id="2_lxydj"]
+[ext_resource type="Texture2D" uid="uid://c76u8c5e63tyu" path="res://Art/Area2/NewCrates.png" id="3_5hc8t"]
+[ext_resource type="Texture2D" uid="uid://duv02tjve681c" path="res://Art/Area3/NewSmallCrates.png" id="4_iao84"]
+[ext_resource type="Texture2D" uid="uid://bkfktkbe7ajq2" path="res://Art/Area2/NewRoadLine.png" id="5_21nnr"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
 [node name="BackgroundCrates" type="ParallaxBackground"]
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
-material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.6, 0)
+motion_scale = Vector2(0, 0)
 
 [node name="Sky" type="Sprite2D" parent="Wayback"]
-position = Vector2(1921, 323)
-scale = Vector2(2.00104, 1.4037)
-texture = ExtResource("1_ubq6e")
+modulate = Color(0.705882, 0.772549, 0.952941, 1)
+position = Vector2(0, -220.5)
+scale = Vector2(386.3, -114.7)
+texture = ExtResource("2_1yy8e")
 
-[node name="Clouds" type="Sprite2D" parent="Wayback"]
+[node name="Clouds1" type="Sprite2D" parent="Wayback"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(774, 140)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_x6mhr")
-
-[node name="Clouds3" type="Sprite2D" parent="Wayback"]
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(3276, 92)
-rotation = -0.150063
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_x6mhr")
+position = Vector2(145.15, 96.55)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_lxydj")
 
 [node name="Clouds2" type="Sprite2D" parent="Wayback"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(2195, -35)
-rotation = 3.14159
-scale = Vector2(0.7, -0.7)
-texture = ExtResource("3_x6mhr")
+position = Vector2(654.15, 36.55)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_lxydj")
+
+[node name="Clouds3" type="Sprite2D" parent="Wayback"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(1228, 111.55)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_lxydj")
+
+[node name="MoreRoad" type="Sprite2D" parent="Wayback"]
+modulate = Color(0.470588, 0.454902, 0.454902, 1)
+position = Vector2(640, 519)
+scale = Vector2(128, 40)
+texture = ExtResource("2_1yy8e")
+
+[node name="Line2D" type="Line2D" parent="Wayback"]
+z_index = 5
+points = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720, 0, 0)
+
+[node name="WayBackRoad" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
 
 [node name="Crates3Behind" type="ParallaxLayer" parent="."]
 visible = false
 modulate = Color(0.450648, 0.450648, 0.450648, 1)
 z_index = 1
 material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.25, 0.2)
+motion_scale = Vector2(0.25, 0.4)
 
 [node name="BackgroundCrates" type="Sprite2D" parent="Crates3Behind"]
 modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(474, 468)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_26asc")
+position = Vector2(-235.5, 308)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_5hc8t")
 
 [node name="BackgroundCrates2" type="Sprite2D" parent="Crates3Behind"]
 modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(2482, 468)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_26asc")
+position = Vector2(1772.5, 308)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_5hc8t")
 
 [node name="BackgroundCrates3" type="Sprite2D" parent="Crates3Behind"]
 modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(4401, 468)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_26asc")
+position = Vector2(3042.1, 308)
+scale = Vector2(-0.6, -0.6)
+texture = ExtResource("3_5hc8t")
 
 [node name="Crates3" type="ParallaxLayer" parent="."]
+modulate = Color(0.666569, 0.666569, 0.666569, 1)
 z_index = 1
 material = SubResource("CanvasItemMaterial_3xyd5")
 motion_scale = Vector2(0.3, 0.2)
 
 [node name="BackgroundCrates" type="Sprite2D" parent="Crates3"]
 modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(474, 468)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_26asc")
+position = Vector2(-141, 338)
+scale = Vector2(-0.4, -0.4)
+texture = ExtResource("3_5hc8t")
 
 [node name="BackgroundCrates2" type="Sprite2D" parent="Crates3"]
 modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(2482, 468)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_26asc")
+position = Vector2(625, 338)
+scale = Vector2(-0.4, -0.4)
+texture = ExtResource("3_5hc8t")
 
 [node name="BackgroundCrates3" type="Sprite2D" parent="Crates3"]
 modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(4401, 468)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_26asc")
+position = Vector2(1391, 338)
+scale = Vector2(0.4, -0.4)
+texture = ExtResource("3_5hc8t")
 
 [node name="Crates2Behind" type="ParallaxLayer" parent="."]
+visible = false
 modulate = Color(0.45098, 0.45098, 0.45098, 1)
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
@@ -97,43 +109,53 @@ motion_scale = Vector2(0.45, 0.3)
 [node name="Crates" type="Sprite2D" parent="Crates2Behind"]
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(-88, 567)
-texture = ExtResource("4_26asc")
+position = Vector2(-163, 393.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_5hc8t")
 
 [node name="Crates2" type="Sprite2D" parent="Crates2Behind"]
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(2091, 567)
-texture = ExtResource("4_26asc")
+position = Vector2(604.75, 393.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_5hc8t")
 
 [node name="Crates3" type="Sprite2D" parent="Crates2Behind"]
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(4213, 567)
-texture = ExtResource("4_26asc")
+position = Vector2(1645.75, 393.5)
+scale = Vector2(-0.4, 0.4)
+texture = ExtResource("3_5hc8t")
 
 [node name="Crates2" type="ParallaxLayer" parent="."]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
 motion_scale = Vector2(0.5, 0.3)
 
 [node name="Crates" type="Sprite2D" parent="Crates2"]
+modulate = Color(0.830335, 0.830335, 0.830335, 1)
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(-88, 567)
-texture = ExtResource("4_26asc")
+position = Vector2(-238, 387)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_5hc8t")
 
 [node name="Crates2" type="Sprite2D" parent="Crates2"]
+modulate = Color(0.830335, 0.830335, 0.830335, 1)
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(2091, 567)
-texture = ExtResource("4_26asc")
+position = Vector2(624.15, 387)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_5hc8t")
 
 [node name="Crates3" type="Sprite2D" parent="Crates2"]
+modulate = Color(0.830335, 0.830335, 0.830335, 1)
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(4213, 567)
-texture = ExtResource("4_26asc")
+position = Vector2(1486, 387)
+scale = Vector2(-0.45, 0.45)
+texture = ExtResource("3_5hc8t")
 
 [node name="Crates1Behind" type="ParallaxLayer" parent="."]
 modulate = Color(0.45098, 0.45098, 0.45098, 1)
@@ -143,21 +165,21 @@ motion_scale = Vector2(0.65, 0.4)
 
 [node name="Crates" type="Sprite2D" parent="Crates1Behind"]
 z_index = 3
-position = Vector2(757, 858)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("5_rbhrl")
+position = Vector2(-1.59997, 437)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("4_iao84")
 
 [node name="Crates2" type="Sprite2D" parent="Crates1Behind"]
 z_index = 3
-position = Vector2(1491, 858)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("5_rbhrl")
+position = Vector2(632.8, 436)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iao84")
 
 [node name="Crates3" type="Sprite2D" parent="Crates1Behind"]
 z_index = 3
-position = Vector2(3606, 858)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("5_rbhrl")
+position = Vector2(1265.4, 437.25)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iao84")
 
 [node name="Crates1" type="ParallaxLayer" parent="."]
 z_index = 3
@@ -166,52 +188,62 @@ motion_scale = Vector2(0.7, 0.4)
 
 [node name="Crates" type="Sprite2D" parent="Crates1"]
 z_index = 3
-position = Vector2(757, 858)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("5_rbhrl")
+position = Vector2(-1.59997, 437.25)
+scale = Vector2(-0.6, 0.6)
+texture = ExtResource("4_iao84")
 
 [node name="Crates2" type="Sprite2D" parent="Crates1"]
 z_index = 3
-position = Vector2(1491, 858)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("5_rbhrl")
+position = Vector2(631.8, 437.25)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iao84")
 
 [node name="Crates3" type="Sprite2D" parent="Crates1"]
 z_index = 3
-position = Vector2(3606, 858)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("5_rbhrl")
+position = Vector2(1265.6, 437.25)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_iao84")
 
 [node name="Road" type="ParallaxLayer" parent="."]
+visible = false
 motion_scale = Vector2(0.7, 0)
 
-[node name="MoreRoad" type="Sprite2D" parent="Road"]
-modulate = Color(0.470588, 0.454902, 0.454902, 1)
-position = Vector2(1929, 695)
-scale = Vector2(387.2, 44.2)
-texture = ExtResource("2_1yy8e")
-
-[node name="RoadButScrollsY" type="ParallaxLayer" parent="."]
+[node name="RoadLines1" type="ParallaxLayer" parent="."]
+position = Vector2(0, -54)
 motion_scale = Vector2(0.7, 0.4)
 
-[node name="MoreRoad" type="Sprite2D" parent="RoadButScrollsY"]
-modulate = Color(0.470588, 0.454902, 0.454902, 1)
-position = Vector2(1916, 1918)
-scale = Vector2(384.6, 115.9)
-texture = ExtResource("2_1yy8e")
-
-[node name="Road3" type="Sprite2D" parent="RoadButScrollsY"]
+[node name="RoadLine" type="Sprite2D" parent="RoadLines1"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(960, 813)
-texture = ExtResource("2_q6dxw")
+position = Vector2(-161.4, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
 
-[node name="Road4" type="Sprite2D" parent="RoadButScrollsY"]
+[node name="RoadLine2" type="Sprite2D" parent="RoadLines1"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(2879, 812)
-texture = ExtResource("2_q6dxw")
+position = Vector2(155.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
 
-[node name="MoreRoad2" type="Sprite2D" parent="RoadButScrollsY"]
-modulate = Color(0.470588, 0.454902, 0.454902, 1)
-position = Vector2(1929, 843.188)
-scale = Vector2(387.2, 17.4375)
-texture = ExtResource("2_1yy8e")
+[node name="RoadLine3" type="Sprite2D" parent="RoadLines1"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(472.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
+
+[node name="RoadLine4" type="Sprite2D" parent="RoadLines1"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(789.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
+
+[node name="RoadLine5" type="Sprite2D" parent="RoadLines1"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(1106.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")
+
+[node name="RoadLine6" type="Sprite2D" parent="RoadLines1"]
+material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(1423.6, 631)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_21nnr")

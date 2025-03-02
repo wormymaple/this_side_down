@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/Light.tscn" id="10_um1cw"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="11_lh4ec"]
 [ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://Scenes/Objects/BoxCircle.tscn" id="12_7lyud"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="12_sb3ji"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="12_sb3ji"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="13_p6fm6"]
-[ext_resource type="Texture2D" uid="uid://ldkojbfcf1p6" path="res://Art/Area3/Barrier.png" id="14_oy4gm"]
+[ext_resource type="Texture2D" uid="uid://o0vpdiqu2xnd" path="res://Art/Area3/Barrier.png" id="14_oy4gm"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://Scenes/Objects/void_out_area.tscn" id="15_k47hj"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://Scenes/Objects/ConcreteTileset.tres" id="17_jdvkg"]
 

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://Art/BackgroundCrates.tscn" id="11_kaf0w"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="11_vbs12"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://Scenes/Objects/spring.tscn" id="11_ve53h"]
-[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/Player.tscn" id="12_o2sbc"]
+[ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://Scenes/Objects/player.tscn" id="12_o2sbc"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://Scenes/Objects/ConcreteTileset.tres" id="12_qmq5x"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://Scenes/Objects/ladder.tscn" id="14_jv4xn"]
 
@@ -22,8 +22,6 @@ color = Color(0.141176, 0.231373, 0.352941, 1)
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource("11_kaf0w")]
 layer = -3
-scale = Vector2(0.5, 0.5)
-transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
 
 [node name="CanvasModulate2" parent="ParallaxBackground2" instance=ExtResource("11_vbs12")]
 position = Vector2(-2226.9, -1118.87)
