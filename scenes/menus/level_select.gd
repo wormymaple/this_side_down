@@ -12,10 +12,10 @@ func _ready():
 			child.queue_free()
 
 func _on_back_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
 	
 func _start_level(level): # I am not sure why this is it's own function
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_" + str(level) + ".tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
 	
 
 func _on_button_1_pressed():

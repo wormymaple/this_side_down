@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhn38qg318td8"]
 
-[ext_resource type="Script" path="res://scenes/user_interface/group_camera.gd" id="1_ju03k"]
-[ext_resource type="PackedScene" uid="uid://de33bfmp2w6jc" path="res://scenes/user_interface/pause_menu.tscn" id="3_kdmjn"]
+[ext_resource type="Script" path="res://scenes/menus/group_camera.gd" id="1_ju03k"]
+[ext_resource type="PackedScene" uid="uid://de33bfmp2w6jc" path="res://scenes/menus/pause_menu.tscn" id="3_kdmjn"]
 
 [node name="GroupCamera" type="Camera2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)

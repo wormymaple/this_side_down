@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://de33bfmp2w6jc"]
 
-[ext_resource type="Script" path="res://scenes/user_interface/pause_menu.gd" id="1_kf0y2"]
+[ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="1_kf0y2"]
 [ext_resource type="FontFile" uid="uid://c4slyfn8702t7" path="res://fonts/nunito/static/Nunito-Bold.ttf" id="3_7cjo4"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="3_baj6k"]
 [ext_resource type="FontFile" uid="uid://fx52s08yvsdd" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="4_vw1xm"]
 [ext_resource type="StyleBox" uid="uid://cghq55g2oqm2g" path="res://resources/transparent_color.tres" id="5_det1a"]
-[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://scenes/user_interface/settings_menu.tscn" id="5_iy68b"]
+[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://scenes/menus/settings_menu.tscn" id="5_iy68b"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3

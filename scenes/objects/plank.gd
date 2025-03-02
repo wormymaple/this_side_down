@@ -6,10 +6,10 @@ enum Themes {YELLOW, GREEN, BLUE, PURPLE}
 
 func _ready():
 	if theme == Themes.YELLOW:
-		sprite.texture = load("res://Art/Area1/Plank1.png")
+		sprite.texture = load("res://art/area_1/plank.png")
 	elif theme == Themes.BLUE:
-		sprite.texture = load("res://Art/Unused/Plank2.png")
+		sprite.texture = load("res://art/unused/plank_2.png")
 	elif theme == Themes.GREEN:
-		sprite.texture = load("res://Art/Unused/Plank3.png")
+		sprite.texture = load("res://art/unused/plank_3.png")
 	elif theme == Themes.PURPLE:
-		sprite.texture = load("res://Art/Unused/Plank4.png")
+		sprite.texture = load("res://art/unused/plank_4.png")

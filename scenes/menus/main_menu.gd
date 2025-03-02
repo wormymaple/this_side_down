@@ -7,7 +7,7 @@ func _ready():
 	FocusButton.grab_focus()
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/UI/LevelSelect.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/level_select.tscn")
 func _on_options_button_pressed():
 	settings_menu.show()
 func _on_quit_button_pressed():

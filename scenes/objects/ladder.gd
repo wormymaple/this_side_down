@@ -6,11 +6,11 @@ enum Themes {BLUE, GREEN, PURPLE}
 
 func _ready():
 	if theme == Themes.BLUE:
-		sprite.texture = load("res://Art/Area3/Ladder.png")
+		sprite.texture = load("res://art/area_3/ladder.png")
 	elif theme == Themes.GREEN:
-		sprite.texture = load("res://Art/Area2/Ladder.png")
+		sprite.texture = load("res://art/area_2/ladder.png")
 	elif theme == Themes.PURPLE:
-		sprite.texture = load("res://Art/Area4/Ladder.png")
+		sprite.texture = load("res://art/area_4/ladder.png")
 		sprite.scale = Vector2(0.19, 0.19)
 
 func _on_body_entered(body):

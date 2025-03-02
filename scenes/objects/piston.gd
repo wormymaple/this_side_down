@@ -20,17 +20,17 @@ func _ready():
 	#set_process(true)
 	
 	if theme == Themes.YELLOW:
-		TextureHead.texture = load("res://Art/Area1/PistonTop.png")
-		TextureBase.texture = load("res://Art/Area1/PistonBase.png")
+		TextureHead.texture = load("res://art/area_1/PistonTop.png")
+		TextureBase.texture = load("res://art/area_1/piston_base.png")
 	elif theme == Themes.BLUE:
-		TextureHead.texture = load("res://Art/Area2/PistonTop.png")
-		TextureBase.texture = load("res://Art/Area2/PistonBase.png")
+		TextureHead.texture = load("res://art/area_2/piston_top.png")
+		TextureBase.texture = load("res://art/area_2/piston_base.png")
 	elif theme == Themes.GREEN:
-		TextureHead.texture = load("res://Art/Area3/PistonTop.png")
-		TextureBase.texture = load("res://Art/Area3/PistonBase.png")
+		TextureHead.texture = load("res://art/area_3/piston_top.png")
+		TextureBase.texture = load("res://art/area_3/piston_base.png")
 	elif theme == Themes.PURPLE:
-		TextureHead.texture = load("res://Art/Area4/PistonTop.png")
-		TextureBase.texture = load("res://Art/Area4/PistonBase.png")
+		TextureHead.texture = load("res://art/area_4/piston_top.png")
+		TextureBase.texture = load("res://art/area_4/piston_base.png")
 
 func _process(_delta):
 	if mode == State.WAIT:

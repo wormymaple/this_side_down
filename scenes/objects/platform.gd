@@ -18,14 +18,14 @@ var movement = 0.0
 
 func _ready():
 	if theme == Themes.YELLOW:
-		sprite.texture = load("res://Art/Area1/FloatingPlatform.png")
+		sprite.texture = load("res://art/area_1/floating_platform.png")
 	elif theme == Themes.GREEN:
-		sprite.texture = load("res://Art/Area2/FloatingPlatform.png")
+		sprite.texture = load("res://art/area_2/floating_platform.png")
 	elif theme == Themes.BLUE:
-		sprite.texture = load("res://Art/Area3/FloatingPlatform.png")
+		sprite.texture = load("res://art/area_3/floating_platform.png")
 	
 	elif theme == Themes.PURPLE:
-		sprite.texture = load("res://Art/Area4/FloatingPlatform.png")
+		sprite.texture = load("res://art/area_4/floating_platform.png")
 
 func _physics_process(_delta):
 	if path_behavior == State.STOP: # The platform does nothing

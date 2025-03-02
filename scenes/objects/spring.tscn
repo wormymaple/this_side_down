@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b13ui3edlyvfn"]
 
-[ext_resource type="Script" path="res://Scenes/Objects/spring.gd" id="1_fdvwv"]
+[ext_resource type="Script" path="res://scenes/objects/spring.gd" id="1_fdvwv"]
 [ext_resource type="Texture2D" uid="uid://br7xjyv4caysm" path="res://art/area_1/spring.png" id="2_uh0i2"]
 [ext_resource type="AudioStream" uid="uid://bmpl152x7gfwr" path="res://audio/boing.wav" id="3_36sag"]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="1_01fhd"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="2_e3q2l"]
-[ext_resource type="Script" path="res://scenes/user_interface/group_camera.gd" id="3_4bvcx"]
+[ext_resource type="Script" path="res://scenes/menus/group_camera.gd" id="3_4bvcx"]
 [ext_resource type="Texture2D" path="res://Art/MiscSprites/TempBox.png" id="4_vp4gt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b30eg"]

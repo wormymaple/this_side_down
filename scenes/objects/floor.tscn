@@ -4,7 +4,6 @@
 size = Vector2(1923, 454)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e0qqc"]
-load_path = "res://.godot/imported/BG_Ground.png-31f1ef7ed14b773ecab109619e18e415.ctex"
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3vuf4"]
 polygon = PackedVector2Array(960, 540, -960, 540, -960, 77, 362, 77, 362, 76, 960, 76)

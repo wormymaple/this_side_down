@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://scenes/other/background_boat.tscn" id="8_60fi5"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="9_p0iqp"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="9_pbvov"]
-[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/user_interface/light.tscn" id="10_um1cw"]
+[ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="10_um1cw"]
 [ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="11_lh4ec"]
 [ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://scenes/objects/box_circle.tscn" id="12_7lyud"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="12_sb3ji"]
-[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/user_interface/group_camera.tscn" id="13_p6fm6"]
+[ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="13_p6fm6"]
 [ext_resource type="PackedScene" uid="uid://ftopepwcjoag" path="res://scenes/objects/plank.tscn" id="13_r66b7"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="17_jdvkg"]
 

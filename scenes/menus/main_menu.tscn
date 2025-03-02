@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://csk0rv5ibfuuk"]
 
-[ext_resource type="Script" path="res://scenes/user_interface/main_menu.gd" id="1_eci1h"]
+[ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_eci1h"]
 [ext_resource type="Texture2D" uid="uid://c365snjl8080e" path="res://art/menus/box_background.png" id="2_0m78c"]
 [ext_resource type="FontFile" uid="uid://fx52s08yvsdd" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="3_6tew7"]
 [ext_resource type="Texture2D" uid="uid://bfofokndy0w38" path="res://art/menus/logo_1.png" id="4_4rgjt"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://80qo1h37y8bu" path="res://art/menus/button_play.png" id="5_m312u"]
 [ext_resource type="Texture2D" uid="uid://ddmfeb64ycwk6" path="res://art/menus/button_options.png" id="6_wiy3j"]
 [ext_resource type="Texture2D" uid="uid://6vs0le1ewi1o" path="res://art/menus/button_quit.png" id="7_n54g6"]
-[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://scenes/user_interface/settings_menu.tscn" id="9_ygyx6"]
+[ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://scenes/menus/settings_menu.tscn" id="9_ygyx6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ke8d4"]
 

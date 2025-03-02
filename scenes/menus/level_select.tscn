@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bvpim07i7se1g"]
 
-[ext_resource type="Script" path="res://scenes/user_interface/level_select.gd" id="1_ykioh"]
+[ext_resource type="Script" path="res://scenes/menus/level_select.gd" id="1_ykioh"]
 [ext_resource type="Texture2D" uid="uid://c365snjl8080e" path="res://art/menus/box_background.png" id="2_jass7"]
 [ext_resource type="FontFile" uid="uid://fx52s08yvsdd" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="3_34nss"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="4_nb6hw"]
@@ -502,17 +502,6 @@ offset_right = 2665.24
 offset_bottom = 2665.24
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_fxaam")
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 372.0
-offset_bottom = -103.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="pressed" from="ButtonBack" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="GridContainer/Button1" to="." method="_on_button_1_pressed"]
