@@ -35,6 +35,7 @@ folder_colors={
 "res://Audio/": "yellow",
 "res://Fonts/": "pink",
 "res://GarageBand/": "orange",
+"res://Resources/": "purple",
 "res://Scenes/": "green",
 "res://Scripts/": "blue"
 }
@@ -43,6 +44,7 @@ folder_colors={
 
 Box=""
 Player=""
+LandingZone=""
 
 [input]
 

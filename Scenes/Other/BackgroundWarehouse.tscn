@@ -14,6 +14,7 @@ scroll_base_offset = Vector2(-500, 0)
 metadata/_edit_vertical_guides_ = [1924.0]
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(-807, -350)
 points = PackedVector2Array(0, 0, 1600, 0, 1600, 910, 0, 910, 0, 0)

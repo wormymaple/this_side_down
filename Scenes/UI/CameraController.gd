@@ -5,6 +5,8 @@ extends Camera2D
 @onready var NoController = $NoController
 @onready var fade = $CanvasLayer/Fade
 
+@export var camera_offset = Vector2(0, -80) # This is only used for level 9 where the player needs to look up
+
 var players: Array
 
 var min_dist = 250
@@ -44,10 +46,9 @@ func _process(delta):
 	
 	var pos = Vector2.ZERO;
 	for player in players:
-		pos += player.global_position
-	pos /= len(players)
+		pos += player.global_position + camera_offset
 	
-	global_position = pos	
+	global_position = pos / len(players) # Get the average
 	
 	var furthest_player = players[0]
 	var furthest_dist = (position - furthest_player.global_position).length()

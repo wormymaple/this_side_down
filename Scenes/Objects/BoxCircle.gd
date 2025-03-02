@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-enum Themes {NORMAL, METAL, UNDERWATER}
+enum Themes {NORMAL, SHIP, UNDERWATER}
 @export var theme: Themes = Themes.NORMAL
 @export var size: float
 @onready var sprite = $BoxSprite
@@ -10,7 +10,7 @@ enum Themes {NORMAL, METAL, UNDERWATER}
 func _ready():
 	if theme == Themes.NORMAL:
 		sprite.texture = load("res://Art/Area1/CrateCircle.png")
-	elif theme == Themes.METAL:
+	elif theme == Themes.SHIP:
 		sprite.texture = load("res://Art/Area2/CrateCircle.png")
 	elif theme == Themes.UNDERWATER:
 		sprite.texture = load("res://Art/Area4/CrateCircle.png")

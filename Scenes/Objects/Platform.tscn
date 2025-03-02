@@ -17,7 +17,7 @@ script = ExtResource("1_vb141")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 
-[node name="Referance" type="Panel" parent="PathFollow2D"]
+[node name="Reference" type="Panel" parent="PathFollow2D"]
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0

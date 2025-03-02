@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scenes/Objects/LandingZone.gd" id="1_wkjfu"]
 [ext_resource type="Texture2D" uid="uid://ctoshpxxf1y65" path="res://Art/Area1/LandingZone.png" id="2_jkmx4"]
-[ext_resource type="Texture2D" uid="uid://ctwh7i4p5pu2b" path="res://Art/MiscSprites/SimpleBox.png" id="3_kmtdw"]
+[ext_resource type="Texture2D" uid="uid://ctwh7i4p5pu2b" path="res://Art/AreaAll/SimpleBox.png" id="3_kmtdw"]
 [ext_resource type="Script" path="res://Scripts/AnimatePosition.gd" id="4_3mwse"]
-[ext_resource type="Texture2D" uid="uid://bivvp24yml4dq" path="res://Art/MiscSprites/StandardParticle.png" id="5_jsrkl"]
+[ext_resource type="Texture2D" uid="uid://bivvp24yml4dq" path="res://Art/AreaAll/StandardParticle.png" id="5_jsrkl"]
 
 [sub_resource type="Curve" id="Curve_edar3"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494845, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -34,7 +34,7 @@ hue_variation_max = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8x63u"]
 size = Vector2(255, 20)
 
-[node name="LandingZone" type="RigidBody2D"]
+[node name="LandingZone" type="RigidBody2D" groups=["LandingZone"]]
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true

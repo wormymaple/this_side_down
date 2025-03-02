@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=4 uid="uid://kiyufpj683ic"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_vjcbh"]
-[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Art/BackgroundWarehouse.tscn" id="5_n57bp"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="6_yeun7"]
+[ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://Scenes/Other/BackgroundWarehouse.tscn" id="5_n57bp"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Scenes/Other/ShadowModulate.tscn" id="6_yeun7"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/Light.tscn" id="7_bc66u"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://Scenes/UI/camera.tscn" id="8_such3"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="9_8gwty"]
@@ -40,7 +40,6 @@ camera = NodePath("../Camera")
 [node name="Box" parent="." instance=ExtResource("10_mhr4p")]
 position = Vector2(-337, 408)
 sleeping = true
-script = null
 
 [node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_kijhk")]
 position = Vector2(607, 272)

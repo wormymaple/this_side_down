@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=4 uid="uid://b3dqjcsmp3nrr"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level.gd" id="1_h80y1"]
-[ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://Art/BackgroundBoat.tscn" id="2_pnw27"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="3_2ulcs"]
+[ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://Scenes/Other/BackgroundBoat.tscn" id="2_pnw27"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Scenes/Other/ShadowModulate.tscn" id="3_2ulcs"]
 [ext_resource type="Texture2D" uid="uid://o0vpdiqu2xnd" path="res://Art/Area3/Barrier.png" id="4_sdadw"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/Light.tscn" id="5_ubt3d"]
 [ext_resource type="Script" path="res://Scenes/Objects/PlayerSpawner.gd" id="6_ts44b"]

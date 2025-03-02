@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://Scenes/UI/Light.tscn" id="1_o3xxm"]
 [ext_resource type="PackedScene" uid="uid://oj2x50mstjua" path="res://Scenes/UI/LightBlocker.tscn" id="1_tn2pd"]
-[ext_resource type="Texture2D" uid="uid://cj30gnj85qxvu" path="res://icon.svg" id="2_238f6"]
-[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Art/ShadowModulate.tscn" id="2_cfxnt"]
+[ext_resource type="Texture2D" uid="uid://ccf8l84twcl2o" path="res://icon.svg" id="2_238f6"]
+[ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://Scenes/Other/ShadowModulate.tscn" id="2_cfxnt"]
 [ext_resource type="PackedScene" uid="uid://c57g5esqefxjw" path="res://Scenes/UI/point_light_2d.tscn" id="3_kbdst"]
-[ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Art/BackgroundOcean.tscn" id="5_55iqg"]
+[ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://Scenes/Other/BackgroundOcean.tscn" id="5_55iqg"]
 
 [node name="LightingLevelTest" type="Node2D"]
 position = Vector2(592, 460)

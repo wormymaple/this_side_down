@@ -21,3 +21,8 @@ func _ready():
 	#if size >= 2: # i think this moves the arrow closer to the center if the box is big
 	#	arrow.position.x -= 20
 	#	arrow.position.y -= 20
+
+func _process(_delta: float) -> void:
+	#print(abs(rotation_degrees) > 135)
+	#print(abs(rotation_degrees) < 45)
+	pass

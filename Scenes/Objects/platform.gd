@@ -14,7 +14,7 @@ var movement = 0.0
 # One Way, which makes the platform turn around when it reaches the end
 # Looping, which makes the platform loop. Make sure the loop is complete
 # Stop, which will make the platform not move at all.
-# One Way Back is just One Way but will move in reverse.
+# One Way Back is just One Way but will move in reverse. (Tells the platform to invert it's progress)
 
 func _ready():
 	if theme == Themes.YELLOW:
@@ -59,23 +59,20 @@ func _physics_process(_delta):
 		if object.is_in_group("Player"):
 			if object.on_ground:
 				object.position += movement * scale
-		if object.is_in_group("Box"):
+		elif object.is_in_group("Box"):
 			#object.global_position += movement * scale # This works for some reason
 			object.global_transform.origin += movement * scale # For some reason this works while setting the position will not
-
+		elif object.is_in_group("LandingZone"):
+			object.position += movement * scale
 
 func _on_area_2d_body_entered(body):
 	if path_behavior != State.STOP:
 		if body.is_in_group("Player") or body.is_in_group("Box"):
 			objects_to_move.push_back(body)
-		#	var objects_in_array = ""
-		#	for object in objects_to_move:
-		#		objects_in_array += object.name + " "
-		#	print(objects_in_array)
+
 
 func _on_area_2d_body_exited(body):
 	if path_behavior != State.STOP:
 		if body.is_in_group("Player") or body.is_in_group("Box"):
 			if body in objects_to_move:
 				objects_to_move.pop_at(objects_to_move.find(body))
-			#print("Removed ", body.name)
