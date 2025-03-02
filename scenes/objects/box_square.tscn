@@ -15,7 +15,7 @@ script = ExtResource("1_s4ybx")
 metadata/grabbable = false
 metadata/grabbed = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_20bt7")
 
 [node name="BoxSprite" type="Sprite2D" parent="."]

@@ -4,7 +4,7 @@ enum Themes {NORMAL, SHIP, UNDERWATER}
 @export var theme: Themes = Themes.NORMAL
 @export var size: float = 1
 @onready var sprite = $BoxSprite
-@onready var collision = $CollisionShape2D
+@onready var collision = $Collision
 #@onready var arrow = $ArrowSprite
 
 func _ready():

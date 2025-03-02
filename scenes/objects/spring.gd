@@ -9,11 +9,11 @@ var current_state: State = State.DONE
 
 func _ready():
 	if theme == Themes.YELLOW:
-		Sprite.texture = load("res://Art/Area1/Spring.png")
+		Sprite.texture = load("res://art/area_1/spring.png")
 	elif theme == Themes.BLUE:
-		Sprite.texture = load("res://Art/Area3/Spring.png")
+		Sprite.texture = load("res://art/area_3/spring.png")
 	elif theme == Themes.GREEN:
-		Sprite.texture = load("res://Art/Unused/Spring2.png")
+		Sprite.texture = load("res://art/unused/spring.png")
 
 func _process(_delta): # Handle looking stretched ## When I get the spring split I shouldn't need to do this anymore
 	

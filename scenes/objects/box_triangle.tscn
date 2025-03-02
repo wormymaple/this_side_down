@@ -12,7 +12,7 @@ script = ExtResource("1_0qwdj")
 metadata/grabbable = false
 metadata/grabbed = false
 
-[node name="Hitbox" type="CollisionPolygon2D" parent="."]
+[node name="Collision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-2, 27, -34, -28, 32, -27)
 
 [node name="BoxSprite" type="Sprite2D" parent="."]

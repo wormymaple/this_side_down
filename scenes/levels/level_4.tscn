@@ -105,6 +105,6 @@ color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
 
 [node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("7_sqj7y")]
-position = Vector2(840, 707)
+position = Vector2(840, 712)
 camera = NodePath("../Camera")
 level = 4

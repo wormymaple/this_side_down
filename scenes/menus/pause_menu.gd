@@ -33,7 +33,7 @@ func _on_settings_pressed():
 	SettingsMenu.show()
 func _on_quit_to_menu_pressed():
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
 
 func _on_visibility_changed():
 	if visible:
