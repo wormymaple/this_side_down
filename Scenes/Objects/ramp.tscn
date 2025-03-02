@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbybiva8l4ojn"]
 
-[ext_resource type="Texture2D" uid="uid://cseji4gc7bqc5" path="res://Art/Area1/Ramp.png" id="1_o4ow0"]
+[ext_resource type="Texture2D" uid="uid://b0lr6wes2im0y" path="res://Art/Area1/Ramp.png" id="1_o4ow0"]
 [ext_resource type="Script" path="res://Scenes/Objects/ramp.gd" id="1_vbkbe"]
 
 [node name="Ramp" type="StaticBody2D"]
