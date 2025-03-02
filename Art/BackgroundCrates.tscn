@@ -37,43 +37,23 @@ position = Vector2(1228, 111.55)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_lxydj")
 
-[node name="MoreRoad" type="Sprite2D" parent="Wayback"]
+[node name="Road" type="Sprite2D" parent="Wayback"]
 modulate = Color(0.470588, 0.454902, 0.454902, 1)
-position = Vector2(640, 520)
+position = Vector2(640, 535)
 scale = Vector2(128, 40)
 texture = ExtResource("2_1yy8e")
 
+[node name="RoadOutline" type="Line2D" parent="Wayback"]
+position = Vector2(0, 334)
+points = PackedVector2Array(0, 0, 1280, 0)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
 [node name="Line2D" type="Line2D" parent="Wayback"]
+visible = false
 z_index = 5
 points = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720, 0, 0)
-
-[node name="WayBackRoad" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0, 0)
-
-[node name="Crates3Behind" type="ParallaxLayer" parent="."]
-visible = false
-modulate = Color(0.450648, 0.450648, 0.450648, 1)
-z_index = 1
-material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.25, 0.4)
-
-[node name="BackgroundCrates" type="Sprite2D" parent="Crates3Behind"]
-modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(-235.5, 308)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_5hc8t")
-
-[node name="BackgroundCrates2" type="Sprite2D" parent="Crates3Behind"]
-modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(1772.5, 308)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_5hc8t")
-
-[node name="BackgroundCrates3" type="Sprite2D" parent="Crates3Behind"]
-modulate = Color(0.668629, 0.668629, 0.668629, 1)
-position = Vector2(3042.1, 308)
-scale = Vector2(-0.6, -0.6)
-texture = ExtResource("3_5hc8t")
+default_color = Color(0, 0, 0, 1)
 
 [node name="Crates3" type="ParallaxLayer" parent="."]
 modulate = Color(0.666569, 0.666569, 0.666569, 1)
@@ -97,34 +77,6 @@ texture = ExtResource("3_5hc8t")
 modulate = Color(0.668629, 0.668629, 0.668629, 1)
 position = Vector2(1391, 338)
 scale = Vector2(0.4, -0.4)
-texture = ExtResource("3_5hc8t")
-
-[node name="Crates2Behind" type="ParallaxLayer" parent="."]
-visible = false
-modulate = Color(0.45098, 0.45098, 0.45098, 1)
-z_index = 2
-material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.45, 0.3)
-
-[node name="Crates" type="Sprite2D" parent="Crates2Behind"]
-z_index = 2
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(-163, 393.5)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_5hc8t")
-
-[node name="Crates2" type="Sprite2D" parent="Crates2Behind"]
-z_index = 2
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(604.75, 393.5)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_5hc8t")
-
-[node name="Crates3" type="Sprite2D" parent="Crates2Behind"]
-z_index = 2
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(1645.75, 393.5)
-scale = Vector2(-0.4, 0.4)
 texture = ExtResource("3_5hc8t")
 
 [node name="Crates2" type="ParallaxLayer" parent="."]
@@ -204,45 +156,41 @@ position = Vector2(1265.6, 437.25)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_iao84")
 
-[node name="Road" type="ParallaxLayer" parent="."]
-visible = false
-motion_scale = Vector2(0.8, 0)
-
-[node name="RoadLines1" type="ParallaxLayer" parent="."]
+[node name="RoadLines" type="ParallaxLayer" parent="."]
 position = Vector2(0, -54)
 motion_scale = Vector2(0.8, 0.6)
 
-[node name="RoadLine" type="Sprite2D" parent="RoadLines1"]
+[node name="RoadLine" type="Sprite2D" parent="RoadLines"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(-161.4, 631)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_21nnr")
 
-[node name="RoadLine2" type="Sprite2D" parent="RoadLines1"]
+[node name="RoadLine2" type="Sprite2D" parent="RoadLines"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(155.6, 631)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_21nnr")
 
-[node name="RoadLine3" type="Sprite2D" parent="RoadLines1"]
+[node name="RoadLine3" type="Sprite2D" parent="RoadLines"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(472.6, 631)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_21nnr")
 
-[node name="RoadLine4" type="Sprite2D" parent="RoadLines1"]
+[node name="RoadLine4" type="Sprite2D" parent="RoadLines"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(789.6, 631)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_21nnr")
 
-[node name="RoadLine5" type="Sprite2D" parent="RoadLines1"]
+[node name="RoadLine5" type="Sprite2D" parent="RoadLines"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(1106.6, 631)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_21nnr")
 
-[node name="RoadLine6" type="Sprite2D" parent="RoadLines1"]
+[node name="RoadLine6" type="Sprite2D" parent="RoadLines"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(1423.6, 631)
 scale = Vector2(0.4, 0.4)

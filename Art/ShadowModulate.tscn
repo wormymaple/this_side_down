@@ -1,4 +1,4 @@
 [gd_scene format=3 uid="uid://di5fo1ec8lk57"]
 
 [node name="ShadowModulate" type="CanvasModulate"]
-color = Color(0.2891, 0.38955, 0.49, 1)
+color = Color(0.354718, 0.467161, 0.579855, 1)
