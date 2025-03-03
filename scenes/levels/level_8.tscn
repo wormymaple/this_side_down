@@ -58,16 +58,13 @@ scale = Vector2(1, -1)
 [node name="Spring1" parent="." instance=ExtResource("5_6hfre")]
 position = Vector2(1861, 610)
 rotation = -1.04227
-script = null
 
 [node name="Spring2" parent="." instance=ExtResource("5_6hfre")]
 position = Vector2(712, 664)
 rotation = 0.399442
-script = null
 
 [node name="Spring3" parent="." instance=ExtResource("5_6hfre")]
 position = Vector2(1288, 180)
-script = null
 
 [node name="CircleBox" parent="." instance=ExtResource("12_7lyud")]
 position = Vector2(2302, 156)

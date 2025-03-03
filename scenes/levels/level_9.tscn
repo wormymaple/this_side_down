@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="14_wbbsx"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="15_iu3jp"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://scenes/objects/spring.tscn" id="16_paf4g"]
-[ext_resource type="Texture2D" uid="uid://o0vpdiqu2xnd" path="res://art/area_3/barrier.png" id="17_eh8td"]
+[ext_resource type="Texture2D" uid="uid://bsap65k4etgm0" path="res://Art/area_3/barrier.png" id="17_eh8td"]
 
 [sub_resource type="Curve2D" id="Curve2D_cf76v"]
 _data = {
@@ -63,16 +63,13 @@ upside_down = true
 [node name="Spring" parent="." instance=ExtResource("16_paf4g")]
 position = Vector2(111, 641)
 rotation = 0.757022
-script = null
 
 [node name="Spring2" parent="." instance=ExtResource("16_paf4g")]
 position = Vector2(1801, 649)
 rotation = -0.807404
-script = null
 
 [node name="Spring3" parent="." instance=ExtResource("16_paf4g")]
 position = Vector2(956, 815)
-script = null
 
 [node name="Platform" parent="." instance=ExtResource("5_bhl86")]
 position = Vector2(298, 267)

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://ln2ffi74l3eg"]
 
-[ext_resource type="FontFile" uid="uid://s5j7v8pcsl2w" path="res://fonts/nunito/static/Nunito-Regular.ttf" id="1_egpol"]
+[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://Fonts/Nunito/static/Nunito-Regular.ttf" id="1_egpol"]
 [ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://resources/button_focus.tres" id="2_7twn1"]
 [ext_resource type="StyleBox" uid="uid://b7x078ag0jx8d" path="res://resources/button_default.tres" id="2_eihje"]
 
