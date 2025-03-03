@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bq13ti4fn0mxl"]
 
 [ext_resource type="Script" path="res://scenes/other/background_boat.gd" id="1_pkpy6"]
-[ext_resource type="Texture2D" uid="uid://62v7gimlcqu2" path="res://art/area_3/ship_background.png" id="3_rwhe7"]
-[ext_resource type="Texture2D" uid="uid://bivvp24yml4dq" path="res://art/general/white_square.png" id="4_yjr6x"]
-[ext_resource type="Texture2D" uid="uid://c76u8c5e63tyu" path="res://art/area_2/background_crates.png" id="5_a838j"]
-[ext_resource type="Texture2D" uid="uid://duv02tjve681c" path="res://art/general/square_crates_background.png" id="6_4ovrn"]
+[ext_resource type="Texture2D" uid="uid://g4hmbl42b1yb" path="res://art/area_3/ship_background.png" id="3_rwhe7"]
+[ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="4_yjr6x"]
+[ext_resource type="Texture2D" uid="uid://cem5ftnlqlxjx" path="res://art/area_2/background_crates.png" id="5_a838j"]
+[ext_resource type="Texture2D" uid="uid://c1267636vtucv" path="res://art/general/square_crates_background.png" id="6_4ovrn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
@@ -19,32 +19,46 @@ motion_scale = Vector2(0, 0)
 
 [node name="Sky" type="Sprite2D" parent="Wayback"]
 modulate = Color(0.282353, 0.329412, 0.486275, 1)
-position = Vector2(960, 284)
-scale = Vector2(191.016, 56.6)
+position = Vector2(960, 539.5)
+scale = Vector2(191.016, 107.7)
 texture = ExtResource("4_yjr6x")
 
 [node name="Floor" type="Sprite2D" parent="Wayback"]
-modulate = Color(0.351563, 0.351563, 0.351563, 1)
+visible = false
+modulate = Color(0.479835, 0.479834, 0.479834, 1)
 position = Vector2(960, 799)
-scale = Vector2(192, 56.813)
+scale = Vector2(152, 56.813)
 texture = ExtResource("4_yjr6x")
 
-[node name="FloorLine" type="Line2D" parent="Wayback"]
+[node name="Polygon2D" type="Polygon2D" parent="Wayback"]
 position = Vector2(0, 513)
-points = PackedVector2Array(0, 0, 1920, 0)
+polygon = PackedVector2Array(-204, 677, 178, -185, 211, -230, 261, -263, 325, -286, 394, -297, 1560, -297, 1612, -285, 1656, -262, 1698, -226, 1732, -186, 2281, 667)
+vertex_colors = PackedColorArray(0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1)
+
+[node name="WallLine" type="Line2D" parent="Wayback"]
+position = Vector2(0, 512)
+points = PackedVector2Array(-204, 677, 178, -185, 211, -230, 261, -263, 325, -286, 394, -297, 1560, -297, 1612, -285, 1656, -262, 1698, -226, 1732, -186, 2281, 667)
+closed = true
 width = 5.0
 default_color = Color(0, 0, 0, 1)
 
 [node name="Ship" type="Sprite2D" parent="Wayback"]
-modulate = Color(0.376471, 0.376471, 0.376471, 1)
 z_index = 1
 position = Vector2(969, 263)
 texture = ExtResource("3_rwhe7")
 
-[node name="Midground" type="ParallaxLayer" parent="."]
-z_index = 1
-material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.87, 0)
+[node name="WayBackFloor" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.004, 0.05)
+
+[node name="Polygon2D" type="Polygon2D" parent="WayBackFloor"]
+position = Vector2(0, 530)
+polygon = PackedVector2Array(-143, 679, 213, -146, 235.936, -198.071, 266, -228, 303, -252, 362, -273, 415, -275, 1481, -270, 1528, -269, 1573, -261, 1624, -239, 1667, -202, 1706, -146, 2202, 667)
+
+[node name="FloorLine2" type="Line2D" parent="WayBackFloor"]
+position = Vector2(0, 530)
+points = PackedVector2Array(-143, 679, 213, -146, 235.936, -198.071, 266, -228, 303, -252, 362, -273, 415, -275, 1481, -270, 1528, -269, 1573, -261, 1624, -239, 1667, -202, 1706, -146, 2202, 667)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
 
 [node name="Crates3" type="ParallaxLayer" parent="."]
 modulate = Color(0.666569, 0.666569, 0.666569, 1)
