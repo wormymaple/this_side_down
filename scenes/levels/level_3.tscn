@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://r0yq03eqwlcd"]
 
-[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_ndoax"]
-[ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="2_dmm6o"]
+[ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_ndoax"]
+[ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="2_dmm6o"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="2_i1512"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="3_jyb7d"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="3_mv7h8"]

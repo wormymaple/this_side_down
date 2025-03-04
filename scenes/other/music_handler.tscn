@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm3nhumty4u0u"]
 
-[ext_resource type="AudioStream" uid="uid://de535kmte6hiu" path="res://audio/box_in_socks_intro.wav" id="1_0dv33"]
-[ext_resource type="Script" path="res://scenes/other/music_handler.gd" id="2_gid20"]
+[ext_resource type="AudioStream" uid="uid://d26cooqm2jbbf" path="res://audio/box_in_socks_intro.wav" id="1_0dv33"]
+[ext_resource type="Script" uid="uid://dkqx1535k6egq" path="res://scenes/other/music_handler.gd" id="2_gid20"]
 
 [node name="Loop" type="AudioStreamPlayer"]
 stream = ExtResource("1_0dv33")

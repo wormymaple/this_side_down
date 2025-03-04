@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://dkiib854vbjx6"]
 
-[ext_resource type="Texture2D" uid="uid://1bpoocsofkxr" path="res://art/menus/button_back.png" id="1_8piub"]
-[ext_resource type="Script" path="res://scenes/menus/credits.gd" id="1_w0aj4"]
-[ext_resource type="Texture2D" uid="uid://c365snjl8080e" path="res://art/menus/box_background.png" id="2_6d2yu"]
-[ext_resource type="FontFile" uid="uid://fx52s08yvsdd" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="2_r18ib"]
-[ext_resource type="FontFile" uid="uid://c4slyfn8702t7" path="res://fonts/nunito/static/Nunito-Bold.ttf" id="3_o5ggc"]
+[ext_resource type="Texture2D" uid="uid://bsr527fhwjda4" path="res://art/menus/button_back.png" id="1_8piub"]
+[ext_resource type="Script" uid="uid://do4gxn4aa7vnl" path="res://scenes/menus/credits.gd" id="1_w0aj4"]
+[ext_resource type="Texture2D" uid="uid://c21y5e2iccgjq" path="res://art/menus/box_background.png" id="2_6d2yu"]
+[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="2_r18ib"]
+[ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://fonts/nunito/static/Nunito-Bold.ttf" id="3_o5ggc"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="5_ss1ur"]
-[ext_resource type="FontFile" uid="uid://s5j7v8pcsl2w" path="res://fonts/nunito/static/Nunito-Regular.ttf" id="6_gvst3"]
+[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/nunito/static/Nunito-Regular.ttf" id="6_gvst3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yjln"]
 bg_color = Color(0, 0, 0, 0.47451)

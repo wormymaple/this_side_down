@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=4 uid="uid://b648xp38c3ny7"]
 
-[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_daa33"]
+[ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_daa33"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="4_nh0bc"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="6_3jehe"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="6_48uye"]
 [ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://scenes/objects/box_triangle.tscn" id="6_55da6"]
-[ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="7_2ga8b"]
+[ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="7_2ga8b"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/LandingZone.tscn" id="8_grauf"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="8_jmg2h"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="9_64wh3"]

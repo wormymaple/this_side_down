@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlwptuwx6ppy2"]
 
-[ext_resource type="Script" path="res://scenes/objects/platform.gd" id="1_vb141"]
-[ext_resource type="Texture2D" uid="uid://mdw25byxk7rd" path="res://art/area_1/floating_platform.png" id="2_v0bgm"]
+[ext_resource type="Script" uid="uid://uhw3n8f8y0ku" path="res://scenes/objects/platform.gd" id="1_vb141"]
+[ext_resource type="Texture2D" uid="uid://en5cg5qgf7f1" path="res://art/area_1/floating_platform.png" id="2_v0bgm"]
 
 [sub_resource type="Curve2D" id="Curve2D_llgmf"]
 

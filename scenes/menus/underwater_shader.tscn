@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://j1cgdb1mcyvg"]
 
-[ext_resource type="Shader" path="res://resources/underwater_shader.gdshader" id="1_hm2o8"]
+[ext_resource type="Shader" uid="uid://b4wscfjnwckcv" path="res://resources/underwater_shader.gdshader" id="1_hm2o8"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_q67py"]
 
@@ -17,10 +17,10 @@ noise = SubResource("FastNoiseLite_b1oqs")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5prjj"]
 shader = ExtResource("1_hm2o8")
-shader_parameter/intensity = 0.015
-shader_parameter/timeMultiplier = 0.07
 shader_parameter/noise0 = SubResource("NoiseTexture2D_hysw7")
 shader_parameter/noise1 = SubResource("NoiseTexture2D_friad")
+shader_parameter/intensity = 0.015
+shader_parameter/timeMultiplier = 0.07
 
 [node name="WaterCanvasLayer" type="CanvasLayer"]
 

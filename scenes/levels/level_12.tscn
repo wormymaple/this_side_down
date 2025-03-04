@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://dl5ncyiq5epgd"]
 
-[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_pjou6"]
+[ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_pjou6"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="2_evlye"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://scenes/objects/ladder.tscn" id="4_cdfft"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://scenes/objects/spring.tscn" id="5_ap2rn"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://scenes/menus/underwater_shader.tscn" id="8_u77f3"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://scenes/other/background_ocean.tscn" id="9_akor3"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://scenes/objects/platform.tscn" id="9_df3oo"]
-[ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="11_psbp5"]
+[ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="11_psbp5"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="12_ukulb"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="13_r0ek7"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="16_sinvx"]

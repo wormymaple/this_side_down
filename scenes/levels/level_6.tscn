@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=4 uid="uid://bwfqlui2oxdvp"]
 
-[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_7gtpw"]
+[ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_7gtpw"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://scenes/objects/ladder.tscn" id="2_87pw1"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="7_5g5wu"]
-[ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="7_fhnad"]
+[ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="7_fhnad"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://scenes/objects/platform.tscn" id="7_hqlvf"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="8_lh8vf"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="9_lxu1d"]

@@ -1,21 +1,20 @@
 [gd_scene load_steps=17 format=3 uid="uid://bgr4nq5o17pmh"]
 
-[ext_resource type="Script" path="res://scenes/objects/player.gd" id="1_5wbp8"]
-[ext_resource type="Texture2D" uid="uid://dkj2ltlmyqlii" path="res://art/player/hand_closed.png" id="2_4wubt"]
-[ext_resource type="Texture2D" uid="uid://cmpjj5lo2116y" path="res://art/player/hand_open.png" id="3_nc5kx"]
-[ext_resource type="Texture2D" uid="uid://c4ik7civndvb6" path="res://art/player/player_head.png" id="4_8lqlt"]
-[ext_resource type="Texture2D" uid="uid://1palh4ajmj3" path="res://art/player/player_legs.png" id="5_g830a"]
-[ext_resource type="AudioStream" uid="uid://bnb36mqraxmkg" path="res://audio/pickup_object.wav" id="6_dmfrs"]
-[ext_resource type="AudioStream" uid="uid://drvdd0g5lu211" path="res://audio/box_drop_better.wav" id="7_jdbta"]
-[ext_resource type="AudioStream" uid="uid://bkyjrghnif8y8" path="res://audio/jump3.wav" id="8_3mkwv"]
-[ext_resource type="AudioStream" uid="uid://c6i1ybp18w08x" path="res://audio/footsteps_0.wav" id="9_7tj8n"]
+[ext_resource type="Script" uid="uid://c1nslewu22mr2" path="res://scenes/objects/player.gd" id="1_5wbp8"]
+[ext_resource type="Texture2D" uid="uid://6x7dxi23gud4" path="res://art/player/hand_closed.png" id="2_4wubt"]
+[ext_resource type="Texture2D" uid="uid://cy84tp1ur2il" path="res://art/player/hand_open.png" id="3_nc5kx"]
+[ext_resource type="Texture2D" uid="uid://dhcgep0jgavc2" path="res://art/player/player_head.png" id="4_8lqlt"]
+[ext_resource type="Texture2D" uid="uid://v66l2jed5dcs" path="res://art/player/player_legs.png" id="5_g830a"]
+[ext_resource type="AudioStream" uid="uid://c3tp2oalks1km" path="res://audio/pickup_object.wav" id="6_dmfrs"]
+[ext_resource type="AudioStream" uid="uid://7j3i73bkqyc" path="res://audio/box_drop_better.wav" id="7_jdbta"]
+[ext_resource type="AudioStream" uid="uid://d3b4l1mjyt4ig" path="res://audio/jump3.wav" id="8_3mkwv"]
+[ext_resource type="AudioStream" uid="uid://bh3i2sv0yd5i8" path="res://audio/footsteps_0.wav" id="9_7tj8n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2c1hu"]
 friction = 0.0
 
 [sub_resource type="Curve" id="Curve_fcyqv"]
-min_value = -2.0
-max_value = 2.0
+_limits = [-2.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 2.13163e-14), 0.0, 13.0693, 0, 0, Vector2(0.250746, 2), 0.0, 0.0, 0, 0, Vector2(0.755224, -2), 0.0, 0.0, 0, 0, Vector2(1, 2.13163e-14), 12.2595, 0.0, 0, 0]
 point_count = 4
 

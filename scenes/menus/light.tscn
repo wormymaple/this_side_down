@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://wonkd2sx7pt6"]
 
-[ext_resource type="Texture2D" uid="uid://ccf8l84twcl2o" path="res://icon.svg" id="1_mr8ae"]
+[ext_resource type="Texture2D" uid="uid://cj30gnj85qxvu" path="res://icon.svg" id="1_mr8ae"]
 
 [node name="Light" type="DirectionalLight2D"]
 rotation = 0.139626

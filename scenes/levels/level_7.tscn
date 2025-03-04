@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=4 uid="uid://b5f8uid778i23"]
 
-[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_ywfd7"]
+[ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_ywfd7"]
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://scenes/other/background_crates.tscn" id="6_p2mlh"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="7_1qngq"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="7_oyu26"]
-[ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="8_2yscn"]
+[ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="8_2yscn"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="8_v6gpo"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="9_vck8b"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="9_vr6y1"]

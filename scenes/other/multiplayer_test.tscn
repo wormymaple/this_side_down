@@ -1,12 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvu6pqwjke534"]
 
-[ext_resource type="Script" path="res://scenes/objects/player_spawner.gd" id="1_01fhd"]
+[ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="1_01fhd"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="2_e3q2l"]
-[ext_resource type="Script" path="res://scenes/menus/group_camera.gd" id="3_4bvcx"]
-[ext_resource type="Texture2D" path="res://Art/MiscSprites/TempBox.png" id="4_vp4gt"]
+[ext_resource type="Script" uid="uid://pia7u6qeieie" path="res://scenes/menus/group_camera.gd" id="3_4bvcx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b30eg"]
 size = Vector2(1152, 79)
+
+[sub_resource type="Resource" id="Resource_qbpb0"]
+metadata/__load_path__ = "res://Art/MiscSprites/TempBox.png"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gpqfj"]
 size = Vector2(64, 64)
@@ -41,7 +43,7 @@ metadata/grabbable = true
 metadata/Grabbed = false
 
 [node name="Sprite2D" type="Sprite2D" parent="Box"]
-texture = ExtResource("4_vp4gt")
+texture = SubResource("Resource_qbpb0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
 shape = SubResource("RectangleShape2D_gpqfj")

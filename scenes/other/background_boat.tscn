@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://bq13ti4fn0mxl"]
 
-[ext_resource type="Script" path="res://scenes/other/background_boat.gd" id="1_pkpy6"]
-[ext_resource type="Texture2D" uid="uid://g4hmbl42b1yb" path="res://art/area_3/ship_background.png" id="3_rwhe7"]
-[ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="4_yjr6x"]
-[ext_resource type="Texture2D" uid="uid://cem5ftnlqlxjx" path="res://art/area_2/background_crates.png" id="5_a838j"]
-[ext_resource type="Texture2D" uid="uid://c1267636vtucv" path="res://art/general/square_crates_background.png" id="6_4ovrn"]
+[ext_resource type="Script" uid="uid://bw7lskundaej3" path="res://scenes/other/background_boat.gd" id="1_pkpy6"]
+[ext_resource type="Texture2D" uid="uid://g4hmbl42b1yb" path="res://Art/area_3/ship_background.png" id="3_rwhe7"]
+[ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://Art/general/white_square.png" id="4_yjr6x"]
+[ext_resource type="Texture2D" uid="uid://cem5ftnlqlxjx" path="res://Art/area_2/background_crates.png" id="5_a838j"]
+[ext_resource type="Texture2D" uid="uid://c1267636vtucv" path="res://Art/general/square_crates_background.png" id="6_4ovrn"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
@@ -31,7 +31,7 @@ scale = Vector2(152, 56.813)
 texture = ExtResource("4_yjr6x")
 
 [node name="Polygon2D" type="Polygon2D" parent="Wayback"]
-position = Vector2(0, 513)
+position = Vector2(0, 512)
 polygon = PackedVector2Array(-204, 677, 178, -185, 211, -230, 261, -263, 325, -286, 394, -297, 1560, -297, 1612, -285, 1656, -262, 1698, -226, 1732, -186, 2281, 667)
 vertex_colors = PackedColorArray(0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1, 0.494118, 0.494118, 0.494118, 1)
 
@@ -52,11 +52,12 @@ motion_scale = Vector2(0.004, 0.05)
 
 [node name="Polygon2D" type="Polygon2D" parent="WayBackFloor"]
 position = Vector2(0, 530)
-polygon = PackedVector2Array(-143, 679, 213, -146, 235.936, -198.071, 266, -228, 303, -252, 362, -273, 415, -275, 1481, -270, 1528, -269, 1573, -261, 1624, -239, 1667, -202, 1706, -146, 2202, 667)
+color = Color(0.720467, 0.720468, 0.720467, 1)
+polygon = PackedVector2Array(-143, 679, 213, -146, 235.936, -198.071, 266, -228, 303, -252, 362, -273, 415, -275, 1481, -270, 1537, -269, 1593, -253, 1633, -233, 1670, -199, 1706, -146, 2202, 667)
 
 [node name="FloorLine2" type="Line2D" parent="WayBackFloor"]
 position = Vector2(0, 530)
-points = PackedVector2Array(-143, 679, 213, -146, 235.936, -198.071, 266, -228, 303, -252, 362, -273, 415, -275, 1481, -270, 1528, -269, 1573, -261, 1624, -239, 1667, -202, 1706, -146, 2202, 667)
+points = PackedVector2Array(-143, 679, 213, -146, 235.936, -198.071, 266, -228, 303, -252, 362, -273, 415, -275, 1481, -270, 1537, -269, 1593, -253, 1633, -233, 1670, -199, 1706, -146, 2202, 667)
 width = 5.0
 default_color = Color(0, 0, 0, 1)
 
