@@ -64,7 +64,9 @@ func _physics_process(_delta):
 			object.global_transform.origin += movement * scale # For some reason this works while setting the position will not
 		elif object.is_in_group("LandingZone"):
 			object.position += movement * scale
-
+		elif object.is_in_group("Spring"):
+			object.position += movement * scale
+		
 func _on_area_2d_body_entered(body):
 	if path_behavior != State.STOP:
 		if body.is_in_group("Player") or body.is_in_group("Box"):

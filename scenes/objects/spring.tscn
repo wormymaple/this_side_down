@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfp4"]
 size = Vector2(128, 25)
 
-[node name="Spring" type="Area2D"]
+[node name="Spring" type="Area2D" groups=["Spring"]]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_fdvwv")

@@ -52,8 +52,8 @@ size_flags_stretch_ratio = 2.0
 custom_minimum_size = Vector2(468, 93)
 layout_mode = 2
 theme = ExtResource("3_baj6k")
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("4_vw1xm")
 theme_override_font_sizes/font_size = 40
@@ -67,8 +67,8 @@ text = "Resume Game"
 custom_minimum_size = Vector2(468, 93)
 layout_mode = 2
 theme = ExtResource("3_baj6k")
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("4_vw1xm")
 theme_override_font_sizes/font_size = 40
@@ -82,8 +82,8 @@ text = "Restart Level"
 custom_minimum_size = Vector2(468, 93)
 layout_mode = 2
 theme = ExtResource("3_baj6k")
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("4_vw1xm")
 theme_override_font_sizes/font_size = 40
@@ -98,8 +98,8 @@ text = "Settings
 custom_minimum_size = Vector2(468, 93)
 layout_mode = 2
 theme = ExtResource("3_baj6k")
-theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("4_vw1xm")
 theme_override_font_sizes/font_size = 40
@@ -113,8 +113,8 @@ text = "Quit To Main Menu"
 visible = false
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RestartLevel" to="." method="_on_restart_level_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitToMenu" to="." method="_on_quit_to_menu_pressed"]

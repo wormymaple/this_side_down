@@ -6,6 +6,7 @@ enum State {DONE, IN, OUT}
 var current_state: State = State.DONE
 @export var Power: int = 700
 @onready var Sprite = $Sprite2D
+@export var platform_to_attach_to: Path2D = null
 
 func _ready():
 	if theme == Themes.YELLOW:
@@ -14,6 +15,9 @@ func _ready():
 		Sprite.texture = load("res://art/area_3/spring.png")
 	elif theme == Themes.GREEN:
 		Sprite.texture = load("res://art/unused/spring.png")
+	
+	if platform_to_attach_to != null:
+		platform_to_attach_to.objects_to_move.push_back(self)
 
 func _process(delta): # Handle looking stretched ## When I get the spring split I shouldn't need to do this anymore
 	

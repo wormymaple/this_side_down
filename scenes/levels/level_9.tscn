@@ -112,6 +112,12 @@ camera_offset = Vector2(0, -150)
 
 [node name="Rails" type="ParallaxBackground" parent="."]
 layer = 0
+visible = false
+
+[node name="CanvasModulate3" parent="Rails" instance=ExtResource("6_tammo")]
+z_index = 1
+position = Vector2(-2226.9, -1118.87)
+color = Color(0.498039, 0.639216, 0.827451, 1)
 
 [node name="Ground" type="ParallaxLayer" parent="Rails"]
 z_index = 4096
@@ -131,10 +137,6 @@ material = SubResource("CanvasItemMaterial_vtxps")
 position = Vector2(1616, 510)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("17_eh8td")
-
-[node name="CanvasModulate3" parent="Rails" instance=ExtResource("6_tammo")]
-position = Vector2(-2226.9, -1118.87)
-color = Color(0.498039, 0.639216, 0.827451, 1)
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 position = Vector2(0, -264)

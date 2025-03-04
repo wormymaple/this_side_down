@@ -80,16 +80,16 @@ rotation = -1.54847
 scale = Vector2(-1, 1)
 
 [node name="Spring2" parent="." instance=ExtResource("10_3lwft")]
-position = Vector2(-298, 462)
+position = Vector2(-248, 518)
 Power = 900
 
 [node name="Spring4" parent="." instance=ExtResource("10_3lwft")]
-position = Vector2(1478, 463)
+position = Vector2(1547, 442)
 rotation = -1.1604
 Power = 1200
 
 [node name="Spring3" parent="." instance=ExtResource("10_3lwft")]
-position = Vector2(343, 113)
+position = Vector2(387, 206)
 rotation = 0.589708
 Power = 1110
 

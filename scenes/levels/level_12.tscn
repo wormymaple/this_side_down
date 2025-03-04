@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dl5ncyiq5epgd"]
+[gd_scene load_steps=18 format=4 uid="uid://dv6cw04ulkig0"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_pjou6"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="2_evlye"]
@@ -19,7 +19,6 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="17_ggy2w"]
 
 [node name="Level12" type="Node2D"]
-position = Vector2(10, -18)
 script = ExtResource("1_pjou6")
 Song = 1
 

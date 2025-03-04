@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://1fc34qaiyikq"]
 
-[ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="1_mlamw"]
-[ext_resource type="Texture2D" uid="uid://b1viy5ojy472w" path="res://art/area_4/kelp_not_foreground.png" id="2_mmx5e"]
-[ext_resource type="Texture2D" uid="uid://cgjjlopugtc46" path="res://art/area_4/ocean_floor_back.png" id="3_kyahy"]
-[ext_resource type="Texture2D" uid="uid://c24r7rlkj1gm1" path="res://art/area_4/sunken_crates.png" id="4_63om1"]
-[ext_resource type="Texture2D" uid="uid://duwftmg5yphjb" path="res://art/area_4/kelp_foreground.png" id="5_id25e"]
-[ext_resource type="Texture2D" uid="uid://bysbsv3ujig1" path="res://art/area_4/ocean_floor_front.png" id="6_qlq6n"]
+[ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://Art/general/white_square.png" id="1_mlamw"]
+[ext_resource type="Texture2D" uid="uid://b1viy5ojy472w" path="res://Art/area_4/kelp_not_foreground.png" id="2_mmx5e"]
+[ext_resource type="Texture2D" uid="uid://cgjjlopugtc46" path="res://Art/area_4/ocean_floor_back.png" id="3_kyahy"]
+[ext_resource type="Texture2D" uid="uid://c24r7rlkj1gm1" path="res://Art/area_4/sunken_crates.png" id="4_63om1"]
+[ext_resource type="Texture2D" uid="uid://duwftmg5yphjb" path="res://Art/area_4/kelp_foreground.png" id="5_id25e"]
+[ext_resource type="Texture2D" uid="uid://bysbsv3ujig1" path="res://Art/area_4/ocean_floor_front.png" id="6_qlq6n"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
@@ -13,13 +13,12 @@
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_3xyd5")
-motion_scale = Vector2(0.7, 0.85)
-motion_mirroring = Vector2(1, 2.08165e-12)
+motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wayback"]
 modulate = Color(0.0941176, 0.172549, 0.223529, 1)
-position = Vector2(953.5, 137.75)
-scale = Vector2(289.1, 81.95)
+position = Vector2(960, 540)
+scale = Vector2(192, 108)
 texture = ExtResource("1_mlamw")
 
 [node name="Midground" type="ParallaxLayer" parent="."]
@@ -30,19 +29,16 @@ motion_scale = Vector2(0.87, 0.94)
 [node name="Sprite2D2" type="Sprite2D" parent="Midground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_kyahy")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Midground"]
 modulate = Color(0.858824, 0.858824, 0.858824, 1)
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_mmx5e")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Midground"]
 modulate = Color(0.376471, 0.376471, 0.376471, 1)
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_63om1")
 
 [node name="Foreground" type="ParallaxLayer" parent="."]
@@ -53,13 +49,11 @@ motion_scale = Vector2(0.9, 0.95)
 [node name="Sprite2D5" type="Sprite2D" parent="Foreground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_63om1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_id25e")
 
 [node name="Ground" type="ParallaxLayer" parent="."]
@@ -70,5 +64,4 @@ motion_scale = Vector2(0.99, 1)
 [node name="Sprite2D" type="Sprite2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(960, 540)
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_qlq6n")

@@ -56,12 +56,9 @@ func _process(_delta):
 			mode = State.WAIT
 	
 
-
-
 func _on_timer_timeout():
 	print("Timer timed out")
 	mode = State.PUSH
-
 
 func _on_area_2d_input_event(_viewport, event, shape_idx):
 	print("Input event!: ", event, ", ", shape_idx)
@@ -70,11 +67,6 @@ func _on_area_2d_input_event(_viewport, event, shape_idx):
 func _on_deleter_body_entered(body):
 	#print(body.name)
 	if body.is_in_group("Box") or body.is_in_group("Player"):
-		body.queue_free()
+		body.call_deferred("queue_free")
 		get_tree().reload_current_scene()
-
-
-#func _on_deleter_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-#	if body.is_in_group("Player") or body.is_in_group("Box"):
-#		print(body.name)
-#		body.queue_free()
+	
