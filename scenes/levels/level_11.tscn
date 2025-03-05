@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://scenes/objects/piston.tscn" id="6_0nodb"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="6_p82q7"]
 [ext_resource type="PackedScene" uid="uid://ftopepwcjoag" path="res://scenes/objects/plank.tscn" id="7_ukslq"]
-[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/LandingZone.tscn" id="8_2ie1f"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/landing_zone.tscn" id="8_2ie1f"]
 [ext_resource type="PackedScene" uid="uid://j1cgdb1mcyvg" path="res://scenes/menus/underwater_shader.tscn" id="8_u77f3"]
 [ext_resource type="PackedScene" uid="uid://1fc34qaiyikq" path="res://scenes/other/background_ocean.tscn" id="9_akor3"]
 [ext_resource type="PackedScene" uid="uid://dlwptuwx6ppy2" path="res://scenes/objects/platform.tscn" id="9_df3oo"]

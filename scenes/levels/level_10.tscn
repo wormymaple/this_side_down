@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://bfume0p3k4a7x"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_sa26g"]
-[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/LandingZone.tscn" id="2_5g4cw"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/landing_zone.tscn" id="2_5g4cw"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="6_db016"]
 [ext_resource type="PackedScene" uid="uid://rlnrmnltn78o" path="res://scenes/objects/piston.tscn" id="6_qfg1o"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="7_tms1o"]

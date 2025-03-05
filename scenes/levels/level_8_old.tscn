@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://scenes/objects/spring.tscn" id="10_3lwft"]
 [ext_resource type="PackedScene" uid="uid://c02557mdlevgc" path="res://scenes/objects/box_circle.tscn" id="11_d74rg"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="12_fn1pp"]
-[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/LandingZone.tscn" id="13_663os"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/landing_zone.tscn" id="13_663os"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://scenes/objects/ladder.tscn" id="14_tyut7"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="15_47ngx"]
 

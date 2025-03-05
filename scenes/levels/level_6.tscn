@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="11_unprq"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="12_7j7q0"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="13_c4ixt"]
-[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/LandingZone.tscn" id="13_uogt2"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/landing_zone.tscn" id="13_uogt2"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="14_jcsp8"]
 
 [sub_resource type="Curve2D" id="Curve2D_037mp"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://c7gc0sday64y6"]
 
-[ext_resource type="Script" uid="uid://dddh20omq2xq4" path="res://scenes/objects/LandingZone.gd" id="1_wkjfu"]
-[ext_resource type="Texture2D" uid="uid://cwbh6525nf4gg" path="res://art/area_1/landing_zone.png" id="2_jkmx4"]
-[ext_resource type="Texture2D" uid="uid://dnk3wvfako1r7" path="res://art/general/simple_box.png" id="3_kmtdw"]
+[ext_resource type="Script" uid="uid://dddh20omq2xq4" path="res://scenes/objects/landing_zone.gd" id="1_wkjfu"]
+[ext_resource type="Texture2D" uid="uid://cwbh6525nf4gg" path="res://Art/area_1/landing_zone.png" id="2_jkmx4"]
+[ext_resource type="Texture2D" uid="uid://dnk3wvfako1r7" path="res://Art/general/simple_box.png" id="3_kmtdw"]
 [ext_resource type="Script" uid="uid://27xd6864a0l2" path="res://standalone_scripts/bob_up_and_down.gd" id="4_3mwse"]
-[ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="5_jsrkl"]
+[ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://Art/general/white_square.png" id="5_jsrkl"]
 
 [sub_resource type="Curve" id="Curve_edar3"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494845, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -71,10 +71,10 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.5, 0.5)
 emitting = false
 amount = 32
-process_material = SubResource("ParticleProcessMaterial_pitsf")
 texture = ExtResource("5_jsrkl")
 trail_enabled = true
 trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_pitsf")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -24)

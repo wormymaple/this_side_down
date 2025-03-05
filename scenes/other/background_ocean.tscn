@@ -9,7 +9,7 @@
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
-[node name="ParallaxBackground" type="ParallaxBackground"]
+[node name="OceanBackground" type="ParallaxBackground"]
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_3xyd5")

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="3_mv7h8"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="8_6vpom"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://scenes/other/background_warehouse.tscn" id="9_5ant1"]
-[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/LandingZone.tscn" id="9_e6i4h"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/landing_zone.tscn" id="9_e6i4h"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="10_i46cw"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="12_57cmh"]
 [ext_resource type="PackedScene" uid="uid://ftopepwcjoag" path="res://scenes/objects/plank.tscn" id="12_aaf8q"]
