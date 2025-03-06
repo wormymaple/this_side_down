@@ -14,7 +14,7 @@ func _ready():
 	elif theme == Themes.BLUE:
 		Sprite.texture = load("res://art/area_3/spring.png")
 	elif theme == Themes.GREEN:
-		Sprite.texture = load("res://art/unused/spring.png")
+		Sprite.texture = load("res://art/area_4/spring.png")
 	
 	if platform_to_attach_to != null:
 		platform_to_attach_to.objects_to_move.push_back(self)
