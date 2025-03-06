@@ -42,7 +42,6 @@ visible = false
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_tms1o")]
 position = Vector2(-252, -1441)
-scale = Vector2(1, 1)
 color = Color(1, 0.941176, 0.917647, 1)
 
 [node name="Box" parent="." instance=ExtResource("15_cawam")]

@@ -69,7 +69,7 @@ func _physics_process(delta):
 		elif Input.is_action_pressed("LS_down_" + playerID):
 			linear_velocity = Vector2.DOWN * ladder_climb_speed * delta # Since the vector is down, I don't need to invert it
 		else:
-			pass # Nothing happens and the player stays in place
+			linear_velocity.y = 0
 	elif gravity_scale == 0 or gravity_scale == 0.5:
 		gravity_scale = original_grav_scale ## This shouldn't need to be here. Does this account for if the player is being held?
 	
@@ -140,7 +140,7 @@ func _physics_process(delta):
 				Footsteps.play()
 				time_since_last_footstep -= footstep_interval
 			
-	elif on_ground:
+	elif on_ground or standing_in_ladder:
 		linear_velocity.x = 0
 
 func _input(event):
