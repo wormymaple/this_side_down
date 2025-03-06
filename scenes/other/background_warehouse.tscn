@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ckanvdi6ly78t"]
 
-[ext_resource type="Texture2D" uid="uid://hsqpfc0l6xr0" path="res://Art/area_1/background.jpg" id="1_xhcn7"]
-[ext_resource type="Texture2D" uid="uid://jcd41vtay8qy" path="res://Art/area_1/shelves.png" id="2_dew31"]
-[ext_resource type="Texture2D" uid="uid://dyrnw8gqdvvyx" path="res://Art/area_1/boxes.png" id="3_ms3rt"]
-[ext_resource type="Texture2D" uid="uid://40vl2cbl6p4w" path="res://Art/area_1/pillar.png" id="4_du21l"]
+[ext_resource type="Texture2D" uid="uid://hsqpfc0l6xr0" path="res://art/area_1/background.jpg" id="1_xhcn7"]
+[ext_resource type="Texture2D" uid="uid://jcd41vtay8qy" path="res://art/area_1/shelves.png" id="2_dew31"]
+[ext_resource type="Texture2D" uid="uid://dyrnw8gqdvvyx" path="res://art/area_1/boxes.png" id="3_ms3rt"]
+[ext_resource type="Texture2D" uid="uid://40vl2cbl6p4w" path="res://art/area_1/pillar.png" id="4_du21l"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s4lip"]
 

@@ -60,12 +60,16 @@ func _ready():
 func _physics_process(delta):
 	## First, do ladder physics
 	if standing_in_ladder: # Ladder physics
+		gravity_scale = 0
 		unmovable = false
-		if Input.is_action_pressed("left_trigger_" + playerID): # The player will climb up
-			gravity_scale = 0.5 # Was 0
+		if Input.is_action_pressed("LS_up_" + playerID): # The player will climb up
+			#print("Climbing up the ladder!")
 			linear_velocity = Vector2.UP * ladder_climb_speed * delta
-		else: # This will eventually be replaced with up or down on the left stick
-			linear_velocity = Vector2.DOWN * -ladder_climb_speed * delta
+		
+		elif Input.is_action_pressed("LS_down_" + playerID):
+			linear_velocity = Vector2.DOWN * ladder_climb_speed * delta # Since the vector is down, I don't need to invert it
+		else:
+			pass # Nothing happens and the player stays in place
 	elif gravity_scale == 0 or gravity_scale == 0.5:
 		gravity_scale = original_grav_scale ## This shouldn't need to be here. Does this account for if the player is being held?
 	
@@ -99,10 +103,10 @@ func _physics_process(delta):
 		
 		# Addinng this code to test being able to rotate held item by button press
 		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_right_p1"):
-			grabbed_body.global_rotation += 0.01 * delta
+			grabbed_body.global_rotation += 2 * delta
 			#print("I am rotating!")
 		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_left_p1"):
-			grabbed_body.global_rotation -= 0.01 * delta
+			grabbed_body.global_rotation -= 2 * delta
 			#print("I am rotating!")
 			
 		
@@ -141,14 +145,14 @@ func _physics_process(delta):
 
 func _input(event):
 	# jump
-	if event.is_action_pressed("left_trigger_" + playerID) && on_ground && !standing_in_ladder:
+	if event.is_action_pressed("LT_" + playerID) && on_ground: #&& !standing_in_ladder:
 		linear_velocity.y = -jump_speed
 		if is_in_water:
 			linear_velocity.y *= water_jump_multiplier
 		Jump.play()
 		
 	# grab
-	if event.is_action_pressed("right_trigger_" + playerID):
+	if event.is_action_pressed("RT_" + playerID):
 		if grabbed_body == null && target_body != null: # Try grab
 			# Am I being grabbed by a player?
 			if target_body.is_in_group("Player") && check_player_linkage(target_body):
@@ -163,7 +167,7 @@ func _input(event):
 			
 			BoxPickup.play()
 			
-	elif event.is_action_released("right_trigger_" + playerID) && grabbed_body != null:
+	elif event.is_action_released("RT_" + playerID) && grabbed_body != null:
 		drop_object()
 
 func set_color(player_index):

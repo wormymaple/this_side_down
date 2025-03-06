@@ -41,7 +41,7 @@ func _process(_delta): # It would be best if this code only checked itself when 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Box"):
-		print("New Box!")
+		#print("New Box!")
 		colliding_bodies.append(body)
 	
 func _on_area_2d_body_exited(body: Node2D) -> void:

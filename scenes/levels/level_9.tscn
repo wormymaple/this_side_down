@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="9_wbevr"]
 [ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://scenes/other/background_boat.tscn" id="10_ffl0r"]
 [ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="12_42hc6"]
+[ext_resource type="Texture2D" uid="uid://bsap65k4etgm0" path="res://art/area_3/barrier.png" id="13_1xidw"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="13_avyxm"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="14_rm8a3"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="14_wbbsx"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="15_a2yd2"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="15_iu3jp"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://scenes/objects/spring.tscn" id="16_paf4g"]
-[ext_resource type="Texture2D" uid="uid://bsap65k4etgm0" path="res://Art/area_3/barrier.png" id="17_eh8td"]
 
 [sub_resource type="Curve2D" id="Curve2D_cf76v"]
 _data = {
@@ -130,13 +130,13 @@ motion_scale = Vector2(1.2, 1)
 material = SubResource("CanvasItemMaterial_vtxps")
 position = Vector2(151, 510)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("17_eh8td")
+texture = ExtResource("13_1xidw")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Rails/Ground"]
 material = SubResource("CanvasItemMaterial_vtxps")
 position = Vector2(1616, 510)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("17_eh8td")
+texture = ExtResource("13_1xidw")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 position = Vector2(0, -264)

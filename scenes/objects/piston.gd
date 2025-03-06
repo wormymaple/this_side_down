@@ -15,7 +15,7 @@ var mode: State# = State.WAIT
 
 func _ready():
 	$Timer.wait_time = time_interval
-	print("Piston is ready")
+	#print("Piston is ready")
 	mode = State.WAIT
 	#set_process(true)
 	
@@ -57,10 +57,10 @@ func _process(_delta):
 	
 
 func _on_timer_timeout():
-	print("Timer timed out")
+	#print("Timer timed out")
 	mode = State.PUSH
 
-func _on_area_2d_input_event(_viewport, event, shape_idx):
+func _on_area_2d_input_event(_viewport, event, shape_idx): # I don't know what this does, maybe I was just testing what this did for the first time?
 	print("Input event!: ", event, ", ", shape_idx)
 
 
