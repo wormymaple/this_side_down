@@ -323,6 +323,13 @@ rotate_left_p4={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Ground Layer"
+2d_physics/layer_2="Player Layer"
+2d_physics/layer_4="Box Layer"
+2d_physics/layer_12="Player Has This"
+
 [physics]
 
 common/physics_ticks_per_second=256

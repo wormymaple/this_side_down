@@ -13,9 +13,10 @@ const drop_threshold = 100
 # States
 var is_in_water: bool
 var on_ground = false
+var things_standing_on = []
 var grab_did_collide = false
 var unmovable = false # The player can't move, either because they are being grabbed or they hit a directional spring
-var standing_in_ladder = false
+var standing_in_ladder = 0
 var original_grav_scale = 1 # This is literally 1. Grav scale gets changed when being held or climbing ladders
 
 # Player detail
@@ -52,10 +53,9 @@ var grabbed_body: Node2D
 var playerID = "p1"
 var right_stick = Vector2.ZERO
 
-func _ready():
-	hand_meta.position = Vector2.UP * arm_length # Why?
-	arm.set_point_position(1, hand_meta.position) # Why?
-	
+#func _ready():
+	#hand_meta.position = Vector2.UP * arm_length # Why?
+	#arm.set_point_position(1, hand_meta.position) # Why?
 
 func _physics_process(delta):
 	## First, do ladder physics
@@ -77,6 +77,7 @@ func _physics_process(delta):
 	if running_buffer: # Jump buffer
 		jump_buffer_time -= delta
 		if jump_buffer_time <= 0:
+			running_buffer = false
 			on_ground = false
 	
 	## Move the player's arm
@@ -145,7 +146,8 @@ func _physics_process(delta):
 
 func _input(event):
 	# jump
-	if event.is_action_pressed("jump_" + playerID) && on_ground: #&& !standing_in_ladder:
+	if event.is_action_pressed("jump_" + playerID) and on_ground: #&& !standing_in_ladder: # Not neccessary
+		print(on_ground)
 		linear_velocity.y = -jump_speed
 		if is_in_water:
 			linear_velocity.y *= water_jump_multiplier
@@ -198,17 +200,10 @@ func _on_grab_area_body_exited(body):
 		target_body = null
 
 func _on_body_entered(_body):
-	
-	var normal = body_state.get_contact_local_normal(0)
-	
-	if abs(normal.x) < 0.4 && normal.y < 0: # If the direction is mostly under the player then they are grounded!
-		on_ground = true
-		jump_buffer_time = 0.1 ## This is the jump buffer
-		running_buffer = false
-		unmovable = false # What if you are being grabbed?
+	return
 
 func _on_body_exited(_body): # Is this when the player leaves the ground?
-	running_buffer = true
+	return
 
 func check_player_linkage(body): # This function is used for knowing if a player can grab another player?
 	if body.grabbed_body == null or not body.grabbed_body.is_in_group("Player"):
@@ -217,3 +212,21 @@ func check_player_linkage(body): # This function is used for knowing if a player
 		return true
 	
 	return check_player_linkage(body.grabbed_body)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	#var normal = body_state.get_contact_local_normal(0)
+	#
+	#if abs(normal.x) < 0.4 && normal.y < 0: # If the direction is mostly under the player then they are grounded!
+	if things_standing_on.find(body) == -1:
+		things_standing_on.append(body)
+	on_ground = true
+	jump_buffer_time = 0.1 ## This is the jump buffer
+	running_buffer = false
+	unmovable = false # What if you are being grabbed?
+	print(things_standing_on)
+
+func _on_jump_area_body_exited(body: Node2D) -> void:
+	if things_standing_on.find(body) != -1:
+		things_standing_on.remove_at(things_standing_on.find(body))
+	running_buffer = true
