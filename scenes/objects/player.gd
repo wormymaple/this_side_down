@@ -145,14 +145,14 @@ func _physics_process(delta):
 
 func _input(event):
 	# jump
-	if event.is_action_pressed("LT_" + playerID) && on_ground: #&& !standing_in_ladder:
+	if event.is_action_pressed("jump_" + playerID) && on_ground: #&& !standing_in_ladder:
 		linear_velocity.y = -jump_speed
 		if is_in_water:
 			linear_velocity.y *= water_jump_multiplier
 		Jump.play()
 		
 	# grab
-	if event.is_action_pressed("RT_" + playerID):
+	if event.is_action_pressed("grab_" + playerID):
 		if grabbed_body == null && target_body != null: # Try grab
 			# Am I being grabbed by a player?
 			if target_body.is_in_group("Player") && check_player_linkage(target_body):
@@ -167,7 +167,7 @@ func _input(event):
 			
 			BoxPickup.play()
 			
-	elif event.is_action_released("RT_" + playerID) && grabbed_body != null:
+	elif event.is_action_released("grab_" + playerID) && grabbed_body != null:
 		drop_object()
 
 func set_color(player_index):
