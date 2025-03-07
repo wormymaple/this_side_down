@@ -70,7 +70,7 @@ polygon = PackedVector2Array(0, 0, 2000, 0, 2000, -6000, 0, -6000)
 vertex_colors = PackedColorArray(0.0941176, 0.172549, 0.223529, 1, 0.0941176, 0.172549, 0.223529, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(2317, 138)
+position = Vector2(-969, 1369)
 script = ExtResource("11_psbp5")
 player_scene = ExtResource("12_ukulb")
 camera = NodePath("../Camera")
@@ -79,7 +79,7 @@ gravity_scale = 0.6
 is_in_water = true
 
 [node name="Camera" parent="." instance=ExtResource("13_r0ek7")]
-position = Vector2(2317, 138)
+position = Vector2(-969, 1369)
 zoom = Vector2(1.5, 1.5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

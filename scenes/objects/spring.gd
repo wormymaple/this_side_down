@@ -45,6 +45,6 @@ func _on_body_entered(body):
 			body.unmovable = abs(asin(rotation)) > 0.1 # Sets if the player can control their direction midair based on the springs rotation
 		current_state = State.IN
 		
-		# var dir = Vector2(asin(rotation), -acos(rotation)).normalized() Old code, didn't work
+		# var dir = Vector2(asin(rotation), -acos(rotation)).normalized() Old code, didn't work perfectly
 		body.linear_velocity = Vector2(0, -Power).rotated(rotation)
 		$AudioStreamPlayer.play() # change for a more springy sound later

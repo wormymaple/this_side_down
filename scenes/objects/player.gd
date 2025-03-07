@@ -102,10 +102,10 @@ func _physics_process(delta):
 	if grabbed_body != null:
 		
 		# Addinng this code to test being able to rotate held item by button press
-		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_right_p1"):
+		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_right_" + playerID):
 			grabbed_body.global_rotation += 2 * delta
 			#print("I am rotating!")
-		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_left_p1"):
+		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_left_" + playerID):
 			grabbed_body.global_rotation -= 2 * delta
 			#print("I am rotating!")
 			
