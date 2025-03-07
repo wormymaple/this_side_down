@@ -130,6 +130,8 @@ shadow_filter_smooth = 0.6
 texture = SubResource("GradientTexture2D_xvbfj")
 
 [node name="JumpArea" type="Area2D" parent="."]
+collision_layer = 2049
+collision_mask = 2049
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea"]
 position = Vector2(0, 53)

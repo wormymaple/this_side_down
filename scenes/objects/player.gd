@@ -229,4 +229,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_jump_area_body_exited(body: Node2D) -> void:
 	if things_standing_on.find(body) != -1:
 		things_standing_on.remove_at(things_standing_on.find(body))
-	running_buffer = true
+	if things_standing_on.size() < 1:
+		running_buffer = true

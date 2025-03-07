@@ -77,28 +77,26 @@ zoom = Vector2(1.5, 1.5)
 camera_offset = Vector2(0, 80)
 
 [node name="Plank" parent="." instance=ExtResource("9_fnxdr")]
-position = Vector2(358, 95)
+position = Vector2(322, 95)
 scale = Vector2(2, 2)
 
 [node name="Plank2" parent="." instance=ExtResource("9_fnxdr")]
-position = Vector2(735, 95)
+position = Vector2(716, 96)
+rotation = 3.14159
 scale = Vector2(2, 2)
 
 [node name="Plank3" parent="." instance=ExtResource("9_fnxdr")]
-position = Vector2(1113, 95)
-scale = Vector2(2, 2)
-
-[node name="Plank4" parent="." instance=ExtResource("9_fnxdr")]
-position = Vector2(1483, 95)
+position = Vector2(1109, 95)
 scale = Vector2(2, 2)
 
 [node name="Spring3" parent="." instance=ExtResource("10_gwinh")]
 position = Vector2(957, 437)
 rotation = -0.00538873
-Power = 1110
+Power = 1200
 
 [node name="CircleBox" parent="." instance=ExtResource("11_bn2ne")]
 position = Vector2(-217, 2)
+mass = 3.0
 theme = 1
 size = 2.0
 

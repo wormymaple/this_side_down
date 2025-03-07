@@ -17,5 +17,5 @@ func _ready():
 		new_player.gravity_scale = gravity_scale
 		new_player.is_in_water = is_in_water
 		new_player.set_color(i)
-		
+		new_player.position.x += i * 50
 		get_node(camera).players.append(new_player)
