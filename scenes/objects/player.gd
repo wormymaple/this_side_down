@@ -16,7 +16,7 @@ const drop_threshold = 100
 var is_in_water: bool
 var on_ground = false
 var things_standing_on = []
-var grab_did_collide = false
+var did_grabbed_body_have_collision_mask_2 = false # Used to set mask layer 2 back to normal when the grabbed body is dropped
 var unmovable = false # The player can't move, either because they are being grabbed or they hit a directional spring
 var standing_in_ladder = 0
 var original_grav_scale = 1 # This is literally 1. Grav scale gets changed when being held or climbing ladders
@@ -180,7 +180,7 @@ func _input(event):
 			grabbed_body = target_body
 			grabbed_body.gravity_scale = 0
 			grabbed_body.set_meta("grabbed", true)
-			grab_did_collide = grabbed_body.get_collision_mask_value(2)
+			did_grabbed_body_have_collision_mask_2 = grabbed_body.get_collision_mask_value(2)
 			grabbed_body.set_collision_mask_value(2, false)
 			HandSprite.texture = holding_hand
 			
@@ -198,7 +198,7 @@ func _integrate_forces(state):
 func drop_object():
 	grabbed_body.gravity_scale = 1
 	grabbed_body.set_meta("grabbed", false)
-	grabbed_body.set_collision_mask_value(2, grab_did_collide) # Also for players?
+	grabbed_body.set_collision_mask_value(2, did_grabbed_body_have_collision_mask_2) # Also for players? # What is grab_did_collide?
 	grabbed_body = null
 	
 	HandSprite.texture = empty_hand
