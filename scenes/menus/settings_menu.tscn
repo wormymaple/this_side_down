@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dq5ntdtxdyc8c"]
 
 [ext_resource type="Script" uid="uid://bre6baeop3tqc" path="res://scenes/menus/settings_menu.gd" id="1_uuh1i"]
-[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
-[ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://fonts/nunito/static/Nunito-Bold.ttf" id="4_grtet"]
+[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://Fonts/Nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
+[ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://Fonts/Nunito/static/Nunito-Bold.ttf" id="4_grtet"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="4_ra86d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vk4d"]
@@ -19,6 +19,7 @@ corner_radius_bottom_left = 20
 
 [node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("display_options", "FocusButton", "master_vol_slider", "music_vol_Slider", "other_vol_slider")]
 process_mode = 3
+layer = 2
 script = ExtResource("1_uuh1i")
 display_options = NodePath("MarginContainer/MarginContainer/VBoxContainer/DisplayContainer/OptionButton")
 FocusButton = NodePath("MarginContainer/MarginContainer/VBoxContainer/BackButton")
@@ -76,6 +77,7 @@ theme_override_fonts/font = ExtResource("3_ur1dc")
 selected = 0
 item_count = 2
 popup/item_0/text = "Windowed"
+popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
 

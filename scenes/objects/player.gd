@@ -1,7 +1,8 @@
 extends RigidBody2D
 
 # Movement constants
-const move_speed = 50000
+const MAX_SPEED = 60000
+const ACCELERATION = 2000
 const jump_speed = 500
 const water_jump_multiplier = 1.5
 const ladder_climb_speed = 40000
@@ -30,12 +31,12 @@ const footstep_interval = 0.4 # This is the amount of time before footsteps can 
 var time_since_last_footstep = 0.0
 
 # Parts of the body that the script needs
-@onready var legs = $Legs
-@onready var head = $Head
-@onready var hand_sprite = $HandMeta/Hand
-@onready var hand_meta = $HandMeta
-@onready var arm = $Arm
-@onready var particles = $BubbleParticles
+@onready var Legs = $Legs
+@onready var Head = $Head
+@onready var HandSprite = $HandMeta/Hand
+@onready var HandMeta = $HandMeta
+@onready var Arm = $Arm
+@onready var Particles = $BubbleParticles
 # Sound effects
 @onready var BoxPickup = $BoxPickup
 @onready var BoxDrop = $BoxDrop
@@ -57,7 +58,7 @@ var right_stick = Vector2.ZERO
 func _ready():
 	if is_in_water:
 		print("The player is underwater!")
-		particles.emitting = true
+		Particles.emitting = true
 
 func _physics_process(delta):
 	## First, do ladder physics
@@ -85,14 +86,14 @@ func _physics_process(delta):
 	## Move the player's arm
 	right_stick = Input.get_vector("RS_left_" + playerID, "RS_right_" + playerID, "RS_up_" + playerID, "RS_down_" + playerID)
 	if right_stick.length() != 0:
-		hand_meta.position += (right_stick * arm_length - hand_meta.position) * arm_move_speed * delta
+		HandMeta.position += (right_stick * arm_length - HandMeta.position) * arm_move_speed * delta
 		#hand_meta.position = hand_meta.position.normalized() * arm_length <- FOR FIXED PENDULUM
 	elif grabbed_body == null:
-		hand_meta.position -= hand_meta.position * arm_move_speed * delta
+		HandMeta.position -= HandMeta.position * arm_move_speed * delta
 		
-	arm.set_point_position(1, hand_meta.position)
-	var dir_to_hand = hand_meta.position.angle()
-	hand_sprite.rotation = dir_to_hand + (PI / 2)
+	Arm.set_point_position(1, HandMeta.position)
+	var dir_to_hand = HandMeta.position.angle()
+	HandSprite.rotation = dir_to_hand + (PI / 2)
 	
 	var box_collides = get_collision_mask_value(4)
 	if target_body != null or grabbed_body != null:
@@ -113,13 +114,13 @@ func _physics_process(delta):
 			#print("I am rotating!")
 			
 		
-		var body_to_hand_dir = hand_meta.global_position - grabbed_body.global_position
+		var body_to_hand_dir = HandMeta.global_position - grabbed_body.global_position
 		if body_to_hand_dir.length() > drop_threshold:
 			drop_object()
 		else: 
 			grabbed_body.linear_velocity = body_to_hand_dir * grab_speed
 	else:
-		hand_sprite.rotation += (PI / 7)
+		HandSprite.rotation += (PI / 7)
 	
 	if get_meta("grabbed") == true or unmovable:
 		return
@@ -127,7 +128,10 @@ func _physics_process(delta):
 	## Move left and right
 	var left_stick = Input.get_axis("LS_left_" + playerID, "LS_right_" + playerID)
 	if left_stick != 0:
-		linear_velocity.x = left_stick * move_speed * delta
+		if left_stick > 0:
+			linear_velocity.x = min(linear_velocity.x + left_stick * ACCELERATION * delta, left_stick * MAX_SPEED * delta)
+		else:
+			linear_velocity.x = max(linear_velocity.x + left_stick * ACCELERATION * delta, left_stick * MAX_SPEED * delta)
 		
 		if on_ground and !running_buffer: # So only if the player is on ground
 			wiggle_current_time += delta
@@ -135,8 +139,8 @@ func _physics_process(delta):
 				wiggle_current_time -= wiggle_time # So restart where the wiggling is
 			
 			var sample = wiggle_curve.sample(wiggle_current_time / wiggle_time) # Put in x, get y out
-			legs.position.x = sample
-			head.position.y = sample
+			Legs.position.x = sample
+			Head.position.y = sample
 			
 			time_since_last_footstep += delta # Play footstep sound effect when supposed to
 			if time_since_last_footstep > footstep_interval:
@@ -144,7 +148,16 @@ func _physics_process(delta):
 				time_since_last_footstep -= footstep_interval
 			
 	elif on_ground or standing_in_ladder:
-		linear_velocity.x = 0
+		if abs(linear_velocity.x) - ACCELERATION * delta <= 0:
+			linear_velocity.x = 0 # move toward 0
+			#print("Stopped!")
+		else:
+			if linear_velocity.x > 0:
+				linear_velocity.x -= ACCELERATION * delta
+				print("Stopping going right")
+			else:
+				linear_velocity.x += ACCELERATION * delta
+				print("Stopping going left")
 
 func _input(event):
 	# jump
@@ -167,7 +180,7 @@ func _input(event):
 			grabbed_body.set_meta("grabbed", true)
 			grab_did_collide = grabbed_body.get_collision_mask_value(2)
 			grabbed_body.set_collision_mask_value(2, false)
-			hand_sprite.texture = holding_hand
+			HandSprite.texture = holding_hand
 			
 			BoxPickup.play()
 			
@@ -186,7 +199,7 @@ func drop_object():
 	grabbed_body.set_collision_mask_value(2, grab_did_collide) # Also for players?
 	grabbed_body = null
 	
-	hand_sprite.texture = empty_hand
+	HandSprite.texture = empty_hand
 	BoxDrop.play()
 
 func _on_grab_area_body_entered(body):
