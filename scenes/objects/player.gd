@@ -3,12 +3,13 @@ extends RigidBody2D
 # Movement constants
 const MAX_SPEED = 60000
 const ACCELERATION = 2000
-const jump_speed = 500
-const water_jump_multiplier = 1.5
-const ladder_climb_speed = 40000
-const arm_move_speed = 5
-const grab_speed = 20
-const arm_length = 150
+const JUMP_POWER = 500
+const UNDERWATER_JUMP_MULTIPLIER = 1.5
+const LADDER_CLIMB_SPEED = 40000
+const ARM_MOVE_SPEED = 5
+const CARRY_SPEED = 20
+const ARM_LENGTH = 150
+
 const drop_threshold = 100
 
 # States
@@ -19,6 +20,7 @@ var grab_did_collide = false
 var unmovable = false # The player can't move, either because they are being grabbed or they hit a directional spring
 var standing_in_ladder = 0
 var original_grav_scale = 1 # This is literally 1. Grav scale gets changed when being held or climbing ladders
+var is_ascending = false # If the player is able to hold up to keep going upwards
 
 # Player detail
 @export var wiggle_curve: Curve # What is wiggle? The player jiggling while moving?
@@ -67,10 +69,10 @@ func _physics_process(delta):
 		unmovable = false
 		if Input.is_action_pressed("LS_up_" + playerID): # The player will climb up
 			#print("Climbing up the ladder!")
-			linear_velocity = Vector2.UP * ladder_climb_speed * delta
+			linear_velocity = Vector2.UP * LADDER_CLIMB_SPEED * delta
 		
 		elif Input.is_action_pressed("LS_down_" + playerID):
-			linear_velocity = Vector2.DOWN * ladder_climb_speed * delta # Since the vector is down, I don't need to invert it
+			linear_velocity = Vector2.DOWN * LADDER_CLIMB_SPEED * delta # Since the vector is down, I don't need to invert it
 		else:
 			linear_velocity.y = 0
 	elif gravity_scale == 0 or gravity_scale == 0.5:
@@ -86,10 +88,10 @@ func _physics_process(delta):
 	## Move the player's arm
 	right_stick = Input.get_vector("RS_left_" + playerID, "RS_right_" + playerID, "RS_up_" + playerID, "RS_down_" + playerID)
 	if right_stick.length() != 0:
-		HandMeta.position += (right_stick * arm_length - HandMeta.position) * arm_move_speed * delta
+		HandMeta.position += (right_stick * ARM_LENGTH - HandMeta.position) * ARM_MOVE_SPEED * delta
 		#hand_meta.position = hand_meta.position.normalized() * arm_length <- FOR FIXED PENDULUM
 	elif grabbed_body == null:
-		HandMeta.position -= HandMeta.position * arm_move_speed * delta
+		HandMeta.position -= HandMeta.position * ARM_MOVE_SPEED * delta
 		
 	Arm.set_point_position(1, HandMeta.position)
 	var dir_to_hand = HandMeta.position.angle()
@@ -118,7 +120,7 @@ func _physics_process(delta):
 		if body_to_hand_dir.length() > drop_threshold:
 			drop_object()
 		else: 
-			grabbed_body.linear_velocity = body_to_hand_dir * grab_speed
+			grabbed_body.linear_velocity = body_to_hand_dir * CARRY_SPEED
 	else:
 		HandSprite.rotation += (PI / 7)
 	
@@ -163,9 +165,9 @@ func _input(event):
 	# jump
 	if event.is_action_pressed("jump_" + playerID) and on_ground: #&& !standing_in_ladder: # Not neccessary
 		print(on_ground)
-		linear_velocity.y = -jump_speed
+		linear_velocity.y = -JUMP_POWER
 		if is_in_water:
-			linear_velocity.y *= water_jump_multiplier
+			linear_velocity.y *= UNDERWATER_JUMP_MULTIPLIER
 		Jump.play()
 		
 	# grab
