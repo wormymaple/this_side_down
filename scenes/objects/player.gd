@@ -35,6 +35,7 @@ var time_since_last_footstep = 0.0
 @onready var hand_sprite = $HandMeta/Hand
 @onready var hand_meta = $HandMeta
 @onready var arm = $Arm
+@onready var particles = $BubbleParticles
 # Sound effects
 @onready var BoxPickup = $BoxPickup
 @onready var BoxDrop = $BoxDrop
@@ -53,9 +54,10 @@ var grabbed_body: Node2D
 var playerID = "p1"
 var right_stick = Vector2.ZERO
 
-#func _ready():
-	#hand_meta.position = Vector2.UP * arm_length # Why?
-	#arm.set_point_position(1, hand_meta.position) # Why?
+func _ready():
+	if is_in_water:
+		print("The player is underwater!")
+		particles.emitting = true
 
 func _physics_process(delta):
 	## First, do ladder physics
@@ -224,7 +226,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	jump_buffer_time = 0.1 ## This is the jump buffer
 	running_buffer = false
 	unmovable = false # What if you are being grabbed?
-	print(things_standing_on)
+	#print(things_standing_on)
 
 func _on_jump_area_body_exited(body: Node2D) -> void:
 	if things_standing_on.find(body) != -1:

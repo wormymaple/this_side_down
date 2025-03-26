@@ -227,7 +227,7 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 theme = 3
 
-[node name="CanvasLayer" parent="." instance=ExtResource("8_u77f3")]
+[node name="UnderwaterShader" parent="." instance=ExtResource("8_u77f3")]
 
 [node name="ParallaxBackground2" parent="." instance=ExtResource("9_akor3")]
 

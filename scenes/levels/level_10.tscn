@@ -32,7 +32,6 @@ script = ExtResource("1_sa26g")
 Song = 1
 
 [node name="WaterShader" parent="." instance=ExtResource("9_mkvtq")]
-visible = false
 
 [node name="BackgroundUnderwater" parent="." instance=ExtResource("10_u7o0h")]
 
