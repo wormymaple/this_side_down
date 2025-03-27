@@ -192,7 +192,7 @@ theme = 1
 
 [node name="Spring" parent="." instance=ExtResource("5_ap2rn")]
 position = Vector2(2239, 1242)
-script = null
+ReleaseCurve = null
 
 [node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
 position = Vector2(1268, -195)

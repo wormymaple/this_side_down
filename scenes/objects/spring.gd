@@ -21,6 +21,7 @@ func _ready():
 			modulate = Color("008a5e")
 		Themes.WHITE:
 			pass # Stay as white
+	
 	if platform_to_attach_to != null:
 		platform_to_attach_to.objects_to_move.push_back(self)
 

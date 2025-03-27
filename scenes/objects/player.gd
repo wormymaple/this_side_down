@@ -3,7 +3,7 @@ extends RigidBody2D
 # Movement constants
 const MAX_SPEED = 60000
 const ACCELERATION = 2000
-const JUMP_POWER = 500
+var JUMP_POWER = 500
 const UNDERWATER_JUMP_MULTIPLIER = 1.5
 const LADDER_CLIMB_SPEED = 40000
 const ARM_MOVE_SPEED = 5
@@ -61,20 +61,21 @@ func _ready():
 	if is_in_water:
 		print("The player is underwater!")
 		Particles.emitting = true
+		JUMP_POWER *= UNDERWATER_JUMP_MULTIPLIER
 
 func _physics_process(delta):
 	## First, do ladder physics
 	if standing_in_ladder: # Ladder physics
 		gravity_scale = 0
 		unmovable = false
-		if Input.is_action_pressed("LS_up_" + playerID): # The player will climb up # I should remake this to work with axis
-			#print("Climbing up the ladder!")
-			linear_velocity = Vector2.UP * LADDER_CLIMB_SPEED * delta
 		
-		elif Input.is_action_pressed("LS_down_" + playerID):
-			linear_velocity = Vector2.DOWN * LADDER_CLIMB_SPEED * delta # Since the vector is down, I don't need to invert it
+		var LS_y_axis = Input.get_axis("LS_up_" + playerID, "LS_down_" + playerID)
+		
+		if LS_y_axis:
+			linear_velocity.y = LS_y_axis * LADDER_CLIMB_SPEED * delta
 		else:
 			linear_velocity.y = 0
+			
 	elif gravity_scale == 0 or gravity_scale == 0.5:
 		gravity_scale = original_grav_scale ## This shouldn't need to be here. Does this account for if the player is being held?
 	
