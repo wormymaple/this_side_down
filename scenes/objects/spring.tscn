@@ -2,12 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d202y7utrpien" path="res://scenes/objects/spring.gd" id="1_fdvwv"]
 [ext_resource type="Texture2D" uid="uid://cxdyacb13x2aj" path="res://art/general/spring_half.png" id="2_1sfmc"]
+[ext_resource type="Curve" uid="uid://bvymgfqejn86f" path="res://resources/spring_curve.tres" id="2_h8dp2"]
 [ext_resource type="AudioStream" uid="uid://brmvjadgmqxig" path="res://audio/boing.wav" id="3_36sag"]
-
-[sub_resource type="Curve" id="Curve_1sfmc"]
-_limits = [0.0, 90.0, 0.0, 1.0]
-_data = [Vector2(0.00921053, 30.113), 0.0, 254.961, 0, 0, Vector2(0.369737, 90), 3.67433, 3.67433, 0, 0, Vector2(0.522368, 90), 0.0, 0.0, 0, 0, Vector2(0.997368, 29.8538), -120.259, 0.0, 0, 0]
-point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfp4"]
 size = Vector2(128, 25)
@@ -16,7 +12,7 @@ size = Vector2(128, 25)
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_fdvwv")
-ReleaseCurve = SubResource("Curve_1sfmc")
+ReleaseCurve = ExtResource("2_h8dp2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30)

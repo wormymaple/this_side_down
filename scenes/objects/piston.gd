@@ -4,14 +4,16 @@ enum Themes {YELLOW, GREEN, BLUE, PURPLE}
 @export var theme: Themes = Themes.YELLOW
 @export var time_interval: int = 5
 @export var landing_zone: RigidBody2D
+@export var ReleaseCurve: Curve
 
 enum State {WAIT, PUSH, RETRACT}
 var mode: State# = State.WAIT
 
 @onready var TextureHead = $PistonHead
 @onready var TextureBase = $PistonBase
-@onready var hitbox = $Deleter
-@onready var collider = $AnimatableBody2D
+@onready var DeleteHitbox = $Deleter
+@onready var Collider = $AnimatableBody2D
+@onready var ReleaseTimer = $Timer
 
 func _ready():
 	$Timer.wait_time = time_interval
@@ -19,18 +21,15 @@ func _ready():
 	mode = State.WAIT
 	#set_process(true)
 	
-	if theme == Themes.YELLOW:
-		TextureHead.texture = load("res://art/area_1/PistonTop.png")
-		TextureBase.texture = load("res://art/area_1/piston_base.png")
-	elif theme == Themes.BLUE:
-		TextureHead.texture = load("res://art/area_2/piston_top.png")
-		TextureBase.texture = load("res://art/area_2/piston_base.png")
-	elif theme == Themes.GREEN:
-		TextureHead.texture = load("res://art/area_3/piston_top.png")
-		TextureBase.texture = load("res://art/area_3/piston_base.png")
-	elif theme == Themes.PURPLE:
-		TextureHead.texture = load("res://art/area_4/piston_top.png")
-		TextureBase.texture = load("res://art/area_4/piston_base.png")
+	match theme:
+		Themes.YELLOW:
+			modulate = Color("c9a338")
+		Themes.BLUE:
+			modulate = Color("377abd")
+		Themes.GREEN:
+			modulate = Color("008a5e")
+		Themes.PURPLE:
+			modulate = Color("000000")
 
 func _process(_delta):
 	if mode == State.WAIT:
@@ -41,8 +40,8 @@ func _process(_delta):
 		if TextureHead.scale.y < .5:
 			TextureHead.scale.y += 0.02
 			TextureHead.position.y -= 3
-			hitbox.position.y -= 12
-			collider.position.y -= 12
+			DeleteHitbox.position.y -= 12
+			Collider.position.y -= 12
 		else:
 			mode = State.RETRACT
 	
@@ -50,10 +49,22 @@ func _process(_delta):
 		if TextureHead.scale.y > 0.065: # 0.078
 			TextureHead.scale.y -= 0.02
 			TextureHead.position.y += 3
-			hitbox.position.y += 12
-			collider.position.y += 12
+			DeleteHitbox.position.y += 12
+			Collider.position.y += 12
 		else:
 			mode = State.WAIT
+	
+	#print((ReleaseTimer.time_left))
+	var height = -ReleaseCurve.sample(1 - ReleaseTimer.time_left)
+	
+	Top.position.y = height # I am technically doing this backwards, but that's okay since the curve is identical both sides
+	$Line2D.points[0].y = height + 10
+	$Line2D.points[5].y = height + 10
+	
+	$Line2D.points[1].y = (16 + $Line2D.points[0].y) / 2
+	$Line2D.points[4].y = (16 + $Line2D.points[0].y) / 2
+	
+	
 	
 
 func _on_timer_timeout():

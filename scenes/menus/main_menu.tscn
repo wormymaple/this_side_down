@@ -662,6 +662,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("15_y4gey")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
 one_shot = true
 
 [connection signal="pressed" from="TitleScreen/HBoxContainer/ButtonPlay" to="." method="_on_play_button_pressed"]
