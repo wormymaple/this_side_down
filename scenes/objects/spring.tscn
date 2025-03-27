@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b13ui3edlyvfn"]
+[gd_scene load_steps=6 format=3 uid="uid://b13ui3edlyvfn"]
 
 [ext_resource type="Script" uid="uid://d202y7utrpien" path="res://scenes/objects/spring.gd" id="1_fdvwv"]
-[ext_resource type="Texture2D" uid="uid://drirnka2j6tnv" path="res://art/area_1/spring.png" id="2_uh0i2"]
+[ext_resource type="Texture2D" uid="uid://cxdyacb13x2aj" path="res://art/general/spring_half.png" id="2_1sfmc"]
 [ext_resource type="AudioStream" uid="uid://brmvjadgmqxig" path="res://audio/boing.wav" id="3_36sag"]
+
+[sub_resource type="Curve" id="Curve_1sfmc"]
+_limits = [0.0, 90.0, 0.0, 1.0]
+_data = [Vector2(0.00921053, 30.113), 0.0, 254.961, 0, 0, Vector2(0.369737, 90), 3.67433, 3.67433, 0, 0, Vector2(0.522368, 90), 0.0, 0.0, 0, 0, Vector2(0.997368, 29.8538), -120.259, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfp4"]
 size = Vector2(128, 25)
@@ -11,16 +16,31 @@ size = Vector2(128, 25)
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_fdvwv")
+ReleaseCurve = SubResource("Curve_1sfmc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_cxfp4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0820286, 0.0820286)
-texture = ExtResource("2_uh0i2")
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-60, -20, 55, 0, -60, 16, 60, 16, -55, 0, 60, -20)
+width = 7.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Top" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
+scale = Vector2(-0.7, -0.7)
+texture = ExtResource("2_1sfmc")
+
+[node name="Bottom" type="Sprite2D" parent="."]
+position = Vector2(0, 26)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_1sfmc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_36sag")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

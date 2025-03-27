@@ -50,7 +50,7 @@ rotation = -0.46104
 theme = 1
 
 [node name="Spring" parent="." instance=ExtResource("5_ap2rn")]
-position = Vector2(2794, 305)
+position = Vector2(2794, 313)
 scale = Vector2(2, 2)
 theme = 1
 Power = 17500

@@ -62,26 +62,26 @@ time_interval = 5
 landing_zone = NodePath("../LandingZone")
 
 [node name="Spring" parent="." instance=ExtResource("16_ot8xr")]
-position = Vector2(841, 1430)
+position = Vector2(841, 1437)
 Power = 850
 
 [node name="Spring2" parent="." node_paths=PackedStringArray("platform_to_attach_to") instance=ExtResource("16_ot8xr")]
-position = Vector2(294, 1208)
+position = Vector2(294, 1209)
 Power = 850
 platform_to_attach_to = NodePath("../Platform1")
 
 [node name="Spring3" parent="." node_paths=PackedStringArray("platform_to_attach_to") instance=ExtResource("16_ot8xr")]
-position = Vector2(1289, 1007)
+position = Vector2(1289, 1008)
 Power = 850
 platform_to_attach_to = NodePath("../Platform2")
 
 [node name="Spring4" parent="." node_paths=PackedStringArray("platform_to_attach_to") instance=ExtResource("16_ot8xr")]
-position = Vector2(294, 792)
+position = Vector2(294, 793)
 Power = 850
 platform_to_attach_to = NodePath("../Platform3")
 
 [node name="Spring5" parent="." node_paths=PackedStringArray("platform_to_attach_to") instance=ExtResource("16_ot8xr")]
-position = Vector2(1294, 552)
+position = Vector2(1294, 553)
 Power = 850
 platform_to_attach_to = NodePath("../Platform4")
 

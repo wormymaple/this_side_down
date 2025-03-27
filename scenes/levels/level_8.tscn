@@ -90,7 +90,7 @@ position = Vector2(1109, 95)
 scale = Vector2(2, 2)
 
 [node name="Spring3" parent="." instance=ExtResource("10_gwinh")]
-position = Vector2(957, 437)
+position = Vector2(957, 440)
 rotation = -0.00538873
 Power = 1200
 

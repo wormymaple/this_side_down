@@ -67,7 +67,7 @@ func _physics_process(delta):
 	if standing_in_ladder: # Ladder physics
 		gravity_scale = 0
 		unmovable = false
-		if Input.is_action_pressed("LS_up_" + playerID): # The player will climb up
+		if Input.is_action_pressed("LS_up_" + playerID): # The player will climb up # I should remake this to work with axis
 			#print("Climbing up the ladder!")
 			linear_velocity = Vector2.UP * LADDER_CLIMB_SPEED * delta
 		
@@ -156,10 +156,10 @@ func _physics_process(delta):
 		else:
 			if linear_velocity.x > 0:
 				linear_velocity.x -= ACCELERATION * delta
-				print("Stopping going right")
+				#print("Stopping going right")
 			else:
 				linear_velocity.x += ACCELERATION * delta
-				print("Stopping going left")
+				#print("Stopping going left")
 
 func _input(event):
 	# jump

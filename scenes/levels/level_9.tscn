@@ -63,27 +63,27 @@ platform_to_attach_to = NodePath("../Platform")
 upside_down = true
 
 [node name="Spring" parent="." instance=ExtResource("16_paf4g")]
-position = Vector2(181, 633)
-rotation = 0.437735
+position = Vector2(180, 635)
+rotation = 0.393482
 Power = 900
 
 [node name="Spring4" parent="." instance=ExtResource("16_paf4g")]
-position = Vector2(303, 689)
-rotation = 0.437735
+position = Vector2(305, 687)
+rotation = 0.394853
 Power = 900
 
 [node name="Spring2" parent="." instance=ExtResource("16_paf4g")]
-position = Vector2(1730, 634)
+position = Vector2(1732, 637)
 rotation = -0.389197
 Power = 900
 
 [node name="Spring5" parent="." instance=ExtResource("16_paf4g")]
-position = Vector2(1599, 689)
+position = Vector2(1601, 692)
 rotation = -0.389197
 Power = 900
 
 [node name="Spring3" parent="." instance=ExtResource("16_paf4g")]
-position = Vector2(956, 815)
+position = Vector2(956, 817)
 Power = 900
 
 [node name="Platform" parent="." instance=ExtResource("5_bhl86")]
