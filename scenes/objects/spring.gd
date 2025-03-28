@@ -1,6 +1,6 @@
 extends Area2D
 
-enum Themes {YELLOW, GREEN, BLUE, WHITE}
+enum Themes {YELLOW, GREEN, BLUE, WHITE, PURPLE}
 @export var theme: Themes = Themes.YELLOW
 
 @export var Power: int = 700
@@ -21,6 +21,8 @@ func _ready():
 			modulate = Color("008a5e")
 		Themes.WHITE:
 			pass # Stay as white
+		Themes.PURPLE:
+			modulate = Color("482c84")
 	
 	if platform_to_attach_to != null:
 		platform_to_attach_to.objects_to_move.push_back(self)

@@ -194,18 +194,25 @@ theme = 1
 position = Vector2(2239, 1242)
 
 [node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
-position = Vector2(1268, -195)
-rotation = 3.13458
-theme = 0
-time_interval = 5
+position = Vector2(1319, -226)
+rotation = 3.15147
+theme = 3
 landing_zone = NodePath("../LandingZone")
+deploy_length = 320
 
 [node name="Piston2" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
-position = Vector2(1560, 131)
-rotation = 0.136673
-theme = 1
-time_interval = 5
+position = Vector2(1463, -226)
+rotation = 3.15147
+theme = 3
 landing_zone = NodePath("../LandingZone")
+deploy_length = 320
+
+[node name="Piston3" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
+position = Vector2(1607, -226)
+rotation = 3.15147
+theme = 3
+landing_zone = NodePath("../LandingZone")
+deploy_length = 320
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_2ie1f")]
 position = Vector2(1867, 830)

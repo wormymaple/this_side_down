@@ -105,13 +105,12 @@ position = Vector2(1404, 1060)
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_w6x32")]
 position = Vector2(1342, -493)
-boxes_required = 2
 camera = NodePath("../Camera")
 level = 8
 
 [node name="Ladder" parent="." instance=ExtResource("14_fmoen")]
-position = Vector2(877, -414)
-rotation = -1.58512
+position = Vector2(878, -426)
+rotation = -1.55151
 scale = Vector2(1, 1.2)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

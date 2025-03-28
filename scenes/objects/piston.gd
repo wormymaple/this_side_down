@@ -34,7 +34,7 @@ func _ready():
 		Themes.GREEN:
 			modulate = Color("008a5e")
 		Themes.PURPLE:
-			modulate = Color("000000")
+			modulate = Color("#482c84")
 
 func _process(_delta):
 	if mode == States.WAIT:
@@ -49,28 +49,16 @@ func _process(_delta):
 	DeleteHitbox.position.y = height
 	OuterShaft.points[1].y = height
 	InnerShaft.points[1].y = height
-	## I wonder if the points resource will be shared so I don't need to update both separately
 	
 	TextureHead.position.x = WiggleCurve.sample(2 - ReleaseTimer.time_left) # Shake back and forth to indicate for the player
 	
-	#print("Pos: ", TextureHead.position.x)
-	#print(min(1, 2 - ReleaseTimer.time_left))
-	#$Line2D.points[0].y = height + 10
-	#$Line2D.points[5].y = height + 10
-	#
-	#$Line2D.points[1].y = (16 + $Line2D.points[0].y) / 2
-	#$Line2D.points[4].y = (16 + $Line2D.points[0].y) / 2
-	
-	
-
-
-
 
 func _on_deleter_body_entered(body):
 	#print(body.name)
-	if body.is_in_group("Box") or body.is_in_group("Player"):
-		body.call_deferred("queue_free")
-		get_tree().call_deferred("reload_current_scene")
+	if body.is_in_group("Player"): # or body.is_in_group("Box")
+		if body.on_ground:
+			body.call_deferred("queue_free")
+			get_tree().call_deferred("reload_current_scene")
 	
 
 
