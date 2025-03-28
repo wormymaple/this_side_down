@@ -1,9 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlwptuwx6ppy2"]
+[gd_scene load_steps=9 format=3 uid="uid://dlwptuwx6ppy2"]
 
 [ext_resource type="Script" uid="uid://uhw3n8f8y0ku" path="res://scenes/objects/platform.gd" id="1_vb141"]
-[ext_resource type="Texture2D" uid="uid://en5cg5qgf7f1" path="res://art/area_1/floating_platform.png" id="2_v0bgm"]
+[ext_resource type="Texture2D" uid="uid://c2o4io3w804tx" path="res://art/general/platform.png" id="2_8dp8w"]
 
 [sub_resource type="Curve2D" id="Curve2D_llgmf"]
+
+[sub_resource type="Curve" id="Curve_jb4ro"]
+_data = [Vector2(0.00394737, 1), 0.0, 0.0, 0, 0, Vector2(0.498684, 0.153144), 0.0, 0.0, 0, 0, Vector2(1, 0.989923), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_lacew"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.00664461), 0.0, 3.23616, 0, 0, Vector2(0.257895, 1), 0.0, 0.0, 0, 0, Vector2(0.757895, -1), 0.0, 0.0, 0, 0, Vector2(1, -0.00487256), 4.32442, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2jwb"]
 size = Vector2(186, 17.9864)
@@ -11,9 +20,15 @@ size = Vector2(186, 17.9864)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qwh1"]
 size = Vector2(186, 7.21675)
 
+[sub_resource type="Curve" id="Curve_8dp8w"]
+_data = [Vector2(0, 0.484607), 0.0, 0.0, 0, 0, Vector2(0.507895, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.494685), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="Platform" type="Path2D"]
 curve = SubResource("Curve2D_llgmf")
 script = ExtResource("1_vb141")
+SpinCurve = SubResource("Curve_jb4ro")
+BobCurve = SubResource("Curve_lacew")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 
@@ -23,9 +38,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 7.31384)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_v0bgm")
+position = Vector2(0, 9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8dp8w")
 
 [node name="Collision" type="StaticBody2D" parent="."]
 collision_layer = 15
@@ -43,6 +58,19 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(3.8147e-06, -22.3916)
 shape = SubResource("RectangleShape2D_3qwh1")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-70, 30, 0, 30, 70, 30)
+width_curve = SubResource("Curve_8dp8w")
+default_color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="BobTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -19,10 +19,10 @@ func _ready():
 			modulate = Color("377abd")
 		Themes.GREEN:
 			modulate = Color("008a5e")
-		Themes.WHITE:
-			pass # Stay as white
 		Themes.PURPLE:
 			modulate = Color("482c84")
+		Themes.WHITE:
+			pass # Stay as white
 	
 	if platform_to_attach_to != null:
 		platform_to_attach_to.objects_to_move.push_back(self)

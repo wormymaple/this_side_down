@@ -1,15 +1,21 @@
 extends Path2D
 
-enum Themes {YELLOW, GREEN, BLUE, PURPLE}
+enum Themes {YELLOW, GREEN, BLUE, PURPLE, WHITE}
 @export var theme: Themes = Themes.YELLOW
+
+@onready var previous_position = $PathFollow2D.position
+@onready var sprite = $Sprite2D
+
 enum State {ONEWAY, LOOPING, STOP, ONEWAYBACK}
 var objects_to_move = []
 var movement = 0.0
 @export var speed = 0.2
-@onready var previous_position = $PathFollow2D.position
-@onready var sprite = $Sprite2D
-
 @export var path_behavior: State
+@export var SpinCurve: Curve
+@export var BobCurve: Curve
+
+var follow_position = Vector2.ZERO
+
 # The path behavior allows for 3 different options:
 # One Way, which makes the platform turn around when it reaches the end
 # Looping, which makes the platform loop. Make sure the loop is complete
@@ -17,23 +23,31 @@ var movement = 0.0
 # One Way Back is just One Way but will move in reverse. (Tells the platform to invert it's progress)
 
 func _ready():
-	if theme == Themes.YELLOW:
-		sprite.texture = load("res://art/area_1/floating_platform.png")
-	elif theme == Themes.GREEN:
-		sprite.texture = load("res://art/area_2/floating_platform.png")
-	elif theme == Themes.BLUE:
-		sprite.texture = load("res://art/area_3/floating_platform.png")
-	
-	elif theme == Themes.PURPLE:
-		sprite.texture = load("res://art/area_4/floating_platform.png")
+	match theme:
+		Themes.YELLOW:
+			modulate = Color("c9a338")
+		Themes.BLUE:
+			modulate = Color("377abd")
+		Themes.GREEN:
+			modulate = Color("008a5e")
+		Themes.PURPLE:
+			modulate = Color("482c84")
+		Themes.WHITE:
+			pass # Stay as white
 
 func _physics_process(_delta):
 	if path_behavior == State.STOP: # The platform does nothing
 		return
 	
-	$Collision.position = $PathFollow2D.position # Sets positions instead of being a child of PathFollow2D because it rotates weirdly
-	sprite.position = $PathFollow2D.position
-	$Area2D.position = $PathFollow2D.position
+	if objects_to_move:
+		follow_position = $PathFollow2D.position
+	else:
+		follow_position = $PathFollow2D.position + Vector2(0, BobCurve.sample($BobTimer.time_left / $BobTimer.wait_time) * 2)
+	
+	$Collision.position = follow_position # Sets positions instead of being a child of PathFollow2D because it rotates weirdly
+	sprite.position = follow_position
+	$Area2D.position = follow_position
+	$Line2D.position = follow_position
 	
 	if path_behavior == State.ONEWAY:
 		if $PathFollow2D.progress_ratio < 0.99:
@@ -66,7 +80,11 @@ func _physics_process(_delta):
 			object.position += movement * scale
 		elif object.is_in_group("Spring"):
 			object.position += movement * scale
-		
+	
+
+func _process(_delta: float) -> void:
+	$Line2D.scale.x = SpinCurve.sample($Timer.time_left / $Timer.wait_time) # This should make it look like there is a spinning propeller
+
 func _on_area_2d_body_entered(body):
 	if path_behavior != State.STOP:
 		if body.is_in_group("Player") or body.is_in_group("Box"):
