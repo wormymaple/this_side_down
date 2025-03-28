@@ -196,12 +196,15 @@ position = Vector2(2239, 1242)
 [node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
 position = Vector2(1268, -195)
 rotation = 3.13458
+theme = 0
+time_interval = 5
 landing_zone = NodePath("../LandingZone")
 
 [node name="Piston2" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
 position = Vector2(1560, 131)
 rotation = 0.136673
 theme = 1
+time_interval = 5
 landing_zone = NodePath("../LandingZone")
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_2ie1f")]

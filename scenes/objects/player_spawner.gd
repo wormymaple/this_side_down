@@ -18,5 +18,7 @@ func _ready():
 		new_player.is_in_water = is_in_water
 		new_player.set_color(i)
 		new_player.position.x += i * 50
+		new_player.get_child(5).set_seed(i * 500) # Child 5 is the bubble particle emitter
+		print(new_player.get_child(5).get_seed())
 		add_child(new_player)
 		get_node(camera).players.append(new_player)

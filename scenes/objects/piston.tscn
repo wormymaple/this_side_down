@@ -1,29 +1,42 @@
-[gd_scene load_steps=7 format=3 uid="uid://rlnrmnltn78o"]
+[gd_scene load_steps=8 format=3 uid="uid://rlnrmnltn78o"]
 
 [ext_resource type="Script" uid="uid://drshym28xdtol" path="res://scenes/objects/piston.gd" id="1_wefcu"]
 [ext_resource type="Texture2D" uid="uid://bwwfr0ljc8dds" path="res://art/general/piston_top.png" id="2_60fg6"]
 [ext_resource type="Texture2D" uid="uid://c0fvw81jug71c" path="res://art/general/piston_base.png" id="3_7djox"]
 
 [sub_resource type="Curve" id="Curve_60fg6"]
-_limits = [0.0, 100.0, 0.0, 1.0]
-_data = [Vector2(0.213158, 15.3488), 0.0, 0.0, 0, 0, Vector2(0.243421, 23.9867), 0.0, 0.0, 0, 0, Vector2(0.278947, 12.9014), 0.0, 0.0, 0, 0, Vector2(0.310526, 25.2824), 0.0, 0.0, 0, 0, Vector2(0.357895, 13.0454), 0.0, 0.0, 0, 0, Vector2(0.394737, 24.9945), 0.0, 0.0, 0, 0, Vector2(0.753947, 100), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 8
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494737, 0), 0.0, 0.0, 0, 0, Vector2(0.757895, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_7djox"]
+_limits = [-8.0, 8.0, 0.0, 1.0]
+_data = [Vector2(0, 0.0531569), 0.0, 0.0, 0, 0, Vector2(0.106579, 8), 0.0, 0.0, 0, 0, Vector2(0.263158, -8), 0.0, 0.0, 0, 0, Vector2(0.365789, 8), 0.0, 0.0, 0, 0, Vector2(0.517105, -8), 0.0, 0.0, 0, 0, Vector2(0.605263, 8), 0.0, 0.0, 0, 0, Vector2(0.751316, -8), 0.0, 0.0, 0, 0, Vector2(0.868421, 8), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 9
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vyyi"]
 size = Vector2(3153.44, 688.769)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1808u"]
-size = Vector2(138, 23)
+size = Vector2(136, 23)
 
 [node name="Piston" type="StaticBody2D"]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("1_wefcu")
-theme = null
-time_interval = null
 ReleaseCurve = SubResource("Curve_60fg6")
+WiggleCurve = SubResource("Curve_7djox")
+
+[node name="OuterShaft" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, -25)
+width = 30.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="InnerShaft" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 0, -25)
+width = 20.0
 
 [node name="PistonHead" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_60fg6")
 
@@ -36,16 +49,21 @@ position = Vector2(-1.13687e-13, -0.5)
 scale = Vector2(0.0437618, 0.053719)
 shape = SubResource("RectangleShape2D_6vyyi")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="IntervalTimer" type="Timer" parent="."]
+one_shot = true
 autostart = true
+
+[node name="ReleaseTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 
 [node name="Deleter" type="Area2D" parent="."]
 collision_layer = 15
 collision_mask = 15
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Deleter"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1808u")
+disabled = true
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 collision_layer = 15
@@ -54,5 +72,6 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 shape = SubResource("RectangleShape2D_1808u")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="IntervalTimer" to="." method="_on_interval_timer_timeout"]
+[connection signal="timeout" from="ReleaseTimer" to="." method="_on_deploy_timer_timeout"]
 [connection signal="body_entered" from="Deleter" to="." method="_on_deleter_body_entered"]

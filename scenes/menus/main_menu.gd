@@ -49,11 +49,11 @@ func _process(_delta: float) -> void:
 	if slide_mode == States.WAIT:
 		return
 	elif slide_mode == States.GO:
-		TitleScreen.position.x = -1920 + 1920 * smooth_line.sample($Timer.time_left) # Should make it go to the left
-		LevelSelect.position.x = 1920 * smooth_line.sample($Timer.time_left) 
+		TitleScreen.position.x = -1920 + 1920 * smooth_line.sample($Timer.time_left / $Timer.wait_time) # Should make it go to the left
+		LevelSelect.position.x = 1920 * smooth_line.sample($Timer.time_left / $Timer.wait_time) 
 	else:
-		TitleScreen.position.x = -1920 * smooth_line.sample($Timer.time_left)
-		LevelSelect.position.x = 1920 -1920 * smooth_line.sample($Timer.time_left)
+		TitleScreen.position.x = -1920 * smooth_line.sample($Timer.time_left / $Timer.wait_time)
+		LevelSelect.position.x = 1920 -1920 * smooth_line.sample($Timer.time_left / $Timer.wait_time)
 	
 
 func _start_level(level): # I am not sure why this is it's own function

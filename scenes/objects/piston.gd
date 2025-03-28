@@ -1,25 +1,30 @@
 extends StaticBody2D
 
+
 enum Themes {YELLOW, GREEN, BLUE, PURPLE}
 @export var theme: Themes = Themes.YELLOW
 @export var time_interval: int = 5
 @export var landing_zone: RigidBody2D
 @export var ReleaseCurve: Curve
+@export var WiggleCurve: Curve
+@export_range(0, 500, 1) var deploy_length = 300
 
-enum State {WAIT, PUSH, RETRACT}
-var mode: State# = State.WAIT
+enum States {WAIT, MOVING}
+var mode = States.WAIT
 
 @onready var TextureHead = $PistonHead
 @onready var TextureBase = $PistonBase
 @onready var DeleteHitbox = $Deleter
 @onready var Collider = $AnimatableBody2D
-@onready var ReleaseTimer = $Timer
+@onready var ReleaseTimer = $ReleaseTimer
+@onready var IntervalTimer = $IntervalTimer
+@onready var OuterShaft = $OuterShaft
+@onready var InnerShaft = $InnerShaft
 
 func _ready():
-	$Timer.wait_time = time_interval
-	#print("Piston is ready")
-	mode = State.WAIT
-	#set_process(true)
+	IntervalTimer.wait_time = time_interval # And then this timer autostarts
+	mode = States.WAIT
+	#IntervalTimer.start()
 	
 	match theme:
 		Themes.YELLOW:
@@ -32,52 +37,48 @@ func _ready():
 			modulate = Color("000000")
 
 func _process(_delta):
-	if mode == State.WAIT:
+	if mode == States.WAIT:
 		#print("Am waiting")
 		return
 	
-	elif mode == State.PUSH: # Stretches the piston
-		if TextureHead.scale.y < .5:
-			TextureHead.scale.y += 0.02
-			TextureHead.position.y -= 3
-			DeleteHitbox.position.y -= 12
-			Collider.position.y -= 12
-		else:
-			mode = State.RETRACT
-	
-	elif mode == State.RETRACT: # Retracts the piston
-		if TextureHead.scale.y > 0.065: # 0.078
-			TextureHead.scale.y -= 0.02
-			TextureHead.position.y += 3
-			DeleteHitbox.position.y += 12
-			Collider.position.y += 12
-		else:
-			mode = State.WAIT
-	
 	#print((ReleaseTimer.time_left))
-	var height = -ReleaseCurve.sample(1 - ReleaseTimer.time_left)
+	var height = deploy_length * -ReleaseCurve.sample((2 - ReleaseTimer.time_left ) / 2) - 25 # Multiply it by a multiplier
 	
-	Top.position.y = height # I am technically doing this backwards, but that's okay since the curve is identical both sides
-	$Line2D.points[0].y = height + 10
-	$Line2D.points[5].y = height + 10
+	TextureHead.position.y = height
+	Collider.position.y = height
+	DeleteHitbox.position.y = height
+	OuterShaft.points[1].y = height
+	InnerShaft.points[1].y = height
+	## I wonder if the points resource will be shared so I don't need to update both separately
 	
-	$Line2D.points[1].y = (16 + $Line2D.points[0].y) / 2
-	$Line2D.points[4].y = (16 + $Line2D.points[0].y) / 2
+	TextureHead.position.x = WiggleCurve.sample(2 - ReleaseTimer.time_left) # Shake back and forth to indicate for the player
 	
+	#print("Pos: ", TextureHead.position.x)
+	#print(min(1, 2 - ReleaseTimer.time_left))
+	#$Line2D.points[0].y = height + 10
+	#$Line2D.points[5].y = height + 10
+	#
+	#$Line2D.points[1].y = (16 + $Line2D.points[0].y) / 2
+	#$Line2D.points[4].y = (16 + $Line2D.points[0].y) / 2
 	
 	
 
-func _on_timer_timeout():
-	#print("Timer timed out")
-	mode = State.PUSH
 
-func _on_area_2d_input_event(_viewport, event, shape_idx): # I don't know what this does, maybe I was just testing what this did for the first time?
-	print("Input event!: ", event, ", ", shape_idx)
 
 
 func _on_deleter_body_entered(body):
 	#print(body.name)
 	if body.is_in_group("Box") or body.is_in_group("Player"):
 		body.call_deferred("queue_free")
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene")
 	
+
+
+func _on_interval_timer_timeout() -> void:
+	print("Release started")
+	mode = States.MOVING
+	ReleaseTimer.start()
+	
+func _on_deploy_timer_timeout() -> void:
+	mode = States.WAIT
+	IntervalTimer.start()
