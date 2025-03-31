@@ -35,7 +35,6 @@ color = Color(0.498039, 0.639216, 0.827451, 1)
 
 [node name="Ladder2" parent="." instance=ExtResource("16_xyxst")]
 position = Vector2(1970, 573)
-theme = 1
 
 [node name="Ramp2" parent="." instance=ExtResource("9_vck8b")]
 position = Vector2(152, 663)

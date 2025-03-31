@@ -188,7 +188,6 @@ theme = 2
 [node name="Ladder2" parent="." instance=ExtResource("4_cdfft")]
 position = Vector2(2111, 399)
 rotation = -0.181089
-theme = 1
 
 [node name="Spring" parent="." instance=ExtResource("5_ap2rn")]
 position = Vector2(2239, 1242)

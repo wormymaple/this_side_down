@@ -1,15 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbybiva8l4ojn"]
 
-[ext_resource type="Texture2D" uid="uid://dhuytne66ssva" path="res://art/area_1/ramp.png" id="1_o4ow0"]
 [ext_resource type="Script" uid="uid://b37qbhq8eop1l" path="res://scenes/objects/ramp.gd" id="1_vbkbe"]
+[ext_resource type="Texture2D" uid="uid://bm1ogslwvhnwg" path="res://art/general/ramp.png" id="2_2gnji"]
 
 [node name="Ramp" type="StaticBody2D"]
 script = ExtResource("1_vbkbe")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-46, 57)
-polygon = PackedVector2Array(-125, 7, -120, 12, 209, 10, 213, -132)
+polygon = PackedVector2Array(-142, 19, 223, 19, 223, -133)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_o4ow0")
+texture = ExtResource("2_2gnji")

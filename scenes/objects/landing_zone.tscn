@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c7gc0sday64y6"]
 
 [ext_resource type="Script" uid="uid://dddh20omq2xq4" path="res://scenes/objects/landing_zone.gd" id="1_wkjfu"]
-[ext_resource type="Texture2D" uid="uid://cwbh6525nf4gg" path="res://art/area_1/landing_zone.png" id="2_jkmx4"]
+[ext_resource type="Texture2D" uid="uid://dh46dioldwboa" path="res://art/general/landing_zone.png" id="2_wq3qk"]
 [ext_resource type="Texture2D" uid="uid://dnk3wvfako1r7" path="res://art/general/simple_box.png" id="3_kmtdw"]
 [ext_resource type="Script" uid="uid://27xd6864a0l2" path="res://standalone_scripts/bob_up_and_down.gd" id="4_3mwse"]
 [ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="5_jsrkl"]
@@ -44,14 +44,17 @@ max_contacts_reported = 6
 script = ExtResource("1_wkjfu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, 20)
+position = Vector2(0, 19)
 scale = Vector2(0.502031, 0.937427)
-polygon = PackedVector2Array(-292.81, -7.46725, 298.786, -6.4005, 262, -44, -245.005, -44.8035)
+polygon = PackedVector2Array(-292.81, -7.46725, 296.794, -7.46725, 256.956, -44.8035, -245.005, -44.8035)
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_jkmx4")
+position = Vector2(0, -5)
+scale = Vector2(0.792807, 0.792807)
+texture = ExtResource("2_wq3qk")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="Hint" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.509804)
@@ -62,8 +65,6 @@ texture = ExtResource("3_kmtdw")
 script = ExtResource("4_3mwse")
 curve = SubResource("Curve_edar3")
 anim_time = 1.0
-move = Vector2(0, 1)
-intensity = 50.0
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 z_index = -1

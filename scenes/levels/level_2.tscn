@@ -18,15 +18,15 @@
 script = ExtResource("1_daa33")
 
 [node name="Ramp" parent="." instance=ExtResource("4_nh0bc")]
-position = Vector2(-834, 552)
+position = Vector2(-821, 543)
 scale = Vector2(-1.1, 1.1)
 
 [node name="Ramp2" parent="." instance=ExtResource("4_nh0bc")]
-position = Vector2(370, 553)
+position = Vector2(377, 549)
 scale = Vector2(-1.09823, 1.09823)
 
 [node name="Ramp3" parent="." instance=ExtResource("4_nh0bc")]
-position = Vector2(-241, 552)
+position = Vector2(-251, 550)
 scale = Vector2(1.1, 1.1)
 
 [node name="Camera" parent="." instance=ExtResource("6_48uye")]

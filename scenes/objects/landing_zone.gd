@@ -14,6 +14,8 @@ var won_already = false
 func _ready() -> void:
 	if platform_to_attach_to != null:
 		platform_to_attach_to.objects_to_move.push_back(self)
+	
+	modulate = Color("c9a338") # good ol' yellow
 
 func _process(_delta): # It would be best if this code only checked itself when a box moves or is dropped
 	
