@@ -9,10 +9,10 @@ extends Node
 func _ready():
 	var player_num = len(Input.get_connected_joypads())
 	
-	for i in range(player_num): # Adds a player for each joypad
+	for i in range(player_num + 1): # Adds a player for each joypad
 		var new_player = player_scene.instantiate();
 		
-		new_player.playerID = "p" + str(i + 1)
+		new_player.playerID = "p" + str(i)
 		new_player.linear_damp = damp
 		new_player.gravity_scale = gravity_scale
 		new_player.is_in_water = is_in_water

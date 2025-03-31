@@ -87,7 +87,13 @@ func _physics_process(delta):
 			on_ground = false
 	
 	## Move the player's arm
-	right_stick = Input.get_vector("RS_left_" + playerID, "RS_right_" + playerID, "RS_up_" + playerID, "RS_down_" + playerID)
+	if playerID != "p0":
+		right_stick = Input.get_vector("RS_left_" + playerID, "RS_right_" + playerID, "RS_up_" + playerID, "RS_down_" + playerID)
+	else: # Keyboard controls
+		right_stick = (Vector2(get_global_mouse_position()) - global_position).normalized()
+	#print(right_stick)
+	#print(position)
+	
 	if right_stick.length() != 0:
 		HandMeta.position += (right_stick * ARM_LENGTH - HandMeta.position) * ARM_MOVE_SPEED * delta
 		#hand_meta.position = hand_meta.position.normalized() * arm_length <- FOR FIXED PENDULUM
@@ -173,6 +179,10 @@ func _input(event):
 		
 	# grab
 	if event.is_action_pressed("grab_" + playerID):
+		
+		print("Local: ", Vector2i(get_local_mouse_position())) # Gives you where the mouse is on the screen coordinates 
+		print("Global: ", Vector2i(get_global_mouse_position()))
+		
 		if grabbed_body == null && target_body != null: # Try grab
 			# Am I being grabbed by a player?
 			if target_body.is_in_group("Player") && check_player_linkage(target_body):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=41 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" uid="uid://bfk5mqt5lko4y" path="res://scenes/menus/main_menu.gd" id="1_eci1h"]
 [ext_resource type="Texture2D" uid="uid://c21y5e2iccgjq" path="res://art/menus/box_background.png" id="2_0m78c"]
@@ -23,7 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://fsi21nnv1af1" path="res://art/menus/button_9.png" id="22_t83ru"]
 [ext_resource type="Texture2D" uid="uid://c746marh7lpvl" path="res://art/menus/button_10.png" id="23_a7sju"]
 [ext_resource type="Texture2D" uid="uid://yyf4pcqg2gsw" path="res://art/menus/button_11.png" id="24_jxaso"]
+[ext_resource type="StyleBox" uid="uid://cghq55g2oqm2g" path="res://resources/transparent_color.tres" id="25_6imgi"]
 [ext_resource type="Texture2D" uid="uid://dhr2uys27ibh2" path="res://art/menus/button_12.png" id="25_mjfcb"]
+[ext_resource type="Texture2D" uid="uid://v66l2jed5dcs" path="res://art/player/player_legs.png" id="26_1hq2q"]
+[ext_resource type="Texture2D" uid="uid://dhcgep0jgavc2" path="res://art/player/player_head.png" id="27_wxcro"]
 
 [sub_resource type="Curve" id="Curve_jygr6"]
 _data = [Vector2(0, 0), 0.0, 0.027516, 0, 0, Vector2(1, 1), -0.0168326, 0.0, 0, 0]
@@ -279,7 +282,9 @@ layout_mode = 2
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
-text = "2"
+text = "This is a test"
+icon = ExtResource("13_1hq2q")
+flat = true
 
 [node name="Texture2" type="TextureRect" parent="LevelSelect/GridContainer/Button2"]
 layout_mode = 0
@@ -665,6 +670,120 @@ texture = ExtResource("15_y4gey")
 wait_time = 0.7
 one_shot = true
 
+[node name="ControllerMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ControllerMenu"]
+layout_mode = 0
+offset_left = -1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 300
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControllerMenu/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ControllerMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("25_6imgi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControllerMenu/MarginContainer/HBoxContainer/Panel"]
+layout_mode = 0
+offset_right = 473.0
+offset_bottom = 630.0
+alignment = 1
+
+[node name="Label" type="Label" parent="ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_bpy87")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Keyboard + Mouse"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayerLegs" type="TextureRect" parent="ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = -52.0
+offset_top = 116.0
+offset_right = 1308.0
+offset_bottom = 979.0
+scale = Vector2(0.073736, 0.073736)
+texture = ExtResource("26_1hq2q")
+
+[node name="PlayerHead" type="TextureRect" parent="ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/Control"]
+layout_mode = 1
+offset_left = -71.0
+offset_top = 18.0
+offset_right = 1289.0
+offset_bottom = 1215.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("27_wxcro")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_bpy87")
+text = "Is playing:"
+
+[node name="CheckBox" type="CheckBox" parent="ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_bpy87")
+
+[node name="Panel2" type="Panel" parent="ControllerMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel3" type="Panel" parent="ControllerMenu/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ControllerMenu"]
+layout_mode = 0
+offset_left = -1058.0
+offset_right = -828.0
+offset_bottom = 45.0
+theme = ExtResource("5_bpy87")
+text = "Manage Players"
+
+[node name="ButtonBack" type="Button" parent="ControllerMenu"]
+offset_left = -1168.0
+offset_top = 835.0
+offset_right = -775.0
+offset_bottom = 1049.0
+focus_neighbor_left = NodePath(".")
+focus_previous = NodePath(".")
+theme = ExtResource("5_bpy87")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7mc1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mlnq6")
+
+[node name="Texture" type="TextureRect" parent="ControllerMenu/ButtonBack"]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -171.0
+offset_right = 1931.0
+offset_bottom = 1877.0
+scale = Vector2(0.3, 0.3)
+theme = ExtResource("5_bpy87")
+texture = ExtResource("11_n8vdk")
+
 [connection signal="pressed" from="TitleScreen/HBoxContainer/ButtonPlay" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TitleScreen/HBoxContainer/ButtonOption" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="TitleScreen/HBoxContainer/ButtonQuit" to="." method="_on_quit_button_pressed"]
@@ -681,3 +800,4 @@ one_shot = true
 [connection signal="pressed" from="LevelSelect/GridContainer/Button10" to="." method="_on_button_10_pressed"]
 [connection signal="pressed" from="LevelSelect/GridContainer/Button11" to="." method="_on_button_11_pressed"]
 [connection signal="pressed" from="LevelSelect/GridContainer/Button12" to="." method="_on_button_12_pressed"]
+[connection signal="pressed" from="ControllerMenu/ButtonBack" to="." method="_on_back_button_pressed"]
