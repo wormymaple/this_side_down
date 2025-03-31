@@ -3,10 +3,11 @@ extends Control
 @onready var settings_menu = $SettingsMenu
 @onready var FocusButton = $TitleScreen/HBoxContainer/ButtonPlay
 @export var Level1Button: Button
-@export var button_texture_list: Array[TextureRect]
+@export var button_texture_list: Array[Button]
 @export var smooth_line: Curve
 @onready var TitleScreen = $TitleScreen
 @onready var LevelSelect = $LevelSelect
+var locked_icon = preload("res://art/menus/locked_level.PNG")
 
 enum States {GO, BACK, WAIT}
 var slide_mode = States.WAIT
@@ -17,10 +18,12 @@ func _ready():
 	if OS.get_name() == "Web":
 		$HBoxContainer/ButtonQuit.hide()
 	
-	for i in range(1, GlobalVariables.farthest_unlocked_level): # Starts at 1 since 1 is always unlocked. Never ever reaching 12 is fine because there are only 11 textures 
+	for level in range(1, 13): # Starts at 1 since 1 is always unlocked. Never ever reaching 12 is fine because there are only 11 textures 
 		#print(i)
-		for child in button_texture_list[i].get_children(): 
-			child.queue_free()
+		if level > GlobalVariables.farthest_unlocked_level:
+			button_texture_list[level-1].disabled = true
+			button_texture_list[level-1].icon = locked_icon
+	
 
 func _on_play_button_pressed():
 	
@@ -63,7 +66,7 @@ func _start_level(level): # I am not sure why this is it's own function
 func _on_button_1_pressed():
 	_start_level(1)
 func _on_button_2_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 2:
+	if GlobalVariables.farthest_unlocked_level >= 2: # I don't need this checks anymore, but there isn't much of a reason to remove them
 		_start_level(2)
 func _on_button_3_pressed():
 	if GlobalVariables.farthest_unlocked_level >= 3:

@@ -1,7 +1,7 @@
 extends Node
 
 var completed_levels: Array[int]
-var farthest_unlocked_level = 12
+var farthest_unlocked_level = 6
 
 func win_level(level_cleared):
 	if level_cleared > farthest_unlocked_level:

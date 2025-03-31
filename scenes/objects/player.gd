@@ -90,13 +90,21 @@ func _physics_process(delta):
 	if playerID != "p0":
 		right_stick = Input.get_vector("RS_left_" + playerID, "RS_right_" + playerID, "RS_up_" + playerID, "RS_down_" + playerID)
 	else: # Keyboard controls
-		right_stick = (Vector2(get_global_mouse_position()) - global_position).normalized()
+		right_stick = (Vector2(get_global_mouse_position()) - global_position)
+		if right_stick.length() > 1 * ARM_LENGTH:
+			print(right_stick.length())
+			right_stick = right_stick.normalized() * ARM_LENGTH
+	
 	#print(right_stick)
-	#print(position)
+	
 	
 	if right_stick.length() != 0:
-		HandMeta.position += (right_stick * ARM_LENGTH - HandMeta.position) * ARM_MOVE_SPEED * delta
-		#hand_meta.position = hand_meta.position.normalized() * arm_length <- FOR FIXED PENDULUM
+		if playerID != "p0":
+			HandMeta.position += (right_stick * ARM_LENGTH - HandMeta.position) * ARM_MOVE_SPEED * delta # Subtracting the current hand meta position from it will make it slow down when almost reaching it's position
+		else:
+			HandMeta.position += (right_stick - HandMeta.position) * ARM_MOVE_SPEED * delta
+	
+	
 	elif grabbed_body == null:
 		HandMeta.position -= HandMeta.position * ARM_MOVE_SPEED * delta
 		
