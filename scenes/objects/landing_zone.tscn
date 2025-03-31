@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c7gc0sday64y6"]
 
 [ext_resource type="Script" uid="uid://dddh20omq2xq4" path="res://scenes/objects/landing_zone.gd" id="1_wkjfu"]
-[ext_resource type="Texture2D" uid="uid://dh46dioldwboa" path="res://art/general/landing_zone.png" id="2_wq3qk"]
+[ext_resource type="Texture2D" uid="uid://dh46dioldwboa" path="res://art/general/loading_zone.png" id="2_wq3qk"]
 [ext_resource type="Texture2D" uid="uid://dnk3wvfako1r7" path="res://art/general/simple_box.png" id="3_kmtdw"]
 [ext_resource type="Script" uid="uid://27xd6864a0l2" path="res://standalone_scripts/bob_up_and_down.gd" id="4_3mwse"]
 [ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="5_jsrkl"]
@@ -34,7 +34,7 @@ hue_variation_max = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8x63u"]
 size = Vector2(255, 20)
 
-[node name="LandingZone" type="RigidBody2D" groups=["LandingZone"]]
+[node name="LoadingZone" type="RigidBody2D" groups=["LandingZone"]]
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true
