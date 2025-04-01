@@ -61,7 +61,7 @@ script = ExtResource("1_5wbp8")
 wiggle_curve = SubResource("Curve_fcyqv")
 holding_hand = ExtResource("2_4wubt")
 empty_hand = ExtResource("3_nc5kx")
-player_colors = Array[Color]([Color(0, 0.709804, 0.835294, 1), Color(1, 0.435294, 0.294118, 1), Color(0.321569, 0.74902, 0, 1), Color(0.670588, 0.537255, 1, 1), Color(1, 0.890196, 0.427451, 1), Color(0.364706, 0.364706, 0.364706, 1)])
+player_colors = Array[Color]([Color(0.722554, 0.722555, 0.722555, 1), Color(0, 0.709804, 0.835294, 1), Color(1, 0.435294, 0.294118, 1), Color(0.321569, 0.74902, 0, 1), Color(0.670588, 0.537255, 1, 1)])
 metadata/grabbable = true
 metadata/grabbed = false
 
