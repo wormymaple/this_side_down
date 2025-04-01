@@ -92,7 +92,7 @@ func _physics_process(delta):
 	else: # Keyboard controls
 		right_stick = (Vector2(get_global_mouse_position()) - global_position)
 		if right_stick.length() > 1 * ARM_LENGTH:
-			print(right_stick.length())
+			#print(right_stick.length())
 			right_stick = right_stick.normalized() * ARM_LENGTH
 	
 	#print(right_stick)
