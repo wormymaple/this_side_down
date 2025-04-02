@@ -33,6 +33,9 @@ func _ready():
 	sprite.scale *= Vector2(size, size) # Uses *= instead of just = because the starting sprite size is 0.145 
 	collision.scale *= Vector2(size, size)
 	
+	#print("Inverse inertia: ", PhysicsServer2D.body_get_direct_state(self.get_rid()).inverse_inertia)
+	#print(inertia)
+	
 	#if size >= 2: # i think this moves the arrow closer to the center if the box is big
 	#	arrow.position.x -= 20
 	#	arrow.position.y -= 20

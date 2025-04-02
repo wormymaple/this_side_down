@@ -7,10 +7,10 @@
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="5_bpy87"]
 [ext_resource type="Texture2D" uid="uid://r3rlt2gbviqu" path="res://art/menus/button_play.png" id="5_m312u"]
 [ext_resource type="Texture2D" uid="uid://dydw1neg2a026" path="res://art/menus/button_controller.PNG" id="7_6imgi"]
-[ext_resource type="Texture2D" uid="uid://gsj1rdgspmyu" path="res://art/menus/button_options.PNG" id="8_1hq2q"]
-[ext_resource type="Texture2D" uid="uid://c0vc4uiercmqu" path="res://art/menus/button_quit.PNG" id="9_wxcro"]
+[ext_resource type="Texture2D" uid="uid://gsj1rdgspmyu" path="res://art/menus/button_options.png" id="8_1hq2q"]
+[ext_resource type="Texture2D" uid="uid://c0vc4uiercmqu" path="res://art/menus/button_quit.png" id="9_wxcro"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://scenes/menus/settings_menu.tscn" id="9_ygyx6"]
-[ext_resource type="Texture2D" uid="uid://byefxy14vv2pq" path="res://art/menus/button_back.PNG" id="11_y4gey"]
+[ext_resource type="Texture2D" uid="uid://byefxy14vv2pq" path="res://art/menus/button_back.png" id="11_y4gey"]
 [ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://resources/button_focus.tres" id="12_6imgi"]
 [ext_resource type="Texture2D" uid="uid://c8rnkk3psusk1" path="res://art/menus/1.png" id="12_n8vdk"]
 [ext_resource type="Texture2D" uid="uid://4ik1tvct68bg" path="res://art/menus/2.PNG" id="13_6imgi"]
@@ -107,6 +107,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="Controls" type="Label" parent="ScrollParent/TitleScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -123,7 +124,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_6tew7")
 theme_override_font_sizes/font_size = 48
-text = "Requires a controller. Left trigger/bumper to jump, right trigger/bumper to grab, left stick to move, and right stick to control arm."
+text = "Left trigger/bumper to jump, right trigger/bumper to grab, left stick to move, and right stick to control arm."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -463,6 +464,7 @@ text = "Is playing:"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath(".")
 theme = ExtResource("5_bpy87")
 
 [node name="Panel2" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
@@ -525,6 +527,8 @@ text = "Is playing:"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox")
 theme = ExtResource("5_bpy87")
 
 [node name="Panel3" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
@@ -587,6 +591,9 @@ text = "Is playing:"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../../../../Panel2/VBoxContainer/HBoxContainer/CheckBox")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../../../../Panel4/VBoxContainer/HBoxContainer/CheckBox")
 theme = ExtResource("5_bpy87")
 
 [node name="Panel4" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
@@ -649,6 +656,8 @@ text = "Is playing:"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox")
+focus_neighbor_top = NodePath(".")
 theme = ExtResource("5_bpy87")
 
 [node name="Panel5" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
@@ -711,6 +720,9 @@ text = "Is playing:"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../../../../../ButtonBackController")
 theme = ExtResource("5_bpy87")
 
 [node name="Label" type="Label" parent="ScrollParent/ControllerMenu"]
@@ -731,6 +743,7 @@ offset_top = 835.0
 offset_right = 1133.0
 offset_bottom = 1017.0
 focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer/CheckBox")
 focus_neighbor_right = NodePath(".")
 focus_previous = NodePath(".")
 theme = ExtResource("5_bpy87")

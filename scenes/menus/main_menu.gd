@@ -12,13 +12,14 @@ extends Control
 @onready var ScrollParent = $ScrollParent
 @onready var settings_menu = $SettingsMenu
 @onready var FocusButton = $ScrollParent/TitleScreen/HBoxContainer/ButtonPlay
+@onready var ControllerToButton = $ScrollParent/TitleScreen/HBoxContainer/ButtonControllers
 var locked_icon = preload("res://art/menus/locked_level.PNG")
 
 enum States {TO_LEVELS, FROM_LEVELS, TO_CONTROLLERS, FROM_CONTROLLERS, WAIT}
 var slide_mode = States.WAIT
 
 func _ready():
-	FocusButton.grab_focus()
+	ControllerToButton.grab_focus()
 	
 	if OS.get_name() == "Web":
 		$HBoxContainer/ButtonQuit.hide()
@@ -48,7 +49,7 @@ func _on_button_controllers_pressed() -> void:
 
 func _on_button_back_controller_pressed() -> void:
 	$Timer.start()
-	FocusButton.grab_focus()
+	ControllerToButton.grab_focus()
 	slide_mode = States.FROM_CONTROLLERS
 
 

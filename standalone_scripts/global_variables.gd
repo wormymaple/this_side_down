@@ -1,7 +1,13 @@
 extends Node
 
 var completed_levels: Array[int]
-var farthest_unlocked_level = 6
+var farthest_unlocked_level = 12
+
+var player_0_playing = true
+var player_1_playing = false
+var player_2_playing = false
+var player_3_playing = false
+var player_4_playing = false
 
 func win_level(level_cleared):
 	if level_cleared > farthest_unlocked_level:

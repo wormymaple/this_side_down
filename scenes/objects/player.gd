@@ -124,12 +124,15 @@ func _physics_process(delta):
 		
 		# Addinng this code to test being able to rotate held item by button press
 		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_right_" + playerID):
-			grabbed_body.global_rotation += 2 * delta
+			#grabbed_body.global_rotation += 2 * delta
+			grabbed_body.apply_torque(1000000 * delta)
 			#print("I am rotating!")
 		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_left_" + playerID):
-			grabbed_body.global_rotation -= 2 * delta
+			#grabbed_body.global_rotation -= 2 * delta
+			grabbed_body.apply_torque(-1000000 * delta)
 			#print("I am rotating!")
 			
+		
 		
 		var body_to_hand_dir = HandMeta.global_position - grabbed_body.global_position
 		if body_to_hand_dir.length() > drop_threshold:
@@ -188,8 +191,8 @@ func _input(event):
 	# grab
 	if event.is_action_pressed("grab_" + playerID):
 		
-		print("Local: ", Vector2i(get_local_mouse_position())) # Gives you where the mouse is on the screen coordinates 
-		print("Global: ", Vector2i(get_global_mouse_position()))
+		#print("Local: ", Vector2i(get_local_mouse_position())) # Gives you where the mouse is on the screen coordinates 
+		#print("Global: ", Vector2i(get_global_mouse_position()))
 		
 		if grabbed_body == null && target_body != null: # Try grab
 			# Am I being grabbed by a player?
@@ -207,6 +210,7 @@ func _input(event):
 			
 	elif event.is_action_released("grab_" + playerID) && grabbed_body != null:
 		drop_object()
+	
 
 func set_color(player_index):
 	modulate = player_colors[player_index]
