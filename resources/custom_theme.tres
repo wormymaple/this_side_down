@@ -1,8 +1,12 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ln2ffi74l3eg"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://ln2ffi74l3eg"]
 
 [ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://Fonts/Nunito/static/Nunito-Regular.ttf" id="1_egpol"]
 [ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://resources/button_focus.tres" id="2_7twn1"]
 [ext_resource type="StyleBox" uid="uid://b7x078ag0jx8d" path="res://resources/button_default.tres" id="2_eihje"]
+[ext_resource type="Texture2D" uid="uid://dw40i2oi5a1mi" path="res://resources/true.png" id="4_aowux"]
+[ext_resource type="Texture2D" uid="uid://b2dftp3jkcoqi" path="res://resources/true_disabled.png" id="5_fp7b3"]
+[ext_resource type="Texture2D" uid="uid://biwsjb1kcif64" path="res://resources/false.PNG" id="6_1pmyd"]
+[ext_resource type="Texture2D" uid="uid://owdpaaubxo68" path="res://resources/false_disabled.png" id="7_cbwiu"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_p6rne"]
 thickness = 3
@@ -19,6 +23,10 @@ Button/styles/hover = ExtResource("2_eihje")
 Button/styles/hover_pressed = ExtResource("2_eihje")
 Button/styles/normal = ExtResource("2_eihje")
 Button/styles/pressed = ExtResource("2_eihje")
+CheckBox/icons/checked = ExtResource("4_aowux")
+CheckBox/icons/checked_disabled = ExtResource("5_fp7b3")
+CheckBox/icons/unchecked = ExtResource("6_1pmyd")
+CheckBox/icons/unchecked_disabled = ExtResource("7_cbwiu")
 HSeparator/constants/separation = 4
 HSeparator/styles/separator = SubResource("StyleBoxLine_p6rne")
 Label/colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)

@@ -458,6 +458,7 @@ texture = ExtResource("27_wxcro")
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Label" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
@@ -466,11 +467,13 @@ theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
 [node name="CheckBox0" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath(".")
 theme = ExtResource("5_bpy87")
+flat = true
+icon_alignment = 1
 
 [node name="Panel2" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -521,6 +524,7 @@ texture = ExtResource("27_wxcro")
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Label" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer"]
@@ -535,6 +539,8 @@ size_flags_horizontal = 4
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox2")
 theme = ExtResource("5_bpy87")
+disabled = true
+flat = true
 
 [node name="Panel3" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -585,6 +591,7 @@ texture = ExtResource("27_wxcro")
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Label" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer"]
@@ -600,6 +607,8 @@ focus_neighbor_left = NodePath("../../../../Panel2/VBoxContainer/HBoxContainer/C
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath("../../../../Panel4/VBoxContainer/HBoxContainer/CheckBox3")
 theme = ExtResource("5_bpy87")
+disabled = true
+flat = true
 
 [node name="Panel4" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -650,6 +659,7 @@ texture = ExtResource("27_wxcro")
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Label" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer/HBoxContainer"]
@@ -664,6 +674,8 @@ size_flags_horizontal = 4
 focus_neighbor_left = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox2")
 focus_neighbor_top = NodePath(".")
 theme = ExtResource("5_bpy87")
+disabled = true
+flat = true
 
 [node name="Panel5" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -729,6 +741,8 @@ focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath("../../../../../../ButtonBackController")
 theme = ExtResource("5_bpy87")
+disabled = true
+flat = true
 
 [node name="Label" type="Label" parent="ScrollParent/ControllerMenu"]
 layout_mode = 0
