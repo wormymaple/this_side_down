@@ -9,7 +9,17 @@ extends Node
 func _ready():
 	var player_num = len(Input.get_connected_joypads())
 	
+	if player_num == 0 and not GlobalVariables.player_0_playing:
+		get_node(camera).get_child(0).show()
+		print("There aren't any controller connected and keyboard isn't an option")
+		return
+	
 	for i in range(player_num + 1): # Adds a player for each joypad
+		print("Adding player")
+		if not GlobalVariables.player_0_playing and i == 0:
+			print("Nevermind, the player isn't using the keyboard")
+			continue
+		
 		var new_player = player_scene.instantiate();
 		
 		new_player.playerID = "p" + str(i)

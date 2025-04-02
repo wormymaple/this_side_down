@@ -54,7 +54,7 @@ point_count = 2
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mlnq6"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("Level1Button", "QuitButton", "ControllerBackButton", "button_texture_list")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("Level1Button", "QuitButton", "ControllerBackButton", "button_texture_list", "player_0_playing", "player_1_playing", "player_2_playing", "player_3_playing", "player_4_playing")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_eci1h")
@@ -63,6 +63,11 @@ QuitButton = NodePath("ScrollParent/TitleScreen/HBoxContainer/ButtonQuit")
 ControllerBackButton = NodePath("ScrollParent/ControllerMenu/ButtonBackController")
 button_texture_list = [NodePath("ScrollParent/LevelSelect/GridContainer/Button1"), NodePath("ScrollParent/LevelSelect/GridContainer/Button2"), NodePath("ScrollParent/LevelSelect/GridContainer/Button3"), NodePath("ScrollParent/LevelSelect/GridContainer/Button4"), NodePath("ScrollParent/LevelSelect/GridContainer/Button5"), NodePath("ScrollParent/LevelSelect/GridContainer/Button6"), NodePath("ScrollParent/LevelSelect/GridContainer/Button7"), NodePath("ScrollParent/LevelSelect/GridContainer/Button8"), NodePath("ScrollParent/LevelSelect/GridContainer/Button9"), NodePath("ScrollParent/LevelSelect/GridContainer/Button10"), NodePath("ScrollParent/LevelSelect/GridContainer/Button11"), NodePath("ScrollParent/LevelSelect/GridContainer/Button12")]
 smooth_line = SubResource("Curve_jygr6")
+player_0_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer/CheckBox0")
+player_1_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer/CheckBox1")
+player_2_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer/CheckBox2")
+player_3_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer/HBoxContainer/CheckBox3")
+player_4_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer/HBoxContainer/CheckBox4")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(0.882353, 0.760784, 0.643137, 1)
@@ -460,7 +465,7 @@ layout_mode = 2
 theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
-[node name="CheckBox" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
+[node name="CheckBox0" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -523,12 +528,12 @@ layout_mode = 2
 theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
-[node name="CheckBox" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer"]
+[node name="CheckBox1" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath(".")
-focus_neighbor_right = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox")
+focus_neighbor_right = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox2")
 theme = ExtResource("5_bpy87")
 
 [node name="Panel3" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
@@ -587,13 +592,13 @@ layout_mode = 2
 theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
-[node name="CheckBox" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer"]
+[node name="CheckBox2" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-focus_neighbor_left = NodePath("../../../../Panel2/VBoxContainer/HBoxContainer/CheckBox")
+focus_neighbor_left = NodePath("../../../../Panel2/VBoxContainer/HBoxContainer/CheckBox1")
 focus_neighbor_top = NodePath(".")
-focus_neighbor_right = NodePath("../../../../Panel4/VBoxContainer/HBoxContainer/CheckBox")
+focus_neighbor_right = NodePath("../../../../Panel4/VBoxContainer/HBoxContainer/CheckBox3")
 theme = ExtResource("5_bpy87")
 
 [node name="Panel4" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
@@ -652,11 +657,11 @@ layout_mode = 2
 theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
-[node name="CheckBox" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer/HBoxContainer"]
+[node name="CheckBox3" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-focus_neighbor_left = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox")
+focus_neighbor_left = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox2")
 focus_neighbor_top = NodePath(".")
 theme = ExtResource("5_bpy87")
 
@@ -716,7 +721,7 @@ layout_mode = 2
 theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
-[node name="CheckBox" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer/HBoxContainer"]
+[node name="CheckBox4" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -743,7 +748,7 @@ offset_top = 835.0
 offset_right = 1133.0
 offset_bottom = 1017.0
 focus_neighbor_left = NodePath(".")
-focus_neighbor_top = NodePath("../MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer/CheckBox")
+focus_neighbor_top = NodePath("../MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer/CheckBox2")
 focus_neighbor_right = NodePath(".")
 focus_previous = NodePath(".")
 theme = ExtResource("5_bpy87")
@@ -770,4 +775,9 @@ icon = ExtResource("11_y4gey")
 [connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button10" to="." method="_on_button_10_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button11" to="." method="_on_button_11_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button12" to="." method="_on_button_12_pressed"]
+[connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer/CheckBox0" to="." method="_on_check_box_0_toggled"]
+[connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer/CheckBox1" to="." method="_on_check_box_1_toggled"]
+[connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer/CheckBox2" to="." method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer/HBoxContainer/CheckBox3" to="." method="_on_check_box_3_toggled"]
+[connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer/HBoxContainer/CheckBox4" to="." method="_on_check_box_4_toggled"]
 [connection signal="pressed" from="ScrollParent/ControllerMenu/ButtonBackController" to="." method="_on_button_back_controller_pressed"]

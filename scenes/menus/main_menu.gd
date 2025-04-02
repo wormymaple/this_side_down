@@ -6,6 +6,12 @@ extends Control
 @export var button_texture_list: Array[Button]
 @export var smooth_line: Curve
 
+@export var player_0_playing: CheckBox
+@export var player_1_playing: CheckBox
+@export var player_2_playing: CheckBox
+@export var player_3_playing: CheckBox
+@export var player_4_playing: CheckBox
+
 @onready var TitleScreen = $ScrollParent/TitleScreen
 @onready var LevelSelect = $ScrollParent/LevelSelect
 @onready var ControllerMenu = $ScrollParent/ControllerMenu
@@ -30,6 +36,11 @@ func _ready():
 			button_texture_list[level-1].disabled = true
 			button_texture_list[level-1].icon = locked_icon
 	
+	player_0_playing.button_pressed = GlobalVariables.player_0_playing
+	player_1_playing.button_pressed = GlobalVariables.player_1_playing
+	player_2_playing.button_pressed = GlobalVariables.player_2_playing
+	player_3_playing.button_pressed = GlobalVariables.player_3_playing
+	player_4_playing.button_pressed = GlobalVariables.player_4_playing
 
 func _on_play_button_pressed():
 	$Timer.start()
@@ -118,6 +129,16 @@ func _on_button_12_pressed():
 	if GlobalVariables.farthest_unlocked_level >= 12:
 		_start_level(12)
 
-
 func _on_timer_timeout() -> void:
 	slide_mode = States.WAIT
+
+func _on_check_box_4_toggled(toggled_on: bool) -> void:
+	GlobalVariables.player_4_playing = toggled_on
+func _on_check_box_3_toggled(toggled_on: bool) -> void:
+	GlobalVariables.player_3_playing = toggled_on
+func _on_check_box_2_toggled(toggled_on: bool) -> void:
+	GlobalVariables.player_2_playing = toggled_on
+func _on_check_box_1_toggled(toggled_on: bool) -> void:
+	GlobalVariables.player_1_playing = toggled_on
+func _on_check_box_0_toggled(toggled_on: bool) -> void:
+	GlobalVariables.player_0_playing = toggled_on
