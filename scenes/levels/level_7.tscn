@@ -75,23 +75,32 @@ position = Vector2(1067, 422)
 speed = 0.4
 
 [node name="Divider2" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(1398, 265)
+position = Vector2(1398, 284)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+
+[node name="Divider5" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(1398, 40)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+
+[node name="Divider6" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(1398, -204)
 rotation = -1.5708
 scale = Vector2(1.5, 1.5)
 
 [node name="Divider" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(297, 583)
-rotation = 4.71239
+position = Vector2(280, 604)
+rotation = 1.5708
 scale = Vector2(1.5, 1.5)
 
 [node name="Divider3" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(155, 440)
-rotation = 3.14159
+position = Vector2(148, 492)
 scale = Vector2(1.5, 1.5)
 
 [node name="Divider4" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(17, 580)
-rotation = -4.71463
+position = Vector2(15, 603)
+rotation = -1.5708
 scale = Vector2(1.5, 1.5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
