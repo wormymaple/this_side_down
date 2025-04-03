@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://jyvaflxbj8dc"]
 
 [ext_resource type="Script" uid="uid://5w2uavby7js7" path="res://scenes/objects/box.gd" id="1_0qwdj"]
-[ext_resource type="Texture2D" uid="uid://ce7lrfbykj4cr" path="res://art/area_1/crate_triangle.png" id="2_34x2i"]
-[ext_resource type="Texture2D" uid="uid://bb153agat705c" path="res://art/general/direction_sticker.png" id="3_vfoyo"]
+[ext_resource type="Texture2D" uid="uid://csflrecehqeut" path="res://art/area_1/crate_triangle.png" id="2_34x2i"]
+[ext_resource type="Texture2D" uid="uid://y6f87jhwxjbv" path="res://art/general/direction_sticker.png" id="3_vfoyo"]
 
 [node name="TriangleBox" type="RigidBody2D" groups=["Box", "triangle"]]
 position = Vector2(2.08165e-12, 2.08165e-12)
