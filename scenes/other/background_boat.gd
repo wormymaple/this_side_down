@@ -4,7 +4,7 @@ extends ParallaxBackground
 
 func _ready():
 	if bad_weather:
-		$Wayback/Ship.texture = load("res://art/area_3/ship_background_stormy.png")
+		$Wayback/Ship.texture = load("res://art/area_3/better_stormy.png")
 		#for child in self.get_children():
 		#	child.modulate = Color(child.modulate.r + .5, child.modulate.r + .5, child.modulate.r + .5) # Darken everything else
 	
