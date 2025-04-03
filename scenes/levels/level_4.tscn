@@ -49,6 +49,7 @@ camera = NodePath("../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("13_dkewa")]
 position = Vector2(88, 605)
+camera_offset = Vector2(0, -120)
 
 [node name="VoidOutArea" parent="." instance=ExtResource("10_eo61p")]
 position = Vector2(663, 1874)

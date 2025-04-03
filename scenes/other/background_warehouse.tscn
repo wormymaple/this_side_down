@@ -9,8 +9,10 @@
 
 [node name="WarehouseBackground" type="ParallaxBackground"]
 layer = -3
-follow_viewport_enabled = true
-scroll_base_offset = Vector2(-500, 0)
+offset = Vector2(1080, 400)
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 1080, 400)
+scroll_ignore_camera_zoom = true
 metadata/_edit_vertical_guides_ = [1924.0]
 
 [node name="Line2D" type="Line2D" parent="."]

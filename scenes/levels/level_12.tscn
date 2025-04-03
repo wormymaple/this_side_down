@@ -30,6 +30,7 @@ rotation = 0.558505
 [node name="CanvasModulate" parent="OceanBackground" instance=ExtResource("5_f2ie4")]
 
 [node name="CanvasModulate" parent="." instance=ExtResource("5_f2ie4")]
+color = Color(0.302304, 0.481884, 0.563484, 1)
 
 [node name="Box" parent="." instance=ExtResource("2_evlye")]
 position = Vector2(-358, 1371)

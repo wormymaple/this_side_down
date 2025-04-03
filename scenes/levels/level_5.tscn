@@ -35,6 +35,7 @@ energy = 1.41
 [node name="Camera" parent="." instance=ExtResource("9_8ra23")]
 position = Vector2(-102, 649)
 zoom = Vector2(1.5, 1.5)
+camera_offset = Vector2(0, -120)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(-102, 649)

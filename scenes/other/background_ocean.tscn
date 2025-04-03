@@ -10,6 +10,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
 [node name="OceanBackground" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_3xyd5")
@@ -65,7 +66,7 @@ z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(-445, -249)
 scale = Vector2(1.5, 1.5)
-motion_scale = Vector2(0.4, 0.4)
+motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sand" type="Sprite2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_3xyd5")

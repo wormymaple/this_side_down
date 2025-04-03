@@ -4,7 +4,7 @@ extends RigidBody2D
 const MAX_SPEED = 60000
 const ACCELERATION = 2000
 var JUMP_POWER = 500
-const UNDERWATER_JUMP_MULTIPLIER = 1.5
+const UNDERWATER_JUMP_MULTIPLIER = 1.3
 const LADDER_CLIMB_SPEED = 40000
 const ARM_MOVE_SPEED = 5
 const CARRY_SPEED = 20
@@ -62,8 +62,12 @@ func _ready():
 		print("The player is underwater!")
 		Particles.emitting = true
 		JUMP_POWER *= UNDERWATER_JUMP_MULTIPLIER
+		original_grav_scale = 0.7
 
 func _physics_process(delta):
+	
+	if gravity_scale == 0.5:
+		breakpoint
 	## First, do ladder physics
 	if standing_in_ladder: # Ladder physics
 		gravity_scale = 0
@@ -76,7 +80,7 @@ func _physics_process(delta):
 		else:
 			linear_velocity.y = 0
 			
-	elif gravity_scale == 0 or gravity_scale == 0.5:
+	elif gravity_scale == 0 or gravity_scale == 0.5: # Why is it testing for 0.5?
 		gravity_scale = original_grav_scale ## This shouldn't need to be here. Does this account for if the player is being held?
 	
 	## Update the jump buffer
@@ -219,7 +223,7 @@ func _integrate_forces(state):
 	body_state = state
 
 func drop_object():
-	grabbed_body.gravity_scale = 1
+	grabbed_body.gravity_scale = original_grav_scale
 	grabbed_body.set_meta("grabbed", false)
 	grabbed_body.set_collision_mask_value(2, did_grabbed_body_have_collision_mask_2) # Also for players? # What is grab_did_collide?
 	grabbed_body = null

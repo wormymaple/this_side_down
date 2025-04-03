@@ -238,6 +238,7 @@ theme = 3
 [node name="ParallaxBackground2" parent="." instance=ExtResource("9_akor3")]
 
 [node name="CanvasModulate" parent="." instance=ExtResource("5_f2ie4")]
+color = Color(0.301961, 0.482353, 0.564706, 1)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(-197, 1217)

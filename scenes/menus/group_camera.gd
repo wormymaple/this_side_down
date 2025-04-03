@@ -10,9 +10,9 @@ extends Camera2D
 var players: Array
 
 var min_dist = 250
-var min_scale = 1.5
-var scale_rate = -0.0001
-var max_scale = 0.8
+var max_zoom_in = 1.5
+var scale_rate = 0.0001
+var max_zoom_out = 0.8
 
 var fade_time = 1.0
 var fade_delay = 0.5
@@ -40,32 +40,33 @@ func _process(delta):
 			fadout = false
 	
 	if len(players) < 1: 
-		if !NoController.visible:
+		if NoController.visible == false:
 			NoController.visible = true
 		return 
 	
-	var pos = Vector2.ZERO;
+	## This calculates the camera to be inbetween all the players
+	var pos = Vector2.ZERO
 	for player in players:
 		pos += player.global_position + camera_offset
 	
 	global_position = pos / len(players) # Get the average
 	
-	var furthest_player = players[0]
-	var furthest_dist = (position - furthest_player.global_position).length()
+	## Make the camera zoom out based on distance between players. First, find the farthest player.
+	var furthest_dist = min_dist #(position - players[0].global_position).length()
 	for player in players: # dist check
 		var dist = (position - player.global_position).length()
 		if dist > furthest_dist:
-			furthest_player = player
-			furthest_dist = dist
-		
-	if furthest_dist > min_dist:
-		var target_zoom = (furthest_dist - min_dist) * scale_rate + min_scale
-		if target_zoom < max_scale:
-			target_zoom = max_scale
-			
-		zoom = target_zoom * Vector2.ONE
-	else:
-		zoom = min_scale * Vector2.ONE
+			furthest_dist = dist 
+	
+	# The bigger the distance is, the smaller target_zoom should be
+	var target_zoom = max_zoom_in - 0.0005 * furthest_dist # * scale_rate * 100 + max_zoom_in
+	#target_zoom = max(target_zoom, max_zoom_out) # Don't go bigger than max zoom!
+	
+	zoom = target_zoom * Vector2.ONE
+	
+	print(furthest_dist)
+	print(target_zoom)
+	print(zoom)
 
 func fade_out(default_delay = false):
 	if !default_delay:

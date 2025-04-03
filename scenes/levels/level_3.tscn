@@ -54,9 +54,6 @@ level = 3
 position = Vector2(-12, -305)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("9_5ant1")]
-offset = Vector2(2.08165e-12, 150)
-scale = Vector2(1.4, 1.4)
-transform = Transform2D(1.4, 0, 0, 1.4, 2.08165e-12, 150)
 
 [node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("10_i46cw")]
 position = Vector2(12, 305)

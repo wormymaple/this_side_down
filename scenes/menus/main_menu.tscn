@@ -1,32 +1,32 @@
 [gd_scene load_steps=40 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" uid="uid://bfk5mqt5lko4y" path="res://scenes/menus/main_menu.gd" id="1_eci1h"]
-[ext_resource type="Texture2D" uid="uid://c365snjl8080e" path="res://art/menus/box_background.png" id="2_0m78c"]
-[ext_resource type="FontFile" uid="uid://s5j7v8pcsl2w" path="res://fonts/nunito/static/Nunito-Regular.ttf" id="3_6tew7"]
-[ext_resource type="Texture2D" uid="uid://bfofokndy0w38" path="res://art/menus/logo_1.png" id="4_4rgjt"]
+[ext_resource type="Texture2D" uid="uid://c21y5e2iccgjq" path="res://art/menus/box_background.png" id="2_0m78c"]
+[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/nunito/static/Nunito-Regular.ttf" id="3_6tew7"]
+[ext_resource type="Texture2D" uid="uid://bfvq1jdp6017a" path="res://art/menus/logo_1.png" id="4_4rgjt"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="5_bpy87"]
-[ext_resource type="Texture2D" uid="uid://80qo1h37y8bu" path="res://art/menus/button_play.png" id="5_m312u"]
-[ext_resource type="Texture2D" uid="uid://dslqmq2no72bl" path="res://art/menus/button_controller.PNG" id="7_6imgi"]
-[ext_resource type="Texture2D" uid="uid://ddmfeb64ycwk6" path="res://art/menus/button_options.png" id="8_1hq2q"]
-[ext_resource type="Texture2D" uid="uid://6vs0le1ewi1o" path="res://art/menus/button_quit.png" id="9_wxcro"]
+[ext_resource type="Texture2D" uid="uid://r3rlt2gbviqu" path="res://art/menus/button_play.png" id="5_m312u"]
+[ext_resource type="Texture2D" uid="uid://dydw1neg2a026" path="res://art/menus/button_controller.PNG" id="7_6imgi"]
+[ext_resource type="Texture2D" uid="uid://gsj1rdgspmyu" path="res://art/menus/button_options.png" id="8_1hq2q"]
+[ext_resource type="Texture2D" uid="uid://c0vc4uiercmqu" path="res://art/menus/button_quit.png" id="9_wxcro"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://scenes/menus/settings_menu.tscn" id="9_ygyx6"]
-[ext_resource type="Texture2D" uid="uid://1bpoocsofkxr" path="res://art/menus/button_back.png" id="11_y4gey"]
+[ext_resource type="Texture2D" uid="uid://byefxy14vv2pq" path="res://art/menus/button_back.png" id="11_y4gey"]
 [ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://resources/button_focus.tres" id="12_6imgi"]
-[ext_resource type="Texture2D" uid="uid://d3ir3ge6tvdhu" path="res://art/menus/1.png" id="12_n8vdk"]
-[ext_resource type="Texture2D" uid="uid://ostnkr2w1ibc" path="res://art/menus/2.PNG" id="13_6imgi"]
-[ext_resource type="Texture2D" uid="uid://bsxupwskaj1kc" path="res://art/menus/3.PNG" id="14_1hq2q"]
-[ext_resource type="Texture2D" uid="uid://byioxpfewxvsl" path="res://art/menus/4.PNG" id="15_wxcro"]
-[ext_resource type="Texture2D" uid="uid://burwtst0rquix" path="res://art/menus/5.PNG" id="16_y4gey"]
-[ext_resource type="Texture2D" uid="uid://f62rhdx0al0i" path="res://art/menus/6.PNG" id="17_ykxr0"]
-[ext_resource type="Texture2D" uid="uid://cgjk6fnb6fjck" path="res://art/menus/7.PNG" id="18_eeloc"]
-[ext_resource type="Texture2D" uid="uid://d25bvt6wmm3og" path="res://art/menus/8.PNG" id="19_oina4"]
-[ext_resource type="Texture2D" uid="uid://db6cprrell023" path="res://art/menus/9.PNG" id="20_b4rtx"]
-[ext_resource type="Texture2D" uid="uid://d0gmkato0duit" path="res://art/menus/10.PNG" id="21_37lca"]
-[ext_resource type="Texture2D" uid="uid://c6elvhi0l2t2d" path="res://art/menus/11.PNG" id="22_4cpr1"]
-[ext_resource type="Texture2D" uid="uid://b16cc5wwle167" path="res://art/menus/12.PNG" id="23_t83ru"]
+[ext_resource type="Texture2D" uid="uid://c8rnkk3psusk1" path="res://art/menus/1.png" id="12_n8vdk"]
+[ext_resource type="Texture2D" uid="uid://4ik1tvct68bg" path="res://art/menus/2.PNG" id="13_6imgi"]
+[ext_resource type="Texture2D" uid="uid://flinkls86054" path="res://art/menus/3.PNG" id="14_1hq2q"]
+[ext_resource type="Texture2D" uid="uid://cjk5aavnd4t7c" path="res://art/menus/4.PNG" id="15_wxcro"]
+[ext_resource type="Texture2D" uid="uid://8e6g6uq36pci" path="res://art/menus/5.PNG" id="16_y4gey"]
+[ext_resource type="Texture2D" uid="uid://ciusfmxhr3aor" path="res://art/menus/6.PNG" id="17_ykxr0"]
+[ext_resource type="Texture2D" uid="uid://dn1f8hkg4a3n5" path="res://art/menus/7.PNG" id="18_eeloc"]
+[ext_resource type="Texture2D" uid="uid://jlky11b4kpvs" path="res://art/menus/8.PNG" id="19_oina4"]
+[ext_resource type="Texture2D" uid="uid://b4vhuedwkih2c" path="res://art/menus/9.PNG" id="20_b4rtx"]
+[ext_resource type="Texture2D" uid="uid://cv2inhxdkyqfr" path="res://art/menus/10.PNG" id="21_37lca"]
+[ext_resource type="Texture2D" uid="uid://du0gcci425k0u" path="res://art/menus/11.PNG" id="22_4cpr1"]
+[ext_resource type="Texture2D" uid="uid://cjqaprj0olaqo" path="res://art/menus/12.PNG" id="23_t83ru"]
 [ext_resource type="StyleBox" uid="uid://cghq55g2oqm2g" path="res://resources/transparent_color.tres" id="25_6imgi"]
-[ext_resource type="Texture2D" uid="uid://1palh4ajmj3" path="res://art/player/player_legs.png" id="26_1hq2q"]
-[ext_resource type="Texture2D" uid="uid://c4ik7civndvb6" path="res://art/player/player_head.png" id="27_wxcro"]
+[ext_resource type="Texture2D" uid="uid://v66l2jed5dcs" path="res://art/player/player_legs.png" id="26_1hq2q"]
+[ext_resource type="Texture2D" uid="uid://dhcgep0jgavc2" path="res://art/player/player_head.png" id="27_wxcro"]
 
 [sub_resource type="Curve" id="Curve_jygr6"]
 _data = [Vector2(0, 0), 0.0, 0.027516, 0, 0, Vector2(1, 1), -0.0168326, 0.0, 0, 0]
@@ -173,7 +173,6 @@ custom_minimum_size = Vector2(327, 0)
 layout_mode = 2
 focus_neighbor_top = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
-focus_next = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 75
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7ykre")
@@ -187,6 +186,7 @@ layout_mode = 2
 focus_neighbor_top = NodePath(".")
 focus_neighbor_right = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 75
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ke8d4")
@@ -764,6 +764,7 @@ offset_bottom = 1017.0
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer/CheckBox2")
 focus_neighbor_right = NodePath(".")
+focus_next = NodePath(".")
 focus_previous = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_p7mc1")
