@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="6_48uye"]
 [ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://scenes/objects/box_triangle.tscn" id="6_55da6"]
 [ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="7_2ga8b"]
-[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/landing_zone.tscn" id="8_grauf"]
+[ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="8_grauf"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="8_jmg2h"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="9_64wh3"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://scenes/other/background_warehouse.tscn" id="10_yrdje"]

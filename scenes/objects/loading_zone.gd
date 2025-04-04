@@ -5,7 +5,8 @@ extends Node2D
 @export var level: int = 1
 @export var platform_to_attach_to: Path2D = null
 
-@onready var Particles = $GPUParticles2D
+@onready var GPUParticles = $GPUParticles2D
+@onready var CPUParticles = $CPUParticles2D
 @export var upside_down = false
 
 var colliding_bodies: Array[Node2D]
@@ -37,9 +38,13 @@ func _process(_delta): # It would be best if this code only checked itself when 
 	#print("That passed!")
 	won_already = true
 	GlobalVariables.win_level(level)
-	Particles.emitting = true
+	
 	camera.fade_out(true)
 	
+	if OS.get_name() == "Web":
+		CPUParticles.emitting = true
+	else:
+		GPUParticles.emitting = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Box"):
