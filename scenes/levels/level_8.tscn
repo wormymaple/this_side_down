@@ -27,7 +27,6 @@ script = ExtResource("1_6to6e")
 Song = 1
 
 [node name="BoatBackground" parent="." instance=ExtResource("2_40qa3")]
-scroll_ignore_camera_zoom = true
 
 [node name="CanvasModulate" parent="BoatBackground" instance=ExtResource("3_e7lui")]
 position = Vector2(-2226.9, -1118.87)

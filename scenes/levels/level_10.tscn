@@ -42,7 +42,6 @@ color = Color(0.301961, 0.482353, 0.564706, 1)
 
 [node name="DirectionalLight2D" parent="." instance=ExtResource("7_tms1o")]
 position = Vector2(-252, -1441)
-color = Color(1, 0.941176, 0.917647, 1)
 
 [node name="Box" parent="." instance=ExtResource("15_cawam")]
 position = Vector2(1710, 199)
