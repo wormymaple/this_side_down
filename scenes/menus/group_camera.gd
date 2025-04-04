@@ -64,9 +64,9 @@ func _process(delta):
 	
 	zoom = target_zoom * Vector2.ONE
 	
-	print(furthest_dist)
-	print(target_zoom)
-	print(zoom)
+	#print(furthest_dist)
+	#print(target_zoom)
+	#print(zoom)
 
 func fade_out(default_delay = false):
 	if !default_delay:

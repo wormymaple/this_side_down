@@ -25,7 +25,7 @@ func _ready():
 	elif self.is_in_group("circle"):
 		match theme:
 			Themes.BOX:
-				sprite.texture = load("res://art/area_1/box_square.png")
+				sprite.texture = load("res://art/area_1/box_circle.png")
 				sprite.scale = Vector2(0.34, 0.34)
 			Themes.CRATE:
 				sprite.texture = load("res://art/area_2/crate_circle.png")
@@ -36,7 +36,7 @@ func _ready():
 	else:
 		match theme:
 			Themes.BOX:
-				sprite.texture = load("res://art/area_1/box_square.png")
+				sprite.texture = load("res://art/area_1/box_triangle.png")
 				sprite.scale = Vector2(0.37, 0.37)
 			Themes.CRATE:
 				sprite.texture = load("res://art/area_2/crate_triangle.png")

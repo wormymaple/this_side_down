@@ -45,6 +45,7 @@ camera = NodePath("../Camera")
 
 [node name="BoxTri" parent="." instance=ExtResource("8_hmve4")]
 position = Vector2(1458, 551)
+theme = 1
 size = 2.0
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_eobp3")]
