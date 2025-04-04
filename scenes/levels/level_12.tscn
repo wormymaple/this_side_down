@@ -79,7 +79,7 @@ points = PackedVector2Array(-9.74081, 0, 105.94, -1.03223)
 default_color = Color(0, 0, 0, 1)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(2240, 145)
+position = Vector2(-970, 1370)
 script = ExtResource("11_psbp5")
 player_scene = ExtResource("12_ukulb")
 camera = NodePath("../Camera")
