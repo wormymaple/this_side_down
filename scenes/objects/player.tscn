@@ -21,7 +21,7 @@ point_count = 4
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4rmwu"]
 radius = 29.14
-height = 86.99
+height = 81.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wh5jr"]
 radius = 9.0
@@ -51,7 +51,7 @@ size = Vector2(45, 9)
 
 [node name="Player" type="RigidBody2D" groups=["Player"]]
 collision_layer = 2
-collision_mask = 2049
+collision_mask = 2057
 physics_material_override = SubResource("PhysicsMaterial_2c1hu")
 lock_rotation = true
 continuous_cd = 1
@@ -77,7 +77,7 @@ scale = Vector2(0.425369, 0.425369)
 texture = ExtResource("5_g830a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10.5)
+position = Vector2(0, 13)
 shape = SubResource("CapsuleShape2D_4rmwu")
 
 [node name="Arm" type="Line2D" parent="."]
@@ -164,8 +164,8 @@ shadow_filter_smooth = 0.6
 texture = SubResource("GradientTexture2D_xvbfj")
 
 [node name="JumpArea" type="Area2D" parent="."]
-collision_layer = 2057
-collision_mask = 2057
+collision_layer = 0
+collision_mask = 2053
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="JumpArea"]
 position = Vector2(0, 53)

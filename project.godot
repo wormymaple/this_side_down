@@ -417,6 +417,7 @@ LS_right_p0={
 
 2d_physics/layer_1="Ground Layer"
 2d_physics/layer_2="Player Layer"
+2d_physics/layer_3="Jump Layer"
 2d_physics/layer_4="Box Layer"
 2d_physics/layer_12="Planks"
 

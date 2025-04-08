@@ -120,9 +120,13 @@ func _physics_process(delta):
 	var box_collides = get_collision_mask_value(4)
 	if target_body != null or grabbed_body != null:
 		if box_collides:
-			set_collision_mask_value(4, false)
-	elif !box_collides: # I am not sure what is happening here
-		set_collision_mask_value(4, true)
+			set_collision_mask_value(4, false) # set the player's collision mask value so they won't collide with boxes without mask 2 (Which are boxes being held)
+			
+	elif not box_collides:
+		set_collision_mask_value(4, true) # Player can collide with boxes being carried again
+		
+	print(target_body)
+	#print(box_collides)
 	
 	## Rotate grabbed item (Provided it is a box)
 	if grabbed_body != null:
@@ -144,10 +148,7 @@ func _physics_process(delta):
 			drop_object()
 		else: 
 			grabbed_body.linear_velocity = body_to_hand_dir * CARRY_SPEED
-	else:
-		print("Special rotating would be active")
-		pass
-		#HandSprite.rotation += (PI / 7) # This only activates when there isn't something being held?
+	
 	
 	if get_meta("grabbed") == true or unmovable:
 		return
@@ -211,6 +212,7 @@ func _input(event):
 			grabbed_body.set_meta("grabbed", true)
 			did_grabbed_body_have_collision_mask_2 = grabbed_body.get_collision_mask_value(2)
 			grabbed_body.set_collision_mask_value(2, false)
+			grabbed_body.set_collision_layer_value(3, false)
 			HandSprite.texture = holding_hand
 			
 			BoxPickup.play()
@@ -229,6 +231,7 @@ func drop_object():
 	grabbed_body.gravity_scale = original_grav_scale
 	grabbed_body.set_meta("grabbed", false)
 	grabbed_body.set_collision_mask_value(2, did_grabbed_body_have_collision_mask_2) # Also for players? # What is grab_did_collide?
+	grabbed_body.set_collision_layer_value(3, true)
 	grabbed_body = null
 	
 	HandSprite.texture = empty_hand
