@@ -523,7 +523,6 @@ texture = ExtResource("27_wxcro")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -541,6 +540,14 @@ focus_neighbor_right = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/
 theme = ExtResource("5_bpy87")
 disabled = true
 flat = true
+
+[node name="Automatic" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("5_bpy87")
+theme_override_colors/font_color = Color(0.687215, 0.687215, 0.687215, 1)
+text = "(Automatic)"
+horizontal_alignment = 1
 
 [node name="Panel3" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -590,7 +597,7 @@ texture = ExtResource("27_wxcro")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -609,6 +616,14 @@ focus_neighbor_right = NodePath("../../../../Panel4/VBoxContainer/HBoxContainer/
 theme = ExtResource("5_bpy87")
 disabled = true
 flat = true
+
+[node name="Automatic" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("5_bpy87")
+theme_override_colors/font_color = Color(0.687215, 0.687215, 0.687215, 1)
+text = "(Automatic)"
+horizontal_alignment = 1
 
 [node name="Panel4" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -658,7 +673,7 @@ texture = ExtResource("27_wxcro")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -676,6 +691,14 @@ focus_neighbor_top = NodePath(".")
 theme = ExtResource("5_bpy87")
 disabled = true
 flat = true
+
+[node name="Automatic" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("5_bpy87")
+theme_override_colors/font_color = Color(0.687215, 0.687215, 0.687215, 1)
+text = "(Automatic)"
+horizontal_alignment = 1
 
 [node name="Panel5" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -725,7 +748,7 @@ texture = ExtResource("27_wxcro")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 0
 alignment = 1
 
 [node name="Label" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer/HBoxContainer"]
@@ -743,6 +766,14 @@ focus_neighbor_bottom = NodePath("../../../../../../ButtonBackController")
 theme = ExtResource("5_bpy87")
 disabled = true
 flat = true
+
+[node name="Automatic" type="Label" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("5_bpy87")
+theme_override_colors/font_color = Color(0.687215, 0.687215, 0.687215, 1)
+text = "(Automatic)"
+horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="ScrollParent/ControllerMenu"]
 layout_mode = 0

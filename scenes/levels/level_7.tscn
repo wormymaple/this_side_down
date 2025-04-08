@@ -37,9 +37,9 @@ color = Color(0.498039, 0.639216, 0.827451, 1)
 position = Vector2(1970, 573)
 
 [node name="Ramp2" parent="." instance=ExtResource("9_vck8b")]
-position = Vector2(152, 663)
+position = Vector2(157, 663)
 rotation = 3.14159
-scale = Vector2(0.75, -1)
+scale = Vector2(0.840002, -1)
 theme = 1
 
 [node name="Box" parent="." instance=ExtResource("7_oyu26")]

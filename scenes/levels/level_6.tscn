@@ -49,7 +49,7 @@ color = Color(0.0901961, 0.211765, 0.447059, 1)
 position = Vector2(-338, 413.87)
 
 [node name="Ramp" parent="." instance=ExtResource("14_jcsp8")]
-position = Vector2(757, 587)
+position = Vector2(749, 577)
 
 [node name="Box" parent="." instance=ExtResource("12_7j7q0")]
 position = Vector2(767, 540)

@@ -118,13 +118,13 @@ tile_map_data = PackedByteArray("AAAGAA4AAAACAAIAAAAGAA0AAAACAAEAAAAFAA4AAAACAAI
 tile_set = ExtResource("15_e7r4c")
 
 [node name="Ramp2" parent="." instance=ExtResource("16_prmyl")]
-position = Vector2(401, 176)
-scale = Vector2(-0.95, 0.94)
+position = Vector2(397, 170)
+scale = Vector2(-0.89865, 0.889191)
 theme = 1
 
 [node name="Ramp3" parent="." instance=ExtResource("16_prmyl")]
-position = Vector2(721, 333)
-scale = Vector2(-0.95, 1)
+position = Vector2(716, 330)
+scale = Vector2(-0.9, 0.9)
 theme = 1
 
 [connection signal="body_entered" from="VoidOutArea" to="LandingZone" method="_on_void_out_area_body_entered"]
