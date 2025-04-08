@@ -63,6 +63,8 @@ func _ready():
 		Particles.emitting = true
 		JUMP_POWER *= UNDERWATER_JUMP_MULTIPLIER
 		original_grav_scale = 0.7
+	
+	$PlayerLight.energy /= GlobalVariables.number_of_players
 
 func _physics_process(delta):
 	
@@ -113,6 +115,7 @@ func _physics_process(delta):
 		HandMeta.position -= HandMeta.position * ARM_MOVE_SPEED * delta
 		
 	Arm.set_point_position(1, HandMeta.position)
+	$ArmOutline.set_point_position(1, HandMeta.position)
 	
 	var dir_to_hand = HandMeta.position.angle()
 	HandSprite.rotation = dir_to_hand + (PI / 2) # Required because the hand is off by 90 degrees. This could be optimized

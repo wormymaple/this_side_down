@@ -80,6 +80,12 @@ texture = ExtResource("5_g830a")
 position = Vector2(0, 13)
 shape = SubResource("CapsuleShape2D_4rmwu")
 
+[node name="ArmOutline" type="Line2D" parent="."]
+z_index = 2
+points = PackedVector2Array(0, 0, 0, 0)
+width = 11.0
+default_color = Color(0, 0, 0, 1)
+
 [node name="Arm" type="Line2D" parent="."]
 z_index = 2
 points = PackedVector2Array(0, 0, 0, 0)
@@ -145,16 +151,9 @@ volume_db = -15.0
 stream = ExtResource("9_7tj8n")
 volume_db = -15.0
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PlayerLight" type="PointLight2D" parent="."]
+position = Vector2(1, -1)
 scale = Vector2(5, 5)
-energy = 0.3
-range_layer_min = -3
-shadow_filter = 1
-shadow_filter_smooth = 1.3
-texture = SubResource("GradientTexture2D_xvbfj")
-texture_scale = 1.97
-
-[node name="SmallerLight" type="PointLight2D" parent="PointLight2D"]
 energy = 0.63
 range_z_min = 1
 range_layer_min = -3

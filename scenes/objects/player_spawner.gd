@@ -9,6 +9,10 @@ extends Node
 func _ready():
 	var player_num = len(Input.get_connected_joypads())
 	
+	GlobalVariables.number_of_players = len(Input.get_connected_joypads())
+	if GlobalVariables.player_0_playing:
+		GlobalVariables.number_of_players += 1
+	
 	if player_num == 0 and not GlobalVariables.player_0_playing:
 		get_node(camera).get_child(0).show()
 		print("There aren't any controller connected and keyboard isn't an option")
@@ -28,7 +32,7 @@ func _ready():
 		new_player.is_in_water = is_in_water
 		new_player.set_color(i)
 		new_player.position.x += i * 50
-		new_player.get_child(5).set_seed(i * 500) # Child 5 is the bubble particle emitter
-		print(new_player.get_child(5).get_seed())
+		new_player.get_child(6).set_seed(i * 500) # Child 5 is the bubble particle emitter
+		#print(new_player.get_child(6).get_seed())
 		add_child(new_player)
 		get_node(camera).players.append(new_player)

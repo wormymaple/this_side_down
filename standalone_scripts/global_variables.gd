@@ -9,6 +9,8 @@ var player_2_playing = false
 var player_3_playing = false
 var player_4_playing = false
 
+var number_of_players = 0
+
 func win_level(level_cleared):
 	if level_cleared > farthest_unlocked_level:
 		farthest_unlocked_level = level_cleared

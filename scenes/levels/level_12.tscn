@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dv6cw04ulkig0"]
+[gd_scene load_steps=16 format=4 uid="uid://dv6cw04ulkig0"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_pjou6"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="2_evlye"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="12_ukulb"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="13_r0ek7"]
 [ext_resource type="PackedScene" uid="uid://ykp1hsy6qeg2" path="res://victory_area.tscn" id="14_u2s8n"]
+[ext_resource type="Texture2D" uid="uid://qsnq85mha2qw" path="res://art/general/sun.png" id="15_muk3n"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="16_sinvx"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="17_ggy2w"]
 
@@ -100,3 +101,8 @@ tile_set = ExtResource("17_ggy2w")
 [node name="VictoryArea" parent="." instance=ExtResource("14_u2s8n")]
 position = Vector2(2691, -6130)
 scale = Vector2(22, 4.51999)
+
+[node name="Sun" type="Sprite2D" parent="."]
+position = Vector2(2862, -8183)
+scale = Vector2(2.89628, 2.89628)
+texture = ExtResource("15_muk3n")
