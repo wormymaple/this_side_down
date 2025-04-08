@@ -125,7 +125,7 @@ func _physics_process(delta):
 	elif not box_collides:
 		set_collision_mask_value(4, true) # Player can collide with boxes being carried again
 		
-	print(target_body)
+	#print(target_body)
 	#print(box_collides)
 	
 	## Rotate grabbed item (Provided it is a box)

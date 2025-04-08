@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bymth3hp348qh"]
+[gd_scene load_steps=8 format=3 uid="uid://bymth3hp348qh"]
 
 [ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="2_1yy8e"]
 [ext_resource type="Texture2D" uid="uid://cum3qrabneuk1" path="res://art/area_2/clouds.png" id="2_lxydj"]
+[ext_resource type="Texture2D" uid="uid://qsnq85mha2qw" path="res://art/general/sun.png" id="2_xjda1"]
 [ext_resource type="Texture2D" uid="uid://cem5ftnlqlxjx" path="res://art/area_2/background_crates.png" id="3_5hc8t"]
 [ext_resource type="Texture2D" uid="uid://c1267636vtucv" path="res://art/general/square_crates_background.png" id="4_iao84"]
 [ext_resource type="Texture2D" uid="uid://v4ddil6hueo8" path="res://art/area_2/road_line.png" id="5_21nnr"]
@@ -21,6 +22,11 @@ modulate = Color(0.705882, 0.772549, 0.952941, 1)
 position = Vector2(640, 196)
 scale = Vector2(128, 40)
 texture = ExtResource("2_1yy8e")
+
+[node name="Sun" type="Sprite2D" parent="Wayback"]
+position = Vector2(744.667, 129.333)
+scale = Vector2(0.360746, 0.360746)
+texture = ExtResource("2_xjda1")
 
 [node name="Clouds1" type="Sprite2D" parent="Wayback"]
 material = SubResource("CanvasItemMaterial_3xyd5")

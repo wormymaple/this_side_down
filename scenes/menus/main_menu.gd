@@ -28,7 +28,7 @@ func _ready():
 	ControllerToButton.grab_focus()
 	
 	if OS.get_name() == "Web":
-		$HBoxContainer/ButtonQuit.hide()
+		$ScrollParent/TitleScreen/HBoxContainer/ButtonQuit.hide()
 	
 	for level in range(1, 13): # Starts at 1 since 1 is always unlocked. Never ever reaching 12 is fine because there are only 11 textures 
 		#print(i)
