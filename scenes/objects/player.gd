@@ -113,8 +113,9 @@ func _physics_process(delta):
 		HandMeta.position -= HandMeta.position * ARM_MOVE_SPEED * delta
 		
 	Arm.set_point_position(1, HandMeta.position)
+	
 	var dir_to_hand = HandMeta.position.angle()
-	HandSprite.rotation = dir_to_hand + (PI / 2)
+	HandSprite.rotation = dir_to_hand + (PI / 2) # Required because the hand is off by 90 degrees. This could be optimized
 	
 	var box_collides = get_collision_mask_value(4)
 	if target_body != null or grabbed_body != null:
@@ -144,7 +145,9 @@ func _physics_process(delta):
 		else: 
 			grabbed_body.linear_velocity = body_to_hand_dir * CARRY_SPEED
 	else:
-		HandSprite.rotation += (PI / 7)
+		print("Special rotating would be active")
+		pass
+		#HandSprite.rotation += (PI / 7) # This only activates when there isn't something being held?
 	
 	if get_meta("grabbed") == true or unmovable:
 		return

@@ -257,6 +257,7 @@ rotation = -2.6679
 [node name="Box" parent="." instance=ExtResource("2_evlye")]
 position = Vector2(-293, 821)
 gravity_scale = 0.5
+theme = 3
 
 [node name="Ladder" parent="." instance=ExtResource("4_cdfft")]
 position = Vector2(1872, 1227)

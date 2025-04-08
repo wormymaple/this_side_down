@@ -95,7 +95,7 @@ Power = 1200
 [node name="CircleBox" parent="." instance=ExtResource("11_bn2ne")]
 position = Vector2(-217, 2)
 mass = 3.0
-theme = 1
+theme = 2
 size = 2.0
 
 [node name="VoidOutArea" parent="." instance=ExtResource("12_f5ae4")]

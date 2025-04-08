@@ -50,7 +50,7 @@ color = Color(0.498039, 0.639216, 0.827451, 1)
 
 [node name="Box" parent="." instance=ExtResource("15_iu3jp")]
 position = Vector2(831, 681)
-theme = 1
+theme = 2
 size = 1.5
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera", "platform_to_attach_to") instance=ExtResource("3_7stkk")]

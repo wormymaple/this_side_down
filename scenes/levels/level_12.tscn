@@ -37,7 +37,7 @@ position = Vector2(-358, 1371)
 rotation = 3.14159
 mass = 2.0
 gravity_scale = 0.5
-theme = 2
+theme = 3
 size = 3.0
 
 [node name="Ladder" parent="." instance=ExtResource("4_cdfft")]

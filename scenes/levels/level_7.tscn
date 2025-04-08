@@ -45,6 +45,7 @@ theme = 1
 [node name="Box" parent="." instance=ExtResource("7_oyu26")]
 position = Vector2(160, 590)
 rotation = -2.72096
+theme = 2
 size = 2.0
 
 [node name="Camera" parent="." instance=ExtResource("10_sb6ob")]

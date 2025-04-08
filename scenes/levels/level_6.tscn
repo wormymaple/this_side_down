@@ -55,7 +55,7 @@ position = Vector2(757, 587)
 position = Vector2(767, 540)
 rotation = -3.5229
 theme = 1
-size = 1.8
+size = 1.2
 
 [node name="Box2" parent="." instance=ExtResource("12_7j7q0")]
 position = Vector2(1279, 496)

@@ -67,13 +67,13 @@ metadata/grabbed = false
 
 [node name="Head" type="Sprite2D" parent="."]
 z_index = 4
-scale = Vector2(0.048, 0.048)
+scale = Vector2(0.479333, 0.479333)
 texture = ExtResource("4_8lqlt")
 
 [node name="Legs" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(0, 36)
-scale = Vector2(0.04, 0.04)
+scale = Vector2(0.425369, 0.425369)
 texture = ExtResource("5_g830a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -96,8 +96,9 @@ disabled = true
 modulate = Color(0.701961, 0.701961, 0.701961, 1)
 z_index = 3
 texture_filter = 1
-scale = Vector2(0.03, 0.03)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_nc5kx")
+offset = Vector2(5, -5)
 
 [node name="GrabArea" type="Area2D" parent="HandMeta"]
 collision_mask = 11

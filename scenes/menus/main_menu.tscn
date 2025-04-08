@@ -440,11 +440,11 @@ size_flags_horizontal = 4
 
 [node name="PlayerLegs" type="TextureRect" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/Control"]
 layout_mode = 1
-offset_left = 46.0
-offset_top = 92.0
-offset_right = 1406.0
-offset_bottom = 955.0
-scale = Vector2(0.073736, 0.073736)
+offset_left = 50.0
+offset_top = 68.0
+offset_right = 1042.0
+offset_bottom = 931.0
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("26_1hq2q")
 
 [node name="PlayerHead" type="TextureRect" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/Control"]
