@@ -118,7 +118,7 @@ func _physics_process(delta):
 	HandSprite.rotation = dir_to_hand + (PI / 2) # Required because the hand is off by 90 degrees. This could be optimized
 	
 	var box_collides = get_collision_mask_value(4)
-	if target_body != null or grabbed_body != null:
+	if grabbed_body != null:
 		if box_collides:
 			set_collision_mask_value(4, false) # set the player's collision mask value so they won't collide with boxes without mask 2 (Which are boxes being held)
 			
