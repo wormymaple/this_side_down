@@ -101,9 +101,6 @@ func _physics_process(delta):
 			#print(right_stick.length())
 			right_stick = right_stick.normalized() * ARM_LENGTH
 	
-	#print(right_stick)
-	
-	
 	if right_stick.length() != 0:
 		if playerID != "p0":
 			HandMeta.position += (right_stick * ARM_LENGTH - HandMeta.position) * ARM_MOVE_SPEED * delta # Subtracting the current hand meta position from it will make it slow down when almost reaching it's position
@@ -205,7 +202,7 @@ func _input(event):
 		#print("Local: ", Vector2i(get_local_mouse_position())) # Gives you where the mouse is on the screen coordinates 
 		#print("Global: ", Vector2i(get_global_mouse_position()))
 		
-		if grabbed_body == null && target_body != null: # Try grab
+		if grabbed_body == null && target_body != null: # Try grab if they aren't already holding something
 			# Am I being grabbed by a player?
 			if target_body.is_in_group("Player") && check_player_linkage(target_body):
 				return
@@ -214,8 +211,9 @@ func _input(event):
 			grabbed_body.gravity_scale = 0
 			grabbed_body.set_meta("grabbed", true)
 			did_grabbed_body_have_collision_mask_2 = grabbed_body.get_collision_mask_value(2)
-			grabbed_body.set_collision_mask_value(2, false)
-			grabbed_body.set_collision_layer_value(3, false)
+			if grabbed_body.is_in_group("Box"):
+				grabbed_body.set_collision_mask_value(2, false)
+				grabbed_body.set_collision_layer_value(3, false)
 			HandSprite.texture = holding_hand
 			
 			BoxPickup.play()
@@ -233,8 +231,11 @@ func _integrate_forces(state):
 func drop_object():
 	grabbed_body.gravity_scale = original_grav_scale
 	grabbed_body.set_meta("grabbed", false)
-	grabbed_body.set_collision_mask_value(2, did_grabbed_body_have_collision_mask_2) # Also for players? # What is grab_did_collide?
-	grabbed_body.set_collision_layer_value(3, true)
+	
+	if grabbed_body.is_in_group("Box"):
+		grabbed_body.set_collision_mask_value(2, did_grabbed_body_have_collision_mask_2) # Also for players? # What is grab_did_collide?
+		grabbed_body.set_collision_layer_value(3, true)
+	
 	grabbed_body = null
 	
 	HandSprite.texture = empty_hand
