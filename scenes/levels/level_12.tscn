@@ -23,6 +23,7 @@ Song = 1
 [node name="Light" parent="." instance=ExtResource("6_p82q7")]
 position = Vector2(-1374, -1172)
 rotation = 0.558505
+color = Color(1, 1, 1, 1)
 
 [node name="WaterShader" parent="." instance=ExtResource("8_u77f3")]
 
@@ -38,6 +39,8 @@ position = Vector2(-358, 1371)
 rotation = 3.14159
 mass = 2.0
 gravity_scale = 0.5
+contact_monitor = true
+max_contacts_reported = 10
 theme = 3
 size = 3.0
 
@@ -64,6 +67,7 @@ theme = 3
 light_mask = 0
 position = Vector2(-2888, -6000)
 scale = Vector2(5.6935, 1)
+color = Color(0.705882, 0.772549, 0.952941, 1)
 polygon = PackedVector2Array(0, 0, 2000, 0, 2000, -6000, 0, -6000)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]

@@ -15,5 +15,6 @@ shadow_filter_smooth = 1.6
 height = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, 2)
 texture = ExtResource("1_mr8ae")

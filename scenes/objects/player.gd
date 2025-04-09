@@ -190,7 +190,7 @@ func _physics_process(delta):
 func _input(event):
 	# jump
 	if event.is_action_pressed("jump_" + playerID) and on_ground: #&& !standing_in_ladder: # Not neccessary
-		print(on_ground)
+		#print(on_ground)
 		linear_velocity.y = -JUMP_POWER
 		if is_in_water:
 			linear_velocity.y *= UNDERWATER_JUMP_MULTIPLIER

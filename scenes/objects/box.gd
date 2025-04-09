@@ -6,9 +6,10 @@ enum Themes {BOX, CRATE, SHIP, UNDERWATER}
 @onready var sprite = $BoxSprite
 @onready var collision = $Collision
 #@onready var arrow = $ArrowSprite
-
+var rng = RandomNumberGenerator.new()
 # Not box sprites have a scale of 0.145
 # boxes should have a scale of 0.346
+var can_play_sound = false
 
 func _ready():
 	if self.is_in_group("square"):
@@ -57,3 +58,34 @@ func _ready():
 	#if size >= 2: # i think this moves the arrow closer to the center if the box is big
 	#	arrow.position.x -= 20
 	#	arrow.position.y -= 20
+
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("Player"):
+		return
+		#print(body.tile_set.get_physics_layer_collision_layer(0))
+	#print("Collision layer values: ", body.get_collision_layer_value())
+	#
+	if not can_play_sound:
+		return
+	print("Velocity length: ", linear_velocity.length())
+	#print("Velocity length: (", linear_velocity.x, "")
+	#print("Velocity length: ", abs(int(linear_velocity.x)), ", ", abs(int(linear_velocity.y)))
+	match rng.randi_range(1, 2):
+		1:
+			if abs(rotation_degrees) > 135 and abs(rotation_degrees) < 225:
+				$GlassSound1.play()
+			else:
+				$BoxSound1.play()
+		2:
+			if abs(rotation_degrees) > 135 and abs(rotation_degrees) < 225:
+				$GlassSound2.play()
+			else:
+				$BoxSound2.play()
+	
+	can_play_sound = false
+	$Timer.start()
+
+
+func _on_timer_timeout() -> void:
+	can_play_sound = true

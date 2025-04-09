@@ -96,7 +96,7 @@ rotation = 1.5708
 scale = Vector2(1.5, 1.5)
 
 [node name="Divider3" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(148, 492)
+position = Vector2(148, 489)
 scale = Vector2(1.5, 1.5)
 
 [node name="Divider4" parent="." instance=ExtResource("13_47ram")]
