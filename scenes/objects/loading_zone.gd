@@ -38,7 +38,7 @@ func _process(_delta): # It would be best if this code only checked itself when 
 	#print("That passed!")
 	won_already = true
 	GlobalVariables.win_level(level)
-	
+	$Congratulations.play()
 	camera.fade_out(true)
 	
 	if OS.get_name() == "Web":

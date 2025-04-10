@@ -68,7 +68,7 @@ func _on_body_entered(body: Node) -> void:
 	#
 	if not can_play_sound:
 		return
-	print("Velocity length: ", linear_velocity.length())
+	#print("Velocity length: ", linear_velocity.length())
 	#print("Velocity length: (", linear_velocity.x, "")
 	#print("Velocity length: ", abs(int(linear_velocity.x)), ", ", abs(int(linear_velocity.y)))
 	match rng.randi_range(1, 2):
@@ -82,6 +82,8 @@ func _on_body_entered(body: Node) -> void:
 				$GlassSound2.play()
 			else:
 				$BoxSound2.play()
+			
+			# Triangle should be greater than 130, less than -130. Y'know, the current parameters are all right
 	
 	can_play_sound = false
 	$Timer.start()

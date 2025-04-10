@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://5w2uavby7js7" path="res://scenes/objects/box.gd" id="1_s4ybx"]
 [ext_resource type="Texture2D" uid="uid://dcu7t24b33w7t" path="res://art/area_2/crate_square.png" id="2_wehnf"]
 [ext_resource type="Texture2D" uid="uid://bb153agat705c" path="res://art/general/direction_sticker.png" id="3_5tyaq"]
-[ext_resource type="AudioStream" uid="uid://jwi3bhnl1cju" path="res://audio/breaking-glass-1.mp3" id="4_y4vk6"]
-[ext_resource type="AudioStream" uid="uid://b8xentn6lq0jj" path="res://audio/breaking_glass_2.mp3" id="5_jvw0c"]
-[ext_resource type="AudioStream" uid="uid://d4cctob467of4" path="res://audio/box_hit_1.mp3" id="6_pch05"]
-[ext_resource type="AudioStream" uid="uid://cjsbrl2esphns" path="res://audio/box_hit_2.mp3" id="7_r2kf4"]
+[ext_resource type="AudioStream" uid="uid://ckw36svtnul4b" path="res://audio/breaking-glass-1.mp3" id="4_y4vk6"]
+[ext_resource type="AudioStream" uid="uid://5c66qlwdujig" path="res://audio/breaking_glass_2.mp3" id="5_jvw0c"]
+[ext_resource type="AudioStream" uid="uid://cclo62k1sbr1d" path="res://audio/box_hit_1.mp3" id="6_pch05"]
+[ext_resource type="AudioStream" uid="uid://xfbx61h7njgc" path="res://audio/box_hit_2.mp3" id="7_r2kf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20bt7"]
 size = Vector2(64, 64)

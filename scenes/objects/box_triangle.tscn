@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://jyvaflxbj8dc"]
+[gd_scene load_steps=8 format=3 uid="uid://jyvaflxbj8dc"]
 
 [ext_resource type="Script" uid="uid://5w2uavby7js7" path="res://scenes/objects/box.gd" id="1_0qwdj"]
 [ext_resource type="Texture2D" uid="uid://ce7lrfbykj4cr" path="res://art/area_2/crate_triangle.png" id="2_34x2i"]
 [ext_resource type="Texture2D" uid="uid://bb153agat705c" path="res://art/general/direction_sticker.png" id="3_vfoyo"]
+[ext_resource type="AudioStream" uid="uid://ckw36svtnul4b" path="res://audio/breaking-glass-1.mp3" id="4_ktn3b"]
+[ext_resource type="AudioStream" uid="uid://5c66qlwdujig" path="res://audio/breaking_glass_2.mp3" id="5_dftgv"]
+[ext_resource type="AudioStream" uid="uid://cclo62k1sbr1d" path="res://audio/box_hit_1.mp3" id="6_vng1o"]
+[ext_resource type="AudioStream" uid="uid://xfbx61h7njgc" path="res://audio/box_hit_2.mp3" id="7_sjpeh"]
 
 [node name="TriangleBox" type="RigidBody2D" groups=["Box", "triangle"]]
 position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 12
 collision_mask = 15
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1_0qwdj")
 metadata/grabbable = false
 metadata/grabbed = false
@@ -26,3 +32,22 @@ texture = ExtResource("2_34x2i")
 position = Vector2(5.96046e-08, -6)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_vfoyo")
+
+[node name="GlassSound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ktn3b")
+
+[node name="GlassSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dftgv")
+
+[node name="BoxSound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vng1o")
+
+[node name="BoxSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sjpeh")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,7 +1,7 @@
 extends Node
 
 var completed_levels: Array[int]
-var farthest_unlocked_level = 12
+var farthest_unlocked_level = 1
 
 var player_0_playing = true
 var player_1_playing = false
