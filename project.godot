@@ -17,7 +17,7 @@ boot_splash/bg_color=Color(0.596078, 0.454902, 0.298039, 1)
 boot_splash/fullsize=false
 boot_splash/image="uid://bfvq1jdp6017a"
 config/icon="res://icon.svg"
-config/macos_native_icon="res://art/menus/logo_2.icns"
+config/macos_native_icon="res://art/menus/macos_icon.icns"
 
 [autoload]
 
