@@ -174,38 +174,38 @@ position = Vector2(797, -406)
 rotation = -0.233954
 
 [node name="Divider31" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(2630, -704)
-rotation = -2.0569
+position = Vector2(2652, -772)
+rotation = -3.02841
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider38" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(2519, -901)
-rotation = -2.11233
-scale = Vector2(1.4, 1.4)
-
-[node name="Divider39" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(2373, -1066)
-rotation = -2.46837
-scale = Vector2(1.4, 1.4)
-
-[node name="Divider40" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(2181, -1169)
-rotation = -2.82858
+position = Vector2(2437, -830)
+rotation = -2.73336
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider41" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(1966, -1215)
-rotation = -3.02683
+position = Vector2(1938, -1264)
+rotation = -2.10572
+scale = Vector2(1.4, 1.4)
+
+[node name="Divider40" parent="PlankHandler" instance=ExtResource("7_ukslq")]
+position = Vector2(2071, -1084)
+rotation = -2.30998
+scale = Vector2(1.4, 1.4)
+
+[node name="Divider39" parent="PlankHandler" instance=ExtResource("7_ukslq")]
+position = Vector2(2240, -938)
+rotation = -2.54787
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider42" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(1309, -1167)
-rotation = -3.12987
+position = Vector2(1307, -1181)
+rotation = -3.14045
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider43" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(1084, -1163)
-rotation = -3.1853
+position = Vector2(1083, -1169)
+rotation = -3.24572
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider44" parent="PlankHandler" instance=ExtResource("7_ukslq")]
@@ -219,23 +219,23 @@ rotation = -3.90154
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider47" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(1309, -1330)
-rotation = -6.26816
+position = Vector2(1305, -1239)
+rotation = -6.43787
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider48" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(1084, -1326)
-rotation = -6.32359
+position = Vector2(1083, -1220)
+rotation = -6.30126
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider49" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(867, -1277)
-rotation = -6.67962
+position = Vector2(861, -1236)
+rotation = -6.12796
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider50" parent="PlankHandler" instance=ExtResource("7_ukslq")]
-position = Vector2(683, -1157)
-rotation = -7.03983
+position = Vector2(643, -1290)
+rotation = -5.95159
 scale = Vector2(1.4, 1.4)
 
 [node name="Divider32" parent="PlankHandler" instance=ExtResource("7_ukslq")]
