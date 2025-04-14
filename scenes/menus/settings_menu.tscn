@@ -111,7 +111,7 @@ value = -10.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ur1dc")
 theme_override_font_sizes/font_size = 25
-text = " Higher"
+text = "Louder"
 
 [node name="MusicContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -139,7 +139,7 @@ value = -10.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ur1dc")
 theme_override_font_sizes/font_size = 25
-text = " Higher"
+text = "Louder"
 
 [node name="EffectsContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -168,7 +168,7 @@ value = -10.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ur1dc")
 theme_override_font_sizes/font_size = 25
-text = " Higher"
+text = "Louder"
 
 [node name="BackButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(170, 80)

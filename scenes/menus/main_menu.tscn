@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" uid="uid://bfk5mqt5lko4y" path="res://scenes/menus/main_menu.gd" id="1_eci1h"]
-[ext_resource type="Texture2D" uid="uid://c21y5e2iccgjq" path="res://art/menus/box_background.png" id="2_0m78c"]
+[ext_resource type="Texture2D" uid="uid://bchwkejqsfd4p" path="res://art/menus/box_background.jpg" id="2_6imgi"]
 [ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/Nunito/static/Nunito-Regular.ttf" id="3_6tew7"]
 [ext_resource type="Texture2D" uid="uid://bfvq1jdp6017a" path="res://art/menus/logo_1.png" id="4_4rgjt"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="5_bpy87"]
@@ -70,11 +70,10 @@ player_3_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxCon
 player_4_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer/HBoxContainer/CheckBox4")
 
 [node name="Background" type="TextureRect" parent="."]
-modulate = Color(0.882353, 0.760784, 0.643137, 1)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_0m78c")
+texture = ExtResource("2_6imgi")
 
 [node name="SettingsMenu" parent="." instance=ExtResource("9_ygyx6")]
 visible = false
@@ -100,13 +99,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 322.0
-offset_top = 43.0
-offset_right = 1528.0
-offset_bottom = 648.0
+offset_left = 378.0
+offset_top = 112.0
+offset_right = 1584.0
+offset_bottom = 717.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.12492, 1.12492)
+scale = Vector2(0.93622, 0.93622)
 texture = ExtResource("4_4rgjt")
 expand_mode = 2
 stretch_mode = 5
