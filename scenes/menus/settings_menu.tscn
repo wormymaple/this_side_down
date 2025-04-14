@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq5ntdtxdyc8c"]
+[gd_scene load_steps=9 format=3 uid="uid://dq5ntdtxdyc8c"]
 
 [ext_resource type="Script" uid="uid://bre6baeop3tqc" path="res://scenes/menus/settings_menu.gd" id="1_uuh1i"]
 [ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/Nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
@@ -17,15 +17,36 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("display_options", "FocusButton", "master_vol_slider", "music_vol_Slider", "other_vol_slider")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojvp1"]
+bg_color = Color(0.34, 0, 0, 0.741176)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_da10i"]
+bg_color = Color(0.34, 0, 0, 0.803922)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjfif"]
+bg_color = Color(0.34, 0, 0, 0.427451)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("display_options", "FocusButton", "DeleteDataContainer", "SecondSeparator")]
 process_mode = 3
 layer = 2
 script = ExtResource("1_uuh1i")
 display_options = NodePath("MarginContainer/MarginContainer/VBoxContainer/DisplayContainer/OptionButton")
 FocusButton = NodePath("MarginContainer/MarginContainer/VBoxContainer/BackButton")
-master_vol_slider = NodePath("MarginContainer/MarginContainer/VBoxContainer/MasterContainer/HBoxContainer/MasterVolSlider")
-music_vol_Slider = NodePath("MarginContainer/MarginContainer/VBoxContainer/MusicContainer/HBoxContainer2/MusicVolSlider")
-other_vol_slider = NodePath("MarginContainer/MarginContainer/VBoxContainer/EffectsContainer/HBoxContainer3/EffectsVolSlider")
+DeleteDataContainer = NodePath("MarginContainer/MarginContainer/VBoxContainer/DeleteContainer")
+SecondSeparator = NodePath("MarginContainer/MarginContainer/VBoxContainer/HSeparator2")
+metadata/on_title_screen = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 1920.0
@@ -81,7 +102,7 @@ popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
 popup/item_1/id = 1
 
-[node name="VSeparator" type="HSeparator" parent="MarginContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("4_ra86d")
 
@@ -159,7 +180,6 @@ custom_minimum_size = Vector2(400, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
-focus_neighbor_bottom = NodePath("../../../BackButton")
 min_value = -50.0
 max_value = 2.08165e-12
 value = -10.0
@@ -170,12 +190,39 @@ theme_override_fonts/font = ExtResource("3_ur1dc")
 theme_override_font_sizes/font_size = 25
 text = "Louder"
 
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_ra86d")
+
+[node name="DeleteContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Delete" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/DeleteContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("3_ur1dc")
+theme_override_font_sizes/font_size = 25
+text = "Clear save data?"
+horizontal_alignment = 1
+
+[node name="DeleteButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer/DeleteContainer"]
+custom_minimum_size = Vector2(143, 48)
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("4_ra86d")
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_ojvp1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_da10i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jjfif")
+text = "Confirm"
+
 [node name="BackButton" type="Button" parent="MarginContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(170, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
-focus_neighbor_top = NodePath("../EffectsContainer/HBoxContainer3/EffectsVolSlider")
 theme = ExtResource("4_ra86d")
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_grtet")
@@ -187,4 +234,5 @@ text = "Back"
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/MasterContainer/HBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/MusicContainer/HBoxContainer2/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/EffectsContainer/HBoxContainer3/EffectsVolSlider" to="." method="_on_other_vol_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/DeleteContainer/DeleteButton" to="." method="_on_delete_button_pressed"]
 [connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/BackButton" to="." method="_on_button_pressed"]

@@ -5,15 +5,21 @@ extends CanvasLayer
 @export var FocusButton: Button
 
 #Audio Sliders
-@export var master_vol_slider: HSlider
-@export var music_vol_Slider: HSlider
-@export var other_vol_slider: HSlider
+#@export var MasterSlider: HSlider
+#@export var MusicSlider: HSlider
+#@export var EffectSlider: HSlider
+@export var DeleteDataContainer: HBoxContainer
+@export var SecondSeparator: HSeparator
 
 const MUSIC_BUS = "Music"
 const OTHER_BUS = "Other"
 
 #func _process(_delta_):
 	#pass
+func _ready() -> void:
+	if not get_meta("on_title_screen"):
+		DeleteDataContainer.hide()
+		SecondSeparator.hide()
 
 func _on_button_pressed():
 	hide()
@@ -43,3 +49,6 @@ func _on_other_vol_slider_value_changed(value):
 	var BusInt = AudioServer.get_bus_index(OTHER_BUS)
 	AudioServer.set_bus_volume_db(BusInt, value)
 	
+
+func _on_delete_button_pressed() -> void:
+	GlobalVariables.clear_save()

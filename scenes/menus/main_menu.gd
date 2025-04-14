@@ -3,7 +3,7 @@ extends Control
 @export var Level1Button: Button
 @export var QuitButton: Button
 @export var ControllerBackButton: Button
-@export var button_texture_list: Array[Button]
+@export var button_list: Array[Button]
 @export var smooth_line: Curve
 
 @export var player_0_playing: CheckBox
@@ -30,11 +30,11 @@ func _ready():
 	if OS.get_name() == "Web":
 		$ScrollParent/TitleScreen/HBoxContainer/ButtonQuit.hide()
 	
-	for level in range(1, 13): # Starts at 1 since 1 is always unlocked. Never ever reaching 12 is fine because there are only 11 textures 
+	for level in range(0, 12): # Goes from 0-11. Starts at 1 since 1 is always unlocked. Never reaching 12 is fine because there are only 11 textures 
 		#print(i)
-		if level > GlobalVariables.farthest_unlocked_level:
-			button_texture_list[level-1].disabled = true
-			button_texture_list[level-1].icon = locked_icon
+		if level > GlobalVariables.last_beaten_level:
+			button_list[level].disabled = true # -1 because the button list indices start at 0
+			button_list[level].icon = locked_icon
 	
 	player_0_playing.button_pressed = GlobalVariables.player_0_playing
 	player_1_playing.button_pressed = GlobalVariables.player_1_playing
@@ -96,38 +96,27 @@ func _start_level(level): # I am not sure why this is it's own function
 func _on_button_1_pressed():
 	_start_level(1)
 func _on_button_2_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 2: # I don't need this checks anymore, but there isn't much of a reason to remove them
-		_start_level(2)
+	_start_level(2)
 func _on_button_3_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 3:
-		_start_level(3)
+	_start_level(3)
 func _on_button_4_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 4:
-		_start_level(4)
+	_start_level(4)
 func _on_button_5_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 5:
-		_start_level(5)
+	_start_level(5)
 func _on_button_6_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 6:
-		_start_level(6)
+	_start_level(6)
 func _on_button_7_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 7:
-		_start_level(7)
+	_start_level(7)
 func _on_button_8_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 8:
-		_start_level(8)
+	_start_level(8)
 func _on_button_9_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 9:
-		_start_level(9)
+	_start_level(9)
 func _on_button_10_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 10:
-		_start_level(10)
+	_start_level(10)
 func _on_button_11_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 11:
-		_start_level(11)
+	_start_level(11)
 func _on_button_12_pressed():
-	if GlobalVariables.farthest_unlocked_level >= 12:
-		_start_level(12)
+	_start_level(12)
 
 func _on_timer_timeout() -> void:
 	slide_mode = States.WAIT
