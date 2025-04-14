@@ -38,12 +38,15 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("display_options", "FocusButton", "DeleteDataContainer", "SecondSeparator")]
+[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("display_options", "FocusButton", "MasterSlider", "MusicSlider", "EffectSlider", "DeleteDataContainer", "SecondSeparator")]
 process_mode = 3
 layer = 2
 script = ExtResource("1_uuh1i")
 display_options = NodePath("MarginContainer/MarginContainer/VBoxContainer/DisplayContainer/OptionButton")
 FocusButton = NodePath("MarginContainer/MarginContainer/VBoxContainer/BackButton")
+MasterSlider = NodePath("MarginContainer/MarginContainer/VBoxContainer/MasterContainer/HBoxContainer/MasterVolSlider")
+MusicSlider = NodePath("MarginContainer/MarginContainer/VBoxContainer/MusicContainer/HBoxContainer2/MusicVolSlider")
+EffectSlider = NodePath("MarginContainer/MarginContainer/VBoxContainer/EffectsContainer/HBoxContainer3/EffectsVolSlider")
 DeleteDataContainer = NodePath("MarginContainer/MarginContainer/VBoxContainer/DeleteContainer")
 SecondSeparator = NodePath("MarginContainer/MarginContainer/VBoxContainer/HSeparator2")
 metadata/on_title_screen = false
