@@ -270,7 +270,7 @@ rotation = -0.181089
 
 [node name="Spring" parent="." instance=ExtResource("5_ap2rn")]
 position = Vector2(2239, 1242)
-Power = 1200
+Power = 1300
 
 [node name="Piston" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
 position = Vector2(1319, -226)

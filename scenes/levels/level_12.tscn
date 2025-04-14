@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dv6cw04ulkig0"]
+[gd_scene load_steps=17 format=4 uid="uid://dv6cw04ulkig0"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_pjou6"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="2_evlye"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="13_r0ek7"]
 [ext_resource type="PackedScene" uid="uid://ykp1hsy6qeg2" path="res://victory_area.tscn" id="14_u2s8n"]
 [ext_resource type="Texture2D" uid="uid://qsnq85mha2qw" path="res://art/general/sun.png" id="15_muk3n"]
+[ext_resource type="Texture2D" uid="uid://cum3qrabneuk1" path="res://art/area_2/clouds.png" id="16_fo48u"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="16_sinvx"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="17_ggy2w"]
 
@@ -105,6 +106,19 @@ position = Vector2(2691, -6130)
 scale = Vector2(22, 4.51999)
 
 [node name="Sun" type="Sprite2D" parent="."]
-position = Vector2(2862, -8183)
-scale = Vector2(2.89628, 2.89628)
+position = Vector2(2862, -7116)
+scale = Vector2(1.67775, 1.67775)
 texture = ExtResource("15_muk3n")
+
+[node name="Clouds" type="Sprite2D" parent="."]
+position = Vector2(1010, -7325)
+texture = ExtResource("16_fo48u")
+
+[node name="Clouds2" type="Sprite2D" parent="."]
+position = Vector2(2635, -7661)
+texture = ExtResource("16_fo48u")
+
+[node name="Clouds3" type="Sprite2D" parent="."]
+position = Vector2(4293, -7336)
+rotation = -0.214803
+texture = ExtResource("16_fo48u")
