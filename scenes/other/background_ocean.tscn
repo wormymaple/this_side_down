@@ -1,11 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://1fc34qaiyikq"]
+[gd_scene load_steps=6 format=3 uid="uid://1fc34qaiyikq"]
 
 [ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="1_mlamw"]
-[ext_resource type="Texture2D" uid="uid://b1viy5ojy472w" path="res://art/area_4/kelp_not_foreground.png" id="2_mmx5e"]
-[ext_resource type="Texture2D" uid="uid://cgjjlopugtc46" path="res://art/area_4/ocean_floor_back.png" id="3_kyahy"]
-[ext_resource type="Texture2D" uid="uid://c24r7rlkj1gm1" path="res://art/area_4/sunken_crates.png" id="4_63om1"]
-[ext_resource type="Texture2D" uid="uid://duwftmg5yphjb" path="res://art/area_4/kelp_foreground.png" id="5_id25e"]
-[ext_resource type="Texture2D" uid="uid://bysbsv3ujig1" path="res://art/area_4/ocean_floor_front.png" id="6_qlq6n"]
+[ext_resource type="Texture2D" uid="uid://bt3txi0abmhpt" path="res://art/area_4/shark.png" id="2_aokf2"]
+[ext_resource type="Texture2D" uid="uid://blhggk48v45u7" path="res://art/area_4/background_far.png" id="3_wq54k"]
+[ext_resource type="Texture2D" uid="uid://dkvmcenitwpr4" path="res://art/area_4/background_close.png" id="4_d77ux"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3xyd5"]
 
@@ -14,61 +12,44 @@ scroll_ignore_camera_zoom = true
 
 [node name="Wayback" type="ParallaxLayer" parent="."]
 material = SubResource("CanvasItemMaterial_3xyd5")
+scale = Vector2(1.5, 1.5)
 motion_scale = Vector2(0, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Wayback"]
+[node name="BlueBackground" type="Sprite2D" parent="Wayback"]
 modulate = Color(0.0941176, 0.172549, 0.223529, 1)
-position = Vector2(960, 540)
-scale = Vector2(192, 108)
+scale = Vector2(128, 72)
 texture = ExtResource("1_mlamw")
+centered = false
 
-[node name="Midground" type="ParallaxLayer" parent="."]
+[node name="Shark" type="Sprite2D" parent="Wayback"]
+position = Vector2(289, 277)
+texture = ExtResource("2_aokf2")
+
+[node name="Background" type="ParallaxLayer" parent="."]
 z_index = 1
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(-445, -249)
 scale = Vector2(1.5, 1.5)
 motion_scale = Vector2(0.139, 0.15)
 
-[node name="BackgroundSand" type="Sprite2D" parent="Midground"]
+[node name="BackgroundSand" type="Sprite2D" parent="Background"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(960, 540)
-texture = ExtResource("3_kyahy")
+texture = ExtResource("3_wq54k")
+centered = false
 
-[node name="Kelp" type="Sprite2D" parent="Midground"]
-modulate = Color(0.858824, 0.858824, 0.858824, 1)
-position = Vector2(960, 540)
-texture = ExtResource("2_mmx5e")
-
-[node name="CratesBackground" type="Sprite2D" parent="Midground"]
-modulate = Color(0.376471, 0.376471, 0.376471, 1)
-position = Vector2(960, 540)
-texture = ExtResource("4_63om1")
-
-[node name="Foreground" type="ParallaxLayer" parent="."]
-z_index = 1
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(-445, -249)
-scale = Vector2(1.5, 1.5)
-motion_scale = Vector2(0.189, 0.2)
-
-[node name="Crates" type="Sprite2D" parent="Foreground"]
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(960, 540)
-texture = ExtResource("4_63om1")
-
-[node name="Kelp" type="Sprite2D" parent="Foreground"]
-material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(960, 540)
-texture = ExtResource("5_id25e")
+[node name="SandExtension" type="Sprite2D" parent="Background"]
+modulate = Color(0.156863, 0.207843, 0.239216, 1)
+position = Vector2(642, 582)
+scale = Vector2(128, 20)
+texture = ExtResource("1_mlamw")
 
 [node name="Ground" type="ParallaxLayer" parent="."]
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(-445, -249)
 scale = Vector2(1.5, 1.5)
 motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sand" type="Sprite2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(960, 540)
-texture = ExtResource("6_qlq6n")
+position = Vector2(0, 150)
+texture = ExtResource("4_d77ux")
+centered = false

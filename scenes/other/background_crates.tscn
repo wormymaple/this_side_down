@@ -12,6 +12,7 @@
 [node name="BackgroundCrates" type="ParallaxBackground"]
 scale = Vector2(1.5, 1.5)
 transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
+scroll_limit_begin = Vector2(0, -1500)
 scroll_limit_end = Vector2(0, 1500)
 scroll_ignore_camera_zoom = true
 
@@ -45,7 +46,7 @@ position = Vector2(654.15, 36.55)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_lxydj")
 
-[node name="aaaa" type="Sprite2D" parent="Wayback2"]
+[node name="Clouds3" type="Sprite2D" parent="Wayback2"]
 material = SubResource("CanvasItemMaterial_3xyd5")
 position = Vector2(1228, 111.55)
 scale = Vector2(0.3, 0.3)
@@ -59,7 +60,7 @@ texture = ExtResource("2_1yy8e")
 
 [node name="RoadOutline" type="Line2D" parent="Wayback2"]
 position = Vector2(0, 254.667)
-points = PackedVector2Array(0, 0, 1280, 0)
+points = PackedVector2Array(-200, 0, 1500, 0)
 width = 4.0
 default_color = Color(0, 0, 0, 1)
 

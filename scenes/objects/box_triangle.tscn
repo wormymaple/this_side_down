@@ -35,15 +35,19 @@ texture = ExtResource("3_vfoyo")
 
 [node name="GlassSound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ktn3b")
+bus = &"Effects"
 
 [node name="GlassSound2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_dftgv")
+bus = &"Effects"
 
 [node name="BoxSound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_vng1o")
+bus = &"Effects"
 
 [node name="BoxSound2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_sjpeh")
+bus = &"Effects"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

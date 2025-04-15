@@ -46,11 +46,7 @@ func _on_visibility_changed() -> void:
 		EffectSlider.value = AudioServer.get_bus_volume_db(2)
 
 func _on_master_vol_slider_value_changed(value):
-	if value == -50:
-		AudioServer.set_bus_mute(0,true)
-	else:
-		AudioServer.set_bus_mute(0,false)
-		AudioServer.set_bus_volume_db(0,value)
+	AudioServer.set_bus_volume_db(0,value)
 func _on_music_vol_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(1, value)
 func _on_other_vol_slider_value_changed(value):
