@@ -69,8 +69,6 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if gravity_scale == 0.5:
-		breakpoint
 	## First, do ladder physics
 	if standing_in_ladder and not get_meta("grabbed"): # Ladder physics
 		gravity_scale = 0
@@ -95,7 +93,7 @@ func _physics_process(delta):
 				else:
 					linear_velocity.y += LADDER_CLIMB_SPEED * delta
 			
-	elif gravity_scale == 0 or gravity_scale == 0.5: # Why is it testing for 0.5?
+	elif gravity_scale == 0:
 		gravity_scale = original_grav_scale ## This shouldn't need to be here. Does this account for if the player is being held?
 	
 	## Update the jump buffer
@@ -223,16 +221,21 @@ func _input(event):
 			grabbed_body = target_body
 			grabbed_body.gravity_scale = 0
 			grabbed_body.set_meta("grabbed", true)
+			if grabbed_body.is_in_group("Player"):
+				Input.start_joy_vibration(int(grabbed_body.playerID.right(1)) - 1, 1, 1, 0.3)
 			did_grabbed_body_have_collision_mask_2 = grabbed_body.get_collision_mask_value(2)
 			if grabbed_body.is_in_group("Box"):
 				grabbed_body.set_collision_mask_value(2, false)
 				grabbed_body.set_collision_layer_value(3, false)
 			HandSprite.texture = holding_hand
 			
+			Input.stop_joy_vibration(int(playerID.right(1)) - 1)
+			Input.start_joy_vibration(int(playerID.right(1)) - 1, 0, 1, 0.2)
 			BoxPickup.play()
 			
 	elif event.is_action_released("grab_" + playerID) && grabbed_body != null:
 		drop_object()
+		
 	
 
 func set_color(player_index):
@@ -252,6 +255,9 @@ func drop_object():
 	grabbed_body = null
 	
 	HandSprite.texture = empty_hand
+	
+	Input.stop_joy_vibration(int(playerID.right(1)))
+	Input.start_joy_vibration(int(playerID.right(1)) - 1, 1, 0, 0.2)
 	BoxDrop.play()
 
 func _on_grab_area_body_entered(body):

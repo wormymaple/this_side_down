@@ -12,7 +12,7 @@ var players: Array
 var min_dist = 250
 var max_zoom_in = 1.5
 var scale_rate = 0.0001
-var max_zoom_out = 0.8
+var max_zoom_out = 0.6
 
 var fade_time = 1.0
 var fade_delay = 0.5
@@ -60,7 +60,7 @@ func _process(delta):
 	
 	# The bigger the distance is, the smaller target_zoom should be
 	var target_zoom = max_zoom_in - 0.0005 * furthest_dist # * scale_rate * 100 + max_zoom_in
-	#target_zoom = max(target_zoom, max_zoom_out) # Don't go bigger than max zoom!
+	target_zoom = max(target_zoom, max_zoom_out) # Don't go bigger than max zoom!
 	
 	zoom = target_zoom * Vector2.ONE
 	
