@@ -33,16 +33,19 @@ motion_scale = Vector2(0.139, 0.15)
 
 [node name="BackgroundSand" type="Sprite2D" parent="Background"]
 material = SubResource("CanvasItemMaterial_3xyd5")
+position = Vector2(-104.667, 0)
+scale = Vector2(1.14999, 1.14999)
 texture = ExtResource("3_wq54k")
 centered = false
 
 [node name="SandExtension" type="Sprite2D" parent="Background"]
 modulate = Color(0.156863, 0.207843, 0.239216, 1)
-position = Vector2(642, 582)
-scale = Vector2(128, 20)
+position = Vector2(639.333, 641.333)
+scale = Vector2(157.278, 18.0996)
 texture = ExtResource("1_mlamw")
 
 [node name="Ground" type="ParallaxLayer" parent="."]
+visible = false
 z_index = 2
 material = SubResource("CanvasItemMaterial_3xyd5")
 scale = Vector2(1.5, 1.5)
@@ -50,6 +53,7 @@ motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sand" type="Sprite2D" parent="Ground"]
 material = SubResource("CanvasItemMaterial_3xyd5")
-position = Vector2(0, 150)
+position = Vector2(-123.333, 72.6667)
+scale = Vector2(1.1765, 1.1765)
 texture = ExtResource("4_d77ux")
 centered = false

@@ -9,9 +9,8 @@
 
 [node name="WarehouseBackground" type="ParallaxBackground"]
 layer = -3
-offset = Vector2(1080, 400)
 scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 1080, 400)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 scroll_ignore_camera_zoom = true
 metadata/_edit_vertical_guides_ = [1924.0]
 
@@ -28,7 +27,7 @@ motion_scale = Vector2(0, 0)
 [node name="Door" type="Sprite2D" parent="Wayback"]
 z_index = -1
 material = SubResource("CanvasItemMaterial_s4lip")
-position = Vector2(1, 72.0813)
+position = Vector2(495, 248)
 texture = ExtResource("1_xhcn7")
 
 [node name="BehindShelf" type="ParallaxLayer" parent="."]
@@ -39,7 +38,7 @@ motion_scale = Vector2(0.03, 0)
 
 [node name="Boxes" type="Sprite2D" parent="BehindShelf"]
 modulate = Color(0.309804, 0.309804, 0.309804, 1)
-position = Vector2(247, -109)
+position = Vector2(741, 66.9187)
 texture = ExtResource("3_ms3rt")
 
 [node name="Shelf" type="ParallaxLayer" parent="."]
@@ -50,12 +49,12 @@ motion_scale = Vector2(0.04, 0)
 
 [node name="Shelves" type="Sprite2D" parent="Shelf"]
 material = SubResource("CanvasItemMaterial_s4lip")
-position = Vector2(242, -44)
+position = Vector2(736, 131.919)
 texture = ExtResource("2_dew31")
 
 [node name="Boxes" type="Sprite2D" parent="Shelf"]
 material = SubResource("CanvasItemMaterial_s4lip")
-position = Vector2(246, -108)
+position = Vector2(740, 67.9187)
 texture = ExtResource("3_ms3rt")
 
 [node name="Column" type="ParallaxLayer" parent="."]
