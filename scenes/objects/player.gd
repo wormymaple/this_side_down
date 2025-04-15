@@ -2,10 +2,11 @@ extends RigidBody2D
 
 # Movement constants
 const MAX_SPEED = 60000
+const MAX_CLIMB_SPEED = 50000
 const ACCELERATION = 2000
 var JUMP_POWER = 500
 const UNDERWATER_JUMP_MULTIPLIER = 1.3
-const LADDER_CLIMB_SPEED = 40000
+const LADDER_CLIMB_SPEED = 1500
 const ARM_MOVE_SPEED = 5
 const CARRY_SPEED = 20
 const ARM_LENGTH = 150
@@ -71,16 +72,28 @@ func _physics_process(delta):
 	if gravity_scale == 0.5:
 		breakpoint
 	## First, do ladder physics
-	if standing_in_ladder: # Ladder physics
+	if standing_in_ladder and not get_meta("grabbed"): # Ladder physics
 		gravity_scale = 0
 		unmovable = false
 		
 		var LS_y_axis = Input.get_axis("LS_up_" + playerID, "LS_down_" + playerID)
 		
 		if LS_y_axis:
-			linear_velocity.y = LS_y_axis * LADDER_CLIMB_SPEED * delta
+			#linear_velocity.y += LS_y_axis * LADDER_CLIMB_SPEED * delta
+			if LS_y_axis > 0:
+				linear_velocity.y = min(linear_velocity.y + LS_y_axis * LADDER_CLIMB_SPEED * delta, LS_y_axis * MAX_CLIMB_SPEED * delta)
+			else: # Going down
+				linear_velocity.y = max(linear_velocity.y + LS_y_axis * LADDER_CLIMB_SPEED * delta, LS_y_axis * MAX_CLIMB_SPEED * delta)
 		else:
-			linear_velocity.y = 0
+			if abs(linear_velocity.y) - LADDER_CLIMB_SPEED * delta <= 0:
+				linear_velocity.y = 0 # move toward 0
+				#print("Stopped!")
+			else:
+				if linear_velocity.y > 0:
+					linear_velocity.y -= LADDER_CLIMB_SPEED * delta
+				#print("Stopping going right")
+				else:
+					linear_velocity.y += LADDER_CLIMB_SPEED * delta
 			
 	elif gravity_scale == 0 or gravity_scale == 0.5: # Why is it testing for 0.5?
 		gravity_scale = original_grav_scale ## This shouldn't need to be here. Does this account for if the player is being held?
