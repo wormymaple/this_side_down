@@ -467,13 +467,12 @@ theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
 [node name="CheckBox0" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath(".")
 theme = ExtResource("5_bpy87")
 flat = true
-icon_alignment = 1
+icon_alignment = 2
 
 [node name="Panel2" type="Panel" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -532,7 +531,6 @@ theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
 [node name="CheckBox1" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath(".")
@@ -607,7 +605,6 @@ theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
 [node name="CheckBox2" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_left = NodePath("../../../../Panel2/VBoxContainer/HBoxContainer/CheckBox1")
@@ -683,7 +680,6 @@ theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
 [node name="CheckBox3" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_left = NodePath("../../../../Panel3/VBoxContainer/HBoxContainer/CheckBox2")
@@ -757,7 +753,6 @@ theme = ExtResource("5_bpy87")
 text = "Is playing:"
 
 [node name="CheckBox4" type="CheckBox" parent="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_top = NodePath(".")

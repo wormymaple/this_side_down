@@ -26,6 +26,8 @@ var slide_mode = States.WAIT
 
 func _ready():
 	await GlobalVariables.load_data()
+	Input.connect("joy_connection_changed", _on_joy_connection_changed)
+	#Input.joy_connection_changed.connect(_on_joy_connection_changed())
 	
 	ControllerToButton.grab_focus()
 	
@@ -73,9 +75,31 @@ func _on_quit_button_pressed():
 
 func _on_joy_connection_changed(device_id, connected): # This is only for debug
 	if connected:
-		print(Input.get_joy_name(device_id))
+		print(Input.get_joy_name(device_id), " connected.")
 	else:
-		print("Keyboard")
+		print(Input.get_joy_name(device_id), " disconnected.")
+	
+	print(Input.get_connected_joypads())
+	var amount_of_controllers = Input.get_connected_joypads().size()
+	
+	player_1_playing.button_pressed = false
+	player_2_playing.button_pressed = false
+	player_3_playing.button_pressed = false
+	player_4_playing.button_pressed = false
+	
+	if amount_of_controllers > 0:
+		player_1_playing.button_pressed = true
+		#$ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/Automatic.text = Input.get_joy_name(0)
+	if amount_of_controllers > 1:
+		player_2_playing.button_pressed = true
+		#$ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/Automatic.text = Input.get_joy_name(1)
+	if amount_of_controllers > 2:
+		player_3_playing.button_pressed = true
+		#$ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel4/VBoxContainer/Automatic.text = Input.get_joy_name(2)
+	if amount_of_controllers > 3:
+		player_4_playing.button_pressed = true
+		#$ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel5/VBoxContainer/Automatic.text = Input.get_joy_name(3)
+	
 
 func _process(_delta: float) -> void:
 	var percent_left = $Timer.time_left / $Timer.wait_time

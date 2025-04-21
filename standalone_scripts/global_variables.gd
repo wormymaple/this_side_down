@@ -28,6 +28,9 @@ func save_data():
 	
 	save_file.flush() # I shouldn't need to do this but I am being full/perfect/exact/clear/concise
 	print("Data saved!")
+	
+	
+
 
 func load_data():
 	
@@ -52,7 +55,7 @@ func load_data():
 	AudioServer.set_bus_volume_db(1, bus_music_vol)
 	AudioServer.set_bus_volume_db(2, bus_effects_vol)
 	#get_tree().get_child(0).player_0_playing.button_pressed = player_0_playing
-	print_tree()
+	
 	
 	print("Save data loaded!")
 
