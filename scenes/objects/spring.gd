@@ -44,7 +44,8 @@ func _on_body_entered(body):
 	if body.is_in_group("Player") or body.is_in_group("Box"):
 		
 		if body.is_in_group("Player"):
-			Input.start_joy_vibration(int(body.playerID.right(1)) - 1, 1, 1, 0.2)
+			if GlobalVariables.controller_rumble:
+				Input.start_joy_vibration(int(body.playerID.right(1)) - 1, 1, 1, 0.2)
 			#Input.start_joy_vibration(int(body.playerID.right(1)) - 1, 0, 1, 0.2)
 			# Should I change the vibration depending on the spring size
 			

@@ -4,7 +4,7 @@ var last_beaten_level = 0
 var bus_master_vol = -10.0
 var bus_music_vol = -10.0
 var bus_effects_vol = -10.0
-
+var controller_rumble = true
 var player_0_playing = true
 
 ## These ones don't need to be saved
@@ -21,8 +21,12 @@ func save_data():
 	save_file.store_float(bus_master_vol)
 	save_file.store_float(bus_music_vol)
 	save_file.store_float(bus_effects_vol)
-	if player_0_playing:
-		save_file.store_8(1) # Apparently there isn't a store_bool() method.
+	if player_0_playing: # Apparently there isn't a store_bool() method so I'm doing this
+		save_file.store_8(1)
+	else:
+		save_file.store_8(0)
+	if controller_rumble:
+		save_file.store_8(1)
 	else:
 		save_file.store_8(0)
 	
@@ -50,6 +54,10 @@ func load_data():
 		player_0_playing = true
 	else:
 		player_0_playing = false
+	if save_file.get_8() == 1:
+		controller_rumble = true
+	else:
+		controller_rumble = false
 	
 	AudioServer.set_bus_volume_db(0, bus_master_vol)
 	AudioServer.set_bus_volume_db(1, bus_music_vol)
@@ -70,9 +78,11 @@ func clear_save():
 	save_file.store_float(bus_music_vol)
 	save_file.store_float(bus_effects_vol)
 	save_file.store_8(1)
+	save_file.store_8(1) # Controller rumble
 	save_file.flush()
 	print("Data cleared!")
 	
+	get_tree().reload_current_scene()
 	#get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
 
 func _ready() -> void:

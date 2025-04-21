@@ -59,6 +59,8 @@ func _on_deleter_body_entered(body):
 		if body.on_ground:
 			body.call_deferred("queue_free")
 			get_tree().call_deferred("reload_current_scene")
+			if GlobalVariables.controller_rumble:
+				Input.start_joy_vibration(int(body.playerID.right(1)) - 1, 1, 1, 0.2)
 	
 
 

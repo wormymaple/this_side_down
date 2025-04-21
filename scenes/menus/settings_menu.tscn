@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq5ntdtxdyc8c"]
+[gd_scene load_steps=10 format=3 uid="uid://dq5ntdtxdyc8c"]
 
 [ext_resource type="Script" uid="uid://bre6baeop3tqc" path="res://scenes/menus/settings_menu.gd" id="1_uuh1i"]
 [ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/Nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
 [ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://fonts/Nunito/static/Nunito-Bold.ttf" id="4_grtet"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="4_ra86d"]
+[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/Nunito/static/Nunito-Regular.ttf" id="5_da10i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vk4d"]
 bg_color = Color(0.592157, 0.443137, 0.286275, 1)
@@ -38,7 +39,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("display_options", "FocusButton", "MasterSlider", "MusicSlider", "EffectSlider", "DeleteDataContainer", "SecondSeparator")]
+[node name="SettingsMenu" type="CanvasLayer" node_paths=PackedStringArray("display_options", "FocusButton", "MasterSlider", "MusicSlider", "EffectSlider", "DeleteDataContainer", "SecondSeparator", "ControllerRumble")]
 process_mode = 3
 layer = 2
 script = ExtResource("1_uuh1i")
@@ -49,6 +50,7 @@ MusicSlider = NodePath("MarginContainer/MarginContainer/VBoxContainer/MusicConta
 EffectSlider = NodePath("MarginContainer/MarginContainer/VBoxContainer/EffectsContainer/HBoxContainer3/EffectsVolSlider")
 DeleteDataContainer = NodePath("MarginContainer/MarginContainer/VBoxContainer/DeleteContainer")
 SecondSeparator = NodePath("MarginContainer/MarginContainer/VBoxContainer/HSeparator2")
+ControllerRumble = NodePath("MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/ControllerRumbleCheckBox")
 metadata/on_title_screen = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -72,7 +74,7 @@ theme_override_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 15
 
 [node name="Settings" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -97,13 +99,33 @@ horizontal_alignment = 1
 [node name="OptionButton" type="OptionButton" parent="MarginContainer/MarginContainer/VBoxContainer/DisplayContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("3_ur1dc")
+theme = ExtResource("4_ra86d")
 selected = 0
-item_count = 2
-popup/item_0/text = "Windowed"
-popup/item_0/id = 0
-popup/item_1/text = "Fullscreen"
-popup/item_1/id = 1
+item_count = 4
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 1
+popup/item_1/text = "Maximized"
+popup/item_1/id = 0
+popup/item_2/text = "Exclusive Fullscreen"
+popup/item_2/id = 3
+popup/item_3/text = "Windowed"
+popup/item_3/id = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_da10i")
+theme_override_font_sizes/font_size = 25
+text = "Controller Rumble"
+
+[node name="ControllerRumbleCheckBox" type="CheckBox" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("4_ra86d")
+flat = true
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -234,6 +256,7 @@ text = "Back"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="item_selected" from="MarginContainer/MarginContainer/VBoxContainer/DisplayContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/ControllerRumbleCheckBox" to="." method="_on_controller_rumble_check_box_toggled"]
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/MasterContainer/HBoxContainer/MasterVolSlider" to="." method="_on_master_vol_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/MusicContainer/HBoxContainer2/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/MarginContainer/VBoxContainer/EffectsContainer/HBoxContainer3/EffectsVolSlider" to="." method="_on_other_vol_slider_value_changed"]
