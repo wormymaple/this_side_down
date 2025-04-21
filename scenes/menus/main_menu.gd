@@ -25,6 +25,8 @@ enum States {TO_LEVELS, FROM_LEVELS, TO_CONTROLLERS, FROM_CONTROLLERS, WAIT}
 var slide_mode = States.WAIT
 
 func _ready():
+	await GlobalVariables.load_data()
+	
 	ControllerToButton.grab_focus()
 	
 	if OS.get_name() == "Web":
@@ -131,3 +133,4 @@ func _on_check_box_1_toggled(toggled_on: bool) -> void:
 	GlobalVariables.player_1_playing = toggled_on
 func _on_check_box_0_toggled(toggled_on: bool) -> void:
 	GlobalVariables.player_0_playing = toggled_on
+	GlobalVariables.save_data()

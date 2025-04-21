@@ -1,12 +1,13 @@
 extends Node
 ## These variables need to be saved between play sessions
 var last_beaten_level = 0
-var bus_master_vol = 0.0
-var bus_music_vol = 0.0
-var bus_effects_vol = 0.0
+var bus_master_vol = -10.0
+var bus_music_vol = -10.0
+var bus_effects_vol = -10.0
+
+var player_0_playing = true
 
 ## These ones don't need to be saved
-var player_0_playing = true
 var player_1_playing = false
 var player_2_playing = false
 var player_3_playing = false
@@ -20,11 +21,16 @@ func save_data():
 	save_file.store_float(bus_master_vol)
 	save_file.store_float(bus_music_vol)
 	save_file.store_float(bus_effects_vol)
+	if player_0_playing:
+		save_file.store_8(1) # Apparently there isn't a store_bool() method.
+	else:
+		save_file.store_8(0)
 	
 	save_file.flush() # I shouldn't need to do this but I am being full/perfect/exact/clear/concise
 	print("Data saved!")
 
 func load_data():
+	
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
 	
 	if not FileAccess.file_exists("user://savegame.save"):
@@ -37,26 +43,38 @@ func load_data():
 	bus_master_vol = save_file.get_float()
 	bus_music_vol = save_file.get_float()
 	bus_effects_vol = save_file.get_float()
+	if save_file.get_8() == 1:
+		player_0_playing = true
+	else:
+		player_0_playing = false
 	
 	AudioServer.set_bus_volume_db(0, bus_master_vol)
 	AudioServer.set_bus_volume_db(1, bus_music_vol)
 	AudioServer.set_bus_volume_db(2, bus_effects_vol)
+	#get_tree().get_child(0).player_0_playing.button_pressed = player_0_playing
+	print_tree()
 	
 	print("Save data loaded!")
 
 func clear_save():
 	
 	last_beaten_level = 0
+	player_0_playing = true
 	
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	save_file.store_8(last_beaten_level)
+	save_file.store_float(bus_master_vol)
+	save_file.store_float(bus_music_vol)
+	save_file.store_float(bus_effects_vol)
+	save_file.store_8(1)
 	save_file.flush()
 	print("Data cleared!")
 	
 	#get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
 
 func _ready() -> void:
-	load_data()
+	pass
+	#load_data()
 	
 	#print("music bus volume: ", AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
 
