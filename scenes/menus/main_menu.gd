@@ -71,6 +71,7 @@ func _on_button_back_controller_pressed() -> void:
 func _on_options_button_pressed():
 	settings_menu.show()
 func _on_quit_button_pressed():
+	#await GlobalVariables.save_data()
 	get_tree().quit()
 
 func _on_joy_connection_changed(device_id, connected): # This is only for debug
@@ -157,4 +158,5 @@ func _on_check_box_1_toggled(toggled_on: bool) -> void:
 	GlobalVariables.player_1_playing = toggled_on
 func _on_check_box_0_toggled(toggled_on: bool) -> void:
 	GlobalVariables.player_0_playing = toggled_on
+	print(toggled_on)
 	GlobalVariables.save_data()

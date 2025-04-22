@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7gc0sday64y6"]
+[gd_scene load_steps=9 format=3 uid="uid://c7gc0sday64y6"]
 
 [ext_resource type="Script" uid="uid://dddh20omq2xq4" path="res://scenes/objects/loading_zone.gd" id="1_wkjfu"]
 [ext_resource type="Texture2D" uid="uid://dh46dioldwboa" path="res://art/general/loading_zone.png" id="2_wq3qk"]
 [ext_resource type="Material" uid="uid://ekewelcchmt1" path="res://resources/confetti_process_material.tres" id="3_iox0q"]
-[ext_resource type="Texture2D" uid="uid://dnk3wvfako1r7" path="res://art/general/simple_box.png" id="3_kmtdw"]
-[ext_resource type="Script" uid="uid://27xd6864a0l2" path="res://standalone_scripts/bob_up_and_down.gd" id="4_3mwse"]
 [ext_resource type="Texture2D" uid="uid://da6st5j6p5on0" path="res://art/general/white_square.png" id="5_jsrkl"]
 [ext_resource type="AudioStream" uid="uid://cytk1x230xjet" path="res://audio/congratulations.wav" id="7_u35je"]
 
@@ -15,10 +13,6 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
-
-[sub_resource type="Curve" id="Curve_edar3"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494845, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8x63u"]
 size = Vector2(255, 20)
@@ -31,6 +25,7 @@ freeze_mode = 1
 contact_monitor = true
 max_contacts_reported = 6
 script = ExtResource("1_wkjfu")
+hints = Array[int]([0])
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 19)
@@ -74,16 +69,6 @@ texture = ExtResource("2_wq3qk")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
-
-[node name="Hint" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.509804)
-z_index = -1
-position = Vector2(2.08165e-12, -123)
-rotation = -3.14159
-texture = ExtResource("3_kmtdw")
-script = ExtResource("4_3mwse")
-curve = SubResource("Curve_edar3")
-anim_time = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -24)

@@ -55,6 +55,7 @@ position = Vector2(867, 614)
 boxes_required = 2
 camera = NodePath("../Camera")
 level = 2
+hints = Array[int]([0, 2])
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("10_yrdje")]
 

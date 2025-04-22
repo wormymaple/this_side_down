@@ -23,8 +23,10 @@ func save_data():
 	save_file.store_float(bus_effects_vol)
 	if player_0_playing: # Apparently there isn't a store_bool() method so I'm doing this
 		save_file.store_8(1)
+		print("Saved keyboard and mouse as playing")
 	else:
 		save_file.store_8(0)
+		print("Saved keyboard and mouse as not playing")
 	if controller_rumble:
 		save_file.store_8(1)
 	else:
@@ -47,14 +49,20 @@ func load_data():
 		return
 	
 	last_beaten_level = save_file.get_8()
+	#last_beaten_level = 12 # My override
 	bus_master_vol = save_file.get_float()
 	bus_music_vol = save_file.get_float()
 	bus_effects_vol = save_file.get_float()
-	if save_file.get_8() == 1:
+	
+	var zero_or_one = save_file.get_8()
+	if zero_or_one == 1:
 		player_0_playing = true
 	else:
+		print("Player 0 not playing")
 		player_0_playing = false
-	if save_file.get_8() == 1:
+	
+	zero_or_one = save_file.get_8()
+	if zero_or_one == 1:
 		controller_rumble = true
 	else:
 		controller_rumble = false

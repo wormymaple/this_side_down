@@ -52,16 +52,16 @@ position = Vector2(-338, 413.87)
 position = Vector2(749, 577)
 
 [node name="Box" parent="." instance=ExtResource("12_7j7q0")]
-position = Vector2(767, 540)
+position = Vector2(762, 505)
 rotation = -3.5229
 theme = 1
-size = 1.5
+size = 1.7
 
 [node name="Box2" parent="." instance=ExtResource("12_7j7q0")]
 position = Vector2(1191, 502)
 rotation = -3.12633
 theme = 1
-size = 1.5
+size = 1.7
 
 [node name="Camera" parent="." instance=ExtResource("7_5g5wu")]
 position = Vector2(169, 616)
@@ -79,6 +79,7 @@ position = Vector2(-116, 247)
 boxes_required = 2
 camera = NodePath("../Camera")
 level = 6
+hints = Array[int]([0, 0])
 
 [node name="Platform2" parent="." instance=ExtResource("7_hqlvf")]
 position = Vector2(404, 695)

@@ -105,6 +105,7 @@ position = Vector2(1404, 1060)
 position = Vector2(1342, -493)
 camera = NodePath("../Camera")
 level = 8
+hints = Array[int]([1])
 
 [node name="Ladder" parent="." instance=ExtResource("14_fmoen")]
 position = Vector2(878, -426)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkuekjol4iyyf"]
+
+[ext_resource type="Texture2D" uid="uid://dnk3wvfako1r7" path="res://art/general/hint_square.png" id="1_33g4y"]
+[ext_resource type="Script" uid="uid://27xd6864a0l2" path="res://standalone_scripts/bob_up_and_down.gd" id="2_bjh5h"]
+
+[sub_resource type="Curve" id="Curve_edar3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494845, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="BoxHint" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.509804)
+z_index = -1
+texture = ExtResource("1_33g4y")
+script = ExtResource("2_bjh5h")
+curve = SubResource("Curve_edar3")
+anim_time = 1.0

@@ -52,6 +52,7 @@ size = 2.0
 position = Vector2(774, 719)
 camera = NodePath("../Camera")
 level = 5
+hints = Array[int]([2])
 
 [node name="Spring" parent="." instance=ExtResource("11_ve53h")]
 position = Vector2(544, 686)

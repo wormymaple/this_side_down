@@ -8,6 +8,9 @@ extends Node2D
 @onready var GPUParticles = $GPUParticles2D
 @onready var CPUParticles = $CPUParticles2D
 @export var upside_down = false
+enum BoxTypes {SQUARE, CIRCLE, TRIANGLE}
+@export var hints: Array[BoxTypes]
+#@export var hints = Array[BoxTypes]
 
 var colliding_bodies: Array[Node2D]
 var won_already = false
@@ -17,6 +20,37 @@ func _ready() -> void:
 		platform_to_attach_to.objects_to_move.push_back(self)
 	
 	modulate = Color("c9a338") # good ol' yellow
+	
+	var hint_number = 0
+	for hint in hints:
+		hint_number += 1
+		var hint_scene = load("res://scenes/objects/box_hint.tscn").instantiate()
+		match hint:
+			BoxTypes.SQUARE:
+				hint_scene.texture = load("res://art/general/hint_square.png")
+				hint_scene.rotation_degrees = 180
+			BoxTypes.CIRCLE:
+				hint_scene.texture = load("res://art/general/hint_circle.png")
+			BoxTypes.TRIANGLE:
+				hint_scene.texture = load("res://art/general/hint_triangle.png")
+		
+		if hints.size() == 2:
+			#print("This is a landing zone with two boxes")
+			if hint_number == 1:
+				#print("Hint 0")
+				hint_scene.position.x -= 50
+			elif hint_number == 2:
+				#print("Hint 1")
+				hint_scene.position.x += 50
+			else:
+				breakpoint
+			
+		
+		hint_scene.position.y = -123
+		add_child(hint_scene)
+		print("Box added!")
+		#box_number += 1
+	
 
 func _process(_delta): # It would be best if this code only checked itself when a box moves or is dropped
 	
