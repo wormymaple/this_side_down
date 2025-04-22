@@ -84,6 +84,33 @@ theme_override_constants/outline_size = 10
 text = "Don't fall in pits!"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="."]
+offset_left = -1019.0
+offset_top = -799.0
+offset_right = -548.0
+offset_bottom = -735.0
+scale = Vector2(0.995067, 0.98283)
+theme = ExtResource("12_vgfet")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "You shouldn't be up here"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 2165.0
+offset_top = -854.0
+offset_right = 2766.0
+offset_bottom = -713.0
+scale = Vector2(0.995067, 0.98283)
+theme = ExtResource("12_vgfet")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Every 60 seconds is Africa, a minute passes. With your donation this can be prevented"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(311, 290)
 scale = Vector2(5, 5)

@@ -102,7 +102,7 @@ tile_map_data = PackedByteArray("AAAgABIAAQAJAAMAAAAgABEAAQAJAAIAAAAgABAAAQAJAAI
 tile_set = ExtResource("17_ggy2w")
 
 [node name="VictoryArea" parent="." instance=ExtResource("14_u2s8n")]
-position = Vector2(2691, -6130)
+position = Vector2(2781, -6106)
 scale = Vector2(22, 4.51999)
 
 [node name="Sun" type="Sprite2D" parent="."]

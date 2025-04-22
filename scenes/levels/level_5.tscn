@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c8aiossmut76m"]
+[gd_scene load_steps=14 format=4 uid="uid://c8aiossmut76m"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_ecodb"]
 [ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://scenes/objects/box_triangle.tscn" id="8_hmve4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bymth3hp348qh" path="res://scenes/other/background_crates.tscn" id="11_kaf0w"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="11_vbs12"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://scenes/objects/spring.tscn" id="11_ve53h"]
+[ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="12_5ke18"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="12_o2sbc"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="12_qmq5x"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://scenes/objects/ladder.tscn" id="14_jv4xn"]
@@ -65,6 +66,34 @@ Power = 950
 
 [node name="Ladder2" parent="." instance=ExtResource("14_jv4xn")]
 position = Vector2(231, 475)
+
+[node name="Label3" type="Label" parent="Ladder2"]
+offset_left = 1414.0
+offset_top = -918.0
+offset_right = 2015.0
+offset_bottom = -777.0
+scale = Vector2(0.995067, 0.98283)
+theme = ExtResource("12_5ke18")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Not this way!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="Ladder2"]
+offset_left = -1414.0
+offset_top = -918.0
+offset_right = -813.0
+offset_bottom = -777.0
+scale = Vector2(0.995067, 0.98283)
+theme = ExtResource("12_5ke18")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "This is not the gameplay you are looking for"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Ladder3" parent="." instance=ExtResource("14_jv4xn")]
 position = Vector2(1093, 481)

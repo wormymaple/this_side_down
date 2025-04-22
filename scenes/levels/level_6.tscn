@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bwfqlui2oxdvp"]
+[gd_scene load_steps=17 format=4 uid="uid://bwfqlui2oxdvp"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_7gtpw"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://scenes/objects/ladder.tscn" id="2_87pw1"]
@@ -13,6 +13,7 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="13_c4ixt"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="13_uogt2"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="14_jcsp8"]
+[ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="14_tqv5a"]
 
 [sub_resource type="Curve2D" id="Curve2D_037mp"]
 _data = {
@@ -98,3 +99,31 @@ position = Vector2(1190, 583)
 curve = SubResource("Curve2D_x1pht")
 theme = 3
 speed = 1.8
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -1294.0
+offset_top = -407.0
+offset_right = -693.0
+offset_bottom = -266.0
+scale = Vector2(0.995067, 0.98283)
+theme = ExtResource("14_tqv5a")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Try Joes Automaton on Itch.io!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 2597.0
+offset_top = -407.0
+offset_right = 3198.0
+offset_bottom = -266.0
+scale = Vector2(0.995067, 0.98283)
+theme = ExtResource("14_tqv5a")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "There is an even bigger secret up ahead"
+horizontal_alignment = 1
+autowrap_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b3dqjcsmp3nrr"]
+[gd_scene load_steps=20 format=4 uid="uid://b3dqjcsmp3nrr"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_6to6e"]
 [ext_resource type="PackedScene" uid="uid://bq13ti4fn0mxl" path="res://scenes/other/background_boat.tscn" id="2_40qa3"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://scenes/objects/ladder.tscn" id="14_fmoen"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="15_e7r4c"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="16_prmyl"]
+[ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="17_40qa3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x03f7"]
 
@@ -65,7 +66,7 @@ color = Color(0.807843, 0.552941, 0.482353, 1)
 energy = 1.41
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(25, 3)
+position = Vector2(30, 4)
 script = ExtResource("6_mnqm8")
 player_scene = ExtResource("7_pdbfg")
 camera = NodePath("../Camera")
@@ -73,7 +74,7 @@ camera = NodePath("../Camera")
 [node name="Camera" parent="." instance=ExtResource("8_kdpne")]
 position = Vector2(30, 4)
 zoom = Vector2(1.5, 1.5)
-camera_offset = Vector2(0, 80)
+camera_offset = Vector2(0, 70)
 
 [node name="Plank" parent="." instance=ExtResource("9_fnxdr")]
 position = Vector2(403, 95)
@@ -127,5 +128,19 @@ theme = 1
 position = Vector2(716, 330)
 scale = Vector2(-0.9, 0.9)
 theme = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -1572.0
+offset_top = -1249.0
+offset_right = -328.0
+offset_bottom = -724.0
+scale = Vector2(0.995067, 0.98283)
+theme = ExtResource("17_40qa3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "\"Your only chance of survival, if you are sincerely smitten, lies in hiding this fact from the woman you love, of feigning a casual detachment under all circumstances. What sadness there is in this simple observation! What an accusation against man! However, it had never occurred to me to contest this law, nor to imagine disobeying it: love makes you weak, and the weaker of the two is oppressed, tortured and finally killed by the other, who in his or her turn oppresses, tortures and kills without having evil intentions, without even getting pleasure from it, with complete indifference; that’s what men, normally, call love.\" -Michel Houellebecq"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="body_entered" from="VoidOutArea" to="LandingZone" method="_on_void_out_area_body_entered"]
