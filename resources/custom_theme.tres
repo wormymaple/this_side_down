@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/Nunito/static/Nunito-Medium.ttf" id="3_fp7b3"]
 [ext_resource type="Texture2D" uid="uid://dw40i2oi5a1mi" path="res://resources/true.png" id="4_aowux"]
 [ext_resource type="Texture2D" uid="uid://b2dftp3jkcoqi" path="res://resources/true_disabled.png" id="5_fp7b3"]
-[ext_resource type="Texture2D" uid="uid://biwsjb1kcif64" path="res://resources/false.PNG" id="6_1pmyd"]
+[ext_resource type="Texture2D" uid="uid://c4lswnhywuqr5" path="res://resources/false.PNG" id="6_1pmyd"]
 [ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/Nunito/static/Nunito-Regular.ttf" id="7_aowux"]
 [ext_resource type="Texture2D" uid="uid://owdpaaubxo68" path="res://resources/false_disabled.png" id="7_cbwiu"]
 
