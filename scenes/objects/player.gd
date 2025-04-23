@@ -133,12 +133,12 @@ func _physics_process(delta):
 		
 		# Addinng this code to test being able to rotate held item by button press
 		if grabbed_body.is_in_group("rotateable") and Input.is_action_pressed("rotate_right_" + playerID):
-			#grabbed_body.global_rotation += 2 * delta
-			grabbed_body.apply_torque(1000000 * delta)
+			grabbed_body.global_rotation += 2 * delta
+			#grabbed_body.apply_torque(1000000 * delta)
 			#print("I am rotating!")
 		if grabbed_body.is_in_group("rotateable") and Input.is_action_pressed("rotate_left_" + playerID):
-			#grabbed_body.global_rotation -= 2 * delta
-			grabbed_body.apply_torque(-1000000 * delta)
+			grabbed_body.global_rotation -= 2 * delta
+			#grabbed_body.apply_torque(-1000000 * delta)
 			#print("I am rotating!")
 			
 		
@@ -215,9 +215,9 @@ func _input(event):
 			
 			
 			if grabbed_body.is_in_group("rotateable"):
-				grabbed_body.set_collision_mask_value(2, false)
+				#grabbed_body.set_collision_mask_value(2, false)
 				grabbed_body.set_collision_layer_value(3, false) # Don't refresh a player's jump
-				grabbed_body.set_collision_layer_value(2, false) # Don't move players anymore
+				grabbed_body.set_collision_layer_value(4, false) # Don't move players anymore
 			HandSprite.texture = holding_hand
 			
 			if GlobalVariables.controller_rumble:
@@ -242,8 +242,8 @@ func drop_object():
 	grabbed_body.set_meta("grabbed", false)
 	
 	if grabbed_body.is_in_group("rotateable"):
-		grabbed_body.set_collision_mask_value(2, true) 
-		grabbed_body.set_collision_layer_value(2, true) # Boxes can hit players again
+		#grabbed_body.set_collision_mask_value(2, true) 
+		grabbed_body.set_collision_layer_value(4, true) # Boxes can hit players again
 		grabbed_body.set_collision_layer_value(3, true) # Objects can refresh jumps again
 	
 	grabbed_body = null

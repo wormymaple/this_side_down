@@ -65,7 +65,7 @@ func _on_deleter_body_entered(body):
 
 
 func _on_interval_timer_timeout() -> void:
-	print("Release started")
+	#print("Release started")
 	mode = States.MOVING
 	ReleaseTimer.start()
 	

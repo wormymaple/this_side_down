@@ -52,7 +52,6 @@ position = Vector2(545, -494)
 
 [node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_grauf")]
 position = Vector2(867, 614)
-boxes_required = 2
 camera = NodePath("../Camera")
 level = 2
 hints = Array[int]([0, 2])

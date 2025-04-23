@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://di5awjw6ai7ff"]
+
+[ext_resource type="Texture2D" uid="uid://ctfhlac76m300" path="res://art/general/concrete_divider.jpg" id="1_a0ly8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0ly8"]
+size = Vector2(132, 14)
+
+[node name="ConcreteDivider" type="StaticBody2D"]
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.49012e-07)
+shape = SubResource("RectangleShape2D_a0ly8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.275007, 0.275007)
+texture = ExtResource("1_a0ly8")

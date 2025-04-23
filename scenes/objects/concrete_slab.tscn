@@ -1,32 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://kjcah3456ds8"]
+[gd_scene load_steps=3 format=3 uid="uid://kjcah3456ds8"]
 
 [ext_resource type="Texture2D" uid="uid://c2ncvaynv2c1l" path="res://art/general/concrete_slab.png" id="1_khcg6"]
 [ext_resource type="AudioStream" uid="uid://ckw36svtnul4b" path="res://audio/breaking-glass-1.mp3" id="4_lkfu6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_khcg6"]
-size = Vector2(168, 64)
-
 [node name="ConcreteSlab" type="RigidBody2D" groups=["rotateable"]]
 position = Vector2(2.08165e-12, 2.08165e-12)
-collision_layer = 14
-collision_mask = 11
-mass = 10.0
+collision_layer = 268
+collision_mask = 2817
+mass = 5.0
 contact_monitor = true
 max_contacts_reported = 10
 metadata/grabbable = true
 metadata/grabbed = false
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_khcg6")
-
 [node name="Sprite" type="Sprite2D" parent="."]
 modulate = Color(0.693429, 0.69343, 0.693429, 1)
-position = Vector2(1.01328e-06, 1.37091e-06)
-scale = Vector2(0.761905, 0.761905)
+position = Vector2(-1.93268e-12, -1.93268e-12)
+scale = Vector2(0.564728, 0.564728)
 texture = ExtResource("1_khcg6")
 
 [node name="ImpactSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_lkfu6")
 bus = &"Effects"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(61, -32, 65, -30, 68, -27, 70, -24, 70, 22, 68, 26, 65, 30, 61, 32, -60, 32, -65, 30, -68, 27, -70, 22, -70, -24, -68, -28, -66, -30, -63, -32)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

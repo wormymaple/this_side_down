@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var boxes_required: int = 1
 @export var camera: Camera2D
 @export var level: int = 1
 @export var platform_to_attach_to: Path2D = null
@@ -39,34 +38,41 @@ func _ready() -> void:
 			if hint_number == 1:
 				#print("Hint 0")
 				hint_scene.position.x -= 50
-			elif hint_number == 2:
+			else:
 				#print("Hint 1")
 				hint_scene.position.x += 50
-			else:
-				breakpoint
 			
-		
+		elif hints.size() == 3:
+			if hint_number == 1:
+				hint_scene.position.x -= 80
+			elif hint_number == 2:
+				pass
+				#hint_scene.position.x += 50
+			else:
+				hint_scene.position.x += 80
+			
 		hint_scene.position.y = -123
 		add_child(hint_scene)
-		print("Box added!")
+		#print("Box added!")
 		#box_number += 1
 	
 
 func _process(_delta): # It would be best if this code only checked itself when a box moves or is dropped
 	
-	if won_already or len(colliding_bodies) < boxes_required: # Asks if there are enough boxes. This could be indented but activating at every new collision makes a less of a chance or not activating
+	if won_already or len(colliding_bodies) < hints.size(): # Asks if there are enough boxes. This could be indented but activating at every new collision makes a less of a chance or not activating
 		return
 		
 	for body in colliding_bodies:
 		if body.get_meta("grabbed"): # Boxes that are being grabbed do not count
 			return
 			
+		print(abs(body.rotation_degrees))
 		if upside_down:
 			if abs(body.rotation_degrees) > 45: # More than 135 degrees means it is facing downwards. Works for negative rotation because of the abs(). Also works since if the rotation is more than 180 rotation the sign flips.
 				return
 		else: # Normal code for if the landing zone is facing up
-			if abs(body.rotation_degrees) < 135:
-				#print("box rotation is not right")
+			if body.rotation_degrees < 135 + rotation_degrees and body.rotation_degrees > -145 - rotation_degrees:
+				print("box rotation is not right")
 				return
 	
 	#print("That passed!")

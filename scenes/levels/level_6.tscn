@@ -77,7 +77,6 @@ camera = NodePath("../Camera")
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_uogt2")]
 position = Vector2(-116, 247)
-boxes_required = 2
 camera = NodePath("../Camera")
 level = 6
 hints = Array[int]([0, 0])
