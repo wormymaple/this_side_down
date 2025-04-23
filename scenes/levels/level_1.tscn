@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://kiyufpj683ic"]
+[gd_scene load_steps=13 format=4 uid="uid://kiyufpj683ic"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_vjcbh"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://scenes/other/background_warehouse.tscn" id="5_n57bp"]
@@ -11,6 +11,7 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="10_pymf7"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="11_0tqh1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="11_kijhk"]
+[ext_resource type="PackedScene" uid="uid://kjcah3456ds8" path="res://scenes/objects/concrete_slab.tscn" id="12_iav0o"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_vjcbh")
@@ -71,3 +72,6 @@ text = "...And then drop the box
 upside-down on the
 landing zone!"
 horizontal_alignment = 1
+
+[node name="ConcreteSlab" parent="." instance=ExtResource("12_iav0o")]
+position = Vector2(-707, 265)

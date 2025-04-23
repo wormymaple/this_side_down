@@ -17,7 +17,6 @@ const drop_threshold = 100
 var is_in_water: bool
 var on_ground = false
 var things_standing_on = []
-var did_grabbed_body_have_collision_mask_2 = false # Used to set mask layer 2 back to normal when the grabbed body is dropped
 var unmovable = false # The player can't move, either because they are being grabbed or they hit a directional spring
 var standing_in_ladder = 0
 var original_grav_scale = 1 # This is literally 1. Grav scale gets changed when being held or climbing ladders
@@ -128,26 +127,16 @@ func _physics_process(delta):
 	var dir_to_hand = HandMeta.position.angle()
 	HandSprite.rotation = dir_to_hand + (PI / 2) # Required because the hand is off by 90 degrees. This could be optimized
 	
-	var box_collides = get_collision_mask_value(4)
-	if grabbed_body != null:
-		if box_collides:
-			set_collision_mask_value(4, false) # set the player's collision mask value so they won't collide with boxes without mask 2 (Which are boxes being held)
-			
-	elif not box_collides:
-		set_collision_mask_value(4, true) # Player can collide with boxes being carried again
-		
-	#print(target_body)
-	#print(box_collides)
 	
 	## Rotate grabbed item (Provided it is a box)
 	if grabbed_body != null:
 		
 		# Addinng this code to test being able to rotate held item by button press
-		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_right_" + playerID):
+		if grabbed_body.is_in_group("rotateable") and Input.is_action_pressed("rotate_right_" + playerID):
 			#grabbed_body.global_rotation += 2 * delta
 			grabbed_body.apply_torque(1000000 * delta)
 			#print("I am rotating!")
-		if grabbed_body.is_in_group("Box") and Input.is_action_pressed("rotate_left_" + playerID):
+		if grabbed_body.is_in_group("rotateable") and Input.is_action_pressed("rotate_left_" + playerID):
 			#grabbed_body.global_rotation -= 2 * delta
 			grabbed_body.apply_torque(-1000000 * delta)
 			#print("I am rotating!")
@@ -207,9 +196,8 @@ func _input(event):
 			linear_velocity.y *= UNDERWATER_JUMP_MULTIPLIER
 		Jump.play()
 		
-	# grab
+	## grab
 	if event.is_action_pressed("grab_" + playerID):
-		
 		#print("Local: ", Vector2i(get_local_mouse_position())) # Gives you where the mouse is on the screen coordinates 
 		#print("Global: ", Vector2i(get_global_mouse_position()))
 		
@@ -224,16 +212,19 @@ func _input(event):
 			if grabbed_body.is_in_group("Player"):
 				if GlobalVariables.controller_rumble:
 					Input.start_joy_vibration(int(grabbed_body.playerID.right(1)) - 1, 1, 1, 0.3)
-			did_grabbed_body_have_collision_mask_2 = grabbed_body.get_collision_mask_value(2)
-			if grabbed_body.is_in_group("Box"):
+			
+			
+			if grabbed_body.is_in_group("rotateable"):
 				grabbed_body.set_collision_mask_value(2, false)
-				grabbed_body.set_collision_layer_value(3, false)
+				grabbed_body.set_collision_layer_value(3, false) # Don't refresh a player's jump
+				grabbed_body.set_collision_layer_value(2, false) # Don't move players anymore
 			HandSprite.texture = holding_hand
 			
 			if GlobalVariables.controller_rumble:
 				Input.stop_joy_vibration(int(playerID.right(1)) - 1)
 				Input.start_joy_vibration(int(playerID.right(1)) - 1, 0, 1, 0.2)
 			BoxPickup.play()
+			#set_collision_mask_value(4, false)
 			
 	elif event.is_action_released("grab_" + playerID) && grabbed_body != null:
 		drop_object()
@@ -250,9 +241,10 @@ func drop_object():
 	grabbed_body.gravity_scale = original_grav_scale
 	grabbed_body.set_meta("grabbed", false)
 	
-	if grabbed_body.is_in_group("Box"):
-		grabbed_body.set_collision_mask_value(2, did_grabbed_body_have_collision_mask_2) # Also for players? # What is grab_did_collide?
-		grabbed_body.set_collision_layer_value(3, true)
+	if grabbed_body.is_in_group("rotateable"):
+		grabbed_body.set_collision_mask_value(2, true) 
+		grabbed_body.set_collision_layer_value(2, true) # Boxes can hit players again
+		grabbed_body.set_collision_layer_value(3, true) # Objects can refresh jumps again
 	
 	grabbed_body = null
 	
@@ -262,6 +254,7 @@ func drop_object():
 		Input.stop_joy_vibration(int(playerID.right(1)))
 		Input.start_joy_vibration(int(playerID.right(1)) - 1, 1, 0, 0.2)
 	BoxDrop.play()
+	#set_collision_mask_value(4, true)
 
 func _on_grab_area_body_entered(body):
 	if body == self:

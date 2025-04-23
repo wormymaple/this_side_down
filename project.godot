@@ -48,6 +48,7 @@ Box=""
 Player=""
 LandingZone=""
 Spring=""
+rotateable=""
 
 [input]
 
