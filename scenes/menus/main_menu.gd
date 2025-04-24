@@ -34,10 +34,16 @@ func _ready():
 	if OS.get_name() == "Web":
 		$ScrollParent/TitleScreen/HBoxContainer/ButtonQuit.hide()
 	
-	for level in range(0, 12): # Goes from 0-11. Starts at 1 since 1 is always unlocked. Never reaching 12 is fine because there are only 11 textures 
+	for level in range(0, 12): # Goes from 0-11.
 		#print(i)
 		if level > GlobalVariables.last_beaten_level:
-			button_list[level].disabled = true # -1 because the button list indices start at 0
+			button_list[level].disabled = true 
+			button_list[level].icon = locked_icon
+	
+	if GlobalVariables.last_beaten_level < 3:
+		for level in range(12, 18): # 12-17 
+			#print(i)
+			button_list[level].disabled = true
 			button_list[level].icon = locked_icon
 	
 	player_0_playing.button_pressed = GlobalVariables.player_0_playing
@@ -118,6 +124,8 @@ func _process(_delta: float) -> void:
 			ScrollParent.position.x = 1920 * smooth_line.sample(percent_left)
 
 func _start_level(level): # I am not sure why this is it's own function
+	#if left(str(level)) == 'b':
+		
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
 
 func _on_button_1_pressed():
@@ -160,3 +168,17 @@ func _on_check_box_0_toggled(toggled_on: bool) -> void:
 	GlobalVariables.player_0_playing = toggled_on
 	print(toggled_on)
 	GlobalVariables.save_data()
+
+
+func _on_button_13_pressed() -> void:
+	_start_level("b1")
+func _on_button_14_pressed() -> void:
+	_start_level("b2")
+func _on_button_15_pressed() -> void:
+	_start_level("b3")
+func _on_button_16_pressed() -> void:
+	_start_level("b4")
+func _on_button_17_pressed() -> void:
+	_start_level("b5")
+func _on_button_18_pressed() -> void:
+	_start_level("b6")

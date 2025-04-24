@@ -52,13 +52,13 @@ tile_map_data = PackedByteArray("AAAMAAcAAAAJAAIAAAD//wcAAAAJAAIAAAAMAAYAAAAJAAI
 tile_set = ExtResource("10_kurtt")
 
 [node name="ConcreteSlab" parent="." instance=ExtResource("12_mhkam")]
-position = Vector2(-556, 367)
-rotation = 1.20228
+position = Vector2(-543, 373)
+rotation = 0.977693
 
 [node name="ConcreteSlab2" parent="." instance=ExtResource("12_mhkam")]
-position = Vector2(-673, 332)
+position = Vector2(-674, 346)
 rotation = -0.00181386
 
 [node name="ConcreteSlab3" parent="." instance=ExtResource("12_mhkam")]
-position = Vector2(-673, 407)
+position = Vector2(-679, 411)
 rotation = -0.00181386

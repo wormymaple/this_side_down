@@ -49,7 +49,7 @@ func load_data():
 		return
 	
 	last_beaten_level = save_file.get_8()
-	last_beaten_level = 12 # My override
+	#last_beaten_level = 3 # My override
 	bus_master_vol = save_file.get_float()
 	bus_music_vol = save_file.get_float()
 	bus_effects_vol = save_file.get_float()
