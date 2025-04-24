@@ -55,7 +55,7 @@ func _process(_delta):
 
 func _on_deleter_body_entered(body):
 	#print(body.name)
-	if body.is_in_group("Player"): # or body.is_in_group("Box")
+	if body.is_in_group("Player") or body.is_in_group("Box"):
 		if body.on_ground:
 			body.call_deferred("queue_free")
 			get_tree().call_deferred("reload_current_scene")
