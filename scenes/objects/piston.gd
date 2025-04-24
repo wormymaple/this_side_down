@@ -8,6 +8,7 @@ enum Themes {YELLOW, GREEN, BLUE, PURPLE}
 @export var ReleaseCurve: Curve
 @export var WiggleCurve: Curve
 @export_range(0, 500, 1) var deploy_length = 300
+@export var dangerous = true
 
 enum States {WAIT, MOVING}
 var mode = States.WAIT
@@ -55,12 +56,16 @@ func _process(_delta):
 
 func _on_deleter_body_entered(body):
 	#print(body.name)
-	if body.is_in_group("Player") or body.is_in_group("Box"):
-		if body.on_ground:
-			body.call_deferred("queue_free")
-			get_tree().call_deferred("reload_current_scene")
+	if (body.is_in_group("Player") or body.is_in_group("Box")) and dangerous:
+		
+		if body.is_in_group("Player"):
+			if not body.on_ground:
+				return
 			if GlobalVariables.controller_rumble:
 				Input.start_joy_vibration(int(body.playerID.right(1)) - 1, 1, 1, 0.2)
+		body.call_deferred("queue_free")
+		get_tree().call_deferred("reload_current_scene")
+		
 	
 
 

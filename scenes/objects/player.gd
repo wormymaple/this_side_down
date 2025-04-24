@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends RigidBody2D # The player is not a CharacterBody2D because they can't use gravity_scale
 
 # Movement constants
 const MAX_SPEED = 60000
