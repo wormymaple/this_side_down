@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://r0yq03eqwlcd"]
+[gd_scene load_steps=14 format=4 uid="uid://r0yq03eqwlcd"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_ndoax"]
 [ext_resource type="Script" uid="uid://d12jlgy3kgxhx" path="res://scenes/objects/player_spawner.gd" id="2_dmm6o"]
 [ext_resource type="PackedScene" uid="uid://bhn38qg318td8" path="res://scenes/menus/group_camera.tscn" id="2_i1512"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="3_jyb7d"]
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="3_mv7h8"]
+[ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="6_f6egh"]
 [ext_resource type="PackedScene" uid="uid://wonkd2sx7pt6" path="res://scenes/menus/light.tscn" id="8_6vpom"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://scenes/other/background_warehouse.tscn" id="9_5ant1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="9_e6i4h"]
@@ -30,8 +31,32 @@ camera = NodePath("../Camera")
 position = Vector2(-81, 842)
 scale = Vector2(1.07488, 1.07488)
 
+[node name="VoidOutArea" parent="." instance=ExtResource("6_f6egh")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(0, 2936.5)
+rotation = 3.14159
+scale = Vector2(18.5641, -1.35254)
+
+[node name="VoidOutFade" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -1
+position = Vector2(5815.54, 1446)
+rotation = 3.14159
+scale = Vector2(11.6025, -0.84669)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
+vertex_colors = PackedColorArray(0.47, 0.4559, 0.4559, 0, 0.47, 0.4559, 0.4559, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[node name="VoidOut" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -2
+position = Vector2(5815.54, 1854.47)
+rotation = 3.14159
+scale = Vector2(11.6025, -4.48232)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
+
 [node name="Ramp2" parent="." instance=ExtResource("3_jyb7d")]
-position = Vector2(-373, 580)
+position = Vector2(-373, 584)
 scale = Vector2(-1.35254, 1.35254)
 
 [node name="Ramp3" parent="." instance=ExtResource("3_jyb7d")]
@@ -42,8 +67,8 @@ scale = Vector2(1.13261, 1.13261)
 position = Vector2(-458, -1494)
 
 [node name="Box" parent="." instance=ExtResource("12_jkmtc")]
-position = Vector2(-689, 856)
-size = 2.0
+position = Vector2(-464, 856)
+size = 1.6
 
 [node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_e6i4h")]
 position = Vector2(861, 908)

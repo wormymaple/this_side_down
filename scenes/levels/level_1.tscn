@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://kiyufpj683ic"]
+[gd_scene load_steps=13 format=4 uid="uid://kiyufpj683ic"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_vjcbh"]
 [ext_resource type="PackedScene" uid="uid://ckanvdi6ly78t" path="res://scenes/other/background_warehouse.tscn" id="5_n57bp"]
@@ -11,6 +11,7 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="10_pymf7"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="11_0tqh1"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="11_kijhk"]
+[ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="12_iav0o"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_vjcbh")
@@ -26,11 +27,11 @@ metadata/_edit_vertical_guides_ = [576.0]
 position = Vector2(386, -631)
 
 [node name="Camera" parent="." instance=ExtResource("8_such3")]
-position = Vector2(-773, 447)
+position = Vector2(-844, 405)
 zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(-882, 405)
+position = Vector2(-844, 405)
 script = ExtResource("9_8gwty")
 player_scene = ExtResource("10_2kv4e")
 camera = NodePath("../Camera")
@@ -60,6 +61,16 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Grab boxes with right trigger/left click..."
 horizontal_alignment = 1
 
+[node name="Label3" type="Label" parent="."]
+offset_left = -1019.0
+offset_top = 205.0
+offset_right = -173.0
+offset_bottom = 250.0
+theme = ExtResource("11_0tqh1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Send out your arm with right stick/mouse..."
+horizontal_alignment = 1
+
 [node name="Label2" type="Label" parent="."]
 offset_left = 269.0
 offset_top = -26.0
@@ -71,3 +82,27 @@ text = "...And then drop the box
 upside-down on the
 landing zone!"
 horizontal_alignment = 1
+
+[node name="VoidOutArea" parent="." instance=ExtResource("12_iav0o")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(29, 2388.5)
+rotation = 3.14159
+scale = Vector2(18.5641, -1.35254)
+
+[node name="VoidOutFade" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -1
+position = Vector2(5844.54, 898)
+rotation = 3.14159
+scale = Vector2(11.6025, -0.84669)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
+vertex_colors = PackedColorArray(0.47, 0.4559, 0.4559, 0, 0.47, 0.4559, 0.4559, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[node name="VoidOut" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -2
+position = Vector2(5844.54, 1306.47)
+rotation = 3.14159
+scale = Vector2(11.6025, -4.48232)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)

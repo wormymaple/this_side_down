@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=20 format=3 uid="uid://d3uqsmqh0kr2d"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://d3uqsmqh0kr2d"]
 
 [ext_resource type="Texture2D" uid="uid://i15fpgn5itso" path="res://art/general/concrete_tileset.png" id="1_24knw"]
 [ext_resource type="Texture2D" uid="uid://vyn3hf7ycc4u" path="res://art/general/sand_tileset.png" id="2_lg5ry"]
@@ -6,17 +6,14 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4vp6k"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_24knw"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 4.02041, -8, 4.02041)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dauma"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 6)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lg5ry"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g4fnd"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dauma"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 4.02041, -8, 4.02041)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ofd5h"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -276,19 +273,19 @@ separation = Vector2i(1, 1)
 3:4/0 = 0
 3:4/0/terrain_set = 0
 3:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dauma")
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.95689, -8, 4.05581)
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.91894)
 2:4/0 = 0
 2:4/0/terrain_set = 0
 2:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dauma")
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.95689, -8, 4.05581)
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.91894)
 1:4/0 = 0
 1:4/0/terrain_set = 0
 1:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dauma")
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.95689, -8, 4.05581)
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.91894)
 0:4/0 = 0
 0:4/0/terrain_set = 0
-0:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_24knw")
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.95689, -8, 4.05581)
+0:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dauma")
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.91894)
 7:3/0 = 0
 7:3/0/terrain_set = 0
 7:3/0/terrain = 0
@@ -479,13 +476,17 @@ separation = Vector2i(1, 1)
 8:3/0/terrains_peering_bit/top_side = 0
 8:3/0/terrains_peering_bit/top_right_corner = 0
 4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.95689, -8, 4.05581)
+4:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dauma")
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.91894)
 5:4/0 = 0
-5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.95689, -8, 4.05581)
+5:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dauma")
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.91894)
 6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.95689, -8, 4.05581)
+6:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dauma")
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.91894)
 7:4/0 = 0
-7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 3.95689, -8, 4.05581)
+7:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dauma")
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.91894)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ra0xp"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

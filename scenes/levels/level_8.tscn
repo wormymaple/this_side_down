@@ -143,4 +143,28 @@ text = "\"Your only chance of survival, if you are sincerely smitten, lies in hi
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="VoidOutArea2" parent="." instance=ExtResource("12_f5ae4")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(0, 2229.5)
+rotation = 3.14159
+scale = Vector2(18.5641, -1.35254)
+
+[node name="VoidOutFade" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -1
+position = Vector2(5815.54, 739)
+rotation = 3.14159
+scale = Vector2(11.6025, -0.84669)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
+vertex_colors = PackedColorArray(0.47, 0.4559, 0.4559, 0, 0.47, 0.4559, 0.4559, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[node name="VoidOut" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -2
+position = Vector2(5815.54, 1147.47)
+rotation = 3.14159
+scale = Vector2(11.6025, -4.48232)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
+
 [connection signal="body_entered" from="VoidOutArea" to="LandingZone" method="_on_void_out_area_body_entered"]

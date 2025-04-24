@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bfume0p3k4a7x"]
+[gd_scene load_steps=19 format=4 uid="uid://bfume0p3k4a7x"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_sa26g"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="2_5g4cw"]
@@ -14,6 +14,7 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="14_3bci7"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="15_cawam"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="15_ko8rk"]
+[ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="16_gttrq"]
 [ext_resource type="PackedScene" uid="uid://b13ui3edlyvfn" path="res://scenes/objects/spring.tscn" id="16_ot8xr"]
 
 [sub_resource type="Curve2D" id="Curve2D_8saqi"]
@@ -61,7 +62,7 @@ position = Vector2(841, 1437)
 Power = 1150
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(-289, 1398)
+position = Vector2(-362, 1415)
 script = ExtResource("7_twdvf")
 player_scene = ExtResource("8_afu2o")
 camera = NodePath("../Camera")
@@ -70,7 +71,7 @@ gravity_scale = 0.6
 is_in_water = true
 
 [node name="Camera" parent="." instance=ExtResource("12_483kp")]
-position = Vector2(-289, 1398)
+position = Vector2(-362, 1415)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Platform1" parent="." instance=ExtResource("12_n18kp")]
@@ -151,3 +152,27 @@ theme_override_constants/outline_size = 10
 text = "Hello, your computer has virus"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="VoidOutArea" parent="." instance=ExtResource("16_gttrq")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(1023, 3198.5)
+rotation = 3.14159
+scale = Vector2(18.5641, -1.35254)
+
+[node name="VoidOutFade" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -1
+position = Vector2(6838.54, 1708)
+rotation = 3.14159
+scale = Vector2(11.6025, -0.84669)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
+vertex_colors = PackedColorArray(0.47, 0.4559, 0.4559, 0, 0.47, 0.4559, 0.4559, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[node name="VoidOut" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -2
+position = Vector2(6838.54, 2116.47)
+rotation = 3.14159
+scale = Vector2(11.6025, -4.48232)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)

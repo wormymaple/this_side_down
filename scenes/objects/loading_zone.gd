@@ -66,13 +66,13 @@ func _process(_delta): # It would be best if this code only checked itself when 
 		if body.get_meta("grabbed"): # Boxes that are being grabbed do not count
 			return
 			
-		print(abs(body.rotation_degrees))
+		#print(abs(body.rotation_degrees))
 		if upside_down:
 			if abs(body.rotation_degrees) > 45: # More than 135 degrees means it is facing downwards. Works for negative rotation because of the abs(). Also works since if the rotation is more than 180 rotation the sign flips.
 				return
 		else: # Normal code for if the landing zone is facing up
 			if body.rotation_degrees < 135 + rotation_degrees and body.rotation_degrees > -145 - rotation_degrees:
-				print("box rotation is not right")
+				#print("box rotation is not right")
 				return
 	
 	#print("That passed!")

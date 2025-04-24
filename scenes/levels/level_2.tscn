@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b648xp38c3ny7"]
+[gd_scene load_steps=15 format=4 uid="uid://b648xp38c3ny7"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_daa33"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="4_nh0bc"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="11_xo40b"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="12_8urt3"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="13_tv7cl"]
+[ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="14_r88tb"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_daa33")
@@ -88,3 +89,27 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Rotate held boxes with Q/E or X/Y"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="VoidOutArea" parent="." instance=ExtResource("14_r88tb")]
+modulate = Color(1, 1, 1, 1)
+position = Vector2(0, 2644.5)
+rotation = 3.14159
+scale = Vector2(18.5641, -1.35254)
+
+[node name="VoidOutFade" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -1
+position = Vector2(5815.54, 1154)
+rotation = 3.14159
+scale = Vector2(11.6025, -0.84669)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
+vertex_colors = PackedColorArray(0.47, 0.4559, 0.4559, 0, 0.47, 0.4559, 0.4559, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[node name="VoidOut" type="Polygon2D" parent="."]
+light_mask = 0
+z_index = -2
+position = Vector2(5815.54, 1562.47)
+rotation = 3.14159
+scale = Vector2(11.6025, -4.48232)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)

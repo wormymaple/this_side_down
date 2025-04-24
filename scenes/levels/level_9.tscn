@@ -100,13 +100,13 @@ scale = Vector2(-1, 1)
 position = Vector2(1663, 700)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(600, 714)
+position = Vector2(540, 725)
 script = ExtResource("12_42hc6")
 player_scene = ExtResource("13_avyxm")
 camera = NodePath("../Camera")
 
 [node name="Camera" parent="." instance=ExtResource("14_wbbsx")]
-position = Vector2(600, 715)
+position = Vector2(540, 726)
 zoom = Vector2(1.5, 1.5)
 camera_offset = Vector2(0, -150)
 
