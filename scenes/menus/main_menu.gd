@@ -41,7 +41,7 @@ func _ready():
 			button_list[level].icon = locked_icon
 	
 	if GlobalVariables.last_beaten_level < 12:
-		for level in range(12, 18): # 12-17 
+		for level in range(12, 21): # 12-17 
 			#print(i)
 			button_list[level].disabled = true
 			button_list[level].icon = locked_icon
@@ -182,3 +182,9 @@ func _on_button_17_pressed() -> void:
 	_start_level(17)
 func _on_button_18_pressed() -> void:
 	_start_level(18)
+func _on_button_19_pressed() -> void:
+	_start_level(19)
+func _on_button_20_pressed() -> void:
+	_start_level(20)
+func _on_button_21_pressed() -> void:
+	_start_level(21)
