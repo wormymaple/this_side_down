@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://kjcah3456ds8"]
+[gd_scene load_steps=4 format=3 uid="uid://kjcah3456ds8"]
 
 [ext_resource type="Texture2D" uid="uid://c2ncvaynv2c1l" path="res://art/general/concrete_slab.png" id="1_khcg6"]
+[ext_resource type="Script" uid="uid://b7artahkviwx3" path="res://scenes/objects/concrete_slab.gd" id="1_mpw0f"]
 [ext_resource type="AudioStream" uid="uid://ckw36svtnul4b" path="res://audio/breaking-glass-1.mp3" id="4_lkfu6"]
 
 [node name="ConcreteSlab" type="RigidBody2D" groups=["rotateable"]]
@@ -10,6 +11,7 @@ collision_mask = 2817
 mass = 5.0
 contact_monitor = true
 max_contacts_reported = 10
+script = ExtResource("1_mpw0f")
 metadata/grabbable = true
 metadata/grabbed = false
 
@@ -26,4 +28,9 @@ bus = &"Effects"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(61, -32, 65, -30, 68, -27, 70, -24, 70, 22, 68, 26, 65, 30, 61, 32, -60, 32, -65, 30, -68, 27, -70, 22, -70, -24, -68, -28, -66, -30, -63, -32)
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

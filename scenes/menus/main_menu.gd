@@ -40,7 +40,7 @@ func _ready():
 			button_list[level].disabled = true 
 			button_list[level].icon = locked_icon
 	
-	if GlobalVariables.last_beaten_level < 3:
+	if GlobalVariables.last_beaten_level < 12:
 		for level in range(12, 18): # 12-17 
 			#print(i)
 			button_list[level].disabled = true
@@ -171,14 +171,14 @@ func _on_check_box_0_toggled(toggled_on: bool) -> void:
 
 
 func _on_button_13_pressed() -> void:
-	_start_level("b1")
+	_start_level(13)
 func _on_button_14_pressed() -> void:
-	_start_level("b2")
+	_start_level(14)
 func _on_button_15_pressed() -> void:
-	_start_level("b3")
+	_start_level(15)
 func _on_button_16_pressed() -> void:
-	_start_level("b4")
+	_start_level(16)
 func _on_button_17_pressed() -> void:
-	_start_level("b5")
+	_start_level(17)
 func _on_button_18_pressed() -> void:
-	_start_level("b6")
+	_start_level(18)

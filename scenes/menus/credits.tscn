@@ -175,4 +175,18 @@ theme = ExtResource("5_ss1ur")
 theme_override_font_sizes/font_size = 75
 icon = ExtResource("1_8piub")
 
+[node name="Label4" type="Label" parent="."]
+offset_left = 1167.0
+offset_top = 873.0
+offset_right = 1514.0
+offset_bottom = 966.0
+scale = Vector2(1.36778, 1.35096)
+theme = ExtResource("5_ss1ur")
+theme_override_colors/font_color = Color(1, 0.490196, 0.788235, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Special levels have been unlocked!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

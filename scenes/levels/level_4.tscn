@@ -74,29 +74,16 @@ tile_map_data = PackedByteArray("AAD+/w4AAAAJAAIAAAD+/w0AAAAJAAIAAAD+/wwAAAAJAAI
 tile_set = ExtResource("13_qii1v")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 378.0
-offset_top = 523.0
-offset_right = 849.0
-offset_bottom = 587.0
+offset_left = 385.0
+offset_top = 761.0
+offset_right = 856.0
+offset_bottom = 825.0
 scale = Vector2(0.995067, 0.98283)
 theme = ExtResource("12_vgfet")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "Don't fall in pits!"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="."]
-offset_left = 92.0
-offset_top = 458.0
-offset_right = 582.0
-offset_bottom = 522.0
-scale = Vector2(0.995067, 0.98283)
-theme = ExtResource("12_vgfet")
-theme_override_colors/font_color = Color(1, 0.490196, 0.788235, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-text = "Special levels have been unlocked"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
