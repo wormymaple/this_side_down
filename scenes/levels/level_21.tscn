@@ -65,7 +65,7 @@ player_scene = ExtResource("7_8wsex")
 camera = NodePath("../Camera")
 
 [node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_uskbl")]
-position = Vector2(897, 433)
+position = Vector2(834, 433)
 camera = NodePath("../Camera")
 level = 21
 
@@ -81,7 +81,7 @@ tile_map_data = PackedByteArray("AAAMAAcAAAAJAAIAAAD//wcAAAAJAAIAAAAMAAYAAAAJAAI
 tile_set = ExtResource("10_nevci")
 
 [node name="Box" parent="." instance=ExtResource("14_0yalt")]
-position = Vector2(-1000, -431)
+position = Vector2(-981, -431)
 size = 2.0
 
 [node name="ConcreteSlab" parent="." instance=ExtResource("18_11oyt")]
