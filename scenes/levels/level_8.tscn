@@ -77,16 +77,19 @@ zoom = Vector2(1.5, 1.5)
 camera_offset = Vector2(0, 70)
 
 [node name="Plank" parent="." instance=ExtResource("9_fnxdr")]
-position = Vector2(403, 95)
-scale = Vector2(2, 2)
+position = Vector2(320, 93)
 
 [node name="Plank2" parent="." instance=ExtResource("9_fnxdr")]
-position = Vector2(728, 95)
-scale = Vector2(2, 2)
+position = Vector2(483, 93)
 
 [node name="Plank3" parent="." instance=ExtResource("9_fnxdr")]
-position = Vector2(1053, 95)
-scale = Vector2(2, 2)
+position = Vector2(646, 93)
+
+[node name="Plank4" parent="." instance=ExtResource("9_fnxdr")]
+position = Vector2(810, 93)
+
+[node name="Plank5" parent="." instance=ExtResource("9_fnxdr")]
+position = Vector2(973, 93)
 
 [node name="Spring3" parent="." instance=ExtResource("10_gwinh")]
 position = Vector2(957, 440)

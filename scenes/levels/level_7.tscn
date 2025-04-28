@@ -49,7 +49,7 @@ theme = 2
 size = 2.0
 
 [node name="Camera" parent="." instance=ExtResource("10_sb6ob")]
-position = Vector2(505, 658.87)
+position = Vector2(553, 716)
 zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
@@ -75,34 +75,43 @@ speed = 0.4
 position = Vector2(1067, 422)
 speed = 0.4
 
+[node name="Divider1" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(1402, 325)
+rotation = -1.5708
+
 [node name="Divider2" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(1398, 284)
+position = Vector2(1402, 162)
 rotation = -1.5708
-scale = Vector2(1.5, 1.5)
-
-[node name="Divider5" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(1398, 40)
-rotation = -1.5708
-scale = Vector2(1.5, 1.5)
-
-[node name="Divider6" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(1398, -204)
-rotation = -1.5708
-scale = Vector2(1.5, 1.5)
-
-[node name="Divider" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(280, 604)
-rotation = 1.5708
-scale = Vector2(1.5, 1.5)
 
 [node name="Divider3" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(148, 489)
-scale = Vector2(1.5, 1.5)
+position = Vector2(1402, -1)
+rotation = -1.5708
 
 [node name="Divider4" parent="." instance=ExtResource("13_47ram")]
-position = Vector2(15, 603)
+position = Vector2(1402, -164)
 rotation = -1.5708
-scale = Vector2(1.5, 1.5)
+
+[node name="Divider10" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(82, 501)
+
+[node name="Divider13" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(235, 501)
+
+[node name="Divider11" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(303, 596)
+rotation = 1.5708
+
+[node name="Divider14" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(303, 758)
+rotation = 1.5708
+
+[node name="Divider12" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(14, 597)
+rotation = -1.5708
+
+[node name="Divider15" parent="." instance=ExtResource("13_47ram")]
+position = Vector2(14, 760)
+rotation = -1.5708
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-133, -234)

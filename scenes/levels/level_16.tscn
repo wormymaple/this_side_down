@@ -12,7 +12,7 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="10_v72oy"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="11_66u3y"]
 
-[node name="Level4" type="Node2D"]
+[node name="Level16" type="Node2D"]
 script = ExtResource("1_lbynr")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("2_lbspt")]

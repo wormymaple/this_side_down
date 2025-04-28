@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://jyvaflxbj8dc" path="res://scenes/objects/box_triangle.tscn" id="11_3cpn8"]
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="12_8fg8a"]
 
-[node name="Level2" type="Node2D"]
+[node name="Level14" type="Node2D"]
 script = ExtResource("1_hd4w6")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("2_x7cri")]

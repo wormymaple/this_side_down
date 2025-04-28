@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c2ncvaynv2c1l" path="res://art/general/concrete_slab.png" id="1_khcg6"]
 [ext_resource type="Script" uid="uid://b7artahkviwx3" path="res://scenes/objects/concrete_slab.gd" id="1_mpw0f"]
-[ext_resource type="AudioStream" uid="uid://ckw36svtnul4b" path="res://audio/breaking-glass-1.mp3" id="4_lkfu6"]
+[ext_resource type="AudioStream" uid="uid://cclo62k1sbr1d" path="res://audio/box_hit_1.mp3" id="3_mpw0f"]
 
 [node name="ConcreteSlab" type="RigidBody2D" groups=["rotateable"]]
 position = Vector2(2.08165e-12, 2.08165e-12)
 collision_layer = 268
-collision_mask = 2817
+collision_mask = 769
 mass = 5.0
 contact_monitor = true
 max_contacts_reported = 10
@@ -22,7 +22,7 @@ scale = Vector2(0.564728, 0.564728)
 texture = ExtResource("1_khcg6")
 
 [node name="ImpactSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_lkfu6")
+stream = ExtResource("3_mpw0f")
 bus = &"Effects"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

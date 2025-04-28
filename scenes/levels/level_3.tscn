@@ -84,12 +84,9 @@ position = Vector2(-12, -305)
 position = Vector2(12, 305)
 
 [node name="Divider2" parent="." instance=ExtResource("12_aaf8q")]
-position = Vector2(421, 200)
+position = Vector2(413, 195)
 rotation = 1.5708
-
-[node name="Divider3" parent="." instance=ExtResource("12_aaf8q")]
-position = Vector2(421, 40)
-rotation = 1.5708
+scale = Vector2(1.1, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-851, -200)

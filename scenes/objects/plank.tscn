@@ -3,22 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://c5tsobj6q5ool" path="res://art/area_1/plank.jpg" id="2_0nldi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2mhgt"]
-size = Vector2(163, 14)
+size = Vector2(163, 28)
 
 [node name="Plank" type="StaticBody2D"]
 collision_layer = 2048
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-41, 0)
-scale = Vector2(0.275007, 0.275007)
-texture = ExtResource("2_0nldi")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(40, 0)
-scale = Vector2(0.275007, 0.275007)
+scale = Vector2(0.55, 0.55)
 texture = ExtResource("2_0nldi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_2mhgt")

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="13_0qkse"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://scenes/objects/ladder.tscn" id="14_xkfgo"]
 
-[node name="Level5" type="Node2D"]
+[node name="Level17" type="Node2D"]
 script = ExtResource("1_ctdd6")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("2_2ytym")]
