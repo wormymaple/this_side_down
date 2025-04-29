@@ -10,8 +10,11 @@ func _ready() -> void:
 func _on_body_entered(body: Node):
 	if body.is_in_group("Player"):
 			return
-	
+	#print(self.get_linear_velocity().length())
+	#print(get_angular_velocity())
 	if not can_play_sound:
+		return
+	if linear_velocity.length() < 100: # This is flawed because it's highly dependent on rotation, but it's oka
 		return
 	
 	$ImpactSound.play()

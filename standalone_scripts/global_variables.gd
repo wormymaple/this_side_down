@@ -108,7 +108,7 @@ func win_level(level_cleared):
 	
 	await get_tree().create_timer(2).timeout # Give the fade in time to...fade
 	
-	if level_cleared != 12 and level_cleared != 18: 
+	if level_cleared != 12 and level_cleared != 24: 
 		get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level_cleared + 1) + ".tscn")
 	else: # Take me to the credits!
 		get_tree().change_scene_to_file("res://scenes/menus/credits.tscn")

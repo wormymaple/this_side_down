@@ -123,35 +123,35 @@ func _process(_delta: float) -> void:
 		States.FROM_CONTROLLERS:
 			ScrollParent.position.x = 1920 * smooth_line.sample(percent_left)
 
-func _start_level(level): # I am not sure why this is it's own function
+func start_level(level): # I am not sure why this is it's own function
 	#if left(str(level)) == 'b':
 		
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
 
 func _on_button_1_pressed():
-	_start_level(1)
+	start_level(1)
 func _on_button_2_pressed():
-	_start_level(2)
+	start_level(2)
 func _on_button_3_pressed():
-	_start_level(3)
+	start_level(3)
 func _on_button_4_pressed():
-	_start_level(4)
+	start_level(4)
 func _on_button_5_pressed():
-	_start_level(5)
+	start_level(5)
 func _on_button_6_pressed():
-	_start_level(6)
+	start_level(6)
 func _on_button_7_pressed():
-	_start_level(7)
+	start_level(7)
 func _on_button_8_pressed():
-	_start_level(8)
+	start_level(8)
 func _on_button_9_pressed():
-	_start_level(9)
+	start_level(9)
 func _on_button_10_pressed():
-	_start_level(10)
+	start_level(10)
 func _on_button_11_pressed():
-	_start_level(11)
+	start_level(11)
 func _on_button_12_pressed():
-	_start_level(12)
+	start_level(12)
 
 func _on_timer_timeout() -> void:
 	slide_mode = States.WAIT
@@ -171,20 +171,26 @@ func _on_check_box_0_toggled(toggled_on: bool) -> void:
 
 
 func _on_button_13_pressed() -> void:
-	_start_level(13)
+	start_level(13)
 func _on_button_14_pressed() -> void:
-	_start_level(14)
+	start_level(14)
 func _on_button_15_pressed() -> void:
-	_start_level(15)
+	start_level(15)
 func _on_button_16_pressed() -> void:
-	_start_level(16)
+	start_level(16)
 func _on_button_17_pressed() -> void:
-	_start_level(17)
+	start_level(17)
 func _on_button_18_pressed() -> void:
-	_start_level(18)
+	start_level(18)
 func _on_button_19_pressed() -> void:
-	_start_level(19)
+	start_level(19)
 func _on_button_20_pressed() -> void:
-	_start_level(20)
+	start_level(20)
 func _on_button_21_pressed() -> void:
-	_start_level(21)
+	start_level(21)
+func _on_button_22_pressed() -> void:
+	start_level(22)
+func _on_button_23_pressed() -> void:
+	start_level(23)
+func _on_button_24_pressed() -> void:
+	start_level(24)
