@@ -169,6 +169,7 @@ func _on_check_box_0_toggled(toggled_on: bool) -> void:
 	print(toggled_on)
 	GlobalVariables.save_data()
 
+# To scroll to the special levels, make the y of LevelContainer -1048
 
 func _on_button_13_pressed() -> void:
 	start_level(13)
