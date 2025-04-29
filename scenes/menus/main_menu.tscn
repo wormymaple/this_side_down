@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=44 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" uid="uid://bfk5mqt5lko4y" path="res://scenes/menus/main_menu.gd" id="1_eci1h"]
 [ext_resource type="Texture2D" uid="uid://bchwkejqsfd4p" path="res://art/menus/box_background.jpg" id="2_6imgi"]
@@ -25,8 +25,12 @@
 [ext_resource type="Texture2D" uid="uid://push1dudb1c8" path="res://art/menus/11.png" id="22_4cpr1"]
 [ext_resource type="Texture2D" uid="uid://cb8pjiyay57a1" path="res://art/menus/12.png" id="23_t83ru"]
 [ext_resource type="StyleBox" uid="uid://cghq55g2oqm2g" path="res://resources/transparent_color.tres" id="25_6imgi"]
+[ext_resource type="Texture2D" uid="uid://j8bh8tov1ivj" path="res://art/menus/13.png" id="25_ykxr0"]
 [ext_resource type="Texture2D" uid="uid://v66l2jed5dcs" path="res://art/player/player_legs.png" id="26_1hq2q"]
+[ext_resource type="Texture2D" uid="uid://3jjnqo2phlwf" path="res://art/menus/14.png" id="26_eeloc"]
+[ext_resource type="Texture2D" uid="uid://bpnyksqbnvbqy" path="res://art/menus/15.png" id="27_oina4"]
 [ext_resource type="Texture2D" uid="uid://dhcgep0jgavc2" path="res://art/player/player_head.png" id="27_wxcro"]
+[ext_resource type="Texture2D" uid="uid://cok5lwfldcqgj" path="res://art/menus/16.png" id="28_b4rtx"]
 
 [sub_resource type="Curve" id="Curve_jygr6"]
 _data = [Vector2(0, 0), 0.0, 0.027516, 0, 0, Vector2(1, 1), -0.0168326, 0.0, 0, 0]
@@ -61,7 +65,7 @@ script = ExtResource("1_eci1h")
 Level1Button = NodePath("ScrollParent/LevelSelect/GridContainer/Button1")
 QuitButton = NodePath("ScrollParent/TitleScreen/HBoxContainer/ButtonQuit")
 ControllerBackButton = NodePath("ScrollParent/ControllerMenu/ButtonBackController")
-button_list = [NodePath("ScrollParent/LevelSelect/GridContainer/Button1"), NodePath("ScrollParent/LevelSelect/GridContainer/Button2"), NodePath("ScrollParent/LevelSelect/GridContainer/Button3"), NodePath("ScrollParent/LevelSelect/GridContainer/Button4"), NodePath("ScrollParent/LevelSelect/GridContainer/Button5"), NodePath("ScrollParent/LevelSelect/GridContainer/Button6"), NodePath("ScrollParent/LevelSelect/GridContainer/Button7"), NodePath("ScrollParent/LevelSelect/GridContainer/Button8"), NodePath("ScrollParent/LevelSelect/GridContainer/Button9"), NodePath("ScrollParent/LevelSelect/GridContainer/Button10"), NodePath("ScrollParent/LevelSelect/GridContainer/Button11"), NodePath("ScrollParent/LevelSelect/GridContainer/Button12"), NodePath("ScrollParent/LevelSelect/GridContainer/Button13"), NodePath("ScrollParent/LevelSelect/GridContainer/Button14"), NodePath("ScrollParent/LevelSelect/GridContainer/Button15"), NodePath("ScrollParent/LevelSelect/GridContainer/Button16"), NodePath("ScrollParent/LevelSelect/GridContainer/Button17"), NodePath("ScrollParent/LevelSelect/GridContainer/Button18"), NodePath("ScrollParent/LevelSelect/GridContainer/Button19"), NodePath("ScrollParent/LevelSelect/GridContainer/Button20"), NodePath("ScrollParent/LevelSelect/GridContainer/Button21")]
+button_list = [NodePath("ScrollParent/LevelSelect/GridContainer/Button1"), NodePath("ScrollParent/LevelSelect/GridContainer/Button2"), NodePath("ScrollParent/LevelSelect/GridContainer/Button3"), NodePath("ScrollParent/LevelSelect/GridContainer/Button4"), NodePath("ScrollParent/LevelSelect/GridContainer/Button5"), NodePath("ScrollParent/LevelSelect/GridContainer/Button6"), NodePath("ScrollParent/LevelSelect/GridContainer/Button7"), NodePath("ScrollParent/LevelSelect/GridContainer/Button8"), NodePath("ScrollParent/LevelSelect/GridContainer/Button9"), NodePath("ScrollParent/LevelSelect/GridContainer/Button10"), NodePath("ScrollParent/LevelSelect/GridContainer/Button11"), NodePath("ScrollParent/LevelSelect/GridContainer/Button12"), NodePath("ScrollParent/LevelSelect/GridContainer/Button13"), NodePath("ScrollParent/LevelSelect/GridContainer/Button14"), NodePath("ScrollParent/LevelSelect/GridContainer/Button15"), NodePath("ScrollParent/LevelSelect/GridContainer/Button16"), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
 smooth_line = SubResource("Curve_jygr6")
 player_0_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer/CheckBox0")
 player_1_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer/CheckBox1")
@@ -206,14 +210,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SelectYourLevel" type="Label" parent="ScrollParent/LevelSelect"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 849.0
-offset_top = 166.0
-offset_right = 1397.0
-offset_bottom = 276.0
+offset_left = 929.0
+offset_top = 240.0
+offset_right = 1477.0
+offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.98736, 0.957039, 0.931485, 1)
@@ -229,10 +234,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 166.0
-offset_top = 760.0
-offset_right = 353.0
-offset_bottom = 899.0
+offset_left = 1977.0
+offset_top = 188.0
+offset_right = 2410.0
+offset_bottom = 222.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0.45, 1)
@@ -246,10 +251,10 @@ autowrap_mode = 2
 
 [node name="ButtonBack" type="Button" parent="ScrollParent/LevelSelect"]
 layout_mode = 0
-offset_left = 450.0
-offset_top = 82.0
-offset_right = 779.0
-offset_bottom = 264.0
+offset_left = 301.0
+offset_top = 91.0
+offset_right = 630.0
+offset_bottom = 273.0
 focus_neighbor_left = NodePath(".")
 focus_previous = NodePath(".")
 theme = ExtResource("5_bpy87")
@@ -260,213 +265,268 @@ icon = ExtResource("11_y4gey")
 
 [node name="GridContainer" type="GridContainer" parent="ScrollParent/LevelSelect"]
 layout_mode = 2
-offset_left = 401.0
-offset_top = 300.0
-offset_right = 2101.0
-offset_bottom = 1360.0
+offset_left = 409.0
+offset_top = 350.0
+offset_right = 2059.0
+offset_bottom = 1160.0
 scale = Vector2(0.685835, 0.685835)
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 6
 
 [node name="Button1" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 layout_mode = 2
+size_flags_horizontal = 5
 focus_neighbor_left = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("12_n8vdk")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button2" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("13_6imgi")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button3" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("14_1hq2q")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button4" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("15_wxcro")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button5" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("16_y4gey")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button6" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("17_ykxr0")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button7" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 focus_neighbor_left = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("18_eeloc")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button8" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("19_oina4")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button9" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 text = "
 "
 icon = ExtResource("20_b4rtx")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button10" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("21_37lca")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button11" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("22_4cpr1")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button12" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
+modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 focus_next = NodePath("../Button13")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("23_t83ru")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button13" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
+modulate = Color(1, 0.490196, 0.290196, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 focus_neighbor_left = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("12_n8vdk")
+icon = ExtResource("25_ykxr0")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button14" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
+modulate = Color(1, 0.490196, 0.290196, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("13_6imgi")
+icon = ExtResource("26_eeloc")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button15" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
+modulate = Color(1, 0.490196, 0.290196, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+size_flags_horizontal = 5
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("14_1hq2q")
+icon = ExtResource("27_oina4")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
 [node name="Button16" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
+modulate = Color(1, 0.490196, 0.290196, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("15_wxcro")
+icon = ExtResource("28_b4rtx")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button17" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
+[node name="w" type="GridContainer" parent="ScrollParent/LevelSelect"]
+layout_mode = 2
+offset_left = 2004.0
+offset_top = 445.0
+offset_right = 3704.0
+offset_bottom = 1535.0
+scale = Vector2(0.685835, 0.685835)
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 6
+
+[node name="Button17" type="Button" parent="ScrollParent/LevelSelect/w"]
+modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("16_y4gey")
+icon = ExtResource("12_n8vdk")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button18" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
+[node name="Button18" type="Button" parent="ScrollParent/LevelSelect/w"]
+modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
@@ -474,12 +534,13 @@ focus_next = NodePath("../Button19")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("17_ykxr0")
+icon = ExtResource("13_6imgi")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button19" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
+[node name="Button19" type="Button" parent="ScrollParent/LevelSelect/w"]
+modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
@@ -488,64 +549,69 @@ focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
+icon = ExtResource("14_1hq2q")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button20" type="Button" parent="ScrollParent/LevelSelect/w"]
+modulate = Color(1, 0, 0.45098, 1)
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_neighbor_bottom = NodePath(".")
+theme = ExtResource("5_bpy87")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("12_6imgi")
+icon = ExtResource("15_wxcro")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button21" type="Button" parent="ScrollParent/LevelSelect/w"]
+modulate = Color(1, 0, 0.45098, 1)
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_neighbor_bottom = NodePath(".")
+theme = ExtResource("5_bpy87")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("12_6imgi")
+icon = ExtResource("16_y4gey")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button22" type="Button" parent="ScrollParent/LevelSelect/w"]
+modulate = Color(1, 0, 0.45098, 1)
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_neighbor_bottom = NodePath(".")
+theme = ExtResource("5_bpy87")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("12_6imgi")
+icon = ExtResource("17_ykxr0")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button23" type="Button" parent="ScrollParent/LevelSelect/w"]
+modulate = Color(1, 0, 0.45098, 1)
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_neighbor_bottom = NodePath(".")
+theme = ExtResource("5_bpy87")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("18_eeloc")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button20" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
-z_index = 3
-custom_minimum_size = Vector2(250, 250)
-layout_mode = 2
-focus_neighbor_bottom = NodePath(".")
-theme = ExtResource("5_bpy87")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("19_oina4")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Button21" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
-z_index = 3
-custom_minimum_size = Vector2(250, 250)
-layout_mode = 2
-focus_neighbor_bottom = NodePath(".")
-theme = ExtResource("5_bpy87")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("20_b4rtx")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Button22" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
-z_index = 3
-custom_minimum_size = Vector2(250, 250)
-layout_mode = 2
-focus_neighbor_bottom = NodePath(".")
-theme = ExtResource("5_bpy87")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("21_37lca")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Button23" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
-z_index = 3
-custom_minimum_size = Vector2(250, 250)
-layout_mode = 2
-focus_neighbor_bottom = NodePath(".")
-theme = ExtResource("5_bpy87")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("22_4cpr1")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Button24" type="Button" parent="ScrollParent/LevelSelect/GridContainer"]
-modulate = Color(1, 0.49, 0.7875, 1)
+[node name="Button24" type="Button" parent="ScrollParent/LevelSelect/w"]
+modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
@@ -554,7 +620,8 @@ focus_next = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
-icon = ExtResource("23_t83ru")
+icon = ExtResource("19_oina4")
+flat = true
 icon_alignment = 1
 expand_icon = true
 
@@ -988,14 +1055,14 @@ icon = ExtResource("11_y4gey")
 [connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button14" to="." method="_on_button_14_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button15" to="." method="_on_button_15_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button16" to="." method="_on_button_16_pressed"]
-[connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button17" to="." method="_on_button_17_pressed"]
-[connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button18" to="." method="_on_button_18_pressed"]
-[connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button19" to="." method="_on_button_19_pressed"]
-[connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button20" to="." method="_on_button_20_pressed"]
-[connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button21" to="." method="_on_button_21_pressed"]
-[connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button22" to="." method="_on_button_22_pressed"]
-[connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button23" to="." method="_on_button_23_pressed"]
-[connection signal="pressed" from="ScrollParent/LevelSelect/GridContainer/Button24" to="." method="_on_button_24_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/w/Button17" to="." method="_on_button_17_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/w/Button18" to="." method="_on_button_18_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/w/Button19" to="." method="_on_button_19_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/w/Button20" to="." method="_on_button_20_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/w/Button21" to="." method="_on_button_21_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/w/Button22" to="." method="_on_button_22_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/w/Button23" to="." method="_on_button_23_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/w/Button24" to="." method="_on_button_24_pressed"]
 [connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer/CheckBox0" to="." method="_on_check_box_0_toggled"]
 [connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer/CheckBox1" to="." method="_on_check_box_1_toggled"]
 [connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer/CheckBox2" to="." method="_on_check_box_2_toggled"]

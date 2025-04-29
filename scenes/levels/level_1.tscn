@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="11_kijhk"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="12_iav0o"]
 
-[node name="Level1" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_vjcbh")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("6_yeun7")]
@@ -40,7 +40,7 @@ camera = NodePath("../Camera")
 position = Vector2(-337, 408)
 sleeping = true
 
-[node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_kijhk")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_kijhk")]
 position = Vector2(607, 272)
 camera = NodePath("../Camera")
 

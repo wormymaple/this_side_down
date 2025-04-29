@@ -12,7 +12,7 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="10_v72oy"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="11_66u3y"]
 
-[node name="Level16" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_lbynr")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("2_lbspt")]
@@ -35,10 +35,10 @@ script = ExtResource("6_82kun")
 player_scene = ExtResource("7_f0pij")
 camera = NodePath("../Camera")
 
-[node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_riis0")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_riis0")]
 position = Vector2(916, 124)
 camera = NodePath("../Camera")
-level = 16
+level = 5
 
 [node name="Label" type="Label" parent="."]
 offset_left = -418.0

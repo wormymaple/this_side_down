@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bbybiva8l4ojn" path="res://scenes/objects/ramp.tscn" id="16_sinvx"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="17_ggy2w"]
 
-[node name="Level12" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_pjou6")
 Song = 1
 

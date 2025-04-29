@@ -28,7 +28,7 @@ _data = {
 }
 point_count = 2
 
-[node name="Level6" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_7gtpw")
 
 [node name="Light" parent="." instance=ExtResource("11_unprq")]
@@ -76,10 +76,10 @@ script = ExtResource("7_fhnad")
 player_scene = ExtResource("8_lh8vf")
 camera = NodePath("../Camera")
 
-[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_uogt2")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_uogt2")]
 position = Vector2(-116, 247)
 camera = NodePath("../Camera")
-level = 6
+level = 7
 hints = Array[int]([0, 0])
 
 [node name="Platform2" parent="." instance=ExtResource("7_hqlvf")]

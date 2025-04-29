@@ -19,7 +19,7 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="17_ggy2w"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="18_qscwv"]
 
-[node name="Level12" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_pjou6")
 Song = 1
 
@@ -277,28 +277,28 @@ Power = 1300
 position = Vector2(1319, -226)
 rotation = 3.15147
 theme = 3
-landing_zone = NodePath("../LandingZone")
+landing_zone = NodePath("../LoadingZone")
 deploy_length = 320
 
 [node name="Piston2" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
 position = Vector2(1463, -226)
 rotation = 3.15147
 theme = 3
-landing_zone = NodePath("../LandingZone")
+landing_zone = NodePath("../LoadingZone")
 deploy_length = 320
 
 [node name="Piston3" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
 position = Vector2(1607, -226)
 rotation = 3.15147
 theme = 3
-landing_zone = NodePath("../LandingZone")
+landing_zone = NodePath("../LoadingZone")
 deploy_length = 320
 
-[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_2ie1f")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_2ie1f")]
 position = Vector2(1867, 830)
 rotation = 0.148353
 camera = NodePath("../Camera")
-level = 11
+level = 14
 
 [node name="Platform" parent="." instance=ExtResource("9_df3oo")]
 position = Vector2(1895, 870)

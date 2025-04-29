@@ -27,7 +27,7 @@ point_count = 2
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vtxps"]
 light_mode = 1
 
-[node name="Level9" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_btr2x")
 Song = 1
 
@@ -54,11 +54,11 @@ rotation = -3.12444
 theme = 2
 size = 1.5
 
-[node name="LandingZone" parent="." node_paths=PackedStringArray("camera", "platform_to_attach_to") instance=ExtResource("3_7stkk")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera", "platform_to_attach_to") instance=ExtResource("3_7stkk")]
 position = Vector2(299, 311)
 rotation = 3.14159
 camera = NodePath("../Camera")
-level = 9
+level = 12
 platform_to_attach_to = NodePath("../Platform")
 upside_down = true
 

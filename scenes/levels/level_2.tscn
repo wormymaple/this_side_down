@@ -51,7 +51,7 @@ camera = NodePath("../Camera")
 [node name="Light" parent="." instance=ExtResource("9_64wh3")]
 position = Vector2(545, -494)
 
-[node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_grauf")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_grauf")]
 position = Vector2(867, 614)
 camera = NodePath("../Camera")
 level = 2

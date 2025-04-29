@@ -23,7 +23,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0kylo"]
 light_mode = 1
 
-[node name="Level8" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_6to6e")
 Song = 1
 
@@ -105,10 +105,10 @@ size = 2.0
 [node name="VoidOutArea" parent="." instance=ExtResource("12_f5ae4")]
 position = Vector2(1404, 1060)
 
-[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_w6x32")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_w6x32")]
 position = Vector2(1342, -493)
 camera = NodePath("../Camera")
-level = 8
+level = 10
 hints = Array[int]([1])
 
 [node name="Ladder" parent="." instance=ExtResource("14_fmoen")]
@@ -170,4 +170,4 @@ scale = Vector2(11.6025, -4.48232)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
 
-[connection signal="body_entered" from="VoidOutArea" to="LandingZone" method="_on_void_out_area_body_entered"]
+[connection signal="body_entered" from="VoidOutArea" to="LoadingZone" method="_on_void_out_area_body_entered"]

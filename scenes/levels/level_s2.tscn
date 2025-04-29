@@ -12,7 +12,7 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="10_2rnbu"]
 [ext_resource type="PackedScene" uid="uid://kjcah3456ds8" path="res://scenes/objects/concrete_slab.tscn" id="11_tar8p"]
 
-[node name="Level18" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_ax1dn")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("2_o3e4a")]
@@ -39,7 +39,7 @@ camera = NodePath("../Camera")
 position = Vector2(-78, 326)
 sleeping = true
 
-[node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_0dket")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_0dket")]
 position = Vector2(529, -287)
 camera = NodePath("../Camera")
 level = 18

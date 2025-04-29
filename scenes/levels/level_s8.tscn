@@ -14,7 +14,7 @@
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="12_ts3ad"]
 [ext_resource type="PackedScene" uid="uid://kjcah3456ds8" path="res://scenes/objects/concrete_slab.tscn" id="13_rhtta"]
 
-[node name="Level24" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_3vqee")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("2_3svww")]
@@ -66,7 +66,7 @@ position = Vector2(-1078, 223)
 sleeping = true
 size = 1.5
 
-[node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("10_cay32")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("10_cay32")]
 position = Vector2(1932, 357)
 camera = NodePath("../Camera")
 level = 22
@@ -93,32 +93,26 @@ autowrap_mode = 2
 [node name="ConcreteSlab23" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(-759, 424)
 rotation = -0.00590718
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab24" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(162, -209)
 rotation = 6.28319
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab25" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(163, 33)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab40" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(163, -107)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab26" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(-756, 490)
 rotation = 3.13408
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab27" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(-759, 359)
 rotation = 3.13822
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab30" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(164.913, 136)
@@ -131,12 +125,10 @@ rotation = -1.5708
 [node name="ConcreteSlab32" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(156, 375)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab34" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(320.156, 474.042)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab36" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(308, 100)
@@ -149,107 +141,83 @@ rotation = -1.5708
 [node name="ConcreteSlab38" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(318, 333.961)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab43" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(676, 408)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab44" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(746, 474)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab45" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(816, 536)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab46" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(788, 636)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab65" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(788, 775)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab50" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(975, 636)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab72" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(975, 775)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab47" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(956, 536)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab48" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(1026, 473)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab49" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(1096, 408)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab53" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(1026, 345)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab54" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(886, 345)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab55" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(746, 345)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab59" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(885, 474)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab61" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(816, 408)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab62" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(955, 408)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab64" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(1166, 345)
 rotation = -3.14159
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab60" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(606, 345)
 rotation = 3.14159
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab56" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(1078, 283)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab57" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(938, 283)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab63" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(798, 283)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab74" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(658, 283)
 rotation = 3.14159
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab39" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(321.363, 614.036)
 rotation = -1.5708
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab3" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(13.9999, 494)
@@ -265,11 +233,9 @@ rotation = -1.5708
 
 [node name="ConcreteSlab21" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(-321, 388)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab28" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(-181, 388)
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab22" parent="." instance=ExtResource("13_rhtta")]
 position = Vector2(-461, 392)

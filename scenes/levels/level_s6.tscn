@@ -13,7 +13,7 @@
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="11_n46va"]
 [ext_resource type="PackedScene" uid="uid://kjcah3456ds8" path="res://scenes/objects/concrete_slab.tscn" id="12_x0607"]
 
-[node name="Level22" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_v83sl")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("2_5gfpd")]
@@ -40,7 +40,7 @@ camera = NodePath("../Camera")
 position = Vector2(-708, 408)
 sleeping = true
 
-[node name="LandingZone2" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_g5x24")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_g5x24")]
 position = Vector2(959, -283)
 camera = NodePath("../Camera")
 level = 22

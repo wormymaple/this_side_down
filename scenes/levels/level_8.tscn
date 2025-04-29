@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="14_j14br"]
 [ext_resource type="PackedScene" uid="uid://dsuqfl562uvov" path="res://scenes/objects/ladder.tscn" id="14_jv4xn"]
 
-[node name="Level5" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_ecodb")
 
 [node name="CanvasModulate" parent="." instance=ExtResource("11_vbs12")]
@@ -50,10 +50,10 @@ position = Vector2(1458, 551)
 theme = 1
 size = 2.0
 
-[node name="LandingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_eobp3")]
+[node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_eobp3")]
 position = Vector2(774, 719)
 camera = NodePath("../Camera")
-level = 5
+level = 8
 hints = Array[int]([2])
 
 [node name="Spring" parent="." instance=ExtResource("11_ve53h")]
