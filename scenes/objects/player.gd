@@ -215,7 +215,7 @@ func _input(event):
 			
 			
 			if grabbed_body.is_in_group("rotateable"):
-				#grabbed_body.set_collision_mask_value(2, false)
+				grabbed_body.set_collision_mask_value(2, false)
 				grabbed_body.set_collision_layer_value(3, false) # Don't refresh a player's jump
 				grabbed_body.set_collision_layer_value(4, false) # Don't move players anymore
 			HandSprite.texture = holding_hand
@@ -242,7 +242,7 @@ func drop_object():
 	grabbed_body.set_meta("grabbed", false)
 	
 	if grabbed_body.is_in_group("rotateable"):
-		#grabbed_body.set_collision_mask_value(2, true) 
+		grabbed_body.set_collision_mask_value(2, true) 
 		grabbed_body.set_collision_layer_value(4, true) # Boxes can hit players again
 		grabbed_body.set_collision_layer_value(3, true) # Objects can refresh jumps again
 	

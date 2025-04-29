@@ -71,12 +71,10 @@ rotation = -0.898067
 [node name="ConcreteSlab2" parent="." instance=ExtResource("12_x0607")]
 position = Vector2(639, 264)
 rotation = 0.00250596
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab3" parent="." instance=ExtResource("12_x0607")]
 position = Vector2(134, 326)
 rotation = -0.00181386
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab4" parent="." instance=ExtResource("12_x0607")]
 position = Vector2(-352, 384)

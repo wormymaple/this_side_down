@@ -71,7 +71,6 @@ level = 21
 
 [node name="Plank" parent="." instance=ExtResource("9_a0dhc")]
 position = Vector2(202, -101)
-scale = Vector2(1, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 2

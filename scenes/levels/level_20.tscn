@@ -46,7 +46,6 @@ level = 20
 [node name="Plank" parent="." instance=ExtResource("9_tww4k")]
 position = Vector2(57, 441)
 rotation = 1.5708
-scale = Vector2(1, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 2

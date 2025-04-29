@@ -176,6 +176,7 @@ theme_override_font_sizes/font_size = 75
 icon = ExtResource("1_8piub")
 
 [node name="Label4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 1167.0
 offset_top = 873.0
 offset_right = 1514.0

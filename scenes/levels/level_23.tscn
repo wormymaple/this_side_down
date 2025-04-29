@@ -71,12 +71,10 @@ rotation = 2.52571
 [node name="ConcreteSlab2" parent="." instance=ExtResource("12_hg2gm")]
 position = Vector2(-193, 885)
 rotation = 2.96595
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab3" parent="." instance=ExtResource("12_hg2gm")]
 position = Vector2(229, 935)
 rotation = 2.31095
-scale = Vector2(1, 1)
 
 [node name="ConcreteSlab4" parent="." instance=ExtResource("12_hg2gm")]
 position = Vector2(-108, 933)
@@ -95,39 +93,39 @@ position = Vector2(114, 1018)
 rotation = 0.00372872
 
 [node name="ConcreteSlab8" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(-217, 545)
-rotation = 0.0225512
+position = Vector2(-133, 762)
+rotation = 0.0740908
 
 [node name="ConcreteSlab9" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(-230, 442)
-rotation = -1.53086
+position = Vector2(-68, 702)
+rotation = -3.09307
 
 [node name="ConcreteSlab10" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(-96, 515)
-rotation = 0.620434
+position = Vector2(-268, 720)
+rotation = 0.707903
 
 [node name="ConcreteSlab11" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(273, 544)
+position = Vector2(142, 760)
 rotation = -0.0289285
 
 [node name="ConcreteSlab12" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(81, 504)
-rotation = -1.0277
+position = Vector2(39, 772)
+rotation = -1.65546
 
 [node name="ConcreteSlab13" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(550, 505)
-rotation = -2.23602
+position = Vector2(236, 688)
+rotation = -3.26565
 
 [node name="ConcreteSlab14" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(424, 505)
-rotation = 2.16755
+position = Vector2(337, 723)
+rotation = 2.44573
 
 [node name="ConcreteSlab15" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(147, 403)
-rotation = 0.0676539
+position = Vector2(92, 678)
+rotation = 0.305185
 
 [node name="ConcreteSlab16" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(-315, 375)
+position = Vector2(-173, 659)
 rotation = -0.639419
 
 [node name="ConcreteSlab17" parent="." instance=ExtResource("12_hg2gm")]
@@ -139,8 +137,8 @@ position = Vector2(43, 875)
 rotation = -0.0677352
 
 [node name="ConcreteSlab19" parent="." instance=ExtResource("12_hg2gm")]
-position = Vector2(-120, 671)
-rotation = -0.639419
+position = Vector2(-63, 827)
+rotation = -0.370897
 
 [node name="ConcreteSlab20" parent="." instance=ExtResource("12_hg2gm")]
 position = Vector2(227, 815)
