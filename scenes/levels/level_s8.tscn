@@ -52,11 +52,11 @@ color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
 
 [node name="Camera" parent="." instance=ExtResource("6_gj52g")]
-position = Vector2(-321, 283)
+position = Vector2(-1494, 294)
 zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(-321, 285)
+position = Vector2(-1494, 296)
 script = ExtResource("7_fwtj0")
 player_scene = ExtResource("8_snmpy")
 camera = NodePath("../Camera")

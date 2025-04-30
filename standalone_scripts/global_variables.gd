@@ -91,7 +91,7 @@ func clear_save():
 	print("Data cleared!")
 	
 	get_tree().reload_current_scene()
-	#get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
+	#get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn") 
 
 func _ready() -> void:
 	pass

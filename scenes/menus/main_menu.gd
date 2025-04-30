@@ -53,6 +53,7 @@ func _ready():
 		$ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonUp.hide()
 		$ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonDown.hide()
 		LevelBackButton.set_focus_previous(".")
+		#LevelBackButton.set_focus_neighbor(SIDE_TOP, ".") # Thankfully I don't even need to do this!
 	
 	player_0_playing.button_pressed = GlobalVariables.player_0_playing
 	player_1_playing.button_pressed = GlobalVariables.player_1_playing
@@ -142,37 +143,10 @@ func _process(_delta: float) -> void:
 			#print("Scrolling content downwards")
 			LevelContainer.position.y = -1048 * smooth_line.sample(level_timer_percent)
 
-
-
 func start_level(level): # I am not sure why this is it's own function
 	#if left(str(level)) == 'b':
 		
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
-
-func _on_button_1_pressed():
-	start_level(1)
-func _on_button_2_pressed():
-	start_level(2)
-func _on_button_3_pressed():
-	start_level(3)
-func _on_button_4_pressed():
-	start_level(4)
-func _on_button_5_pressed():
-	start_level(5)
-func _on_button_6_pressed():
-	start_level(6)
-func _on_button_7_pressed():
-	start_level(7)
-func _on_button_8_pressed():
-	start_level(8)
-func _on_button_9_pressed():
-	start_level(9)
-func _on_button_10_pressed():
-	start_level(10)
-func _on_button_11_pressed():
-	start_level(11)
-func _on_button_12_pressed():
-	start_level(12)
 
 func _on_timer_timeout() -> void:
 	slide_mode = ScrollStates.WAIT
@@ -201,8 +175,30 @@ func _on_check_box_0_toggled(toggled_on: bool) -> void:
 	print(toggled_on)
 	GlobalVariables.save_data()
 
-
-
+func _on_button_1_pressed():
+	start_level(1)
+func _on_button_2_pressed():
+	start_level(2)
+func _on_button_3_pressed():
+	start_level(3)
+func _on_button_4_pressed():
+	start_level(4)
+func _on_button_5_pressed():
+	start_level(5)
+func _on_button_6_pressed():
+	start_level(6)
+func _on_button_7_pressed():
+	start_level(7)
+func _on_button_8_pressed():
+	start_level(8)
+func _on_button_9_pressed():
+	start_level(9)
+func _on_button_10_pressed():
+	start_level(10)
+func _on_button_11_pressed():
+	start_level(11)
+func _on_button_12_pressed():
+	start_level(12)
 func _on_button_13_pressed() -> void:
 	start_level(13)
 func _on_button_14_pressed() -> void:
@@ -211,22 +207,23 @@ func _on_button_15_pressed() -> void:
 	start_level(15)
 func _on_button_16_pressed() -> void:
 	start_level(16)
+	
 func _on_button_17_pressed() -> void:
-	start_level(17) # Where levels are started with s#
+	start_level("s1") # Where levels are started with s#
 func _on_button_18_pressed() -> void:
-	start_level(18)
+	start_level("s2")
 func _on_button_19_pressed() -> void:
-	start_level(19)
+	start_level("s3")
 func _on_button_20_pressed() -> void:
-	start_level(20)
+	start_level("s4")
 func _on_button_21_pressed() -> void:
-	start_level(21)
+	start_level("s5")
 func _on_button_22_pressed() -> void:
-	start_level(22)
+	start_level("s6")
 func _on_button_23_pressed() -> void:
-	start_level(23)
+	start_level("s7")
 func _on_button_24_pressed() -> void:
-	start_level(24)
+	start_level("s8")
 
 
 func _on_button_down_pressed() -> void:

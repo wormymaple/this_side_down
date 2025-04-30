@@ -59,6 +59,7 @@ level = 13
 
 [node name="Spring" parent="." instance=ExtResource("16_ot8xr")]
 position = Vector2(841, 1437)
+theme = 4
 Power = 1150
 
 [node name="PlayerSpawn" type="Node2D" parent="."]

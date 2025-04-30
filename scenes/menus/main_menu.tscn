@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://csk0rv5ibfuuk"]
+[gd_scene load_steps=46 format=3 uid="uid://csk0rv5ibfuuk"]
 
 [ext_resource type="Script" uid="uid://bfk5mqt5lko4y" path="res://scenes/menus/main_menu.gd" id="1_eci1h"]
 [ext_resource type="Texture2D" uid="uid://bchwkejqsfd4p" path="res://art/menus/box_background.jpg" id="2_6imgi"]
@@ -10,10 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://gsj1rdgspmyu" path="res://art/menus/button_options.png" id="8_1hq2q"]
 [ext_resource type="Texture2D" uid="uid://c0vc4uiercmqu" path="res://art/menus/button_quit.png" id="9_wxcro"]
 [ext_resource type="PackedScene" uid="uid://dq5ntdtxdyc8c" path="res://scenes/menus/settings_menu.tscn" id="9_ygyx6"]
+[ext_resource type="Texture2D" uid="uid://dbc60wkglxmy5" path="res://art/menus/arrows_up.png" id="11_oina4"]
 [ext_resource type="Texture2D" uid="uid://byefxy14vv2pq" path="res://art/menus/button_back.png" id="11_y4gey"]
 [ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://resources/button_focus.tres" id="12_6imgi"]
 [ext_resource type="Texture2D" uid="uid://c8rnkk3psusk1" path="res://art/menus/1.png" id="12_n8vdk"]
 [ext_resource type="Texture2D" uid="uid://cyhh3l0ypm0na" path="res://art/menus/2.png" id="13_6imgi"]
+[ext_resource type="Texture2D" uid="uid://bhndvcf5i1ux4" path="res://art/menus/arrows_down.png" id="13_b4rtx"]
 [ext_resource type="Texture2D" uid="uid://brbm6vsaethp5" path="res://art/menus/3.png" id="14_1hq2q"]
 [ext_resource type="Texture2D" uid="uid://drbmog5vmhlg2" path="res://art/menus/4.png" id="15_wxcro"]
 [ext_resource type="Texture2D" uid="uid://hjk2w3vftk15" path="res://art/menus/5.png" id="16_y4gey"]
@@ -274,17 +276,19 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="ButtonUp" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
-custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_previous = NodePath(".")
 theme = ExtResource("5_bpy87")
 disabled = true
-text = "UP"
+icon = ExtResource("11_oina4")
+flat = true
 
 [node name="ButtonBack" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../ButtonUp")
 focus_neighbor_right = NodePath("../../Control/LevelContainer/Normal/Button7")
 focus_previous = NodePath("../ButtonUp")
 theme = ExtResource("5_bpy87")
@@ -294,11 +298,11 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_mlnq6")
 icon = ExtResource("11_y4gey")
 
 [node name="ButtonDown" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
-custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("5_bpy87")
-text = "DOWN"
+icon = ExtResource("13_b4rtx")
+flat = true
 
 [node name="Control" type="Control" parent="ScrollParent/LevelSelect/HBoxContainer"]
 layout_mode = 2
@@ -413,6 +417,7 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 5
 focus_neighbor_left = NodePath("../../../../ButtonContainer/ButtonBack")
+focus_neighbor_bottom = NodePath("../Button13")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")

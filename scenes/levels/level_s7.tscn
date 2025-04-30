@@ -27,11 +27,11 @@ metadata/_edit_vertical_guides_ = [576.0]
 position = Vector2(386, -631)
 
 [node name="Camera" parent="." instance=ExtResource("5_318w8")]
-position = Vector2(-597, 371)
+position = Vector2(-639, 476)
 zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(-595, 372)
+position = Vector2(-637, 477)
 script = ExtResource("6_rwau5")
 player_scene = ExtResource("7_q88f4")
 camera = NodePath("../Camera")
