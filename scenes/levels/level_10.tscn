@@ -79,7 +79,7 @@ position = Vector2(2297.96, 1258)
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_w6x32")]
 position = Vector2(2235.96, -295)
 camera = NodePath("../Camera")
-level = 10
+level = "10"
 hints = Array[int]([1])
 
 [node name="Ladder" parent="." instance=ExtResource("14_fmoen")]

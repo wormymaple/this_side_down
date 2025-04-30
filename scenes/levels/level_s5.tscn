@@ -67,7 +67,7 @@ camera = NodePath("../Camera")
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_uskbl")]
 position = Vector2(834, 433)
 camera = NodePath("../Camera")
-level = 21
+level = "s5"
 
 [node name="Plank" parent="." instance=ExtResource("9_a0dhc")]
 position = Vector2(202, -101)

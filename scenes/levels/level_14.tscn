@@ -306,7 +306,7 @@ deploy_length = 320
 position = Vector2(1867, 830)
 rotation = 0.148353
 camera = NodePath("../Camera")
-level = 14
+level = "14"
 
 [node name="Platform" parent="." instance=ExtResource("9_df3oo")]
 position = Vector2(1895, 870)

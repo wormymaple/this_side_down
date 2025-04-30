@@ -54,7 +54,7 @@ position = Vector2(545, -494)
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_grauf")]
 position = Vector2(867, 614)
 camera = NodePath("../Camera")
-level = 2
+level = "2"
 hints = Array[int]([0, 2])
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("10_yrdje")]

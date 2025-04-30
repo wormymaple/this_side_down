@@ -58,7 +58,7 @@ size = 1.5
 position = Vector2(299, 311)
 rotation = 3.14159
 camera = NodePath("../Camera")
-level = 12
+level = "12"
 platform_to_attach_to = NodePath("../Platform")
 upside_down = true
 

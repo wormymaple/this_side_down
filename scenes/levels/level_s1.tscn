@@ -44,7 +44,7 @@ size = 1.9
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_2kfw6")]
 position = Vector2(278, 193)
 camera = NodePath("../Camera")
-level = 13
+level = "s1"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 2

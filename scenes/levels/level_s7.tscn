@@ -43,7 +43,7 @@ sleeping = true
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_qpeip")]
 position = Vector2(32, 1072)
 camera = NodePath("../Camera")
-level = 23
+level = "s7"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 2

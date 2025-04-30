@@ -47,7 +47,7 @@ is_in_water = true
 position = Vector2(1564, 53)
 rotation = 3.14063
 camera = NodePath("../Camera")
-level = 15
+level = "15"
 upside_down = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

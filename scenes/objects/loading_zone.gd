@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var camera: Camera2D
-@export var level: int = 1
+@export var level: String = "1"
 @export var platform_to_attach_to: Path2D = null
 
 @onready var GPUParticles = $GPUParticles2D

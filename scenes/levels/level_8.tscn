@@ -50,7 +50,7 @@ size = 2.0
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_eobp3")]
 position = Vector2(774, 719)
 camera = NodePath("../Camera")
-level = 8
+level = "8"
 hints = Array[int]([2])
 
 [node name="Spring" parent="." instance=ExtResource("11_ve53h")]

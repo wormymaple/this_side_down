@@ -136,4 +136,4 @@ polygon = PackedVector2Array(0, 0, 1000, 0, 1000, 500, 0, 500)
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("7_sqj7y")]
 position = Vector2(1492, 677)
 camera = NodePath("../Camera")
-level = 6
+level = "6"

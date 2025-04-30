@@ -77,7 +77,7 @@ camera = NodePath("../Camera")
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("13_uogt2")]
 position = Vector2(-116, 247)
 camera = NodePath("../Camera")
-level = 7
+level = "7"
 hints = Array[int]([0, 0])
 
 [node name="Platform2" parent="." instance=ExtResource("7_hqlvf")]

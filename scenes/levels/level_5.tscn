@@ -38,7 +38,7 @@ camera = NodePath("../Camera")
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_riis0")]
 position = Vector2(1482, 174)
 camera = NodePath("../Camera")
-level = 5
+level = "5"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 148.0

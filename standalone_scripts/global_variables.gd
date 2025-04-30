@@ -17,7 +17,7 @@ var number_of_players = 0
 func save_data():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	
-	save_file.store_8(last_beaten_level)
+	save_file.store_8(int(last_beaten_level))
 	save_file.store_float(bus_master_vol)
 	save_file.store_float(bus_music_vol)
 	save_file.store_float(bus_effects_vol)
@@ -101,14 +101,21 @@ func _ready() -> void:
 
 func win_level(level_cleared):
 	print("Level #", level_cleared, " beaten")
-	if level_cleared > last_beaten_level:
+	if not level_cleared.contains("s") and int(level_cleared) > last_beaten_level:
 		
 		last_beaten_level = level_cleared
 		save_data()
 	
 	await get_tree().create_timer(2).timeout # Give the fade in time to...fade
 	
-	if level_cleared != 16 and level_cleared != 24: 
-		get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level_cleared + 1) + ".tscn")
-	else: # Take me to the credits!
-		get_tree().change_scene_to_file("res://scenes/menus/credits.tscn")
+	if not level_cleared.contains("s"):
+		if level_cleared != "16":
+			get_tree().change_scene_to_file("res://scenes/levels/level_" + str(int(level_cleared) + 1) + ".tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/menus/credits.tscn")
+	else:
+		if level_cleared != "24":
+			get_tree().change_scene_to_file("res://scenes/levels/level_s" + str(int(level_cleared.lstrip("s")) + 1) + ".tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/menus/credits.tscn")
+		

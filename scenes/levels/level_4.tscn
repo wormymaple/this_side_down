@@ -73,7 +73,7 @@ size = 1.6
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("9_e6i4h")]
 position = Vector2(861, 908)
 camera = NodePath("../Camera")
-level = 4
+level = "4"
 
 [node name="CanvasModulate2" parent="." instance=ExtResource("10_i46cw")]
 position = Vector2(-12, -305)
