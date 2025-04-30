@@ -19,10 +19,14 @@ extends Control
 @onready var settings_menu = $SettingsMenu
 @onready var FocusButton = $ScrollParent/TitleScreen/HBoxContainer/ButtonPlay
 @onready var ControllerToButton = $ScrollParent/TitleScreen/HBoxContainer/ButtonControllers
+@onready var LevelContainer = $ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer
+@onready var LevelBackButton = $ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonBack
 var locked_icon = preload("res://art/menus/locked_level.PNG")
 
-enum States {TO_LEVELS, FROM_LEVELS, TO_CONTROLLERS, FROM_CONTROLLERS, WAIT}
-var slide_mode = States.WAIT
+enum ScrollStates {TO_LEVELS, FROM_LEVELS, TO_CONTROLLERS, FROM_CONTROLLERS, WAIT}
+var slide_mode = ScrollStates.WAIT
+enum LevelScrollStates {TO_TOP, TO_BOTTOM, WAIT}
+var levels_slide_mode = LevelScrollStates.WAIT
 
 func _ready():
 	await GlobalVariables.load_data()
@@ -54,24 +58,23 @@ func _ready():
 
 func _on_play_button_pressed():
 	$Timer.start()
-	Level1Button.grab_focus()
-	slide_mode = States.TO_LEVELS
-	
+	LevelBackButton.grab_focus()
+	slide_mode = ScrollStates.TO_LEVELS
 
 func _on_back_button_pressed():
 	$Timer.start()
 	FocusButton.grab_focus()
-	slide_mode = States.FROM_LEVELS
+	slide_mode = ScrollStates.FROM_LEVELS
 
 func _on_button_controllers_pressed() -> void:
 	$Timer.start()
 	ControllerBackButton.grab_focus()
-	slide_mode = States.TO_CONTROLLERS
+	slide_mode = ScrollStates.TO_CONTROLLERS
 
 func _on_button_back_controller_pressed() -> void:
 	$Timer.start()
 	ControllerToButton.grab_focus()
-	slide_mode = States.FROM_CONTROLLERS
+	slide_mode = ScrollStates.FROM_CONTROLLERS
 
 
 func _on_options_button_pressed():
@@ -112,16 +115,30 @@ func _process(_delta: float) -> void:
 	var percent_left = $Timer.time_left / $Timer.wait_time
 	
 	match slide_mode:
-		States.WAIT:
-			return
-		States.TO_LEVELS:
+		ScrollStates.WAIT:
+			pass
+		ScrollStates.TO_LEVELS:
 			ScrollParent.position.x = -1920 * smooth_line.sample(1 - percent_left) # Should make it go to the left
-		States.FROM_LEVELS:
+		ScrollStates.FROM_LEVELS:
 			ScrollParent.position.x = -1920 * smooth_line.sample(percent_left)
-		States.TO_CONTROLLERS:
+		ScrollStates.TO_CONTROLLERS:
 			ScrollParent.position.x = 1920 * smooth_line.sample(1 - percent_left)
-		States.FROM_CONTROLLERS:
+		ScrollStates.FROM_CONTROLLERS:
 			ScrollParent.position.x = 1920 * smooth_line.sample(percent_left)
+	
+	var level_timer_percent = $LevelTimer.time_left / $LevelTimer.wait_time
+	
+	match levels_slide_mode:
+		LevelScrollStates.WAIT:
+			pass
+		LevelScrollStates.TO_BOTTOM:
+			#print("Scrolling content upwards")
+			LevelContainer.position.y = -1048 * smooth_line.sample(1 - level_timer_percent)
+		LevelScrollStates.TO_TOP:
+			#print("Scrolling content downwards")
+			LevelContainer.position.y = -1048 * smooth_line.sample(level_timer_percent)
+
+
 
 func start_level(level): # I am not sure why this is it's own function
 	#if left(str(level)) == 'b':
@@ -154,7 +171,18 @@ func _on_button_12_pressed():
 	start_level(12)
 
 func _on_timer_timeout() -> void:
-	slide_mode = States.WAIT
+	slide_mode = ScrollStates.WAIT
+func _on_level_timer_timeout() -> void:
+	if levels_slide_mode == LevelScrollStates.TO_TOP:
+		#print(get_node("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button1").name)
+		LevelBackButton.set_focus_neighbor(SIDE_RIGHT, "../../Control/LevelContainer/Normal/Button7")#"ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button1")
+		$ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonUp.disabled = true
+		$ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonDown.disabled = false
+	else:
+		LevelBackButton.set_focus_neighbor(SIDE_RIGHT, "../../Control/LevelContainer/Special/Button23")
+		$ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonDown.disabled = true
+		$ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonUp.disabled = false
+	levels_slide_mode = LevelScrollStates.WAIT
 
 func _on_check_box_4_toggled(toggled_on: bool) -> void:
 	GlobalVariables.player_4_playing = toggled_on
@@ -169,7 +197,7 @@ func _on_check_box_0_toggled(toggled_on: bool) -> void:
 	print(toggled_on)
 	GlobalVariables.save_data()
 
-# To scroll to the special levels, make the y of LevelContainer -1048
+
 
 func _on_button_13_pressed() -> void:
 	start_level(13)
@@ -180,7 +208,7 @@ func _on_button_15_pressed() -> void:
 func _on_button_16_pressed() -> void:
 	start_level(16)
 func _on_button_17_pressed() -> void:
-	start_level(17)
+	start_level(17) # Where levels are started with s#
 func _on_button_18_pressed() -> void:
 	start_level(18)
 func _on_button_19_pressed() -> void:
@@ -195,3 +223,19 @@ func _on_button_23_pressed() -> void:
 	start_level(23)
 func _on_button_24_pressed() -> void:
 	start_level(24)
+
+
+func _on_button_down_pressed() -> void:
+	#print("Button down pressed!")
+	if levels_slide_mode != LevelScrollStates.WAIT:
+		return
+	levels_slide_mode = LevelScrollStates.TO_BOTTOM
+	$LevelTimer.start()
+
+
+func _on_button_up_pressed() -> void:
+	#print("Button up pressed!")
+	if levels_slide_mode != LevelScrollStates.WAIT:
+		return
+	levels_slide_mode = LevelScrollStates.TO_TOP
+	$LevelTimer.start()

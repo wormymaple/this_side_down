@@ -65,7 +65,7 @@ script = ExtResource("1_eci1h")
 Level1Button = NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button1")
 QuitButton = NodePath("ScrollParent/TitleScreen/HBoxContainer/ButtonQuit")
 ControllerBackButton = NodePath("ScrollParent/ControllerMenu/ButtonBackController")
-button_list = [NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button1"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button2"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button3"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button4"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button5"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button6"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button7"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button8"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button9"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button10"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button11"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button12"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button13"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button14"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button15"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button16"), NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+button_list = [NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button1"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button2"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button3"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button4"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button5"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button6"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button7"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button8"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button9"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button10"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button11"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button12"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button13"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button14"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button15"), NodePath("ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button16"), null, null, null, null, null]
 smooth_line = SubResource("Curve_jygr6")
 player_0_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer/CheckBox0")
 player_1_playing = NodePath("ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer/CheckBox1")
@@ -80,6 +80,7 @@ offset_bottom = 1080.0
 texture = ExtResource("2_6imgi")
 
 [node name="Background2" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1920.0
 offset_right = 3840.0
@@ -91,6 +92,10 @@ visible = false
 metadata/on_title_screen = true
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="LevelTimer" type="Timer" parent="."]
 wait_time = 0.7
 one_shot = true
 
@@ -268,16 +273,19 @@ layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Button" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ButtonUp" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Page Up"
+theme = ExtResource("5_bpy87")
+disabled = true
+text = "UP"
 
 [node name="ButtonBack" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 focus_neighbor_left = NodePath(".")
+focus_neighbor_right = NodePath("../../Control/LevelContainer/Normal/Button1")
 focus_previous = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_p7mc1")
@@ -285,11 +293,12 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqa")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mlnq6")
 icon = ExtResource("11_y4gey")
 
-[node name="Button2" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
-custom_minimum_size = Vector2(100, 100)
+[node name="ButtonDown" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Page Down"
+theme = ExtResource("5_bpy87")
+text = "DOWN"
 
 [node name="Control" type="Control" parent="ScrollParent/LevelSelect/HBoxContainer"]
 layout_mode = 2
@@ -318,7 +327,8 @@ modulate = Color(1, 0.491167, 0.29, 1)
 z_index = 3
 layout_mode = 2
 size_flags_horizontal = 5
-focus_neighbor_left = NodePath(".")
+focus_neighbor_left = NodePath("../../../../ButtonContainer/ButtonBack")
+focus_previous = NodePath("../../../../ButtonContainer/ButtonBack")
 theme = ExtResource("5_bpy87")
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("12_n8vdk")
@@ -402,7 +412,7 @@ z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 5
-focus_neighbor_left = NodePath(".")
+focus_neighbor_left = NodePath("../../../../ButtonContainer/ButtonBack")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
@@ -490,7 +500,8 @@ z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 5
-focus_neighbor_left = NodePath(".")
+focus_neighbor_left = NodePath("../../../../ButtonContainer/ButtonBack")
+focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
@@ -505,6 +516,7 @@ z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 5
+focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
@@ -519,6 +531,7 @@ z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 5
+focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
@@ -532,6 +545,8 @@ modulate = Color(1, 0.490196, 0.290196, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
@@ -555,6 +570,9 @@ modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../../ButtonContainer/ButtonBack")
+focus_neighbor_top = NodePath(".")
+focus_previous = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
@@ -568,6 +586,7 @@ modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+focus_neighbor_top = NodePath(".")
 focus_next = NodePath("../Button19")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
@@ -582,7 +601,7 @@ modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
-focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
@@ -597,6 +616,7 @@ modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+focus_neighbor_top = NodePath(".")
 focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
@@ -611,6 +631,7 @@ modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../Normal/Button5")
 focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
@@ -625,6 +646,7 @@ modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+focus_neighbor_top = NodePath("../../Normal/Button6")
 focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
@@ -639,6 +661,7 @@ modulate = Color(1, 0, 0.45098, 1)
 z_index = 3
 custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../../ButtonContainer/ButtonBack")
 focus_neighbor_bottom = NodePath(".")
 theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
@@ -1072,11 +1095,14 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_mlnq6")
 icon = ExtResource("11_y4gey")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="pressed" from="ScrollParent/TitleScreen/HBoxContainer/ButtonControllers" to="." method="_on_button_controllers_pressed"]
 [connection signal="pressed" from="ScrollParent/TitleScreen/HBoxContainer/ButtonOption" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="ScrollParent/TitleScreen/HBoxContainer/ButtonQuit" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="ScrollParent/TitleScreen/HBoxContainer/ButtonPlay" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonUp" to="." method="_on_button_up_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonBack" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonDown" to="." method="_on_button_down_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Normal/Button3" to="." method="_on_button_3_pressed"]
