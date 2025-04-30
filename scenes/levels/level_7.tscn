@@ -31,21 +31,19 @@ point_count = 2
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7gtpw")
 
-[node name="Light" parent="." instance=ExtResource("11_unprq")]
-position = Vector2(-2171, 152.87)
-color = Color(0.807843, 0.552941, 0.482353, 1)
-energy = 1.41
-
 [node name="CanvasModulate" parent="." instance=ExtResource("9_lxu1d")]
 position = Vector2(-2226.9, -1015)
-color = Color(0.141176, 0.231373, 0.352941, 1)
 
-[node name="ParallaxBackground2" parent="." instance=ExtResource("10_5rxrt")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("10_5rxrt")]
 layer = -3
 
-[node name="CanvasModulate" parent="ParallaxBackground2" instance=ExtResource("9_lxu1d")]
+[node name="CanvasModulate" parent="ParallaxBackground" instance=ExtResource("9_lxu1d")]
 position = Vector2(-2226.9, -1015)
-color = Color(0.0901961, 0.211765, 0.447059, 1)
+
+[node name="Light" parent="." instance=ExtResource("11_unprq")]
+position = Vector2(-2171, 152.87)
+scale = Vector2(1, 1)
+color = Color(0.807843, 0.552941, 0.482353, 1)
 
 [node name="Ladder2" parent="." instance=ExtResource("2_87pw1")]
 position = Vector2(-338, 413.87)

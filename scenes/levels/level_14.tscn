@@ -23,8 +23,15 @@
 script = ExtResource("1_pjou6")
 Song = 1
 
-[node name="DirectionalLight2D" parent="." instance=ExtResource("6_p82q7")]
+[node name="Light" parent="." instance=ExtResource("6_p82q7")]
 position = Vector2(-1374, -1172)
+
+[node name="UnderwaterShader" parent="." instance=ExtResource("8_u77f3")]
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource("9_akor3")]
+
+[node name="CanvasModulate" parent="." instance=ExtResource("5_f2ie4")]
+color = Color(0.301961, 0.482353, 0.564706, 1)
 
 [node name="PlankHandler" type="Node2D" parent="."]
 position = Vector2(-293, 828)
@@ -313,20 +320,12 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 theme = 3
 
-[node name="UnderwaterShader" parent="." instance=ExtResource("8_u77f3")]
-
-[node name="ParallaxBackground2" parent="." instance=ExtResource("9_akor3")]
-
-[node name="CanvasModulate" parent="." instance=ExtResource("5_f2ie4")]
-color = Color(0.301961, 0.482353, 0.564706, 1)
-
 [node name="PlayerSpawn" type="Node2D" parent="."]
 position = Vector2(-197, 1217)
 script = ExtResource("11_psbp5")
 player_scene = ExtResource("12_ukulb")
 camera = NodePath("../Camera")
 damp = 2.0
-gravity_scale = 0.6
 is_in_water = true
 
 [node name="Camera" parent="." instance=ExtResource("13_r0ek7")]

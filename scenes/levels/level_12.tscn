@@ -38,7 +38,7 @@ bad_weather = true
 position = Vector2(-2226.9, -1118.87)
 color = Color(0.498039, 0.639216, 0.827451, 1)
 
-[node name="DirectionalLight2D" parent="." instance=ExtResource("7_lplcc")]
+[node name="Light" parent="." instance=ExtResource("7_lplcc")]
 visible = false
 position = Vector2(-2171, 49)
 color = Color(0.807843, 0.552941, 0.482353, 1)

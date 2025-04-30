@@ -25,14 +25,14 @@ position = Vector2(640, 196)
 scale = Vector2(128, 40)
 texture = ExtResource("2_1yy8e")
 
-[node name="Sun" type="Sprite2D" parent="Wayback"]
-position = Vector2(938.667, 121.333)
-rotation = 0.115204
-scale = Vector2(0.360746, 0.360746)
-texture = ExtResource("2_xjda1")
-
 [node name="Wayback2" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sun" type="Sprite2D" parent="Wayback2"]
+position = Vector2(480.667, 116)
+rotation = -0.0443167
+scale = Vector2(0.360746, 0.360746)
+texture = ExtResource("2_xjda1")
 
 [node name="Clouds1" type="Sprite2D" parent="Wayback2"]
 material = SubResource("CanvasItemMaterial_3xyd5")

@@ -19,7 +19,7 @@ var on_ground = false
 var things_standing_on = []
 var unmovable = false # The player can't move, either because they are being grabbed or they hit a directional spring
 var standing_in_ladder = 0
-var original_grav_scale = 1 # This is literally 1. Grav scale gets changed when being held or climbing ladders
+var original_grav_scale = 1 # Grav scale gets changed when being held or climbing ladders, this is used to reset it
 var is_ascending = false # If the player is able to hold up to keep going upwards
 
 # Player detail
@@ -63,6 +63,7 @@ func _ready():
 		Particles.emitting = true
 		JUMP_POWER *= UNDERWATER_JUMP_MULTIPLIER
 		original_grav_scale = 0.7
+	gravity_scale = original_grav_scale
 	
 	$PlayerLight.energy /= GlobalVariables.number_of_players
 

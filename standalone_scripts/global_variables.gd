@@ -49,7 +49,7 @@ func load_data():
 		return
 	
 	last_beaten_level = save_file.get_8()
-	#last_beaten_level = 12 # My override
+	#last_beaten_level = 16 ## My override
 	bus_master_vol = save_file.get_float()
 	bus_music_vol = save_file.get_float()
 	bus_effects_vol = save_file.get_float()
@@ -108,7 +108,7 @@ func win_level(level_cleared):
 	
 	await get_tree().create_timer(2).timeout # Give the fade in time to...fade
 	
-	if level_cleared != 12 and level_cleared != 24: 
+	if level_cleared != 16 and level_cleared != 24: 
 		get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level_cleared + 1) + ".tscn")
 	else: # Take me to the credits!
 		get_tree().change_scene_to_file("res://scenes/menus/credits.tscn")

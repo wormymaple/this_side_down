@@ -42,7 +42,7 @@ Song = 1
 [node name="CanvasModulate" parent="." instance=ExtResource("6_db016")]
 color = Color(0.301961, 0.482353, 0.564706, 1)
 
-[node name="DirectionalLight2D" parent="." instance=ExtResource("7_tms1o")]
+[node name="Light" parent="." instance=ExtResource("7_tms1o")]
 position = Vector2(-252, -1441)
 
 [node name="Box" parent="." instance=ExtResource("15_cawam")]
@@ -67,7 +67,6 @@ script = ExtResource("7_twdvf")
 player_scene = ExtResource("8_afu2o")
 camera = NodePath("../Camera")
 damp = 2.0
-gravity_scale = 0.6
 is_in_water = true
 
 [node name="Camera" parent="." instance=ExtResource("12_483kp")]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://mnnw0y5b8aj5"]
+
+[ext_resource type="Texture2D" uid="uid://bsap65k4etgm0" path="res://art/area_3/barrier.png" id="1_gqsne"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x03f7"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0kylo"]
+light_mode = 1
+
+[node name="RopeParallax" type="ParallaxBackground"]
+layer = 0
+visible = false
+
+[node name="Ground" type="ParallaxLayer" parent="."]
+z_index = 4096
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_x03f7")
+position = Vector2(-14, 173)
+motion_scale = Vector2(1.2, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_0kylo")
+position = Vector2(-508, 350)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_gqsne")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Ground"]
+material = SubResource("CanvasItemMaterial_0kylo")
+position = Vector2(2235, 350)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_gqsne")

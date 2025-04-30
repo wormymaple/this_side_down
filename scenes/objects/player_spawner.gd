@@ -3,7 +3,7 @@ extends Node
 @export var player_scene: PackedScene
 @export var camera: NodePath
 @export var damp := 0.0
-@export var gravity_scale := 1.0
+#@export var gravity_scale := 1.0 # Not used, gravity scale is changed in the player.gd if the player is underwater
 @export var is_in_water := false
 
 func _ready():
@@ -27,8 +27,8 @@ func _ready():
 		var new_player = player_scene.instantiate();
 		
 		new_player.playerID = "p" + str(i)
-		new_player.linear_damp = damp
-		new_player.gravity_scale = gravity_scale
+		new_player.linear_damp = damp # This is a damp override, usually 0.0 but 2.0 in underwater levels
+		#new_player.gravity_scale = 10 #gravity_scale
 		new_player.is_in_water = is_in_water
 		new_player.set_color(i)
 		new_player.position.x += i * 50

@@ -38,17 +38,21 @@ func _ready():
 	if OS.get_name() == "Web":
 		$ScrollParent/TitleScreen/HBoxContainer/ButtonQuit.hide()
 	
-	for level in range(0, 12): # Goes from 0-11.
+	for level in range(0, 16): # Goes from 0-11.
 		#print(i)
 		if level > GlobalVariables.last_beaten_level:
 			button_list[level].disabled = true 
 			button_list[level].icon = locked_icon
 	
-	if GlobalVariables.last_beaten_level < 12:
-		for level in range(12, 21): # 12-17 
+	if GlobalVariables.last_beaten_level < 16:
+		for level in range(16, 24): # 16-24
 			#print(i)
 			button_list[level].disabled = true
 			button_list[level].icon = locked_icon
+		
+		$ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonUp.hide()
+		$ScrollParent/LevelSelect/HBoxContainer/ButtonContainer/ButtonDown.hide()
+		LevelBackButton.set_focus_previous(".")
 	
 	player_0_playing.button_pressed = GlobalVariables.player_0_playing
 	player_1_playing.button_pressed = GlobalVariables.player_1_playing
