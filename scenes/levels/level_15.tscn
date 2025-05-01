@@ -22,7 +22,6 @@ Song = 1
 
 [node name="Light" parent="." instance=ExtResource("4_3p4vh")]
 position = Vector2(-1374, -1172)
-scale = Vector2(1, 1)
 
 [node name="UnderwaterShader" parent="." instance=ExtResource("3_6ddg5")]
 

@@ -42,7 +42,6 @@ position = Vector2(-2226.9, -1015)
 
 [node name="Light" parent="." instance=ExtResource("11_unprq")]
 position = Vector2(-2171, 152.87)
-scale = Vector2(1, 1)
 color = Color(0.807843, 0.552941, 0.482353, 1)
 
 [node name="Ladder2" parent="." instance=ExtResource("2_87pw1")]

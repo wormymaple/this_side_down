@@ -278,6 +278,7 @@ alignment = 1
 [node name="ButtonUp" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 8
 focus_previous = NodePath(".")
 theme = ExtResource("5_bpy87")
 disabled = true
@@ -287,6 +288,7 @@ flat = true
 [node name="ButtonBack" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 focus_neighbor_left = NodePath(".")
 focus_neighbor_top = NodePath("../ButtonUp")
 focus_neighbor_right = NodePath("../../Control/LevelContainer/Normal/Button7")
@@ -300,6 +302,7 @@ icon = ExtResource("11_y4gey")
 [node name="ButtonDown" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 theme = ExtResource("5_bpy87")
 icon = ExtResource("13_b4rtx")
 flat = true
