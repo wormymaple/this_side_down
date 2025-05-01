@@ -18,20 +18,18 @@ script = ExtResource("1_0qwdj")
 metadata/grabbable = false
 metadata/grabbed = false
 
-[node name="Collision" type="CollisionPolygon2D" parent="."]
-position = Vector2(-2.08165e-12, 1)
-polygon = PackedVector2Array(0, 27, -34, -28, 34, -28)
-
 [node name="BoxSprite" type="Sprite2D" parent="."]
-position = Vector2(1, 1)
-rotation = 3.14159
 scale = Vector2(0.144043, 0.144043)
 texture = ExtResource("2_34x2i")
 
 [node name="ArrowSprite" type="Sprite2D" parent="."]
-position = Vector2(5.96046e-08, -6)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-16, 19)
+rotation = -3.14159
+scale = Vector2(0.135637, 0.135637)
 texture = ExtResource("3_vfoyo")
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -26, -31, 28, 35, 28)
 
 [node name="GlassSound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ktn3b")

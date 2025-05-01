@@ -276,6 +276,7 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="ButtonUp" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(144, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -284,6 +285,7 @@ theme = ExtResource("5_bpy87")
 disabled = true
 icon = ExtResource("11_oina4")
 flat = true
+icon_alignment = 1
 
 [node name="ButtonBack" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
 layout_mode = 2
@@ -300,12 +302,14 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_mlnq6")
 icon = ExtResource("11_y4gey")
 
 [node name="ButtonDown" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/ButtonContainer"]
+custom_minimum_size = Vector2(144, 140)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("5_bpy87")
 icon = ExtResource("13_b4rtx")
 flat = true
+icon_alignment = 1
 
 [node name="Control" type="Control" parent="ScrollParent/LevelSelect/HBoxContainer"]
 layout_mode = 2

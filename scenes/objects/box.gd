@@ -5,7 +5,7 @@ enum Themes {BOX, CRATE, SHIP, UNDERWATER}
 @export var size: float = 1
 @onready var sprite = $BoxSprite
 @onready var collision = $Collision
-#@onready var arrow = $ArrowSprite
+@onready var arrow = $ArrowSprite
 var rng = RandomNumberGenerator.new()
 # Not box sprites have a scale of 0.145
 # boxes should have a scale of 0.346
@@ -30,15 +30,18 @@ func _ready():
 				sprite.scale = Vector2(0.34, 0.34)
 			Themes.CRATE:
 				sprite.texture = load("res://art/area_2/crate_circle.png")
+				sprite.scale = Vector2(0.145, 0.145)
 			Themes.SHIP:
 				sprite.texture = load("res://art/area_3/crate_circle.png")
+				sprite.scale = Vector2(0.145, 0.145)
 			Themes.UNDERWATER:
 				sprite.texture = load("res://art/area_4/crate_circle.png")
+				sprite.scale = Vector2(0.145, 0.145)
 	else:
 		match theme:
 			Themes.BOX:
 				sprite.texture = load("res://art/area_1/box_triangle.png")
-				sprite.scale = Vector2(0.37, 0.37)
+				sprite.scale = Vector2(0.37, 0.37) # Rotation is also set to 0
 			Themes.CRATE:
 				sprite.texture = load("res://art/area_2/crate_triangle.png")
 				sprite.rotation_degrees = 179.4
@@ -51,11 +54,9 @@ func _ready():
 		
 	sprite.scale *= Vector2(size, size) # Uses *= instead of just = because the starting sprite size is 0.145 
 	collision.scale *= Vector2(size, size)
+	arrow.position *= Vector2(size, size)
 	
-	#print("Inverse inertia: ", PhysicsServer2D.body_get_direct_state(self.get_rid()).inverse_inertia)
-	#print(inertia)
-	
-	#if size >= 2: # i think this moves the arrow closer to the center if the box is big
+	#if size >= 2: # This moves the arrow closer to the center of bigger triangle boxes
 	#	arrow.position.x -= 20
 	#	arrow.position.y -= 20
 

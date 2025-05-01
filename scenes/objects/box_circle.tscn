@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://c02557mdlevgc"]
 
 [ext_resource type="Script" uid="uid://5w2uavby7js7" path="res://scenes/objects/box.gd" id="1_mudvn"]
-[ext_resource type="Texture2D" uid="uid://wq3ehqjhjont" path="res://art/area_2/crate_circle.png" id="2_2f1j3"]
+[ext_resource type="Texture2D" uid="uid://bg2svlmodygwp" path="res://art/area_1/box_circle.png" id="2_atvpk"]
 [ext_resource type="Texture2D" uid="uid://bb153agat705c" path="res://art/general/direction_sticker.png" id="3_1c5nq"]
 [ext_resource type="AudioStream" uid="uid://ckw36svtnul4b" path="res://audio/breaking-glass-1.mp3" id="4_atvpk"]
 [ext_resource type="AudioStream" uid="uid://5c66qlwdujig" path="res://audio/breaking_glass_2.mp3" id="5_q2xa3"]
@@ -27,11 +27,11 @@ shape = SubResource("CircleShape2D_y87lr")
 
 [node name="BoxSprite" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, 0)
-rotation = 2.53073
-scale = Vector2(0.146389, 0.146389)
-texture = ExtResource("2_2f1j3")
+scale = Vector2(0.346401, 0.346401)
+texture = ExtResource("2_atvpk")
 
 [node name="ArrowSprite" type="Sprite2D" parent="."]
+position = Vector2(15, -8)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_1c5nq")
 
