@@ -62,13 +62,16 @@ tile_set = ExtResource("9_b2233")
 [node name="CircleBox" parent="." instance=ExtResource("10_rfrxc")]
 position = Vector2(1580, -357)
 rotation = 1.34248
+theme = 2
 
 [node name="CircleBox2" parent="." instance=ExtResource("10_rfrxc")]
 position = Vector2(1120, -136)
+theme = 2
 
 [node name="TriangleBox" parent="." instance=ExtResource("11_3cpn8")]
 position = Vector2(1220, -114)
 rotation = -1.03771
+theme = 2
 
 [node name="Ramp" parent="." instance=ExtResource("12_8fg8a")]
 position = Vector2(1505, -255)

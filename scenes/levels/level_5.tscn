@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dtf1ov77rjnls"]
+[gd_scene load_steps=14 format=4 uid="uid://dtf1ov77rjnls"]
 
 [ext_resource type="Script" uid="uid://citvl5u2tinva" path="res://scenes/levels/level.gd" id="1_lbynr"]
 [ext_resource type="PackedScene" uid="uid://di5fo1ec8lk57" path="res://scenes/objects/shadow_modulate.tscn" id="2_lbspt"]
@@ -9,8 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bgr4nq5o17pmh" path="res://scenes/objects/player.tscn" id="7_f0pij"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="8_riis0"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="9_pi8ry"]
+[ext_resource type="Texture2D" uid="uid://bfbolkrhb3mt2" path="res://resources/T_Tab_Key_White.png" id="10_5ke18"]
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="10_v72oy"]
 [ext_resource type="PackedScene" uid="uid://bmfa7lxg68u7k" path="res://scenes/objects/box_square.tscn" id="11_66u3y"]
+[ext_resource type="Texture2D" uid="uid://c7eet8lyeuisp" path="res://resources/T_X_X_Light.png" id="11_j14br"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_lbynr")
@@ -40,20 +42,32 @@ position = Vector2(1482, 174)
 camera = NodePath("../Camera")
 level = "5"
 
-[node name="Label" type="Label" parent="."]
-offset_left = 148.0
+[node name="HowToMenu" type="Label" parent="."]
+offset_left = 69.0
 offset_top = 585.0
-offset_right = 970.0
+offset_right = 1050.0
 offset_bottom = 774.0
 scale = Vector2(0.995067, 0.98283)
 theme = ExtResource("9_pi8ry")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-text = "You can restart the level in the pause menu.
-Open the pause menu with Tab or Start on controller."
+text = "Fallen and can't get up?
+You can restart levels from the pause menu.
+Open the pause menu with         /
+You can also skip this level in the level select."
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="TTabKeyWhite" type="Sprite2D" parent="HowToMenu"]
+position = Vector2(686.989, 117.619)
+scale = Vector2(0.401983, 0.406988)
+texture = ExtResource("10_5ke18")
+
+[node name="TXXLight" type="Sprite2D" parent="HowToMenu"]
+position = Vector2(753.718, 117.619)
+scale = Vector2(0.401983, 0.406988)
+texture = ExtResource("11_j14br")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 2
@@ -64,3 +78,4 @@ tile_set = ExtResource("10_v72oy")
 
 [node name="Box" parent="." instance=ExtResource("11_66u3y")]
 position = Vector2(-10, 142)
+theme = 1

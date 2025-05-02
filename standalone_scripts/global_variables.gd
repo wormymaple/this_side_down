@@ -1,6 +1,6 @@
 extends Node
 ## These variables need to be saved between play sessions
-var last_beaten_level = 0
+var last_beaten_level = "0"
 var bus_master_vol = -10.0
 var bus_music_vol = -10.0
 var bus_effects_vol = -10.0
@@ -101,9 +101,11 @@ func _ready() -> void:
 
 func win_level(level_cleared):
 	print("Level #", level_cleared, " beaten")
-	if not level_cleared.contains("s") and int(level_cleared) > last_beaten_level:
-		
-		last_beaten_level = level_cleared
+	if not level_cleared.contains("s") and int(level_cleared) > int(last_beaten_level):
+		if level_cleared != "4": 
+			last_beaten_level = level_cleared
+		else:
+			last_beaten_level = "5"
 		save_data()
 	
 	await get_tree().create_timer(2).timeout # Give the fade in time to...fade
