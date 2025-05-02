@@ -123,6 +123,7 @@ tile_set = ExtResource("14_3bci7")
 position = Vector2(30, 1249)
 rotation = 3.14782
 theme = 1
+time_interval = 2
 deploy_length = 180
 
 [node name="Label3" type="Label" parent="."]

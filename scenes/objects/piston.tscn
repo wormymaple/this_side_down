@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://rlnrmnltn78o"]
+[gd_scene load_steps=10 format=3 uid="uid://rlnrmnltn78o"]
 
 [ext_resource type="Script" uid="uid://drshym28xdtol" path="res://scenes/objects/piston.gd" id="1_wefcu"]
 [ext_resource type="Texture2D" uid="uid://bwwfr0ljc8dds" path="res://art/general/piston_top.png" id="2_60fg6"]
 [ext_resource type="Texture2D" uid="uid://c0fvw81jug71c" path="res://art/general/piston_base.png" id="3_7djox"]
+[ext_resource type="AudioStream" uid="uid://du2yjg3c76sfw" path="res://audio/piston_deploy.wav" id="4_vhqe5"]
+[ext_resource type="AudioStream" uid="uid://cru4s0uu7plra" path="res://audio/piston_retract.wav" id="5_g76ej"]
 
 [sub_resource type="Curve" id="Curve_60fg6"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.494737, 0), 0.0, 0.0, 0, 0, Vector2(0.757895, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -49,9 +51,14 @@ position = Vector2(-1.13687e-13, -0.5)
 scale = Vector2(0.0437618, 0.053719)
 shape = SubResource("RectangleShape2D_6vyyi")
 
+[node name="DeploySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vhqe5")
+
+[node name="RetractSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_g76ej")
+
 [node name="IntervalTimer" type="Timer" parent="."]
 one_shot = true
-autostart = true
 
 [node name="ReleaseTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -73,6 +80,7 @@ collision_mask = 15
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 shape = SubResource("RectangleShape2D_1808u")
 
+[connection signal="finished" from="DeploySound" to="." method="_on_deploy_sound_finished"]
 [connection signal="timeout" from="IntervalTimer" to="." method="_on_interval_timer_timeout"]
 [connection signal="timeout" from="ReleaseTimer" to="." method="_on_deploy_timer_timeout"]
 [connection signal="body_entered" from="Deleter" to="." method="_on_deleter_body_entered"]

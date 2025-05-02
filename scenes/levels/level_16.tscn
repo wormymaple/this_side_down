@@ -31,6 +31,7 @@ color = Color(1, 1, 1, 1)
 [node name="OceanBackground" parent="." instance=ExtResource("9_akor3")]
 
 [node name="CanvasModulate" parent="OceanBackground" instance=ExtResource("5_f2ie4")]
+color = Color(0.301961, 0.482353, 0.564706, 1)
 
 [node name="CanvasModulate" parent="." instance=ExtResource("5_f2ie4")]
 color = Color(0.302304, 0.481884, 0.563484, 1)
@@ -71,13 +72,19 @@ polygon = PackedVector2Array(0, 0, 2000, 0, 2000, -6000, 0, -6000)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 light_mask = 0
-position = Vector2(1779, -253)
-scale = Vector2(1, 0.969)
+position = Vector2(1779, -306)
+scale = Vector2(1, 0.960167)
 polygon = PackedVector2Array(0, 0, 2000, 0, 2000, -6000, 0, -6000)
 vertex_colors = PackedColorArray(0.0941176, 0.172549, 0.223529, 1, 0.0941176, 0.172549, 0.223529, 1, 0, 0.74902, 1, 1, 0, 0.74902, 1, 1)
 
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(2252.75, -6067)
+scale = Vector2(11.575, 0.969)
+points = PackedVector2Array(-9.74081, 0, 105.94, -1.03223)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(2252.75, -304)
 scale = Vector2(11.575, 0.969)
 points = PackedVector2Array(-9.74081, 0, 105.94, -1.03223)
 default_color = Color(0, 0, 0, 1)
@@ -105,19 +112,30 @@ position = Vector2(2781, -6106)
 scale = Vector2(22, 4.51999)
 
 [node name="Sun" type="Sprite2D" parent="."]
-position = Vector2(2862, -7116)
-scale = Vector2(1.67775, 1.67775)
+z_index = 20
+position = Vector2(2595, -7143)
+rotation = 0.292827
+scale = Vector2(1.21774, 1.21774)
 texture = ExtResource("15_muk3n")
 
 [node name="Clouds" type="Sprite2D" parent="."]
+top_level = true
+light_mask = 0
+z_index = 20
 position = Vector2(1010, -7325)
 texture = ExtResource("16_fo48u")
 
 [node name="Clouds2" type="Sprite2D" parent="."]
+top_level = true
+light_mask = 0
+z_index = 20
 position = Vector2(2635, -7661)
 texture = ExtResource("16_fo48u")
 
 [node name="Clouds3" type="Sprite2D" parent="."]
+top_level = true
+light_mask = 0
+z_index = 20
 position = Vector2(4293, -7336)
 rotation = -0.214803
 texture = ExtResource("16_fo48u")

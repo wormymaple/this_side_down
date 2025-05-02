@@ -158,7 +158,7 @@ func _physics_process(delta):
 	## Move left and right
 	var left_stick = Input.get_axis("LS_left_" + playerID, "LS_right_" + playerID)
 	if left_stick != 0:
-		if left_stick > 0:
+		if left_stick > 0: # Eventually I should rework this so this doesn't cap player speed when thrown
 			linear_velocity.x = min(linear_velocity.x + left_stick * ACCELERATION * delta, left_stick * MAX_SPEED * delta)
 		else:
 			linear_velocity.x = max(linear_velocity.x + left_stick * ACCELERATION * delta, left_stick * MAX_SPEED * delta)

@@ -25,7 +25,10 @@ position = Vector2(-1374, -1172)
 
 [node name="UnderwaterShader" parent="." instance=ExtResource("3_6ddg5")]
 
-[node name="ParallaxBackground2" parent="." instance=ExtResource("4_pxs7j")]
+[node name="OceanBackground" parent="." instance=ExtResource("4_pxs7j")]
+
+[node name="CanvasModulate2" parent="OceanBackground" instance=ExtResource("2_2ytym")]
+color = Color(0.301961, 0.482353, 0.564706, 1)
 
 [node name="CanvasModulate2" parent="." instance=ExtResource("2_2ytym")]
 color = Color(0.301961, 0.482353, 0.564706, 1)
@@ -71,6 +74,7 @@ dangerous = false
 position = Vector2(288, 820)
 rotation = 1.18132
 theme = 1
+time_interval = 4
 deploy_length = 150
 dangerous = false
 

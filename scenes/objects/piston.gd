@@ -9,6 +9,7 @@ enum Themes {YELLOW, GREEN, BLUE, PURPLE}
 @export var WiggleCurve: Curve
 @export_range(0, 500, 1) var deploy_length = 300
 @export var dangerous = true
+@export var start_offset = 0.0
 
 enum States {WAIT, MOVING}
 var mode = States.WAIT
@@ -19,13 +20,15 @@ var mode = States.WAIT
 @onready var Collider = $AnimatableBody2D
 @onready var ReleaseTimer = $ReleaseTimer
 @onready var IntervalTimer = $IntervalTimer
-@onready var OuterShaft = $OuterShaft
+@onready var OuterShaft = $OuterShaft # I don't know why I put these in @onready
 @onready var InnerShaft = $InnerShaft
+
+var release_sounded_yet = true
 
 func _ready():
 	IntervalTimer.wait_time = time_interval # And then this timer autostarts
 	mode = States.WAIT
-	#IntervalTimer.start()
+	
 	
 	match theme:
 		Themes.YELLOW:
@@ -36,12 +39,19 @@ func _ready():
 			modulate = Color("008a5e")
 		Themes.PURPLE:
 			modulate = Color("#482c84")
+	
+	if start_offset > 0:
+		await get_tree().create_timer(start_offset).timeout
+	IntervalTimer.start()
 
 func _process(_delta):
 	if mode == States.WAIT:
 		#print("Am waiting")
 		return
 	
+	if ReleaseTimer.time_left < 1 and release_sounded_yet == false:
+		$DeploySound.play()
+		release_sounded_yet = true
 	#print((ReleaseTimer.time_left))
 	var height = deploy_length * -ReleaseCurve.sample((2 - ReleaseTimer.time_left ) / 2) - 25 # Multiply it by a multiplier
 	
@@ -68,12 +78,16 @@ func _on_deleter_body_entered(body):
 		
 	
 
-
 func _on_interval_timer_timeout() -> void:
 	#print("Release started")
 	mode = States.MOVING
 	ReleaseTimer.start()
+	release_sounded_yet = false
 	
 func _on_deploy_timer_timeout() -> void:
 	mode = States.WAIT
 	IntervalTimer.start()
+
+
+func _on_deploy_sound_finished() -> void:
+	$RetractSound.play()

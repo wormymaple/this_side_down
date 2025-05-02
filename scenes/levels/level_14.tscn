@@ -28,7 +28,10 @@ position = Vector2(-1374, -1172)
 
 [node name="UnderwaterShader" parent="." instance=ExtResource("8_u77f3")]
 
-[node name="ParallaxBackground2" parent="." instance=ExtResource("9_akor3")]
+[node name="OceanBackground" parent="." instance=ExtResource("9_akor3")]
+
+[node name="CanvasModulate2" parent="OceanBackground" instance=ExtResource("5_f2ie4")]
+color = Color(0.301961, 0.482353, 0.564706, 1)
 
 [node name="CanvasModulate" parent="." instance=ExtResource("5_f2ie4")]
 color = Color(0.301961, 0.482353, 0.564706, 1)
@@ -294,6 +297,7 @@ rotation = 3.15147
 theme = 3
 landing_zone = NodePath("../LoadingZone")
 deploy_length = 320
+start_offset = 0.5
 
 [node name="Piston3" parent="." node_paths=PackedStringArray("landing_zone") instance=ExtResource("6_0nodb")]
 position = Vector2(1607, -226)
@@ -301,6 +305,7 @@ rotation = 3.15147
 theme = 3
 landing_zone = NodePath("../LoadingZone")
 deploy_length = 320
+start_offset = 1.0
 
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("8_2ie1f")]
 position = Vector2(1867, 830)
