@@ -46,6 +46,7 @@ var time_since_last_footstep = 0.0
 @onready var Footsteps = $Footstep
 
 var body_state: PhysicsDirectBodyState2D # I am not sure how this is used
+var player_holding_player: RigidBody2D = null
 
 # Coyote time variables
 var jump_buffer_time = 0.0 # Current time left for jumping
@@ -190,13 +191,19 @@ func _physics_process(delta):
 
 func _input(event):
 	# jump
-	if event.is_action_pressed("jump_" + playerID) and on_ground: #&& !standing_in_ladder: # Not neccessary
+	if event.is_action_pressed("jump_" + playerID) and (on_ground or player_holding_player != null):
 		#print(on_ground)
 		linear_velocity.y = -JUMP_POWER
 		if is_in_water:
 			linear_velocity.y *= UNDERWATER_JUMP_MULTIPLIER
 		Jump.play()
+	#elif event.is_action_pressed("jump_" + playerID) and player_holding_player != null:
+		if player_holding_player != null:
+			#print("Player struggled")
+			player_holding_player.drop_object()
+			player_holding_player = null
 		
+	
 	## grab
 	if event.is_action_pressed("grab_" + playerID):
 		#print("Local: ", Vector2i(get_local_mouse_position())) # Gives you where the mouse is on the screen coordinates 
@@ -211,7 +218,9 @@ func _input(event):
 			grabbed_body.gravity_scale = 0
 			grabbed_body.set_meta("grabbed", true)
 			if grabbed_body.is_in_group("Player"):
+				grabbed_body.player_holding_player = self
 				if GlobalVariables.controller_rumble:
+					
 					Input.start_joy_vibration(int(grabbed_body.playerID.right(1)) - 1, 1, 1, 0.3)
 			
 			
@@ -246,6 +255,8 @@ func drop_object():
 		grabbed_body.set_collision_mask_value(2, true) 
 		grabbed_body.set_collision_layer_value(4, true) # Boxes can hit players again
 		grabbed_body.set_collision_layer_value(3, true) # Objects can refresh jumps again
+	elif grabbed_body.is_in_group("Player"):
+		grabbed_body.player_holding_player = null
 	
 	grabbed_body = null
 	
@@ -255,7 +266,6 @@ func drop_object():
 		Input.stop_joy_vibration(int(playerID.right(1)))
 		Input.start_joy_vibration(int(playerID.right(1)) - 1, 1, 0, 0.2)
 	BoxDrop.play()
-	#set_collision_mask_value(4, true)
 
 func _on_grab_area_body_entered(body):
 	if body == self:
