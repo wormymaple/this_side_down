@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://dq5ntdtxdyc8c"]
 
 [ext_resource type="Script" uid="uid://bre6baeop3tqc" path="res://scenes/menus/settings_menu.gd" id="1_uuh1i"]
-[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/Nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
-[ext_resource type="FontFile" uid="uid://wcx8hoexeh7x" path="res://fonts/Nunito/static/Nunito-Bold.ttf" id="4_grtet"]
+[ext_resource type="FontFile" uid="uid://fx52s08yvsdd" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="3_ur1dc"]
+[ext_resource type="FontFile" uid="uid://c4slyfn8702t7" path="res://fonts/nunito/static/Nunito-Bold.ttf" id="4_grtet"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="4_ra86d"]
-[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/Nunito/static/Nunito-Regular.ttf" id="5_da10i"]
+[ext_resource type="FontFile" uid="uid://s5j7v8pcsl2w" path="res://fonts/nunito/static/Nunito-Regular.ttf" id="5_da10i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vk4d"]
 bg_color = Color(0.592157, 0.443137, 0.286275, 1)
