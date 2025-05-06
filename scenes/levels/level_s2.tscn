@@ -54,11 +54,14 @@ tile_set = ExtResource("10_2rnbu")
 [node name="ConcreteSlab" parent="." instance=ExtResource("11_tar8p")]
 position = Vector2(-538, 375)
 rotation = 0.902551
+scale = Vector2(0.9, 1)
 
 [node name="ConcreteSlab2" parent="." instance=ExtResource("11_tar8p")]
 position = Vector2(-674, 346)
 rotation = -0.00181386
+scale = Vector2(0.9, 1)
 
 [node name="ConcreteSlab3" parent="." instance=ExtResource("11_tar8p")]
 position = Vector2(-679, 411)
 rotation = -0.00181386
+scale = Vector2(0.9, 1)

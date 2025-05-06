@@ -2,11 +2,11 @@
 
 [ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://resources/button_focus.tres" id="2_7twn1"]
 [ext_resource type="StyleBox" uid="uid://b7x078ag0jx8d" path="res://resources/button_default.tres" id="2_eihje"]
-[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/nunito/static/Nunito-Medium.ttf" id="3_fp7b3"]
+[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/Nunito/static/Nunito-Medium.ttf" id="3_fp7b3"]
 [ext_resource type="Texture2D" uid="uid://dw40i2oi5a1mi" path="res://resources/true.png" id="4_aowux"]
 [ext_resource type="Texture2D" uid="uid://b2dftp3jkcoqi" path="res://resources/true_disabled.png" id="5_fp7b3"]
 [ext_resource type="Texture2D" uid="uid://6yf5jljh35of" path="res://resources/false.png" id="6_1pmyd"]
-[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/nunito/static/Nunito-Regular.ttf" id="7_aowux"]
+[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/Nunito/static/Nunito-Regular.ttf" id="7_aowux"]
 [ext_resource type="Texture2D" uid="uid://owdpaaubxo68" path="res://resources/false_disabled.png" id="7_cbwiu"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_p6rne"]

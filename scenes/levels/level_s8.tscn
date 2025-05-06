@@ -64,6 +64,7 @@ camera = NodePath("../Camera")
 [node name="Box" parent="." instance=ExtResource("9_018pn")]
 position = Vector2(-1078, 223)
 sleeping = true
+theme = 1
 size = 1.5
 
 [node name="LoadingZone" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("10_cay32")]

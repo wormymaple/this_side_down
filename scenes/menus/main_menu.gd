@@ -240,3 +240,7 @@ func _on_button_up_pressed() -> void:
 		return
 	levels_slide_mode = LevelScrollStates.TO_TOP
 	$LevelTimer.start()
+
+
+func _on_button_25_pressed() -> void:
+	start_level("s9") # I haven't updated the button array with this button but I don't need it anymore...

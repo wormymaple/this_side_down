@@ -116,7 +116,7 @@ func win_level(level_cleared):
 		else:
 			get_tree().change_scene_to_file("res://scenes/menus/credits.tscn")
 	else:
-		if level_cleared != "s8":
+		if level_cleared != "s9":
 			get_tree().change_scene_to_file("res://scenes/levels/level_s" + str(int(level_cleared.lstrip("s")) + 1) + ".tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")

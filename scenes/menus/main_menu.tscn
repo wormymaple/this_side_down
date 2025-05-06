@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfk5mqt5lko4y" path="res://scenes/menus/main_menu.gd" id="1_eci1h"]
 [ext_resource type="Texture2D" uid="uid://bchwkejqsfd4p" path="res://art/menus/box_background.jpg" id="2_6imgi"]
-[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/nunito/static/Nunito-Regular.ttf" id="3_6tew7"]
+[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/Nunito/static/Nunito-Regular.ttf" id="3_6tew7"]
 [ext_resource type="Texture2D" uid="uid://bfvq1jdp6017a" path="res://art/menus/logo_1.png" id="4_4rgjt"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="5_bpy87"]
 [ext_resource type="Texture2D" uid="uid://r3rlt2gbviqu" path="res://art/menus/button_play.png" id="5_m312u"]
@@ -22,9 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://dg3ryydsenhpy" path="res://art/menus/6.png" id="17_ykxr0"]
 [ext_resource type="Texture2D" uid="uid://cipi8r4owjtjv" path="res://art/menus/7.png" id="18_eeloc"]
 [ext_resource type="Texture2D" uid="uid://ctqn8u4v1wjhr" path="res://art/menus/8.png" id="19_oina4"]
-[ext_resource type="Texture2D" uid="uid://dxvwovj3tx6cy" path="res://art/menus/9.PNG" id="20_b4rtx"]
-[ext_resource type="Texture2D" uid="uid://bkrsi87ltpqcg" path="res://art/menus/10.PNG" id="21_37lca"]
-[ext_resource type="Texture2D" uid="uid://push1dudb1c8" path="res://art/menus/11.PNG" id="22_4cpr1"]
+[ext_resource type="Texture2D" uid="uid://dxvwovj3tx6cy" path="res://art/menus/9.png" id="20_b4rtx"]
+[ext_resource type="Texture2D" uid="uid://bkrsi87ltpqcg" path="res://art/menus/10.png" id="21_37lca"]
+[ext_resource type="Texture2D" uid="uid://push1dudb1c8" path="res://art/menus/11.png" id="22_4cpr1"]
 [ext_resource type="StyleBox" uid="uid://cghq55g2oqm2g" path="res://resources/transparent_color.tres" id="25_6imgi"]
 [ext_resource type="Texture2D" uid="uid://j8bh8tov1ivj" path="res://art/menus/13.png" id="25_ykxr0"]
 [ext_resource type="Texture2D" uid="uid://v66l2jed5dcs" path="res://art/player/player_legs.png" id="26_1hq2q"]
@@ -297,8 +297,7 @@ layout_mode = 2
 [node name="LevelContainer" type="Control" parent="ScrollParent/LevelSelect/HBoxContainer/Control"]
 layout_mode = 2
 anchors_preset = 0
-offset_left = 4.0
-offset_right = 1516.0
+offset_right = 1512.0
 offset_bottom = 1080.0
 size_flags_horizontal = 3
 
@@ -677,6 +676,21 @@ theme = ExtResource("5_bpy87")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/focus = ExtResource("12_6imgi")
 icon = ExtResource("19_oina4")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button25" type="Button" parent="ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Special"]
+modulate = Color(1, 0, 0.45098, 1)
+z_index = 3
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+theme = ExtResource("5_bpy87")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("12_6imgi")
+icon = ExtResource("20_b4rtx")
 flat = true
 icon_alignment = 1
 expand_icon = true
@@ -1164,6 +1178,7 @@ icon = ExtResource("11_y4gey")
 [connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Special/Button22" to="." method="_on_button_22_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Special/Button23" to="." method="_on_button_23_pressed"]
 [connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Special/Button24" to="." method="_on_button_24_pressed"]
+[connection signal="pressed" from="ScrollParent/LevelSelect/HBoxContainer/Control/LevelContainer/Special/Button25" to="." method="_on_button_25_pressed"]
 [connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel/VBoxContainer/HBoxContainer/CheckBox0" to="." method="_on_check_box_0_toggled"]
 [connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel2/VBoxContainer/HBoxContainer/CheckBox1" to="." method="_on_check_box_1_toggled"]
 [connection signal="toggled" from="ScrollParent/ControllerMenu/MarginContainer/HBoxContainer/Panel3/VBoxContainer/HBoxContainer/CheckBox2" to="." method="_on_check_box_2_toggled"]
