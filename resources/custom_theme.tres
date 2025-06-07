@@ -1,13 +1,11 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://ln2ffi74l3eg"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ln2ffi74l3eg"]
 
 [ext_resource type="StyleBox" uid="uid://cdqlbxa148orj" path="res://resources/button_focus.tres" id="2_7twn1"]
 [ext_resource type="StyleBox" uid="uid://b7x078ag0jx8d" path="res://resources/button_default.tres" id="2_eihje"]
-[ext_resource type="FontFile" uid="uid://dwise6tlxxmb" path="res://fonts/Nunito/static/Nunito-Medium.ttf" id="3_fp7b3"]
-[ext_resource type="Texture2D" uid="uid://dw40i2oi5a1mi" path="res://resources/true.png" id="4_aowux"]
-[ext_resource type="Texture2D" uid="uid://b2dftp3jkcoqi" path="res://resources/true_disabled.png" id="5_fp7b3"]
-[ext_resource type="Texture2D" uid="uid://6yf5jljh35of" path="res://resources/false.png" id="6_1pmyd"]
-[ext_resource type="FontFile" uid="uid://bypsh0k1ipvuc" path="res://fonts/Nunito/static/Nunito-Regular.ttf" id="7_aowux"]
-[ext_resource type="Texture2D" uid="uid://owdpaaubxo68" path="res://resources/false_disabled.png" id="7_cbwiu"]
+[ext_resource type="Texture2D" uid="uid://d0iv6mb8qcerq" path="res://resources/true.png" id="4_aowux"]
+[ext_resource type="Texture2D" uid="uid://dhhtmeibm8ko7" path="res://resources/true_disabled.png" id="5_fp7b3"]
+[ext_resource type="Texture2D" uid="uid://ds7npo0wkjuyu" path="res://resources/false.png" id="6_1pmyd"]
+[ext_resource type="Texture2D" uid="uid://c7phg6scbg0he" path="res://resources/false_disabled.png" id="7_cbwiu"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_p6rne"]
 thickness = 3
@@ -25,7 +23,7 @@ Button/styles/hover_pressed = ExtResource("2_eihje")
 Button/styles/normal = ExtResource("2_eihje")
 Button/styles/pressed = ExtResource("2_eihje")
 CheckBox/font_sizes/font_size = 12
-CheckBox/fonts/font = ExtResource("3_fp7b3")
+CheckBox/fonts/font = null
 CheckBox/icons/checked = ExtResource("4_aowux")
 CheckBox/icons/checked_disabled = ExtResource("5_fp7b3")
 CheckBox/icons/unchecked = ExtResource("6_1pmyd")
@@ -36,8 +34,8 @@ Label/colors/font_color = Color(0.847059, 0.623529, 0.419608, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 8
 Label/font_sizes/font_size = 32
-Label/fonts/font = ExtResource("7_aowux")
+Label/fonts/font = null
 OptionButton/constants/outline_size = 8
 OptionButton/font_sizes/font_size = 24
-OptionButton/fonts/font = ExtResource("3_fp7b3")
+OptionButton/fonts/font = null
 Panel/styles/panel = SubResource("StyleBoxFlat_54eja")

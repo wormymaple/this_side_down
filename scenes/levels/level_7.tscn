@@ -13,10 +13,10 @@
 [ext_resource type="TileSet" uid="uid://d3uqsmqh0kr2d" path="res://resources/ConcreteTileset.tres" id="13_c4ixt"]
 [ext_resource type="PackedScene" uid="uid://c7gc0sday64y6" path="res://scenes/objects/loading_zone.tscn" id="13_uogt2"]
 [ext_resource type="Theme" uid="uid://ln2ffi74l3eg" path="res://resources/custom_theme.tres" id="14_tqv5a"]
-[ext_resource type="Texture2D" uid="uid://cbpmj2drxkpuy" path="res://resources/T_S_Key_White.png" id="15_c64tk"]
+[ext_resource type="Texture2D" uid="uid://dnu5u0q5fx15l" path="res://resources/T_S_Key_White.png" id="15_c64tk"]
 [ext_resource type="PackedScene" uid="uid://hnvq81t41qbb" path="res://scenes/objects/void_out_area.tscn" id="15_ppjov"]
-[ext_resource type="Texture2D" uid="uid://bymqoe6w1o5mc" path="res://resources/T_W_Key_White.png" id="16_bntht"]
-[ext_resource type="Texture2D" uid="uid://bq1eyxli018ek" path="res://resources/T_X_L_Y_Light.png" id="17_7co51"]
+[ext_resource type="Texture2D" uid="uid://bis1l1wsrq1w4" path="res://resources/T_W_Key_White.png" id="16_bntht"]
+[ext_resource type="Texture2D" uid="uid://dmlyca2j1rlxn" path="res://resources/T_X_L_Y_Light.png" id="17_7co51"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7gtpw")

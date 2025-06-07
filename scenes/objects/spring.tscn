@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b13ui3edlyvfn"]
 
 [ext_resource type="Script" uid="uid://d202y7utrpien" path="res://scenes/objects/spring.gd" id="1_fdvwv"]
-[ext_resource type="Texture2D" uid="uid://cxdyacb13x2aj" path="res://art/general/spring_half.png" id="2_1sfmc"]
+[ext_resource type="Texture2D" uid="uid://b560so2nvd121" path="res://art/general/spring_half.png" id="2_1sfmc"]
 [ext_resource type="Curve" uid="uid://bvymgfqejn86f" path="res://resources/spring_curve.tres" id="2_h8dp2"]
-[ext_resource type="AudioStream" uid="uid://b4yuucljmbg17" path="res://audio/boing.wav" id="3_36sag"]
+[ext_resource type="AudioStream" uid="uid://bmpl152x7gfwr" path="res://audio/boing.wav" id="3_36sag"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxfp4"]
 size = Vector2(128, 25)
